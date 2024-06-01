@@ -17,26 +17,26 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="创建Vue项目Vue脚手架的安装与卸载 安装、卸载vue-cli2命令  npm install vue-cli -gnpm uninstall vue-cli -g  安装、卸载vue-cli3命令  npm install @vue&#x2F;cli -gnpm uninstall @vue&#x2F;cli -g Vue项目创建# 创建一个名为demo-vue的项目vue create demo-vue  El">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301261713790.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301261716128.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301261713790.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301261716128.png">
 <meta property="article:published_time" content="2023-03-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:25.023Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301261713790.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301261713790.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230570">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409420">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230570">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409420">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230570">
+            <link rel="stylesheet" href="/custom.css?v=1717252409420">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230570"></script>
+    <script async src="/js/app.js?v=1717252409420"></script>
     
      
 
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230570"></script>
+	<script async src="/js/search.js?v=1717252409420"></script>
 
 
 
@@ -225,7 +225,7 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install @vue/cli -g<br>npm uninstall @vue/cli -g<br></code></pre></td></tr></table></figure>
 <h2 id="Vue项目创建"><a href="#Vue项目创建" class="headerlink" title="Vue项目创建"></a>Vue项目创建</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建一个名为demo-vue的项目</span><br>vue create demo-vue<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301261713790.png" alt="image-20230126171311650" data-caption="image-20230126171311650" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301261716128.png" alt="image-20230126171655053" data-caption="image-20230126171655053" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301261713790.png" alt="image-20230126171311650" data-caption="image-20230126171311650" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301261716128.png" alt="image-20230126171655053" data-caption="image-20230126171655053" loading="lazy"></p>
 <h2 id="Element-UI"><a href="#Element-UI" class="headerlink" title="Element-UI"></a>Element-UI</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"># 安装<br># npm i element-ui -S<br>vue add element<br># 引入<span class="hljs-title class_">Element</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementUI</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-ui&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span>;<br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementUI</span>);<br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">el</span>: <span class="hljs-string">&#x27;#app&#x27;</span>,<br>  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-params">h</span> =&gt;</span> <span class="hljs-title function_">h</span>(<span class="hljs-title class_">App</span>)<br>&#125;);<br></code></pre></td></tr></table></figure>
 <h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">npm install axios -s<br><span class="hljs-comment">// 配置request.js-------------------------</span><br><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br><span class="hljs-keyword">const</span> request = axios.<span class="hljs-title function_">create</span>(&#123;<br>  <span class="hljs-comment">// baseURL: &#x27;/api&#x27;,  // 注意！！ 这里是全局统一加上了 &#x27;/api&#x27; 前缀，也就是说所有接口都会加上&#x27;/api&#x27;前缀在，页面里面写接口的时候就不要加 &#x27;/api&#x27;了，否则会出现2个&#x27;/api&#x27;，类似 &#x27;/api/api/user&#x27;这样的报错，切记！！！</span><br>    <span class="hljs-attr">timeout</span>: <span class="hljs-number">5000</span><br>&#125;)<br><span class="hljs-comment">// request 拦截器</span><br><span class="hljs-comment">// 可以自请求发送前对请求做一些处理</span><br><span class="hljs-comment">// 比如统一加token，对请求参数统一加密</span><br>request.<span class="hljs-property">interceptors</span>.<span class="hljs-property">request</span>.<span class="hljs-title function_">use</span>(<span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> &#123;<br>    config.<span class="hljs-property">headers</span>[<span class="hljs-string">&#x27;Content-Type&#x27;</span>] = <span class="hljs-string">&#x27;application/json;charset=utf-8&#x27;</span>;<br>  <br> <span class="hljs-comment">// config.headers[&#x27;token&#x27;] = user.token;  // 设置请求头</span><br>    <span class="hljs-keyword">return</span> config<br>&#125;, <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(error)<br>&#125;);<br><span class="hljs-comment">// response 拦截器</span><br><span class="hljs-comment">// 可以在接口响应后统一处理结果</span><br>request.<span class="hljs-property">interceptors</span>.<span class="hljs-property">response</span>.<span class="hljs-title function_">use</span>(<br>    <span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">let</span> res = response.<span class="hljs-property">data</span>;<br>        <span class="hljs-comment">// 如果是返回的文件</span><br>        <span class="hljs-keyword">if</span> (response.<span class="hljs-property">config</span>.<span class="hljs-property">responseType</span> === <span class="hljs-string">&#x27;blob&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> res<br>        &#125;<br>        <span class="hljs-comment">// 兼容服务端返回的字符串数据</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> res === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;<br>            res = res ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(res) : res<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;err&#x27;</span> + error) <span class="hljs-comment">// for debug</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(error)<br>    &#125;<br>)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> request<br><span class="hljs-comment">// 配置vue.config.js------------------------------------</span><br><span class="hljs-comment">// 跨域配置</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>    <span class="hljs-attr">devServer</span>: &#123;                <span class="hljs-comment">//记住，别写错了devServer//设置本地默认端口  选填</span><br>        <span class="hljs-attr">port</span>: <span class="hljs-number">9876</span>,<br>        <span class="hljs-attr">proxy</span>: &#123;                 <span class="hljs-comment">//设置代理，必须填</span><br>            <span class="hljs-string">&#x27;/api&#x27;</span>: &#123;              <span class="hljs-comment">//设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定</span><br>                <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;http://localhost:9999&#x27;</span>,     <span class="hljs-comment">//代理的目标地址</span><br>                <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,              <span class="hljs-comment">//是否设置同源，输入是的</span><br>                <span class="hljs-attr">pathRewrite</span>: &#123;                   <span class="hljs-comment">//路径重写</span><br>                    <span class="hljs-string">&#x27;^/api&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>                     <span class="hljs-comment">//选择忽略拦截器里面的内容</span><br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="qs"><a href="#qs" class="headerlink" title="qs"></a>qs</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">npm install qs<br><span class="hljs-comment">// 在main.js中配置</span><br><span class="hljs-keyword">import</span> qs <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;qs&#x27;</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">qs</span>=qs<br></code></pre></td></tr></table></figure>

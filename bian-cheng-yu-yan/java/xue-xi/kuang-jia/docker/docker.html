@@ -17,28 +17,28 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Docker概念镜像:相当于容器的模板容器:可以理解成轻量级的虚拟机镜像仓库:存放镜像的仓库，官方的镜像仓库 https:&#x2F;&#x2F;hub.docker.com&#x2F;以下内容可能会使用到某些文件下载链接  可以使用镜像来不断创建容器，而镜像仓库则是存放镜像的地方  命令 官网文档  # 查看帮助文档docker --help# 查看某一个命令的用法，如 pulldocker pull --help# 下列命">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240323184204498.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240324181016560.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240325062118495.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240325071054576.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240324181016560.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325062118495.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325071054576.png">
 <meta property="article:published_time" content="2024-04-21T04:12:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.921Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240323184204498.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230326">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409283">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230326">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409283">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230326">
+            <link rel="stylesheet" href="/custom.css?v=1717252409283">
         
     
 
@@ -47,7 +47,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230326"></script>
+    <script async src="/js/app.js?v=1717252409283"></script>
     
      
 
@@ -138,7 +138,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230326"></script>
+	<script async src="/js/search.js?v=1717252409283"></script>
 
 
 
@@ -294,7 +294,7 @@
 <h3 id="其他镜像和容器命令"><a href="#其他镜像和容器命令" class="headerlink" title="其他镜像和容器命令"></a>其他镜像和容器命令</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 查看镜像详细内容</span><br>docker images inspect [OPTIONS] IMAGE [IMAGE...]<br>docker image inspect 7614ae9453d1<br><span class="hljs-comment"># 查看容器中的进程</span><br>docker top CONTAINER[ps CONTAINER]<br>docker top redis<br><span class="hljs-comment"># 查看容器详细内容</span><br>docker inspect 51764b94357b<br></code></pre></td></tr></table></figure>
 <h3 id="运行jar包"><a href="#运行jar包" class="headerlink" title="运行jar包"></a>运行jar包</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># docker拉取java17</span><br>docker pull openjdk:17-jdk<br><span class="hljs-comment"># 运行jar包</span><br>java -jar xxx.jar<br><span class="hljs-comment"># 根据application.properties来穿参数</span><br><span class="hljs-comment"># 运行时参数，比如运行端口为8080，mysql的密码为root</span><br>java -jar xxx.jar --server.port=8080 --spring.datasource.username=root --spring.datasource.password=root<br>docker run -d \<br>-p 8080:8080 \<br>-v /usr/blog:/usr/blog \<br>--restart always \<br>--name jar_test \<br>openjdk:17-jdk java -jar /usr/blog/demo-0.0.1-SNAPSHOT.jar <br></code></pre></td></tr></table></figure>
 <h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker inspect mysql<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240323184204498.png" alt="image-20240323184204498" data-caption="image-20240323184204498" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png" alt="image-20240323184204498" data-caption="image-20240323184204498" loading="lazy"></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 查看运行的容器</span><br>docker ps -f name=jar_test<br><span class="hljs-comment"># 进入容器内部</span><br>docker <span class="hljs-built_in">exec</span> -it jar_test bash<br><span class="hljs-comment"># ping mysql试试</span><br>ping 172.17.0.3<br><span class="hljs-comment"># 创建网络</span><br>docker network create 网络名<br><span class="hljs-comment"># 列出网络信息</span><br>docker network <span class="hljs-built_in">ls</span><br><span class="hljs-comment"># 加入网络有两种方式</span><br><span class="hljs-comment"># 1.在创建容器时加入</span><br>docker run --network 网络名 镜像名<br><span class="hljs-comment"># 2.容器创建后加入</span><br>docker network connect [选项] 网络名 容器名或容器<span class="hljs-built_in">id</span><br><span class="hljs-comment"># 查看网络详情</span><br>docker network inspect 网络名或网络<span class="hljs-built_in">id</span><br>docker run -d \<br>-p 8080:8080 \<br>-v /usr/blog:/usr/blog \<br>--network blog_test jar_test<br>--restart always \<br>--name jar_test \<br>openjdk:17-jdk java -jar /usr/blog/demo-0.0.1-SNAPSHOT.jar \<br><span class="hljs-string">&quot;--spring.datasource.url=jdbc:mysql://mysql:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC&amp;useSSL=false&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;allowPublicKeyRetrieval=true&quot;</span><br><span class="hljs-comment"># 在加入同一个网络后，这里spring.datasource.url并没有写ip地址了，而是写的容器名称mysql</span><br></code></pre></td></tr></table></figure>
 <h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ol>
 <li>不区分大小写，但是最好习惯大写</li>
@@ -416,7 +416,7 @@
 <p>hosts文件路径：C:\Windows\System32\drivers\etc<br><strong><code>hosts</code>文件</strong></p>
 </blockquote>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">192.168.56.10</span>   docker1<br></code></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="http://docker1:81/">http://docker1:81/</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240324181016560.png" alt="image-20240324181016560" data-caption="image-20240324181016560" loading="lazy"></p>
+<p><a target="_blank" rel="noopener" href="http://docker1:81/">http://docker1:81/</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240324181016560.png" alt="image-20240324181016560" data-caption="image-20240324181016560" loading="lazy"></p>
 <h3 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h3><blockquote>
 <p>暴露需要发布的端口，让镜像使用者知道应该发布哪些端口</p>
 </blockquote>
@@ -488,12 +488,12 @@
 <p>dockerfile</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">FROM openjdk:17-jdk<br>WORKDIR /app<br>ADD demo.jar .<br>EXPOSE 8080<br>ENTRYPOINT [<span class="hljs-string">&quot;java&quot;</span>,<span class="hljs-string">&quot;-jar&quot;</span>]<br>CMD [<span class="hljs-string">&quot;demo.jar&quot;</span>]<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240325062118495.png" alt="image-20240325062118495" data-caption="image-20240325062118495" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325062118495.png" alt="image-20240325062118495" data-caption="image-20240325062118495" loading="lazy"></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> /usr/dockerfile_test<br>docker build -t demo_jar:1 -f /usr/dockerfile_test/demo_jar .<br><span class="hljs-comment"># network 添加到同一个网络</span><br><span class="hljs-comment"># mysql也需要</span><br>docker run -d \<br>-p 8080:8080 \<br>--network blog_test \<br>--restart always \<br>--name jar_demo \<br>demo_jar:1<br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>前端</p>
 <p><code>demo_ngxin</code>是dockerfile文件</p>
-<p>blog-vue下则是前端文件<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240325071054576.png" alt="image-20240325071054576" data-caption="image-20240325071054576" loading="lazy"></p>
+<p>blog-vue下则是前端文件<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325071054576.png" alt="image-20240325071054576" data-caption="image-20240325071054576" loading="lazy"></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">FROM nginx:latest<br>WORKDIR /app<br>COPY blog-vue .<br>RUN <span class="hljs-built_in">cp</span> -r dist/* /usr/share/nginx/html<br>EXPOSE 80<br>ENTRYPOINT [<span class="hljs-string">&quot;nginx&quot;</span>,<span class="hljs-string">&quot;-g&quot;</span>,<span class="hljs-string">&quot;daemon off;&quot;</span>]<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker build -t blog_vue:1 -f demo_nginx .<br>docker run -d \<br>-p 80:80 \<br>--restart always \<br>-d \<br>--name blog_vue \<br>blog_vue:1<br></code></pre></td></tr></table></figure>

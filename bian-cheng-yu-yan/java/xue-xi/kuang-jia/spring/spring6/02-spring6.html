@@ -17,26 +17,26 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Spring6学习02引入外部文件  引入数据库相关依赖 创建外部属性文件，如properties，定义数据库连接信息(用户名、密码…) 创建spring配置文件，引入context命名空间来引入属性文件，使用表达式完成注入   public class ApplicationTest &amp;#123;    @Test    public void test1() &amp;#123;        try">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303112157765.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303112203370.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112157765.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112203370.png">
 <meta property="article:published_time" content="2023-03-11T10:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.948Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.512Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="Spring6">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303112157765.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112157765.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230587">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409434">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230587">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409434">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230587">
+            <link rel="stylesheet" href="/custom.css?v=1717252409434">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230587"></script>
+    <script async src="/js/app.js?v=1717252409434"></script>
     
      
 
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230587"></script>
+	<script async src="/js/search.js?v=1717252409434"></script>
 
 
 
@@ -220,7 +220,7 @@
 <ol>
 <li>引入数据库相关依赖</li>
 <li>创建外部属性文件，如properties，定义数据库连接信息(用户名、密码…)</li>
-<li>创建spring配置文件，引入context命名空间来引入属性文件，使用表达式完成注入<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303112157765.png" alt="image-20230311215722456" data-caption="image-20230311215722456" loading="lazy"></li>
+<li>创建spring配置文件，引入context命名空间来引入属性文件，使用表达式完成注入<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112157765.png" alt="image-20230311215722456" data-caption="image-20230311215722456" loading="lazy"></li>
 </ol>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApplicationTest</span> &#123;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> (<span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DruidDataSource</span>()) &#123;<br>            dataSource.setDriverClassName(<span class="hljs-string">&quot;oracle.jdbc.driver.OracleDriver&quot;</span>);<br>            dataSource.setUrl(<span class="hljs-string">&quot;jdbc:oracle:thin:@localhost:1521:orcl&quot;</span>);<br>            dataSource.setUsername(<span class="hljs-string">&quot;root&quot;</span>);<br>            dataSource.setPassword(<span class="hljs-string">&quot;123456&quot;</span>);<br>            System.out.println(dataSource);<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;出现异常&quot;</span>, e);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
@@ -230,7 +230,7 @@
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">jdbc.driver</span>=<span class="hljs-string">oracle.jdbc.driver.OracleDriver</span><br><span class="hljs-attr">jdbc.url</span>=<span class="hljs-string">jdbc:oracle:thin:@localhost:1521:orcl</span><br><span class="hljs-attr">jdbc.username</span>=<span class="hljs-string">root</span><br><span class="hljs-attr">jdbc.password</span>=<span class="hljs-string">123456</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 引入属性 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:property-placeholder</span> <span class="hljs-attr">location</span>=<span class="hljs-string">&quot;jdbc.properties&quot;</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!-- 完成数据库信息注入 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dataSource&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driverClassName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.driver&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.url&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.username&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.password&#125;&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApplicationTest</span> &#123;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test2</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">ApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br>        <span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> context.getBean(DruidDataSource.class);<br>        System.out.println(dataSource);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303112203370.png" alt="image-20230311220327244" data-caption="image-20230311220327244" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112203370.png" alt="image-20230311220327244" data-caption="image-20230311220327244" loading="lazy"></p>
 <h2 id="bean的作用域"><a href="#bean的作用域" class="headerlink" title="bean的作用域"></a>bean的作用域</h2><p>在Spring中可以通过配置bean标签的scope属性来指定bean的作用域范围，各取值含义参加下表：</p>
 <table>
 <thead>

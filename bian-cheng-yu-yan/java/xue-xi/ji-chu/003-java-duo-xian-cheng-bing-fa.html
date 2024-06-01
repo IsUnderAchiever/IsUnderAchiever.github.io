@@ -17,25 +17,25 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Java多线程并发Java线程实现&#x2F;创建方式继承Thread类 Thread 类本质上是实现了 Runnable 接口的一个实例，代表一个线程的实例。启动线程的唯一方法就是通过 Thread 类的 start()实例方法。start()方法是一个 native 方法，它将启动一个新线程，并执行 run()方法。  public class MyThread extends Thread">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201940930.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png">
 <meta property="article:published_time" content="2022-12-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.911Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201940930.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230640">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409607">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230640">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409607">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230640">
+            <link rel="stylesheet" href="/custom.css?v=1717252409607">
         
     
 
@@ -44,7 +44,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230640"></script>
+    <script async src="/js/app.js?v=1717252409607"></script>
     
      
 
@@ -135,7 +135,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230640"></script>
+	<script async src="/js/search.js?v=1717252409608"></script>
 
 
 
@@ -285,7 +285,7 @@
 </li>
 </ol>
 <h3 id="线程死亡（dead）"><a href="#线程死亡（dead）" class="headerlink" title="线程死亡（dead）"></a>线程死亡（dead）</h3><blockquote>
-<p>线程会以下面三种方式结束，结束后就是死亡状态。<br>正常结束：run()或 call()方法执行完成，线程正常结束。<br>异常结束：线程抛出一个未捕获的 Exception 或 Error。<br>调用 stop：直接调用该线程的 stop()方法来结束该线程—该方法通常容易导致死锁，不推荐使用。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201940930.png" alt="线程状态转换" data-caption="线程状态转换" loading="lazy"></p>
+<p>线程会以下面三种方式结束，结束后就是死亡状态。<br>正常结束：run()或 call()方法执行完成，线程正常结束。<br>异常结束：线程抛出一个未捕获的 Exception 或 Error。<br>调用 stop：直接调用该线程的 stop()方法来结束该线程—该方法通常容易导致死锁，不推荐使用。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png" alt="线程状态转换" data-caption="线程状态转换" loading="lazy"></p>
 </blockquote>
 <h3 id="终止线程的4种方式"><a href="#终止线程的4种方式" class="headerlink" title="终止线程的4种方式"></a>终止线程的4种方式</h3><h3 id="正常运行结束"><a href="#正常运行结束" class="headerlink" title="正常运行结束"></a>正常运行结束</h3><blockquote>
 <p>程序运行结束，线程自动结束。</p>

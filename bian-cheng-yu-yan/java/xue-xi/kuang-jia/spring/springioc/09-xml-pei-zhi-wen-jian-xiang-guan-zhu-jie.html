@@ -17,26 +17,26 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="XML配置文件相关注解@Configuration 标注在类上，表示当前类是一个配置类。我们可以用注解类来完全替换掉xml配置文件。注意:如果使用配置类替换了xml配置，spring容器要使用:AnnotationConfigApplicationContext  @ComponentScan 可以用来代替contexcomponent-scan标签来配置组件扫描。使用接下来的一个例子，来完全替换">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922130.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922749.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922130.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922749.png">
 <meta property="article:published_time" content="2023-01-15T02:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.978Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.507Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="SpringIOC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922130.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922130.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230612">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409579">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230612">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409579">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230612">
+            <link rel="stylesheet" href="/custom.css?v=1717252409579">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230612"></script>
+    <script async src="/js/app.js?v=1717252409579"></script>
     
      
 
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230613"></script>
+	<script async src="/js/search.js?v=1717252409579"></script>
 
 
 
@@ -230,9 +230,9 @@
 <p>可以用来代替bean标签，主要用于<code>第三方类</code>的注入。<br>比如Druid连接池，由于是第三方jar包，没办法添加<code>@Component</code>注解注入到<code>Spring容器</code>中<br>这时候，可以使用@Bean注解</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@ComponentScan(basePackages = &#123;&quot;com.example&quot;&#125;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApplicationConfig</span> &#123;<br>    <span class="hljs-meta">@Bean(&quot;dataSource&quot;)</span><br>    <span class="hljs-keyword">public</span> DruidDataSource <span class="hljs-title function_">getDruidDataSource</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DruidDataSource</span>();<br>        dataSource.setDriverClassName(<span class="hljs-string">&quot;1&quot;</span>);<br>        dataSource.setUrl(<span class="hljs-string">&quot;2&quot;</span>);<br>        dataSource.setUsername(<span class="hljs-string">&quot;3&quot;</span>);<br>        dataSource.setPassword(<span class="hljs-string">&quot;4&quot;</span>);<br>        <span class="hljs-keyword">return</span> dataSource;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Application_11</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 创建注解容器，指定配置类(传入字节码对象)</span><br>        <span class="hljs-type">AnnotationConfigApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AnnotationConfigApplicationContext</span>(ApplicationConfig.class);<br>        <span class="hljs-comment">//User userEntity = (User) context.getBean(&quot;userEntity&quot;);</span><br>        <span class="hljs-comment">//System.out.println(userEntity);</span><br>        <span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> (DruidDataSource) context.getBean(<span class="hljs-string">&quot;dataSource&quot;</span>);<br>        System.out.println(dataSource);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922130.png" alt="1" data-caption="1" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922130.png" alt="1" data-caption="1" loading="lazy"></p>
 <blockquote>
-<p>这里其实还有一种<code>更常用的写法</code>，不配置Bean的id，直接通过字节码来获取Bean<br>这里能这么使用是因为对应类型的Bean只有一个<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922749.png" alt="2" data-caption="2" loading="lazy"></p>
+<p>这里其实还有一种<code>更常用的写法</code>，不配置Bean的id，直接通过字节码来获取Bean<br>这里能这么使用是因为对应类型的Bean只有一个<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922749.png" alt="2" data-caption="2" loading="lazy"></p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Configuration</span><br><span class="hljs-meta">@ComponentScan(basePackages = &#123;&quot;com.example&quot;&#125;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ApplicationConfig</span> &#123;<br>  <span class="hljs-comment">// 没有指定Bean的id属性</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> DruidDataSource <span class="hljs-title function_">getDruidDataSource</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DruidDataSource</span>();<br>        dataSource.setDriverClassName(<span class="hljs-string">&quot;1&quot;</span>);<br>        dataSource.setUrl(<span class="hljs-string">&quot;2&quot;</span>);<br>        dataSource.setUsername(<span class="hljs-string">&quot;3&quot;</span>);<br>        dataSource.setPassword(<span class="hljs-string">&quot;4&quot;</span>);<br>        <span class="hljs-keyword">return</span> dataSource;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Application_11</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-comment">// 创建注解容器，指定配置类(传入字节码对象)</span><br>        <span class="hljs-type">AnnotationConfigApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AnnotationConfigApplicationContext</span>(ApplicationConfig.class);<br>        <span class="hljs-comment">// 这里写DruidDataSource.class或者DataSource.class都行</span><br>        <span class="hljs-comment">// 这里和config配置中的返回值类型相对应</span><br>        <span class="hljs-type">DataSource</span> <span class="hljs-variable">bean</span> <span class="hljs-operator">=</span> context.getBean(DruidDataSource.class);<br>        System.out.println(bean);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="PropertySource"><a href="#PropertySource" class="headerlink" title="@PropertySource"></a>@PropertySource</h3><blockquote>

@@ -17,25 +17,25 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="SPEL表达式 先写原写法，再看spel表达式和原写法之间的区别  &lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;       xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;w">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201920189.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201920189.png">
 <meta property="article:published_time" content="2023-01-14T03:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.972Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.507Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="SpringIOC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201920189.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201920189.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230617">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409584">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230617">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409584">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230617">
+            <link rel="stylesheet" href="/custom.css?v=1717252409584">
         
     
 
@@ -44,7 +44,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230617"></script>
+    <script async src="/js/app.js?v=1717252409584"></script>
     
      
 
@@ -135,7 +135,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230617"></script>
+	<script async src="/js/search.js?v=1717252409584"></script>
 
 
 
@@ -221,7 +221,7 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- game --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.example.entity.Game&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;gameEntity&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;王者荣耀&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;country&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;中国&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;money&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;88.8&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- student --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.example.entity.Student&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;studentEntity&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;学生1&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;男&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;22&quot;</span>/&gt;</span><br>        <span class="hljs-comment">&lt;!-- 这里ref指向上面的gameid --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;game&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;gameEntity&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p><strong>SPEL表达式</strong></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- game --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.example.entity.Game&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;gameEntity&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;王者荣耀&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;country&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;中国&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;money&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;#&#123;88+0.8&#125;&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- student --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.example.entity.Student&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;studentEntity&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;学生1&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;男&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;22&quot;</span>/&gt;</span><br>        <span class="hljs-comment">&lt;!-- 这里ref指向上面的gameid --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;game&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;#&#123;gameEntity&#125;&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201920189.png" alt="1" data-caption="1" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201920189.png" alt="1" data-caption="1" loading="lazy"></p>
 <blockquote>
 <p>注意：SPEL需要写到<code>value</code>属性中，而不能写在<code>ref</code>属性中</p>
 </blockquote>

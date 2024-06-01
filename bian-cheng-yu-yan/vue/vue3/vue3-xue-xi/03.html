@@ -17,26 +17,26 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="03.to全家桶toRef 修改响应式对象的值 对于非响应式数据，只会改变数据，视图依然不会发生变化 toRef(A,B) A&#x3D;&gt;对象 B&#x3D;&gt;key值  &lt;template&gt;  &lt;a-button danger @click&#x3D;&quot;test1&quot;&gt;test&lt;&#x2F;a-button&gt;&lt;&#x2F;template&gt;&amp;lt">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132258373.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132316449.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132258373.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132316449.png">
 <meta property="article:published_time" content="2023-07-13T15:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:25.033Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="vue3">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132258373.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132258373.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230518">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409369">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230518">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409369">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230518">
+            <link rel="stylesheet" href="/custom.css?v=1717252409369">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230518"></script>
+    <script async src="/js/app.js?v=1717252409369"></script>
     
      
 
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230518"></script>
+	<script async src="/js/search.js?v=1717252409369"></script>
 
 
 
@@ -224,7 +224,7 @@
 <p>B&#x3D;&gt;key值</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;a-button danger @click=&quot;test1&quot;&gt;test&lt;/a-button&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123;reactive,toRef, toRefs, toRaw&#125; from &#x27;vue&#x27;;<br>let user=reactive(&#123;<br>  name:&#x27;马小跳&#x27;,<br>  gender:&#x27;男&#x27;,<br>  like:&#x27;篮球&#x27;<br>&#125;)<br>let refName=toRef(user,&#x27;name&#x27;);<br>let test1=()=&gt;&#123;<br>  console.log(refName);<br>  console.log(refName.value);<br>  // 对值进行修改<br>  refName.value=&#x27;洛洛&#x27;;<br>&#125;<br>&lt;/script&gt;  <br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132258373.png" alt="image-20230713225812269" data-caption="image-20230713225812269" loading="lazy"><br><strong>应用场景</strong><br>有某函数需要接受指定参数，可使用toRef解构出对象的属性给指定函数</p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132258373.png" alt="image-20230713225812269" data-caption="image-20230713225812269" loading="lazy"><br><strong>应用场景</strong><br>有某函数需要接受指定参数，可使用toRef解构出对象的属性给指定函数</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &#123;&#123;user.name&#125;&#125;<br>  &lt;a-button danger @click=&quot;test1&quot;&gt;test&lt;/a-button&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123;reactive,toRef, toRefs, toRaw&#125; from &#x27;vue&#x27;;<br>import &#123;message&#125; from &quot;ant-design-vue&quot;;<br>let user=reactive(&#123;<br>  name:&#x27;马小跳&#x27;,<br>  gender:&#x27;男&#x27;,<br>  like:&#x27;篮球&#x27;<br>&#125;)<br>let test1=()=&gt;&#123;<br>  let refName=toRef(user,&#x27;name&#x27;);<br>  sendMessage(refName.value);<br>&#125;<br>let sendMessage=(name:string)=&gt;&#123;<br>  message.success(&#x27;你好,&#x27;+name);<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <h2 id="toRefs"><a href="#toRefs" class="headerlink" title="toRefs"></a>toRefs</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &#123;&#123;user.name&#125;&#125;<br>  &lt;a-button danger @click=&quot;test1&quot;&gt;test&lt;/a-button&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123;reactive,toRef, toRaw&#125; from &#x27;vue&#x27;;<br>import &#123;message&#125; from &quot;ant-design-vue&quot;;<br>let user=reactive(&#123;<br>  name:&#x27;马小跳&#x27;,<br>  gender:&#x27;男&#x27;,<br>  like:&#x27;篮球&#x27;<br>&#125;)<br>// 类似实现原理<br>const toRefs=&lt;T extends object&gt;(object:T)=&gt;&#123;<br>  const map:any=&#123;&#125;;<br>  for (let key in object) &#123;<br>    map[key]=toRef(object,key)<br>  &#125;<br>  return map;<br>&#125;<br>let test1=()=&gt;&#123;<br>  let &#123;name,gender&#125;=toRefs(user);<br>  console.log(name.value);<br>  console.log(gender.value);<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 <blockquote>
@@ -235,7 +235,7 @@
 <p>获取代理前的对象</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &#123;&#123; user.name &#125;&#125;<br>  &lt;a-button danger @click=&quot;test1&quot;&gt;test&lt;/a-button&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123;reactive, toRef, toRefs, toRaw&#125; from &#x27;vue&#x27;;<br>let user = reactive(&#123;<br>  name: &#x27;马小跳&#x27;,<br>  gender: &#x27;男&#x27;,<br>  like: &#x27;篮球&#x27;<br>&#125;)<br>let test1 = () =&gt; &#123;<br>  console.log(user);<br>  console.log(toRaw(user));<br>&#125;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132316449.png" alt="image-20230713231621346" data-caption="image-20230713231621346" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132316449.png" alt="image-20230713231621346" data-caption="image-20230713231621346" loading="lazy"></p>
 
     
   </article>

@@ -17,26 +17,26 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="一个简单的，快速的状态管理解决方案，api设计基于函数式和hooks 1. 基础使用让我们实现一个非常简单的计数器案例完成我们的第一个store1- 创建一个counterStore import create from &amp;#x27;zustand&amp;#x27;const useCounterStore &#x3D; create((set) &#x3D;&gt; (&amp;#123;  &#x2F;&#x2F; 数据  count: 0,">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132140701.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132140480.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132140701.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132140480.png">
 <meta property="article:published_time" content="2023-06-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:25.021Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132140701.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132140701.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230522">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409373">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230522">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409373">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230522">
+            <link rel="stylesheet" href="/custom.css?v=1717252409373">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230522"></script>
+    <script async src="/js/app.js?v=1717252409373"></script>
     
      
 
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230522"></script>
+	<script async src="/js/search.js?v=1717252409373"></script>
 
 
 
@@ -216,7 +216,7 @@
     
 </div>
 
-    <p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132140701.png" alt="img" data-caption="img" loading="lazy"><br>一个简单的，快速的状态管理解决方案，api设计基于函数式和hooks</p>
+    <p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132140701.png" alt="img" data-caption="img" loading="lazy"><br>一个简单的，快速的状态管理解决方案，api设计基于函数式和hooks</p>
 <h1 id="1-基础使用"><a href="#1-基础使用" class="headerlink" title="1. 基础使用"></a>1. 基础使用</h1><p>让我们实现一个非常简单的计数器案例完成我们的第一个store<br>1- 创建一个counterStore</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> create <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;zustand&#x27;</span><br><span class="hljs-keyword">const</span> useCounterStore = <span class="hljs-title function_">create</span>(<span class="hljs-function">(<span class="hljs-params">set</span>) =&gt;</span> (&#123;<br>  <span class="hljs-comment">// 数据</span><br>  <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>,<br>  <span class="hljs-comment">// 修改数据的方法</span><br>  <span class="hljs-attr">increase</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">set</span>(<span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> (&#123; <span class="hljs-attr">count</span>: state.<span class="hljs-property">count</span> + <span class="hljs-number">1</span> &#125;)),<br>  <span class="hljs-attr">decrease</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-title function_">set</span>(<span class="hljs-function"><span class="hljs-params">state</span> =&gt;</span> (&#123; <span class="hljs-attr">count</span>: state.<span class="hljs-property">count</span> - <span class="hljs-number">1</span> &#125;))<br>&#125;))<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> useCounterStore<br></code></pre></td></tr></table></figure>
 <p>2- 绑定到组件</p>
@@ -229,7 +229,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ yarn add simple-zustand-devtools<br></code></pre></td></tr></table></figure>
 <p>2- 配置调试工具</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> create <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;zustand&#x27;</span><br><span class="hljs-comment">// 导入核心方法</span><br><span class="hljs-keyword">import</span> &#123; mountStoreDevtool &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;simple-zustand-devtools&#x27;</span><br><span class="hljs-keyword">const</span> useStore = <span class="hljs-title function_">create</span>(<span class="hljs-function">(<span class="hljs-params">set</span>) =&gt;</span> (&#123;&#125;))<br><span class="hljs-comment">// 开发环境开启调试</span><br><span class="hljs-keyword">if</span> (process.<span class="hljs-property">env</span>.<span class="hljs-property">NODE_ENV</span> === <span class="hljs-string">&#x27;development&#x27;</span>) &#123;<br>  <span class="hljs-comment">// 第一个参数为调试的store标识</span><br>  <span class="hljs-title function_">mountStoreDevtool</span>(<span class="hljs-string">&#x27;counterStore&#x27;</span>, useStore)<br>&#125;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> useStore<br></code></pre></td></tr></table></figure>
-<p>3- 打开 React调试工具<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132140480.png" alt="img" data-caption="img" loading="lazy"></p>
+<p>3- 打开 React调试工具<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132140480.png" alt="img" data-caption="img" loading="lazy"></p>
 
     
   </article>

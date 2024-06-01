@@ -17,25 +17,25 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="管理数据库事务什么是事务？数据库几乎是所有系统的核心模块，它将数据有条理地保存在储存介质(磁盘)中，并在逻辑上，将数据以结构化的形态呈现给用户。支持数据的增、删、改.查，并在过程中保障数据的正确且可靠。要做到这点并非易事，常见的例子就是银行转账，A账户给B账户转账一个亿(T1)，买一块地盖房子。在这种交易的过程中，有几个问题值得思考:  如何同时保证上述交易中，A账户总金额减少一个亿,B账户总金额">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953530.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953530.png">
 <meta property="article:published_time" content="2022-12-21T04:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.863Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.519Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="大数据">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953530.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953530.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230634">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409601">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230634">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409601">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230634">
+            <link rel="stylesheet" href="/custom.css?v=1717252409601">
         
     
 
@@ -44,7 +44,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230634"></script>
+    <script async src="/js/app.js?v=1717252409601"></script>
     
      
 
@@ -135,7 +135,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230634"></script>
+	<script async src="/js/search.js?v=1717252409601"></script>
 
 
 
@@ -230,7 +230,7 @@
 <blockquote>
 <p>原子性<br>事务是一个完整的操作事务的各元素是不可分的(原子的)，事务中的所有元素必须作为一个整体提交或回滚。如果事务中的任何元素失败，则整个事务将失败。<br>事务的原子性确保不管交易过程中发生了什么意外状况（服务器崩溃、网络中断等)，不能出现A账户少了一个亿.但B账户没到帐，或者A账户没变，但B账户却凭空收到一个亿(数据不一致)。A和B账户的金额变动要么同时成功，要么同时失败(保持原状).<br>一致性<br>当事务完成时，数据必须处于一致状态。也就是说，在事务开始之前，数据库中存储的数据处于一致状态。在正在进行的事务中.数据可能处于不一致的状态，如数据可能有部分被修改。然而,当事务成功完成时，数据必须再次回到已知的一致状态。通过事务对数据所做的修改不能损坏数据，或者说事务不能使数据存储处于不稳定的状态。<br>确保钱不会在系统内煲空产生或消失,<code>依赖原子性和隔离性</code><br>隔离性<br>对数据进行修改的所有并发事务是彼此隔离的,这表明事务必须是独立的,它不应以任何方式依赖于或影响其他事务。修改数据的事务可以在另一个使用相同数据的事务开始之前访问这些数据，或者在另一个使用相同数据的事务结束之后访问这些数据。<br>如果A在转账1亿给B(T1)，同时C又在转账3亿给A_(T2)，不管T1和T2谁先执行完毕,最终结果必须是A账户增加2亿,而不是3亿，B增加1亿,C减少3亿。<br>持久性<br>事务的持久性指不管系统是否发生了故源,事务处理的结果都是永久的。<br>—个事务成功完成之后，它对数据库所作的改变是永久性的,即使系统出现故障也是如此。也就是说,一旦事务被提交，事务对数据所做的任何变动都会被永久地保留在数据库中<br>事务的持久性确保确保如果T1刚刚提交，数据库就发生崩溃,T1执行的结果依然会保持在数据库中.</p>
 </blockquote>
-<h3 id="控制事务"><a href="#控制事务" class="headerlink" title="控制事务"></a>控制事务</h3><p>事务控制是对关系型数据库管理系统(RDBMS)里可能发生的各种事务的管理能力。在谈及事务时,<br>我们是INSERT、UPDATE和DELETE等DML命令。<br>事务的启动或执行在各个数据库实现中是不同的，详细情况请查看具体实现的文档。控制事务的命令有<code>COMMIT、ROLLBACK、SAVEPOINT</code>。<br><strong>什么可以使用事务?</strong><br>事务控制命令只与DML命令INSERT、UPDATE和DELETE配合使用，比如我们不会在创建表之后使用COMMIT语句，因为当表被创建之后，它会自动被提交给数据库。也不能使用ROLLBACK语句来恢复被撤销的表。此外，还有其他类似的语句，也是不能被撤销的，例如TRUNCATE语句。<br>当事务完成之后，事务信息被保存在数据库里的指定区域或临时回退区域。所有的修改都被保存到这个临时回退区域，直到事务控制命令出现。当事务控制命令出现时，所做的修改要么被保存到数据库，要么被放弃，然后临时回退区域被清空<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953530.png" alt="控制事务" data-caption="控制事务" loading="lazy"></p>
+<h3 id="控制事务"><a href="#控制事务" class="headerlink" title="控制事务"></a>控制事务</h3><p>事务控制是对关系型数据库管理系统(RDBMS)里可能发生的各种事务的管理能力。在谈及事务时,<br>我们是INSERT、UPDATE和DELETE等DML命令。<br>事务的启动或执行在各个数据库实现中是不同的，详细情况请查看具体实现的文档。控制事务的命令有<code>COMMIT、ROLLBACK、SAVEPOINT</code>。<br><strong>什么可以使用事务?</strong><br>事务控制命令只与DML命令INSERT、UPDATE和DELETE配合使用，比如我们不会在创建表之后使用COMMIT语句，因为当表被创建之后，它会自动被提交给数据库。也不能使用ROLLBACK语句来恢复被撤销的表。此外，还有其他类似的语句，也是不能被撤销的，例如TRUNCATE语句。<br>当事务完成之后，事务信息被保存在数据库里的指定区域或临时回退区域。所有的修改都被保存到这个临时回退区域，直到事务控制命令出现。当事务控制命令出现时，所做的修改要么被保存到数据库，要么被放弃，然后临时回退区域被清空<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953530.png" alt="控制事务" data-caption="控制事务" loading="lazy"></p>
 <h4 id="COMMIT"><a href="#COMMIT" class="headerlink" title="COMMIT"></a>COMMIT</h4><p>COMMIT命令用于把事务所做的修改保存到数据库，即把上一个COMMIT或ROLLBACK命令之后的DML操作都保存到数据库。<br>这个命令的语法是:<br>COMMIT [work];<br>关键字COMMIT是语法中唯一不可缺少的部分，其后是可选的用于终止语句的字符或命令，具体内容取决于不同的实现。关键字work是个可选项，其唯一作用是让命令对用户更加友好。</p>
 <table>
 <thead>

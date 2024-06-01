@@ -17,26 +17,26 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Mockito基础 当我们mock了某个对象后，调用该方法的时候是并不会去执行实际方法的逻辑的  public class User &amp;#123;    private String name &#x3D; &quot;小张&quot;;    private String gender &#x3D; &quot;男&quot;;    private Integer age &#x3D; 15;&amp;#125;&#x2F;&#x2F;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032042560.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032043970.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202403032042560.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202403032043970.png">
 <meta property="article:published_time" content="2024-03-01T12:45:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.934Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="Mockito">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032042560.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202403032042560.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230386">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409343">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230386">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409343">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230386">
+            <link rel="stylesheet" href="/custom.css?v=1717252409343">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230386"></script>
+    <script async src="/js/app.js?v=1717252409343"></script>
     
      
 
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230386"></script>
+	<script async src="/js/search.js?v=1717252409343"></script>
 
 
 
@@ -220,7 +220,7 @@
 <p>当我们<code>mock</code>了某个对象后，调用该方法的时候是并不会去执行实际方法的逻辑的</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;小张&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">gender</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;男&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Integer</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">15</span>;<br>&#125;<br><span class="hljs-comment">//=================================</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        mockUser.setName(<span class="hljs-string">&quot;呵呵呵&quot;</span>);<br>        mockUser.setGender(<span class="hljs-string">&quot;女&quot;</span>);<br>        mockUser.setAge(<span class="hljs-number">11</span>);<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getName() = &quot;</span> + mockUser.getName());<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getGender() = &quot;</span> + mockUser.getGender());<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getAge() = &quot;</span> + mockUser.getAge());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032042560.png" alt="image-20240303175851275" data-caption="image-20240303175851275" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202403032042560.png" alt="image-20240303175851275" data-caption="image-20240303175851275" loading="lazy"></p>
 <blockquote>
 <p>查看覆盖率发现对应的<code>get</code>、<code>set</code>方法没有被调用过</p>
 <p>这也就是<code>调用mock对象方法时，不会执行实际逻辑</code>的意思</p>
@@ -293,7 +293,7 @@
 <p>除非使用<code>when(xxx).thenReturn(xxx)</code>为其设置返回值，否则将会执行真实的业务逻辑</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-keyword">import</span> org.mockito.Spy;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@Spy</span><br>    User mockUser;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getName() = &quot;</span> + mockUser.getName());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032043970.png" alt="image-20240303201902361" data-caption="image-20240303201902361" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202403032043970.png" alt="image-20240303201902361" data-caption="image-20240303201902361" loading="lazy"></p>
 <blockquote>
 <p>可以看到这里执行了<code>getName</code>方法的真实逻辑</p>
 </blockquote>

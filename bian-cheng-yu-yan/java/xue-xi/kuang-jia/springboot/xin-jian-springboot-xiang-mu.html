@@ -10,39 +10,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-    <meta name="description" content="新建SpringBoot项目下文包括使用sts、idea新建SpringBoot项目，并编写登录逻辑以及测试  新建SpringBoot项目   使用Spring Tool Suite右键新建，选择Spring Starter Project  注意：其实不安装lombok插件也没什么，手动给get、set方法 和 有参、无参的构造方法即可  sts 的lombok插件需要自己安装jar包，安装过">
+    <meta name="description" content="新建SpringBoot项目下文包括使用sts、idea新建SpringBoot项目，并编写登录逻辑以及测试  新建SpringBoot项目   使用Spring Tool Suite右键新建，选择Spring Starter Project注意：其实不安装lombok插件也没什么，手动给get、set方法 和 有参、无参的构造方法即可 sts 的lombok插件需要自己安装jar包，安装过程上网">
 <meta property="og:type" content="article">
 <meta property="og:title" content="新建SpringBoot项目">
 <meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/springboot/xin-jian-springboot-xiang-mu.html">
 <meta property="og:site_name" content="折影轻梦">
-<meta property="og:description" content="新建SpringBoot项目下文包括使用sts、idea新建SpringBoot项目，并编写登录逻辑以及测试  新建SpringBoot项目   使用Spring Tool Suite右键新建，选择Spring Starter Project  注意：其实不安装lombok插件也没什么，手动给get、set方法 和 有参、无参的构造方法即可  sts 的lombok插件需要自己安装jar包，安装过">
+<meta property="og:description" content="新建SpringBoot项目下文包括使用sts、idea新建SpringBoot项目，并编写登录逻辑以及测试  新建SpringBoot项目   使用Spring Tool Suite右键新建，选择Spring Starter Project注意：其实不安装lombok插件也没什么，手动给get、set方法 和 有参、无参的构造方法即可 sts 的lombok插件需要自己安装jar包，安装过程上网">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201930984.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931798.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931023.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931066.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931675.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931906.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931512.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931989.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201930984.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931798.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931023.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931066.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931675.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931906.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931512.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931989.png">
 <meta property="article:published_time" content="2022-11-27T03:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.989Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.424Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201930984.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201930984.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230649">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409616">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230649">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409616">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230649">
+            <link rel="stylesheet" href="/custom.css?v=1717252409616">
         
     
 
@@ -51,7 +51,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230649"></script>
+    <script async src="/js/app.js?v=1717252409616"></script>
     
      
 
@@ -142,7 +142,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230649"></script>
+	<script async src="/js/search.js?v=1717252409617"></script>
 
 
 
@@ -225,16 +225,12 @@
 <li>新建SpringBoot项目</li>
 </ol>
 <ul>
-<li>使用Spring Tool Suite<br>右键新建，选择Spring Starter Project<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201930984.png" alt="新建springboot项目1" data-caption="新建springboot项目1" loading="lazy">
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931798.png" alt="新建springboot项目2" data-caption="新建springboot项目2" loading="lazy">
-注意：其实不安装lombok插件也没什么，手动给get、set方法 和 有参、无参的构造方法即可
-
-sts 的lombok插件需要自己安装jar包，安装过程上网查找，这里不再多说；idea的插件安装 同</li>
-<li>使用IDEA<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931023.png" alt="新建springboot项目1" data-caption="新建springboot项目1" loading="lazy">
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931066.png" alt="新建springboot项目2" data-caption="新建springboot项目2" loading="lazy">
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931675.png" alt="新建springboot项目3" data-caption="新建springboot项目3" loading="lazy">
-
-右键新建，选择Spring Initializr (无法访问spring官网可以选择custom，<a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com</a>)</li>
+<li><p>使用Spring Tool Suite<br>右键新建，选择Spring Starter Project<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201930984.png" alt="202301201930984.png" data-caption="202301201930984.png" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931798.png" alt="202301201931798.png" data-caption="202301201931798.png" loading="lazy"><br>注意：其实不安装lombok插件也没什么，手动给get、set方法 和 有参、无参的构造方法即可</p>
+<p>sts 的lombok插件需要自己安装jar包，安装过程上网查找，这里不再多说；idea的插件安装 同</p>
+</li>
+<li><p>使用IDEA<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931023.png" alt="202301201931023.png" data-caption="202301201931023.png" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931066.png" alt="202301201931066.png" data-caption="202301201931066.png" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931675.png" alt="202301201931675.png" data-caption="202301201931675.png" loading="lazy"></p>
+<p>右键新建，选择Spring Initializr (无法访问spring官网可以选择custom，<a target="_blank" rel="noopener" href="https://start.aliyun.com/">https://start.aliyun.com</a>)</p>
+</li>
 </ul>
 <blockquote>
 <p>更正：</p>
@@ -284,10 +280,10 @@ sts 的lombok插件需要自己安装jar包，安装过程上网查找，这里�
 </ol>
 </li>
 <li><p>目录结构</p>
-   <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931906.png" alt="目录结构" data-caption="目录结构" loading="lazy">
-   <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931512.png" alt="目录结构" data-caption="目录结构" loading="lazy"></li>
+   <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931906.png" alt="目录结构" data-caption="目录结构" loading="lazy">
+   <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931512.png" alt="目录结构" data-caption="目录结构" loading="lazy"></li>
 <li><p>打开postman进行测试，没有的可以去<a target="_blank" rel="noopener" href="https://www.postman.com/downloads/?utm_source=postman-home">官网下载</a>，我这里也提供一份<br>  链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1PfkZpMb_5zs9adP5TSRXRA?pwd=cc41">https://pan.baidu.com/s/1PfkZpMb_5zs9adP5TSRXRA?pwd=cc41</a><br>  提取码：cc41 </p>
-  <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201931989.png" alt="请求测试" data-caption="请求测试" loading="lazy">
+  <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201931989.png" alt="请求测试" data-caption="请求测试" loading="lazy">
 </li>
 <li><p>最后比较一下idea和sts。</p>
 <p>   sts和eclipse差不多，上手难度低，需要配置的不多。相比之下idea上手难度高一些，需要配置的地方也多一些。</p>

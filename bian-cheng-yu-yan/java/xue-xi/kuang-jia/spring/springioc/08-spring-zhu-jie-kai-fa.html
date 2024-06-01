@@ -17,29 +17,29 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Spring注解开发&lt;bean class&#x3D;&quot;com.example.entity.User&quot; id&#x3D;&quot;userEntity&quot;&#x2F;&gt; 等同于@Data@Component(&quot;userEntity&quot;)public class User &amp;#123;    private Integer uid;    private String">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201921812.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922865.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922816.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922579.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922963.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201921812.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922865.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922816.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922579.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922963.png">
 <meta property="article:published_time" content="2023-01-15T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.977Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.507Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="SpringIOC">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201921812.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201921812.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230614">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409579">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230614">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409579">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230614">
+            <link rel="stylesheet" href="/custom.css?v=1717252409579">
         
     
 
@@ -48,7 +48,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230614"></script>
+    <script async src="/js/app.js?v=1717252409579"></script>
     
      
 
@@ -139,7 +139,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230614"></script>
+	<script async src="/js/search.js?v=1717252409580"></script>
 
 
 
@@ -228,7 +228,7 @@
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">spring.datasource.url</span>= <span class="hljs-string">jdbc:mysql://localhost:3306/test?serverTimezone=UTC</span><br><span class="hljs-attr">spring.datasource.username</span>= <span class="hljs-string">root</span><br><span class="hljs-attr">spring.datasource.password</span>= <span class="hljs-string">123456</span><br><span class="hljs-attr">spring.datasource.driver-class-name</span>= <span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br><span class="hljs-attr">spring.datasource.name</span>= <span class="hljs-string">com.alibaba.druid.pool.DruidDataSource</span><br></code></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    String <span class="hljs-title function_">selectUserById</span><span class="hljs-params">(Integer id)</span>;<br>    String <span class="hljs-title function_">updateUserStatusById</span><span class="hljs-params">(Integer id,String status)</span>;<br>&#125;<br><span class="hljs-meta">@Repository(&quot;userDao&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">selectUserById</span><span class="hljs-params">(Integer id)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;select * from user where uid=&quot;</span>+id;<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">updateUserStatusById</span><span class="hljs-params">(Integer id,String status)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;update user set status=&#x27;&quot;</span>+status+<span class="hljs-string">&quot;&#x27; where uid=&quot;</span>+id;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Application_10</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-type">int</span> id=<span class="hljs-number">1</span>;<br>        String status=<span class="hljs-string">&quot;睡觉&quot;</span>;<br>        <span class="hljs-type">ClassPathXmlApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br>        <span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> (DruidDataSource) context.getBean(<span class="hljs-string">&quot;dataSource&quot;</span>);<br>        UserDao userDao= (UserDao) context.getBean(<span class="hljs-string">&quot;userDao&quot;</span>);<br>        <span class="hljs-comment">// 1.导入驱动jar包</span><br>        <span class="hljs-comment">// 2.加载驱动</span><br>        Class.forName(dataSource.getDriverClassName());<br>        <span class="hljs-comment">// 3.获取数据库连接对象</span><br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">connection</span> <span class="hljs-operator">=</span> DriverManager.getConnection(dataSource.getUrl(), dataSource.getUsername(), dataSource.getPassword());<br>        <span class="hljs-comment">// 4.定义sql语句</span><br>        <span class="hljs-comment">// 5.获取执行sql语句的对象</span><br>        <span class="hljs-type">Statement</span> <span class="hljs-variable">statement</span> <span class="hljs-operator">=</span> connection.createStatement();<br>        <span class="hljs-comment">// 6.执行sql并接收返回的对象</span><br>        statement.executeUpdate(userDao.updateUserStatusById(id,status));<br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">resultSet</span> <span class="hljs-operator">=</span> statement.executeQuery(userDao.selectUserById(id));<br>        <span class="hljs-comment">// 7.处理结果</span><br>        <span class="hljs-keyword">while</span> (resultSet.next()) &#123;<br>            System.out.println(<span class="hljs-string">&quot;User(&quot;</span> + resultSet.getInt(<span class="hljs-string">&quot;uid&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getString(<span class="hljs-string">&quot;name&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getString(<span class="hljs-string">&quot;gender&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getInt(<span class="hljs-string">&quot;age&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getInt(<span class="hljs-string">&quot;parent_id&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span>+<br>                    resultSet.getString(<span class="hljs-string">&quot;status&quot;</span>)+<span class="hljs-string">&quot;)&quot;</span>);<br>        &#125;<br>        <span class="hljs-comment">// 8.关闭连接，释放资源</span><br>        resultSet.close();<br>        statement.close();<br>        connection.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>将uid为1的<code>user</code>的<code>status</code>字段更新为<code>睡觉</code>后查询输出<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201921812.png" alt="1" data-caption="1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922865.png" alt="2" data-caption="2" loading="lazy"><br>常用注解有<code>@Component</code>、<code>@Repository</code>、<code>@Service</code>、<code>@Controller</code></p>
+<p>将uid为1的<code>user</code>的<code>status</code>字段更新为<code>睡觉</code>后查询输出<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201921812.png" alt="1" data-caption="1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922865.png" alt="2" data-caption="2" loading="lazy"><br>常用注解有<code>@Component</code>、<code>@Repository</code>、<code>@Service</code>、<code>@Controller</code></p>
 </blockquote>
 <h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><blockquote>
 <p><code>@Value</code>并不依赖于<code>set方法</code>，支持SPEL表达式</p>
@@ -239,15 +239,15 @@
 <blockquote>
 <p>我这里<code>User类</code>并没有给<code>set方法</code>，并不影响运行结果，说明<code>@Value</code>并不依赖于<code>set方法</code></p>
 </blockquote>
-<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922816.png" alt="3" data-caption="3" loading="lazy"></p>
+<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922816.png" alt="3" data-caption="3" loading="lazy"></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;名字&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br><span class="hljs-meta">@Service(&quot;service&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserDao userDao;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ClassPathXmlApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br>        <span class="hljs-comment">//User userEntity = (User) context.getBean(&quot;userEntity&quot;);</span><br>        <span class="hljs-comment">//System.out.println(userEntity);</span><br>        <span class="hljs-type">UserService</span> <span class="hljs-variable">userService</span> <span class="hljs-operator">=</span> (UserService) context.getBean(<span class="hljs-string">&quot;service&quot;</span>);<br>        System.out.println(userService);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h3><blockquote>
 <p>假如说，我们现在有多个<code>UserDaoImpl</code>实现<code>UserDao</code><br>此时<code>@Autowired</code>根据类型会找到多个类，此时会发生报错</p>
 <p><code>No qualifying bean of type &#39;org.example.dao.UserDao&#39; available: expected single matching bean but found 2: userDao1,userDao2</code></p>
-<p>如何解决？<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922579.png" alt="4" data-caption="4" loading="lazy"></p>
+<p>如何解决？<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922579.png" alt="4" data-caption="4" loading="lazy"></p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserDao</span> &#123;<br>&#125;<br><span class="hljs-meta">@Repository(&quot;userDao1&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;名字&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br><span class="hljs-meta">@Repository(&quot;userDao2&quot;)</span><br><span class="hljs-meta">@ToString</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;名字2&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922963.png" alt="5" data-caption="5" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922963.png" alt="5" data-caption="5" loading="lazy"></p>
 <blockquote>
 <p>可以看到Idea这里也提示了报错信息</p>
 </blockquote>

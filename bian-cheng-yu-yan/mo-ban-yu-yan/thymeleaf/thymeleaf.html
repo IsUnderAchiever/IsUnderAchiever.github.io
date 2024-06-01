@@ -17,25 +17,25 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="thymeleaf学习依赖&lt;dependency&gt;  &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;  &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;&#x2F;artifactId&gt;&lt;&#x2F;dependency&gt;&lt;dependency&gt;  &lt;g">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202304151432559.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304151432559.png">
 <meta property="article:published_time" content="2023-04-15T06:50:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:25.060Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="thymeleaf">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202304151432559.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304151432559.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230561">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409412">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230561">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409412">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230561">
+            <link rel="stylesheet" href="/custom.css?v=1717252409412">
         
     
 
@@ -44,7 +44,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230561"></script>
+    <script async src="/js/app.js?v=1717252409412"></script>
     
      
 
@@ -135,7 +135,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230562"></script>
+	<script async src="/js/search.js?v=1717252409412"></script>
 
 
 
@@ -218,7 +218,7 @@
     <h2 id="thymeleaf学习"><a href="#thymeleaf学习" class="headerlink" title="thymeleaf学习"></a>thymeleaf学习</h2><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h3 id="thymeleaf默认模板"><a href="#thymeleaf默认模板" class="headerlink" title="thymeleaf默认模板"></a>thymeleaf默认模板</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ch&quot;</span> <span class="hljs-attr">xmlns:th</span>=<span class="hljs-string">&quot;http://www.thymeleaf.org&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>默认的标题<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;description&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;默认的描述&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;keywords&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;默认的关键字&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h3 id="thymeleaf配置"><a href="#thymeleaf配置" class="headerlink" title="thymeleaf配置"></a>thymeleaf配置</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">server:</span><br>  <span class="hljs-comment"># 应用服务 WEB 访问端口</span><br>  <span class="hljs-attr">port:</span> <span class="hljs-number">10010</span><br><span class="hljs-attr">spring:</span><br>  <span class="hljs-comment"># 应用名称</span><br>  <span class="hljs-attr">application:</span><br>    <span class="hljs-attr">name:</span> <span class="hljs-string">thymeleaf-demo</span><br>  <span class="hljs-comment"># 配置thymeleaf</span><br>  <span class="hljs-attr">thymeleaf:</span><br>    <span class="hljs-attr">cache:</span> <span class="hljs-literal">false</span><br>    <span class="hljs-attr">mode:</span> <span class="hljs-string">HTML5</span><br>    <span class="hljs-attr">encoding:</span> <span class="hljs-string">UTF-8</span><br>    <span class="hljs-attr">prefix:</span> <span class="hljs-string">classpath:/templates/</span><br>    <span class="hljs-comment">#名称的后缀</span><br>    <span class="hljs-attr">suffix:</span> <span class="hljs-string">.html</span><br>    <span class="hljs-attr">servlet:</span><br>      <span class="hljs-attr">content-type:</span> <span class="hljs-string">text/html</span><br>  <span class="hljs-attr">datasource:</span><br>    <span class="hljs-comment"># 数据库驱动：</span><br>    <span class="hljs-attr">driver-class-name:</span> <span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br>    <span class="hljs-comment"># 数据源名称</span><br>    <span class="hljs-attr">name:</span> <span class="hljs-string">defaultDataSource</span><br>    <span class="hljs-comment"># 数据库连接地址</span><br>    <span class="hljs-attr">url:</span> <span class="hljs-string">jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8</span><br>    <span class="hljs-comment"># 数据库用户名&amp;密码：</span><br>    <span class="hljs-attr">username:</span> <span class="hljs-string">root</span><br>    <span class="hljs-attr">password:</span> <span class="hljs-number">123456</span><br><span class="hljs-attr">mybatis-plus:</span><br>  <span class="hljs-comment"># 指定Mybatis的Mapper文件</span><br>  <span class="hljs-attr">mapper-locations:</span> <span class="hljs-string">classpath:mapper/*xml</span><br>  <span class="hljs-comment"># 指定Mybatis的实体目录</span><br>  <span class="hljs-attr">type-aliases-package:</span> <span class="hljs-string">com.example.plus.domain</span><br>  <span class="hljs-comment"># 日志打印</span><br>  <span class="hljs-attr">configuration:</span><br>    <span class="hljs-attr">log-impl:</span> <span class="hljs-string">org.apache.ibatis.logging.stdout.StdOutImpl</span><br>  <span class="hljs-comment"># 逻辑删除列配置</span><br>  <span class="hljs-attr">global-config:</span><br>    <span class="hljs-attr">db-config:</span><br>      <span class="hljs-comment"># 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)</span><br>      <span class="hljs-attr">logic-delete-field:</span> <span class="hljs-string">delFlag</span><br>      <span class="hljs-comment"># 逻辑已删除值(默认为 1)</span><br>      <span class="hljs-attr">logic-delete-value:</span> <span class="hljs-number">1</span><br>      <span class="hljs-comment"># 逻辑未删除值(默认为 0)</span><br>      <span class="hljs-attr">logic-not-delete-value:</span> <span class="hljs-number">0</span><br><span class="hljs-attr">logging:</span><br>  <span class="hljs-attr">pattern:</span><br>    <span class="hljs-attr">dateformat:</span> <span class="hljs-string">MM-ddHH:mm:ss:SSS</span><br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202304151432559.png" alt="数据库" data-caption="数据库" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304151432559.png" alt="数据库" data-caption="数据库" loading="lazy"></p>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><blockquote>
 <p>本项目采用<code>thymeleaf+mybatis plus+mysql+springboot</code>，项目结构如下<br>其中<code>templates</code>用来存放html，<code>templates</code>下的<code>component</code>内用于存放页面中可复用的组件<br><code>static</code>下存放静态文件，如js、css、img…<br>thymeleaf:.<br>    └─src<br>        └─main<br>            ├─java<br>            │ └─com<br>            │   └─example<br>            │       ├─controller<br>            │       ├─domain<br>            │       ├─mapper<br>            │       └─service<br>            │           └─impl<br>            └─resources<br>                ├─mapper<br>                ├─static<br>                │ ├─css<br>                │ ├─js<br>                │ └─json<br>                └─templates<br>                    └─component</p>
 </blockquote>

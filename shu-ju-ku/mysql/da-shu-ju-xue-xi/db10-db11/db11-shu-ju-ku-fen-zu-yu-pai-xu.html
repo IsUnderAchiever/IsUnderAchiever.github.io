@@ -17,28 +17,28 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="为什么要分组？数据分组是按照逻辑次序把具有重复值的字段进行合并。比如说，一个数据库存储了关于所有员工的信息，有些员工住在不同的城市里，有些员工住在同一个城市里。我们可能需要进行一个查询，了解每个指定城市里的员工的信息。这时就是在根据城市对员工进行分组，并且创建一个统计报告。假设我们想了解每个城市的员工的平均薪水，这时可以对SALARY字段使用AVG函数，并且使用GROUP BY子句把结果按照城市进">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953353.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953244.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953468.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953410.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953353.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953244.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953468.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953410.png">
 <meta property="article:published_time" content="2022-12-23T02:30:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.868Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.519Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="大数据">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953353.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953353.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230631">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409598">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230631">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409598">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230631">
+            <link rel="stylesheet" href="/custom.css?v=1717252409598">
         
     
 
@@ -47,7 +47,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230631"></script>
+    <script async src="/js/app.js?v=1717252409598"></script>
     
      
 
@@ -138,7 +138,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230632"></script>
+	<script async src="/js/search.js?v=1717252409598"></script>
 
 
 
@@ -235,10 +235,10 @@
 <p>示例：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> date_format(month_ending, <span class="hljs-string">&#x27;%Y&#x27;</span>), car_category, <span class="hljs-built_in">sum</span>(quantity)<br><span class="hljs-keyword">from</span> car_sold<br><span class="hljs-keyword">where</span> month_ending<span class="hljs-operator">&gt;=</span><span class="hljs-string">&#x27;2001-01-01&#x27;</span><br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>;<br></code></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> date_format(month_ending, <span class="hljs-string">&#x27;%Y&#x27;</span>), car_category, <span class="hljs-built_in">sum</span>(quantity)<br><span class="hljs-keyword">from</span> car_sold<br><span class="hljs-keyword">where</span> month_ending<span class="hljs-operator">&gt;=</span><span class="hljs-string">&#x27;2001-01-01&#x27;</span><br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span> <span class="hljs-keyword">with</span> <span class="hljs-keyword">rollup</span> ;<br></code></pre></td></tr></table></figure>
-<p>在完成了基本的分组数据汇总以后，去掉了最后一个字段(车型)，并根据剩余的字段(年份)，再次进行分组统计，并将结果插入返回表。最后，还对全表进行了一次统计。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953353.png" alt="1" data-caption="1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953244.png" alt="2" data-caption="2" loading="lazy"></p>
+<p>在完成了基本的分组数据汇总以后，去掉了最后一个字段(车型)，并根据剩余的字段(年份)，再次进行分组统计，并将结果插入返回表。最后，还对全表进行了一次统计。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953353.png" alt="1" data-caption="1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953244.png" alt="2" data-caption="2" loading="lazy"></p>
 <h5 id="rollup练习"><a href="#rollup练习" class="headerlink" title="rollup练习"></a>rollup练习</h5><p>rollup() 是分组函数的一种用法，配合 group by 使用。<br>rollup() 能够起到一个多次分组求值的效果。</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>  <span class="hljs-built_in">sum</span>(字段A)<br><span class="hljs-keyword">from</span><br>  表名<br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span><br>  <span class="hljs-keyword">rollup</span>(字段A) <br></code></pre></td></tr></table></figure>
-<p>作用：<br>一共执行了两次分组求和：<br>第1步：以“字段A”作为条件，进行分组求和；<br>第2步：以所有记录作为一个大组，进行求和；<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953468.png" alt="3" data-caption="3" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201953410.png" alt="4" data-caption="4" loading="lazy"></p>
+<p>作用：<br>一共执行了两次分组求和：<br>第1步：以“字段A”作为条件，进行分组求和；<br>第2步：以所有记录作为一个大组，进行求和；<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953468.png" alt="3" data-caption="3" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201953410.png" alt="4" data-caption="4" loading="lazy"></p>
 <h6 id="多个字段分组的语法："><a href="#多个字段分组的语法：" class="headerlink" title="多个字段分组的语法："></a>多个字段分组的语法：</h6><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span><br>  <span class="hljs-built_in">sum</span>(字段A), <br>  <span class="hljs-built_in">sum</span>(字段B)<br><span class="hljs-keyword">from</span><br>  表名<br><span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span><br>  <span class="hljs-keyword">rollup</span>(字段A, 字段B) <br></code></pre></td></tr></table></figure>
 <p>作用：<br>一共执行了三次分组求和：<br>第1步：以“字段A”和“字段B”联合起来作为条件，进行分组求和；<br>第2步：以“字段A”作为条件，进行分组求和；<br>第3步：以所有记录作为一个大组，进行求和；</p>
 <h4 id="CUBE语句"><a href="#CUBE语句" class="headerlink" title="CUBE语句"></a>CUBE语句</h4><p>CUBE语句的工作方式与ROLLLP有所不同。它对分组列表中的所有字段进行排列组合，并根据每一种组合结果，分别进行统计汇总。最后，CUBE语句也会对全表进行统计，体现立(N)方体的概念<br>CUBE的ANSI语法结构如下:<br>GROUP BY CUBE ( column list of grouping sets)<br>CUBE语句通常被用来生成交叉报表〉比如需要根据月份(month code)、省份(province)、商品类别(prod_cartegory)三个字段获得销售数据的分组统计结果，GROUP BY语句会根据一下的每一种字段组合分组汇总，并产生结果。</p>

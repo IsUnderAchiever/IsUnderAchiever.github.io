@@ -17,109 +17,109 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Redis单点Redis的问题 数据丢失问题Redis是内存存储，服务重启可能会丢失数据 并发能力问题单节点Redis并发能力虽然不错，但也无法满足如618这样的高并发场景 故障恢复问题如果Redis宕机，则服务不可用，需要一种自动的故障恢复手段 存储能力问题Redis基于内存，单节点能存储的数据量难以满足海量数据需求 解决方案   数据丢失问题实现Redis数据持久化 并发能力问题搭建主从集群，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415211506657.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415213015095.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415213600960.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415214253132.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415214743582.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415215054692.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416063931474.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416070837220.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416070901240.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416070908369.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416071004714.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416071252667.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416071420341.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421125052157.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421135026402.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421133144513.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421140154283.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421142455620.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421142858831.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421142916435.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143048582.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143606124.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143752145.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143738686.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421144659573.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421150448468.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421151021414.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421151554098.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212010655.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212010983.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212017069.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212101080.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212106197.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212224751.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212227284.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220644926.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220734941.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220736397.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220740344.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220751093.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220800499.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220758218.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220802251.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220822902.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220824380.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220825414.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220826733.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220830568.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220831656.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220831464.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222011412.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222011833.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222015126.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222015689.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222016266.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222017371.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222017656.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222048262.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222051246.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222053908.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222109918.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222116235.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404232154657.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404232210854.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404240738901.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404240809279.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242013465.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404240829903.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242021196.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242021909.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242044685.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242047718.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242049543.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242050050.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242053831.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242055720.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242056356.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242059554.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242101468.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242103921.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242109850.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242110235.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242125244.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242127034.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242128817.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png">
 <meta property="article:published_time" content="2024-04-24T13:30:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.940Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415211506657.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230301">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409280">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230301">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409280">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230301">
+            <link rel="stylesheet" href="/custom.css?v=1717252409280">
         
     
 
@@ -128,7 +128,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230301"></script>
+    <script async src="/js/app.js?v=1717252409280"></script>
     
      
 
@@ -219,7 +219,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230301"></script>
+	<script async src="/js/search.js?v=1717252409280"></script>
 
 
 
@@ -326,7 +326,7 @@
 <blockquote>
 <p>这里有一句<code>Saving the final RDB snapshot before exiting.</code></p>
 <p>Redis将文件保存在运行目录中</p>
-<p>我这是<code>windows</code>系统，如果是<code>linux</code>则使用<code>ls</code>、<code>ll</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415211506657.png" alt="image-20240415211506657" data-caption="image-20240415211506657" loading="lazy"><br>但是我们担心如果突然宕机还没来得及持久化怎么办，我们更加希望隔一段时间持久化一次</p>
+<p>我这是<code>windows</code>系统，如果是<code>linux</code>则使用<code>ls</code>、<code>ll</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png" alt="image-20240415211506657" data-caption="image-20240415211506657" loading="lazy"><br>但是我们担心如果突然宕机还没来得及持久化怎么办，我们更加希望隔一段时间持久化一次</p>
 <p>Redis内部有触发RDB的机制，可以在redis.conf文件中找到， 格式如下:</p>
 </blockquote>
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 900秒内，如果至少一个key被修改，则执行bgsave</span><br><span class="hljs-comment"># 如果是save &quot;&quot; 则表示禁用Redis</span><br><span class="hljs-attr">save</span> <span class="hljs-string">900 1</span><br><span class="hljs-attr">save</span> <span class="hljs-string">300 10</span><br><span class="hljs-attr">save</span> <span class="hljs-string">60 10000</span><br></code></pre></td></tr></table></figure>
@@ -335,7 +335,7 @@
 </blockquote>
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 是否压缩，建议不开启，压缩也会消耗CPU，磁盘不值钱</span><br><span class="hljs-attr">rdbcompression</span> <span class="hljs-string">yes</span><br><span class="hljs-comment"># RDB文件名称</span><br><span class="hljs-attr">dbfilename</span> <span class="hljs-string">dump.rdb</span><br><span class="hljs-comment"># 文件保存的路径</span><br><span class="hljs-attr">dir</span> <span class="hljs-string">./</span><br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>bgsave开始时会<code>fork</code>主进程得到子进程，子进程共享主进程的内存数据。完成fork后读取内存数据并写入RDB文件。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415213015095.png" alt="image-20240415213015095" data-caption="image-20240415213015095" loading="lazy"><br>fork采用的是copy-on-write技术:<br>当主进程执行读操作时,访问共享内存;<br>当主进程执行写操作时，则会拷贝一份数据，执行写操作。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415213600960.png" alt="image-20240415213600960" data-caption="image-20240415213600960" loading="lazy"></p>
+<p>bgsave开始时会<code>fork</code>主进程得到子进程，子进程共享主进程的内存数据。完成fork后读取内存数据并写入RDB文件。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png" alt="image-20240415213015095" data-caption="image-20240415213015095" loading="lazy"><br>fork采用的是copy-on-write技术:<br>当主进程执行读操作时,访问共享内存;<br>当主进程执行写操作时，则会拷贝一份数据，执行写操作。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png" alt="image-20240415213600960" data-caption="image-20240415213600960" loading="lazy"></p>
 </blockquote>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>RDB方式bgsave的基本流程?</p>
 <ol>
@@ -356,28 +356,28 @@
 <p>AOF的命令记录的频率也可以通过redis.conf文件来配:</p>
 </blockquote>
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 表示每执行一次写命令，立即记录到AOF文件</span><br><span class="hljs-attr">appendfsync</span> <span class="hljs-string">always</span><br><span class="hljs-comment"># 写命令执行完先放入AOF缓冲区，然后表示每隔1秒将缓冲区数据写到AOF文件，是默认方案</span><br><span class="hljs-attr">appendfsync</span> <span class="hljs-string">everysec</span><br><span class="hljs-comment"># 写命令执行完先放入AOF缓冲区，由操作系统决定何时将缓冲区内容写回磁盘</span><br><span class="hljs-attr">appendfsync</span> <span class="hljs-string">no</span><br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415214253132.png" alt="image-20240415214253132" data-caption="image-20240415214253132" loading="lazy"><br>由于AOF记录的是命令操作，而不是直接记录值，所以会比RDB文件大很多<br>因为是记录命令, AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一-次写操作才有意义。通过执行bgrewriteaof命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415214743582.png" alt="image-20240415214743582" data-caption="image-20240415214743582" loading="lazy"><br>Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也可以在redis.conf中配置: </p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png" alt="image-20240415214253132" data-caption="image-20240415214253132" loading="lazy"><br>由于AOF记录的是命令操作，而不是直接记录值，所以会比RDB文件大很多<br>因为是记录命令, AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一-次写操作才有意义。通过执行bgrewriteaof命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png" alt="image-20240415214743582" data-caption="image-20240415214743582" loading="lazy"><br>Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也可以在redis.conf中配置: </p>
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># AOF文件比上次文件增长超过多少百分比则触发重写</span><br><span class="hljs-attr">auto-aof-rewrite-percentage</span> <span class="hljs-string">100</span><br><span class="hljs-comment"># AOF文件体积最小多大以上才触发重写</span><br><span class="hljs-attr">auto-aof-rewrite-min-size</span> <span class="hljs-string">64mb</span><br></code></pre></td></tr></table></figure>
-<p><code>RDB</code>和<code>AOF</code>各有自己的优缺点，如果对数据安全性要求较高,在实际开发中往往会结合两者来使用。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240415215054692.png" alt="image-20240415215054692" data-caption="image-20240415215054692" loading="lazy"></p>
+<p><code>RDB</code>和<code>AOF</code>各有自己的优缺点，如果对数据安全性要求较高,在实际开发中往往会结合两者来使用。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png" alt="image-20240415215054692" data-caption="image-20240415215054692" loading="lazy"></p>
 <h2 id="Redis主从"><a href="#Redis主从" class="headerlink" title="Redis主从"></a>Redis主从</h2><blockquote>
-<p>单节点Redis的并发能力是有上限的，要近一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416063931474.png" alt="image-20240416063931474" data-caption="image-20240416063931474" loading="lazy"><br>开启RDB，关闭AOF</p>
+<p>单节点Redis的并发能力是有上限的，要近一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png" alt="image-20240416063931474" data-caption="image-20240416063931474" loading="lazy"><br>开启RDB，关闭AOF</p>
 <p>一主二从 A（B、C） 一个master两个slave&#x2F;replica</p>
 </blockquote>
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 禁用RDB</span><br><span class="hljs-comment"># save &quot;&quot;</span><br><span class="hljs-attr">save</span> <span class="hljs-string">900 1</span><br><span class="hljs-attr">save</span> <span class="hljs-string">300 10</span><br><span class="hljs-attr">save</span> <span class="hljs-string">60 10000</span><br><span class="hljs-attr">appendonly</span> <span class="hljs-string">no</span><br></code></pre></td></tr></table></figure>
 <h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><p>windows配置redis集群查看<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41846320/article/details/83753667">该博客</a></p>
 <blockquote>
-<p>主节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416070837220.png" alt="image-20240416070837220" data-caption="image-20240416070837220" loading="lazy"><br>从节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416070901240.png" alt="image-20240416070901240" data-caption="image-20240416070901240" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416070908369.png" alt="image-20240416070908369" data-caption="image-20240416070908369" loading="lazy"><br>从节点只能读数据，不能写数据<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416071004714.png" alt="image-20240416071004714" data-caption="image-20240416071004714" loading="lazy"><br>关闭主节点后，从节点的状态<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416071252667.png" alt="image-20240416071252667" data-caption="image-20240416071252667" loading="lazy"><br>重启主节点后，从节点的状态<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240416071420341.png" alt="image-20240416071420341" data-caption="image-20240416071420341" loading="lazy"></p>
+<p>主节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png" alt="image-20240416070837220" data-caption="image-20240416070837220" loading="lazy"><br>从节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png" alt="image-20240416070901240" data-caption="image-20240416070901240" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png" alt="image-20240416070908369" data-caption="image-20240416070908369" loading="lazy"><br>从节点只能读数据，不能写数据<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png" alt="image-20240416071004714" data-caption="image-20240416071004714" loading="lazy"><br>关闭主节点后，从节点的状态<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png" alt="image-20240416071252667" data-caption="image-20240416071252667" loading="lazy"><br>重启主节点后，从节点的状态<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png" alt="image-20240416071420341" data-caption="image-20240416071420341" loading="lazy"></p>
 </blockquote>
 <h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><blockquote>
-<p>接下来演示<code>docker配置redis集群</code>，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43025151/article/details/134205482">博客链接</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421125052157.png" alt="image-20240421125052157" data-caption="image-20240421125052157" loading="lazy"><br>可以看到本地已经拉取了<code>redis</code>镜像<br>在<code>/root</code>目录下新建一个<code>redis.conf</code>文件和<code>data</code>目录<br><code>data</code>用以存储redis持久化文件，<code>redis.conf</code>作为redis的配置文件，这里配置<code>主从集群</code>，所以需要新建三个<code>conf</code>和<code>data</code>，目录及文件如下<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421135026402.png" alt="image-20240421135026402" data-caption="image-20240421135026402" loading="lazy"><br><code>redis-7001.conf</code>下载<a target="_blank" rel="noopener" href="https://gitee.com/tongstyle/blog-img/raw/master/img/redis-7001.conf">链接</a></p>
+<p>接下来演示<code>docker配置redis集群</code>，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43025151/article/details/134205482">博客链接</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png" alt="image-20240421125052157" data-caption="image-20240421125052157" loading="lazy"><br>可以看到本地已经拉取了<code>redis</code>镜像<br>在<code>/root</code>目录下新建一个<code>redis.conf</code>文件和<code>data</code>目录<br><code>data</code>用以存储redis持久化文件，<code>redis.conf</code>作为redis的配置文件，这里配置<code>主从集群</code>，所以需要新建三个<code>conf</code>和<code>data</code>，目录及文件如下<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png" alt="image-20240421135026402" data-caption="image-20240421135026402" loading="lazy"><br><code>redis-7001.conf</code>下载<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/redis-7001.conf">链接</a></p>
 <p>启动容器，这里使用<code>7001</code>作为端口号</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name redis-master \<br>-v /root/redis/redis-7001.conf:/etc/redis/redis.conf \<br>-v /root/redis/data:/data \<br>-dp 7001:6379 \<br>redis:latest \<br>redis-server /etc/redis/redis.conf<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421133144513.png" alt="image-20240421133144513" data-caption="image-20240421133144513" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png" alt="image-20240421133144513" data-caption="image-20240421133144513" loading="lazy"></p>
 <blockquote>
 <p>配置文件直接复制7001即可，反正将来也是以容器为单位启动，不会造成端口冲突，但是虚拟机(宿主机)的端口映射则不能都写7001了</p>
 <p>7001端口已经被<code>master</code>占据了，剩下两个<code>slave</code>使用<code>7002、7003</code></p>
-<p>修改对应的持久化目录<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421140154283.png" alt="image-20240421140154283" data-caption="image-20240421140154283" loading="lazy"><br><code>redis-7001.conf</code>文件中添加如下配置</p>
+<p>修改对应的持久化目录<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png" alt="image-20240421140154283" data-caption="image-20240421140154283" loading="lazy"><br><code>redis-7001.conf</code>文件中添加如下配置</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">slave-announce-ip 192.168.56.10<br>slave-announce-port 7001<br></code></pre></td></tr></table></figure>
 <p><code>redis-7002.conf、redis-7003.conf</code>也是一样</p>
@@ -395,23 +395,23 @@
 <p>关系查看</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it redis-master redis-cli info replication<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421142455620.png" alt="image-20240421142455620" data-caption="image-20240421142455620" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png" alt="image-20240421142455620" data-caption="image-20240421142455620" loading="lazy"></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it redis-slave1 redis-cli info replication<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it redis-slave2 redis-cli info replication<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>slave1<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421142858831.png" alt="image-20240421142858831" data-caption="image-20240421142858831" loading="lazy"><br>slave2<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421142916435.png" alt="image-20240421142916435" data-caption="image-20240421142916435" loading="lazy"><br>此时停止master</p>
+<p>slave1<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png" alt="image-20240421142858831" data-caption="image-20240421142858831" loading="lazy"><br>slave2<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png" alt="image-20240421142916435" data-caption="image-20240421142916435" loading="lazy"><br>此时停止master</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker stop redis-master<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143048582.png" alt="image-20240421143048582" data-caption="image-20240421143048582" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png" alt="image-20240421143048582" data-caption="image-20240421143048582" loading="lazy"></p>
 <blockquote>
 <p>尝试向slave中写入数据</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it redis-slave1 /bin/bash<br>redis-cli<br><span class="hljs-built_in">set</span> name tigerhhzz11<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143606124.png" alt="image-20240421143606124" data-caption="image-20240421143606124" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png" alt="image-20240421143606124" data-caption="image-20240421143606124" loading="lazy"></p>
 <blockquote>
-<p>向master中写入数据，在slave中读出<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143752145.png" alt="image-20240421143752145" data-caption="image-20240421143752145" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421143738686.png" alt="image-20240421143738686" data-caption="image-20240421143738686" loading="lazy"></p>
+<p>向master中写入数据，在slave中读出<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png" alt="image-20240421143752145" data-caption="image-20240421143752145" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png" alt="image-20240421143738686" data-caption="image-20240421143738686" loading="lazy"></p>
 </blockquote>
-<h2 id="数据同步原理"><a href="#数据同步原理" class="headerlink" title="数据同步原理"></a>数据同步原理</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>主从第一次同步是<code>全量同步</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421144659573.png" alt="image-20240421144659573" data-caption="image-20240421144659573" loading="lazy"></p>
+<h2 id="数据同步原理"><a href="#数据同步原理" class="headerlink" title="数据同步原理"></a>数据同步原理</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>主从第一次同步是<code>全量同步</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png" alt="image-20240421144659573" data-caption="image-20240421144659573" loading="lazy"></p>
 <blockquote>
 <p>master怎么知道slave是否是第一次请求数据呢？这里会用到两个很重要的概念:</p>
 <p><code>Replication id</code>:简称replid, 是数据集的标记，id一致则说明是同一数据集。每一个master都有唯一的replid,slave则会<code>继承</code>master节点的replid</p>
@@ -430,13 +430,13 @@
 <li>master将RDB期间的命令记录在repl_baklog,并持续将log中的命令发送给slave</li>
 <li>slave执行接收到的命令，保持与master之间的同步</li>
 </ol>
-<h3 id="增量同步"><a href="#增量同步" class="headerlink" title="增量同步"></a>增量同步</h3><p>主从第一次同步是<code>全量同步</code>,但如果slave重启后同步，则执行<code>增量同步</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421150448468.png" alt="image-20240421150448468" data-caption="image-20240421150448468" loading="lazy"></p>
+<h3 id="增量同步"><a href="#增量同步" class="headerlink" title="增量同步"></a>增量同步</h3><p>主从第一次同步是<code>全量同步</code>,但如果slave重启后同步，则执行<code>增量同步</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png" alt="image-20240421150448468" data-caption="image-20240421150448468" loading="lazy"></p>
 <blockquote>
 <p><code>repl_baklog</code>本质是一个<code>环形数组</code>，slave与master数据之间的差异&#x3D;master-slave（图中红色线段的部分）</p>
 <p>当数据记完一圈后，会覆盖掉上次的内容继续往下记载，slave也会继续跟着master往后同步数据</p>
 <p>但是这样就存在<code>无法进行增量同步</code>的情况</p>
 <p><code>repl_baklog</code>大小有上限，写满后会覆盖最早的数据。如果slave断开时间过久，导致数据被覆盖,则无法实现增量同步，只能再次全量同步。</p>
-<p>如果master已经覆盖掉上一次的内容，开始记入第二圈的数据，而slave由于某种原因宕机，导致master覆盖的数据并没有同步完成<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421151021414.png" alt="image-20240421151021414" data-caption="image-20240421151021414" loading="lazy"><br>此时就只能做全量同步了，无法进行增量同步</p>
+<p>如果master已经覆盖掉上一次的内容，开始记入第二圈的数据，而slave由于某种原因宕机，导致master覆盖的数据并没有同步完成<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png" alt="image-20240421151021414" data-caption="image-20240421151021414" loading="lazy"><br>此时就只能做全量同步了，无法进行增量同步</p>
 <p>应当尽可能的减少全量同步，因为它的性能较差。或许可以进一步优化全量同步的性能</p>
 <p>可以从以下几个方面来优化Redis主从就集群:</p>
 <ol>
@@ -447,7 +447,7 @@
 </li>
 <li><p>适当提高repl_baklog的大小，发现slave宕机时尽快实现故障恢复,尽可能避免全量同步</p>
 </li>
-<li><p>限制一个master上的slave节点数量，如果实在是太多slave,则可以采用<code>主-从-从</code>链式结构，减少master压力<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20240421151554098.png" alt="image-20240421151554098" data-caption="image-20240421151554098" loading="lazy"></p>
+<li><p>限制一个master上的slave节点数量，如果实在是太多slave,则可以采用<code>主-从-从</code>链式结构，减少master压力<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png" alt="image-20240421151554098" data-caption="image-20240421151554098" loading="lazy"></p>
 </li>
 </ol>
 </blockquote>
@@ -461,12 +461,12 @@
 <h2 id="Redis哨兵"><a href="#Redis哨兵" class="headerlink" title="Redis哨兵"></a>Redis哨兵</h2><h3 id="哨兵的作用和工作原理"><a href="#哨兵的作用和工作原理" class="headerlink" title="哨兵的作用和工作原理"></a>哨兵的作用和工作原理</h3><blockquote>
 <p>slave节点宕机恢复后可以找master节点同步数据，如果<code>master</code>节点<code>宕机</code>怎么办?</p>
 <p>master节点如果宕机，那么此时用户无法进行<code>redis数据写入</code>的操作，可用性下降了</p>
-<p>我们需要去监控集群中的节点状态，在master节点挂掉之后，选一个新的master，增进挂掉的master重启后，作为slave<br>Redis提供了哨兵(Sentinel) 机制来实现主从集群的自动故障恢复。哨兵的结构和作用如下:<br><strong>监控</strong>: Sentinel 会不断检查您的master和slave是否按预期工作<br><strong>自动故障恢复</strong>:如果master故障，Sentinel会将一个slave提升为master。当故障实例恢复后也以新的master为主<br><strong>通知</strong>: Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212010655.png" alt="image-20240421195306145" data-caption="image-20240421195306145" loading="lazy"></p>
+<p>我们需要去监控集群中的节点状态，在master节点挂掉之后，选一个新的master，增进挂掉的master重启后，作为slave<br>Redis提供了哨兵(Sentinel) 机制来实现主从集群的自动故障恢复。哨兵的结构和作用如下:<br><strong>监控</strong>: Sentinel 会不断检查您的master和slave是否按预期工作<br><strong>自动故障恢复</strong>:如果master故障，Sentinel会将一个slave提升为master。当故障实例恢复后也以新的master为主<br><strong>通知</strong>: Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png" alt="image-20240421195306145" data-caption="image-20240421195306145" loading="lazy"></p>
 </blockquote>
 <h4 id="服务状态监控"><a href="#服务状态监控" class="headerlink" title="服务状态监控"></a>服务状态监控</h4><p>Sentinel基于心跳机制监测服务状态,每隔1秒向集群的每个实例发送ping命令:</p>
 <ul>
 <li>主观下线:如果某sentinel节点发现某实例未在规定时间响应，则认为该实例主观下线。</li>
-<li>客观下线:若超过指定数量( quorum)的sentinel都认为该实例主观下线，则该实例客观下线。quorum值最好超过Sentinel实例数量的一半。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212010983.png" alt="image-20240421200042664" data-caption="image-20240421200042664" loading="lazy"></li>
+<li>客观下线:若超过指定数量( quorum)的sentinel都认为该实例主观下线，则该实例客观下线。quorum值最好超过Sentinel实例数量的一半。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png" alt="image-20240421200042664" data-caption="image-20240421200042664" loading="lazy"></li>
 </ul>
 <h4 id="选举新的master"><a href="#选举新的master" class="headerlink" title="选举新的master"></a>选举新的master</h4><p>一旦发现master故障，sentinel需 要在salve中选择- -一个作为新的master,选择依据是这样的:</p>
 <ol>
@@ -479,7 +479,7 @@
 <ol>
 <li>sentinel给 备选的slave1节点发送<code>slaveof no one</code>命令,让该节点成为master</li>
 <li>sentinel给所有其它slave发送<code>slaveof 192.168.150.101 7002</code>命令，让这些slave成为新master的从节点，开始从新的master上同步数据。</li>
-<li>最后，sentinel将故障节点标记为slave,当故障节点恢复后会自动成为新的master的slave节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212017069.png" alt="image-20240421201712016" data-caption="image-20240421201712016" loading="lazy"></li>
+<li>最后，sentinel将故障节点标记为slave,当故障节点恢复后会自动成为新的master的slave节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png" alt="image-20240421201712016" data-caption="image-20240421201712016" loading="lazy"></li>
 </ol>
 <h4 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h4><p>Sentinel的三个作用是什么?</p>
 <ol>
@@ -493,7 +493,7 @@
 <li>修改故障节点配置，添加slaveof 新master</li>
 </ol>
 <h3 id="搭建哨兵集群"><a href="#搭建哨兵集群" class="headerlink" title="搭建哨兵集群"></a>搭建哨兵集群</h3><blockquote>
-<p>手动创建<code>sentinel</code>下的<code>s1、s2、s3</code>，然后配置<code>sentinel.conf</code>文件<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212101080.png" alt="image-20240421210126992" data-caption="image-20240421210126992" loading="lazy"></p>
+<p>手动创建<code>sentinel</code>下的<code>s1、s2、s3</code>，然后配置<code>sentinel.conf</code>文件<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png" alt="image-20240421210126992" data-caption="image-20240421210126992" loading="lazy"></p>
 </blockquote>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><code class="hljs crmsh">port <span class="hljs-number">27001</span><br>sentinel announce-ip <span class="hljs-number">192.168</span>.<span class="hljs-number">56.10</span><br>sentinel <span class="hljs-literal">monitor</span> redis-<span class="hljs-keyword">master</span> <span class="hljs-title">192</span>.<span class="hljs-number">168.56</span>.<span class="hljs-number">10</span> <span class="hljs-number">7001</span> <span class="hljs-number">2</span><br>sentinel down-after-milliseconds redis-<span class="hljs-keyword">master</span> <span class="hljs-title">5000</span><br>sentinel failover-timeout redis-<span class="hljs-keyword">master</span> <span class="hljs-title">60000</span><br></code></pre></td></tr></table></figure>
 <p>解读：</p>
@@ -503,7 +503,7 @@
 <li><code>redis-master</code>：主节点名称，自定义，任意写</li>
 <li><code>192.168.56.10 7001</code>：主节点的ip和端口</li>
 <li><code>2</code>：选举master时的quorum值<blockquote>
-<p>启动<code>sentinel</code>的<code>jar</code>包<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212106197.png" alt="image-20240421210646154" data-caption="image-20240421210646154" loading="lazy"><br>启动三个sentinel容器</p>
+<p>启动<code>sentinel</code>的<code>jar</code>包<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png" alt="image-20240421210646154" data-caption="image-20240421210646154" loading="lazy"><br>启动三个sentinel容器</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-1 \<br>-v /root/redis/sentinel/sentinel1.conf:/etc/redis/sentinel.conf \<br>-dp 27001:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-2 \<br>-v /root/redis/sentinel/sentinel2.conf:/etc/redis/sentinel.conf \<br>-dp 27002:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
@@ -512,22 +512,22 @@
 <p>关系查看</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it sentinel-1 redis-cli -h 192.168.56.10 -p 27001 info sentinel<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212224751.png" alt="image-20240421222424683" data-caption="image-20240421222424683" loading="lazy"><blockquote>
-<p>注意目录对应关系，如果在运行容器时，将<code>conf</code>路径写错了，则可能出现如下情况<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404212227284.png" alt="image-20240421222751214" data-caption="image-20240421222751214" loading="lazy"><br>此时停止<code>redis-master</code>节点，查看<code>sentinel</code>日志</p>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png" alt="image-20240421222424683" data-caption="image-20240421222424683" loading="lazy"><blockquote>
+<p>注意目录对应关系，如果在运行容器时，将<code>conf</code>路径写错了，则可能出现如下情况<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png" alt="image-20240421222751214" data-caption="image-20240421222751214" loading="lazy"><br>此时停止<code>redis-master</code>节点，查看<code>sentinel</code>日志</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker stop redis-master <br>docker logs sentinel-1<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220644926.png" alt="image-20240422064431835" data-caption="image-20240422064431835" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png" alt="image-20240422064431835" data-caption="image-20240422064431835" loading="lazy"><blockquote>
 <p>解决办法，直接挂载整个目录，而不是只挂载某个conf文件，注意<code>权限</code>设置为777，目录和文件都要设置</p>
-<p><code>chmod 777 -R &lt;file&gt;</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220734941.png" alt="image-20240422073450817" data-caption="image-20240422073450817" loading="lazy"></p>
+<p><code>chmod 777 -R &lt;file&gt;</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png" alt="image-20240422073450817" data-caption="image-20240422073450817" loading="lazy"></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-1 \<br>-v /root/redis/sentinel/s1:/etc/redis \<br>-dp 27001:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-2 \<br>-v /root/redis/sentinel/s2:/etc/redis \<br>-dp 27002:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-3 \<br>-v /root/redis/sentinel/s3:/etc/redis \<br>-dp 27003:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>但是日志打印还有一个警告<br><strong>1:X 21 Apr 2024 23:33:24.072 # WARNING: The TCP backlog setting of 511 cannot be enforced because &#x2F;proc&#x2F;sys&#x2F;net&#x2F;core&#x2F;somaxconn is set to the lower value of 128.</strong><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220736397.png" alt="image-20240422073645324" data-caption="image-20240422073645324" loading="lazy"><br>解决办法</p>
+<p>但是日志打印还有一个警告<br><strong>1:X 21 Apr 2024 23:33:24.072 # WARNING: The TCP backlog setting of 511 cannot be enforced because &#x2F;proc&#x2F;sys&#x2F;net&#x2F;core&#x2F;somaxconn is set to the lower value of 128.</strong><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png" alt="image-20240422073645324" data-caption="image-20240422073645324" loading="lazy"><br>解决办法</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">vim /etc/sysctl.conf<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220740344.png" alt="image-20240422074046273" data-caption="image-20240422074046273" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png" alt="image-20240422074046273" data-caption="image-20240422074046273" loading="lazy"><blockquote>
 <p>文件新增如下内容</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs conf">net.core.somaxconn = 1024<br>vm.overcommit_memory = 1<br></code></pre></td></tr></table></figure>
@@ -542,16 +542,16 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-2 --sysctl net.core.somaxconn=1024 \<br>-v /root/redis/sentinel/s2:/etc/redis \<br>-dp 27002:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name sentinel-3 --sysctl net.core.somaxconn=1024 \<br>-v /root/redis/sentinel/s3:/etc/redis \<br>-dp 27003:26379 \<br>redis:latest \<br>redis-sentinel /etc/redis/sentinel.conf<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>问题已经解决<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220751093.png" alt="image-20240422075110021" data-caption="image-20240422075110021" loading="lazy"><br>停掉<code>redis-master</code></p>
+<p>问题已经解决<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png" alt="image-20240422075110021" data-caption="image-20240422075110021" loading="lazy"><br>停掉<code>redis-master</code></p>
 <p>查看sentinel日志</p>
 </blockquote>
 <figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> logs sentinel-<span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220800499.png" alt="image-20240422080023345" data-caption="image-20240422080023345" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png" alt="image-20240422080023345" data-caption="image-20240422080023345" loading="lazy"><blockquote>
 <p>查看redis节点状态，发现<code>7003</code>确实成为<code>master</code>了</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it redis-slave2 redis-cli info replication<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220758218.png" alt="image-20240422075815065" data-caption="image-20240422075815065" loading="lazy"><blockquote>
-<p>重启<code>7001</code>，发现原来的<code>master</code>变成<code>slave</code>了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220802251.png" alt="image-20240422080253175" data-caption="image-20240422080253175" loading="lazy"></p>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png" alt="image-20240422075815065" data-caption="image-20240422075815065" loading="lazy"><blockquote>
+<p>重启<code>7001</code>，发现原来的<code>master</code>变成<code>slave</code>了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png" alt="image-20240422080253175" data-caption="image-20240422080253175" loading="lazy"></p>
 </blockquote>
 </li>
 </ul>
@@ -567,21 +567,21 @@
 <p>配置<code>Redis</code>读写分离</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SpringBootApplication</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">RedisDemoApplication</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SpringApplication.run(RedisDemoApplication.class, args);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 配置Redis的读写策略，实现master写入、slave读取(读写分离</span><br><span class="hljs-comment">     * MASTER:从主节点读取</span><br><span class="hljs-comment">     * MASTER_PREFERRED: 优先从master节点读取，master不可用才读取replica</span><br><span class="hljs-comment">     * REPLICA:从slave (replica) 节点读取</span><br><span class="hljs-comment">     * REPLICA_PREFERRED: 优先从slave (replica) 节点读取，所有的slave都不可用才读取master)</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> &#123;<span class="hljs-doctag">@link</span> LettuceClientConfigurationBuilderCustomizer&#125;</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Bean</span><br>    <span class="hljs-keyword">public</span> LettuceClientConfigurationBuilderCustomizer <span class="hljs-title function_">configurationBuilderCustomizer</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">return</span> clientConfigurationBuilder -&gt; clientConfigurationBuilder.readFrom(ReadFrom.REPLICA_PREFERRED);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220822902.png" alt="image-20240422082247840" data-caption="image-20240422082247840" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png" alt="image-20240422082247840" data-caption="image-20240422082247840" loading="lazy"></p>
 <blockquote>
 <p>报错<code>io.lettuce.core.RedisCommandExecutionException: ERR No such master with that name</code></p>
-<p>名称改为<code>redis-master</code>，与<code>sentinel.conf</code>文件中的配置保持一致<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220824380.png" alt="image-20240422082422321" data-caption="image-20240422082422321" loading="lazy"></p>
+<p>名称改为<code>redis-master</code>，与<code>sentinel.conf</code>文件中的配置保持一致<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png" alt="image-20240422082422321" data-caption="image-20240422082422321" loading="lazy"></p>
 </blockquote>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">server:</span><br>    <span class="hljs-attr">port:</span> <span class="hljs-number">8080</span><br><span class="hljs-attr">logging:</span><br>    <span class="hljs-attr">level:</span><br>      <span class="hljs-attr">io.lettuce.core:</span> <span class="hljs-string">debug</span><br>    <span class="hljs-attr">pattern:</span><br>        <span class="hljs-attr">dateformat:</span> <span class="hljs-string">yyyy-MM-dd</span> <span class="hljs-string">HH:mm:ss:SSS</span><br><span class="hljs-attr">spring:</span><br>    <span class="hljs-attr">data:</span><br>        <span class="hljs-attr">redis:</span><br>            <span class="hljs-attr">sentinel:</span><br>                <span class="hljs-comment"># 指定master 节点名称</span><br>                <span class="hljs-attr">master:</span> <span class="hljs-string">redis-master</span><br>                <span class="hljs-comment"># 指定redis-sentinel集群信息</span><br>                <span class="hljs-attr">nodes:</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:27001</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:27002</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:27003</span><br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>访问<code>http://localhost:8080/get/name</code>(得有一个叫name的数据)<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220825414.png" alt="image-20240422082543326" data-caption="image-20240422082543326" loading="lazy"><br><strong>可以看到这里通过7002来获取数据</strong><br>访问<code>http://localhost:8080/set/name/333</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220826733.png" alt="image-20240422082647557" data-caption="image-20240422082647557" loading="lazy"><br><strong>可以看到这里通过7003来设置数据</strong><br>重启<code>redis-slave2</code></p>
+<p>访问<code>http://localhost:8080/get/name</code>(得有一个叫name的数据)<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png" alt="image-20240422082543326" data-caption="image-20240422082543326" loading="lazy"><br><strong>可以看到这里通过7002来获取数据</strong><br>访问<code>http://localhost:8080/set/name/333</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png" alt="image-20240422082647557" data-caption="image-20240422082647557" loading="lazy"><br><strong>可以看到这里通过7003来设置数据</strong><br>重启<code>redis-slave2</code></p>
 </blockquote>
 <figure class="highlight maxima"><table><tr><td class="code"><pre><code class="hljs maxima">docker <span class="hljs-built_in">restart</span> redis-slave2<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>此时<code>slave1(7002)</code>被选为master<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220830568.png" alt="image-20240422083027509" data-caption="image-20240422083027509" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220831656.png" alt="image-20240422083109475" data-caption="image-20240422083109475" loading="lazy"><br><code>7003</code>为<code>replica</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404220831464.png" alt="image-20240422083125383" data-caption="image-20240422083125383" loading="lazy"><br>使用idea连接虚拟机</p>
-<p><code>Deployment-&gt;Configuration</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222011412.png" alt="image-20240422201104329" data-caption="image-20240422201104329" loading="lazy"><br>新建<code>SFTP</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222011833.png" alt="image-20240422201138710" data-caption="image-20240422201138710" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222015126.png" alt="image-20240422201502055" data-caption="image-20240422201502055" loading="lazy"><br>查看虚拟机文件</p>
-<p><code>Deployment-&gt;Browse Remote Host</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222015689.png" alt="image-20240422201551614" data-caption="image-20240422201551614" loading="lazy"><br>右侧就可以看到虚拟机的文件信息了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222016266.png" alt="image-20240422201634100" data-caption="image-20240422201634100" loading="lazy"><br>打开命令窗口</p>
-<p>点击<code>Tools-&gt;Start SSH Session</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222017371.png" alt="image-20240422201705287" data-caption="image-20240422201705287" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222017656.png" alt="image-20240422201727483" data-caption="image-20240422201727483" loading="lazy"></p>
+<p>此时<code>slave1(7002)</code>被选为master<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png" alt="image-20240422083027509" data-caption="image-20240422083027509" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png" alt="image-20240422083109475" data-caption="image-20240422083109475" loading="lazy"><br><code>7003</code>为<code>replica</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png" alt="image-20240422083125383" data-caption="image-20240422083125383" loading="lazy"><br>使用idea连接虚拟机</p>
+<p><code>Deployment-&gt;Configuration</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png" alt="image-20240422201104329" data-caption="image-20240422201104329" loading="lazy"><br>新建<code>SFTP</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png" alt="image-20240422201138710" data-caption="image-20240422201138710" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png" alt="image-20240422201502055" data-caption="image-20240422201502055" loading="lazy"><br>查看虚拟机文件</p>
+<p><code>Deployment-&gt;Browse Remote Host</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png" alt="image-20240422201551614" data-caption="image-20240422201551614" loading="lazy"><br>右侧就可以看到虚拟机的文件信息了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png" alt="image-20240422201634100" data-caption="image-20240422201634100" loading="lazy"><br>打开命令窗口</p>
+<p>点击<code>Tools-&gt;Start SSH Session</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png" alt="image-20240422201705287" data-caption="image-20240422201705287" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png" alt="image-20240422201727483" data-caption="image-20240422201727483" loading="lazy"></p>
 </blockquote>
 <h2 id="Redis分片集群"><a href="#Redis分片集群" class="headerlink" title="Redis分片集群"></a>Redis分片集群</h2><blockquote>
 <p>我们知道单节点的Redis内存不要设置过高，在内存的持久化或者数据同步的时候会导致大量的IO，性能会下降</p>
@@ -661,13 +661,13 @@
 <p>并打开以下两处的注释</p>
 </blockquote>
 <figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment"># 开启 cluster 功能，即分布式系统功能</span><br><span class="hljs-attr">cluster-enabled</span> <span class="hljs-string">yes</span><br><span class="hljs-comment"># 指定其需要的配置文件名称</span><br><span class="hljs-attr">cluster-config-file</span> <span class="hljs-string">nodes-6379.conf</span><br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222048262.png" alt="image-20240422204825169" data-caption="image-20240422204825169" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png" alt="image-20240422204825169" data-caption="image-20240422204825169" loading="lazy"><blockquote>
 <p>重命名<code>redis.conf</code>为<code>redis1.conf</code>，并复制成其他五份<code>redis2.conf、redis3.conf、redis4.conf、redis5.conf、redis6.conf</code></p>
 <p>这6份配置文件内容完全相同</p>
-<p>更改文件之后记得上传<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222051246.png" alt="image-20240422205154155" data-caption="image-20240422205154155" loading="lazy"><br>停止之前运行的<code>redis、sentinel</code>容器</p>
+<p>更改文件之后记得上传<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png" alt="image-20240422205154155" data-caption="image-20240422205154155" loading="lazy"><br>停止之前运行的<code>redis、sentinel</code>容器</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker stop redis-master redis-slave1 redis-slave2 sentinel-1 sentinel-2 sentinel-3<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222053908.png" alt="image-20240422205342819" data-caption="image-20240422205342819" loading="lazy"><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name master-cluster-1 \<br>--network host \<br>-v /root/redis-cluster/redis1.conf:/etc/redis/redis.conf \<br>-v /root/redis-cluster/data/8001:/data \<br>-d redis:latest redis-server /etc/redis/redis.conf \<br>--port 8001<br></code></pre></td></tr></table></figure>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png" alt="image-20240422205342819" data-caption="image-20240422205342819" loading="lazy"><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name master-cluster-1 \<br>--network host \<br>-v /root/redis-cluster/redis1.conf:/etc/redis/redis.conf \<br>-v /root/redis-cluster/data/8001:/data \<br>-d redis:latest redis-server /etc/redis/redis.conf \<br>--port 8001<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name master-cluster-2 \<br>--network host \<br>-v /root/redis-cluster/redis2.conf:/etc/redis/redis.conf \<br>-v /root/redis-cluster/data/8002:/data \<br>-d redis:latest redis-server /etc/redis/redis.conf \<br>--port 8002<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name master-cluster-3 \<br>--network host \<br>-v /root/redis-cluster/redis3.conf:/etc/redis/redis.conf \<br>-v /root/redis-cluster/data/8003:/data \<br>-d redis:latest redis-server /etc/redis/redis.conf \<br>--port 8003<br></code></pre></td></tr></table></figure>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name slave-cluster-1 \<br>--network host \<br>-v /root/redis-cluster/redis4.conf:/etc/redis/redis.conf \<br>-v /root/redis-cluster/data/9001:/data \<br>-d redis:latest redis-server /etc/redis/redis.conf \<br>--port 9001<br></code></pre></td></tr></table></figure>
@@ -678,16 +678,16 @@
 <p>所以前三个是<code>主</code>，后三个是<code>从</code></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it master-cluster-1 /bin/bash<br>redis-cli --cluster create --cluster-replicas 1 192.168.56.10:8001 192.168.56.10:8002 192.168.56.10:8003 192.168.56.10:9001 192.168.56.10:9002 192.168.56.10:9003<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222109918.png" alt="image-20240422210937770" data-caption="image-20240422210937770" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png" alt="image-20240422210937770" data-caption="image-20240422210937770" loading="lazy"><blockquote>
 <p>查看节点信息</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli -c -p 8003 cluster nodes<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404222116235.png" alt="image-20240422211623156" data-caption="image-20240422211623156" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png" alt="image-20240422211623156" data-caption="image-20240422211623156" loading="lazy"><blockquote>
 <p>这样就可以查看到节点的信息了</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="散列插槽"><a href="#散列插槽" class="headerlink" title="散列插槽"></a>散列插槽</h3><p>Redis会把每一个master节 点映射到0~16383共16384个插槽(hashslot) 上，查看集群信息时就能看到:<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404232154657.png" alt="image-20240423215451539" data-caption="image-20240423215451539" loading="lazy"></p>
+<h3 id="散列插槽"><a href="#散列插槽" class="headerlink" title="散列插槽"></a>散列插槽</h3><p>Redis会把每一个master节 点映射到0~16383共16384个插槽(hashslot) 上，查看集群信息时就能看到:<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png" alt="image-20240423215451539" data-caption="image-20240423215451539" loading="lazy"></p>
 <blockquote>
 <p>我们这里插槽分布如下</p>
 <table>
@@ -722,7 +722,7 @@
 <p>注意这里一定要加<code>-c</code>，代表<code>集群模式</code></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli -c -p 8001<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404232210854.png" alt="image-20240423221028770" data-caption="image-20240423221028770" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png" alt="image-20240423221028770" data-caption="image-20240423221028770" loading="lazy"><blockquote>
 <p>redis会先算出插槽的值，最后找到对应的ip及端口，存储(获取)对应redis实例里的数据<br>Redis如何判断某个key应该在哪个实例?</p>
 </blockquote>
 </li>
@@ -733,7 +733,7 @@
 </ol>
 <h3 id="集群伸缩"><a href="#集群伸缩" class="headerlink" title="集群伸缩"></a>集群伸缩</h3><p>redis-cli –cluster提供了很多操作集群的命令，可以通过下面方式查看:</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it master-cluster-1 /bin/bash<br>redis-cli --cluster <span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404240738901.png" alt="image-20240424073841796" data-caption="image-20240424073841796" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png" alt="image-20240424073841796" data-caption="image-20240424073841796" loading="lazy"></p>
 <blockquote>
 <p>向集群中添加一个新的master节点,并向其中存储num &#x3D; 10<br><strong>需求</strong><br>启动一个新的redis实例，端口为<code>8004</code><br>添加8004到之前的集群，并作为一个master节点<br>给8004节点分配插槽，使得num这个key可以存储到8004实例<br>分析，这里有几个关键点</p>
 <ol>
@@ -743,62 +743,62 @@
 <p>参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhoujinyi/p/11606935.html">博客</a><br><strong>复制一份<code>redis7.conf</code>文件</strong></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker run --name master-cluster-4 \<br>--network host \<br>-v /root/redis-cluster/redis7.conf:/etc/redis/redis.conf \<br>-v /root/redis-cluster/data/8004:/data \<br>-d redis:latest redis-server /etc/redis/redis.conf \<br>--port 8004<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404240809279.png" alt="image-20240424080947181" data-caption="image-20240424080947181" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png" alt="image-20240424080947181" data-caption="image-20240424080947181" loading="lazy"></p>
 <blockquote>
 <p>可以看到集群节点里并没有新建的<code>8004</code></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it master-cluster-1 /bin/bash<br>redis-cli -c -p 8003 cluster nodes<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242013465.png" alt="image-20240424082942970" data-caption="image-20240424082942970" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png" alt="image-20240424082942970" data-caption="image-20240424082942970" loading="lazy"></p>
 <blockquote>
 <p>查看帮助文档</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli --cluster <span class="hljs-built_in">help</span><br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404240829903.png" alt="image-20240424082917801" data-caption="image-20240424082917801" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png" alt="image-20240424082917801" data-caption="image-20240424082917801" loading="lazy"></p>
 <blockquote>
 <p>添加节点到集群</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli --cluster add-node 192.168.56.10:8004 192.168.56.10:8003<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242021196.png" alt="image-20240424202128104" data-caption="image-20240424202128104" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png" alt="image-20240424202128104" data-caption="image-20240424202128104" loading="lazy"></p>
 <blockquote>
 <p>再次查看集群信息，可以看到<code>8004</code>是作为master的，但是并没有给它分配插槽</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli -c -p 8003 cluster nodes<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242021909.png" alt="image-20240424202157821" data-caption="image-20240424202157821" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png" alt="image-20240424202157821" data-caption="image-20240424202157821" loading="lazy"></p>
 <blockquote>
-<p>接下来需要为<code>8004</code>分配至少<code>0~2765</code>的插槽，这里就直接分配前<code>3000</code>个了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242044685.png" alt="image-20240424204432417" data-caption="image-20240424204432417" loading="lazy"><br>输入<code>yes</code></p>
+<p>接下来需要为<code>8004</code>分配至少<code>0~2765</code>的插槽，这里就直接分配前<code>3000</code>个了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png" alt="image-20240424204432417" data-caption="image-20240424204432417" loading="lazy"><br>输入<code>yes</code></p>
 <p>再次查看节点信息，可以看到已经分配了<code>0-2999</code>的插槽</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli -p 8004 cluster nodes<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242047718.png" alt="image-20240424204721576" data-caption="image-20240424204721576" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png" alt="image-20240424204721576" data-caption="image-20240424204721576" loading="lazy"></p>
 <blockquote>
 <p>试一下获取<code>num</code>，可以看到是从8004上获取的数据</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli -c -p 8001<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242049543.png" alt="image-20240424204902473" data-caption="image-20240424204902473" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png" alt="image-20240424204902473" data-caption="image-20240424204902473" loading="lazy"></p>
 <blockquote>
 <p><strong>练习</strong></p>
-<p>删除8004节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242050050.png" alt="image-20240424205045856" data-caption="image-20240424205045856" loading="lazy"><br>转移插槽<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242053831.png" alt="image-20240424205333760" data-caption="image-20240424205333760" loading="lazy"><br>删除节点，可以看到<code>8004</code>节点已经被移除</p>
+<p>删除8004节点<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png" alt="image-20240424205045856" data-caption="image-20240424205045856" loading="lazy"><br>转移插槽<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png" alt="image-20240424205333760" data-caption="image-20240424205333760" loading="lazy"><br>删除节点，可以看到<code>8004</code>节点已经被移除</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli --cluster del-node 192.168.56.10:8004 969b40741ba2c93557ff9013a774f98322f77ba0<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242055720.png" alt="image-20240424205522582" data-caption="image-20240424205522582" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png" alt="image-20240424205522582" data-caption="image-20240424205522582" loading="lazy"></p>
 <blockquote>
-<p>删除容器<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242056356.png" alt="image-20240424205605167" data-caption="image-20240424205605167" loading="lazy"></p>
+<p>删除容器<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png" alt="image-20240424205605167" data-caption="image-20240424205605167" loading="lazy"></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">rm</span> -f master-cluster-4<br>docker ps<br></code></pre></td></tr></table></figure>
 <h3 id="故障转移"><a href="#故障转移" class="headerlink" title="故障转移"></a>故障转移</h3><h4 id="自动故障转移"><a href="#自动故障转移" class="headerlink" title="自动故障转移"></a>自动故障转移</h4><blockquote>
-<p>当集群中有一个master宕机会发生什么呢?<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242059554.png" alt="image-20240424205957402" data-caption="image-20240424205957402" loading="lazy"><br>重新启动8002<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242101468.png" alt="image-20240424210155393" data-caption="image-20240424210155393" loading="lazy"><br>可以看到<code>8002</code>变成了<code>master</code>，而<code>9002</code>变成了<code>slaver</code>，实现了自动故障转移</p>
+<p>当集群中有一个master宕机会发生什么呢?<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png" alt="image-20240424205957402" data-caption="image-20240424205957402" loading="lazy"><br>重新启动8002<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png" alt="image-20240424210155393" data-caption="image-20240424210155393" loading="lazy"><br>可以看到<code>8002</code>变成了<code>master</code>，而<code>9002</code>变成了<code>slaver</code>，实现了自动故障转移</p>
 </blockquote>
-<h4 id="手动故障转移"><a href="#手动故障转移" class="headerlink" title="手动故障转移"></a>手动故障转移</h4><p>利用<code>cluster failover</code>命令可以手动让集群中的某个master宕机，切换到执行cluster failover命令的这个slave节点，实现无感知的数据迁移。其流程如下:<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242103921.png" alt="image-20240424210353844" data-caption="image-20240424210353844" loading="lazy"><br>手动的Failover支持三种不同模式:</p>
+<h4 id="手动故障转移"><a href="#手动故障转移" class="headerlink" title="手动故障转移"></a>手动故障转移</h4><p>利用<code>cluster failover</code>命令可以手动让集群中的某个master宕机，切换到执行cluster failover命令的这个slave节点，实现无感知的数据迁移。其流程如下:<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png" alt="image-20240424210353844" data-caption="image-20240424210353844" loading="lazy"><br>手动的Failover支持三种不同模式:</p>
 <ol>
 <li>缺省:默认的流程，如图1~6步</li>
 <li>force:省略了对offset的一致性校验</li>
 <li>takeover:直接执行第5步，忽略数据一致性、忽略master状态和其它master的意见<blockquote>
 <p><strong>练习</strong></p>
-<p>手动故障转移，让<code>8002</code>重新变成master<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242109850.png" alt="image-20240424210932755" data-caption="image-20240424210932755" loading="lazy"></p>
+<p>手动故障转移，让<code>8002</code>重新变成master<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png" alt="image-20240424210932755" data-caption="image-20240424210932755" loading="lazy"></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">CLUSTER FAILOVER<br></code></pre></td></tr></table></figure>
 <blockquote>
-<p>看到<code>8002</code>重新变成master<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242110235.png" alt="image-20240424211012127" data-caption="image-20240424211012127" loading="lazy"></p>
+<p>看到<code>8002</code>重新变成master<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png" alt="image-20240424211012127" data-caption="image-20240424211012127" loading="lazy"></p>
 </blockquote>
 </li>
 </ol>
@@ -809,13 +809,13 @@
 <li>配置读写分离<br>与哨兵模式相比，其中只有分片集群的配置方式略有差异，如下:<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 配置分片集群</span><br><span class="hljs-attr">spring:</span><br>    <span class="hljs-attr">data:</span><br>        <span class="hljs-attr">redis:</span><br>            <span class="hljs-attr">cluster:</span><br>                <span class="hljs-comment"># 指定分片集群的每一个节点信息</span><br>                <span class="hljs-attr">nodes:</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:8001</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:8002</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:8003</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:9001</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:9002</span><br>                    <span class="hljs-bullet">-</span> <span class="hljs-number">192.168</span><span class="hljs-number">.56</span><span class="hljs-number">.10</span><span class="hljs-string">:9003</span><br></code></pre></td></tr></table></figure>
 <blockquote>
 <p>访问<code>http://localhost:8080/get/a</code></p>
-<p>查看日志，通过<code>9003</code>获取到<code>a</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242125244.png" alt="image-20240424212554166" data-caption="image-20240424212554166" loading="lazy"><br>查看节点信息</p>
+<p>查看日志，通过<code>9003</code>获取到<code>a</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png" alt="image-20240424212554166" data-caption="image-20240424212554166" loading="lazy"><br>查看节点信息</p>
 <p><code>9003</code>的master是<code>8003</code></p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli -c -p 8003 cluster nodes<br></code></pre></td></tr></table></figure>
-<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242127034.png" alt="image-20240424212728958" data-caption="image-20240424212728958" loading="lazy"><blockquote>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png" alt="image-20240424212728958" data-caption="image-20240424212728958" loading="lazy"><blockquote>
 <p>访问<code>http://localhost:8080/set/a/666</code></p>
-<p>通过<code>8003</code>去set值<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202404242128817.png" alt="image-20240424212846737" data-caption="image-20240424212846737" loading="lazy"></p>
+<p>通过<code>8003</code>去set值<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png" alt="image-20240424212846737" data-caption="image-20240424212846737" loading="lazy"></p>
 </blockquote>
 </li>
 </ol>

@@ -17,33 +17,33 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Spring原理Spring特点 它是一个全面的、企业应用开发一站式的解决方案，贯穿表现层、业务层、持久层。但是 Spring仍然可以和其他的框架无缝整合。  轻量级控制反转面向切面容器框架集合 Spring核心组件 Spring常用模块 Spring主要包 Spring常用注解 bean 注入与装配的的方式有很多种，可以通过 xml、get set 方式，、造函数或者注解等。简单易用的方式就是使">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942533.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942720.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942329.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942662.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942615.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942195.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942258.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201941273.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942455.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942533.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942720.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942329.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942662.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942615.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942195.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942258.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201941273.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942455.png">
 <meta property="article:published_time" content="2022-12-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.912Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.518Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942533.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942533.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230642">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409606">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230642">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409606">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230642">
+            <link rel="stylesheet" href="/custom.css?v=1717252409606">
         
     
 
@@ -52,7 +52,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230642"></script>
+    <script async src="/js/app.js?v=1717252409606"></script>
     
      
 
@@ -143,7 +143,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230642"></script>
+	<script async src="/js/search.js?v=1717252409606"></script>
 
 
 
@@ -226,14 +226,14 @@
     <h2 id="Spring原理"><a href="#Spring原理" class="headerlink" title="Spring原理"></a>Spring原理</h2><h3 id="Spring特点"><a href="#Spring特点" class="headerlink" title="Spring特点"></a>Spring特点</h3><blockquote>
 <p>它是一个全面的、企业应用开发一站式的解决方案，贯穿表现层、业务层、持久层。但是 Spring仍然可以和其他的框架无缝整合。</p>
 </blockquote>
-<h3 id="轻量级"><a href="#轻量级" class="headerlink" title="轻量级"></a>轻量级</h3><h3 id="控制反转"><a href="#控制反转" class="headerlink" title="控制反转"></a>控制反转</h3><h3 id="面向切面"><a href="#面向切面" class="headerlink" title="面向切面"></a>面向切面</h3><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><h3 id="框架集合"><a href="#框架集合" class="headerlink" title="框架集合"></a>框架集合</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942533.png" alt="框架集合" data-caption="框架集合" loading="lazy"></p>
-<h3 id="Spring核心组件"><a href="#Spring核心组件" class="headerlink" title="Spring核心组件"></a>Spring核心组件</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942720.png" alt="spring核心组件" data-caption="spring核心组件" loading="lazy"></p>
-<h3 id="Spring常用模块"><a href="#Spring常用模块" class="headerlink" title="Spring常用模块"></a>Spring常用模块</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942329.png" alt="常用模块" data-caption="常用模块" loading="lazy"></p>
-<h3 id="Spring主要包"><a href="#Spring主要包" class="headerlink" title="Spring主要包"></a>Spring主要包</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942662.png" alt="主要jar包" data-caption="主要jar包" loading="lazy"></p>
+<h3 id="轻量级"><a href="#轻量级" class="headerlink" title="轻量级"></a>轻量级</h3><h3 id="控制反转"><a href="#控制反转" class="headerlink" title="控制反转"></a>控制反转</h3><h3 id="面向切面"><a href="#面向切面" class="headerlink" title="面向切面"></a>面向切面</h3><h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><h3 id="框架集合"><a href="#框架集合" class="headerlink" title="框架集合"></a>框架集合</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942533.png" alt="框架集合" data-caption="框架集合" loading="lazy"></p>
+<h3 id="Spring核心组件"><a href="#Spring核心组件" class="headerlink" title="Spring核心组件"></a>Spring核心组件</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942720.png" alt="spring核心组件" data-caption="spring核心组件" loading="lazy"></p>
+<h3 id="Spring常用模块"><a href="#Spring常用模块" class="headerlink" title="Spring常用模块"></a>Spring常用模块</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942329.png" alt="常用模块" data-caption="常用模块" loading="lazy"></p>
+<h3 id="Spring主要包"><a href="#Spring主要包" class="headerlink" title="Spring主要包"></a>Spring主要包</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942662.png" alt="主要jar包" data-caption="主要jar包" loading="lazy"></p>
 <h3 id="Spring常用注解"><a href="#Spring常用注解" class="headerlink" title="Spring常用注解"></a>Spring常用注解</h3><blockquote>
-<p>bean 注入与装配的的方式有很多种，可以通过 xml、get set 方式，、造函数或者注解等。简单易用的方式就是使用 Spring 的注解了，Spring 提供了大量的注解方式<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942615.png" alt="spring常用注解" data-caption="spring常用注解" loading="lazy"></p>
+<p>bean 注入与装配的的方式有很多种，可以通过 xml、get set 方式，、造函数或者注解等。简单易用的方式就是使用 Spring 的注解了，Spring 提供了大量的注解方式<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942615.png" alt="spring常用注解" data-caption="spring常用注解" loading="lazy"></p>
 </blockquote>
-<h3 id="Spring第三方结合"><a href="#Spring第三方结合" class="headerlink" title="Spring第三方结合"></a>Spring第三方结合</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942195.png" alt="第三方框架集成" data-caption="第三方框架集成" loading="lazy"></p>
+<h3 id="Spring第三方结合"><a href="#Spring第三方结合" class="headerlink" title="Spring第三方结合"></a>Spring第三方结合</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942195.png" alt="第三方框架集成" data-caption="第三方框架集成" loading="lazy"></p>
 <h3 id="Spring-IOC原理"><a href="#Spring-IOC原理" class="headerlink" title="Spring IOC原理"></a>Spring IOC原理</h3><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
 <p>Spring 通过一个配置文件描述 Bean 及 Bean 之间的依赖关系，利用 Java 语言的反射功能实例化Bean 并建立 Bean 之间的依赖关系。 Spring 的 IoC 容器在完成这些底层工作的基础上，还提供了 Bean 实例缓存、生命周期管理、 Bean 实例代理、事件发布、资源装载等高级服务。</p>
 </blockquote>
@@ -331,7 +331,7 @@
 </blockquote>
 </li>
 </ol>
-<pre><code>![Bean在Spring Bean应用上下文中的生命周期](https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942515.png)
+<pre><code>![Bean在Spring Bean应用上下文中的生命周期](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942515.png)
 </code></pre>
 <blockquote>
 <p> （生命周期）<br>11.  bean 标签有两个重要的属性（init-method 和 destroy-method）。用它们你可以自己定制初始化和注销方法。它们也有相应的注解（@PostConstruct 和@PreDestroy）。</p>
@@ -393,7 +393,7 @@
 <h3 id="SpringMVC原理"><a href="#SpringMVC原理" class="headerlink" title="SpringMVC原理"></a>SpringMVC原理</h3><blockquote>
 <p>Spring 的模型-视图-控制器（MVC）框架是围绕一个 DispatcherServlet 来设计的，这个 Servlet会把请求分发给各个处理器，并支持可配置的处理器映射、视图渲染、本地化、时区与主题渲染等，甚至还能支持文件上传。</p>
 </blockquote>
-<h3 id="MVC流程"><a href="#MVC流程" class="headerlink" title="MVC流程"></a>MVC流程</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942258.png" alt="MVC流程" data-caption="MVC流程" loading="lazy"></p>
+<h3 id="MVC流程"><a href="#MVC流程" class="headerlink" title="MVC流程"></a>MVC流程</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942258.png" alt="MVC流程" data-caption="MVC流程" loading="lazy"></p>
 <blockquote>
 <p>Http 请求到 DispatcherServlet</p>
 </blockquote>
@@ -459,10 +459,10 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">transferAccount</span><span class="hljs-params">()</span> &#123;   <br>    <span class="hljs-type">UserTransaction</span> <span class="hljs-variable">userTx</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;   <br>    <span class="hljs-type">Connection</span> <span class="hljs-variable">connA</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;   <br>    <span class="hljs-type">Statement</span> <span class="hljs-variable">stmtA</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;   <br>    <span class="hljs-type">Connection</span> <span class="hljs-variable">connB</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;   <br>    <span class="hljs-type">Statement</span> <span class="hljs-variable">stmtB</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;   <br>    <span class="hljs-keyword">try</span>&#123;   <br>        <span class="hljs-comment">// 获得 Transaction 管理对象  </span><br>        userTx = (UserTransaction)getContext().lookup(<span class="hljs-string">&quot;java:comp/UserTransaction&quot;</span>);   <br>        connA = getDataSourceA().getConnection();<span class="hljs-comment">// 从数据库 A 中取得数据库连接  </span><br>        connB = getDataSourceB().getConnection();<span class="hljs-comment">// 从数据库 B 中取得数据库连接  </span><br>        userTx.begin(); <span class="hljs-comment">// 启动事务  </span><br>        stmtA = connA.createStatement();<span class="hljs-comment">// 将 A 账户中的金额减少 500   </span><br>        stmtA.execute(<span class="hljs-string">&quot;update t_account set amount = amount - 500 where account_id = &#x27;A&#x27;&quot;</span>);  <br>        <span class="hljs-comment">// 将 B 账户中的金额增加 500   </span><br>        stmtB = connB.createStatement();   <br>        stmtB.execute(<span class="hljs-string">&quot;update t_account set amount = amount + 500 where account_id = &#x27;B&#x27;&quot;</span>);  <br>        userTx.commit();<span class="hljs-comment">// 提交事务  </span><br>        <span class="hljs-comment">// 事务提交：转账的两步操作同时成功（数据库 A 和数据库 B 中的数据被同时更新）  </span><br>    &#125; <span class="hljs-keyword">catch</span>(SQLException sqle)&#123;   <br>        <span class="hljs-comment">// 发生异常，回滚在本事务中的操纵  </span><br>        userTx.rollback();<span class="hljs-comment">// 事务回滚：数据库 A 和数据库 B 中的数据更新被同时撤销  </span><br>    &#125; <span class="hljs-keyword">catch</span>(Exception ne)&#123;  <br>    &#125;   <br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="两阶段提交"><a href="#两阶段提交" class="headerlink" title="两阶段提交"></a>两阶段提交</h3><blockquote>
-<p>两阶段提交主要保证了分布式事务的原子性：即所有结点要么全做要么全不做，所谓的两个阶段是指：第一阶段：准备阶段；第二阶段：提交阶段。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201941273.png" alt="两阶段提交" data-caption="两阶段提交" loading="lazy"><br>1 准备阶段<br>事务协调者(事务管理器)给每个参与者(资源管理器)发送 Prepare 消息，每个参与者要么直接返回失败(如权限验证失败)，要么在本地执行事务，写本地的 redo 和 undo 日志，但不提交，到达一种万事俱备，只欠东风的状态。<br>2 提交阶段<br>如果协调者收到了参与者的失败消息或者超时，直接给每个参与者发送回滚(Rollback)消息；否则，发送提交(Commit)消息；参与者根据协调者的指令执行提交或者回滚操作，释放所有事务处理过程中使用的锁资源。(注意:必须在最后阶段释放锁资源)将提交分成两阶段进行的目的很明确，就是尽可能晚地提交事务，让事务在提交前尽可能地完成所有能完成的工作。</p>
+<p>两阶段提交主要保证了分布式事务的原子性：即所有结点要么全做要么全不做，所谓的两个阶段是指：第一阶段：准备阶段；第二阶段：提交阶段。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201941273.png" alt="两阶段提交" data-caption="两阶段提交" loading="lazy"><br>1 准备阶段<br>事务协调者(事务管理器)给每个参与者(资源管理器)发送 Prepare 消息，每个参与者要么直接返回失败(如权限验证失败)，要么在本地执行事务，写本地的 redo 和 undo 日志，但不提交，到达一种万事俱备，只欠东风的状态。<br>2 提交阶段<br>如果协调者收到了参与者的失败消息或者超时，直接给每个参与者发送回滚(Rollback)消息；否则，发送提交(Commit)消息；参与者根据协调者的指令执行提交或者回滚操作，释放所有事务处理过程中使用的锁资源。(注意:必须在最后阶段释放锁资源)将提交分成两阶段进行的目的很明确，就是尽可能晚地提交事务，让事务在提交前尽可能地完成所有能完成的工作。</p>
 </blockquote>
 <h3 id="MyBatis缓存"><a href="#MyBatis缓存" class="headerlink" title="MyBatis缓存"></a>MyBatis缓存</h3><blockquote>
-<p>Mybatis 中有一级缓存和二级缓存，默认情况下一级缓存是开启的，而且是不能关闭的。一级缓存是指 SqlSession 级别的缓存，当在同一个 SqlSession 中进行相同的 SQL 语句查询时，第二次以后的查询不会从数据库查询，而是直接从缓存中获取，一级缓存最多缓存 1024 条 SQL。二级缓存是指可以跨 SqlSession 的缓存。是 mapper 级别的缓存，对于 mapper 级别的缓存不同的sqlsession 是可以共享的。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201942455.png" alt="MyBatis缓存机制" data-caption="MyBatis缓存机制" loading="lazy"></p>
+<p>Mybatis 中有一级缓存和二级缓存，默认情况下一级缓存是开启的，而且是不能关闭的。一级缓存是指 SqlSession 级别的缓存，当在同一个 SqlSession 中进行相同的 SQL 语句查询时，第二次以后的查询不会从数据库查询，而是直接从缓存中获取，一级缓存最多缓存 1024 条 SQL。二级缓存是指可以跨 SqlSession 的缓存。是 mapper 级别的缓存，对于 mapper 级别的缓存不同的sqlsession 是可以共享的。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942455.png" alt="MyBatis缓存机制" data-caption="MyBatis缓存机制" loading="lazy"></p>
 </blockquote>
 <h3 id="MyBatis一级缓存原理（sqlsession级别）"><a href="#MyBatis一级缓存原理（sqlsession级别）" class="headerlink" title="MyBatis一级缓存原理（sqlsession级别）"></a>MyBatis一级缓存原理（sqlsession级别）</h3><blockquote>
 <p>第一次发出一个查询 sql，sql 查询结果写入 sqlsession 的一级缓存中，缓存使用的数据结构是一个 map。<br>key：MapperID+offset+limit+Sql+所有的入参<br>value：用户信息<br>同一个 sqlsession 再次发出相同的 sql，就从缓存中取出数据。如果两次中间出现 commit 操作（修改、添加、删除），本 sqlsession 中的一级缓存区域全部清空，下次再去缓存中查询不到所以要从数据库查询，从数据库查询到再写入缓存</p>

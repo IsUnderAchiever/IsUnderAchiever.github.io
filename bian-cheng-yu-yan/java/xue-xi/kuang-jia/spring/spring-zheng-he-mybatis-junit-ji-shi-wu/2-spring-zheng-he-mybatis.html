@@ -17,29 +17,29 @@
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="2_MyBatis复习 目录结构  Spring_MyBatis                        ├─ src                                │  ├─ main                            │  │  ├─ java                         │  │  │  └─ com">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20230120142044740.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201457499.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201459301.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501580.png">
-<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501920.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20230120142044740.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201457499.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201459301.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201501580.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201501920.png">
 <meta property="article:published_time" content="2023-01-20T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-01T14:12:24.981Z">
+<meta property="article:modified_time" content="2024-06-01T14:32:53.508Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="Spring整合MyBatis、Junit及事务">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20230120142044740.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20230120142044740.png">
     
 <link rel="stylesheet" href="/lib/fancybox/fancybox.css">
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230603">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717252409452">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717251230603">
+    <link rel="stylesheet" href="/css/style.css?v=1717252409452">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717251230603">
+            <link rel="stylesheet" href="/custom.css?v=1717252409452">
         
     
 
@@ -48,7 +48,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717251230603"></script>
+    <script async src="/js/app.js?v=1717252409453"></script>
     
      
 
@@ -139,7 +139,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717251230603"></script>
+	<script async src="/js/search.js?v=1717252409453"></script>
 
 
 
@@ -305,15 +305,15 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@ContextConfiguration(locations = &quot;classpath:applicationContext.xml&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(userMapper.selectAll());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="MyBatis配置别名的作用"><a href="#MyBatis配置别名的作用" class="headerlink" title="MyBatis配置别名的作用"></a>MyBatis配置别名的作用</h2><blockquote>
-<p>例子<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20230120142044740.png" alt="database" data-caption="database" loading="lazy"></p>
+<p>例子<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20230120142044740.png" alt="database" data-caption="database" loading="lazy"></p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@ContextConfiguration(locations = &quot;classpath:applicationContext.xml&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&quot;哈哈&quot;</span>,<span class="hljs-string">&quot;男&quot;</span>,<span class="hljs-number">12</span>,<span class="hljs-string">&quot;湖南&quot;</span>,<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;131xxxx5494&quot;</span>);<br>        userMapper.insert(user);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201457499.png" alt="image-20230120145745385" data-caption="image-20230120145745385" loading="lazy"><br><code>测试结果</code>：<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201459301.png" alt="image-20230120145944254" data-caption="image-20230120145944254" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201457499.png" alt="image-20230120145745385" data-caption="image-20230120145745385" loading="lazy"><br><code>测试结果</code>：<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201459301.png" alt="image-20230120145944254" data-caption="image-20230120145944254" loading="lazy"></p>
 <blockquote>
 <p>在配置了别名后，可继续使用上面的<code>全类名</code>写法，也可以只写<code>类名</code></p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@ContextConfiguration(locations = &quot;classpath:applicationContext.xml&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-number">5</span>,<span class="hljs-string">&quot;呵呵&quot;</span>,<span class="hljs-string">&quot;女&quot;</span>,<span class="hljs-number">15</span>,<span class="hljs-string">&quot;湖南&quot;</span>,<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;131xxxx5494&quot;</span>);<br>        userMapper.insert(user);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501580.png" alt="image-20230120150113451" data-caption="image-20230120150113451" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501920.png" alt="image-20230120150143868" data-caption="image-20230120150143868" loading="lazy"></p>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201501580.png" alt="image-20230120150113451" data-caption="image-20230120150113451" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201501920.png" alt="image-20230120150143868" data-caption="image-20230120150143868" loading="lazy"></p>
 <blockquote>
 <p>它的作用是让Mapper.xml中的参数找到对应类,如下面parameterType&#x3D;”User”，如果没有配置别名，则要改为parameterType&#x3D;”com.example.domain.User”&gt;</p>
 </blockquote>

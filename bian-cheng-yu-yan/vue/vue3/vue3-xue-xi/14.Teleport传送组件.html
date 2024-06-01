@@ -61,7 +61,7 @@ import { ref, reactive } from &#39;vue&#39;
 }
 &lt;/style&gt;
 </code></pre>
-<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307232121995.png" alt="img"></h3><h3 id="多个使用场景"><a href="#多个使用场景" class="headerlink" title="多个使用场景"></a>多个使用场景</h3><pre><code>&lt;Teleport to=&quot;.modal1&quot;&gt;
+<h3 id=""><a href="#" class="headerlink" title=""></a><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121995.png" alt="img"></h3><h3 id="多个使用场景"><a href="#多个使用场景" class="headerlink" title="多个使用场景"></a>多个使用场景</h3><pre><code>&lt;Teleport to=&quot;.modal1&quot;&gt;
      &lt;Loading&gt;&lt;/Loading&gt;
 &lt;/Teleport&gt;
 &lt;Teleport to=&quot;.modal2&quot;&gt;
@@ -73,4 +73,4 @@ import { ref, reactive } from &#39;vue&#39;
       &lt;A&gt;&lt;/A&gt;
     &lt;/teleport&gt;
 </code></pre>
-<h3 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h3><p>在创建teleport 组件的时候会经过patch 方法 然后调用teleport 的process 方法<br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307232121902.png" alt="img"><br> 主要是创建 更新 和删除的逻辑<br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307232121086.png" alt="img"><br> 他通过 resolveTarget 函数 获取了props.to 和 querySelect 获取 了目标元素<br>然后判断是否有disabled 如果有则 to 属性不生效 否则 挂载新的位置<br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307232121972.png" alt="img"><br> 新节点disabled 为 true  旧节点disabled false 就把子节点移动回容器<br>如果新节点disabled 为 false 旧节点为true 就把子节点移动到目标元素<br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307232121942.png" alt="img"><br> 遍历teleport 子节点进行unmount方法去移除<br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307232121056.png" alt="img"></p>
+<h3 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h3><p>在创建teleport 组件的时候会经过patch 方法 然后调用teleport 的process 方法<br><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121902.png" alt="img"><br> 主要是创建 更新 和删除的逻辑<br><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121086.png" alt="img"><br> 他通过 resolveTarget 函数 获取了props.to 和 querySelect 获取 了目标元素<br>然后判断是否有disabled 如果有则 to 属性不生效 否则 挂载新的位置<br><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121972.png" alt="img"><br> 新节点disabled 为 true  旧节点disabled false 就把子节点移动回容器<br>如果新节点disabled 为 false 旧节点为true 就把子节点移动到目标元素<br><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121942.png" alt="img"><br> 遍历teleport 子节点进行unmount方法去移除<br><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121056.png" alt="img"></p>
