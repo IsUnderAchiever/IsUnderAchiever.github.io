@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Spring6学习04 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Spring6学习04手写IOC 实现过程  创建子模块 创建测试类 创建两个注解 @Bean(代替@Component) @Di(代替@Autowired)   创建Bean容器接口ApplicationContext，定义方法，返回对象 实现Bean容器接口 返回对象 根据包规则加载bean    规则:扫描当前包及其子包里的所有类，判断类上是否有@Bean注解，如果有，则把这个类通过反射实例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring6学习04">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/spring6/04-spring6.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="Spring6学习04手写IOC 实现过程  创建子模块 创建测试类 创建两个注解 @Bean(代替@Component) @Di(代替@Autowired)   创建Bean容器接口ApplicationContext，定义方法，返回对象 实现Bean容器接口 返回对象 根据包规则加载bean    规则:扫描当前包及其子包里的所有类，判断类上是否有@Bean注解，如果有，则把这个类通过反射实例">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335347.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335120.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335485.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152336525.png">
+<meta property="article:published_time" content="2023-03-14T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.951Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="Spring6">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335347.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230577">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230577">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230577">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230577"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230577"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="Spring6学习04" loading="lazy">
+            <h1>Spring6学习04</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年03月14日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/Spring6/">Spring6</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="Spring6学习04"><a href="#Spring6学习04" class="headerlink" title="Spring6学习04"></a>Spring6学习04</h1><h2 id="手写IOC"><a href="#手写IOC" class="headerlink" title="手写IOC"></a>手写IOC</h2><blockquote>
+<p>实现过程</p>
+<ol>
+<li>创建子模块</li>
+<li>创建测试类</li>
+<li>创建两个注解<ol>
+<li>@Bean(代替@Component)</li>
+<li>@Di(代替@Autowired)</li>
+</ol>
+</li>
+<li>创建Bean容器接口ApplicationContext，定义方法，返回对象</li>
+<li>实现Bean容器接口<ol>
+<li>返回对象</li>
+<li>根据包规则加载bean</li>
+</ol>
+</li>
+</ol>
+<p><strong><code>规则:扫描当前包及其子包里的所有类，判断类上是否有@Bean注解，如果有，则把这个类通过反射实例化</code></strong></p>
+</blockquote>
+<h3 id="第一步，搭建项目"><a href="#第一步，搭建项目" class="headerlink" title="第一步，搭建项目"></a>第一步，搭建项目</h3><p><strong>创建两个注解，@Bean、@Di</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;<br><span class="hljs-keyword">import</span> java.lang.annotation.Retention;<br><span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;<br><span class="hljs-keyword">import</span> java.lang.annotation.Target;<br><span class="hljs-meta">@Target(ElementType.TYPE)</span><br><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Bean &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.lang.annotation.ElementType;<br><span class="hljs-keyword">import</span> java.lang.annotation.Retention;<br><span class="hljs-keyword">import</span> java.lang.annotation.RetentionPolicy;<br><span class="hljs-keyword">import</span> java.lang.annotation.Target;<br><span class="hljs-meta">@Target(ElementType.FIELD)</span><br><span class="hljs-meta">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> Di &#123;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>使用如下方式进行注入</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Bean</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Di</span><br>    <span class="hljs-keyword">private</span> UserDao userDao;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>新建ApplicationContext接口</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ApplicationContext</span> &#123;<br>    Object <span class="hljs-title function_">getBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>对接口进行实例化</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.Map;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AnnotationApplicationContext</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ApplicationContext</span>&#123;<br>    <span class="hljs-comment">// 创建Map集合，用于存放Bean对象</span><br>    <span class="hljs-keyword">private</span> Map&lt;Class&lt;?&gt;,Object&gt; beanFactory=<span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 返回bean对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">getBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span> &#123;<br>        <span class="hljs-keyword">return</span> beanFactory.get(clazz);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 创建有参构造方法，传递包路径，设置包扫描规则</span><br><span class="hljs-comment">     * 当前包及其子包，标注有<span class="hljs-doctag">@Bean</span>注解，把这个类通过反射实例化</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> basePackage 包路径</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AnnotationApplicationContext</span><span class="hljs-params">(String basePackage)</span> &#123;<br>        <span class="hljs-comment">//</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>为什么要写<code>AnnotationApplicationContext</code>的构造方法？</p>
+<p>我们先来看看原本Spring是怎么写的<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335347.png" alt="image-20230409104422741" data-caption="image-20230409104422741" loading="lazy"><br><strong>以下是暂时的项目结构</strong><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335120.png" alt="image-20230409104055973" data-caption="image-20230409104055973" loading="lazy"></p>
+</blockquote>
+<h3 id="第二步，配置扫描规则"><a href="#第二步，配置扫描规则" class="headerlink" title="第二步，配置扫描规则"></a>第二步，配置扫描规则</h3><blockquote>
+<p>用法应该如下所示</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AnnotationApplicationContext</span>(<span class="hljs-string">&quot;com.example&quot;</span>);<br>        <span class="hljs-type">Object</span> <span class="hljs-variable">bean</span> <span class="hljs-operator">=</span> context.getBean(UserDaoImpl.class);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol>
+<li>将.替换成\ <code>（com.example）-&gt;（com\example）</code></li>
+<li>获取包的(带盘符的)对路径 <code>（这里的绝对路径并非是当前类的绝对路径，而是编译后生成的target内的类路径）</code><blockquote>
+<p>由于转义字符的影响，所以得这么写</p>
+<p>如果不放心，可以试着打印输出一下</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">packagePath</span> <span class="hljs-operator">=</span> basePackage.replaceAll(<span class="hljs-string">&quot;\\.&quot;</span>, <span class="hljs-string">&quot;\\\\&quot;</span>);<br></code></pre></td></tr></table></figure>
+<img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152335485.png" alt="image-20230409112600074" data-caption="image-20230409112600074" loading="lazy"><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AnnotationApplicationContext</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ApplicationContext</span> &#123;<br>    <span class="hljs-comment">// 创建Map集合，用于存放Bean对象</span><br>    <span class="hljs-keyword">private</span> Map&lt;Class&lt;?&gt;, Object&gt; beanFactory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-keyword">private</span> String rootPath;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 返回bean对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">getBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span> &#123;<br>        <span class="hljs-keyword">return</span> beanFactory.get(clazz);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 创建有参构造方法，传递包路径，设置包扫描规则</span><br><span class="hljs-comment">     * 当前包及其子包，标注有<span class="hljs-doctag">@Bean</span>注解，把这个类通过反射实例化</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> basePackage 包路径</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AnnotationApplicationContext</span><span class="hljs-params">(String basePackage)</span> &#123;<br>        <span class="hljs-comment">// com.example</span><br>        <span class="hljs-comment">// 1. 将.替换成\</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">packagePath</span> <span class="hljs-operator">=</span> basePackage.replaceAll(<span class="hljs-string">&quot;\\.&quot;</span>, <span class="hljs-string">&quot;\\\\&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">// 2. 获取包的绝对路径</span><br>            Enumeration&lt;URL&gt; urls = Thread.currentThread().getContextClassLoader().getResources(packagePath);<br>            <span class="hljs-comment">// 遍历枚举对象</span><br>            <span class="hljs-keyword">while</span> (urls.hasMoreElements()) &#123;<br>                <span class="hljs-type">URL</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> urls.nextElement();<br>                <span class="hljs-comment">// 斜杠会做url编码，所以要进行转码</span><br>                <span class="hljs-type">String</span> <span class="hljs-variable">filePath</span> <span class="hljs-operator">=</span> URLDecoder.decode(url.getFile(), <span class="hljs-string">&quot;UTF-8&quot;</span>);<br>                <span class="hljs-comment">// 获取包前面的路径部分，字符串截取</span><br>                rootPath=filePath.substring(<span class="hljs-number">0</span>,filePath.length()-packagePath.length());<br>                <span class="hljs-comment">// 包扫描</span><br>                loadBean(<span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(filePath));<br>            &#125;<br>        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 包扫描过程</span><br><span class="hljs-comment">     * 实例化</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">loadBean</span><span class="hljs-params">(File file)</span> &#123;<br>        <span class="hljs-comment">// 1.判断当前是否是文件夹</span><br>        <span class="hljs-comment">// 2.获取文件夹里的所有内容(文件夹、文件)</span><br>        <span class="hljs-comment">// 3.若文件夹里为空，直接返回</span><br>        <span class="hljs-comment">// 4.文件夹不为空，遍历文件夹所有内容</span><br>        <span class="hljs-comment">// 4.1遍历得到每个File对象，递归判断文件夹里是否还有文件夹...</span><br>        <span class="hljs-comment">// 4.2遍历得到File对象不是文件夹，是文件</span><br>        <span class="hljs-comment">// 4.3得到【包路径+类名称】部分-字符串截取</span><br>        <span class="hljs-comment">// 4.4判断当前类型是否是.class</span><br>        <span class="hljs-comment">// 4.5如果是.class类型，就把\替换成. 并 去掉后缀.class</span><br>        <span class="hljs-comment">// com.example.service.UserServiceImpl  因为只有获取类全路径名才能使用反射</span><br>        <span class="hljs-comment">// 4.6判断类上是否有注解@Bean，如果有，实例化过程</span><br>        <span class="hljs-comment">// 4.7把对象实例化之后，放到map集合beanFactory</span><br>        <span class="hljs-comment">// 小细节:如果有接口，就放接口class作为key，如果没有，就让自己class作为key</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="第三步，配置包扫描过程"><a href="#第三步，配置包扫描过程" class="headerlink" title="第三步，配置包扫描过程"></a>第三步，配置包扫描过程</h3><blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><code class="hljs">步骤<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>判断当前是否是文件夹</li>
+<li>获取文件夹里的所有内容(文件夹、文件)</li>
+<li>若文件夹里为空，直接返回</li>
+<li>文件夹不为空，遍历文件夹所有内容<br>4.1 遍历得到每个File对象，递归判断文件夹里是否还有文件夹…<br>4.2 遍历得到File对象不是文件夹，是文件<br>4.3 得到【包路径+类名称】部分-字符串截取<br>4.4 判断当前类型是否是.class<br>4.5 如果是.class类型，就把\替换成. 并 去掉后缀.class <code>com.example.service.UserServiceImpl 因为只有获取类全路径名才能使用反射</code><br>4.6 判断类上是否有注解@Bean，如果有，实例化过程<br>4.7 把对象实例化之后，放到map集合beanFactory<br>小细节:如果有接口，就放接口class作为key，如果没有，就让自己class作为key</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AnnotationApplicationContext</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ApplicationContext</span> &#123;<br>    <span class="hljs-comment">// 创建Map集合，用于存放Bean对象</span><br>    <span class="hljs-keyword">private</span> Map&lt;Class&lt;?&gt;, Object&gt; beanFactory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-keyword">private</span> String rootPath;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 返回bean对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">getBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span> &#123;<br>        <span class="hljs-keyword">return</span> beanFactory.get(clazz);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 创建有参构造方法，传递包路径，设置包扫描规则</span><br><span class="hljs-comment">     * 当前包及其子包，标注有<span class="hljs-doctag">@Bean</span>注解，把这个类通过反射实例化</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> basePackage 包路径</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AnnotationApplicationContext</span><span class="hljs-params">(String basePackage)</span> &#123;<br>        <span class="hljs-comment">// com.example</span><br>        <span class="hljs-comment">// 1. 将.替换成\</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">packagePath</span> <span class="hljs-operator">=</span> basePackage.replaceAll(<span class="hljs-string">&quot;\\.&quot;</span>, <span class="hljs-string">&quot;\\\\&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">// 2. 获取包的绝对路径</span><br>            Enumeration&lt;URL&gt; urls = Thread.currentThread().getContextClassLoader().getResources(packagePath);<br>            <span class="hljs-comment">// 遍历枚举对象</span><br>            <span class="hljs-keyword">while</span> (urls.hasMoreElements()) &#123;<br>                <span class="hljs-type">URL</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> urls.nextElement();<br>                <span class="hljs-comment">// 斜杠会做url编码，所以要进行转码</span><br>                <span class="hljs-type">String</span> <span class="hljs-variable">filePath</span> <span class="hljs-operator">=</span> URLDecoder.decode(url.getFile(), <span class="hljs-string">&quot;UTF-8&quot;</span>);<br>                <span class="hljs-comment">// 获取包前面的路径部分，字符串截取</span><br>                rootPath=filePath.substring(<span class="hljs-number">0</span>,filePath.length()-packagePath.length());<br>                <span class="hljs-comment">// 包扫描</span><br>                loadBean(<span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(filePath));<br>            &#125;<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 包扫描过程</span><br><span class="hljs-comment">     * 实例化</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">loadBean</span><span class="hljs-params">(File file)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-comment">// 1.判断当前是否是文件夹</span><br>        <span class="hljs-keyword">if</span>(file.isDirectory())&#123;<br>            <span class="hljs-comment">// 2.获取文件夹里的所有内容(文件夹、文件)</span><br>            File[] childrenFiles = file.listFiles();<br>            <span class="hljs-comment">// 3.若文件夹里为空，直接返回</span><br>            <span class="hljs-keyword">if</span>(childrenFiles==<span class="hljs-literal">null</span>||childrenFiles.length==<span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            <span class="hljs-comment">// 4.文件夹不为空，遍历文件夹所有内容</span><br>            <span class="hljs-keyword">for</span>(File child:childrenFiles)&#123;<br>                <span class="hljs-comment">// 4.1遍历得到每个File对象，递归判断文件夹里是否还有文件夹...</span><br>                <span class="hljs-keyword">if</span>(child.isDirectory())&#123;<br>                    <span class="hljs-comment">// 递归</span><br>                    loadBean(child);<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    <span class="hljs-comment">// 4.2遍历得到File对象不是文件夹，是文件</span><br>                    <span class="hljs-comment">// 4.3得到【包路径+类名称】部分-字符串截取</span><br>                    <span class="hljs-type">String</span> <span class="hljs-variable">pathWithClass</span> <span class="hljs-operator">=</span> child.getAbsolutePath().substring(rootPath.length() - <span class="hljs-number">1</span>);<br>                    <span class="hljs-comment">// 4.4判断当前类型是否是.class</span><br>                    <span class="hljs-keyword">if</span>(pathWithClass.contains(<span class="hljs-string">&quot;.class&quot;</span>))&#123;<br>                        <span class="hljs-comment">// 4.5如果是.class类型，就把\替换成. 并 去掉后缀.class</span><br>                        <span class="hljs-comment">// com.example.service.UserServiceImpl  因为只有获取类全路径名才能使用反射</span><br>                        <span class="hljs-type">String</span> <span class="hljs-variable">allName</span> <span class="hljs-operator">=</span> pathWithClass.replaceAll(<span class="hljs-string">&quot;\\\\&quot;</span>, <span class="hljs-string">&quot;.&quot;</span>).replace(<span class="hljs-string">&quot;.class&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);<br>                        <span class="hljs-comment">// 4.6判断类上是否有注解@Bean，如果有，实例化过程</span><br>                        <span class="hljs-comment">// 4.6.1获取类的class对象</span><br>                        Class&lt;?&gt; clazz = Class.forName(allName);<br>                        <span class="hljs-comment">// 4.6.2判断，如果不是接口，则实例化</span><br>                        <span class="hljs-keyword">if</span>(!clazz.isInterface())&#123;<br>                            <span class="hljs-comment">// 4.6.3判断，类上是否有注解@Bean</span><br>                            <span class="hljs-type">Bean</span> <span class="hljs-variable">annotation</span> <span class="hljs-operator">=</span> clazz.getAnnotation(Bean.class);<br>                            <span class="hljs-keyword">if</span>(annotation!=<span class="hljs-literal">null</span>)&#123;<br>                                <span class="hljs-comment">// 类上@Bean有注解</span><br>                                <span class="hljs-comment">// 4.6.4实例化</span><br>                                <span class="hljs-type">Object</span> <span class="hljs-variable">instance</span> <span class="hljs-operator">=</span> clazz.getConstructor().newInstance();<br>                                <span class="hljs-comment">// 4.7把对象实例化之后，放到map集合beanFactory</span><br>                                <span class="hljs-comment">// 4.7.1小细节:如果有接口，就放接口class作为key，如果没有，就让自己class作为key</span><br>                                <span class="hljs-keyword">if</span>(clazz.getInterfaces().length&gt;<span class="hljs-number">0</span>)&#123;<br>                                    beanFactory.put(clazz.getInterfaces()[<span class="hljs-number">0</span>],instance);<br>                                &#125;<span class="hljs-keyword">else</span>&#123;<br>                                    beanFactory.put(clazz,instance);<br>                                &#125;<br>                            &#125;<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="第四步，测试-Bean注解"><a href="#第四步，测试-Bean注解" class="headerlink" title="第四步，测试@Bean注解"></a>第四步，测试@Bean注解</h3><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">insert</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Bean</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">insert</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;userDao--insert&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">()</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Bean</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Di</span><br>    <span class="hljs-keyword">private</span> UserDao userDao;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;service--add&quot;</span>);<br>        <span class="hljs-comment">// TODO 调用dao的方法</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AnnotationApplicationContext</span>(<span class="hljs-string">&quot;com.example&quot;</span>);<br>        <span class="hljs-type">UserService</span> <span class="hljs-variable">userService</span> <span class="hljs-operator">=</span> (UserService) context.getBean(UserService.class);<br>        System.out.println(userService);<br>        userService.add();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="第五步，编写-Di注解属性注入逻辑"><a href="#第五步，编写-Di注解属性注入逻辑" class="headerlink" title="第五步，编写@Di注解属性注入逻辑"></a>第五步，编写@Di注解属性注入逻辑</h3><blockquote>
+<p>实例化对象在beanFactory的map集合里<br>1.遍历beanFactory的map集合<br>2.获取map集合每个对象(value)，每个对象的属性获取到<br>3.遍历得到每个对象属性数组，得到每个属性<br>4.属性上是否有@Di的注解(如果是私有属性，需要设置为【可以设置值】)<br>5.如果有@Di的注解，把对象注入</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AnnotationApplicationContext</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">ApplicationContext</span> &#123;<br>    <span class="hljs-comment">// 创建Map集合，用于存放Bean对象</span><br>    <span class="hljs-keyword">private</span> Map&lt;Class&lt;?&gt;, Object&gt; beanFactory = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    <span class="hljs-keyword">private</span> String rootPath;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 返回bean对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">getBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span> &#123;<br>        <span class="hljs-keyword">return</span> beanFactory.get(clazz);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 创建有参构造方法，传递包路径，设置包扫描规则</span><br><span class="hljs-comment">     * 当前包及其子包，标注有<span class="hljs-doctag">@Bean</span>注解，把这个类通过反射实例化</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> basePackage 包路径</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AnnotationApplicationContext</span><span class="hljs-params">(String basePackage)</span> &#123;<br>        <span class="hljs-comment">// com.example</span><br>        <span class="hljs-comment">// 1. 将.替换成\</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">packagePath</span> <span class="hljs-operator">=</span> basePackage.replaceAll(<span class="hljs-string">&quot;\\.&quot;</span>, <span class="hljs-string">&quot;\\\\&quot;</span>);<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">// 2. 获取包的绝对路径</span><br>            Enumeration&lt;URL&gt; urls = Thread.currentThread().getContextClassLoader().getResources(packagePath);<br>            <span class="hljs-comment">// 遍历枚举对象</span><br>            <span class="hljs-keyword">while</span> (urls.hasMoreElements()) &#123;<br>                <span class="hljs-type">URL</span> <span class="hljs-variable">url</span> <span class="hljs-operator">=</span> urls.nextElement();<br>                <span class="hljs-comment">// 斜杠会做url编码，所以要进行转码</span><br>                <span class="hljs-type">String</span> <span class="hljs-variable">filePath</span> <span class="hljs-operator">=</span> URLDecoder.decode(url.getFile(), <span class="hljs-string">&quot;UTF-8&quot;</span>);<br>                <span class="hljs-comment">// 获取包前面的路径部分，字符串截取</span><br>                rootPath = filePath.substring(<span class="hljs-number">0</span>, filePath.length() - packagePath.length());<br>                <span class="hljs-comment">// 包扫描</span><br>                loadBean(<span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(filePath));<br>            &#125;<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>        <span class="hljs-comment">// 属性注入</span><br>        loadDi();<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 属性注入</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">loadDi</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 实例化对象在beanFactory的map集合里</span><br>        <span class="hljs-comment">// 1.遍历beanFactory的map集合</span><br>        Set&lt;Map.Entry&lt;Class&lt;?&gt;, Object&gt;&gt; entries = beanFactory.entrySet();<br>        <span class="hljs-keyword">for</span> (Map.Entry&lt;Class&lt;?&gt;, Object&gt; entry : entries) &#123;<br>            <span class="hljs-comment">// 2.获取map集合每个对象(value)，每个对象的属性获取到</span><br>            <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> entry.getValue();<br>            <span class="hljs-comment">// 获取对象class</span><br>            Class&lt;?&gt; clazz = obj.getClass();<br>            <span class="hljs-comment">// 获取每个对象中的属性</span><br>            Field[] declaredFields = clazz.getDeclaredFields();<br>            <span class="hljs-comment">// 3.遍历得到每个对象属性数组，得到每个属性</span><br>            <span class="hljs-keyword">for</span> (Field field : declaredFields) &#123;<br>                <span class="hljs-comment">// 4.属性上是否有@Di的注解(如果是私有属性，需要设置为【可以设置值】)</span><br>                <span class="hljs-type">Di</span> <span class="hljs-variable">annotation</span> <span class="hljs-operator">=</span> field.getAnnotation(Di.class);<br>                <span class="hljs-keyword">if</span> (annotation != <span class="hljs-literal">null</span>) &#123;<br>                    <span class="hljs-comment">// 属性上有@Di注解</span><br>                    <span class="hljs-comment">// 如果是私有属性，需要设置为【可设置值】</span><br>                    field.setAccessible(<span class="hljs-literal">true</span>);<br>                    <span class="hljs-comment">// 5.如果有@Di的注解，把对象注入</span><br>                    System.out.println(<span class="hljs-string">&quot;类型:&quot;</span>+field.getType());<br>                    <span class="hljs-keyword">try</span> &#123;<br>                        field.set(obj, beanFactory.get(field.getType()));<br>                    &#125; <span class="hljs-keyword">catch</span> (IllegalAccessException e) &#123;<br>                        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 包扫描过程</span><br><span class="hljs-comment">     * 实例化</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">loadBean</span><span class="hljs-params">(File file)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-comment">// 1.判断当前是否是文件夹</span><br>        <span class="hljs-keyword">if</span> (file.isDirectory()) &#123;<br>            <span class="hljs-comment">// 2.获取文件夹里的所有内容(文件夹、文件)</span><br>            File[] childrenFiles = file.listFiles();<br>            <span class="hljs-comment">// 3.若文件夹里为空，直接返回</span><br>            <span class="hljs-keyword">if</span> (childrenFiles == <span class="hljs-literal">null</span> || childrenFiles.length == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            <span class="hljs-comment">// 4.文件夹不为空，遍历文件夹所有内容</span><br>            <span class="hljs-keyword">for</span> (File child : childrenFiles) &#123;<br>                <span class="hljs-comment">// 4.1遍历得到每个File对象，递归判断文件夹里是否还有文件夹...</span><br>                <span class="hljs-keyword">if</span> (child.isDirectory()) &#123;<br>                    <span class="hljs-comment">// 递归</span><br>                    loadBean(child);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-comment">// 4.2遍历得到File对象不是文件夹，是文件</span><br>                    <span class="hljs-comment">// 4.3得到【包路径+类名称】部分-字符串截取</span><br>                    <span class="hljs-type">String</span> <span class="hljs-variable">pathWithClass</span> <span class="hljs-operator">=</span> child.getAbsolutePath().substring(rootPath.length() - <span class="hljs-number">1</span>);<br>                    <span class="hljs-comment">// 4.4判断当前类型是否是.class</span><br>                    <span class="hljs-keyword">if</span> (pathWithClass.contains(<span class="hljs-string">&quot;.class&quot;</span>)) &#123;<br>                        <span class="hljs-comment">// 4.5如果是.class类型，就把\替换成. 并 去掉后缀.class</span><br>                        <span class="hljs-comment">// com.example.service.UserServiceImpl  因为只有获取类全路径名才能使用反射</span><br>                        <span class="hljs-type">String</span> <span class="hljs-variable">allName</span> <span class="hljs-operator">=</span> pathWithClass.replaceAll(<span class="hljs-string">&quot;\\\\&quot;</span>, <span class="hljs-string">&quot;.&quot;</span>).replace(<span class="hljs-string">&quot;.class&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);<br>                        <span class="hljs-comment">// 4.6判断类上是否有注解@Bean，如果有，实例化过程</span><br>                        <span class="hljs-comment">// 4.6.1获取类的class对象</span><br>                        Class&lt;?&gt; clazz = Class.forName(allName);<br>                        <span class="hljs-comment">// 4.6.2判断，如果不是接口，则实例化</span><br>                        <span class="hljs-keyword">if</span> (!clazz.isInterface()) &#123;<br>                            <span class="hljs-comment">// 4.6.3判断，类上是否有注解@Bean</span><br>                            <span class="hljs-type">Bean</span> <span class="hljs-variable">annotation</span> <span class="hljs-operator">=</span> clazz.getAnnotation(Bean.class);<br>                            <span class="hljs-keyword">if</span> (annotation != <span class="hljs-literal">null</span>) &#123;<br>                                <span class="hljs-comment">// 类上@Bean有注解</span><br>                                <span class="hljs-comment">// 4.6.4实例化</span><br>                                <span class="hljs-type">Object</span> <span class="hljs-variable">instance</span> <span class="hljs-operator">=</span> clazz.getConstructor().newInstance();<br>                                <span class="hljs-comment">// 4.7把对象实例化之后，放到map集合beanFactory</span><br>                                <span class="hljs-comment">// 4.7.1小细节:如果有接口，就放接口class作为key，如果没有，就让自己class作为key</span><br>                                <span class="hljs-keyword">if</span> (clazz.getInterfaces().length &gt; <span class="hljs-number">0</span>) &#123;<br>                                    beanFactory.put(clazz.getInterfaces()[<span class="hljs-number">0</span>], instance);<br>                                &#125; <span class="hljs-keyword">else</span> &#123;<br>                                    beanFactory.put(clazz, instance);<br>                                &#125;<br>                            &#125;<br>                        &#125;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Bean</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Di</span><br>    <span class="hljs-keyword">private</span> UserDao userDao;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;service--add&quot;</span>);<br>        <span class="hljs-comment">// 调用dao的方法</span><br>        userDao.insert();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152336525.png" alt="image-20230409150523624" data-caption="image-20230409150523624" loading="lazy"></p>
+<hr>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Spring6/" rel="tag">Spring6</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring6%E5%AD%A6%E4%B9%A004"><span class="toc-number">1.</span> <span class="toc-text">Spring6学习04</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%86%99IOC"><span class="toc-number">1.1.</span> <span class="toc-text">手写IOC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%8C%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.1.</span> <span class="toc-text">第一步，搭建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%8C%E9%85%8D%E7%BD%AE%E6%89%AB%E6%8F%8F%E8%A7%84%E5%88%99"><span class="toc-number">1.1.2.</span> <span class="toc-text">第二步，配置扫描规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%8C%E9%85%8D%E7%BD%AE%E5%8C%85%E6%89%AB%E6%8F%8F%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text">第三步，配置包扫描过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%8C%E6%B5%8B%E8%AF%95-Bean%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.1.4.</span> <span class="toc-text">第四步，测试@Bean注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E6%AD%A5%EF%BC%8C%E7%BC%96%E5%86%99-Di%E6%B3%A8%E8%A7%A3%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.5.</span> <span class="toc-text">第五步，编写@Di注解属性注入逻辑</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

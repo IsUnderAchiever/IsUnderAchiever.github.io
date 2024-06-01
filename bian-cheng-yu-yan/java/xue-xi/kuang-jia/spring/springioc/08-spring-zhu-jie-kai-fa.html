@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>08_Spring注解开发 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Spring注解开发&lt;bean class&#x3D;&quot;com.example.entity.User&quot; id&#x3D;&quot;userEntity&quot;&#x2F;&gt; 等同于@Data@Component(&quot;userEntity&quot;)public class User &amp;#123;    private Integer uid;    private String">
+<meta property="og:type" content="article">
+<meta property="og:title" content="08_Spring注解开发">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/springioc/08-spring-zhu-jie-kai-fa.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="Spring注解开发&lt;bean class&#x3D;&quot;com.example.entity.User&quot; id&#x3D;&quot;userEntity&quot;&#x2F;&gt; 等同于@Data@Component(&quot;userEntity&quot;)public class User &amp;#123;    private Integer uid;    private String">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201921812.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922865.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922816.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922579.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922963.png">
+<meta property="article:published_time" content="2023-01-15T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.977Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="SpringIOC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201921812.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230614">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230614">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230614">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230614"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230614"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="08_Spring注解开发" loading="lazy">
+            <h1>08_Spring注解开发</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年01月15日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/SpringIOC/">SpringIOC</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="Spring注解开发"><a href="#Spring注解开发" class="headerlink" title="Spring注解开发"></a>Spring注解开发</h2><figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.example.entity.User&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userEntity&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="等同于-注解开发的准备工作-开启组件扫描如果要使用注解开发必须要开启组件扫描，这样加了注解的类才会被识别出来。Spring才能去解析其中的注解。"><a href="#等同于-注解开发的准备工作-开启组件扫描如果要使用注解开发必须要开启组件扫描，这样加了注解的类才会被识别出来。Spring才能去解析其中的注解。" class="headerlink" title="等同于&gt; 注解开发的准备工作### 开启组件扫描如果要使用注解开发必须要开启组件扫描，这样加了注解的类才会被识别出来。Spring才能去解析其中的注解。"></a>等同于<br><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@Component(&quot;userEntity&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> Integer uid;<br>    <span class="hljs-keyword">private</span> String username;<br>    <span class="hljs-keyword">private</span> String password;<br>&#125;<br></code></pre></td></tr></table></figure><br>&gt; 注解开发的准备工作<br>### 开启组件扫描<br>如果要使用注解开发必须要开启组件扫描，这样加了注解的类才会被识别出来。Spring才能去解析其中的注解。<br><figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--启动组件扫描，指定对应扫描的包路径，该包及其子包下所有的类都会被扫描，加载包含指定注解的类--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.example&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure></h2><blockquote>
+<p>这里试一下连接数据库，查数据<br>普通的jdbc的方法</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- applicationContext --&gt;</span><br><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.example&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">resource</span>=<span class="hljs-string">&quot;classpath:/mysql/jdbc.xml&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- jdbc.xml --&gt;</span><br><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:property-placeholder</span> <span class="hljs-attr">location</span>=<span class="hljs-string">&quot;classpath:mysql/jdbc.properties&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dataSource&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driverClassName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;spring.datasource.driver-class-name&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;spring.datasource.url&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;spring.datasource.username&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;spring.datasource.password&#125;&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">spring.datasource.url</span>= <span class="hljs-string">jdbc:mysql://localhost:3306/test?serverTimezone=UTC</span><br><span class="hljs-attr">spring.datasource.username</span>= <span class="hljs-string">root</span><br><span class="hljs-attr">spring.datasource.password</span>= <span class="hljs-string">123456</span><br><span class="hljs-attr">spring.datasource.driver-class-name</span>= <span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br><span class="hljs-attr">spring.datasource.name</span>= <span class="hljs-string">com.alibaba.druid.pool.DruidDataSource</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    String <span class="hljs-title function_">selectUserById</span><span class="hljs-params">(Integer id)</span>;<br>    String <span class="hljs-title function_">updateUserStatusById</span><span class="hljs-params">(Integer id,String status)</span>;<br>&#125;<br><span class="hljs-meta">@Repository(&quot;userDao&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">selectUserById</span><span class="hljs-params">(Integer id)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;select * from user where uid=&quot;</span>+id;<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">updateUserStatusById</span><span class="hljs-params">(Integer id,String status)</span> &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;update user set status=&#x27;&quot;</span>+status+<span class="hljs-string">&quot;&#x27; where uid=&quot;</span>+id;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Application_10</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-type">int</span> id=<span class="hljs-number">1</span>;<br>        String status=<span class="hljs-string">&quot;睡觉&quot;</span>;<br>        <span class="hljs-type">ClassPathXmlApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br>        <span class="hljs-type">DruidDataSource</span> <span class="hljs-variable">dataSource</span> <span class="hljs-operator">=</span> (DruidDataSource) context.getBean(<span class="hljs-string">&quot;dataSource&quot;</span>);<br>        UserDao userDao= (UserDao) context.getBean(<span class="hljs-string">&quot;userDao&quot;</span>);<br>        <span class="hljs-comment">// 1.导入驱动jar包</span><br>        <span class="hljs-comment">// 2.加载驱动</span><br>        Class.forName(dataSource.getDriverClassName());<br>        <span class="hljs-comment">// 3.获取数据库连接对象</span><br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">connection</span> <span class="hljs-operator">=</span> DriverManager.getConnection(dataSource.getUrl(), dataSource.getUsername(), dataSource.getPassword());<br>        <span class="hljs-comment">// 4.定义sql语句</span><br>        <span class="hljs-comment">// 5.获取执行sql语句的对象</span><br>        <span class="hljs-type">Statement</span> <span class="hljs-variable">statement</span> <span class="hljs-operator">=</span> connection.createStatement();<br>        <span class="hljs-comment">// 6.执行sql并接收返回的对象</span><br>        statement.executeUpdate(userDao.updateUserStatusById(id,status));<br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">resultSet</span> <span class="hljs-operator">=</span> statement.executeQuery(userDao.selectUserById(id));<br>        <span class="hljs-comment">// 7.处理结果</span><br>        <span class="hljs-keyword">while</span> (resultSet.next()) &#123;<br>            System.out.println(<span class="hljs-string">&quot;User(&quot;</span> + resultSet.getInt(<span class="hljs-string">&quot;uid&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getString(<span class="hljs-string">&quot;name&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getString(<span class="hljs-string">&quot;gender&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getInt(<span class="hljs-string">&quot;age&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span> +<br>                    resultSet.getInt(<span class="hljs-string">&quot;parent_id&quot;</span>) + <span class="hljs-string">&#x27;,&#x27;</span>+<br>                    resultSet.getString(<span class="hljs-string">&quot;status&quot;</span>)+<span class="hljs-string">&quot;)&quot;</span>);<br>        &#125;<br>        <span class="hljs-comment">// 8.关闭连接，释放资源</span><br>        resultSet.close();<br>        statement.close();<br>        connection.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>将uid为1的<code>user</code>的<code>status</code>字段更新为<code>睡觉</code>后查询输出<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201921812.png" alt="1" data-caption="1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922865.png" alt="2" data-caption="2" loading="lazy"><br>常用注解有<code>@Component</code>、<code>@Repository</code>、<code>@Service</code>、<code>@Controller</code></p>
+</blockquote>
+<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><blockquote>
+<p><code>@Value</code>并不依赖于<code>set方法</code>，支持SPEL表达式</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@ToString</span><br><span class="hljs-meta">@Component(&quot;userEntity&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;1&quot;)</span><br>    <span class="hljs-keyword">private</span> Integer uid;<br>    <span class="hljs-meta">@Value(&quot;admin&quot;)</span><br>    <span class="hljs-keyword">private</span> String username;<br>    <span class="hljs-meta">@Value(&quot;123456&quot;)</span><br>    <span class="hljs-keyword">private</span> String password;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ClassPathXmlApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br>        <span class="hljs-type">User</span> <span class="hljs-variable">userEntity</span> <span class="hljs-operator">=</span> (User) context.getBean(<span class="hljs-string">&quot;userEntity&quot;</span>);<br>        System.out.println(userEntity);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>我这里<code>User类</code>并没有给<code>set方法</code>，并不影响运行结果，说明<code>@Value</code>并不依赖于<code>set方法</code></p>
+</blockquote>
+<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922816.png" alt="3" data-caption="3" loading="lazy"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;名字&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br><span class="hljs-meta">@Service(&quot;service&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserDao userDao;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ClassPathXmlApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;applicationContext.xml&quot;</span>);<br>        <span class="hljs-comment">//User userEntity = (User) context.getBean(&quot;userEntity&quot;);</span><br>        <span class="hljs-comment">//System.out.println(userEntity);</span><br>        <span class="hljs-type">UserService</span> <span class="hljs-variable">userService</span> <span class="hljs-operator">=</span> (UserService) context.getBean(<span class="hljs-string">&quot;service&quot;</span>);<br>        System.out.println(userService);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h3><blockquote>
+<p>假如说，我们现在有多个<code>UserDaoImpl</code>实现<code>UserDao</code><br>此时<code>@Autowired</code>根据类型会找到多个类，此时会发生报错</p>
+<p><code>No qualifying bean of type &#39;org.example.dao.UserDao&#39; available: expected single matching bean but found 2: userDao1,userDao2</code></p>
+<p>如何解决？<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922579.png" alt="4" data-caption="4" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserDao</span> &#123;<br>&#125;<br><span class="hljs-meta">@Repository(&quot;userDao1&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;名字&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br><span class="hljs-meta">@Repository(&quot;userDao2&quot;)</span><br><span class="hljs-meta">@ToString</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserDaoImpl2</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">UserDao</span> &#123;<br>    <span class="hljs-meta">@Value(&quot;名字2&quot;)</span><br>    <span class="hljs-keyword">private</span> String name;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201922963.png" alt="5" data-caption="5" loading="lazy"></p>
+<blockquote>
+<p>可以看到Idea这里也提示了报错信息</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Service(&quot;userService&quot;)</span><br><span class="hljs-meta">@ToString</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-meta">@Qualifier(&quot;userDao1&quot;)</span><br>    <span class="hljs-keyword">private</span> UserDao userDao;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>可以通过<code>@Qualifier(&quot;BeanName&quot;)</code>来指定对应的bean<br>这里的<code>@Qualifier(&quot;userDao1&quot;)</code>和<code>UserDao</code>接口下的<code>@Repository(&quot;userDao1&quot;)</code>对应</p>
+<blockquote>
+<p>注意，<code>@Qualifier</code>注解不能单独使用，需配合<code>@Autowired</code>来使用</p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/SpringIOC/" rel="tag">SpringIOC</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">Spring注解开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E5%90%8C%E4%BA%8E-%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C-%E5%BC%80%E5%90%AF%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%E5%A6%82%E6%9E%9C%E8%A6%81%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E8%A6%81%E5%BC%80%E5%90%AF%E7%BB%84%E4%BB%B6%E6%89%AB%E6%8F%8F%EF%BC%8C%E8%BF%99%E6%A0%B7%E5%8A%A0%E4%BA%86%E6%B3%A8%E8%A7%A3%E7%9A%84%E7%B1%BB%E6%89%8D%E4%BC%9A%E8%A2%AB%E8%AF%86%E5%88%AB%E5%87%BA%E6%9D%A5%E3%80%82Spring%E6%89%8D%E8%83%BD%E5%8E%BB%E8%A7%A3%E6%9E%90%E5%85%B6%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3%E3%80%82"><span class="toc-number">2.</span> <span class="toc-text">等同于@Data@Component(&quot;userEntity&quot;)public class User {    private Integer uid;    private String username;    private String password;}&gt; 注解开发的准备工作### 开启组件扫描如果要使用注解开发必须要开启组件扫描，这样加了注解的类才会被识别出来。Spring才能去解析其中的注解。&lt;!--启动组件扫描，指定对应扫描的包路径，该包及其子包下所有的类都会被扫描，加载包含指定注解的类--&gt;&lt;context:component-scan base-package&#x3D;&quot;com.example&quot;&#x2F;&gt;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Value"><span class="toc-number">2.1.</span> <span class="toc-text">@Value</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Autowired"><span class="toc-number">2.2.</span> <span class="toc-text">@Autowired</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Qualifier"><span class="toc-number">2.3.</span> <span class="toc-text">@Qualifier</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

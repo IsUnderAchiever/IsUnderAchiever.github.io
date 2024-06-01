@@ -1,0 +1,169 @@
+<hr>
+<h2 id="permalink-“-编程语言-Vue-Vue3-Vue3学习-02-html”title-Reactive全家桶date-2023-07-13-23-00-00categories-“vue3”tags-“vue3”"><a href="#permalink-“-编程语言-Vue-Vue3-Vue3学习-02-html”title-Reactive全家桶date-2023-07-13-23-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;02.html”title: Reactive全家桶date: 2023-07-13 23:00:00categories: “vue3”tags: “vue3”"></a>permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;02.html”<br>title: Reactive全家桶<br>date: 2023-07-13 23:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="02-Reactive全家桶"><a href="#02-Reactive全家桶" class="headerlink" title="02.Reactive全家桶"></a>02.Reactive全家桶</h1><h2 id="reactive"><a href="#reactive" class="headerlink" title="reactive"></a>reactive</h2><blockquote>
+<p>reactive(‘’)不支持string类型</p>
+<p>查看源码可知，只支持引用类型，object、map、set</p>
+<p>而ref都支持<br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132214501.png" alt="image-20230713221217293"><br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132214316.png" alt="image-20230713221436279"><br>reactive在赋值时无需使用<code>.value</code></p>
+<p>而ref需要</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;{{user.name}}--{{user.gender}}&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, ref} from &#39;vue&#39;;
+import {Button} from &quot;ant-design-vue&quot;;
+let user=reactive({
+  name:&#39;马小跳&#39;,
+  gender:&#39;男&#39;
+});
+let test1=()=&gt;{
+  user.name=&#39;洛洛&#39;;
+  console.log(user);
+}
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<blockquote>
+<p>阻止默认事件</p>
+<p><code>@click.prevent</code></p>
+</blockquote>
+<pre><code class="html">  &lt;form&gt;
+      &lt;button @click.prevent=&quot;test1&quot;&gt;test2&lt;/button&gt;
+  &lt;/form&gt;
+</code></pre>
+<blockquote>
+<p>reactive是经过proxy代理的对象，直接赋值会失去响应式</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p v-for=&quot;user in users&quot;&gt;{{user}}&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, ref} from &#39;vue&#39;;
+let users=reactive&lt;string[]&gt;([]);
+let test1=()=&gt;{
+  // 假设res为获取到的数据
+  let res=[&#39;小满&#39;,&#39;辣辣&#39;,&#39;路西&#39;];
+  // 失去响应式
+  users=res;
+  console.log(users);
+}
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>正确方法如下<br><strong>方法1</strong></p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p v-for=&quot;user in users&quot;&gt;{{user}}&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, ref} from &#39;vue&#39;;
+let users=reactive&lt;string[]&gt;([]);
+let test1=()=&gt;{
+  // 假设res为获取到的数据
+  let res=[&#39;小满&#39;,&#39;辣辣&#39;,&#39;路西&#39;];
+  // 正确方法1
+  // 结构后赋值
+  users.push(...res);
+  console.log(users);
+}
+&lt;/script&gt;
+</code></pre>
+<p><strong>方法2</strong></p>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;p v-for=&quot;user in users.arr&quot;&gt;{{user}}&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, ref} from &#39;vue&#39;;
+let users=reactive&lt;{arr:string[]}&gt;({arr:[]});
+let test1=()=&gt;{
+  // 假设res为获取到的数据
+  let res=[&#39;小满&#39;,&#39;辣辣&#39;,&#39;路西&#39;];
+  // 正确方法2
+  users.arr=res;
+  console.log(users);
+}
+&lt;/script&gt;
+</code></pre>
+<h2 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h2><blockquote>
+<p>无法修改readonly修饰的值，报错<code>Attempt to assign to const or readonly variable </code><br><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132232965.png" alt="image-20230713223221913"><br>但是会受<code>reactive</code>影响</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, readonly, ref} from &#39;vue&#39;;
+import {message} from &quot;ant-design-vue&quot;;
+let user=reactive({name:&#39;小荷&#39;});
+const readUser=readonly(user);
+let test1=()=&gt;{
+  user.name=&#39;小满&#39;;
+  message.success(readUser.name)
+}
+&lt;/script&gt;
+</code></pre>
+<p><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132234118.png" alt="image-20230713223406071"></p>
+<h2 id="shallowReactive"><a href="#shallowReactive" class="headerlink" title="shallowReactive"></a>shallowReactive</h2><blockquote>
+<p>与<code>shallowRef</code>类似</p>
+<p><code>只能对浅层的数据 如果是深层的数据只会改变值 不会改变视图</code></p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  {{ user.name.firstName }}{{ user.name.lastName }}--{{user.gender}}
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, readonly, ref, shallowReactive} from &#39;vue&#39;;
+import {message} from &quot;ant-design-vue&quot;;
+let user = shallowReactive({
+  name: {
+    firstName: &#39;赵&#39;,
+    lastName: &#39;子龙&#39;
+  },
+  gender: &#39;男&#39;
+});
+let test1 = () =&gt; {
+  user.name.firstName = &#39;貂&#39;
+  user.name.lastName = &#39;蝉&#39;
+  user.gender = &#39;女&#39;
+}
+&lt;/script&gt;
+</code></pre>
+<p><img src="https://gitee.com/tongstyle/blog-img/raw/master/img/202307132249201.png" alt="image-20230713224921165"></p>
+<blockquote>
+<p>不是说好不改变视图的吗？</p>
+<p>和<code>shallowRef</code>一样，shallowReactive也会受reactive影响</p>
+<p>当gender属性改变时，触发了强制更新</p>
+<p>所以如下代码即可</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  {{ user.name.firstName }}{{ user.name.lastName }}--{{user.gender}}
+  &lt;a-button danger @click=&quot;test1&quot;&gt;test1&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineComponent, reactive, readonly, ref, shallowReactive} from &#39;vue&#39;;
+import {message} from &quot;ant-design-vue&quot;;
+let user = shallowReactive({
+  name: {
+    firstName: &#39;赵&#39;,
+    lastName: &#39;子龙&#39;
+  },
+  gender: &#39;男&#39;
+});
+let test1 = () =&gt; {
+  user.name.firstName = &#39;貂&#39;
+  user.name.lastName = &#39;蝉&#39;
+  // user.gender = &#39;女&#39;
+}
+&lt;/script&gt;
+</code></pre>

@@ -1,0 +1,232 @@
+<hr>
+<h2 id="permalink-“-编程语言-Vue-Vue3-Vue3学习-01-html”title-Ref全家桶date-2023-07-13-23-00-00categories-“vue3”tags-“vue3”"><a href="#permalink-“-编程语言-Vue-Vue3-Vue3学习-01-html”title-Ref全家桶date-2023-07-13-23-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;01.html”title: Ref全家桶date: 2023-07-13 23:00:00categories: “vue3”tags: “vue3”"></a>permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;01.html”<br>title: Ref全家桶<br>date: 2023-07-13 23:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="01-Ref全家桶"><a href="#01-Ref全家桶" class="headerlink" title="01.Ref全家桶"></a>01.Ref全家桶</h1><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><pre><code class="vue">&lt;template&gt;
+  &lt;p&gt;message1:{{ message1 }}&lt;/p&gt;
+  &lt;a-button @click=&quot;refTest&quot;&gt;Ref测试&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot;&gt;
+import {customRef, defineComponent, isRef, reactive, ref, shallowRef, triggerRef} from &#39;vue&#39;;
+import {notification} from &quot;ant-design-vue&quot;;
+export default defineComponent({
+  name: &#39;&#39;,
+  setup() {
+    let message1 = ref&lt;string&gt;(&quot;信息&quot;)
+    /**
+     * 测试ref
+     * 接受一个内部值并返回一个响应式且可变的 ref 对象
+     */
+    let refTest = () =&gt; {
+      message1.value += &quot;=&quot;
+      notification[&#39;success&#39;]({
+        message: &#39;测试ref&#39;,
+        description:
+            &#39;测试成功&#39;,
+      });
+    }
+    return {
+      message1,
+      refTest,
+    }
+  }
+})
+&lt;/script&gt;
+</code></pre>
+<h2 id="isRef"><a href="#isRef" class="headerlink" title="isRef"></a>isRef</h2><pre><code class="vue">&lt;template&gt;
+  &lt;p&gt;message1:{{ message1 }}&lt;/p&gt;
+  &lt;p&gt;message2:{{ message2 }}&lt;/p&gt;
+  &lt;a-button @click=&quot;isRefTest&quot;&gt;isRef测试&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot;&gt;
+import {customRef, defineComponent, isRef, onMounted, reactive, ref, shallowRef, triggerRef} from &#39;vue&#39;;
+import {notification} from &quot;ant-design-vue&quot;;
+export default defineComponent({
+  name: &#39;&#39;,
+  setup() {
+    let message1 = ref&lt;string&gt;(&quot;信息&quot;)
+    let message2 = &quot;信息&quot;
+    /**
+     * 测试isRef
+     * 判断是不是一个ref对象
+     */
+    let isRefTest = () =&gt; {
+      notification[&#39;success&#39;]({
+        message: &#39;测试isRef&#39;,
+        description:
+            &#39;message1&#39; + (isRef(message1) ? &#39;是&#39; : &#39;不是&#39;) + &#39;ref//&#39; + &#39;message2&#39; + (isRef(message2) ? &#39;是&#39; : &#39;不是&#39;) + &#39;ref&#39;,
+      });
+    }
+    
+    return {
+      message1,
+      message2,
+      isRefTest
+    }
+  }
+})
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<h2 id="shallowRef"><a href="#shallowRef" class="headerlink" title="shallowRef"></a>shallowRef</h2><pre><code class="vue">&lt;template&gt;
+  &lt;p&gt;message3:{{ message3 }}&lt;/p&gt;
+  &lt;a-button @click=&quot;shallowRefTest(true)&quot;&gt;shallowRef测试&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot;&gt;
+import {customRef, defineComponent, isRef, onMounted, reactive, ref, shallowRef, triggerRef} from &#39;vue&#39;;
+import {notification} from &quot;ant-design-vue&quot;;
+export default defineComponent({
+  name: &#39;&#39;,
+  setup() {
+    let message3 = shallowRef({
+      name: &#39;马小跳&#39;
+    })
+    /**
+     * 测试shallowRef
+     */
+    let shallowRefTest = (flag: boolean) =&gt; {
+      // 有以下两种方法
+      // 只有直接直接针对value来进行修改才会触发响应式
+      if (!flag) {
+        // 不会变成响应式的情况
+        message3.value.name = &#39;aaa&#39;;
+        notification[&#39;error&#39;]({
+          message: &#39;测试shallowRef&#39;,
+          description: &#39;没有响应式变化&#39;
+        });
+      } else {
+        // 会变成响应式的情况
+        message3.value = {name: &#39;aaa&#39;};
+        notification[&#39;success&#39;]({
+          message: &#39;测试shallowRef&#39;,
+          description: &#39;发生响应式变化&#39;
+        });
+      }
+    }
+    return {
+      message3,
+      shallowRefTest
+    }
+  }
+})
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<h2 id="triggerRef"><a href="#triggerRef" class="headerlink" title="triggerRef"></a>triggerRef</h2><pre><code class="vue">&lt;template&gt;
+  &lt;p&gt;message3:{{ message3 }}&lt;/p&gt;
+  &lt;a-button @click=&quot;triggerRefTest&quot;&gt;triggerRef测试&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot;&gt;
+import {customRef, defineComponent, isRef, onMounted, reactive, ref, shallowRef, triggerRef} from &#39;vue&#39;;
+import {notification} from &quot;ant-design-vue&quot;;
+export default defineComponent({
+  name: &#39;&#39;,
+  setup() {
+    let message3 = shallowRef({
+      name: &#39;马小跳&#39;
+    })
+    /**
+     * 强制更新页面DOM
+     */
+    let triggerRefTest = () =&gt; {
+      message3.value.name = &#39;bbb&#39;;
+      triggerRef(message3);
+      notification[&#39;success&#39;]({
+        message: &#39;测试triggerRef&#39;,
+        description: &#39;已经强制更新页面DOM&#39;
+      });
+    }
+  
+    return {
+      message3,
+      triggerRefTest
+    }
+  }
+})
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<h2 id="customRef"><a href="#customRef" class="headerlink" title="customRef"></a>customRef</h2><pre><code class="vue">&lt;template&gt;
+  &lt;p&gt;message4:{{ message4 }}&lt;/p&gt;
+  &lt;a-button @click=&quot;customRefTest&quot;&gt;customRef测试&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot;&gt;
+import {customRef, defineComponent, isRef, onMounted, reactive, ref, shallowRef, triggerRef} from &#39;vue&#39;;
+import {notification} from &quot;ant-design-vue&quot;;
+export default defineComponent({
+  name: &#39;&#39;,
+  setup() {
+    let message4=myCustomRef(&#39;哈哈哈&#39;);
+    /**
+     * 自定义ref
+     * customRef 是个工厂函数要求我们返回一个对象 并且实现 get 和 set
+     * 适合去做防抖之类的
+     */
+    function myCustomRef(value) {
+      let timer: any;
+      return customRef((track, trigger) =&gt; {
+        return {
+          get() {
+            track();
+            return value;
+          },
+          set(newVal) {
+            // 制作防抖
+            clearTimeout(timer)
+            timer = setTimeout(() =&gt; {
+              console.log(&#39;触发了set&#39;)
+              value = newVal
+              timer = null;
+              notification[&#39;success&#39;]({
+                message: &#39;测试customRef&#39;,
+                description: &#39;已经调用customRefTest方法&#39;
+              });
+              trigger();
+            }, 500)
+          }
+        }
+      })
+    }
+    let customRefTest=()=&gt;{
+      message4.value+=&#39;==&#39;
+    }
+    return {
+      message4,
+      customRefTest
+    }
+  }
+})
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>
+<h2 id="标签中的ref属性"><a href="#标签中的ref属性" class="headerlink" title="标签中的ref属性"></a>标签中的ref属性</h2><pre><code class="vue">&lt;template&gt;
+  &lt;div ref=&quot;dom&quot;&gt;aaa&lt;/div&gt;
+  &lt;a-button @click=&quot;buttonTest&quot;&gt;ref属性测试&lt;/a-button&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot;&gt;
+import {customRef, defineComponent, isRef, onMounted, reactive, ref, shallowRef, triggerRef} from &#39;vue&#39;;
+import {notification} from &quot;ant-design-vue&quot;;
+export default defineComponent({
+  name: &#39;&#39;,
+  setup() {
+    const dom=ref&lt;HTMLDivElement&gt;()
+    /**
+     * 获取到元素节点
+     * 要求:ref的值相同
+     * 如:ref=&quot;dom&quot;、const dom=ref&lt;&gt;();
+     */
+    let buttonTest=()=&gt;{
+      console.log(&quot;dom:&quot;,dom.value);
+    }
+    return {
+      // 需要return出来才能获取到节点
+      dom,
+      buttonTest
+    }
+  }
+})
+&lt;/script&gt;
+&lt;style scoped&gt;
+&lt;/style&gt;
+</code></pre>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>git配置 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="git环境配置安装一路默认即可【一直next】在桌面右键，多出了Git Bash Here # 打开Git Bash Here，复制命令并粘贴，右键paste# 配置用户名【填写自己的用户名】git config --global user.name &quot;your username&quot;# 配置邮箱【填写自己的邮箱】git config --global user.email &amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git配置">
+<meta property="og:url" content="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/git-pei-zhi/git-pei-zhi.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="git环境配置安装一路默认即可【一直next】在桌面右键，多出了Git Bash Here # 打开Git Bash Here，复制命令并粘贴，右键paste# 配置用户名【填写自己的用户名】git config --global user.name &quot;your username&quot;# 配置邮箱【填写自己的邮箱】git config --global user.email &amp;qu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015463.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015664.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015837.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015913.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015239.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015408.png">
+<meta property="article:published_time" content="2022-12-13T07:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.887Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="环境配置">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015463.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230647">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230647">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230647">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230647"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230647"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="git配置" loading="lazy">
+            <h1>git配置</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2022年12月13日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="git环境配置"><a href="#git环境配置" class="headerlink" title="git环境配置"></a>git环境配置</h2><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015463.png" alt="1" data-caption="1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015664.png" alt="2" data-caption="2" loading="lazy"><br>安装一路默认即可【一直next】<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015837.png" alt="3" data-caption="3" loading="lazy"><br>在桌面右键，多出了Git Bash Here</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 打开Git Bash Here，复制命令并粘贴，右键paste</span><br><span class="hljs-comment"># 配置用户名【填写自己的用户名】</span><br>git config --global user.name <span class="hljs-string">&quot;your username&quot;</span><br><span class="hljs-comment"># 配置邮箱【填写自己的邮箱】</span><br>git config --global user.email <span class="hljs-string">&quot;your email&quot;</span><br></code></pre></td></tr></table></figure>
+<h2 id="同时配置gitee和github"><a href="#同时配置gitee和github" class="headerlink" title="同时配置gitee和github"></a>同时配置gitee和github</h2><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1774890">参考博客</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">git config --global --<span class="hljs-built_in">unset</span> user.name <span class="hljs-string">&quot;你的名字&quot;</span><br>git config --global --<span class="hljs-built_in">unset</span> user.email <span class="hljs-string">&quot;你的邮箱&quot;</span><br></code></pre></td></tr></table></figure>
+<h3 id="生成新的-SSH-keys"><a href="#生成新的-SSH-keys" class="headerlink" title="生成新的 SSH keys"></a>生成新的 SSH keys</h3><h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">ssh-keygen -t rsa -f ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.<span class="hljs-property">github</span> -C <span class="hljs-string">&quot;xxx@qq.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p>按三次回车</p>
+<h3 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h3><p>邮箱换一个，不与Github邮箱相同即可</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">ssh-keygen -t rsa -f ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.<span class="hljs-property">gitee</span> -C <span class="hljs-string">&quot;xxx@aliyun.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p>按三次回车<br>完成后会在~&#x2F;.ssh &#x2F; 目录下生成以下文件。</p>
+<ul>
+<li>id_rsa.github</li>
+<li>id_rsa.github.pub</li>
+<li>id_rsa.gitee</li>
+<li>id_rsa.gitee.pub<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">ssh-agent bash<br>ssh-add ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.<span class="hljs-property">github</span><br>ssh-add ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.<span class="hljs-property">gitee</span><br></code></pre></td></tr></table></figure>
+创建一个名为config的文件，不带后缀，以文本形式打开，写入如下内容<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">#<span class="hljs-title class_">Default</span> gitHub user <span class="hljs-title class_">Self</span><br><span class="hljs-title class_">Host</span> github.<span class="hljs-property">com</span><br>    <span class="hljs-title class_">HostName</span> github.<span class="hljs-property">com</span><br>    <span class="hljs-title class_">User</span> git<br>    <span class="hljs-title class_">IdentityFile</span> ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.<span class="hljs-property">github</span><br># gitee<br><span class="hljs-title class_">Host</span> gitee.<span class="hljs-property">com</span><br>    <span class="hljs-title class_">Port</span> <span class="hljs-number">22</span><br>    <span class="hljs-title class_">HostName</span> gitee.<span class="hljs-property">com</span><br>    <span class="hljs-title class_">User</span> git<br>    <span class="hljs-title class_">IdentityFile</span> ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.<span class="hljs-property">gitee</span><br></code></pre></td></tr></table></figure>
+添加 ssh到github和gitee中<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript">ssh -T git@gitee.<span class="hljs-property">com</span><br>ssh -T git@github.<span class="hljs-property">com</span><br></code></pre></td></tr></table></figure>
+输入yes</li>
+</ul>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
+<p>说一下我遇到的问题，我是全程开着加速器的，毕竟github的特殊性…<br>但是最后这一步测试github的连接始终是连不上，<code>Connection reset by 140.82.114.4 port 22</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ ping  github.com<br>Pinging github.com [140.82.114.4] with 32 bytes of data:<br>Reply from 140.82.114.4: bytes=32 time=270ms TTL=41<br>Request timed out.<br>Reply from 140.82.114.4: bytes=32 time=273ms TTL=41<br>Reply from 140.82.114.4: bytes=32 time=273ms TTL=41<br>Ping statistics <span class="hljs-keyword">for</span> 140.82.114.4:<br>    Packets: Sent = 4, Received = 3, Lost = 1 (25% loss),<br>Approximate round trip <span class="hljs-built_in">times</span> <span class="hljs-keyword">in</span> milli-seconds:<br>    Minimum = 270ms, Maximum = 273ms, Average = 272ms<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>看来确实是有问题的</p>
+<p>配置一下hosts文件就连上了<br>hosts文件在C:\Windows\System32\drivers\etc<br><a target="_blank" rel="noopener" href="https://tool.chinaz.com/speedworld/">点击测速</a>，搜索github.com</p>
+</blockquote>
+<figure class="highlight accesslog"><table><tr><td class="code"><pre><code class="hljs accesslog">如我这里是<span class="hljs-number">20</span>.<span class="hljs-number">205</span>.<span class="hljs-number">243</span>.<span class="hljs-number">166</span><br>则在hosts文件里添加<br><span class="hljs-number">20.205.243.166</span> github.com<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ ssh -T git@github.com<br>The authenticity of host <span class="hljs-string">&#x27;github.com (140.82.114.4)&#x27;</span> can<span class="hljs-string">&#x27;t be established.</span><br><span class="hljs-string">ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.</span><br><span class="hljs-string">This key is not known by any other names.</span><br><span class="hljs-string">Are you sure you want to continue connecting (yes/no/[fingerprint])? yes</span><br><span class="hljs-string">Warning: Permanently added &#x27;</span>github.com<span class="hljs-string">&#x27; (ED25519) to the list of known hosts.</span><br><span class="hljs-string">Hi IsUnderAchiever! You&#x27;</span>ve successfully authenticated, but GitHub does not provide shell access.<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>但是<code>github</code>克隆项目还是报错，开不开‘特殊手段’都是这样</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> https://github.com/nodejs/node.git<br>Cloning into <span class="hljs-string">&#x27;node&#x27;</span>...<br>fatal: unable to access <span class="hljs-string">&#x27;https://github.com/nodejs/node.git/&#x27;</span>: Failed to connect to github.com port 443 after 21049 ms: Couldn<span class="hljs-string">&#x27;t connect to server</span><br></code></pre></td></tr></table></figure>
+<h2 id="只配置gitee或github"><a href="#只配置gitee或github" class="headerlink" title="只配置gitee或github"></a>只配置gitee或github</h2><blockquote>
+<p>以gitee为例，github类似<br>配置ssh免密登录</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;your email&quot;</span><br><span class="hljs-comment"># 按三次回车后，生成密钥【在用户目录下】</span><br><span class="hljs-built_in">cat</span> ~/.ssh/id_rsa.pub<br><span class="hljs-comment"># 查看密钥</span><br><span class="hljs-comment"># 复制以上密钥</span><br><span class="hljs-comment"># 进入gitee，左侧找到SSH公钥，添加标题（自己随便写一个），公钥复制粘贴上一步查看的内容（注意不要携带空格）</span><br><span class="hljs-comment"># 测试是否成功 (选择yes)</span><br>ssh -T git@gitee.com<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015913.png" alt="4" data-caption="4" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015239.png" alt="5" data-caption="5" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202015408.png" alt="6" data-caption="6" loading="lazy"></p>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">git环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEgitee%E5%92%8Cgithub"><span class="toc-number">2.</span> <span class="toc-text">同时配置gitee和github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84-SSH-keys"><span class="toc-number">2.1.</span> <span class="toc-text">生成新的 SSH keys</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Github"><span class="toc-number">2.1.1.</span> <span class="toc-text">Github</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gitee"><span class="toc-number">2.2.</span> <span class="toc-text">Gitee</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">2.3.</span> <span class="toc-text">补充</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E9%85%8D%E7%BD%AEgitee%E6%88%96github"><span class="toc-number">3.</span> <span class="toc-text">只配置gitee或github</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>SpringMVC - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="SpringMVC spring-mvc.xml  &lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;       xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.or">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringMVC">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/springmvc/springmvc.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="SpringMVC spring-mvc.xml  &lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;&lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;       xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.or">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339699.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339603.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339798.png">
+<meta property="article:published_time" content="2023-03-19T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.997Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="SpringMVC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339699.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230569">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230569">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230569">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230569"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230569"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="SpringMVC" loading="lazy">
+            <h1>SpringMVC</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年03月19日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/SpringMVC/">SpringMVC</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><blockquote>
+<p>spring-mvc.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:mvc</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/mvc&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- SpringMVC只扫描controller包即可 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.example.controller&quot;</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!-- 解决静态资源访问问题，如果不加mvc:annotation-driven会导致无法访问handler--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">mvc:default-servlet-handler</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!--解决响应乱码--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">mvc:annotation-driven</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">mvc:message-converters</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;utf-8&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:message-converters</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:annotation-driven</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>web.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">web-app</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">version</span>=<span class="hljs-string">&quot;4.0&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>DispatcherServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">            为DispatcherServlet提供初始化参数的</span><br><span class="hljs-comment">            设置springmvc配置文件的路径</span><br><span class="hljs-comment">                name是固定的，必须是contextConfigLocation</span><br><span class="hljs-comment">                value指的是SpringMVC配置文件的位置</span><br><span class="hljs-comment">         --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>contextConfigLocation<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>classpath:spring-mvc.xml<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">            指定项目启动就初始化DispatcherServlet</span><br><span class="hljs-comment">         --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">load-on-startup</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">load-on-startup</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>DispatcherServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">             /           表示当前servlet映射除jsp之外的所有请求（包含静态资源）</span><br><span class="hljs-comment">             *.do        表示.do结尾的请求路径才能被SpringMVC处理(老项目会出现)</span><br><span class="hljs-comment">             /*          表示当前servlet映射所有请求（包含静态资源,jsp），不应该使用其配置DispatcherServlet</span><br><span class="hljs-comment">         --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--乱码处理过滤器，由SpringMVC提供--&gt;</span><br>    <span class="hljs-comment">&lt;!-- 处理post请求乱码 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">filter</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-class</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">init-param</span>&gt;</span><br>            <span class="hljs-comment">&lt;!-- name固定不变，value值根据需要设置 --&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>encoding<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">init-param</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">filter</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">filter-mapping</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">filter-name</span>&gt;</span>CharacterEncodingFilter<span class="hljs-tag">&lt;/<span class="hljs-name">filter-name</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- 所有请求都设置utf-8的编码 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/*<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">filter-mapping</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">web-app</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>pom.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.example<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>springmvc<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--不能漏--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">packaging</span>&gt;</span>war<span class="hljs-tag">&lt;/<span class="hljs-name">packaging</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--servlet依赖--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>javax.servlet<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>javax.servlet-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.1.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--jsp依赖--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>javax.servlet.jsp<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jsp-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--springmvc依赖--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-webmvc<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.2.15.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--jackson--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jackson-databind<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.9.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><span class="hljs-comment">&lt;!--    &lt;build&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--        &lt;plugins&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--            &lt;plugin&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                &lt;version&gt;2.2&lt;/version&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                &lt;configuration&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                    &lt;port&gt;8000&lt;/port&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                    &lt;path&gt;/&lt;/path&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                    &lt;uriEncoding&gt;utf-8&lt;/uriEncoding&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--                &lt;/configuration&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--            &lt;/plugin&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--        &lt;/plugins&gt;--&gt;</span><br><span class="hljs-comment">&lt;!--    &lt;/build&gt;--&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="指定请求参数"><a href="#指定请求参数" class="headerlink" title="指定请求参数"></a><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339699.png" alt="项目结构" data-caption="项目结构" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339603.png" alt="structure" data-caption="structure" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152339798.png" alt="依赖" data-caption="依赖" loading="lazy"><br>指定请求参数</h2><blockquote>
+<p>必须有code参数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testParams&quot;,method = RequestMethod.GET,params = &quot;code&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testParams</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testParams处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>不能有code参数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testParams&quot;,method = RequestMethod.GET,params = &quot;!code&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testParams</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testParams处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>code参数必须是某个值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testParams&quot;,method = RequestMethod.GET,params = &quot;code=sgct&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testParams</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testParams处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>code参数参数必须不是某个值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testParams&quot;,method = RequestMethod.GET,params = &quot;code!=sgct&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testParams</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testParams处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="指定请求头"><a href="#指定请求头" class="headerlink" title="指定请求头"></a>指定请求头</h2><blockquote>
+<p>请求头必须有deviceType</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testHeaders&quot;,method = RequestMethod.GET,headers = &quot;deviceType&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testHeaders</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testHeaders处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>请求头不能有deviceType</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testHeaders&quot;,method = RequestMethod.GET,headers = &quot;!deviceType&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testHeaders</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testHeaders处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>请求头中的deviceType必须为aaa</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testHeaders&quot;,method = RequestMethod.GET,headers = &quot;deviceType=aaa&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testHeaders</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testHeaders处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>请求头中的deviceType不能是aaa</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/test&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestController</span> &#123;<br>    <br>    <span class="hljs-meta">@RequestMapping(value = &quot;/testHeaders&quot;,method = RequestMethod.GET,headers = &quot;deviceType!=aaa&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">testHeaders</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;testHeaders处理了请求&quot;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><blockquote>
+<ol>
+<li>PathVariable</li>
+<li>RequestBody</li>
+<li>RequestParam</li>
+</ol>
+</blockquote>
+<h4 id="required"><a href="#required" class="headerlink" title="required"></a>required</h4><blockquote>
+<p>@RequestParam(value &#x3D; “id”,required &#x3D; false)<br> 代表是否必须，默认值为true也就是必须要有对应的参数。如果没有就会报错。<br> 如果对应的参数可传可不传则可以把去设置为fasle<br>例如：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testRquestParam&quot;)</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">testRquestParam</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam(value = &quot;id&quot;,required = false)</span> Integer uid,<span class="hljs-meta">@RequestParam(&quot;name&quot;)</span> String name, <span class="hljs-meta">@RequestParam(&quot;likes&quot;)</span>String[] likes)</span>&#123;<br>    System.out.println(<span class="hljs-string">&quot;testRquestParam&quot;</span>);<br>    System.out.println(uid);<br>    System.out.println(name);<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>@RequestParam(value &#x3D; “id”,required &#x3D; false,defaultValue &#x3D; “777”)</p>
+</blockquote>
+<h4 id="defaultValue"><a href="#defaultValue" class="headerlink" title="defaultValue"></a>defaultValue</h4><p> 如果对应的参数没有，我们可以用defaultValue属性设置默认值。<br>例如：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/testRquestParam&quot;)</span><br><span class="hljs-keyword">public</span> String <span class="hljs-title function_">testRquestParam</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam(value = &quot;id&quot;,required = false,defaultValue = &quot;777&quot;)</span> Integer uid,<span class="hljs-meta">@RequestParam(&quot;name&quot;)</span> String name, <span class="hljs-meta">@RequestParam(&quot;likes&quot;)</span>String[] likes)</span>&#123;<br>    System.out.println(uid);<br>    System.out.println(name);<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;/success.jsp&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringMVC"><span class="toc-number">1.</span> <span class="toc-text">SpringMVC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">指定请求参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-number">1.2.</span> <span class="toc-text">指定请求头</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.3.</span> <span class="toc-text">常用注解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#required"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">required</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#defaultValue"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">defaultValue</span></a></li></ol></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

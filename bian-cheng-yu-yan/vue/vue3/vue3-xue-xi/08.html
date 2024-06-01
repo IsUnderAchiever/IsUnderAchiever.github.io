@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>sass学习 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="sass学习 sass官方文档 less官方文档 原博客bem架构BEM实际上是block、element、modifier的缩写，分别为块层、元素层、修饰符层BEM 命名约定的模式是：  .block &amp;#123;&amp;#125; .block__element &amp;#123;&amp;#125; .block--modifier &amp;#123;&amp;#125; 嵌套规则 Sass 允许将一套 CSS 样式嵌套进另">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass学习">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/vue/vue3/vue3-xue-xi/08.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="sass学习 sass官方文档 less官方文档 原博客bem架构BEM实际上是block、element、modifier的缩写，分别为块层、元素层、修饰符层BEM 命名约定的模式是：  .block &amp;#123;&amp;#125; .block__element &amp;#123;&amp;#125; .block--modifier &amp;#123;&amp;#125; 嵌套规则 Sass 允许将一套 CSS 样式嵌套进另">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:25.040Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="vue3">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230402">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230402">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230402">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230402"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230402"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="sass学习" loading="lazy">
+            <h1>sass学习</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年07月17日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/vue3/">vue3</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="sass学习"><a href="#sass学习" class="headerlink" title="sass学习"></a>sass学习</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.sass.hk/docs/">sass官方文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://less.bootcss.com/#%E6%A6%82%E8%A7%88">less官方文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://xiaoman.blog.csdn.net/article/details/122832888">原博客</a><br>bem架构<br><code>BEM</code>实际上是<code>block</code>、<code>element</code>、<code>modifier</code>的缩写，分别为块层、元素层、修饰符层<br>BEM 命名约定的模式是：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.block</span> &#123;&#125;<br> <br><span class="hljs-selector-class">.block__element</span> &#123;&#125;<br> <br><span class="hljs-selector-class">.block--modifier</span> &#123;&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h3><blockquote>
+<p>Sass 允许将一套 CSS 样式嵌套进另一套样式中，内层的样式将它外层的选择器作为父选择器</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#main</span> <span class="hljs-selector-tag">p</span> &#123;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#00ff00</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">97%</span>;<br>  <span class="hljs-selector-class">.redbox</span> &#123;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ff0000</span>;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#000000</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="父选择器"><a href="#父选择器" class="headerlink" title="父选择器 &amp;"></a>父选择器 <code>&amp;</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">a</span> &#123;<br>  <span class="hljs-attribute">font-weight</span>: bold;<br>  <span class="hljs-attribute">text-decoration</span>: none;<br>  &amp;<span class="hljs-selector-pseudo">:hover</span> &#123; <span class="hljs-attribute">text-decoration</span>: underline; &#125;<br>  <span class="hljs-selector-tag">body</span><span class="hljs-selector-class">.firefox</span> &amp; &#123; <span class="hljs-attribute">font-weight</span>: normal; &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量 $"></a>变量 <code>$</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">$<span class="hljs-attribute">width</span>: <span class="hljs-number">5em</span>;<br><span class="hljs-selector-id">#main</span> &#123;<br>  <span class="hljs-attribute">width</span>: $width;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="插值语句"><a href="#插值语句" class="headerlink" title="插值语句 #{}"></a>插值语句 <code>#&#123;&#125;</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">$name: foo;<br>$attr: border;<br><span class="hljs-selector-tag">p</span>.#&#123;$name&#125; &#123;<br>  #&#123;$attr&#125;-<span class="hljs-attribute">color</span>: blue;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="at-root"><a href="#at-root" class="headerlink" title="@at-root"></a>@at-root</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@media</span> print &#123;<br>  <span class="hljs-selector-class">.page</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">8in</span>;<br>    <span class="hljs-keyword">@at-root</span> (<span class="hljs-attribute">without</span>: media) &#123;<br>      <span class="hljs-attribute">color</span>: red;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@media</span> print &#123;<br>  <span class="hljs-selector-class">.page</span> &#123;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">8in</span>;<br>  &#125;<br>&#125;<br><span class="hljs-selector-class">.page</span> &#123;<br>  <span class="hljs-attribute">color</span>: red;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="定义混合指令-mixin"><a href="#定义混合指令-mixin" class="headerlink" title="定义混合指令 @mixin"></a>定义混合指令 <code>@mixin</code></h3><blockquote>
+<p>混合指令的用法是在 <code>@mixin</code> 后添加名称与样式，比如名为 <code>large-text</code> 的混合通过下面的代码定义：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@mixin</span> large-text &#123;<br>  <span class="hljs-attribute">font</span>: &#123;<br>    family: Arial;<br>    size: <span class="hljs-number">20px</span>;<br>    weight: bold;<br>  &#125;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="引用混合样式-include"><a href="#引用混合样式-include" class="headerlink" title="引用混合样式 @include"></a>引用混合样式 <code>@include</code></h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@mixin</span> large-text &#123;<br>  <span class="hljs-attribute">font</span>: &#123;<br>    family: Arial;<br>    size: <span class="hljs-number">20px</span>;<br>    weight: bold;<br>  &#125;<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;<br>&#125;<br><span class="hljs-selector-class">.page-title</span> &#123;<br>  <span class="hljs-keyword">@include</span> large-text;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">4px</span>;<br>  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>编译后</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.page-title</span> &#123;<br>    <span class="hljs-attribute">font-family</span>: Arial;<br>    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>    <span class="hljs-attribute">font-weight</span>: bold;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff0000</span>;<br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">4px</span>;<br>    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="练习-实现layout布局"><a href="#练习-实现layout布局" class="headerlink" title="练习:实现layout布局"></a>练习:实现layout布局</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">$block-sel: <span class="hljs-string">&quot;-&quot;</span> !default;<br>$element-sel: <span class="hljs-string">&quot;__&quot;</span> !default;<br>$modifier-sel: <span class="hljs-string">&quot;--&quot;</span> !default;<br>$namespace:<span class="hljs-string">&#x27;xm&#x27;</span> !default;<br><span class="hljs-keyword">@mixin</span> bfc &#123;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">overflow</span>: hidden;<br>&#125;<br> <br>//混入<br><span class="hljs-keyword">@mixin</span> b($block) &#123;<br>   $<span class="hljs-selector-tag">B</span>: $namespace + $block-sel + $block; //变量<br>   .#&#123;$<span class="hljs-selector-tag">B</span>&#125;&#123; //插值语法#&#123;&#125;<br>     <span class="hljs-keyword">@content</span>; //内容替换<br>   &#125;<br>&#125;<br> <br><span class="hljs-keyword">@mixin</span> flex &#123;<br>    <span class="hljs-attribute">display</span>: flex;<br>&#125;<br> <br><span class="hljs-keyword">@mixin</span> e($element) &#123;<br>    $selector:&amp;;<br>    <span class="hljs-keyword">@at-root</span> &#123;<br>        #&#123;$selector + $element-sel + $element&#125; &#123;<br>            <span class="hljs-keyword">@content</span>;<br>        &#125;<br>    &#125;<br>&#125;<br> <br><span class="hljs-keyword">@mixin</span> m($modifier) &#123;<br>    $selector:&amp;;<br>    <span class="hljs-keyword">@at-root</span> &#123;<br>        #&#123;$selector + $modifier-sel + $modifier&#125; &#123;<br>            <span class="hljs-keyword">@content</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>全局扩充sass</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; defineConfig &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span><br><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span><br> <br><span class="hljs-comment">// https://vitejs.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>    <span class="hljs-attr">plugins</span>: [<span class="hljs-title function_">vue</span>()],<br>    <span class="hljs-attr">css</span>: &#123;<br>        <span class="hljs-attr">preprocessorOptions</span>: &#123;<br>            <span class="hljs-attr">scss</span>: &#123;<br>                <span class="hljs-attr">additionalData</span>: <span class="hljs-string">&quot;@import &#x27;./src/bem.scss&#x27;;&quot;</span><br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p><strong>Vue 组件用法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>    &lt;div class=&quot;xm-wraps&quot;&gt;<br>         &lt;div&gt;<br>            &lt;Menu&gt;&lt;/Menu&gt;<br>         &lt;/div&gt;<br>         &lt;div class=&quot;xm-wraps__right&quot;&gt;<br>            &lt;Header&gt;&lt;/Header&gt;<br>            &lt;Content&gt;&lt;/Content&gt;<br>         &lt;/div&gt;<br>    &lt;/div&gt;<br>&lt;/template&gt;<br> <br>&lt;script lang=&quot;ts&quot; setup&gt;<br>import &#123; ref, reactive &#125; from &quot;vue&quot;<br>import Menu from &#x27;./Menu/index.vue&#x27;<br>import Content from &#x27;./Content/index.vue&#x27;<br>import Header from &#x27;./Header/index.vue&#x27;<br>&lt;/script&gt;<br> <br>&lt;style lang=&quot;scss&quot; scoped&gt;<br>@include b(&#x27;wraps&#x27;)&#123;<br>    @include bfc;<br>    @include flex;<br>    @include e(right)&#123;<br>        flex:1;<br>        display: flex;<br>        flex-direction: column;<br>    &#125;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/vue3/" rel="tag">vue3</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sass%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">sass学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E8%A7%84%E5%88%99"><span class="toc-number">1.0.1.</span> <span class="toc-text">嵌套规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">1.0.2.</span> <span class="toc-text">父选择器 &amp;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-number">1.0.3.</span> <span class="toc-text">变量 $</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%80%BC%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.0.4.</span> <span class="toc-text">插值语句 #{}</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#at-root"><span class="toc-number">1.0.5.</span> <span class="toc-text">@at-root</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E6%B7%B7%E5%90%88%E6%8C%87%E4%BB%A4-mixin"><span class="toc-number">1.0.6.</span> <span class="toc-text">定义混合指令 @mixin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%B7%B7%E5%90%88%E6%A0%B7%E5%BC%8F-include"><span class="toc-number">1.0.7.</span> <span class="toc-text">引用混合样式 @include</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0-%E5%AE%9E%E7%8E%B0layout%E5%B8%83%E5%B1%80"><span class="toc-number">1.0.8.</span> <span class="toc-text">练习:实现layout布局</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

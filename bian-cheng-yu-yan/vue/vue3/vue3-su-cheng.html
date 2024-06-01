@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>vue3快速上手 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="vue3快速上手vue create vue3-demo  ElementPlusnpm install element-plus --save  完整引入  &#x2F;&#x2F; main.tsimport &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import ElementPlus from &amp;#x27;element-plus&amp;#x27;import &amp;#x2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue3快速上手">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/vue/vue3/vue3-su-cheng.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="vue3快速上手vue create vue3-demo  ElementPlusnpm install element-plus --save  完整引入  &#x2F;&#x2F; main.tsimport &amp;#123; createApp &amp;#125; from &amp;#x27;vue&amp;#x27;import ElementPlus from &amp;#x27;element-plus&amp;#x27;import &amp;#x2">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202304300916024.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202304291523418.png">
+<meta property="article:published_time" content="2023-04-30T02:50:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:25.029Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="vue3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202304300916024.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230554">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230554">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230554">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230554"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230554"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="vue3快速上手" loading="lazy">
+            <h1>vue3快速上手</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年04月30日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/vue3/">vue3</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="vue3快速上手"><a href="#vue3快速上手" class="headerlink" title="vue3快速上手"></a>vue3快速上手</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">vue create vue3-demo<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202304300916024.png" alt="image-20230430091624858" data-caption="image-20230430091624858" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202304291523418.png" alt="创建vue3项目" data-caption="创建vue3项目" loading="lazy"></p>
+<h2 id="ElementPlus"><a href="#ElementPlus" class="headerlink" title="ElementPlus"></a>ElementPlus</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install element-plus --save<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>完整引入</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// main.ts</span><br><span class="hljs-keyword">import</span> &#123; createApp &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>)<br>app.<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>安装图标</p>
+</blockquote>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install @element-plus/icons-vue<br></code></pre></td></tr></table></figure>
+<p><strong>图标注册</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// main.ts</span><br><span class="hljs-comment">// 如果您正在使用CDN引入，请删除下面一行。</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">ElementPlusIconsVue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@element-plus/icons-vue&#x27;</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, component] <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(<span class="hljs-title class_">ElementPlusIconsVue</span>)) &#123;<br>  app.<span class="hljs-title function_">component</span>(key, component)<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>综合</code></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// main.ts</span><br><span class="hljs-keyword">import</span> &#123;createApp&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./router&#x27;</span><br><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./store&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">ElementPlusIconsVue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@element-plus/icons-vue&#x27;</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br>app.<span class="hljs-title function_">use</span>(store)<br>app.<span class="hljs-title function_">use</span>(router)<br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, component] <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(<span class="hljs-title class_">ElementPlusIconsVue</span>)) &#123;<br>    app.<span class="hljs-title function_">component</span>(key, component)<br>&#125;<br>app.<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><blockquote>
+<p>安装axios</p>
+<p>以下内容参考【<a target="_blank" rel="noopener" href="https://blog.csdn.net/xqnode">程序员青戈</a>】的博客</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install axios -s<br></code></pre></td></tr></table></figure>
+<p><strong>utils&#x2F;request.js</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;axios&#x27;</span><br><span class="hljs-keyword">const</span> request = axios.<span class="hljs-title function_">create</span>(&#123;<br>  <span class="hljs-attr">baseURL</span>: <span class="hljs-string">&#x27;/api&#x27;</span>,  <span class="hljs-comment">// 注意！！ 这里是全局统一加上了 &#x27;/api&#x27; 前缀，也就是说所有接口都会加上&#x27;/api&#x27;前缀在，页面里面写接口的时候就不要加 &#x27;/api&#x27;了，否则会出现2个&#x27;/api&#x27;，类似 &#x27;/api/api/user&#x27;这样的报错，切记！！！</span><br>    <span class="hljs-attr">timeout</span>: <span class="hljs-number">5000</span><br>&#125;)<br><span class="hljs-comment">// request 拦截器</span><br><span class="hljs-comment">// 可以自请求发送前对请求做一些处理</span><br><span class="hljs-comment">// 比如统一加token，对请求参数统一加密</span><br>request.<span class="hljs-property">interceptors</span>.<span class="hljs-property">request</span>.<span class="hljs-title function_">use</span>(<span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> &#123;<br>    config.<span class="hljs-property">headers</span>[<span class="hljs-string">&#x27;Content-Type&#x27;</span>] = <span class="hljs-string">&#x27;application/json;charset=utf-8&#x27;</span>;<br>  <br> <span class="hljs-comment">// config.headers[&#x27;token&#x27;] = user.token;  // 设置请求头</span><br>    <span class="hljs-keyword">return</span> config<br>&#125;, <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(error)<br>&#125;);<br><span class="hljs-comment">// response 拦截器</span><br><span class="hljs-comment">// 可以在接口响应后统一处理结果</span><br>request.<span class="hljs-property">interceptors</span>.<span class="hljs-property">response</span>.<span class="hljs-title function_">use</span>(<br>    <span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">let</span> res = response.<span class="hljs-property">data</span>;<br>        <span class="hljs-comment">// 如果是返回的文件</span><br>        <span class="hljs-keyword">if</span> (response.<span class="hljs-property">config</span>.<span class="hljs-property">responseType</span> === <span class="hljs-string">&#x27;blob&#x27;</span>) &#123;<br>            <span class="hljs-keyword">return</span> res<br>        &#125;<br>        <span class="hljs-comment">// 兼容服务端返回的字符串数据</span><br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> res === <span class="hljs-string">&#x27;string&#x27;</span>) &#123;<br>            res = res ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(res) : res<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;,<br>    <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;err&#x27;</span> + error) <span class="hljs-comment">// for debug</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">reject</span>(error)<br>    &#125;<br>)<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> request<br></code></pre></td></tr></table></figure>
+<p><strong>vue.config.js</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 跨域配置</span><br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>    <span class="hljs-attr">devServer</span>: &#123;                <span class="hljs-comment">//记住，别写错了devServer//设置本地默认端口  选填</span><br>        <span class="hljs-attr">port</span>: <span class="hljs-number">10020</span>,<br>        <span class="hljs-attr">proxy</span>: &#123;                 <span class="hljs-comment">//设置代理，必须填</span><br>            <span class="hljs-string">&#x27;/api&#x27;</span>: &#123;              <span class="hljs-comment">//设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定</span><br>                <span class="hljs-attr">target</span>: <span class="hljs-string">&#x27;http://localhost:10010&#x27;</span>,     <span class="hljs-comment">//代理的目标地址</span><br>                <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,              <span class="hljs-comment">//是否设置同源，输入是的</span><br>                <span class="hljs-attr">pathRewrite</span>: &#123;                   <span class="hljs-comment">//路径重写</span><br>                    <span class="hljs-string">&#x27;^/api&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>                     <span class="hljs-comment">//选择忽略拦截器里面的内容</span><br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><blockquote>
+<p>安装vuex（已安装，main.ts配置参考element plus处）</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install vuex --save-dev<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>安装持久化插件</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm i vuex-persistedstate<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>关闭严格模式</p>
+<p><code>tsconfig.json</code>里将<code>&quot;strict&quot;: false</code>设置为<code>&quot;strict&quot;: true</code><br><strong>sotore&#x2F;modules&#x2F;userts</strong></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>    <span class="hljs-attr">namespaced</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 为每个模块添加一个前缀名，保证模块命明不冲突</span><br>    <span class="hljs-comment">// state中存放的就是全局共享的数据</span><br>    <span class="hljs-comment">// sessionStorage.getItem(&#x27;userState&#x27;)?JSON.parse(sessionStorage.getItem(&#x27;userState&#x27;))</span><br>    <span class="hljs-attr">state</span>: <span class="hljs-literal">null</span> != <span class="hljs-variable language_">window</span>.<span class="hljs-property">sessionStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;state&#x27;</span>) ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">sessionStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;state&#x27;</span>)) : &#123;<br>        <span class="hljs-attr">user</span>: &#123;<br>            <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-attr">age</span>: <span class="hljs-literal">null</span>,<br>            <span class="hljs-attr">gender</span>: <span class="hljs-string">&quot;&quot;</span><br>        &#125;<br>    &#125;,<br>    <span class="hljs-comment">// 取值的方法，计算属性</span><br>    <span class="hljs-attr">getters</span>: &#123;<br>        <span class="hljs-title function_">getUser</span>(<span class="hljs-params">state</span>) &#123;<br>            <span class="hljs-keyword">return</span> state.<span class="hljs-property">user</span>;<br>        &#125;<br>    &#125;,<br>    <span class="hljs-comment">// 可以修改state值的方法，同步阻塞</span><br>    <span class="hljs-attr">mutations</span>: &#123;<br>        <span class="hljs-comment">// 传入user对象，更新全局的user</span><br>        <span class="hljs-title function_">updateUser</span>(<span class="hljs-params">state, user</span>) &#123;<br>            state.<span class="hljs-property">user</span> = user;<br>        &#125;<br>    &#125;,<br>    <span class="hljs-comment">// 异步调用mutations方法</span><br>    <span class="hljs-attr">actions</span>: &#123;<br>        <span class="hljs-title function_">asyncUpdateUser</span>(<span class="hljs-params">context, user</span>) &#123;<br>            context.<span class="hljs-title function_">commit</span>(<span class="hljs-string">&#x27;updateUser&#x27;</span>, user);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>store&#x2F;indexts</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;createStore&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex&#x27;</span><br><span class="hljs-keyword">import</span> createPersistedState <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vuex-persistedstate&#x27;</span><br><span class="hljs-keyword">import</span> user <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./modules/user&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">createStore</span>(&#123;<br>  <span class="hljs-attr">state</span>: &#123;<br>  &#125;,<br>  <span class="hljs-attr">getters</span>: &#123;<br>  &#125;,<br>  <span class="hljs-attr">mutations</span>: &#123;&#125;,<br>  <span class="hljs-attr">actions</span>: &#123;&#125;,<br>  <span class="hljs-attr">modules</span>: &#123;<br>    user<br>  &#125;,<br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-comment">// 配置vuex插件</span><br>    <span class="hljs-comment">// 使用模块提供的方法</span><br>    <span class="hljs-title function_">createPersistedState</span>(&#123;<br>      <span class="hljs-comment">// 默认存储在localStorage 现改为sessionStorage</span><br>      <span class="hljs-attr">storage</span>: <span class="hljs-variable language_">window</span>.<span class="hljs-property">sessionStorage</span>,<br>      <span class="hljs-comment">// 本地存储数据的键名</span><br>      <span class="hljs-comment">// 配置存储持久化的key键名</span><br>      <span class="hljs-attr">key</span>: <span class="hljs-string">&#x27;user&#x27;</span>,<br>      <span class="hljs-comment">// 指定需要存储的模块，如果是模块下具体的数据需要加上模块名称，如user.token</span><br>      <span class="hljs-comment">// paths数组可以选择配置持久化的模块，不写代表所有</span><br>      <span class="hljs-comment">// paths: [&#x27;user&#x27;, &#x27;cart&#x27;]</span><br>    &#125;)<br>  ]<br>&#125;)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>测试页面</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;hello&quot;&gt;<br>    &lt;el-button icon=&quot;Search&quot; circle @click=&quot;testVuex&quot; /&gt;<br>    &lt;br&gt;<br>    &lt;el-button type=&quot;success&quot; @click=&quot;clearDataFromVuex&quot;&gt;删除vuex内的数据&lt;/el-button&gt;<br>    &lt;br&gt;<br>    &lt;h3&gt;name:&#123;&#123; store.state.user.user.name &#125;&#125;&lt;/h3&gt;<br>    &lt;h3&gt;age:&#123;&#123; store.state.user.user.age &#125;&#125;&lt;/h3&gt;<br>    &lt;h3&gt;gender:&#123;&#123; store.state.user.user.gender &#125;&#125;&lt;/h3&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script lang=&quot;ts&quot;&gt;<br>import &#123;defineComponent, reactive, ref, computed&#125; from &#x27;vue&#x27;;<br>import &#123;useStore&#125; from &quot;vuex&quot;;<br>export default defineComponent(&#123;<br>  name: &#x27;HelloWorld&#x27;,<br>  props: &#123;<br>    msg: String,<br>  &#125;,<br>  setup() &#123;<br>    const store = useStore();<br>    const testVuex = () =&gt; &#123;<br>      // 使用这种方式可以改变值，但是无法实现数据的持久化<br>      // store.state.user.user.name=&#x27;假面骑士decade&#x27;<br>      // store.state.user.user.age=22<br>      // store.state.user.user.gender=&#x27;男&#x27;<br>    <br>      // 下面两种方法可以实现vuex的数据持久化<br>      // store.commit(&#x27;user/updateUser&#x27;,&#123;<br>      //   name: &quot;Decade&quot;,<br>      //   age: 22,<br>      //   gender: &quot;男&quot;<br>      // &#125;);<br>      store.dispatch(&#x27;user/asyncUpdateUser&#x27;, &#123;<br>        name: &quot;假面骑士&quot;,<br>        age: 18,<br>        gender: &quot;女&quot;<br>      &#125;);<br>    &#125;<br>    const clearDataFromVuex=()=&gt;&#123;<br>      store.dispatch(&#x27;user/asyncUpdateUser&#x27;, &#123;&#125;);<br>    &#125;;<br>    return &#123;<br>      testVuex,<br>      clearDataFromVuex,<br>      store<br>    &#125;<br>  &#125;<br>&#125;);<br>&lt;/script&gt;<br>&lt;style scoped lang=&quot;less&quot;&gt;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>简单集成ts</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;hello&quot;&gt;<br>    &lt;el-button icon=&quot;Search&quot; circle @click=&quot;testVuex&quot;/&gt;<br>    &lt;br&gt;<br>    &lt;el-button type=&quot;success&quot; @click=&quot;clearDataFromVuex&quot;&gt;删除vuex内的数据&lt;/el-button&gt;<br>    &lt;br&gt;<br>    &lt;h3&gt;name:&#123;&#123; store.state.user.user.name &#125;&#125;&lt;/h3&gt;<br>    &lt;h3&gt;age:&#123;&#123; store.state.user.user.age &#125;&#125;&lt;/h3&gt;<br>    &lt;h3&gt;gender:&#123;&#123; store.state.user.user.gender &#125;&#125;&lt;/h3&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script lang=&quot;ts&quot;&gt;<br>import &#123;defineComponent, reactive, ref, computed&#125; from &#x27;vue&#x27;;<br>import &#123;useStore&#125; from &quot;vuex&quot;;<br>interface userForm &#123;<br>  name: string,<br>  age: number,<br>  gender: string<br>&#125;<br>export default defineComponent(&#123;<br>  name: &#x27;HelloWorld&#x27;,<br>  props: &#123;<br>    msg: String,<br>  &#125;,<br>  setup() &#123;<br>    const store = useStore();<br>    const testVuex = (user: userForm) =&gt; &#123;<br>      user = &#123;<br>        name: &quot;Decade&quot;,<br>        age: 22,<br>        gender: &quot;男&quot;<br>      &#125;;<br>      store.commit(&#x27;user/updateUser&#x27;, user);<br>    &#125;<br>    const clearDataFromVuex = () =&gt; &#123;<br>      store.dispatch(&#x27;user/asyncUpdateUser&#x27;, &#123;&#125;);<br>    &#125;;<br>    return &#123;<br>      testVuex,<br>      clearDataFromVuex,<br>      store<br>    &#125;<br>  &#125;<br>&#125;);<br>&lt;/script&gt;<br>&lt;style scoped lang=&quot;less&quot;&gt;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install vue-cookies --save<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>main.ts</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;createApp&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./router&#x27;</span><br><span class="hljs-keyword">import</span> store <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./store&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">ElementPlus</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;element-plus&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;element-plus/dist/index.css&#x27;</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">ElementPlusIconsVue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@element-plus/icons-vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;@/assets/css/global.css&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">VueCookies</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue-cookies&#x27;</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br>app.<span class="hljs-title function_">use</span>(store)<br>app.<span class="hljs-title function_">use</span>(router)<br>app.<span class="hljs-title function_">use</span>(<span class="hljs-title class_">ElementPlus</span>)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, component] <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(<span class="hljs-title class_">ElementPlusIconsVue</span>)) &#123;<br>    app.<span class="hljs-title function_">component</span>(key, component)<br>&#125;<br><span class="hljs-comment">// @ts-ignore</span><br>app.<span class="hljs-property">config</span>.<span class="hljs-property">globalProperties</span>.<span class="hljs-property">$cookies</span> = <span class="hljs-title class_">VueCookies</span>;<br>app.<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;cookie-test&quot;&gt;<br>    &lt;el-button @click=&quot;cookieInTest&quot;&gt;点击存入cookie&lt;/el-button&gt;<br>    &lt;el-button @click=&quot;cookieDeleteTest&quot;&gt;点击删除cookie&lt;/el-button&gt;<br>    &lt;br&gt;<br>    &lt;span&gt;cookieForm:&#123;&#123;cookieForm&#125;&#125;&lt;/span&gt;<br>    &lt;br&gt;<br>    &lt;span&gt;mydata:&#123;&#123;myData&#125;&#125;&lt;/span&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script lang=&quot;ts&quot;&gt;<br>import &#123;defineComponent, getCurrentInstance, ref,onMounted&#125; from &#x27;vue&#x27;;<br>import VueCookies from &#x27;vue-cookies&#x27;<br>export default defineComponent(&#123;<br>  name: &#x27;&#x27;,<br>  setup()&#123;<br>    let cookieForm=ref();<br>    let internalInstance = getCurrentInstance();<br>    let cookies = internalInstance.appContext.config.globalProperties.$cookies<br>    const cookieInTest=()=&gt;&#123;<br>      // 存入，可加时间限制(秒)<br>      // cookies.set(&#x27;test&#x27;, &#x27;Hello world!&#x27;,5);<br>      // cookies.set(&#x27;test&#x27;, &#x27;Hello world!&#x27;,5000);<br>      // 获取<br>      // cookieForm.value=cookies.get(&#x27;test&#x27;);<br>      // 将数据保存到cookie中<br>      cookies.set(&#x27;myData&#x27;, &#x27;测试数据&#x27;, &#x27;30d&#x27;)<br>      myData.value=cookies.get(&#x27;myData&#x27;);<br>      console.log(&quot;set--mydata,&quot;,myData.value);<br>    &#125;<br>    const cookieDeleteTest=()=&gt;&#123;<br>      // cookies.remove(&#x27;test&#x27;);<br>      // 获取<br>      // cookieForm.value=cookies.get(&#x27;test&#x27;);<br>      cookies.remove(&#x27;myData&#x27;);<br>      myData.value=cookies.get(&#x27;myData&#x27;);<br>    &#125;<br>    const createdData=()=&gt;&#123;<br>      // cookieForm = cookies.get(&#x27;myData&#x27;)<br>    &#125;<br>    const myData = ref(&#x27;&#x27;)<br>    onMounted(() =&gt; &#123;<br>      // 从cookie中读取数据<br>      myData.value = cookies.get(&#x27;myData&#x27;)<br>      console.log(&quot;mydata,&quot;,myData.value);<br>    &#125;)<br>    return &#123;<br>      cookieForm,<br>      cookieInTest,<br>      cookieDeleteTest,<br>      myData<br>    &#125;<br>  &#125;<br>&#125;)<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><blockquote>
+<p>util&#x2F;index.js</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> &#123;<span class="hljs-title class_">Router</span> <span class="hljs-keyword">as</span> router&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue-router&quot;</span>;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 获取uuid</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@returns</span> &#123;<span class="hljs-type">string</span>&#125; <span class="hljs-variable">uuid</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getUUID</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#x27;</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/[xy]/g</span>, <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> &#123;<br>        <span class="hljs-keyword">return</span> (c === <span class="hljs-string">&#x27;x&#x27;</span> ? (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-number">16</span> | <span class="hljs-number">0</span>) : (<span class="hljs-string">&#x27;r&amp;0x3&#x27;</span> | <span class="hljs-string">&#x27;0x8&#x27;</span>)).<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>)<br>    &#125;)<br>&#125;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 是否有权限</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">*</span>&#125; <span class="hljs-variable">key</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">isAuth</span> (key) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">sessionStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;permissions&#x27;</span>) || <span class="hljs-string">&#x27;[]&#x27;</span>).<span class="hljs-title function_">indexOf</span>(key) !== -<span class="hljs-number">1</span> || <span class="hljs-literal">false</span><br>&#125;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 树形数据转换</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">*</span>&#125; <span class="hljs-variable">data</span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">*</span>&#125; <span class="hljs-variable">id</span></span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> &#123;<span class="hljs-type">*</span>&#125; <span class="hljs-variable">pid</span></span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">treeDataTranslate</span> (data, id = <span class="hljs-string">&#x27;id&#x27;</span>, pid = <span class="hljs-string">&#x27;parentId&#x27;</span>) &#123;<br>    <span class="hljs-keyword">const</span> res = [];<br>    <span class="hljs-keyword">const</span> temp = &#123;&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; data.<span class="hljs-property">length</span>; i++) &#123;<br>        temp[data[i][id]] = data[i]<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> k = <span class="hljs-number">0</span>; k &lt; data.<span class="hljs-property">length</span>; k++) &#123;<br>        <span class="hljs-keyword">if</span> (temp[data[k][pid]] &amp;&amp; data[k][id] !== data[k][pid]) &#123;<br>            <span class="hljs-keyword">if</span> (!temp[data[k][pid]][<span class="hljs-string">&#x27;children&#x27;</span>]) &#123;<br>                temp[data[k][pid]][<span class="hljs-string">&#x27;children&#x27;</span>] = []<br>            &#125;<br>            <span class="hljs-keyword">if</span> (!temp[data[k][pid]][<span class="hljs-string">&#x27;_level&#x27;</span>]) &#123;<br>                temp[data[k][pid]][<span class="hljs-string">&#x27;_level&#x27;</span>] = <span class="hljs-number">1</span><br>            &#125;<br>            data[k][<span class="hljs-string">&#x27;_level&#x27;</span>] = temp[data[k][pid]].<span class="hljs-property">_level</span> + <span class="hljs-number">1</span><br>            temp[data[k][pid]][<span class="hljs-string">&#x27;children&#x27;</span>].<span class="hljs-title function_">push</span>(data[k])<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            res.<span class="hljs-title function_">push</span>(data[k])<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res<br>&#125;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 清除登录信息</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">clearLoginInfo</span> () &#123;<br>    <span class="hljs-comment">// Vue.cookie.delete(&#x27;token&#x27;)</span><br>    <span class="hljs-comment">// store.commit(&#x27;resetStore&#x27;)</span><br>    <span class="hljs-comment">// router.options.isAddDynamicMenuRoutes = false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="qs"><a href="#qs" class="headerlink" title="qs"></a>qs</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install qs --save<br></code></pre></td></tr></table></figure>
+<h3 id="qs的使用"><a href="#qs的使用" class="headerlink" title="qs的使用"></a><strong>qs的使用</strong></h3><h4 id="parse"><a href="#parse" class="headerlink" title="parse"></a>parse</h4><blockquote>
+<p>将<code>url</code>的参数转化为<code>object</code>对象</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> str = <span class="hljs-string">&quot;name=%E9%A9%AC%E5%B0%8F%E8%B7%B3&amp;age=12&amp;address=%E5%BC%82%E6%AC%A1%E5%85%83&#x27;&quot;</span> <br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(qs.<span class="hljs-title function_">parse</span>(str)) <span class="hljs-comment">// Object &#123;name: &quot;马小跳&quot;,age: &quot;12&quot;,address: &quot;异次元&quot;&#125;</span><br></code></pre></td></tr></table></figure>
+<h4 id="stringfy"><a href="#stringfy" class="headerlink" title="stringfy"></a>stringfy</h4><blockquote>
+<p>将<code>对象</code>转为<code>url参数</code>格式</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(qs.<span class="hljs-title function_">stringify</span>(&#123;<br>  <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;马小跳&#x27;</span>,<br>  <span class="hljs-attr">age</span>:<span class="hljs-number">12</span>,<br>  <span class="hljs-attr">address</span>:<span class="hljs-string">&#x27;异次元&#x27;</span><br>&#125;))<br><span class="hljs-comment">// logs name=%E9%A9%AC%E5%B0%8F%E8%B7%B3&amp;age=12&amp;address=%E5%BC%82%E6%AC%A1%E5%85%83</span><br></code></pre></td></tr></table></figure>
+<h2 id="echarts"><a href="#echarts" class="headerlink" title="echarts"></a>echarts</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://echarts.apache.org/zh/index.html">echarts官网</a><br>数据可视化</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install echarts --save<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>main.ts内引入</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 全局引入相关包</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> echarts <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;echarts&quot;</span>;<br><span class="hljs-comment">// 开启echarts</span><br>app.<span class="hljs-property">config</span>.<span class="hljs-property">globalProperties</span>.<span class="hljs-property">$echarts</span> = echarts;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>组件内使用</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div id=&quot;myChart&quot;&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script lang=&quot;ts&quot;&gt;<br>import &#123;defineComponent, toRefs, reactive, onMounted&#125; from &#x27;vue&#x27;<br>import * as echarts from &#x27;echarts&#x27;<br>export default defineComponent(&#123;<br>  name: &#x27;EchartsTest&#x27;,<br>  setup() &#123;<br>    const state = reactive(&#123;<br>      option: &#123;<br>        title: &#123;<br>          text: &#x27;Referer of a Website&#x27;,<br>          subtext: &#x27;Fake Data&#x27;,<br>          left: &#x27;center&#x27;<br>        &#125;,<br>        tooltip: &#123;<br>          trigger: &#x27;item&#x27;<br>        &#125;,<br>        legend: &#123;<br>          orient: &#x27;vertical&#x27;,<br>          left: &#x27;left&#x27;<br>        &#125;,<br>        grid: &#123;<br>          top: &#x27;4%&#x27;,<br>          left: &#x27;2%&#x27;,<br>          right: &#x27;4%&#x27;,<br>          bottom: &#x27;0%&#x27;,<br>          containLabel: true,<br>        &#125;,<br>        series: [<br>          &#123;<br>            name: &#x27;Access From&#x27;,<br>            type: &#x27;pie&#x27;,<br>            radius: &#x27;50%&#x27;,<br>            data: [<br>              &#123; value: 1048, name: &#x27;Search Engine&#x27; &#125;,<br>              &#123; value: 735, name: &#x27;Direct&#x27; &#125;,<br>              &#123; value: 580, name: &#x27;Email&#x27; &#125;,<br>              &#123; value: 484, name: &#x27;Union Ads&#x27; &#125;,<br>              &#123; value: 300, name: &#x27;Video Ads&#x27; &#125;<br>            ],<br>            emphasis: &#123;<br>              itemStyle: &#123;<br>                shadowBlur: 10,<br>                shadowOffsetX: 0,<br>                shadowColor: &#x27;rgba(0, 0, 0, 0.5)&#x27;<br>              &#125;<br>            &#125;<br>          &#125;<br>        ]<br>      &#125;,<br>    &#125;)<br>    const initEcharts = () =&gt; &#123;<br>      let myChart = echarts.init(document.getElementById(&#x27;myChart&#x27;))<br>      // 绘制图表<br>      myChart.setOption(state.option)<br>    &#125;<br>    onMounted(() =&gt; &#123;<br>      initEcharts()<br>    &#125;)<br>    return &#123;<br>      ...toRefs(state),<br>    &#125;<br>  &#125;,<br>&#125;)<br>&lt;/script&gt;<br>&lt;style scoped&gt;<br>#myChart&#123;<br>  width: 700px;<br>  height: 700px;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="常用依赖"><a href="#常用依赖" class="headerlink" title="常用依赖"></a>常用依赖</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41897680/article/details/107560873">博客</a></p>
+</blockquote>
+<h3 id="常用库"><a href="#常用库" class="headerlink" title="常用库"></a>常用库</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44757034/article/details/128090797">博客</a></p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/vue3/" rel="tag">vue3</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue3%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B"><span class="toc-number">1.</span> <span class="toc-text">vue3快速上手</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ElementPlus"><span class="toc-number">1.1.</span> <span class="toc-text">ElementPlus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios"><span class="toc-number">1.2.</span> <span class="toc-text">axios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vuex"><span class="toc-number">1.3.</span> <span class="toc-text">vuex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie"><span class="toc-number">1.4.</span> <span class="toc-text">cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-number">1.5.</span> <span class="toc-text">工具类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qs"><span class="toc-number">1.6.</span> <span class="toc-text">qs</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#qs%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.6.1.</span> <span class="toc-text">qs的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#parse"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">parse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stringfy"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">stringfy</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#echarts"><span class="toc-number">1.7.</span> <span class="toc-text">echarts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-number">1.8.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BE%9D%E8%B5%96"><span class="toc-number">1.8.1.</span> <span class="toc-text">常用依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BA%93"><span class="toc-number">1.8.2.</span> <span class="toc-text">常用库</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

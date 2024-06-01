@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>添加&#34;通过XXX打开&#34;的右键菜单 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="添加【通过XXX打开】的右键菜单 参考博文 可以看到暂时还没有以webstorm打开的快捷方式win+R，输入regedit新建项，命名为webstorm点击默认项，输入Open Folder as WebStorm Project设置图标命名为Icon赋值webStorm文件路径设置之前新建的Icon的值参考&quot;D:\IntelliJ IDEA 2022.3.1\bin\idea64.e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="添加&quot;通过XXX打开&quot;的右键菜单">
+<meta property="og:url" content="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/tian-jia-you-jian-yi-xxx-de-fang-shi-da-kai/tian-jia-you-jian-yi-xxx-de-fang-shi-da-kai.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="添加【通过XXX打开】的右键菜单 参考博文 可以看到暂时还没有以webstorm打开的快捷方式win+R，输入regedit新建项，命名为webstorm点击默认项，输入Open Folder as WebStorm Project设置图标命名为Icon赋值webStorm文件路径设置之前新建的Icon的值参考&quot;D:\IntelliJ IDEA 2022.3.1\bin\idea64.e">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261145545.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261148240.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261149268.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261151163.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261153982.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261200992.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261155321.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261156380.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261157731.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261158016.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261201683.png">
+<meta property="article:published_time" content="2023-03-26T23:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.904Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="添加【通过XXX打开】的右键菜单">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261145545.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230566">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230566">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230566">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230566"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230566"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="添加&#34;通过XXX打开&#34;的右键菜单" loading="lazy">
+            <h1>添加&#34;通过XXX打开&#34;的右键菜单</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年03月27日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="添加【通过XXX打开】的右键菜单"><a href="#添加【通过XXX打开】的右键菜单" class="headerlink" title="添加【通过XXX打开】的右键菜单"></a>添加【通过XXX打开】的右键菜单</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cjxstart/p/16130101.html">参考博文</a></p>
+<p>可以看到暂时还没有<code>以webstorm</code>打开的快捷方式<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261145545.png" alt="步骤1" data-caption="步骤1" loading="lazy"><br>win+R，输入<code>regedit</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261148240.png" alt="步骤2" data-caption="步骤2" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261149268.png" alt="步骤3" data-caption="步骤3" loading="lazy"><br>新建项，命名为webstorm<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261151163.png" alt="步骤4" data-caption="步骤4" loading="lazy"><br>点击<code>默认项</code>，输入<code>Open Folder as WebStorm Project</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261153982.png" alt="步骤5" data-caption="步骤5" loading="lazy"><br>设置图标<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261200992.png" alt="新建Icon字符串值" data-caption="新建Icon字符串值" loading="lazy"><br>命名为Icon<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261155321.png" alt="image-20230326115545268" data-caption="image-20230326115545268" loading="lazy"><br>赋值webStorm文件路径<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261156380.png" alt="image-20230326115637333" data-caption="image-20230326115637333" loading="lazy"><br>设置之前新建的Icon的值<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261157731.png" alt="image-20230326115711697" data-caption="image-20230326115711697" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261158016.png" alt="image-20230326115803952" data-caption="image-20230326115803952" loading="lazy"><br>参考<code>&quot;D:\IntelliJ IDEA 2022.3.1\bin\idea64.exe&quot; &quot;%1&quot;</code>这个命令，将文件路径换成自己的，其他不变<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303261201683.png" alt="image-20230326120150589" data-caption="image-20230326120150589" loading="lazy"></p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%B7%BB%E5%8A%A0%E3%80%90%E9%80%9A%E8%BF%87XXX%E6%89%93%E5%BC%80%E3%80%91%E7%9A%84%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/" rel="tag">添加【通过XXX打开】的右键菜单</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E3%80%90%E9%80%9A%E8%BF%87XXX%E6%89%93%E5%BC%80%E3%80%91%E7%9A%84%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95"><span class="toc-number">1.</span> <span class="toc-text">添加【通过XXX打开】的右键菜单</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

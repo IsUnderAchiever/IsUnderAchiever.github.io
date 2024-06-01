@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>配置nodejs - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="nvm安装前往下载 默认就好，免得配置环境  在nvm文件夹下找到setting.txt，进行如下配置  ##当前操作系统的位数（32&#x2F;64）arch: 64 ##是否需要代理proxy: none ##node的淘宝镜像node_mirror: http:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;##npm的淘宝镜像npm_mirror: https:&#x2F;&#x2F;npm.taobao.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置nodejs">
+<meta property="og:url" content="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/nvm-pei-zhi-nodejs/pei-zhi-nodejs.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="nvm安装前往下载 默认就好，免得配置环境  在nvm文件夹下找到setting.txt，进行如下配置  ##当前操作系统的位数（32&#x2F;64）arch: 64 ##是否需要代理proxy: none ##node的淘宝镜像node_mirror: http:&#x2F;&#x2F;npm.taobao.org&#x2F;mirrors&#x2F;node&#x2F;##npm的淘宝镜像npm_mirror: https:&#x2F;&#x2F;npm.taobao.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037693.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037788.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037422.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037973.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037971.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037983.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037071.png">
+<meta property="article:published_time" content="2023-01-19T08:20:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.897Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="环境配置">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037693.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230607">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230607">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230607">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230607"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230607"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="配置nodejs" loading="lazy">
+            <h1>配置nodejs</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年01月19日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="nvm安装"><a href="#nvm安装" class="headerlink" title="nvm安装"></a>nvm安装</h2><p><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">前往下载</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037693.png" alt="1" data-caption="1" loading="lazy"></p>
+<h5 id="默认就好，免得配置环境"><a href="#默认就好，免得配置环境" class="headerlink" title="默认就好，免得配置环境"></a>默认就好，免得配置环境</h5><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037788.png" alt="2" data-caption="2" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037422.png" alt="3" data-caption="3" loading="lazy"></p>
+<blockquote>
+<p>在<code>nvm</code>文件夹下找到<code>setting.txt</code>，进行如下配置<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037973.png" alt="4" data-caption="4" loading="lazy"></p>
+</blockquote>
+<figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-comment">##当前操作系统的位数（32/64）</span><br><span class="hljs-attr">arch</span>: <span class="hljs-string">64 </span><br><span class="hljs-comment">##是否需要代理</span><br><span class="hljs-attr">proxy</span>: <span class="hljs-string">none </span><br><span class="hljs-comment">##node的淘宝镜像</span><br><span class="hljs-attr">node_mirror</span>: <span class="hljs-string">http://npm.taobao.org/mirrors/node/</span><br><span class="hljs-comment">##npm的淘宝镜像</span><br><span class="hljs-attr">npm_mirror</span>: <span class="hljs-string">https://npm.taobao.org/mirrors/npm/</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">## nvm下载nodejs</span><br>nvm install 14.17.2<br>nvm use 14.17.2<br>nvm install 16.13.2<br>nvm use 16.13.2<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">## 安装cnpm,将npm设置为淘宝镜像</span><br><span class="hljs-comment">## 安装</span><br>npm install -g cnpm --registry=https://registry.npm.taobao.org<br><span class="hljs-comment">## 设置</span><br>npm config <span class="hljs-built_in">set</span> registry https://registry.npm.taobao.org<br><span class="hljs-comment">## 安装vue/cli</span><br>cnpm install -g @vue/cli<br><span class="hljs-comment">## 检查是否安装成功</span><br><span class="hljs-comment">#vue -V 或者</span><br>vue --version<br></code></pre></td></tr></table></figure>
+<h2 id="创建一个vue项目试试"><a href="#创建一个vue项目试试" class="headerlink" title="创建一个vue项目试试"></a>创建一个vue项目试试</h2><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">vue create demo<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>选择manually select features 手动创建<br>选择<code>TypeScript</code>、<code>Router</code>、<code>Vuex</code>，<strong>取消掉Linter&#x2F;Formatter</strong><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037971.png" alt="5" data-caption="5" loading="lazy"><br>选择3.X<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037983.png" alt="6" data-caption="6" loading="lazy"><br>根据提示运行命令</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> demo<br>npm run serve<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301202037071.png" alt="8" data-caption="8" loading="lazy"></p>
+<h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/dist/v10.16.3/">网址</a><br>一直默认即可（安装地址自定义）<br>环境变量 path新建”D:\nodejs”<br>在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> prefix <span class="hljs-string">&quot;D:\nodejs\node_global&quot;</span><br>npm config <span class="hljs-built_in">set</span> cache <span class="hljs-string">&quot;D:\nodejs\node_cache&quot;</span><br></code></pre></td></tr></table></figure>
+<p>环境变量 path新建”D:\nodejs\node_global”</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm config get registry<br>npm config <span class="hljs-built_in">set</span> registry https://registry.npm.taobao.org/<br>npm config get registry<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nvm%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">nvm安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%B0%B1%E5%A5%BD%EF%BC%8C%E5%85%8D%E5%BE%97%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">默认就好，免得配置环境</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAvue%E9%A1%B9%E7%9B%AE%E8%AF%95%E8%AF%95"><span class="toc-number">2.</span> <span class="toc-text">创建一个vue项目试试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">3.</span> <span class="toc-text">安装nodejs</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

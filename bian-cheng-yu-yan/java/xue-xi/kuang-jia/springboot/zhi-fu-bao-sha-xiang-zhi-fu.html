@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>支付宝沙箱支付 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="支付宝沙箱支付 参考博客1 参考博客2 网站 参考视频,青戈的demo项目密钥导入依赖  &lt;dependency&gt;    &lt;groupId&gt;com.alipay.sdk&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;alipay-sdk-java&lt;&#x2F;artifactId&gt;    &lt;version&gt;4.22.110.ALL&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="支付宝沙箱支付">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/springboot/zhi-fu-bao-sha-xiang-zhi-fu.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="支付宝沙箱支付 参考博客1 参考博客2 网站 参考视频,青戈的demo项目密钥导入依赖  &lt;dependency&gt;    &lt;groupId&gt;com.alipay.sdk&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;alipay-sdk-java&lt;&#x2F;artifactId&gt;    &lt;version&gt;4.22.110.ALL&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337963.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337090.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337207.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337844.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337268.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337560.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337177.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337241.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337915.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337442.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338191.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337401.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338219.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338689.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338811.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338582.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338306.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338384.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338458.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338705.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338134.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338575.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338417.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338042.png">
+<meta property="article:published_time" content="2023-03-27T03:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.988Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="支付宝沙箱支付">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337963.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230565">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230565">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230565">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230565"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230565"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="支付宝沙箱支付" loading="lazy">
+            <h1>支付宝沙箱支付</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年03月27日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1%E6%94%AF%E4%BB%98/">支付宝沙箱支付</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="支付宝沙箱支付"><a href="#支付宝沙箱支付" class="headerlink" title="支付宝沙箱支付"></a>支付宝沙箱支付</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hhb442/article/details/123304287">参考博客1</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xqnode/article/details/124457790">参考博客2</a></p>
+<p><a target="_blank" rel="noopener" href="https://open.alipay.com/develop/sandbox/app">网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12e4y1o7qj/?spm_id_from=333.337.search-card.all.click&vd_source=0de2cc95ad0adc3e9ec15f6dcede1a20">参考视频</a>,<a target="_blank" rel="noopener" href="https://gitee.com/xqnode/alipay-demo">青戈的demo项目</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337963.png" alt="步骤1" data-caption="步骤1" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337090.png" alt="image-20230326134943080" data-caption="image-20230326134943080" loading="lazy"><br><a target="_blank" rel="noopener" href="https://opendocs.alipay.com/common/02kipk#%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD">密钥</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337207.png" alt="image-20230326203237561" data-caption="image-20230326203237561" loading="lazy"><br>导入依赖</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alipay.sdk<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>alipay-sdk-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.22.110.ALL<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>cn.hutool<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>hutool-all<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.7.20<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>application.properties里需要配置这四个<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337844.png" alt="image-20230326212330514" data-caption="image-20230326212330514" loading="lazy"><br>这里复制第一个appid<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337268.png" alt="appId" data-caption="appId" loading="lazy"><br>复制第二个私钥<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337560.png" alt="image-20230326212621235" data-caption="image-20230326212621235" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337177.png" alt="image-20230326212657145" data-caption="image-20230326212657145" loading="lazy"><br>复制第三个支付宝公钥<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337241.png" alt="image-20230326212806008" data-caption="image-20230326212806008" loading="lazy"><br>至于第四个url，需要下载一个工具<br>natapp地址</p>
+</blockquote>
+<hr>
+<p>官网：<a target="_blank" rel="noopener" href="https://natapp.cn/">https://natapp.cn/</a><br>下载：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1L99Ibawylnck4b4c0NtmXg?pwd=685x">https://pan.baidu.com/s/1L99Ibawylnck4b4c0NtmXg?pwd=685x</a></p>
+<blockquote>
+<p>下载后，去官网注册账号<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337915.png" alt="image-20230326213755393" data-caption="image-20230326213755393" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337442.png" alt="image-20230326213914822" data-caption="image-20230326213914822" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338191.png" alt="image-20230326213940611" data-caption="image-20230326213940611" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152337401.png" alt="image-20230326214106638" data-caption="image-20230326214106638" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338219.png" alt="image-20230326214209342" data-caption="image-20230326214209342" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338689.png" alt="image-20230326214411891" data-caption="image-20230326214411891" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338811.png" alt="image-20230326214512806" data-caption="image-20230326214512806" loading="lazy"><br>配好之后双击start.bat<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338582.png" alt="image-20230326214657488" data-caption="image-20230326214657488" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338306.png" alt="image-20230326214742135" data-caption="image-20230326214742135" loading="lazy"><br>还需要配置controller的地址<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338384.png" alt="image-20230326214859892" data-caption="image-20230326214859892" loading="lazy"><br>配置到此结束<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338458.png" alt="image-20230326215056683" data-caption="image-20230326215056683" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> lombok.Data;<br><span class="hljs-keyword">import</span> org.springframework.boot.context.properties.ConfigurationProperties;<br><span class="hljs-keyword">import</span> org.springframework.stereotype.Component;<br><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@Component</span><br><span class="hljs-meta">@ConfigurationProperties(prefix = &quot;alipay&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AliPayConfig</span> &#123;<br>    <span class="hljs-keyword">private</span> String appId;<br>    <span class="hljs-keyword">private</span> String appPrivateKey;<br>    <span class="hljs-keyword">private</span> String alipayPublicKey;<br>    <span class="hljs-keyword">private</span> String notifyUrl;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338705.png" alt="image-20230326215215436" data-caption="image-20230326215215436" loading="lazy"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> lombok.Data;<br><span class="hljs-meta">@Data</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AliPay</span> &#123;<br>    <span class="hljs-keyword">private</span> String traceNo;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">double</span> totalAmount;<br>    <span class="hljs-keyword">private</span> String subject;<br>    <span class="hljs-keyword">private</span> String alipayTraceNo;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>继续新建<code>AliPayController</code>，把报错的<code>AliPayConfig</code>包换成自己项目里的路径，还有<code>Order</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> cn.hutool.json.JSONObject;<br><span class="hljs-keyword">import</span> com.alipay.api.AlipayApiException;<br><span class="hljs-keyword">import</span> com.alipay.api.AlipayClient;<br><span class="hljs-keyword">import</span> com.alipay.api.DefaultAlipayClient;<br><span class="hljs-keyword">import</span> com.alipay.api.internal.util.AlipaySignature;<br><span class="hljs-keyword">import</span> com.alipay.api.request.AlipayTradePagePayRequest;<br><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;<br><span class="hljs-keyword">import</span> com.example.alipay.common.AliPayConfig;<br><span class="hljs-keyword">import</span> com.example.alipay.dao.OrdersMapper;<br><span class="hljs-keyword">import</span> com.example.alipay.entity.Orders;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.GetMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.PostMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.RestController;<br><span class="hljs-keyword">import</span> javax.annotation.Resource;<br><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;<br><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletResponse;<br><span class="hljs-keyword">import</span> java.util.Date;<br><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.Map;<br><span class="hljs-comment">// xjlugv6874@sandbox.com</span><br><span class="hljs-comment">// 9428521.24 - 30 = 9428491.24 + 30 = 9428521.24</span><br><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping(&quot;/alipay&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AliPayController</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">GATEWAY_URL</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;https://openapi.alipaydev.com/gateway.do&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">FORMAT</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;JSON&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">CHARSET</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;UTF-8&quot;</span>;<br>    <span class="hljs-comment">//签名方式</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">String</span> <span class="hljs-variable">SIGN_TYPE</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;RSA2&quot;</span>;<br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> AliPayConfig aliPayConfig;<br>    <span class="hljs-meta">@Resource</span><br>    <span class="hljs-keyword">private</span> OrdersMapper ordersMapper;<br>    <span class="hljs-meta">@GetMapping(&quot;/pay&quot;)</span> <span class="hljs-comment">// &amp;subject=xxx&amp;traceNo=xxx&amp;totalAmount=xxx</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">pay</span><span class="hljs-params">(AliPay aliPay, HttpServletResponse httpResponse)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-comment">// 1. 创建Client，通用SDK提供的Client，负责调用支付宝的API</span><br>        <span class="hljs-type">AlipayClient</span> <span class="hljs-variable">alipayClient</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DefaultAlipayClient</span>(GATEWAY_URL, aliPayConfig.getAppId(),<br>                aliPayConfig.getAppPrivateKey(), FORMAT, CHARSET, aliPayConfig.getAlipayPublicKey(), SIGN_TYPE);<br>        <span class="hljs-comment">// 2. 创建 Request并设置Request参数</span><br>        <span class="hljs-type">AlipayTradePagePayRequest</span> <span class="hljs-variable">request</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AlipayTradePagePayRequest</span>();  <span class="hljs-comment">// 发送请求的 Request类</span><br>        request.setNotifyUrl(aliPayConfig.getNotifyUrl());<br>        <span class="hljs-type">JSONObject</span> <span class="hljs-variable">bizContent</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JSONObject</span>();<br>        bizContent.set(<span class="hljs-string">&quot;out_trade_no&quot;</span>, aliPay.getTraceNo());  <span class="hljs-comment">// 我们自己生成的订单编号</span><br>        bizContent.set(<span class="hljs-string">&quot;total_amount&quot;</span>, aliPay.getTotalAmount()); <span class="hljs-comment">// 订单的总金额</span><br>        bizContent.set(<span class="hljs-string">&quot;subject&quot;</span>, aliPay.getSubject());   <span class="hljs-comment">// 支付的名称</span><br>        bizContent.set(<span class="hljs-string">&quot;product_code&quot;</span>, <span class="hljs-string">&quot;FAST_INSTANT_TRADE_PAY&quot;</span>);  <span class="hljs-comment">// 固定配置</span><br>        request.setBizContent(bizContent.toString());<br>        <span class="hljs-comment">// 执行请求，拿到响应的结果，返回给浏览器</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">form</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            form = alipayClient.pageExecute(request).getBody(); <span class="hljs-comment">// 调用SDK生成表单</span><br>        &#125; <span class="hljs-keyword">catch</span> (AlipayApiException e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>        httpResponse.setContentType(<span class="hljs-string">&quot;text/html;charset=&quot;</span> + CHARSET);<br>        httpResponse.getWriter().write(form);<span class="hljs-comment">// 直接将完整的表单html输出到页面</span><br>        httpResponse.getWriter().flush();<br>        httpResponse.getWriter().close();<br>    &#125;<br>    <span class="hljs-meta">@PostMapping(&quot;/notify&quot;)</span>  <span class="hljs-comment">// 注意这里必须是POST接口</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">payNotify</span><span class="hljs-params">(HttpServletRequest request)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-keyword">if</span> (request.getParameter(<span class="hljs-string">&quot;trade_status&quot;</span>).equals(<span class="hljs-string">&quot;TRADE_SUCCESS&quot;</span>)) &#123;<br>            System.out.println(<span class="hljs-string">&quot;=========支付宝异步回调========&quot;</span>);<br>            Map&lt;String, String&gt; params = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>            Map&lt;String, String[]&gt; requestParams = request.getParameterMap();<br>            <span class="hljs-keyword">for</span> (String name : requestParams.keySet()) &#123;<br>                params.put(name, request.getParameter(name));<br>                <span class="hljs-comment">// System.out.println(name + &quot; = &quot; + request.getParameter(name));</span><br>            &#125;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">outTradeNo</span> <span class="hljs-operator">=</span> params.get(<span class="hljs-string">&quot;out_trade_no&quot;</span>);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">gmtPayment</span> <span class="hljs-operator">=</span> params.get(<span class="hljs-string">&quot;gmt_payment&quot;</span>);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">alipayTradeNo</span> <span class="hljs-operator">=</span> params.get(<span class="hljs-string">&quot;trade_no&quot;</span>);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">sign</span> <span class="hljs-operator">=</span> params.get(<span class="hljs-string">&quot;sign&quot;</span>);<br>            <span class="hljs-type">String</span> <span class="hljs-variable">content</span> <span class="hljs-operator">=</span> AlipaySignature.getSignCheckContentV1(params);<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">checkSignature</span> <span class="hljs-operator">=</span> AlipaySignature.rsa256CheckContent(content, sign, aliPayConfig.getAlipayPublicKey(), <span class="hljs-string">&quot;UTF-8&quot;</span>); <span class="hljs-comment">// 验证签名</span><br>            <span class="hljs-comment">// 支付宝验签</span><br>            <span class="hljs-keyword">if</span> (checkSignature) &#123;<br>                <span class="hljs-comment">// 验签通过</span><br>                System.out.println(<span class="hljs-string">&quot;交易名称: &quot;</span> + params.get(<span class="hljs-string">&quot;subject&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;交易状态: &quot;</span> + params.get(<span class="hljs-string">&quot;trade_status&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;支付宝交易凭证号: &quot;</span> + params.get(<span class="hljs-string">&quot;trade_no&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;商户订单号: &quot;</span> + params.get(<span class="hljs-string">&quot;out_trade_no&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;交易金额: &quot;</span> + params.get(<span class="hljs-string">&quot;total_amount&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;买家在支付宝唯一id: &quot;</span> + params.get(<span class="hljs-string">&quot;buyer_id&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;买家付款时间: &quot;</span> + params.get(<span class="hljs-string">&quot;gmt_payment&quot;</span>));<br>                System.out.println(<span class="hljs-string">&quot;买家付款金额: &quot;</span> + params.get(<span class="hljs-string">&quot;buyer_pay_amount&quot;</span>));<br>                <span class="hljs-comment">// 查询订单</span><br>                QueryWrapper&lt;Orders&gt; queryWrapper = <span class="hljs-keyword">new</span> <span class="hljs-title class_">QueryWrapper</span>&lt;&gt;();<br>                queryWrapper.eq(<span class="hljs-string">&quot;order_id&quot;</span>, outTradeNo);<br>                <span class="hljs-type">Orders</span> <span class="hljs-variable">orders</span> <span class="hljs-operator">=</span> ordersMapper.selectOne(queryWrapper);<br>                <span class="hljs-keyword">if</span> (orders != <span class="hljs-literal">null</span>) &#123;<br>                    orders.setAlipayNo(alipayTradeNo);<br>                    orders.setPayTime(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>());<br>                    orders.setState(<span class="hljs-string">&quot;已支付&quot;</span>);<br>                    ordersMapper.updateById(orders);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;success&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338134.png" alt="image-20230326220353675" data-caption="image-20230326220353675" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs url">http://localhost:15000/alipay/pay?subject=香蕉&amp;traceNo=202208221661165525068&amp;totalAmount=6.99<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>可以看到这里是502，奇怪，视频上明明是这样做的，上网搜了一下，发现<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46978751/article/details/111577414">博客</a><code>每周日中午12点至每周一中午12点沙箱环境进行维护</code>，今天是周日</p>
+<p>官方也说了，请<a target="_blank" rel="noopener" href="https://opendocs.alipay.com/support/01razf">查看</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338575.png" alt="image-20230327203933130" data-caption="image-20230327203933130" loading="lazy"><br>ok，过了时间就可以打开了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338417.png" alt="image-20230327205301864" data-caption="image-20230327205301864" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">商家信息<br>商户账号rilvmb5932<span class="hljs-meta">@sandbox</span>.com<br>登录密码<span class="hljs-number">111111</span><br>商户PID2088621987551356<br>账户余额<span class="hljs-number">2132135.00</span><br>买家信息<br>买家账号xesgkm3338<span class="hljs-meta">@sandbox</span>.com<br>登录密码<span class="hljs-number">111111</span><br>支付密码<span class="hljs-number">111111</span><br>用户UID2088622987164881<br>用户名称xesgkm3338<br>证件类型IDENTITY_CARD<br>证件账号<span class="hljs-number">308282195800026310</span><br>账户余额<span class="hljs-number">99999.00</span> <br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>这里我遇到了一个问题，没有执行回调，我上网查了一下，找到这篇<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45000856/article/details/125671735">博客</a>，但是我不是这个原因<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152338042.png" alt="image-20230327213001891" data-caption="image-20230327213001891" loading="lazy"><br>这个url，复制粘贴到<code>alipay.notifyUrl</code>这里，<code>这个url每次启动都会改变，所以应该更改properties</code></p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1%E6%94%AF%E4%BB%98/" rel="tag">支付宝沙箱支付</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1%E6%94%AF%E4%BB%98"><span class="toc-number">1.</span> <span class="toc-text">支付宝沙箱支付</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

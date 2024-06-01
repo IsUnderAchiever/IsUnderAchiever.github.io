@@ -1,0 +1,102 @@
+<hr>
+<h2 id="permalink-“-编程语言-Vue-Vue3-Vue3学习-11-html”title-11-htmldate-2024-06-01-22-12-25categories-“编程语言”"><a href="#permalink-“-编程语言-Vue-Vue3-Vue3学习-11-html”title-11-htmldate-2024-06-01-22-12-25categories-“编程语言”" class="headerlink" title="permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;11.html”title: 11.htmldate: 2024-06-01 22:12:25categories: “编程语言”"></a>permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;11.html”<br>title: 11.html<br>date: 2024-06-01 22:12:25<br>categories: “编程语言”</h2><pre><code class="vue">&lt;template&gt;
+  &lt;div style=&quot;display: flex;&quot;&gt;
+    &lt;div id=&quot;att&quot; v-for=&quot;(item,index) in com&quot;&gt;
+      &lt;div @click=&quot;changeIndex(index)&quot;&gt;{{item.name}}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;component :is=&quot;isCom&quot;&gt;&lt;/component&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {reactive, ref} from &quot;vue&quot;;
+import ACom from &quot;@/view/ACom.vue&quot;;
+import BCom from &quot;@/view/BCom.vue&quot;;
+import CCom from &quot;@/view/CCom.vue&quot;;
+let isCom=ref(ACom);
+let com = reactive([
+  {
+    name: &#39;A组件&#39;,
+    comName: ACom
+  },
+  {
+    name: &#39;B组件&#39;,
+    comName: BCom
+  },
+  {
+    name: &#39;C组件&#39;,
+    comName: CCom
+  }]);
+let changeIndex=(index:number)=&gt;{
+  isCom.value=com[index].comName
+}
+&lt;/script&gt;
+&lt;style scoped&gt;
+#att div {
+  width: 50px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 30px;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+&lt;/style&gt;
+</code></pre>
+<blockquote>
+<p>控制台警告如下</p>
+</blockquote>
+<pre><code class="warn">HomeView.vue?t=1689771528237:70 [Vue warn]: Vue received a Component which was made a reactive object. This can lead to unnecessary performance overhead, and should be avoided by marking the component with `markRaw` or using `shallowRef` instead of `ref`. 
+Component that was made reactive:  {__name: &#39;ACom&#39;, __hmrId: &#39;2b2bca80&#39;, __file: &#39;D:/project/jetBrains/idea/antd-demo/src/view/ACom.vue&#39;, setup: ƒ, render: ƒ} 
+  at &lt;HomeView onVnodeUnmounted=fn&lt;onVnodeUnmounted&gt; ref=Ref&lt; null &gt; &gt; 
+  at &lt;RouterView&gt; 
+  at &lt;App&gt;
+</code></pre>
+<p><strong>这是因为reactive 会进行proxy 代理 而我们组件代理之后毫无用处 节省性能开销 推荐我们使用shallowRef 或者 markRaw 跳过proxy 代理</strong></p>
+<blockquote>
+<p>修改如下</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div style=&quot;display: flex;&quot;&gt;
+    &lt;div id=&quot;att&quot; v-for=&quot;(item,index) in com&quot;&gt;
+      &lt;div @click=&quot;changeIndex(item,index)&quot;&gt;{{ item.name }}&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;component :is=&quot;isCom&quot;&gt;&lt;/component&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {markRaw, reactive, ref, shallowRef} from &quot;vue&quot;;
+import ACom from &quot;@/view/ACom.vue&quot;;
+import BCom from &quot;@/view/BCom.vue&quot;;
+import CCom from &quot;@/view/CCom.vue&quot;;
+let isCom = shallowRef(ACom);
+let active=ref(0);
+let com = reactive([
+  {
+    name: &#39;A组件&#39;,
+    comName: markRaw(ACom)
+  },
+  {
+    name: &#39;B组件&#39;,
+    comName: markRaw(BCom)
+  },
+  {
+    name: &#39;C组件&#39;,
+    comName: markRaw(CCom)
+  }]);
+let changeIndex = (item,index) =&gt; {
+  isCom.value=item.comName
+  active.value=index;
+}
+&lt;/script&gt;
+&lt;style scoped&gt;
+#att div {
+  width: 50px;
+  height: 30px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 30px;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+&lt;/style&gt;
+</code></pre>

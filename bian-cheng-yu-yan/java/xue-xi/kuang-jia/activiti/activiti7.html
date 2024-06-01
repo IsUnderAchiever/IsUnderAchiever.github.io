@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Activiti7 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="全新Activiti7工作流讲解一、Activiti7概述官网地址：https:&#x2F;&#x2F;www.activiti.org&#x2F;&amp;emsp;&amp;emsp;Activiti由Alfresco软件开发，目前最高版本Activiti 7。是BPMN的一个基于java的软件实现，不过Activiti 不仅仅包括BPMN，还有DMN决策表和CMMN Case管理引擎，并且有自己的用户管理、微服务API等一系列功能，是一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activiti7">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/activiti/activiti7.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="全新Activiti7工作流讲解一、Activiti7概述官网地址：https:&#x2F;&#x2F;www.activiti.org&#x2F;&amp;emsp;&amp;emsp;Activiti由Alfresco软件开发，目前最高版本Activiti 7。是BPMN的一个基于java的软件实现，不过Activiti 不仅仅包括BPMN，还有DMN决策表和CMMN Case管理引擎，并且有自己的用户管理、微服务API等一系列功能，是一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245900.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245006.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245918.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245332.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245982.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245884.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245820.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245125.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245689.png">
+<meta property="og:image" content="c:\Users\dpb\AppData\Roaming\Typora\typora-user-images\image-20230519112027397.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245281.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246185.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246862.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246137.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246104.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246614.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246605.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246908.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246049.png">
+<meta property="article:published_time" content="2024-03-01T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.920Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="Activiti7">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245900.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230388">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230388">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230388">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230388"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230388"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="Activiti7" loading="lazy">
+            <h1>Activiti7</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年03月01日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/Activiti7/">Activiti7</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="全新Activiti7工作流讲解"><a href="#全新Activiti7工作流讲解" class="headerlink" title="全新Activiti7工作流讲解"></a>全新Activiti7工作流讲解</h1><h1 id="一、Activiti7概述"><a href="#一、Activiti7概述" class="headerlink" title="一、Activiti7概述"></a>一、Activiti7概述</h1><p>官网地址：<a target="_blank" rel="noopener" href="https://www.activiti.org/">https://www.activiti.org/</a><br>&emsp;&emsp;Activiti由Alfresco软件开发，目前最高版本Activiti 7。是BPMN的一个基于java的软件实现，不过Activiti 不仅仅包括BPMN，还有DMN决策表和CMMN Case管理引擎，并且有自己的用户管理、微服务API等一系列功能，是一个服务平台。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245900.png" alt="image-20230517195056636" data-caption="image-20230517195056636" loading="lazy"></p>
+<h1 id="二、Activiti7的入门案例"><a href="#二、Activiti7的入门案例" class="headerlink" title="二、Activiti7的入门案例"></a>二、Activiti7的入门案例</h1><p>官方手册：<a target="_blank" rel="noopener" href="http://jeecg.com/activiti5.21/">http://jeecg.com/activiti5.21/</a></p>
+<h2 id="1-创建SpringBoot项目"><a href="#1-创建SpringBoot项目" class="headerlink" title="1.创建SpringBoot项目"></a>1.创建SpringBoot项目</h2><p>&emsp;&emsp;现在开发中或者我们自己学习写案例都是通过SpringBoot脚手架工具来快速构建项目的。那么我们也就直接通过创建SpringBoot项目来给大家讲解相关的案例。创建一个普通的SpringBoot项目。指定版本为2.4.2即可<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245006.png" alt="image-20230517211943193" data-caption="image-20230517211943193" loading="lazy"><br>&emsp;&emsp;然后添加对应的依赖：Activiti7的依赖和MySQL的依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.reporting.outputEncoding</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">spring-boot.version</span>&gt;</span>2.4.2<span class="hljs-tag">&lt;/<span class="hljs-name">spring-boot.version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.23<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.activiti<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>activiti-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>7.0.0.GA<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;spring-boot.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.8.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">encoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">encoding</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;spring-boot.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">mainClass</span>&gt;</span>com.boge.act.PrepareDemo2Application<span class="hljs-tag">&lt;/<span class="hljs-name">mainClass</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">skip</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">skip</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">executions</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">execution</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>repackage<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">goals</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">goal</span>&gt;</span>repackage<span class="hljs-tag">&lt;/<span class="hljs-name">goal</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">goals</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">execution</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">executions</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>相关的Activiti依赖加载进来了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245918.png" alt="image-20230517212124728" data-caption="image-20230517212124728" loading="lazy"><br>到这儿基本环境就OK了</p>
+<h2 id="2-获取ProcessEngine"><a href="#2-获取ProcessEngine" class="headerlink" title="2.获取ProcessEngine"></a>2.获取ProcessEngine</h2><h3 id="2-1-默认的方式"><a href="#2-1-默认的方式" class="headerlink" title="2.1 默认的方式"></a>2.1 默认的方式</h3><p>&emsp;&emsp;在工作流引擎框架中，<code>ProcessEngine</code>是一个非常核心的对象，我们需要首先解决这个对象的获取。获取方式很多。先来看最简单的一个基于<code>activiti.cfg.xml</code>的XML文件的配置方式。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">processEngine</span> <span class="hljs-operator">=</span> ProcessEngines.getDefaultProcessEngine();<br>    System.out.println(processEngine);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>&emsp;&emsp;通过<code>getDefaultProcessEngine</code>方法加载会默认的从classpath路径下加载<code>activiti.cfg.xml</code>配置文件。我们添加该文件。内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;processEngineConfiguration&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcUrl&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/activiti7&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcDriver&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcUsername&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;root&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcPassword&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123456&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;databaseSchemaUpdate&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;asyncExecutorActivate&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mailServerHost&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mail.my-corp.com&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mailServerPort&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5025&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>然后我们就可以启动，但是出现了如下错误：<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245332.png" alt="image-20230517211345644" data-caption="image-20230517211345644" loading="lazy"><br>&emsp;&emsp;出现这种情况只需要在mysql的连接字符串中添加上nullCatalogMeansCurrent&#x3D;true，设置为只查当前连接的schema库即可。</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;processEngineConfiguration&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcUrl&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/activiti7?nullCatalogMeansCurrent=true&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcDriver&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcUsername&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;root&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jdbcPassword&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123456&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;databaseSchemaUpdate&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;asyncExecutorActivate&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;false&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mailServerHost&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mail.my-corp.com&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mailServerPort&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5025&quot;</span> /&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>然后执行程序正确。搞定。同时在数据库中创建了相关的表结构<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245982.png" alt="image-20230517212912548" data-caption="image-20230517212912548" loading="lazy"></p>
+<h3 id="2-2-编程方式获取"><a href="#2-2-编程方式获取" class="headerlink" title="2.2 编程方式获取"></a>2.2 编程方式获取</h3><p>&emsp;&emsp;上面的配置文件的方式中的配置文件其实是一个Spring的配置文件，但是这并不意味着Activiti只能用于Spring环境。我们也可以通过编程的方式来使用配置文件，从而来构建ProcessEngineConfiguration对象，具体的实现如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test2</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">engine</span> <span class="hljs-operator">=</span> ProcessEngineConfiguration<br>          .createStandaloneInMemProcessEngineConfiguration()<br>            .setJdbcUrl(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/activiti7?nullCatalogMeansCurrent=true&quot;</span>)<br>            .setJdbcDriver(<span class="hljs-string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>)<br>            .setJdbcPassword(<span class="hljs-string">&quot;123456&quot;</span>)<br>            .setJdbcUsername(<span class="hljs-string">&quot;root&quot;</span>)<br>            .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE)<br>            .buildProcessEngine();<br>    System.out.println(engine);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>上面讲解中的相关属性说明：<br><strong>databaseSchemaUpdate</strong>：用于设置流程引擎启动关闭时使用的数据库表结构控制策略</p>
+<ul>
+<li><code>false</code> (默认): 当引擎启动时，检查数据库表结构的版本是否匹配库文件版本。版本不匹配时抛出异常。</li>
+<li><code>true</code>: 构建引擎时，检查并在需要时更新表结构。表结构不存在则会创建。</li>
+<li><code>create-drop</code>: 引擎创建时创建表结构，并在引擎关闭时删除表结构。</li>
+</ul>
+<h3 id="2-3-表结构介绍"><a href="#2-3-表结构介绍" class="headerlink" title="2.3 表结构介绍"></a>2.3 表结构介绍</h3><p>&emsp;&emsp;在Activiti7中。我们启动服务会自动维护Activiti7需要使用到的相关的表结构。在这块我们需要有个大概的了解。首先是支持的数据库有：</p>
+<table>
+<thead>
+<tr>
+<th>Activiti数据库类型</th>
+<th>示例JDBC URL</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h2</td>
+<td>jdbc:h2:tcp:&#x2F;&#x2F;localhost&#x2F;activiti</td>
+<td>默认配置的数据库</td>
+</tr>
+<tr>
+<td>mysql</td>
+<td>jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;activiti?autoReconnect&#x3D;true</td>
+<td>已使用mysql-connector-java数据库驱动测试</td>
+</tr>
+<tr>
+<td>oracle</td>
+<td>jdbc:oracle:thin:@localhost:1521:xe</td>
+<td></td>
+</tr>
+<tr>
+<td>postgres</td>
+<td>jdbc:postgresql:&#x2F;&#x2F;localhost:5432&#x2F;activiti</td>
+<td></td>
+</tr>
+<tr>
+<td>db2</td>
+<td>jdbc:db2:&#x2F;&#x2F;localhost:50000&#x2F;activiti</td>
+<td></td>
+</tr>
+<tr>
+<td>mssql</td>
+<td>jdbc:sqlserver:&#x2F;&#x2F;localhost:1433;databaseName&#x3D;activiti (jdbc.driver&#x3D;com.microsoft.sqlserver.jdbc.SQLServerDriver) <em>OR</em> jdbc:jtds:sqlserver:&#x2F;&#x2F;localhost:1433&#x2F;activiti (jdbc.driver&#x3D;net.sourceforge.jtds.jdbc.Driver)</td>
+<td>已使用Microsoft JDBC Driver 4.0 (sqljdb</td>
+</tr>
+<tr>
+<td>&emsp;&emsp;Activiti的所有数据库表都以**ACT_**开头。第二部分是说明表用途的两字符标示符。服务API的命名也大略符合这个规则。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ACT_RE_</strong>*: <code>RE</code>代表<code>repository</code>。带有这个前缀的表包含“静态”信息，例如流程定义与流程资源（图片、规则等）。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ACT_RU_</strong>*: <code>RU</code>代表<code>runtime</code>。这些表存储运行时信息，例如流程实例（process instance）、用户任务（user task）、变量（variable）、作业（job）等。Activiti只在流程实例运行中保存运行时数据，并在流程实例结束时删除记录。这样保证运行时表小和快。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ACT_ID_</strong>*: <code>ID</code>代表<code>identity</code>。这些表包含身份信息，例如用户、组等。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ACT_HI_</strong>*: <code>HI</code>代表<code>history</code>。这些表存储历史数据，例如已完成的流程实例、变量、任务等。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ACT_GE_</strong>*: 通用数据。用于不同场景下</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>注意：MySQL数据库最好使用5.7及以上的版本</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="3-在线流程设计器"><a href="#3-在线流程设计器" class="headerlink" title="3.在线流程设计器"></a>3.在线流程设计器</h2><p>&emsp;&emsp;接下来我们通过官方提供的流程设计器来实现一个简单流程的设计。然后完成相关的部署和流程整体操作。<br>官网下载地址：<a target="_blank" rel="noopener" href="https://www.activiti.org/get-started">https://www.activiti.org/get-started</a> 下载下来后解压缩<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245884.png" alt="image-20230519111655829" data-caption="image-20230519111655829" loading="lazy"><br>进入到wars中。提供的有Activiti-app.war<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245820.png" alt="image-20230519111731391" data-caption="image-20230519111731391" loading="lazy"><br>把这war包拷贝到Tomcat服务器中即可。注意Tomcat的版本不要高于8.5，然后Tomcat服务。访问 <a target="_blank" rel="noopener" href="http://localhost:8080/activiti-app">http://localhost:8080/activiti-app</a> 即可。登录的账号密码是 admin  test<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245125.png" alt="image-20230519111931446" data-caption="image-20230519111931446" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245689.png" alt="image-20230519112000632" data-caption="image-20230519112000632" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="C:\Users\dpb\AppData\Roaming\Typora\typora-user-images\image-20230519112027397.png" alt="image-20230519112027397" data-caption="image-20230519112027397" loading="lazy"><br>点击create process 弹出窗口。录入相关的流程定义信息<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242245281.png" alt="image-20230519112212684" data-caption="image-20230519112212684" loading="lazy"><br>绘制好流程图后。保存并下载对应的xml文件<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246185.png" alt="image-20230519112253385" data-caption="image-20230519112253385" loading="lazy"><br>得到的流程图的xml内容：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">definitions</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.omg.org/spec/BPMN/20100524/MODEL&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="hljs-attr">xmlns:xsd</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">xmlns:activiti</span>=<span class="hljs-string">&quot;http://activiti.org/bpmn&quot;</span> <span class="hljs-attr">xmlns:bpmndi</span>=<span class="hljs-string">&quot;http://www.omg.org/spec/BPMN/20100524/DI&quot;</span> <span class="hljs-attr">xmlns:omgdc</span>=<span class="hljs-string">&quot;http://www.omg.org/spec/DD/20100524/DC&quot;</span> <span class="hljs-attr">xmlns:omgdi</span>=<span class="hljs-string">&quot;http://www.omg.org/spec/DD/20100524/DI&quot;</span> <span class="hljs-attr">typeLanguage</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span> <span class="hljs-attr">expressionLanguage</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/XPath&quot;</span> <span class="hljs-attr">targetNamespace</span>=<span class="hljs-string">&quot;http://www.activiti.org/processdef&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">process</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test1&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;test1&quot;</span> <span class="hljs-attr">isExecutable</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">documentation</span>&gt;</span>test1<span class="hljs-tag">&lt;/<span class="hljs-name">documentation</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">startEvent</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;startEvent1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">startEvent</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sid-470631FF-51BA-4954-96BB-346B99CA0A2C&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;人事审批&quot;</span> <span class="hljs-attr">activiti:assignee</span>=<span class="hljs-string">&quot;zhangsan&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">extensionElements</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">modeler:initiator-can-complete</span> <span class="hljs-attr">xmlns:modeler</span>=<span class="hljs-string">&quot;http://activiti.com/modeler&quot;</span>&gt;</span>&lt;![CDATA[false]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">modeler:initiator-can-complete</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">extensionElements</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">userTask</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sid-B53369E8-E698-4F53-AE40-97E7654BFA78&quot;</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">&quot;startEvent1&quot;</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">&quot;sid-470631FF-51BA-4954-96BB-346B99CA0A2C&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sequenceFlow</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sid-34454522-B109-41C9-8519-59D29B621099&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;经理审批&quot;</span> <span class="hljs-attr">activiti:assignee</span>=<span class="hljs-string">&quot;lisi&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">extensionElements</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">modeler:initiator-can-complete</span> <span class="hljs-attr">xmlns:modeler</span>=<span class="hljs-string">&quot;http://activiti.com/modeler&quot;</span>&gt;</span>&lt;![CDATA[false]]&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">modeler:initiator-can-complete</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">extensionElements</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">userTask</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sid-5AE88ADE-9FD3-48F2-81EF-528DA0C068CB&quot;</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">&quot;sid-470631FF-51BA-4954-96BB-346B99CA0A2C&quot;</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">&quot;sid-34454522-B109-41C9-8519-59D29B621099&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sequenceFlow</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">endEvent</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sid-EA0332FA-59B0-45C0-9D24-47C78051D52C&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">endEvent</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sid-F6C0657A-C92F-4DEA-AAB1-93750FFBD7E5&quot;</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">&quot;sid-34454522-B109-41C9-8519-59D29B621099&quot;</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">&quot;sid-EA0332FA-59B0-45C0-9D24-47C78051D52C&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sequenceFlow</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">process</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNDiagram</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNDiagram_test1&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNPlane</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;test1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNPlane_test1&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;startEvent1&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNShape_startEvent1&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;30.0&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;30.0&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;100.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;163.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdc:Bounds</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;sid-470631FF-51BA-4954-96BB-346B99CA0A2C&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNShape_sid-470631FF-51BA-4954-96BB-346B99CA0A2C&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;80.0&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100.0&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;175.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;138.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdc:Bounds</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;sid-34454522-B109-41C9-8519-59D29B621099&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNShape_sid-34454522-B109-41C9-8519-59D29B621099&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;80.0&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100.0&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;320.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;138.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdc:Bounds</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;sid-EA0332FA-59B0-45C0-9D24-47C78051D52C&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNShape_sid-EA0332FA-59B0-45C0-9D24-47C78051D52C&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;28.0&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;28.0&quot;</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;465.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;164.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdc:Bounds</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;sid-5AE88ADE-9FD3-48F2-81EF-528DA0C068CB&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNEdge_sid-5AE88ADE-9FD3-48F2-81EF-528DA0C068CB&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;275.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;178.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdi:waypoint</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;320.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;178.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdi:waypoint</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;sid-F6C0657A-C92F-4DEA-AAB1-93750FFBD7E5&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNEdge_sid-F6C0657A-C92F-4DEA-AAB1-93750FFBD7E5&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;420.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;178.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdi:waypoint</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;465.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;178.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdi:waypoint</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">&quot;sid-B53369E8-E698-4F53-AE40-97E7654BFA78&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BPMNEdge_sid-B53369E8-E698-4F53-AE40-97E7654BFA78&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;130.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;178.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdi:waypoint</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">&quot;175.0&quot;</span> <span class="hljs-attr">y</span>=<span class="hljs-string">&quot;178.0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">omgdi:waypoint</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNPlane</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNDiagram</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">definitions</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>然后我们就可以做流程的部署操作了</p>
+<h2 id="4-流程操作"><a href="#4-流程操作" class="headerlink" title="4.流程操作"></a>4.流程操作</h2><h3 id="4-1-流程部署"><a href="#4-1-流程部署" class="headerlink" title="4.1 流程部署"></a>4.1 流程部署</h3><p>&emsp;&emsp;设计好了流程图我们就可以通过如下的代码完成流程的部署。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment">  * 流程部署操作</span><br><span class="hljs-comment">  */</span><br> <span class="hljs-meta">@Test</span><br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test3</span><span class="hljs-params">()</span>&#123;<br>     <span class="hljs-comment">// 1.获取ProcessEngine对象</span><br>     <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">processEngine</span> <span class="hljs-operator">=</span> ProcessEngines.getDefaultProcessEngine();<br>     <span class="hljs-comment">// 2.完成流程的部署操作 需要通过RepositoryService来完成</span><br>     <span class="hljs-type">RepositoryService</span> <span class="hljs-variable">repositoryService</span> <span class="hljs-operator">=</span> processEngine.getRepositoryService();<br>     <span class="hljs-comment">// 3.完成部署操作</span><br>     <span class="hljs-type">Deployment</span> <span class="hljs-variable">deploy</span> <span class="hljs-operator">=</span> repositoryService.createDeployment()<br>             .addClasspathResource(<span class="hljs-string">&quot;flow/test1.bpmn20.xml&quot;</span>)<br>             .name(<span class="hljs-string">&quot;第一个流程&quot;</span>)<br>             .deploy();<br>     System.out.println(deploy.getId());<br>     System.out.println(deploy.getName());<br> &#125;<br></code></pre></td></tr></table></figure>
+<p>流程部署的行为会涉及到数据库中的这两张表<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246862.png" alt="image-20230519114622514" data-caption="image-20230519114622514" loading="lazy"><br>然后我们可以通过Activiti提供的相关的API来获取流程部署和流程定义的相关信息</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 查询当前部署的流程有哪些</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test4</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">engine</span> <span class="hljs-operator">=</span> ProcessEngines.getDefaultProcessEngine();<br>    <span class="hljs-type">RepositoryService</span> <span class="hljs-variable">repositoryService</span> <span class="hljs-operator">=</span> engine.getRepositoryService();<br>    <span class="hljs-comment">// 查询有哪些部署的流程--》查询相关的流程定义信息</span><br>    <span class="hljs-comment">// repositoryService.createDeploymentQuery() 查询流程部署的相关信息</span><br>    <span class="hljs-comment">// repositoryService.createProcessDefinitionQuery() 查询部署的流程的相关的定义</span><br>    List&lt;Deployment&gt; list = repositoryService.createDeploymentQuery().list(); <span class="hljs-comment">// 查询所有的部署信息</span><br>    <span class="hljs-keyword">for</span> (Deployment deployment : list) &#123;<br>        System.out.println(deployment.getId());<br>        System.out.println(deployment.getName());<br>    &#125;<br>    List&lt;ProcessDefinition&gt; list1 = repositoryService.createProcessDefinitionQuery().list();<br>    <span class="hljs-keyword">for</span> (ProcessDefinition processDefinition : list1) &#123;<br>        System.out.println(processDefinition.getId());<br>        System.out.println(processDefinition.getName());<br>        System.out.println(processDefinition.getDescription());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="4-2-发起流程"><a href="#4-2-发起流程" class="headerlink" title="4.2 发起流程"></a>4.2 发起流程</h3><p>&emsp;&emsp;部署流程成功后。我们就可以发起一个流程。发起流程需要通过<code>RuntimeService</code>来实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 发起一个流程</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test5</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">engine</span> <span class="hljs-operator">=</span> ProcessEngines.getDefaultProcessEngine();<br>    <span class="hljs-comment">// 发起流程 需要通过 runtimeService来实现</span><br>    <span class="hljs-type">RuntimeService</span> <span class="hljs-variable">runtimeService</span> <span class="hljs-operator">=</span> engine.getRuntimeService();<br>    <span class="hljs-comment">// 通过流程定义ID来启动流程  返回的是流程实例对象</span><br>    <span class="hljs-type">ProcessInstance</span> <span class="hljs-variable">processInstance</span> <span class="hljs-operator">=</span> runtimeService<br>            .startProcessInstanceById(<span class="hljs-string">&quot;test1:1:3&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;processInstance.getId() = &quot;</span> + processInstance.getId());<br>    System.out.println(<span class="hljs-string">&quot;processInstance.getDeploymentId() = &quot;</span> + processInstance.getDeploymentId());<br>    System.out.println(<span class="hljs-string">&quot;processInstance.getDescription() = &quot;</span> + processInstance.getDescription());<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>发起流程成功后。在对应的<code>act_ru_task</code>中就有一条对应的待办记录。<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246137.png" alt="image-20230520100457878" data-caption="image-20230520100457878" loading="lazy"><br>对应的流程状态如下：<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246104.png" alt="image-20230520100513859" data-caption="image-20230520100513859" loading="lazy"></p>
+<h3 id="4-3-查询流程"><a href="#4-3-查询流程" class="headerlink" title="4.3 查询流程"></a>4.3 查询流程</h3><p>&emsp;&emsp;用户登录后要查看待办的任务信息。我们需要通过<code>TaskService</code>来实现查询操作。具体代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 待办查询</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test6</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">engine</span> <span class="hljs-operator">=</span> ProcessEngines.getDefaultProcessEngine();<br>    <span class="hljs-comment">// 待办查询 执行中的任务处理通过 TaskService来实现</span><br>    <span class="hljs-type">TaskService</span> <span class="hljs-variable">taskService</span> <span class="hljs-operator">=</span> engine.getTaskService();<br>    <span class="hljs-comment">// Task 对象对应的其实就是 act_ru_task 这张表的记录</span><br>    List&lt;Task&gt; list = taskService.createTaskQuery().taskAssignee(<span class="hljs-string">&quot;lisi&quot;</span>).list();<br>    <span class="hljs-keyword">if</span>(list != <span class="hljs-literal">null</span> &amp;&amp; !list.isEmpty())&#123;<br>        <span class="hljs-keyword">for</span> (Task task : list) &#123;<br>            System.out.println(<span class="hljs-string">&quot;task.getId() = &quot;</span> + task.getId());<br>            System.out.println(<span class="hljs-string">&quot;task.getName() = &quot;</span> + task.getName());<br>            System.out.println(<span class="hljs-string">&quot;task.getAssignee() = &quot;</span> + task.getAssignee());<br>        &#125;<br>    &#125;<span class="hljs-keyword">else</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;当前没有待办任务&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="4-4-审批流程"><a href="#4-4-审批流程" class="headerlink" title="4.4 审批流程"></a>4.4 审批流程</h3><p>&emsp;&emsp;当前登录用户查看到相关的待办信息后。可以做流程的审批处理。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 任务审批</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test7</span><span class="hljs-params">()</span>&#123;<br>    <span class="hljs-type">ProcessEngine</span> <span class="hljs-variable">engine</span> <span class="hljs-operator">=</span> ProcessEngines.getDefaultProcessEngine();<br>    <span class="hljs-comment">// 做任务申请 也需要通过 TaskService 来实现</span><br>    <span class="hljs-type">TaskService</span> <span class="hljs-variable">taskService</span> <span class="hljs-operator">=</span> engine.getTaskService();<br>    <span class="hljs-comment">// 根据当前登录用户查询出对应的待办信息</span><br>    List&lt;Task&gt; list = taskService.createTaskQuery().taskAssignee(<span class="hljs-string">&quot;lisi&quot;</span>).list();<br>    <span class="hljs-keyword">if</span>(list != <span class="hljs-literal">null</span> &amp;&amp; list.size() &gt; <span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">for</span> (Task task : list) &#123;<br>            <span class="hljs-comment">// 做对应的任务审批处理</span><br>            taskService.complete(task.getId());<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 完成任务</span><br>    <span class="hljs-comment">// taskService.complete(&quot;2505&quot;);</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="5-涉及表结构"><a href="#5-涉及表结构" class="headerlink" title="5.涉及表结构"></a>5.涉及表结构</h2><p>&emsp;&emsp;上面一个审批涉及到的表结构的介绍</p>
+<table>
+<thead>
+<tr>
+<th>表名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>act_re_deployment</td>
+<td>部署流程的记录表：一次部署行为会产生一张表</td>
+</tr>
+<tr>
+<td>act_re_procdef</td>
+<td>流程定义表：一张流程图对应的表</td>
+</tr>
+<tr>
+<td>act_hi_procinst</td>
+<td>流程实例表：发起一个流程。就会创建对应的一张表</td>
+</tr>
+<tr>
+<td>act_ru_task</td>
+<td>流程待办表：当前需要审批的记录表，节点审批后就会被删除</td>
+</tr>
+<tr>
+<td>act_hi_actinst</td>
+<td>历史记录：流程审批节点的记录信息</td>
+</tr>
+<tr>
+<td><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246614.png" alt="相关表结构" data-caption="相关表结构" loading="lazy"></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="三、表达式"><a href="#三、表达式" class="headerlink" title="三、表达式"></a>三、表达式</h1><h2 id="值表达式"><a href="#值表达式" class="headerlink" title="值表达式"></a>值表达式</h2><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246605.png" alt="image-20230623091854461" data-caption="image-20230623091854461" loading="lazy"></p>
+<blockquote>
+<p><code>$&#123;&#125;</code></p>
+</blockquote>
+<h2 id="方法表达式"><a href="#方法表达式" class="headerlink" title="方法表达式"></a>方法表达式</h2><p>方法表达式Method expression:调用一个方法， 可以带或不带参数。当调不带参数的方法时，要确保在方法名后添加空括号(以避免与值表达式混淆)。传递的参数可以是字面值,也可以是表达式，它们会被自动解析。例如:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java">$&#123;printer.print()&#125;<br>$&#123;myBean.getAssignee()&#125;<br>$&#123;myBean.addNewOrder(<span class="hljs-string">&#x27;orderName&#x27;</span>)&#125;<br>$&#123;myBean.doSomething(myVar,execution)&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h2><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246908.png" alt="image-20230623132637416" data-caption="image-20230623132637416" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242246049.png" alt="image-20230623132659870" data-caption="image-20230623132659870" loading="lazy"></p>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Activiti7/" rel="tag">Activiti7</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A8%E6%96%B0Activiti7%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%AE%B2%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">全新Activiti7工作流讲解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Activiti7%E6%A6%82%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">一、Activiti7概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Activiti7%E7%9A%84%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">二、Activiti7的入门案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BASpringBoot%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.1.</span> <span class="toc-text">1.创建SpringBoot项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96ProcessEngine"><span class="toc-number">3.2.</span> <span class="toc-text">2.获取ProcessEngine</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E9%BB%98%E8%AE%A4%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.1 默认的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F%E8%8E%B7%E5%8F%96"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2 编程方式获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%A1%A8%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.2.3.</span> <span class="toc-text">2.3 表结构介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%9C%A8%E7%BA%BF%E6%B5%81%E7%A8%8B%E8%AE%BE%E8%AE%A1%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">3.在线流程设计器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%B5%81%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="toc-number">3.4.</span> <span class="toc-text">4.流程操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%B5%81%E7%A8%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.4.1.</span> <span class="toc-text">4.1 流程部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%8F%91%E8%B5%B7%E6%B5%81%E7%A8%8B"><span class="toc-number">3.4.2.</span> <span class="toc-text">4.2 发起流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%9F%A5%E8%AF%A2%E6%B5%81%E7%A8%8B"><span class="toc-number">3.4.3.</span> <span class="toc-text">4.3 查询流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E5%AE%A1%E6%89%B9%E6%B5%81%E7%A8%8B"><span class="toc-number">3.4.4.</span> <span class="toc-text">4.4 审批流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%B6%89%E5%8F%8A%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-number">3.5.</span> <span class="toc-text">5.涉及表结构</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">三、表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%80%BC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.1.</span> <span class="toc-text">值表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">方法表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-number">4.3.</span> <span class="toc-text">监听器</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

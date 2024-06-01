@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>activiti踩坑 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="遭遇问题404http:&#x2F;&#x2F;localhost:8080&#x2F;activiti-app访问报404在activiti官网上下的文件，官网链接，网盘链接看了一下tomcat，是因为activiti-app.war没有被解压怀疑是war包有问题，又去github下载了（实际可能不是），链接后来没办法，试过直接用zip解压，但是启动tomcat时候报错了，即便删掉重新启动还是会报错最后清了一下tomcat缓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="activiti踩坑">
+<meta property="og:url" content="https://nexmoe.com/bao-cuo-ji-lu/activiti/activiti-cai-keng.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="遭遇问题404http:&#x2F;&#x2F;localhost:8080&#x2F;activiti-app访问报404在activiti官网上下的文件，官网链接，网盘链接看了一下tomcat，是因为activiti-app.war没有被解压怀疑是war包有问题，又去github下载了（实际可能不是），链接后来没办法，试过直接用zip解压，但是启动tomcat时候报错了，即便删掉重新启动还是会报错最后清了一下tomcat缓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152350068.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152349359.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152349743.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152349643.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152348161.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243610.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243919.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243195.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243154.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243943.png">
+<meta property="article:published_time" content="2023-07-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.844Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="activiti">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152350068.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230520">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230520">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230520">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230520"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230520"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="activiti踩坑" loading="lazy">
+            <h1>activiti踩坑</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年07月10日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/activiti/">activiti</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="遭遇问题"><a href="#遭遇问题" class="headerlink" title="遭遇问题"></a>遭遇问题</h1><h2 id="404"><a href="#404" class="headerlink" title="404"></a>404</h2><p><code>http://localhost:8080/activiti-app</code>访问报404<br>在activiti官网上下的文件，<a target="_blank" rel="noopener" href="https://www.activiti.org/get-started">官网链接</a>，<a target="_blank" rel="noopener" href="https://www.123pan.com/s/tMU0Vv-REzUd.html">网盘链接</a><br>看了一下tomcat，是因为<code>activiti-app.war</code>没有被解压<br>怀疑是war包有问题，又去github下载了（实际可能不是），<a target="_blank" rel="noopener" href="https://www.123pan.com/s/tMU0Vv-DEzUd.html">链接</a><br>后来没办法，试过直接用zip解压，但是启动tomcat时候报错了，即便删掉重新启动还是会报错<br>最后清了一下tomcat缓存就成功了<br><strong>以下是清理Tomcat的步骤：</strong></p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 停止Tomcat服务器：在命令行中输入“shutdown.bat”（Windows）或“shutdown.sh”（Linux）。<br><span class="hljs-bullet">2.</span> 删除Tomcat工作目录：在Tomcat安装目录下找到“work”文件夹并删除。<br><span class="hljs-bullet">3.</span> 删除Tomcat日志文件：在Tomcat安装目录下找到“logs”文件夹并删除其中的日志文件。<br><span class="hljs-bullet">4.</span> 删除Tomcat临时文件：在Tomcat安装目录下找到“temp”文件夹并删除其中的临时文件。<br><span class="hljs-bullet">5.</span> 清理Tomcat缓存：在Tomcat安装目录下找到“catalina”文件夹并删除其中的缓存文件。<br><span class="hljs-bullet">6.</span> 清理Tomcat应用程序：在Tomcat安装目录下找到“webapps”文件夹并删除其中的应用程序。<br><span class="hljs-bullet">7.</span> 清理Tomcat配置文件：在Tomcat安装目录下找到“conf”文件夹并删除其中的配置文件。<br><span class="hljs-bullet">8.</span> 清理Tomcat插件：在Tomcat安装目录下找到“lib”文件夹并删除其中的插件。<br><span class="hljs-bullet">9.</span> 重新启动Tomcat服务器：在命令行中输入“startup.bat”（Windows）或“startup.sh”（Linux）。<br>注意：在清理Tomcat之前，请备份重要的文件和配置。<br></code></pre></td></tr></table></figure>
+<h2 id="配置MySQL"><a href="#配置MySQL" class="headerlink" title="配置MySQL"></a>配置MySQL</h2><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152350068.png" alt="202306242243706" data-caption="202306242243706" loading="lazy"></p>
+<blockquote>
+<p>查看<a target="_blank" rel="noopener" href="https://blog.csdn.net/zxw75192/article/details/94749796">博客</a></p>
+<p>启动依然还有报错，需要将mysql连接包复制到lib文件夹下</p>
+<p>不确定对mysql连接包的版本有没有要求，我刚开始用的是<code>8.0.30</code>版本，依然存在报错，改为<code>8.0.17</code>后即可，记得删除原本5.xx版本的jar包<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152349359.png" alt="202306242243379" data-caption="202306242243379" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152349743.png" alt="202306242243046" data-caption="202306242243046" loading="lazy"><br>再次启动，报错如下</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## Error querying database. Cause: java.sql.SQLSyntaxErrorException: Table &#x27;activit.ACT_GE_PROPERTY&#x27; doesn&#x27;t exist</span></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## The error may exist in org/activiti/db/mapping/entity/Property.xml</span></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## The error may involve org.activiti.engine.impl.persistence.entity.PropertyEntityImpl.selectProperty-Inline</span></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## The error occurred while setting parameters</span></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## SQL: select * from ACT_GE_PROPERTY where NAME_ = ?</span></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## Cause: java.sql.SQLSyntaxErrorException: Table &#x27;activit.ACT_GE_PROPERTY&#x27; doesn&#x27;t exist</span></span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>修改配置文件</p>
+<p>添加<code>nullCatalogMeansCurrent=true</code>即可<br>datasource.url&#x3D;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;activiti6ui?<code>nullCatalogMeansCurrent=true</code>&amp;characterEncoding&#x3D;utf8&amp;useSSL&#x3D;false&amp;serverTimezone&#x3D;UTC&amp;allowPublicKeyRetrieval&#x3D;true<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152349643.png" alt="202306242243027" data-caption="202306242243027" loading="lazy"></p>
+</blockquote>
+<h2 id="junit报错"><a href="#junit报错" class="headerlink" title="junit报错"></a>junit报错</h2><blockquote>
+<p>导入<code>activiti</code>依赖后，junit报错</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><code class="hljs livecodeserver">java.lang.IllegalStateException: Failed <span class="hljs-built_in">to</span> <span class="hljs-built_in">load</span> ApplicationContext<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>更换junit依赖即可</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.demo;<br><span class="hljs-keyword">import</span> org.junit.Test;<br><span class="hljs-keyword">import</span> org.springframework.boot.test.context.SpringBootTest;<br><span class="hljs-meta">@SpringBootTest</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ActivitiDemoApplicationTests</span> &#123;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">contextLoads</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;aaa&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>注意</strong></p>
+<blockquote>
+<p><code>activiti</code>和<code>mybatis</code>版本问题，可能会导致版本冲突</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.example<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>activiti-demo<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>activiti-demo<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>activiti-demo<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">java.version</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">java.version</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.reporting.outputEncoding</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">spring-boot.version</span>&gt;</span>2.3.12.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">spring-boot.version</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">mybatis-plus.version</span>&gt;</span>3.5.2<span class="hljs-tag">&lt;/<span class="hljs-name">mybatis-plus.version</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">activiti.version</span>&gt;</span>7.0.0.GA<span class="hljs-tag">&lt;/<span class="hljs-name">activiti.version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- web --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- mysql --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- test --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- mybatis-plus --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.baomidou<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;mybatis-plus.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- activiti --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.activiti<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>activiti-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;activiti.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">exclusions</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">exclusion</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">exclusion</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">exclusions</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencyManagement</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;spring-boot.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">type</span>&gt;</span>pom<span class="hljs-tag">&lt;/<span class="hljs-name">type</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>import<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencyManagement</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.8.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">encoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">encoding</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>$&#123;spring-boot.version&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">mainClass</span>&gt;</span>com.example.demo.ActivitiDemoApplication<span class="hljs-tag">&lt;/<span class="hljs-name">mainClass</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">skip</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">skip</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">executions</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">execution</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>repackage<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">goals</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">goal</span>&gt;</span>repackage<span class="hljs-tag">&lt;/<span class="hljs-name">goal</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">goals</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">execution</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">executions</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="获取ProcessEngine对象报错"><a href="#获取ProcessEngine对象报错" class="headerlink" title="获取ProcessEngine对象报错"></a>获取ProcessEngine对象报错</h2><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152348161.png" alt="202306242243865" data-caption="202306242243865" loading="lazy"></p>
+<blockquote>
+<p>jdk从8更换为11即可<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243610.png" alt="image-20230622131628898" data-caption="image-20230622131628898" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243919.png" alt="image-20230622131642302" data-caption="image-20230622131642302" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243195.png" alt="image-20230622131646360" data-caption="image-20230622131646360" loading="lazy"></p>
+</blockquote>
+<h2 id="流程部署后查询不到"><a href="#流程部署后查询不到" class="headerlink" title="流程部署后查询不到"></a>流程部署后查询不到</h2><blockquote>
+<p>那是因为没有部署成功<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243154.png" alt="image-20230623095814972" data-caption="image-20230623095814972" loading="lazy"><br>这两个<code>xml</code>文件，图标都不一样，是文件的命名有问题<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202306242243943.png" alt="image-20230623095858036" data-caption="image-20230623095858036" loading="lazy"><br>将文件名改为<code>xxx.bpmn20</code>即可</p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/activiti/" rel="tag">activiti</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%AD%E9%81%87%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">遭遇问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#404"><span class="toc-number">1.1.</span> <span class="toc-text">404</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEMySQL"><span class="toc-number">1.2.</span> <span class="toc-text">配置MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#junit%E6%8A%A5%E9%94%99"><span class="toc-number">1.3.</span> <span class="toc-text">junit报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96ProcessEngine%E5%AF%B9%E8%B1%A1%E6%8A%A5%E9%94%99"><span class="toc-number">1.4.</span> <span class="toc-text">获取ProcessEngine对象报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E9%83%A8%E7%BD%B2%E5%90%8E%E6%9F%A5%E8%AF%A2%E4%B8%8D%E5%88%B0"><span class="toc-number">1.5.</span> <span class="toc-text">流程部署后查询不到</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

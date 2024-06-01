@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Java泛型 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Java泛型Java泛型参考视频 在类上 这是个打印integer的类，但也仅仅只能打印integer了 难道以后要打印String、Double还需要复制粘贴再新建类吗？  public class PrinterInteger &amp;#123;    Integer needToPrint;    public PrinterInteger(Integer needToPrint) &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java泛型">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/ji-chu/009-java-fan-xing.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="Java泛型Java泛型参考视频 在类上 这是个打印integer的类，但也仅仅只能打印integer了 难道以后要打印String、Double还需要复制粘贴再新建类吗？  public class PrinterInteger &amp;#123;    Integer needToPrint;    public PrinterInteger(Integer needToPrint) &amp;#123;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330491.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330591.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331352.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330482.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330279.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330520.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331778.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330133.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330061.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331588.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331449.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331926.png">
+<meta property="article:published_time" content="2023-04-01T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.918Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330491.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230564">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230564">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230564">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230564"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230565"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="Java泛型" loading="lazy">
+            <h1>Java泛型</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年04月01日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="Java泛型"><a href="#Java泛型" class="headerlink" title="Java泛型"></a>Java泛型</h1><h2 id="Java泛型-1"><a href="#Java泛型-1" class="headerlink" title="Java泛型"></a>Java泛型</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ds4y1E7uW/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=0de2cc95ad0adc3e9ec15f6dcede1a20">参考视频</a></p>
+<h3 id="在类上"><a href="#在类上" class="headerlink" title="在类上"></a>在类上</h3><blockquote>
+<p>这是个打印integer的类，但也仅仅只能打印integer了</p>
+<p>难道以后要打印String、Double还需要复制粘贴再新建类吗？</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PrinterInteger</span> &#123;<br>    Integer needToPrint;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">PrinterInteger</span><span class="hljs-params">(Integer needToPrint)</span> &#123;<br>        <span class="hljs-built_in">this</span>.needToPrint = needToPrint;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(needToPrint);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>可以考虑采用以下方式</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Printer</span> &lt;T&gt;&#123;<br>    T needToPrint;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Printer</span><span class="hljs-params">(T needToPrint)</span> &#123;<br>        <span class="hljs-built_in">this</span>.needToPrint = needToPrint;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(needToPrint);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 测试</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>            <span class="hljs-comment">// 打印String</span><br>            Printer&lt;String&gt; stringPrinter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Printer</span>&lt;&gt;(<span class="hljs-string">&quot;hello world&quot;</span>);<br>            stringPrinter.print();<br>            <span class="hljs-comment">// 打印Double</span><br>            Printer&lt;Double&gt; doublePrinter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Printer</span>&lt;&gt;(<span class="hljs-number">30.5</span>);<br>            doublePrinter.print();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>泛型不能使用基本数据类型，如int、long等<br>泛型 extends</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span> &#123;<br>    String name;<br>    <span class="hljs-type">int</span> age;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;吃饭ing&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span>&#123;<br>    <span class="hljs-keyword">private</span> String litterPreference;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Cat</span><span class="hljs-params">(String name)</span> &#123;<br>        <span class="hljs-built_in">this</span>.name = name;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Cat</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getLitterPreference</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> litterPreference;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setLitterPreference</span><span class="hljs-params">(String litterPreference)</span> &#123;<br>        <span class="hljs-built_in">this</span>.litterPreference = litterPreference;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span>&#123;<br>    <span class="hljs-type">int</span> walkDistancePreference;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>泛型这么写</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Printer</span> &lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span>&gt;&#123;<br>    T needToPrint;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Printer</span><span class="hljs-params">(T needToPrint)</span> &#123;<br>        <span class="hljs-built_in">this</span>.needToPrint = needToPrint;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(needToPrint);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330491.png" alt="泛型继承" data-caption="泛型继承" loading="lazy"></p>
+<blockquote>
+<p>这个时候就会报错了，因为泛型写了<code>&lt;T extends Animal&gt;</code>，改写成如下写法后正确</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Printer</span> &lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span>&gt;&#123;<br>    T needToPrint;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Printer</span><span class="hljs-params">(T needToPrint)</span> &#123;<br>        <span class="hljs-built_in">this</span>.needToPrint = needToPrint;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(needToPrint);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 测试</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>            <span class="hljs-comment">// 打印Cat</span><br>            Printer&lt;Cat&gt; stringPrinter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Printer</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>());<br>            stringPrinter.print();<br>            <span class="hljs-comment">// 打印Dog</span><br>            Printer&lt;Dog&gt; doublePrinter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Printer</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Dog</span>());<br>            doublePrinter.print();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>eat方法定义在Animal类中，但如果取消掉类上的<code>&lt;T extends Animal&gt;</code>后，这行代码会报错<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330591.png" alt="image-20230401130433407" data-caption="image-20230401130433407" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331352.png" alt="image-20230401130709488" data-caption="image-20230401130709488" loading="lazy"><br>但是java不支持多继承，所以如果还需要同时继承Animal怎么办，参考如下写法</p>
+<p>但是注意，<code>接口要写在后面</code>，如果调换位置会报错<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330482.png" alt="image-20230401130833543" data-caption="image-20230401130833543" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330279.png" alt="image-20230401131024843" data-caption="image-20230401131024843" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Printer</span>&lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span> &amp; Serializable&gt; &#123;<br>    T needToPrint;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Printer</span><span class="hljs-params">(T needToPrint)</span> &#123;<br>        <span class="hljs-built_in">this</span>.needToPrint = needToPrint;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(needToPrint);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 测试</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>多个泛型参数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Printer</span>&lt;T, V&gt; &#123;<br>    T needToPrint;<br>    V moreMsg;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Printer</span><span class="hljs-params">(T needToPrint, V moreMsg)</span> &#123;<br>        <span class="hljs-built_in">this</span>.needToPrint = needToPrint;<br>        <span class="hljs-built_in">this</span>.moreMsg = moreMsg;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">()</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;T:%s%n&quot;</span>, needToPrint);<br>        System.out.printf(<span class="hljs-string">&quot;V:%s%n&quot;</span>, moreMsg);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 测试</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>            Printer&lt;String, Cat&gt; catPrinter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Printer</span>&lt;&gt;(<span class="hljs-string">&quot;哈哈哈&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>());<br>            catPrinter.print();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="在方法上"><a href="#在方法上" class="headerlink" title="在方法上"></a>在方法上</h3><blockquote>
+<p>作用在方法上<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330520.png" alt="image-20230401131313812" data-caption="image-20230401131313812" loading="lazy"><br>注意，这个时候他并不知道T是一个泛型，你需要”告诉他”<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331778.png" alt="image-20230401131402488" data-caption="image-20230401131402488" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        print(<span class="hljs-string">&quot;abc&quot;</span>);<br>        print(<span class="hljs-number">123</span>);<br>        print(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>());<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(T str)</span>&#123;<br>        System.out.println(str+<span class="hljs-string">&quot;:打印完成&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>当然，也可以写多个参数<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330133.png" alt="image-20230401131824195" data-caption="image-20230401131824195" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        print(<span class="hljs-string">&quot;哈哈哈&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>());<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T, V&gt; <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(T str, V msg)</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;T:%s%n&quot;</span>, str);<br>        System.out.printf(<span class="hljs-string">&quot;V:%s%n&quot;</span>, msg);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>指定返回值的泛型</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">print</span> <span class="hljs-operator">=</span> print(<span class="hljs-string">&quot;哈哈哈&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>());<br>        System.out.println(<span class="hljs-string">&quot;返回值:&quot;</span>+print);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T, V&gt; T <span class="hljs-title function_">print</span><span class="hljs-params">(T str, V msg)</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;T:%s%n&quot;</span>, str);<br>        System.out.printf(<span class="hljs-string">&quot;V:%s%n&quot;</span>, msg);<br>        <span class="hljs-keyword">return</span> str;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152330061.png" alt="image-20230401132537492" data-caption="image-20230401132537492" loading="lazy"></p>
+<blockquote>
+<p>泛型通配符<br><strong>首先，来看一下下面这个问题</strong><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331588.png" alt="image-20230401133025790" data-caption="image-20230401133025790" loading="lazy"><br><strong>报错如下</strong><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331449.png" alt="image-20230401133013989" data-caption="image-20230401133013989" loading="lazy"><br><strong>是不是觉得很奇怪？Integer是Object的子类，为什么不能这么传值呢?</strong></p>
+<p>对，Integer是Object的子类没错，但是这里是<code>List&lt;Object&gt;</code>和<code>List&lt;Integer&gt;</code></p>
+<p><code>List&lt;Integer&gt;</code>并不是<code>List&lt;Object&gt;</code>的子类</p>
+<p>或者可以把<code>List&lt;Object&gt;</code>换成Object，<code>List&lt;Integer&gt;</code>是<code>Object</code>的子类</p>
+<p>但是我们要的不是这种效果</p>
+<p>这时可以采用通配符<code>?</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        list.add(<span class="hljs-number">1</span>);<br>        print(list);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(List&lt;?&gt; list)</span> &#123;<br>        System.out.println(list);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>甚至还可以指定是否继承某个类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;        <br>        List&lt;Cat&gt; animal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        animal.add(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>());<br>        print(animal);<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(List&lt;? extends Animal&gt; list)</span> &#123;<br>        System.out.println(list);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202402152331926.png" alt="image-20230401133723105" data-caption="image-20230401133723105" loading="lazy"></p>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag">Java基础</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E6%B3%9B%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">Java泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E6%B3%9B%E5%9E%8B-1"><span class="toc-number">1.1.</span> <span class="toc-text">Java泛型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%B1%BB%E4%B8%8A"><span class="toc-number">1.1.1.</span> <span class="toc-text">在类上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%96%B9%E6%B3%95%E4%B8%8A"><span class="toc-number">1.1.2.</span> <span class="toc-text">在方法上</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

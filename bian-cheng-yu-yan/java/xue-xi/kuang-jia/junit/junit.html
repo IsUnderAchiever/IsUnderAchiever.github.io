@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Junit测试 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Junit测试 这里使用junit5进行演示  正常的情况&#x2F;** * @Author: 不是菜鸡爱编程 * @Date: 2023&#x2F;11&#x2F;29&#x2F;21:30 * @Description: *&#x2F;public class Calculate &amp;#123;    &#x2F;**     * 加     *     * @param i 我     * @param j j     * @return int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Junit测试">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/junit/junit.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="Junit测试 这里使用junit5进行演示  正常的情况&#x2F;** * @Author: 不是菜鸡爱编程 * @Date: 2023&#x2F;11&#x2F;29&#x2F;21:30 * @Description: *&#x2F;public class Calculate &amp;#123;    &#x2F;**     * 加     *     * @param i 我     * @param j j     * @return int">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292144145_repeat_1701265469164__211203.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292145937_repeat_1701265524954__145173.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292146882_repeat_1701265589895__016984.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292147830_repeat_1701265633841__794593.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292147718_repeat_1701265662728__041266.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292150876_repeat_1701265821886__706483.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292151937_repeat_1701265892946__483201.png">
+<meta property="article:published_time" content="2024-02-16T02:22:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.933Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="Junit">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292144145_repeat_1701265469164__211203.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230390">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230390">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230390">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230390"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230390"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="Junit测试" loading="lazy">
+            <h1>Junit测试</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年02月16日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/Junit/">Junit</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="Junit测试"><a href="#Junit测试" class="headerlink" title="Junit测试"></a>Junit测试</h1><blockquote>
+<p>这里使用junit5进行演示</p>
+</blockquote>
+<h2 id="正常的情况"><a href="#正常的情况" class="headerlink" title="正常的情况"></a>正常的情况</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2023/11/29/21:30</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculate</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 加</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> i 我</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> j j</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> int</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> j)</span>&#123;<br>        <span class="hljs-keyword">return</span> i+j;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 减</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> i 我</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> j j</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> int</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> j)</span>&#123;<br>        <span class="hljs-keyword">return</span> i-j;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 乘</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> i 我</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> j j</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> int</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">multi</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> j)</span>&#123;<br>        <span class="hljs-keyword">return</span> i*j;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 除</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> i 我</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> j j</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> int</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> i,<span class="hljs-type">int</span> j)</span>&#123;<br>        <span class="hljs-keyword">return</span> i/j;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>有以上类，我们需要进行测试</p>
+<p>在idea中按住<code>Ctrl+Shift+T</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292144145_repeat_1701265469164__211203.png" alt="image-20231129214419971" data-caption="image-20231129214419971" loading="lazy"><br>勾选方法<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292145937_repeat_1701265524954__145173.png" alt="image-20231129214524901" data-caption="image-20231129214524901" loading="lazy"><br>会生成以下模板</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculateTest</span> &#123;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">sub</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">multi</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">div</span><span class="hljs-params">()</span> &#123;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>我们将使用断言<code>Assert</code>来完成测试<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292146882_repeat_1701265589895__016984.png" alt="image-20231129214629814" data-caption="image-20231129214629814" loading="lazy"><br>我们将<code>预期值</code>与<code>实际值</code>进行比较<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292147830_repeat_1701265633841__794593.png" alt="image-20231129214713781" data-caption="image-20231129214713781" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292147718_repeat_1701265662728__041266.png" alt="image-20231129214742612" data-caption="image-20231129214742612" loading="lazy"><br>可以看到<code>100%测试覆盖率</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292150876_repeat_1701265821886__706483.png" alt="image-20231129215021768" data-caption="image-20231129215021768" loading="lazy"><br>注释掉一个测试方法后，导致测试覆盖率不足100%，因为有部分代码未被测试到<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202311292151937_repeat_1701265892946__483201.png" alt="image-20231129215132836" data-caption="image-20231129215132836" loading="lazy"><br>修改预期值后导致测试方法不通过</p>
+</blockquote>
+<h2 id="异常的情况"><a href="#异常的情况" class="headerlink" title="异常的情况"></a>异常的情况</h2><blockquote>
+<p>在<code>Calculate</code>中添加一个方法<code>throwException</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Calculate</span> &#123;<br>    <span class="hljs-comment">// ...</span><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">throwException</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalStateException</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>可能抛出异常的方法该如何测试？<br><strong>测试方法1</strong><br>设置一个标志位</p>
+<p>捕获到异常后，更改标志位</p>
+<p>断言标志位为<code>True</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">void</span> <span class="hljs-title function_">throwException</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">boolean</span> flag=<span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">try</span> &#123;<br>        Calculate.throwException();<br>    &#125; <span class="hljs-keyword">catch</span> (IllegalStateException e) &#123;<br>        flag=<span class="hljs-literal">true</span>;<br>    &#125;<br>    assertTrue(flag);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="测试方法2-后面是lambda表达式"><a href="#测试方法2-后面是lambda表达式" class="headerlink" title="测试方法2&gt; 后面是lambda表达式"></a><strong>测试方法2</strong><br>&gt; 后面是<code>lambda</code>表达式<br><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">void</span> <span class="hljs-title function_">throwException</span><span class="hljs-params">()</span> &#123;<br>    assertThrows(IllegalStateException.class, Calculate::throwException);<br>&#125;<br></code></pre></td></tr></table></figure></h2><blockquote>
+<p>junit4可使用如下写法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test(expected=IndexOutOfBoundsException.class)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testIndexOutOfBoundsException</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">ArrayList</span> <span class="hljs-variable">emptyList</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>();<br>    <span class="hljs-type">Object</span> <span class="hljs-variable">o</span> <span class="hljs-operator">=</span> emptyList.get(<span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Junit/" rel="tag">Junit</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Junit%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">Junit测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.1.</span> <span class="toc-text">正常的情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text">异常的情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%952-%E5%90%8E%E9%9D%A2%E6%98%AFlambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">测试方法2&gt; 后面是lambda表达式@Testvoid throwException() {    assertThrows(IllegalStateException.class, Calculate::throwException);}</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

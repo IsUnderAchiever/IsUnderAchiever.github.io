@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>jsp复习 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Servlet 项目创建删掉pom.xml点击运行即可因为没有页面在WEB-INF下新建lib包，在lib下存放jar包此时依赖还没完全导入，还需如下操作选择lib，此时就算导入成功了网上copy一个jdbc的工具包  package com.example.util;import org.apache.commons.beanutils.BeanUtils;import java.lang.re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jsp复习">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/mo-ban-yu-yan/jsp/jsp.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="Servlet 项目创建删掉pom.xml点击运行即可因为没有页面在WEB-INF下新建lib包，在lib下存放jar包此时依赖还没完全导入，还需如下操作选择lib，此时就算导入成功了网上copy一个jdbc的工具包  package com.example.util;import org.apache.commons.beanutils.BeanUtils;import java.lang.re">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222125366.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222127960.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222132185.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222132497.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222133344.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222133936.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222133445.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222134032.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222134753.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222136177.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222136111.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222139162.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222140082.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222140175.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222141981.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222154368.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222155920.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222200659.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222206576.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222204889.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222205247.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303230741695.png">
+<meta property="article:published_time" content="2023-03-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:25.058Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="jsp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222125366.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230568">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230568">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230568">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230568"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230568"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="jsp复习" loading="lazy">
+            <h1>jsp复习</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年03月24日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/jsp/">jsp</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><blockquote>
+<h3 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222125366.png" alt="项目创建" data-caption="项目创建" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222127960.png" alt="配置1" data-caption="配置1" loading="lazy"><br>删掉pom.xml<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222132185.png" alt="image-20230322213236109" data-caption="image-20230322213236109" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222132497.png" alt="image-20230322213258427" data-caption="image-20230322213258427" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222133344.png" alt="image-20230322213314271" data-caption="image-20230322213314271" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222133936.png" alt="image-20230322213335864" data-caption="image-20230322213335864" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222133445.png" alt="image-20230322213347376" data-caption="image-20230322213347376" loading="lazy"><br>点击运行即可<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222134032.png" alt="image-20230322213425998" data-caption="image-20230322213425998" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222134753.png" alt="image-20230322213433714" data-caption="image-20230322213433714" loading="lazy"><br>因为没有页面<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222136177.png" alt="image-20230322213617014" data-caption="image-20230322213617014" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222136111.png" alt="image-20230322213631081" data-caption="image-20230322213631081" loading="lazy"><br>在WEB-INF下新建lib包，在lib下存放jar包<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222139162.png" alt="image-20230322213928118" data-caption="image-20230322213928118" loading="lazy"><br>此时依赖还没完全导入，还需如下操作<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222140082.png" alt="image-20230322214007002" data-caption="image-20230322214007002" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222140175.png" alt="image-20230322214026141" data-caption="image-20230322214026141" loading="lazy"><br>选择lib，此时就算导入成功了<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222141981.png" alt="image-20230322214102932" data-caption="image-20230322214102932" loading="lazy"><br>网上copy一个jdbc的工具包</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.example.util;<br><span class="hljs-keyword">import</span> org.apache.commons.beanutils.BeanUtils;<br><span class="hljs-keyword">import</span> java.lang.reflect.Field;<br><span class="hljs-keyword">import</span> java.sql.*;<br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">JDBCUtil</span> &#123;<br>    <span class="hljs-comment">//1.加载驱动</span><br>    <span class="hljs-keyword">static</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            Class.forName(<span class="hljs-string">&quot;com.mysql.jdbc.Driver&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>            <span class="hljs-comment">// TODO Auto-generated catch block</span><br>            e.printStackTrace();<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">//2.获取连接</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Connection <span class="hljs-title function_">getConnection</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            conn = DriverManager.getConnection(<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/xiaoy&quot;</span>, <span class="hljs-string">&quot;root&quot;</span>, <span class="hljs-string">&quot;mysql&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>            e.printStackTrace();<br>        &#125;<br>        <span class="hljs-keyword">return</span> conn;<br>    &#125;<br>    <span class="hljs-comment">//3.关闭连接</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">close</span><span class="hljs-params">(Connection conn, Statement st, ResultSet rs)</span> &#123;<br>        <span class="hljs-comment">//关闭连接</span><br>        <span class="hljs-keyword">if</span> (conn != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                conn.close();<br>            &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>                <span class="hljs-comment">// TODO Auto-generated catch block</span><br>                e.printStackTrace();<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//关闭statement</span><br>        <span class="hljs-keyword">if</span> (st != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                st.close();<br>            &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>                <span class="hljs-comment">// TODO Auto-generated catch block</span><br>                e.printStackTrace();<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//关闭结果集</span><br>        <span class="hljs-keyword">if</span> (rs != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">try</span> &#123;<br>                rs.close();<br>            &#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>                <span class="hljs-comment">// TODO Auto-generated catch block</span><br>                e.printStackTrace();<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">//-------------------------------封装sql操作------------------------------</span><br>    <span class="hljs-comment">//查询返回List集合</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; List&lt;T&gt; <span class="hljs-title function_">getList</span><span class="hljs-params">(Class&lt;T&gt; cls, String sql, Object... obj)</span> &#123;<br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">ps</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">//1.获取连接</span><br>            conn = getConnection();<br>            <span class="hljs-comment">//2.获取预处理对象</span><br>            ps = conn.prepareStatement(sql);<br>            <span class="hljs-comment">//循环参数，如果没有就不走这里</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= obj.length; i++) &#123;<br>                <span class="hljs-comment">//注意：数组下标从0开始，预处理参数设置从1开始</span><br>                ps.setObject(i, obj[i - <span class="hljs-number">1</span>]);<br>            &#125;<br>            <span class="hljs-comment">//3.执行SQL语句</span><br>            System.out.println(sql);<br>            rs = ps.executeQuery();<br>            <span class="hljs-comment">//4.遍历结果集</span><br>            <span class="hljs-comment">//遍历之前准备：因为封装不知道未来会查询多少列，所以我们需要指定有多少列</span><br>            <span class="hljs-comment">//获取ResultSet对象的列编号、类型和属性</span><br>            <span class="hljs-type">ResultSetMetaData</span> <span class="hljs-variable">date</span> <span class="hljs-operator">=</span> rs.getMetaData();<br>            <span class="hljs-comment">//获取列数</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">column</span> <span class="hljs-operator">=</span> date.getColumnCount();<br>            <span class="hljs-comment">//获取本类所有的属性</span><br>            Field[] fields = cls.getDeclaredFields();<br>            <span class="hljs-comment">//创建一个list集合对象来存储查询数据</span><br>            List&lt;T&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;T&gt;();<br>            <span class="hljs-comment">//开始遍历结果集</span><br>            <span class="hljs-keyword">while</span> (rs.next()) &#123;<br>                <span class="hljs-comment">//创建类类型实例</span><br>                <span class="hljs-type">T</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> cls.newInstance();<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= column; i++) &#123;<br>                    <span class="hljs-comment">//每一列的值</span><br>                    <span class="hljs-type">Object</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> rs.getObject(i);<br>                    <span class="hljs-comment">/**</span><br><span class="hljs-comment">                     *String columnName = date.getColumnName(i);//获取每一列名称</span><br><span class="hljs-comment">                     * 关于获取每一列名称，如果列取了别名的话，则不能用上面的方法取列的名称</span><br><span class="hljs-comment">                     * 用下面的方法</span><br><span class="hljs-comment">                     */</span><br>                    <span class="hljs-type">String</span> <span class="hljs-variable">columnName</span> <span class="hljs-operator">=</span> date.getColumnLabel(i);<span class="hljs-comment">//获取每一列名称（别名）</span><br>                    <span class="hljs-comment">//遍历所有属性对象</span><br>                    <span class="hljs-keyword">for</span> (Field field : fields) &#123;<br>                        <span class="hljs-comment">//获取属性名</span><br>                        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> field.getName();<br>                        field.setAccessible(<span class="hljs-literal">true</span>);<span class="hljs-comment">//打破封装，忽略对封装修饰符的检测</span><br>            <span class="hljs-comment">/*if (name.equals(columnName)) &#123;</span><br><span class="hljs-comment">                            //获取列类型名称</span><br><span class="hljs-comment">              String string = date.getColumnTypeName(i);</span><br><span class="hljs-comment">              //如果列类型是Date类型，转换成字符串表现形式</span><br><span class="hljs-comment">              SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="hljs-comment">              String d = sdf.format(value);</span><br><span class="hljs-comment">              //赋值：将数据库中查询的字段赋值给对应名称的属性</span><br><span class="hljs-comment">              field.set(t, d);</span><br><span class="hljs-comment">            &#125;else&#123;</span><br><span class="hljs-comment">              field.set(t, value);</span><br><span class="hljs-comment">            &#125;*/</span><br>                        <span class="hljs-keyword">if</span> (name.equals(columnName)) &#123;<br>                            BeanUtils.copyProperty(t, name, value);<br>                            <span class="hljs-keyword">break</span>;<span class="hljs-comment">//增加效率，避免不必要的循环</span><br>                        &#125;<br>                    &#125;<br>                &#125;<br>                list.add(t);<br>            &#125;<br>            <span class="hljs-keyword">return</span> list;<br>            <span class="hljs-comment">//5.关闭连接</span><br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            JDBCUtil.close(conn, ps, rs);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 增加、删除、修改</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> sql sql语句</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> obj 参数</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">getDML</span><span class="hljs-params">(String sql, Object... obj)</span> &#123;<br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">ps</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            conn = getConnection();<br>            ps = conn.prepareStatement(sql);<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= obj.length; i++) &#123;<br>                ps.setObject(i, obj[i - <span class="hljs-number">1</span>]);<br>            &#125;<br>            System.out.println(sql);<br>            <span class="hljs-type">int</span> <span class="hljs-variable">update</span> <span class="hljs-operator">=</span> ps.executeUpdate();<br>            <span class="hljs-keyword">if</span> (update &gt; <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            close(conn, ps, <span class="hljs-literal">null</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-comment">//查询返回单个对象</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; T <span class="hljs-title function_">getOneObject</span><span class="hljs-params">(Class&lt;T&gt; cls, String sql, Object... obj)</span> &#123;<br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">ps</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">//1.获取连接</span><br>            conn = getConnection();<br>            <span class="hljs-comment">//2.获取预处理对象</span><br>            ps = conn.prepareStatement(sql);<br>            <span class="hljs-comment">//循环参数，如果没有就不走这里</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= obj.length; i++) &#123;<br>                <span class="hljs-comment">//注意：数组下标从0开始，预处理参数设置从1开始</span><br>                ps.setObject(i, obj[i - <span class="hljs-number">1</span>]);<br>            &#125;<br>            <span class="hljs-comment">//3.执行SQL语句</span><br>            System.out.println(sql);<br>            rs = ps.executeQuery();<br>            <span class="hljs-comment">//4.遍历结果集</span><br>            <span class="hljs-comment">//遍历之前准备：因为封装不知道未来会查询多少列，所以我们需要指定有多少列</span><br>            <span class="hljs-comment">//获取ResultSet对象的列编号、类型和属性</span><br>            <span class="hljs-type">ResultSetMetaData</span> <span class="hljs-variable">date</span> <span class="hljs-operator">=</span> rs.getMetaData();<br>            <span class="hljs-comment">//获取列数</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">column</span> <span class="hljs-operator">=</span> date.getColumnCount();<br>            <span class="hljs-comment">//获取本类所有的属性</span><br>            Field[] fields = cls.getDeclaredFields();<br>            <span class="hljs-comment">//开始遍历结果集</span><br>            <span class="hljs-keyword">if</span> (rs.next()) &#123;<br>                <span class="hljs-comment">//创建类类型实例</span><br>                <span class="hljs-type">T</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> cls.newInstance();<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= column; i++) &#123;<br>                    <span class="hljs-comment">//每一列的值</span><br>                    <span class="hljs-type">Object</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> rs.getObject(i);<br>                    <span class="hljs-comment">//获取每一列名称</span><br>                    <span class="hljs-type">String</span> <span class="hljs-variable">columnName</span> <span class="hljs-operator">=</span> date.getColumnName(i);<br>                    <span class="hljs-comment">//遍历所有属性对象</span><br>                    <span class="hljs-keyword">for</span> (Field field : fields) &#123;<br>                        <span class="hljs-comment">//获取属性名</span><br>                        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> field.getName();<br>                        <span class="hljs-comment">//打破封装，忽略对封装修饰符的检测</span><br>                        field.setAccessible(<span class="hljs-literal">true</span>);<br>                        <span class="hljs-keyword">if</span> (name.equals(columnName)) &#123;<br>                            BeanUtils.copyProperty(t, name, value);<br>                        &#125;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">return</span> t;<br>            &#125;<br>            <span class="hljs-comment">//5.关闭连接</span><br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            JDBCUtil.close(conn, ps, rs);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br>    <span class="hljs-comment">//查询总记录数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer <span class="hljs-title function_">getCount</span><span class="hljs-params">(String sql, Object... obj)</span> &#123;<br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">PreparedStatement</span> <span class="hljs-variable">ps</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-type">ResultSet</span> <span class="hljs-variable">rs</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">//1.获取连接</span><br>            conn = getConnection();<br>            <span class="hljs-comment">//2.获取预处理对象</span><br>            ps = conn.prepareStatement(sql);<br>            <span class="hljs-comment">//循环参数，如果没有就不走这里</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= obj.length; i++) &#123;<br>                <span class="hljs-comment">//注意：数组下标从0开始，预处理参数设置从1开始</span><br>                ps.setObject(i, obj[i - <span class="hljs-number">1</span>]);<br>            &#125;<br>            <span class="hljs-comment">//3.执行SQL语句</span><br>            System.out.println(sql);<br>            rs = ps.executeQuery();<br>            <span class="hljs-comment">//开始遍历结果集</span><br>            <span class="hljs-keyword">if</span> (rs.next()) &#123;<br>                <span class="hljs-keyword">return</span> rs.getInt(<span class="hljs-number">1</span>);<br>            &#125;<br>            <span class="hljs-comment">//5.关闭连接</span><br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            e.printStackTrace();<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            JDBCUtil.close(conn, ps, rs);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>BeanUtils需要导包，<code>commons-beanutils-1.9.4.jar</code></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>commons-beanutils<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>commons-beanutils<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.9.4<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>如果需要连接oracle，则jdbcUtil需要改改配置</p>
+<p>导入jquery，使用ajax，<a target="_blank" rel="noopener" href="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js">下载网址</a><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222154368.png" alt="image-20230322215453085" data-caption="image-20230322215453085" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222155920.png" alt="image-20230322215530812" data-caption="image-20230322215530812" loading="lazy"><br>配置webservlet</p>
+<p>我这里@WebServlet注解爆红，导入<code>javax.servlet-api-3.1.0.jar</code>包后解决<br>看到有博客说<code>servlet.jar</code>也可以，不过我就导入了<code>javax.servlet-api-3.1.0.jar</code>就已解决<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222200659.png" alt="image-20230322220056475" data-caption="image-20230322220056475" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222206576.png" alt="image-20230322220646463" data-caption="image-20230322220646463" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222204889.png" alt="image-20230322220429739" data-caption="image-20230322220429739" loading="lazy"><br>注释掉SubHandle内的<code>super.doPost(req, resp);</code>即可，<code>记得重启服务</code><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303222205247.png" alt="image-20230322220511121" data-caption="image-20230322220511121" loading="lazy"></p>
+<h2 id="前端之前一直接受不到数据"><a href="#前端之前一直接受不到数据" class="headerlink" title="前端之前一直接受不到数据"></a>前端之前一直接受不到数据</h2><p>既不执行success也不执行error，是因为后端的返回格式不是json<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202303230741695.png" alt="image-20230323074135515" data-caption="image-20230323074135515" loading="lazy"></p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/jsp/" rel="tag">jsp</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet"><span class="toc-number">1.</span> <span class="toc-text">Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="toc-number">1.1.</span> <span class="toc-text">项目创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E4%B9%8B%E5%89%8D%E4%B8%80%E7%9B%B4%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%88%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">2.</span> <span class="toc-text">前端之前一直接受不到数据</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

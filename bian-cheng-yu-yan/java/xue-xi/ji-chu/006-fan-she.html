@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>java反射 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="java 反射详细信息推介查看 &#x2F;&#x2F;获取包名、类名clazz.getPackage().getName()&#x2F;&#x2F;包名clazz.getSimpleName()&#x2F;&#x2F;类名clazz.getName()&#x2F;&#x2F;完整类名 &#x2F;&#x2F;获取成员变量定义信息getFields()&#x2F;&#x2F;获取所有公开的成员变量,包括继承变量getDeclaredFields()&#x2F;&#x2F;获取本类定义的成员变量,包括私有,但不包括继承的变量getFie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java反射">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/ji-chu/006-fan-she.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="java 反射详细信息推介查看 &#x2F;&#x2F;获取包名、类名clazz.getPackage().getName()&#x2F;&#x2F;包名clazz.getSimpleName()&#x2F;&#x2F;类名clazz.getName()&#x2F;&#x2F;完整类名 &#x2F;&#x2F;获取成员变量定义信息getFields()&#x2F;&#x2F;获取所有公开的成员变量,包括继承变量getDeclaredFields()&#x2F;&#x2F;获取本类定义的成员变量,包括私有,但不包括继承的变量getFie">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.914Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="java基础">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230621">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230621">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230621">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230621"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230621"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="java反射" loading="lazy">
+            <h1>java反射</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年01月05日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/java%E5%9F%BA%E7%A1%80/">java基础</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="java-反射"><a href="#java-反射" class="headerlink" title="java 反射"></a>java 反射</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51515673/article/details/124830558">详细信息推介查看</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//获取包名、类名</span><br>clazz.getPackage().getName()<span class="hljs-comment">//包名</span><br>clazz.getSimpleName()<span class="hljs-comment">//类名</span><br>clazz.getName()<span class="hljs-comment">//完整类名</span><br> <br><span class="hljs-comment">//获取成员变量定义信息</span><br>getFields()<span class="hljs-comment">//获取所有公开的成员变量,包括继承变量</span><br>getDeclaredFields()<span class="hljs-comment">//获取本类定义的成员变量,包括私有,但不包括继承的变量</span><br>getField(变量名)<br>getDeclaredField(变量名)<br> <br><span class="hljs-comment">//获取构造方法定义信息</span><br>getConstructor(参数类型列表)<span class="hljs-comment">//获取公开的构造方法</span><br>getConstructors()<span class="hljs-comment">//获取所有的公开的构造方法</span><br>getDeclaredConstructors()<span class="hljs-comment">//获取所有的构造方法,包括私有</span><br>getDeclaredConstructor(<span class="hljs-type">int</span>.class,String.class)<br> <br><span class="hljs-comment">//获取方法定义信息</span><br>getMethods()<span class="hljs-comment">//获取所有可见的方法,包括继承的方法</span><br>getMethod(方法名,参数类型列表)<br>getDeclaredMethods()<span class="hljs-comment">//获取本类定义的的方法,包括私有,不包括继承的方法</span><br>getDeclaredMethod(方法名,<span class="hljs-type">int</span>.class,String.class)<br> <br><span class="hljs-comment">//反射新建实例</span><br>clazz.newInstance();<span class="hljs-comment">//执行无参构造创建对象</span><br>clazz.newInstance(<span class="hljs-number">222</span>,<span class="hljs-string">&quot;韦小宝&quot;</span>);<span class="hljs-comment">//执行有参构造创建对象</span><br>clazz.getConstructor(<span class="hljs-type">int</span>.class,String.class)<span class="hljs-comment">//获取构造方法</span><br> <br><span class="hljs-comment">//反射调用成员变量</span><br>clazz.getDeclaredField(变量名);<span class="hljs-comment">//获取变量</span><br>clazz.setAccessible(<span class="hljs-literal">true</span>);<span class="hljs-comment">//使私有成员允许访问</span><br>f.set(实例,值);<span class="hljs-comment">//为指定实例的变量赋值,静态变量,第一参数给null</span><br>f.get(实例);<span class="hljs-comment">//访问指定实例变量的值,静态变量,第一参数给null</span><br> <br><span class="hljs-comment">//反射调用成员方法</span><br><span class="hljs-type">Method</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> Clazz.getDeclaredMethod(方法名,参数类型列表);<br>m.setAccessible(<span class="hljs-literal">true</span>);<span class="hljs-comment">//使私有方法允许被调用</span><br>m.invoke(实例,参数数据);<span class="hljs-comment">//让指定实例来执行该方法</span><br></code></pre></td></tr></table></figure>
+<h2 id="获取对象字节码的3种方式"><a href="#获取对象字节码的3种方式" class="headerlink" title="获取对象字节码的3种方式"></a>获取对象字节码的3种方式</h2><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 1.</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getClazz1</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>    Class&lt;? <span class="hljs-keyword">extends</span> <span class="hljs-title class_">User</span>&gt; clazz = user.getClass();<br>    System.out.println(clazz);<br>&#125;<br><span class="hljs-comment">// 2.</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getClazz2</span><span class="hljs-params">()</span> &#123;<br>    Class&lt;User&gt; clazz = User.class;<br>    System.out.println(clazz);<br>&#125;<br><span class="hljs-comment">// 3.</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getClazz3</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">try</span> &#123;<br>        Class&lt;?&gt; clazz = Class.forName(<span class="hljs-string">&quot;com.example.domain.User&quot;</span>);<br>        System.out.println(clazz);<br>    &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        System.out.println(getClazz()); <span class="hljs-comment">// class com.example.domain.User</span><br>        System.out.println(getClazz().getName()); <span class="hljs-comment">// com.example.domain.User</span><br>        System.out.println(getClazz().getSimpleName()); <span class="hljs-comment">// User</span><br>        System.out.println(getClazz().getPackage()); <span class="hljs-comment">// package com.example.domain</span><br>        System.out.println(getClazz().getPackage().getName()); <span class="hljs-comment">// com.example.domain</span><br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Class&lt;?&gt; getClazz()&#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">return</span> Class.forName(<span class="hljs-string">&quot;com.example.domain.User&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs JAVA"><span class="hljs-keyword">package</span> com.example.mytest;<br><span class="hljs-keyword">import</span> com.example.domain.User;<br><span class="hljs-keyword">import</span> java.lang.reflect.Constructor;<br><span class="hljs-keyword">import</span> java.lang.reflect.Field;<br><span class="hljs-keyword">import</span> java.lang.reflect.Method;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        createObjectByReflect();<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取 Class 对象</span><br><span class="hljs-comment">     * 方法1</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getClazz1</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>        Class&lt;? <span class="hljs-keyword">extends</span> <span class="hljs-title class_">User</span>&gt; clazz = user.getClass();<br>        System.out.println(clazz);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取 Class 对象</span><br><span class="hljs-comment">     * 方法2</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getClazz2</span><span class="hljs-params">()</span> &#123;<br>        Class&lt;User&gt; clazz = User.class;<br>        System.out.println(clazz);<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取 Class 对象</span><br><span class="hljs-comment">     * 方法3</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getClazz3</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            Class&lt;?&gt; clazz = Class.forName(<span class="hljs-string">&quot;com.example.domain.User&quot;</span>);<br>            System.out.println(clazz);<br>        &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取类的所有方法信息</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getAllMethods</span><span class="hljs-params">()</span> &#123;<br>        Class&lt;?&gt; clazz = getClazz();<br>        Method[] methods = clazz.getDeclaredMethods();<br>        <span class="hljs-keyword">for</span> (Method method : methods) &#123;<br>            System.out.println(method);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取类的所有成员属性信息</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getAllFields</span><span class="hljs-params">()</span> &#123;<br>        Field[] declaredFields = getClazz().getDeclaredFields();<br>        <span class="hljs-keyword">for</span> (Field f : declaredFields) &#123;<br>            System.out.println(f);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 获取类的构造方法信息</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">getAllConstructors</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            Constructor&lt;?&gt;[] declaredConstructors = getClazz().getDeclaredConstructors();<br>            <span class="hljs-keyword">for</span> (Constructor&lt;?&gt; constructor : declaredConstructors) &#123;<br>                System.out.println(constructor);<br>            &#125;<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 利用反射动态创建对象实例</span><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 通过反射---创建对象</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createObjectByReflect</span><span class="hljs-params">()</span> &#123;<br>        Class&lt;?&gt; clazz = getClazz();<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-comment">//User user = (User) clazz.newInstance();</span><br>            Constructor&lt;?&gt; declaredConstructor = clazz.getDeclaredConstructor(Integer.class,String.class,Integer.class,String.class, List.class);<br>            <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> (User) declaredConstructor.newInstance(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-number">12</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-literal">null</span>);<br>            System.out.println(user);<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 提取方法：---获取class对象</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> &#123;<span class="hljs-doctag">@link</span> Class&#125;&lt;&#123;<span class="hljs-doctag">@link</span> ?&#125;&gt;</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Class&lt;?&gt; getClazz() &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">return</span> Class.forName(<span class="hljs-string">&quot;com.example.domain.User&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (ClassNotFoundException e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs JAVA"><span class="hljs-comment">// User</span><br><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> Integer uid;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> Integer age;<br>    <span class="hljs-keyword">private</span> String gender;<br>    <span class="hljs-keyword">private</span> List&lt;User&gt; children;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E5%8F%8D%E5%B0%84"><span class="toc-number">1.</span> <span class="toc-text">java 反射</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E5%AD%97%E8%8A%82%E7%A0%81%E7%9A%843%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">获取对象字节码的3种方式</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

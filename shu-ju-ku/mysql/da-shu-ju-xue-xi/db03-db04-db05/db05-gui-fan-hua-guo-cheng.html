@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>DB05_数据模型抽象层次 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="数据模型抽象层次概念模型（CDM）概念模型(Concept Data Model，CDM)是一种面向用户、面向客观世界的模型，主要用来描述世界的概念化结构按用户的观点来对数据和信息建模用于组织信息世界的概念，表现从现实世界中抽象出来的事物以及它们之间的联系这类模型强调其语义表达能力，概念简单、清晰，易于用户理解如如E-R模型 逻辑数据模型（LDM）逻辑数据模型(Logicad Data Model">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DB05_数据模型抽象层次">
+<meta property="og:url" content="https://nexmoe.com/shu-ju-ku/mysql/da-shu-ju-xue-xi/db03-db04-db05/db05-gui-fan-hua-guo-cheng.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="数据模型抽象层次概念模型（CDM）概念模型(Concept Data Model，CDM)是一种面向用户、面向客观世界的模型，主要用来描述世界的概念化结构按用户的观点来对数据和信息建模用于组织信息世界的概念，表现从现实世界中抽象出来的事物以及它们之间的联系这类模型强调其语义表达能力，概念简单、清晰，易于用户理解如如E-R模型 逻辑数据模型（LDM）逻辑数据模型(Logicad Data Model">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-20T12:40:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.861Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="大数据">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230635">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230635">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230635">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230635"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230635"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="DB05_数据模型抽象层次" loading="lazy">
+            <h1>DB05_数据模型抽象层次</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2022年12月20日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h3 id="数据模型抽象层次"><a href="#数据模型抽象层次" class="headerlink" title="数据模型抽象层次"></a>数据模型抽象层次</h3><h4 id="概念模型（CDM）"><a href="#概念模型（CDM）" class="headerlink" title="概念模型（CDM）"></a>概念模型（CDM）</h4><p>概念模型(Concept Data Model，CDM)是一种面向用户、面向客观世界的模型，主要用来描述世界的概念化结构<br><code>按用户的观点来对数据和信息建模</code><br><code>用于组织信息世界的概念，表现从现实世界中抽象出来的事物以及它们之间的联系</code><br><code>这类模型强调其语义表达能力，概念简单、清晰，易于用户理解</code><br><code>如如E-R模型</code></p>
+<h4 id="逻辑数据模型（LDM）"><a href="#逻辑数据模型（LDM）" class="headerlink" title="逻辑数据模型（LDM）"></a>逻辑数据模型（LDM）</h4><p>逻辑数据模型(Logicad Data Model)是<br><code>利用图形方式，通过数据和关系反映业务的一个过程</code><br><code>定义需要追踪和管理的各种实体、属性和关系</code><br><code>是进行数据管理、分析和交流的重要手段</code><br><code>是IT和业务人员沟通的桥梁。</code></p>
+<h4 id="概念模型（PDM）"><a href="#概念模型（PDM）" class="headerlink" title="概念模型（PDM）"></a>概念模型（PDM）</h4><p>物理数据模型，是概念数据模型和逻辑数据模型在计算机中的具体表示，真正实现数据在数据库中的存放。其主要的工作是根据逻辑数据模型中的实体、属性、联系转换成对应的物理模型中的元素，包括定义所有的表和列，定义外键以维持表之间的联系等</p>
+<h3 id="数据库逻辑设计"><a href="#数据库逻辑设计" class="headerlink" title="数据库逻辑设计"></a>数据库逻辑设计</h3><p>任何数据库设计都要考虑到终端用户。数据库逻辑设计，也被称为逻辑建模，是把数据安排到逻辑的、有组织的对象组，以便于维护的过程。数据库的逻辑设计应该减少数据重复，甚至是完全消除这种现象。毕竟，为什么要把数据存储两遍呢?另外，数据库逻辑设计应该努力让数据库易于维护和更新，同时也要保持数据库里的命名规范与逻辑。</p>
+<h4 id="终端用户的需求"><a href="#终端用户的需求" class="headerlink" title="终端用户的需求"></a>终端用户的需求</h4><p>在设计数据库时，终端用户的需求应该是最重要的考虑因素，在设计时要考虑的与用户相关的因素包括:<br><code>数据库里应该保存什么数据? </code><br><code>用户如何访问数据库?</code><br><code>用户需要什么权限?</code><br><code>数据库里的数据如何分组?</code><br><code>哪些数据最经常被访问?</code><br><code>全部数据与数据库如何关联?</code><br><code>采取什么措施保证数据的正确性?</code><br><code>采取什么措施减少数据冗余?</code><br><code>采取什么措施让负责维护数据的用户更易于使用数据库?</code></p>
+<h4 id="数据冗余考虑"><a href="#数据冗余考虑" class="headerlink" title="数据冗余考虑"></a>数据冗余考虑</h4><p>数据应该没有冗余，这意味着重复的数据应该保持到最少,其原因有很多。举例来说，把雇员的家庭住址保存到多个表里就没有意义。重复数据会占据额外的存储空间，而且经常会产生混乱<br><code>比如员工的地址在一个表里的内容与在另一个表里的内容不相符时，哪一个是正确的呢?</code><br><code>能不能找到文档资料来确定雇员当前的地址?</code><br>数据管理已经很困难了，冗余数据会导致灾难。减少冗余数据还能简化数据库的更新操作。如果只有一个表保存了雇员的地址，那么在用新地址更新了这个表之后，我们就可以确保所有人都会看到这个更新的数据。</p>
+<h3 id="非规范化数据库"><a href="#非规范化数据库" class="headerlink" title="非规范化数据库"></a>非规范化数据库</h3><p>在没有经过规范化的数据库里，有些数据可能会出现在多个不同的表里，而且没有什么明显的原因。这样对<code>安全</code>、<code>磁盘利用</code>、<code>查询速度</code>、<code>数据库更新</code>都不好，特别是可能产生数据完整性的问题。在规范化之前，数据库里的数据并没有从逻辑上被分解到较小的、更易于管理的表里。</p>
+<h3 id="什么是规范化"><a href="#什么是规范化" class="headerlink" title="什么是规范化"></a>什么是规范化</h3><p>规范化是<code>去除数据库里冗余数据的过程</code>，在设计和重新设计数据库时使用。它是一组减少数据冗余来优化数据库的指导方针，<code>具体的方针被称为数据库范式</code>。<br>数据库的设计范式是数据库设计所需要满足的规范，满足这些规范的数据库是简洁的、结构明晰的，同时，不会发生插入(INSERT)、删除（DELETE)和更新(UPDATE)操作异常。反之则是乱七八糟，不仅给数据库的编程人员制造麻烦，而且面目可憎，可能存储了大量不需要的冗余信息。</p>
+<h3 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h3><ul>
+<li>Normal Format，是一种离散数学中的知识，解决数据的存储与优化的问题。保存数据之后，凡是能够通过关系寻找出来的数据，不再重复存储，终极目标是为了减少数据的冗余。</li>
+<li>范式是一种分层结构的规范，分为六层(1NF、2NF、3NF.…6NF):每一次层都比上一层更加严格。</li>
+<li>关系型数据库有空间浪费，需要致力于节省存储空间。在设计数据库的时候，需要范式要求来进行数据库设计。</li>
+<li>但是数据库不单是要解决空间问题，还要保证效率问题，所以数据库的设计又不可能完全按照范式的要求实现。一般情况下，只有前三种范式需要满足。<br><code>范式在数据库的设计当中是有指导意义，但不是强制规范。</code></li>
+</ul>
+<h4 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h4><p>所谓第一范式（1NF)是指数据库表的每一列都是不可分割的基本数据项，同一列中不能有多个值即实体中的某个属性不能有多个值或者不能有重复的属性。如果出现重复的属性，就可能需要定义一个新的实体，新的实体由重复的属性构成，新实体与原实体之间为一对多关系。在第一范式 （1NF)中表的每一行只包含一个实例的信息。简而言之，<code>第一范式就是无重复的列</code>。</p>
+<blockquote>
+<p>第一范式要求字段的数据具有原子性，不可再分。</p>
+</blockquote>
+<h4 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h4><p>如果关系模式R为第一范式，并且R中每一个非主属性完全函数依赖于R的某个<code>候选键</code>，则称为第二范式模式。<br>第二范式(2NF)是在第一范式(1NF)的基础上建立起来的，即满足第二范式(2NF)必须先满足第一范式(1NF)。第二范式(2NF)要求数据库表中的每个实例或行必须可以被惟一地区分。为实现区分通常需要为表加上一个列，以存储各个实例的惟一标识。这个惟一属性列被称为主关键字或主键、主码。</p>
+<blockquote>
+<p>第二范式就是要解决表设计不允许出现部分依赖，要满足第二范式，必须满足第一范式</p>
+</blockquote>
+<h4 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h4><p>一张表中的所有字段都应该直接依赖主键。如果表中存在一个字段，并不直接依赖主键，而是依赖某个非主键字段，最终实现依赖主键，称之为传递依赖关系。第三范式就是要解决传递依赖的问题<code>要满足第三范式，必须满足第二范式</code>。<br>所谓传递依赖，指的是如果存在”A→B→C”的决定关系，则C传递依赖于A。因此，满足第三范式的数据库表应该不存在如下依赖关系:</p>
+<blockquote>
+<p>关键字段→非关键字段X→非关键字段Y</p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag">大数据</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E6%8A%BD%E8%B1%A1%E5%B1%82%E6%AC%A1"><span class="toc-number">1.</span> <span class="toc-text">数据模型抽象层次</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B%EF%BC%88CDM%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">概念模型（CDM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%EF%BC%88LDM%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">逻辑数据模型（LDM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B%EF%BC%88PDM%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">概念模型（PDM）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">数据库逻辑设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E7%94%A8%E6%88%B7%E7%9A%84%E9%9C%80%E6%B1%82"><span class="toc-number">2.1.</span> <span class="toc-text">终端用户的需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%86%97%E4%BD%99%E8%80%83%E8%99%91"><span class="toc-number">2.2.</span> <span class="toc-text">数据冗余考虑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E8%A7%84%E8%8C%83%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">非规范化数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A7%84%E8%8C%83%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">什么是规范化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">范式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F"><span class="toc-number">5.1.</span> <span class="toc-text">第一范式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text">第二范式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F"><span class="toc-number">5.3.</span> <span class="toc-text">第三范式</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

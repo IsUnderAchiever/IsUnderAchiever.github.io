@@ -1,0 +1,116 @@
+<hr>
+<h2 id="permalink-“-编程语言-Vue-Vue3-Vue3学习-17-html”title-transitiongroup过度列表date-2023-07-24-22-00-00categories-“vue3”tags-“vue3”"><a href="#permalink-“-编程语言-Vue-Vue3-Vue3学习-17-html”title-transitiongroup过度列表date-2023-07-24-22-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;17.html”title: transitiongroup过度列表date: 2023-07-24 22:00:00categories: “vue3”tags: “vue3”"></a>permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;17.html”<br>title: transitiongroup过度列表<br>date: 2023-07-24 22:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="transitiongroup过度列表"><a href="#transitiongroup过度列表" class="headerlink" title="transitiongroup过度列表"></a>transitiongroup过度列表</h1><ul>
+<li>单个节点</li>
+<li>多个节点，每次只渲染一个<br>那么怎么同时渲染整个列表，比如使用 <code>v-for</code>？在这种场景下，我们会使用 <code>&lt;transition-group&gt;</code> 组件。在我们深入例子之前，先了解关于这个组件的几个特点：</li>
+<li>默认情况下，它不会渲染一个包裹元素，但是你可以通过 <code>tag</code> attribute 指定渲染一个元素。</li>
+<li><a href="https://v3.cn.vuejs.org/guide/transitions-enterleave.html#%E8%BF%87%E6%B8%A1%E6%A8%A1%E5%BC%8F">过渡模式</a>不可用，因为我们不再相互切换特有的元素。</li>
+<li>内部元素<strong>总是需要</strong>提供唯一的 <code>key</code> attribute 值。</li>
+<li>CSS 过渡的类将会应用在内部的元素中，而不是这个组&#x2F;容器本身。</li>
+</ul>
+<pre><code class="vue">&lt;transition-group&gt;
+     &lt;div style=&quot;margin: 10px;&quot; :key=&quot;item&quot; v-for=&quot;item in list&quot;&gt;{{ item }&lt;/div&gt;
+&lt;/transition-group&gt;
+const list = reactive&lt;number[]&gt;([1, 2, 4, 5, 6, 7, 8, 9])
+const Push = () =&gt; {
+    list.push(123)
+}
+const Pop = () =&gt; {
+    list.pop()
+}
+</code></pre>
+<pre><code class="vue">&lt;template&gt;
+  &lt;button @click=&quot;Push&quot;&gt;插入&lt;/button&gt;
+  &lt;button @click=&quot;Pop&quot;&gt;删除&lt;/button&gt;
+  &lt;div class=&quot;box&quot;&gt;
+    &lt;transition-group&gt;
+      &lt;div style=&quot;margin: 10px;&quot; :key=&quot;item&quot; v-for=&quot;item in list&quot;&gt;{{ item }}&lt;/div&gt;
+    &lt;/transition-group&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineAsyncComponent, reactive, ref} from &quot;vue&quot;;
+import &#39;animate.css&#39;
+const list = reactive&lt;number[]&gt;([1, 2, 3])
+const Push = () =&gt; {
+  list.push(list.length+1)
+}
+const Pop = () =&gt; {
+  list.pop()
+}
+&lt;/script&gt;
+&lt;style scoped lang=&quot;scss&quot;&gt;
+.box{
+  display: flex;
+  flex-wrap: wrap;
+}
+&lt;/style&gt;
+</code></pre>
+<h2 id="2-列表的移动过渡"><a href="#2-列表的移动过渡" class="headerlink" title="2.列表的移动过渡"></a>2.列表的移动过渡</h2><p><strong>lodash</strong></p>
+<pre><code class="bash">npm install lodash -S
+npm install @types/lodash -D
+</code></pre>
+<p><code>&lt;transition-group&gt;</code> 组件还有一个特殊之处。除了进入和离开，它还可以为定位的改变添加动画。只需了解新增的 <strong><code>v-move</code> 类</strong>就可以使用这个新功能，它会应用在元素改变定位的过程中。像之前的类名一样，它的前缀可以通过 <code>name</code> attribute 来自定义，也可以通过 <code>move-class</code> attribute 手动设置<br>下面代码很酷炫</p>
+<pre><code class="vue">&lt;template&gt;
+    &lt;div&gt;
+        &lt;button @click=&quot;shuffle&quot;&gt;Shuffle&lt;/button&gt;
+        &lt;transition-group class=&quot;wraps&quot; name=&quot;mmm&quot; tag=&quot;ul&quot;&gt;
+            &lt;li class=&quot;cell&quot; v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;{{ item.number }}&lt;/li&gt;
+        &lt;/transition-group&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+  
+&lt;script setup  lang=&#39;ts&#39;&gt;
+import _ from &#39;lodash&#39;
+import { ref } from &#39;vue&#39;
+let items = ref(Array.apply(null, { length: 81 } as number[]).map((_, index) =&gt; {
+    return {
+        id: index,
+        number: (index % 9) + 1
+    }
+}))
+const shuffle = () =&gt; {
+    items.value = _.shuffle(items.value)
+}
+&lt;/script&gt;
+  
+&lt;style scoped lang=&quot;less&quot;&gt;
+.wraps {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(25px * 10 + 9px);
+    .cell {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #ccc;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.mmm-move {
+    transition: transform 0.8s ease;
+}
+&lt;/style&gt;
+</code></pre>
+<h2 id="3-状态过度"><a href="#3-状态过度" class="headerlink" title="3.状态过度"></a>3.状态过度</h2><pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;input step=&quot;20&quot; v-model=&quot;num.current&quot; type=&quot;number&quot;/&gt;
+    &lt;div&gt;{{ num.tweenedNumber.toFixed(0) }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&#39;ts&#39;&gt;
+import {reactive, watch} from &#39;vue&#39;
+import gsap from &#39;gsap&#39;
+const num = reactive({
+  tweenedNumber: 0,
+  current: 0
+})
+watch(() =&gt; num.current, (newVal) =&gt; {
+  gsap.to(num, {
+    duration: 1,
+    tweenedNumber: newVal
+  })
+})
+&lt;/script&gt;
+</code></pre>

@@ -1,0 +1,87 @@
+<hr>
+<h2 id="permalink-“-编程语言-Vue-Vue3-Vue3学习-07-html”title-watchEffect高级侦听器date-2023-07-17-23-00-00categories-“vue3”tags-“vue3”"><a href="#permalink-“-编程语言-Vue-Vue3-Vue3学习-07-html”title-watchEffect高级侦听器date-2023-07-17-23-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;07.html”title: watchEffect高级侦听器date: 2023-07-17 23:00:00categories: “vue3”tags: “vue3”"></a>permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;07.html”<br>title: watchEffect高级侦听器<br>date: 2023-07-17 23:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="watchEffect高级侦听器"><a href="#watchEffect高级侦听器" class="headerlink" title="watchEffect高级侦听器"></a>watchEffect高级侦听器</h1><blockquote>
+<p><a href="https://xiaoman.blog.csdn.net/article/details/122802130">原博客</a><br>执行传入的函数，同时响应式追踪其依赖，当依赖改变时重新运行该函数	</p>
+</blockquote>
+<pre><code class="typescript">import {ref, watchEffect} from &#39;vue&#39;;
+let message = ref&lt;number&gt;(0)
+watchEffect(() =&gt; {
+  console.log(&#39;message&#39;, message.value);
+})
+</code></pre>
+<p><strong>清除副作用</strong></p>
+<blockquote>
+<p>在触发监听之前会调用一个函数来处理逻辑，如防抖</p>
+</blockquote>
+<pre><code class="typescript">&lt;script setup lang=&quot;ts&quot;&gt;
+import { watchEffect, ref } from &#39;vue&#39;
+let message = ref&lt;number&gt;(0)
+watchEffect((beforeTest) =&gt; {
+  beforeTest(()=&gt;{
+    console.log(&#39;测试前&#39;);
+  })
+  console.log(&#39;message&#39;, message.value);
+})
+&lt;/script&gt;
+</code></pre>
+<p><strong>停止跟踪</strong></p>
+<blockquote>
+<p>watchEffect 返回一个函数 调用之后将停止更新</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;div&gt;{{ message }}&lt;/div&gt;
+    &lt;button @click=&quot;message++&quot;&gt;测试&lt;/button&gt;
+    &lt;button @click=&quot;stopWatch&quot;&gt;停止监听&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import { watchEffect, ref } from &#39;vue&#39;
+let message = ref&lt;number&gt;(0)
+let stopWatch=watchEffect((beforeTest) =&gt; {
+  beforeTest(()=&gt;{
+    console.log(&#39;测试前&#39;);
+  })
+  console.log(&#39;message&#39;, message.value);
+})
+&lt;/script&gt;
+</code></pre>
+<p><strong>刷新时机</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">pre</th>
+<th align="center">sync</th>
+<th align="center">post</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">更新时机</td>
+<td align="center">组件<code>更新前</code>执行</td>
+<td align="center"><code>同步</code>执行</td>
+<td align="center">组件<code>更新后</code>执行</td>
+</tr>
+</tbody></table>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;div&gt;{{ message }}&lt;/div&gt;
+    &lt;button @click=&quot;message++&quot;&gt;测试&lt;/button&gt;
+    &lt;button @click=&quot;stopWatch&quot;&gt;停止监听&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {watchEffect, ref} from &#39;vue&#39;
+let message = ref&lt;number&gt;(0)
+let stopWatch = watchEffect((beforeTest) =&gt; {
+  beforeTest(() =&gt; {
+    console.log(&#39;测试前&#39;);
+  })
+  console.log(&#39;message&#39;, message.value);
+}, {
+  flush: &#39;post&#39;,
+  onTrigger() {
+    console.log(&#39;更新前&#39;);
+  }
+})
+&lt;/script&gt;
+</code></pre>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>2_MyBatis复习 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="2_MyBatis复习 目录结构  Spring_MyBatis                        ├─ src                                │  ├─ main                            │  │  ├─ java                         │  │  │  └─ com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2_MyBatis复习">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/spring-zheng-he-mybatis-junit-ji-shi-wu/2-spring-zheng-he-mybatis.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="2_MyBatis复习 目录结构  Spring_MyBatis                        ├─ src                                │  ├─ main                            │  │  ├─ java                         │  │  │  └─ com">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20230120142044740.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201457499.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201459301.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501580.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501920.png">
+<meta property="article:published_time" content="2023-01-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.981Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="Spring整合MyBatis、Junit及事务">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20230120142044740.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230603">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230603">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230603">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230603"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230603"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="2_MyBatis复习" loading="lazy">
+            <h1>2_MyBatis复习</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年01月20日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/Spring%E6%95%B4%E5%90%88MyBatis%E3%80%81Junit%E5%8F%8A%E4%BA%8B%E5%8A%A1/">Spring整合MyBatis、Junit及事务</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h2 id="2-MyBatis复习"><a href="#2-MyBatis复习" class="headerlink" title="2_MyBatis复习"></a>2_MyBatis复习</h2><blockquote>
+<p>目录结构</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs tree">Spring_MyBatis                        <br>├─ src                                <br>│  ├─ main                            <br>│  │  ├─ java                         <br>│  │  │  └─ com                       <br>│  │  │     └─ example                <br>│  │  │        ├─ domain              <br>│  │  │        │  └─ User.java        <br>│  │  │        ├─ mapper              <br>│  │  │        │  └─ UserMapper.java  <br>│  │  │        └─ Demo.java           <br>│  │  └─ resources                    <br>│  │     ├─ com                       <br>│  │     │  └─ example                <br>│  │     │     └─ mapper              <br>│  │     │        └─ UserMapper.xml   <br>│  │     ├─ applicationContext.xml    <br>│  │     ├─ jdbc.properties           <br>│  │     └─ mybatis-config.xml        <br>│  └─ test                            <br>│     └─ java                       <br>└─ pom.xml                            <br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.example<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>Spring_MyBatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--lombok--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.projectlombok<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>lombok<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.18.24<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--mybatis--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.5.9<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--mysql--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.30<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>mybatis-config.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">configuration</span> <span class="hljs-keyword">PUBLIC</span></span><br><span class="hljs-meta">        <span class="hljs-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span><br><span class="hljs-meta">        <span class="hljs-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--设置文件所在路径--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span> <span class="hljs-attr">resource</span>=<span class="hljs-string">&quot;jdbc.properties&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">environments</span> <span class="hljs-attr">default</span>=<span class="hljs-string">&quot;development&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">environment</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;development&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">transactionManager</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;JDBC&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">dataSource</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;POOLED&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driver&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.driver&#125;&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.url&#125;&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.username&#125;&quot;</span>/&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.password&#125;&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">dataSource</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">environment</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">environments</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">mappers</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--指定包--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">package</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;com.example.mapper&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">mappers</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>jdbc.properties</p>
+</blockquote>
+<figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">jdbc.driver</span>=<span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br><span class="hljs-attr">jdbc.url</span>=<span class="hljs-string">jdbc:mysql://localhost:3306/test?serverTimezone=UTC</span><br><span class="hljs-attr">jdbc.username</span>=<span class="hljs-string">root</span><br><span class="hljs-attr">jdbc.password</span>=<span class="hljs-string">123456</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>UserMapper.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">mapper</span></span><br><span class="hljs-meta">        <span class="hljs-keyword">PUBLIC</span> <span class="hljs-string">&quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span></span><br><span class="hljs-meta">        <span class="hljs-string">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">&quot;com.example.mapper.UserMapper&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;BaseResultMap&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.example.domain.User&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">id</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;INTEGER&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;VARCHAR&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;VARCHAR&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;INTEGER&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;address&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;address&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;VARCHAR&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;VARCHAR&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;phone&quot;</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;phone&quot;</span> <span class="hljs-attr">jdbcType</span>=<span class="hljs-string">&quot;VARCHAR&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;Base_Column_List&quot;</span>&gt;</span><br>        id,name,gender,<br>        age,address,email,<br>        phone<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectByPrimaryKey&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;java.lang.Long&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;BaseResultMap&quot;</span>&gt;</span><br>        select<br>        <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;Base_Column_List&quot;</span> /&gt;</span><br>        from user<br>        where  id = #&#123;id,jdbcType=INTEGER&#125; <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAll&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;com.example.domain.User&quot;</span>&gt;</span><br>        select<br>        <span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;Base_Column_List&quot;</span> /&gt;</span><br>        from user<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">delete</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;deleteByPrimaryKey&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;java.lang.Long&quot;</span>&gt;</span><br>        delete from user<br>        where  id = #&#123;id,jdbcType=INTEGER&#125; <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">delete</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;insert&quot;</span> <span class="hljs-attr">keyColumn</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">keyProperty</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;com.example.domain.User&quot;</span> <span class="hljs-attr">useGeneratedKeys</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>        insert into user<br>        ( id,name,gender<br>        ,age,address,email<br>        ,phone)<br>        values (#&#123;id,jdbcType=INTEGER&#125;,#&#123;name,jdbcType=VARCHAR&#125;,#&#123;gender,jdbcType=VARCHAR&#125;<br>        ,#&#123;age,jdbcType=INTEGER&#125;,#&#123;address,jdbcType=VARCHAR&#125;,#&#123;email,jdbcType=VARCHAR&#125;<br>        ,#&#123;phone,jdbcType=VARCHAR&#125;)<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">insert</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;insertSelective&quot;</span> <span class="hljs-attr">keyColumn</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">keyProperty</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;com.example.domain.User&quot;</span> <span class="hljs-attr">useGeneratedKeys</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>        insert into user<br>        <span class="hljs-tag">&lt;<span class="hljs-name">trim</span> <span class="hljs-attr">prefix</span>=<span class="hljs-string">&quot;(&quot;</span> <span class="hljs-attr">suffix</span>=<span class="hljs-string">&quot;)&quot;</span> <span class="hljs-attr">suffixOverrides</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;id != null&quot;</span>&gt;</span>id,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;name != null&quot;</span>&gt;</span>name,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;gender != null&quot;</span>&gt;</span>gender,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;age != null&quot;</span>&gt;</span>age,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;address != null&quot;</span>&gt;</span>address,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;email != null&quot;</span>&gt;</span>email,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;phone != null&quot;</span>&gt;</span>phone,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">trim</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">trim</span> <span class="hljs-attr">prefix</span>=<span class="hljs-string">&quot;values (&quot;</span> <span class="hljs-attr">suffix</span>=<span class="hljs-string">&quot;)&quot;</span> <span class="hljs-attr">suffixOverrides</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;id != null&quot;</span>&gt;</span>#&#123;id,jdbcType=INTEGER&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;name != null&quot;</span>&gt;</span>#&#123;name,jdbcType=VARCHAR&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;gender != null&quot;</span>&gt;</span>#&#123;gender,jdbcType=VARCHAR&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;age != null&quot;</span>&gt;</span>#&#123;age,jdbcType=INTEGER&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;address != null&quot;</span>&gt;</span>#&#123;address,jdbcType=VARCHAR&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;email != null&quot;</span>&gt;</span>#&#123;email,jdbcType=VARCHAR&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;phone != null&quot;</span>&gt;</span>#&#123;phone,jdbcType=VARCHAR&#125;,<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">trim</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">insert</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">update</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;updateByPrimaryKeySelective&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;com.example.domain.User&quot;</span>&gt;</span><br>        update user<br>        <span class="hljs-tag">&lt;<span class="hljs-name">set</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;name != null&quot;</span>&gt;</span><br>                    name = #&#123;name,jdbcType=VARCHAR&#125;,<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;gender != null&quot;</span>&gt;</span><br>                    gender = #&#123;gender,jdbcType=VARCHAR&#125;,<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;age != null&quot;</span>&gt;</span><br>                    age = #&#123;age,jdbcType=INTEGER&#125;,<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;address != null&quot;</span>&gt;</span><br>                    address = #&#123;address,jdbcType=VARCHAR&#125;,<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;email != null&quot;</span>&gt;</span><br>                    email = #&#123;email,jdbcType=VARCHAR&#125;,<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;phone != null&quot;</span>&gt;</span><br>                    phone = #&#123;phone,jdbcType=VARCHAR&#125;,<br>                <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span><br>        where   id = #&#123;id,jdbcType=INTEGER&#125; <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">update</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">update</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;updateByPrimaryKey&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;com.example.domain.User&quot;</span>&gt;</span><br>        update user<br>        set <br>            name =  #&#123;name,jdbcType=VARCHAR&#125;,<br>            gender =  #&#123;gender,jdbcType=VARCHAR&#125;,<br>            age =  #&#123;age,jdbcType=INTEGER&#125;,<br>            address =  #&#123;address,jdbcType=VARCHAR&#125;,<br>            email =  #&#123;email,jdbcType=VARCHAR&#125;,<br>            phone =  #&#123;phone,jdbcType=VARCHAR&#125;<br>        where   id = #&#123;id,jdbcType=INTEGER&#125; <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">update</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>UserMapper</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">UserMapper</span> &#123;<br>    List&lt;User&gt; <span class="hljs-title function_">selectAll</span><span class="hljs-params">()</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">deleteByPrimaryKey</span><span class="hljs-params">(Long id)</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">insert</span><span class="hljs-params">(User record)</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">insertSelective</span><span class="hljs-params">(User record)</span>;<br>    User <span class="hljs-title function_">selectByPrimaryKey</span><span class="hljs-params">(Long id)</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">updateByPrimaryKeySelective</span><span class="hljs-params">(User record)</span>;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">updateByPrimaryKey</span><span class="hljs-params">(User record)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>User</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Data</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-meta">@NoArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Serializable</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户id</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer id;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户名字</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户性别</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String gender;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户年龄</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> Integer age;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户地址</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String address;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户邮箱</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String email;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 用户手机号</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> String phone;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">long</span> <span class="hljs-variable">serialVersionUID</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object that)</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span> == that) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (that == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (getClass() != that.getClass()) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">other</span> <span class="hljs-operator">=</span> (User) that;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-built_in">this</span>.getId() == <span class="hljs-literal">null</span> ? other.getId() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getId().equals(other.getId()))<br>            &amp;&amp; (<span class="hljs-built_in">this</span>.getName() == <span class="hljs-literal">null</span> ? other.getName() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getName().equals(other.getName()))<br>            &amp;&amp; (<span class="hljs-built_in">this</span>.getGender() == <span class="hljs-literal">null</span> ? other.getGender() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getGender().equals(other.getGender()))<br>            &amp;&amp; (<span class="hljs-built_in">this</span>.getAge() == <span class="hljs-literal">null</span> ? other.getAge() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getAge().equals(other.getAge()))<br>            &amp;&amp; (<span class="hljs-built_in">this</span>.getAddress() == <span class="hljs-literal">null</span> ? other.getAddress() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getAddress().equals(other.getAddress()))<br>            &amp;&amp; (<span class="hljs-built_in">this</span>.getEmail() == <span class="hljs-literal">null</span> ? other.getEmail() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getEmail().equals(other.getEmail()))<br>            &amp;&amp; (<span class="hljs-built_in">this</span>.getPhone() == <span class="hljs-literal">null</span> ? other.getPhone() == <span class="hljs-literal">null</span> : <span class="hljs-built_in">this</span>.getPhone().equals(other.getPhone()));<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">final</span> <span class="hljs-type">int</span> <span class="hljs-variable">prime</span> <span class="hljs-operator">=</span> <span class="hljs-number">31</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        result = prime * result + ((getId() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getId().hashCode());<br>        result = prime * result + ((getName() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getName().hashCode());<br>        result = prime * result + ((getGender() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getGender().hashCode());<br>        result = prime * result + ((getAge() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getAge().hashCode());<br>        result = prime * result + ((getAddress() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getAddress().hashCode());<br>        result = prime * result + ((getEmail() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getEmail().hashCode());<br>        result = prime * result + ((getPhone() == <span class="hljs-literal">null</span>) ? <span class="hljs-number">0</span> : getPhone().hashCode());<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">toString</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>        sb.append(getClass().getSimpleName());<br>        sb.append(<span class="hljs-string">&quot; [&quot;</span>);<br>        sb.append(<span class="hljs-string">&quot;Hash = &quot;</span>).append(hashCode());<br>        sb.append(<span class="hljs-string">&quot;, id=&quot;</span>).append(id);<br>        sb.append(<span class="hljs-string">&quot;, name=&quot;</span>).append(name);<br>        sb.append(<span class="hljs-string">&quot;, gender=&quot;</span>).append(gender);<br>        sb.append(<span class="hljs-string">&quot;, age=&quot;</span>).append(age);<br>        sb.append(<span class="hljs-string">&quot;, address=&quot;</span>).append(address);<br>        sb.append(<span class="hljs-string">&quot;, email=&quot;</span>).append(email);<br>        sb.append(<span class="hljs-string">&quot;, phone=&quot;</span>).append(phone);<br>        sb.append(<span class="hljs-string">&quot;, serialVersionUID=&quot;</span>).append(serialVersionUID);<br>        sb.append(<span class="hljs-string">&quot;]&quot;</span>);<br>        <span class="hljs-keyword">return</span> sb.toString();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>测试MyBatis</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-comment">// 定义mybatis配置文件的路径</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">resource</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;mybatis-config.xml&quot;</span>;<br>        <span class="hljs-type">InputStream</span> <span class="hljs-variable">inputStream</span> <span class="hljs-operator">=</span> Resources.getResourceAsStream(resource);<br>        <span class="hljs-type">SqlSessionFactory</span> <span class="hljs-variable">sqlSessionFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SqlSessionFactoryBuilder</span>().build(inputStream);<br>        <span class="hljs-comment">// 获取SqlSession对象</span><br>        <span class="hljs-type">SqlSession</span> <span class="hljs-variable">sqlSession</span> <span class="hljs-operator">=</span> sqlSessionFactory.openSession();<br>        <span class="hljs-comment">// 获取UserMapper实现类对象</span><br>        <span class="hljs-type">UserMapper</span> <span class="hljs-variable">userMapper</span> <span class="hljs-operator">=</span> sqlSession.getMapper(UserMapper.class);<br>        <span class="hljs-comment">// 调用方法测试</span><br>        List&lt;User&gt; users = userMapper.selectAll();<br>        System.out.println(users);<br>        <span class="hljs-comment">// 释放资源</span><br>        sqlSession.close();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="14-Spring整合MyBatis"><a href="#14-Spring整合MyBatis" class="headerlink" title="14_Spring整合MyBatis"></a>14_Spring整合MyBatis</h2><p><a target="_blank" rel="noopener" href="https://mybatis.org/spring/zh/index.html">参考文档</a></p>
+<blockquote>
+<p>MyBatis-String连接包版本对应</p>
+<table>
+<thead>
+<tr>
+<th align="left">MyBatis-Spring</th>
+<th align="left">MyBatis</th>
+<th align="left">Spring Framework</th>
+<th align="left">Spring Batch</th>
+<th align="left">Java</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>3.0</strong></td>
+<td align="left">3.5+</td>
+<td align="left">6.0+</td>
+<td align="left">5.0+</td>
+<td align="left">Java 17+</td>
+</tr>
+<tr>
+<td align="left"><strong>2.1</strong></td>
+<td align="left">3.5+</td>
+<td align="left">5.x</td>
+<td align="left">4.x</td>
+<td align="left">Java 8+</td>
+</tr>
+<tr>
+<td align="left"><strong>2.0</strong></td>
+<td align="left">3.5+</td>
+<td align="left">5.x</td>
+<td align="left">4.x</td>
+<td align="left">Java 8+</td>
+</tr>
+<tr>
+<td align="left"><strong>1.3</strong></td>
+<td align="left">3.4+</td>
+<td align="left">3.2.2+</td>
+<td align="left">2.1+</td>
+<td align="left">Java 6+</td>
+</tr>
+</tbody></table>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.example<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>Spring_MyBatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="hljs-tag">&lt;/<span class="hljs-name">project.build.sourceEncoding</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--lombok--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.projectlombok<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>lombok<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.18.24<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--Junit--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--Spring整合Junit依赖--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-test<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.3.18<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--Spring JDBC--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-jdbc<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.3.9<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--ioc--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-context<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.3.9<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--mybatis整合spring--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis-spring<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.0.6<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--druid数据源--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>druid<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.2.9<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--mybatis--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.5.9<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--mysql--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0.30<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>往容器中注入整合相关对象</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.example&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:property-placeholder</span> <span class="hljs-attr">location</span>=<span class="hljs-string">&quot;classpath:jdbc.properties&quot;</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!--配置Druid连接池--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dataSource&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driverClassName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.driver&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.url&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.username&#125;&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.password&#125;&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--配置Mapper扫描器，扫描到的mapper对象会被注入Spring容器中--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;mapperScannerConfigurer&quot;</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--mapper.xml的路径--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;basePackage&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;com.example.mapper&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sqlSessionFactory&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dataSource&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;dataSource&quot;</span>/&gt;</span><br>        <span class="hljs-comment">&lt;!--设置MyBatis配置文件的路径--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;configLocation&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;mybatis-config.xml&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>mybatis-config.xml</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">configuration</span> <span class="hljs-keyword">PUBLIC</span></span><br><span class="hljs-meta">        <span class="hljs-string">&quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span></span><br><span class="hljs-meta">        <span class="hljs-string">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--别名配置--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">typeAliases</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">package</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;com.example.domain&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">typeAliases</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>测试</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@ContextConfiguration(locations = &quot;classpath:applicationContext.xml&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(userMapper.selectAll());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="MyBatis配置别名的作用"><a href="#MyBatis配置别名的作用" class="headerlink" title="MyBatis配置别名的作用"></a>MyBatis配置别名的作用</h2><blockquote>
+<p>例子<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/image-20230120142044740.png" alt="database" data-caption="database" loading="lazy"></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@ContextConfiguration(locations = &quot;classpath:applicationContext.xml&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&quot;哈哈&quot;</span>,<span class="hljs-string">&quot;男&quot;</span>,<span class="hljs-number">12</span>,<span class="hljs-string">&quot;湖南&quot;</span>,<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;131xxxx5494&quot;</span>);<br>        userMapper.insert(user);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201457499.png" alt="image-20230120145745385" data-caption="image-20230120145745385" loading="lazy"><br><code>测试结果</code>：<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201459301.png" alt="image-20230120145944254" data-caption="image-20230120145944254" loading="lazy"></p>
+<blockquote>
+<p>在配置了别名后，可继续使用上面的<code>全类名</code>写法，也可以只写<code>类名</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@ContextConfiguration(locations = &quot;classpath:applicationContext.xml&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTest</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test1</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>(<span class="hljs-number">5</span>,<span class="hljs-string">&quot;呵呵&quot;</span>,<span class="hljs-string">&quot;女&quot;</span>,<span class="hljs-number">15</span>,<span class="hljs-string">&quot;湖南&quot;</span>,<span class="hljs-string">&quot;xxx@qq.com&quot;</span>,<span class="hljs-string">&quot;131xxxx5494&quot;</span>);<br>        userMapper.insert(user);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501580.png" alt="image-20230120150113451" data-caption="image-20230120150113451" loading="lazy"><br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202301201501920.png" alt="image-20230120150143868" data-caption="image-20230120150143868" loading="lazy"></p>
+<blockquote>
+<p>它的作用是让Mapper.xml中的参数找到对应类,如下面parameterType&#x3D;”User”，如果没有配置别名，则要改为parameterType&#x3D;”com.example.domain.User”&gt;</p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Spring%E6%95%B4%E5%90%88MyBatis%E3%80%81Junit%E5%8F%8A%E4%BA%8B%E5%8A%A1/" rel="tag">Spring整合MyBatis、Junit及事务</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-MyBatis%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">2_MyBatis复习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Spring%E6%95%B4%E5%90%88MyBatis"><span class="toc-number">2.</span> <span class="toc-text">14_Spring整合MyBatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyBatis%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">MyBatis配置别名的作用</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

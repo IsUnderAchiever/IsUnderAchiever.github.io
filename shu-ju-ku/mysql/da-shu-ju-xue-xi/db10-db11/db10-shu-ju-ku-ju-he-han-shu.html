@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>DB10_数据库聚合函数 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="什么是聚合函数函数是SQL里的关键字，用于对字段里的数据进行操作。函数是一个命令，通常与字段名称或表达式联合使用，处理输入的数据并产生结果。SQL包含多种类型的函数，其中聚合函数为SQL语句提供合计信息，比如计数、总和、平均等。基本的聚合函数包括COUNT、suM、MIN、MAx、AVG COUNT聚合函数COUNT函数用于统计不包含NULL值的记录或字段值，在用于查询之中时，它返回一个数值。它也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DB10_数据库聚合函数">
+<meta property="og:url" content="https://nexmoe.com/shu-ju-ku/mysql/da-shu-ju-xue-xi/db10-db11/db10-shu-ju-ku-ju-he-han-shu.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="什么是聚合函数函数是SQL里的关键字，用于对字段里的数据进行操作。函数是一个命令，通常与字段名称或表达式联合使用，处理输入的数据并产生结果。SQL包含多种类型的函数，其中聚合函数为SQL语句提供合计信息，比如计数、总和、平均等。基本的聚合函数包括COUNT、suM、MIN、MAx、AVG COUNT聚合函数COUNT函数用于统计不包含NULL值的记录或字段值，在用于查询之中时，它返回一个数值。它也">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-23T01:40:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.867Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="大数据">
+<meta name="twitter:card" content="summary">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230632">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230632">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230632">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230632"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230632"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="DB10_数据库聚合函数" loading="lazy">
+            <h1>DB10_数据库聚合函数</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2022年12月23日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h4 id="什么是聚合函数"><a href="#什么是聚合函数" class="headerlink" title="什么是聚合函数"></a>什么是聚合函数</h4><p>函数是SQL里的关键字，用于对字段里的数据进行操作。函数是一个命令，通常与字段名称或表达式联合使用，处理输入的数据并产生结果。SQL包含多种类型的函数，其中聚合函数为SQL语句提供合计信息，比如计数、总和、平均等。<br>基本的聚合函数包括<strong>COUNT、suM、MIN、MAx、AVG</strong></p>
+<h4 id="COUNT聚合函数"><a href="#COUNT聚合函数" class="headerlink" title="COUNT聚合函数"></a>COUNT聚合函数</h4><p>COUNT函数用于统计不包含NULL值的记录或字段值，在用于查询之中时，它返回一个数值。它也可以与DISTINCT命令一起使用，从而只统计数据集里不同的记录数量。命令ALL(与DISTINCT相反)是默认的，在语句中不需要明确指定。<br>在没有指定DISTINCT的情况下，重复的行也被统计在内。使用COUNT函数的另一种方式是与星号配合。COUNT(*)会统计表里的全部记录数量，包括重复的，也不管字段里是否包含NULL值(即使极端情况全部字段值为NULL)。<br>COUNT语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">COUNT [(<span class="hljs-operator">*</span>)<span class="hljs-operator">|</span>(<span class="hljs-keyword">DISTINCT</span><span class="hljs-operator">|</span><span class="hljs-keyword">ALL</span>)](column_name)<br></code></pre></td></tr></table></figure>
+<p>注意:</p>
+<ul>
+<li>DISTINCT命令只能用于COUNT(column_ name)，不能与COUNT(*)一起使用</li>
+<li>数据类型不影响COUNT的统计记过，COUNT函数统计的是行数，不涉及数据类型。行里可以包含任意类型的数据。<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-operator">*</span>)<br><span class="hljs-keyword">from</span> products_tbl;<br><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(prod_id)<br><span class="hljs-keyword">from</span> products_tbl;<br><span class="hljs-keyword">select</span> <span class="hljs-built_in">count</span>(<span class="hljs-keyword">distinct</span> prod_id)<br><span class="hljs-keyword">from</span> products_tbl;<br></code></pre></td></tr></table></figure></li>
+<li>在COUNT函数中使用星号，将返回所有的统计数就记录数，包括重复项和NULL</li>
+<li>在COUNT函数指定字段名，则除NULL之外的统计数</li>
+</ul>
+<h4 id="SUM聚合函数"><a href="#SUM聚合函数" class="headerlink" title="SUM聚合函数"></a>SUM聚合函数</h4><p>SUM函数返回一组记录中某一个字段值的总和。它也可以与DISTINCT一起使用，这时只会计算不同记录之和。这一般没有什么意义，因为有些记录被忽略掉了，在实际应用基本上没有使用。<br>sum语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-built_in">SUM</span>( [ <span class="hljs-keyword">DISTINCT</span> ] column_name)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>虽然SUM函数只能处理数值类型的字段，无法处理其它数量类型，比如字符类型或者日期类型。<br>但也有例外，char数据可以隐式转换为数值类型，如果数据不能隐含地转化为数值类型，其结果就是0。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"># 统计全部员工的总和<br><span class="hljs-keyword">select</span> <span class="hljs-built_in">sum</span>(salary)<br><span class="hljs-keyword">from</span> employee_pay_tbl;<br># 统计不同薪水的总和<br><span class="hljs-keyword">select</span> <span class="hljs-built_in">sum</span>(<span class="hljs-keyword">distinct</span> salary)<br><span class="hljs-keyword">from</span> employee_pay_tbl;<br></code></pre></td></tr></table></figure>
+<h4 id="AVG聚合函数"><a href="#AVG聚合函数" class="headerlink" title="AVG聚合函数"></a>AVG聚合函数</h4><p>AVG函数可以计算一组指定记录的平均值。在与DISTINCT一起使用时，它返回不重复记录的平均值。<br>AVG函数的语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-built_in">AVG</span> ([ <span class="hljs-keyword">DISTINCT</span> ] column_name)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>AVG函数只能处理数值类型的字段，AVG聚合函数的参数必须是数值类型，和上述SUM聚合函数一样<br>NULL值不包括在计算中<br>在某些场景中，AVG统计结果被四舍五入到数据类型精度</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">avg</span>(salary)<br><span class="hljs-keyword">from</span> employee_pay_tbl;<br><span class="hljs-keyword">select</span> <span class="hljs-built_in">avg</span>(<span class="hljs-keyword">distinct</span> salary)<br><span class="hljs-keyword">from</span> employee_pay_tbl;<br></code></pre></td></tr></table></figure>
+<h4 id="MAX聚合函数"><a href="#MAX聚合函数" class="headerlink" title="MAX聚合函数"></a>MAX聚合函数</h4><p>MAX函数返回一组记录中某个字段的最大值，NULL值不在计算范围之内。DISTINCT也可以使用, 但全部记录与不同记录的最大值是一样的，所以用DISTINCT没有意义。<br>MAX函数的语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-built_in">MAX</span>([ <span class="hljs-keyword">DISTINCT</span> ] column_name)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>MAX函数可以针对字符类型进行聚合</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-built_in">max</span>(prod_desc)<br><span class="hljs-keyword">from</span> products_tbl;<br></code></pre></td></tr></table></figure>
+<h4 id="MIN聚合函数"><a href="#MIN聚合函数" class="headerlink" title="MIN聚合函数"></a>MIN聚合函数</h4><p>MIN函数返回一组记录里某个字段的最小值，NULL值不在计算范围之内。DISTINCT也可以使用 但全部记录与不同记录的最大值是一样的，所以用DISTINCT没有意义。<br>MIN函数的语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-built_in">MIN</span> ([ <span class="hljs-keyword">DISTINCT</span> ] column_name)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>MIN函数可以针对字符类型进行聚合</p>
+</blockquote>
+<h4 id="聚合函数组合使用"><a href="#聚合函数组合使用" class="headerlink" title="聚合函数组合使用"></a>聚合函数组合使用</h4><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-built_in">COUNT</span>(ord_num),<br>       <span class="hljs-built_in">SUM</span>(qty),<br>       <span class="hljs-built_in">SUM</span>(qty) <span class="hljs-operator">/</span> <span class="hljs-built_in">COUNT</span>(ord_num) avg_qty<br><span class="hljs-keyword">FROM</span> orders_tbl;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>sum、avg、max、min、count均会忽略null值</p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" rel="tag">大数据</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">什么是聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#COUNT%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">COUNT聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SUM%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">SUM聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AVG%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">AVG聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MAX%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">MAX聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MIN%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">MIN聚合函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8"><span class="toc-number">7.</span> <span class="toc-text">聚合函数组合使用</span></a></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

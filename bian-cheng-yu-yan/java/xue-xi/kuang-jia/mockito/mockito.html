@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>Mockito - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="Mockito基础 当我们mock了某个对象后，调用该方法的时候是并不会去执行实际方法的逻辑的  public class User &amp;#123;    private String name &#x3D; &quot;小张&quot;;    private String gender &#x3D; &quot;男&quot;;    private Integer age &#x3D; 15;&amp;#125;&#x2F;&#x2F;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mockito">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/mockito/mockito.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="Mockito基础 当我们mock了某个对象后，调用该方法的时候是并不会去执行实际方法的逻辑的  public class User &amp;#123;    private String name &#x3D; &quot;小张&quot;;    private String gender &#x3D; &quot;男&quot;;    private Integer age &#x3D; 15;&amp;#125;&#x2F;&#x2F;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032042560.png">
+<meta property="og:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032043970.png">
+<meta property="article:published_time" content="2024-03-01T12:45:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:24.934Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="Mockito">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032042560.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230386">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230386">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230386">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230386"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230386"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="Mockito" loading="lazy">
+            <h1>Mockito</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年03月01日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/Mockito/">Mockito</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="Mockito"><a href="#Mockito" class="headerlink" title="Mockito"></a>Mockito</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><blockquote>
+<p>当我们<code>mock</code>了某个对象后，调用该方法的时候是并不会去执行实际方法的逻辑的</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;小张&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">String</span> <span class="hljs-variable">gender</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;男&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">Integer</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> <span class="hljs-number">15</span>;<br>&#125;<br><span class="hljs-comment">//=================================</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        mockUser.setName(<span class="hljs-string">&quot;呵呵呵&quot;</span>);<br>        mockUser.setGender(<span class="hljs-string">&quot;女&quot;</span>);<br>        mockUser.setAge(<span class="hljs-number">11</span>);<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getName() = &quot;</span> + mockUser.getName());<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getGender() = &quot;</span> + mockUser.getGender());<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getAge() = &quot;</span> + mockUser.getAge());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032042560.png" alt="image-20240303175851275" data-caption="image-20240303175851275" loading="lazy"></p>
+<blockquote>
+<p>查看覆盖率发现对应的<code>get</code>、<code>set</code>方法没有被调用过</p>
+<p>这也就是<code>调用mock对象方法时，不会执行实际逻辑</code>的意思</p>
+</blockquote>
+<h3 id="验证方法被调用的次数"><a href="#验证方法被调用的次数" class="headerlink" title="验证方法被调用的次数"></a>验证方法被调用的次数</h3><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.*;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-comment">// 模拟创建List对象</span><br>        <span class="hljs-type">List</span> <span class="hljs-variable">mockList</span> <span class="hljs-operator">=</span> mock(List.class);<br>        <span class="hljs-comment">// add(&quot;星期一&quot;)方法</span><br>        mockList.add(<span class="hljs-string">&quot;星期一&quot;</span>);<br>        <span class="hljs-comment">// 校验add(&quot;星期一&quot;)方法的执行次数是否是1</span><br>        <span class="hljs-comment">// times(1)表示该方法执行了一次</span><br>        verify(mockList,times(<span class="hljs-number">1</span>)).add(<span class="hljs-string">&quot;星期一&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>在<code>Mocktio 4.10.0</code>中还可以使用<code>List mockList = mock();</code>来mock对象，无需传入对应<code>class</code></p>
+</blockquote>
+<h3 id="模拟方法返回值"><a href="#模拟方法返回值" class="headerlink" title="模拟方法返回值"></a>模拟方法返回值</h3><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> lombok.AllArgsConstructor;<br><span class="hljs-keyword">import</span> lombok.Data;<br><span class="hljs-keyword">import</span> lombok.NoArgsConstructor;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 真实user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>        <span class="hljs-comment">// 打印为小张</span><br>        System.out.println(<span class="hljs-string">&quot;user.getName() = &quot;</span> + user.getName());<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        <span class="hljs-comment">// 打印为null，因为还没mock方法的返回值</span><br>        System.out.println(<span class="hljs-string">&quot;mockUser.getName() = &quot;</span> + mockUser.getName());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>mock方法的返回值</p>
+<p><code>when(object.functionName()).thenReturn(result)</code>来mock方法的返回值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> lombok.AllArgsConstructor;<br><span class="hljs-keyword">import</span> lombok.Data;<br><span class="hljs-keyword">import</span> lombok.NoArgsConstructor;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 真实user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>        <span class="hljs-comment">// 打印为小张</span><br>        System.out.println(<span class="hljs-string">&quot;user.getName() = &quot;</span> + user.getName());<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        <span class="hljs-comment">// mock方法的返回值</span><br>        when(mockUser.getName()).thenReturn(<span class="hljs-string">&quot;小明&quot;</span>);<br>        <span class="hljs-comment">// 打印为小明</span><br>        System.out.println(<span class="hljs-string">&quot;mockUser.getName() = &quot;</span> + mockUser.getName());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>当调用<code>mockUser.getName()</code>方法时，会返回<code>小明</code><br>因为我们mock了该方法的返回值，所以并不会去走实际逻辑，而是直接返回我们<code>mock</code>的返回值<code>小明</code></p>
+</blockquote>
+<h3 id="模拟异常"><a href="#模拟异常" class="headerlink" title="模拟异常"></a>模拟异常</h3><blockquote>
+<p>mock异常</p>
+<p><code>when(object.functionName()).thenThrow(throwable);</code>来mock异常</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        when(mockUser.getAge()).thenThrow(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;年龄保密&quot;</span>));<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getAge() = &quot;</span> + mockUser.getAge());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>使用<code>doThrow</code>来mock方法体的异常</p>
+<p><code>doThrow(throwable).when(mockObject).functionName();</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.doThrow;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        doThrow(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;年龄保密&quot;</span>)).when(mockUser).getAge();<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getAge() = &quot;</span> + mockUser.getAge());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>Mocktio</code>可以配合<code>Junit</code>来使用<strong>更加优雅</strong></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertThrows;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.doThrow;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 模拟user对象</span><br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> mock(User.class);<br>        doThrow(<span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(<span class="hljs-string">&quot;年龄保密&quot;</span>)).when(mockUser).getAge();<br>        <span class="hljs-comment">// 断言异常类型</span><br>        <span class="hljs-type">RuntimeException</span> <span class="hljs-variable">runtimeException</span> <span class="hljs-operator">=</span> assertThrows(RuntimeException.class, () -&gt; &#123;<br>            <span class="hljs-comment">// 发生异常的代码块</span><br>            System.out.println(<span class="hljs-string">&quot;mockUser.getAge() = &quot;</span> + mockUser.getAge());<br>        &#125;);<br>        <span class="hljs-comment">// 断言异常信息</span><br>        assertEquals(<span class="hljs-string">&quot;年龄保密&quot;</span>,runtimeException.getMessage());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="更多细节"><a href="#更多细节" class="headerlink" title="更多细节"></a>更多细节</h3><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">generateInt</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span>&#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>希望<code>generateInt</code>方法传入任意值，都返回<code>1</code></p>
+<p><code>anyInt()</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.ArgumentMatchers.anyInt;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        MockitoTest mockitoTest=mock(MockitoTest.class);<br>        when(mockitoTest.generateInt(anyInt())).thenReturn(<span class="hljs-number">1</span>);<br>        assertEquals(mockitoTest.generateInt(<span class="hljs-number">2</span>),<span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">generateInt</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span>&#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>atLeast(xxx)</code>、<code>atMost(xxx)</code>mock方法调用的最小、最大次数</p>
+<p><code>verify(mockitoObject,atLeast(num)).functionName();</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.ArgumentMatchers.anyInt;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.*;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        MockitoTest mockitoTest=mock(MockitoTest.class);<br>        <span class="hljs-comment">// 调用三次该方法</span><br>        mockitoTest.generateInt(<span class="hljs-number">1</span>);<br>        mockitoTest.generateInt(<span class="hljs-number">2</span>);<br>        mockitoTest.generateInt(<span class="hljs-number">3</span>);<br>        verify(mockitoTest,atLeast(<span class="hljs-number">3</span>)).generateInt(anyInt());<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">generateInt</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span>&#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>when(mockitoTest.generateInt(anyInt())).thenReturn(2).thenReturn(1)</code>支持链式调用</p>
+<p>表示第一次调用<code>generateInt</code>返回2，第二次调用返回1</p>
+<p>配合<code>Junit</code>断言使用，断言不一致则抛出<code>AssertionFailedError</code>异常</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.ArgumentMatchers.anyInt;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">MockitoTest</span> <span class="hljs-variable">mockitoTest</span> <span class="hljs-operator">=</span> mock(MockitoTest.class);<br>        when(mockitoTest.generateInt(anyInt()))<br>                <span class="hljs-comment">// 第一次调用返回2</span><br>                .thenReturn(<span class="hljs-number">2</span>)<br>                <span class="hljs-comment">// 第二次调用返回1</span><br>                .thenReturn(<span class="hljs-number">1</span>);<br>        assertEquals(<span class="hljs-number">2</span>,mockitoTest.generateInt(<span class="hljs-number">1</span>));<br>        assertEquals(<span class="hljs-number">1</span>,mockitoTest.generateInt(<span class="hljs-number">2</span>));<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">generateInt</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>验证执行顺序</p>
+<p>将需要排序的对象传入<code>inOrder()</code>方法中</p>
+<p>案例中<code>add()方法</code>和<code>verify()</code>的顺序不能反，一定要先执行模拟方法<code>add</code>，然后再<code>verify </code>校验顺序</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.InOrder;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.inOrder;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.mock;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">functionHasExecutedTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">List</span> <span class="hljs-variable">mockitoList1</span> <span class="hljs-operator">=</span> mock(List.class);<br>        <span class="hljs-type">List</span> <span class="hljs-variable">mockitoList2</span> <span class="hljs-operator">=</span> mock(List.class);<br>        mockitoList1.add(<span class="hljs-number">1</span>);<br>        mockitoList2.add(<span class="hljs-number">1</span>);<br>        mockitoList1.add(<span class="hljs-number">2</span>);<br>        <span class="hljs-type">InOrder</span> <span class="hljs-variable">inOrder</span> <span class="hljs-operator">=</span> inOrder(mockitoList1, mockitoList2);<br>        inOrder.verify(mockitoList1).add(<span class="hljs-number">1</span>);<br>        inOrder.verify(mockitoList2).add(<span class="hljs-number">1</span>);<br>        inOrder.verify(mockitoList1).add(<span class="hljs-number">2</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>顺序不一致，则会抛出以下异常信息</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs error">org.mockito.exceptions.verification.VerificationInOrderFailure: <br>Verification in order failure<br>Wanted but not invoked:<br>list.add(1);<br>-&gt; at com.example.MockitoTest.functionHasExecutedTest(MockitoTest.java:30)<br>Wanted anywhere AFTER following interaction:<br>list.add(2);<br>-&gt; at com.example.MockitoTest.functionHasExecutedTest(MockitoTest.java:26)<br></code></pre></td></tr></table></figure>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h3 id="Mock"><a href="#Mock" class="headerlink" title="@Mock"></a>@Mock</h3><blockquote>
+<p><code>@Mock</code>代替<code>Mockito.mock()</code>方法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.Mock;<br><span class="hljs-keyword">import</span> org.springframework.boot.test.context.SpringBootTest;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-meta">@SpringBootTest</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-meta">@Mock</span><br>    List&lt;Integer&gt; mockitoList;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        when(mockitoList.get(<span class="hljs-number">0</span>)).thenReturn(<span class="hljs-number">1</span>);<br>        System.out.println(<span class="hljs-string">&quot;mockitoList.get(0) = &quot;</span> + mockitoList.get(<span class="hljs-number">0</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>注意<code>@SpringBootTest</code></p>
+<p>或者使用如下写法</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.Mock;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@Mock</span><br>    List&lt;Integer&gt; mockitoList;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        when(mockitoList.get(<span class="hljs-number">0</span>)).thenReturn(<span class="hljs-number">1</span>);<br>        System.out.println(<span class="hljs-string">&quot;mockitoList.get(0) = &quot;</span> + mockitoList.get(<span class="hljs-number">0</span>));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="Spy"><a href="#Spy" class="headerlink" title="@Spy"></a>@Spy</h3><blockquote>
+<p>@Spy用于返回一个真实的对象，@Mock返回的是一个模拟的假对象</p>
+<p>除非使用<code>when(xxx).thenReturn(xxx)</code>为其设置返回值，否则将会执行真实的业务逻辑</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-keyword">import</span> org.mockito.Spy;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@Spy</span><br>    User mockUser;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;mockUser.getName() = &quot;</span> + mockUser.getName());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://gitee.com/tongstyle/blog-img/raw/master/img/202403032043970.png" alt="image-20240303201902361" data-caption="image-20240303201902361" loading="lazy"></p>
+<blockquote>
+<p>可以看到这里执行了<code>getName</code>方法的真实逻辑</p>
+</blockquote>
+<h3 id="Captor"><a href="#Captor" class="headerlink" title="@Captor"></a>@Captor</h3><blockquote>
+<p>捕获方法的参数，进行进一步的校验</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.ArgumentCaptor;<br><span class="hljs-keyword">import</span> org.mockito.Captor;<br><span class="hljs-keyword">import</span> org.mockito.Mock;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-keyword">import</span> java.util.Map;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.times;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.verify;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@Mock</span><br>    Map&lt;Integer,String&gt; mockMap;<br>    <span class="hljs-meta">@Captor</span><br>    ArgumentCaptor&lt;Integer&gt; key;<br>    <span class="hljs-meta">@Captor</span><br>    ArgumentCaptor&lt;String&gt; value;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        mockMap.put(<span class="hljs-number">1</span>,<span class="hljs-string">&quot;星期一&quot;</span>);<br>        verify(mockMap,times(<span class="hljs-number">1</span>)).put(key.capture(),value.capture());<br>        assertEquals(<span class="hljs-number">1</span>,key.getValue());<br>        assertEquals(<span class="hljs-string">&quot;星期一&quot;</span>,value.getValue());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="InjectMocks"><a href="#InjectMocks" class="headerlink" title="@InjectMocks"></a>@InjectMocks</h3><blockquote>
+<p><code>@InjectMocks</code>注解可以注入指定的<code>Bean</code>，但是和<code>@Autowired</code>有些区别</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Component</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserMapper</span> &#123;<br>    <span class="hljs-keyword">public</span> User <span class="hljs-title function_">selectUserByName</span><span class="hljs-params">(String name)</span>&#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">user</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>        user.setName(name);<br>        System.out.println(<span class="hljs-string">&quot;mapper真实逻辑已执行&quot;</span>);<br>        <span class="hljs-keyword">return</span> user;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">UserService</span> &#123;<br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> UserMapper userMapper;<br>    <span class="hljs-keyword">public</span> User <span class="hljs-title function_">getUserByName</span><span class="hljs-params">(String name)</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;service真实逻辑已执行&quot;</span>);<br>        <span class="hljs-keyword">return</span> userMapper.selectUserByName(name);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>这样注入<code>UserService</code>在执行时会报错<code>NullPointerException</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> com.example.service.UserService;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.InjectMocks;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@InjectMocks</span><br>    UserService userService;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">userByName</span> <span class="hljs-operator">=</span> userService.getUserByName(<span class="hljs-string">&quot;李四&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;userByName = &quot;</span> + userByName);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>因为此时只注入了<code>UserService</code>，而<code>UserMapper</code>并没有被注入</p>
+<p>请看如下两种写法</p>
+<p>使用<code>@Spy</code>来mock<code>UserMapper</code></p>
+<p>使用<code>@Mock</code>来mock<code>UserMapper</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> com.example.mapper.UserMapper;<br><span class="hljs-keyword">import</span> com.example.service.UserService;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.InjectMocks;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-keyword">import</span> org.mockito.Spy;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@InjectMocks</span><br>    UserService userService;<br>    <span class="hljs-meta">@Spy</span><br>    UserMapper userMapper;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">userByName</span> <span class="hljs-operator">=</span> userService.getUserByName(<span class="hljs-string">&quot;李四&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;userByName = &quot;</span> + userByName);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>以上代码会执行<code>UserMapper</code>的<code>getUserByName</code>方法的真实逻辑</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> com.example.entity.User;<br><span class="hljs-keyword">import</span> com.example.mapper.UserMapper;<br><span class="hljs-keyword">import</span> com.example.service.UserService;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.AfterEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.BeforeEach;<br><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;<br><span class="hljs-keyword">import</span> org.mockito.InjectMocks;<br><span class="hljs-keyword">import</span> org.mockito.Mock;<br><span class="hljs-keyword">import</span> org.mockito.MockitoAnnotations;<br><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.mockito.Mockito.when;<br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: 不是菜鸡爱编程</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Date</span>: 2024/03/03/17:22</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MockitoTest</span> &#123;<br>    <span class="hljs-keyword">private</span> AutoCloseable closeable;<br>    <span class="hljs-meta">@InjectMocks</span><br>    UserService userService;<br>    <span class="hljs-meta">@Mock</span><br>    UserMapper userMapper;<br>    <span class="hljs-meta">@BeforeEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">init</span><span class="hljs-params">()</span> &#123;<br>        closeable = MockitoAnnotations.openMocks(<span class="hljs-built_in">this</span>);<br>    &#125;<br>    <span class="hljs-meta">@AfterEach</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">destroy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            closeable.close();<br>        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RuntimeException</span>(e);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 函数是否已执行</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">mockitoTest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">User</span> <span class="hljs-variable">mockUser</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br>        mockUser.setName(<span class="hljs-string">&quot;张三&quot;</span>);<br>        <span class="hljs-comment">// mock方法返回值</span><br>        when(userMapper.selectUserByName(<span class="hljs-string">&quot;李四&quot;</span>)).thenReturn(mockUser);<br>        <span class="hljs-type">User</span> <span class="hljs-variable">userByName</span> <span class="hljs-operator">=</span> userService.getUserByName(<span class="hljs-string">&quot;李四&quot;</span>);<br>        System.out.println(<span class="hljs-string">&quot;userByName = &quot;</span> + userByName);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>而以上代码并不会去执行真实逻辑</p>
+<p>而是返回mock的返回值<code>张三</code></p>
+</blockquote>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Mockito/" rel="tag">Mockito</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mockito"><span class="toc-number">1.</span> <span class="toc-text">Mockito</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95%E8%A2%AB%E8%B0%83%E7%94%A8%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">验证方法被调用的次数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%96%B9%E6%B3%95%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">1.1.2.</span> <span class="toc-text">模拟方法返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E5%BC%82%E5%B8%B8"><span class="toc-number">1.1.3.</span> <span class="toc-text">模拟异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E7%BB%86%E8%8A%82"><span class="toc-number">1.1.4.</span> <span class="toc-text">更多细节</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mock"><span class="toc-number">1.2.1.</span> <span class="toc-text">@Mock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spy"><span class="toc-number">1.2.2.</span> <span class="toc-text">@Spy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Captor"><span class="toc-number">1.2.3.</span> <span class="toc-text">@Captor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InjectMocks"><span class="toc-number">1.2.4.</span> <span class="toc-text">@InjectMocks</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

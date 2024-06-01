@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>全局组件、局部组件、递归组件 - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="配置全局组件 这里封装一个全局组件Global.vue  &lt;template&gt;  &lt;div id&#x3D;&quot;global-component&quot; align&#x3D;&quot;center&quot;&gt;    全局组件  &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;style scoped&gt;#global-component&amp;#123;  b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="全局组件、局部组件、递归组件">
+<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/vue/vue3/vue3-xue-xi/10.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="配置全局组件 这里封装一个全局组件Global.vue  &lt;template&gt;  &lt;div id&#x3D;&quot;global-component&quot; align&#x3D;&quot;center&quot;&gt;    全局组件  &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;style scoped&gt;#global-component&amp;#123;  b">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5b4de39d5f8b48c38f751d510b4f1f61.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/42572d5f39b94ccca67608ea8b0b8d6a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/703a8f3167e8448eb0fc1616884dee1a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e70cd74130e84cd2a6a4be220ca2a312.png">
+<meta property="article:published_time" content="2024-02-16T02:21:00.000Z">
+<meta property="article:modified_time" content="2024-06-01T14:12:25.043Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="vue3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/5b4de39d5f8b48c38f751d510b4f1f61.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717251230391">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717251230391">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717251230391">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717251230391"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>60</div>
+        <div><span>分类</span>61</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717251230391"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="http://wpa.qq.com/msgrd?v=3&uin=938798576&site=qq&menu=yes"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg" alt="全局组件、局部组件、递归组件" loading="lazy">
+            <h1>全局组件、局部组件、递归组件</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年02月16日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/vue3/">vue3</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="配置全局组件"><a href="#配置全局组件" class="headerlink" title="配置全局组件"></a>配置全局组件</h1><blockquote>
+<p>这里封装一个全局组件<code>Global.vue</code></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div id=&quot;global-component&quot; align=&quot;center&quot;&gt;<br>    全局组件<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;style scoped&gt;<br>#global-component&#123;<br>  border: 1px solid black;<br>  margin: 10px 10px;<br>  line-height: 25px;<br>  width: 80px;<br>  height: 25px;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>在main.ts引入注册，类似element注册</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// main.ts</span><br><span class="hljs-comment">// 如果您正在使用CDN引入，请删除下面一行。</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">ElementPlusIconsVue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@element-plus/icons-vue&#x27;</span><br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> [key, component] <span class="hljs-keyword">of</span> <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(<span class="hljs-title class_">ElementPlusIconsVue</span>)) &#123;<br>  app.<span class="hljs-title function_">component</span>(key, component)<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">import</span> &#123;createApp&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./App.vue&#x27;</span><br><span class="hljs-keyword">import</span> <span class="hljs-title class_">Global</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/view/Global.vue&quot;</span>;<br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">createApp</span>(<span class="hljs-title class_">App</span>)<br>app.<span class="hljs-title function_">component</span>(<span class="hljs-string">&#x27;Global&#x27;</span>,<span class="hljs-title class_">Global</span>)<br>app.<span class="hljs-title function_">mount</span>(<span class="hljs-string">&#x27;#app&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h2 id="在其他vue页面-立即使用即可-无需引入-批量注册全局组件可以参考element-ui-其实就是遍历一下然后通过-app-component-注册-配置局部组件就是在一个组件内（A）-通过import-去引入别的组件-B-称之为局部组件应为B组件只能在A组件内使用-所以是局部组件如果C组件想用B组件-就需要C组件也手动import-引入-B-组件-配置递归组件原理跟我们写js递归是一样的-自己调用自己-通过一个条件来结束递归-否则导致内存泄漏案例递归树在父组件配置数据结构-数组对象格式-传给子组件子组件接收值-第一个script"><a href="#在其他vue页面-立即使用即可-无需引入-批量注册全局组件可以参考element-ui-其实就是遍历一下然后通过-app-component-注册-配置局部组件就是在一个组件内（A）-通过import-去引入别的组件-B-称之为局部组件应为B组件只能在A组件内使用-所以是局部组件如果C组件想用B组件-就需要C组件也手动import-引入-B-组件-配置递归组件原理跟我们写js递归是一样的-自己调用自己-通过一个条件来结束递归-否则导致内存泄漏案例递归树在父组件配置数据结构-数组对象格式-传给子组件子组件接收值-第一个script" class="headerlink" title="在其他vue页面 立即使用即可 无需引入# 批量注册全局组件可以参考element ui 其实就是遍历一下然后通过 app.component 注册# 配置局部组件就是在一个组件内（A） 通过import 去引入别的组件(B) 称之为局部组件应为B组件只能在A组件内使用 所以是局部组件如果C组件想用B组件 就需要C组件也手动import 引入 B 组件# 配置递归组件原理跟我们写js递归是一样的 自己调用自己 通过一个条件来结束递归 否则导致内存泄漏案例递归树在父组件配置数据结构 数组对象格式 传给子组件子组件接收值 第一个script"></a>在其他vue页面 立即使用即可 无需引入<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;Global/&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><br># 批量注册全局组件<br>可以参考element ui 其实就是遍历一下然后通过 app.component 注册<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://img-blog.csdnimg.cn/5b4de39d5f8b48c38f751d510b4f1f61.png" alt="img" data-caption="img" loading="lazy"><br><br># 配置局部组件<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div class=&quot;wraps&quot;&gt;<br>    &lt;layout-menu :flag=&quot;flag&quot; @on-click=&quot;getMenu&quot; @on-toogle=&quot;getMenuItem&quot; :data=&quot;menuList&quot; class=&quot;wraps-left&quot;&gt;&lt;/layout-menu&gt;<br>    &lt;div class=&quot;wraps-right&quot;&gt;<br>      &lt;layout-header&gt; &lt;/layout-header&gt;<br>      &lt;layout-main class=&quot;wraps-right-main&quot;&gt;&lt;/layout-main&gt;<br>    &lt;/div&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123; reactive,ref &#125; from &quot;vue&quot;;<br>import layoutHeader from &quot;./Header.vue&quot;;<br>import layoutMenu from &quot;./Menu.vue&quot;;<br>import layoutMain from &quot;./Content.vue&quot;;<br></code></pre></td></tr></table></figure><br>就是在一个组件内（A） 通过import 去引入别的组件(B) 称之为局部组件<br>应为B组件只能在A组件内使用 所以是局部组件<br>如果C组件想用B组件 就需要C组件也手动import 引入 B 组件<br># 配置递归组件<br>原理跟我们写js递归是一样的 自己调用自己 通过一个条件来结束递归 否则导致内存泄漏<br>案例递归树<br>在父组件配置数据结构 数组对象格式 传给子组件<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;TreeCom :data=&quot;data&quot;/&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>import &#123;reactive&#125; from &quot;vue&quot;;<br>import TreeCom from &quot;@/view/TreeCom.vue&quot;;<br>type TreeProps = &#123;<br>  name: string,<br>  icon?: string,<br>  children?: TreeProps[] | []<br>&#125;<br>const data = reactive&lt;TreeProps[]&gt;([<br>  &#123;<br>    name: &quot;no.1&quot;,<br>    children: [<br>      &#123;<br>        name: &quot;no.1-1&quot;,<br>        children: [<br>          &#123;<br>            name: &quot;no.1-1-1&quot;,<br>          &#125;,<br>        ],<br>      &#125;,<br>    ],<br>  &#125;,<br>  &#123;<br>    name: &quot;no.2&quot;,<br>    children: [<br>      &#123;<br>        name: &quot;no.2-1&quot;,<br>      &#125;,<br>    ],<br>  &#125;,<br>  &#123;<br>    name: &quot;no.3&quot;,<br>  &#125;,<br>])<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><br>子组件接收值 第一个script<br><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">type</span> <span class="hljs-title class_">TreeProps</span> = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>,<br>  icon?: <span class="hljs-built_in">string</span>,<br>  children?: <span class="hljs-title class_">TreeProps</span>[] | []<br>&#125;<br><span class="hljs-keyword">let</span> props=defineProps&lt;&#123;<br>  <span class="hljs-attr">data</span>:<span class="hljs-title class_">TreeProps</span>[]<br>&#125;&gt;();<br></code></pre></td></tr></table></figure></h2><h1 id="子组件增加一个script-定义组件名称为了-递归用"><a href="#子组件增加一个script-定义组件名称为了-递归用" class="headerlink" title="子组件增加一个script 定义组件名称为了 递归用"></a>子组件增加一个script 定义组件名称为了 递归用</h1><h2 id="给我们的组件定义名称有好几种方式"><a href="#给我们的组件定义名称有好几种方式" class="headerlink" title="给我们的组件定义名称有好几种方式"></a>给我们的组件定义名称有好几种方式</h2><h3 id="1-在增加一个script-通过-export-添加name"><a href="#1-在增加一个script-通过-export-添加name" class="headerlink" title="1.在增加一个script 通过 export 添加name"></a>1.在增加一个script 通过 export 添加name</h3><figure class="highlight xquery"><table><tr><td class="code"><pre><code class="hljs xquery"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> </span></span><span class="language-xquery">&#123;</span><br><span class="language-xquery"> <span class="hljs-built_in"> name</span>:<span class="hljs-string">&quot;TreeItem&quot;</span></span><br><span class="language-xquery">&#125;</span><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<h3 id="2-直接使用文件名当组件名"><a href="#2-直接使用文件名当组件名" class="headerlink" title="2.直接使用文件名当组件名"></a>2.直接使用文件名当组件名</h3><p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://img-blog.csdnimg.cn/42572d5f39b94ccca67608ea8b0b8d6a.png" alt="img" data-caption="img" loading="lazy"><br>3.使用插件<br><a target="_blank" rel="noopener" href="https://github.com/sxzz/unplugin-vue-macros/blob/HEAD/packages/define-options/README-zh-CN.md">unplugin-vue-macros&#x2F;README-zh-CN.md at 722a80795a6c7558debf7c62fd5f57de70e0d0bf · sxzz&#x2F;unplugin-vue-macros · GitHub</a><br> unplugin-vue-define-options</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-keyword">import</span> DefineOptions <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;unplugin-vue-define-options/vite&#x27;</span><br><span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig(&#123;<br>  plugins: [Vue(), DefineOptions()],<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p> ts支持</p>
+<figure class="highlight prolog"><table><tr><td class="code"><pre><code class="hljs prolog"><span class="hljs-string">&quot;types&quot;</span>: [<span class="hljs-string">&quot;unplugin-vue-define-options/macros-global&quot;</span>],<br></code></pre></td></tr></table></figure>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://img-blog.csdnimg.cn/703a8f3167e8448eb0fc1616884dee1a.png" alt="img" data-caption="img" loading="lazy"></p>
+<p>template<br>TreeItem 其实就是当前组件 通过import 把自身又引入了一遍 如果他没有children 了就结束</p>
+<figure class="highlight handlebars"><table><tr><td class="code"><pre><code class="hljs handlebars"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;margin-left:10px;&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;tree&quot;</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">:key</span>=<span class="hljs-string">&quot;index&quot;</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,index) in data&quot;</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&#x27;clickItem(item)&#x27;</span>&gt;</span></span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">item.name</span>&#125;&#125;</span><span class="language-xml"></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;<span class="hljs-name">TreeItem</span> @<span class="hljs-attr">on-click</span>=<span class="hljs-string">&#x27;clickItem&#x27;</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&#x27;item?.children?.length&#x27;</span> <span class="hljs-attr">:data</span>=<span class="hljs-string">&quot;item.children&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">TreeItem</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p> <img onerror="imgOnError(this);" data-fancybox="gallery" src="https://img-blog.csdnimg.cn/e70cd74130e84cd2a6a4be220ca2a312.png" alt="img" data-caption="img" loading="lazy"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs vue">&lt;template&gt;<br>  &lt;div v-for=&quot;(item,index) in data&quot;&gt;<br>    &lt;input type=&quot;checkbox&quot;&gt;&lt;span&gt;&#123;&#123;item.name&#125;&#125;&lt;/span&gt;<br>    &lt;TreeCom v-if=&quot;item?.children?.length&quot; :data=&quot;item.children&quot;/&gt;<br>  &lt;/div&gt;<br>&lt;/template&gt;<br>&lt;script setup lang=&quot;ts&quot;&gt;<br>type TreeProps = &#123;<br>  name: string,<br>  icon?: string,<br>  children?: TreeProps[] | []<br>&#125;<br>let props=defineProps&lt;&#123;<br>  data:TreeProps[]<br>&#125;&gt;();<br>&lt;/script&gt;<br>&lt;style scoped&gt;<br>div&#123;<br>  margin-left: 10px;<br>&#125;<br>&lt;/style&gt;<br></code></pre></td></tr></table></figure>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/vue3/" rel="tag">vue3</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">配置全局组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E5%85%B6%E4%BB%96vue%E9%A1%B5%E9%9D%A2-%E7%AB%8B%E5%8D%B3%E4%BD%BF%E7%94%A8%E5%8D%B3%E5%8F%AF-%E6%97%A0%E9%9C%80%E5%BC%95%E5%85%A5-%E6%89%B9%E9%87%8F%E6%B3%A8%E5%86%8C%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83element-ui-%E5%85%B6%E5%AE%9E%E5%B0%B1%E6%98%AF%E9%81%8D%E5%8E%86%E4%B8%80%E4%B8%8B%E7%84%B6%E5%90%8E%E9%80%9A%E8%BF%87-app-component-%E6%B3%A8%E5%86%8C-%E9%85%8D%E7%BD%AE%E5%B1%80%E9%83%A8%E7%BB%84%E4%BB%B6%E5%B0%B1%E6%98%AF%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%BB%84%E4%BB%B6%E5%86%85%EF%BC%88A%EF%BC%89-%E9%80%9A%E8%BF%87import-%E5%8E%BB%E5%BC%95%E5%85%A5%E5%88%AB%E7%9A%84%E7%BB%84%E4%BB%B6-B-%E7%A7%B0%E4%B9%8B%E4%B8%BA%E5%B1%80%E9%83%A8%E7%BB%84%E4%BB%B6%E5%BA%94%E4%B8%BAB%E7%BB%84%E4%BB%B6%E5%8F%AA%E8%83%BD%E5%9C%A8A%E7%BB%84%E4%BB%B6%E5%86%85%E4%BD%BF%E7%94%A8-%E6%89%80%E4%BB%A5%E6%98%AF%E5%B1%80%E9%83%A8%E7%BB%84%E4%BB%B6%E5%A6%82%E6%9E%9CC%E7%BB%84%E4%BB%B6%E6%83%B3%E7%94%A8B%E7%BB%84%E4%BB%B6-%E5%B0%B1%E9%9C%80%E8%A6%81C%E7%BB%84%E4%BB%B6%E4%B9%9F%E6%89%8B%E5%8A%A8import-%E5%BC%95%E5%85%A5-B-%E7%BB%84%E4%BB%B6-%E9%85%8D%E7%BD%AE%E9%80%92%E5%BD%92%E7%BB%84%E4%BB%B6%E5%8E%9F%E7%90%86%E8%B7%9F%E6%88%91%E4%BB%AC%E5%86%99js%E9%80%92%E5%BD%92%E6%98%AF%E4%B8%80%E6%A0%B7%E7%9A%84-%E8%87%AA%E5%B7%B1%E8%B0%83%E7%94%A8%E8%87%AA%E5%B7%B1-%E9%80%9A%E8%BF%87%E4%B8%80%E4%B8%AA%E6%9D%A1%E4%BB%B6%E6%9D%A5%E7%BB%93%E6%9D%9F%E9%80%92%E5%BD%92-%E5%90%A6%E5%88%99%E5%AF%BC%E8%87%B4%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%A1%88%E4%BE%8B%E9%80%92%E5%BD%92%E6%A0%91%E5%9C%A8%E7%88%B6%E7%BB%84%E4%BB%B6%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%A0%BC%E5%BC%8F-%E4%BC%A0%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%8E%A5%E6%94%B6%E5%80%BC-%E7%AC%AC%E4%B8%80%E4%B8%AAscript"><span class="toc-number">1.1.</span> <span class="toc-text">在其他vue页面 立即使用即可 无需引入&lt;template&gt;  &lt;Global&#x2F;&gt;&lt;&#x2F;template&gt;&lt;script setup lang&#x3D;&quot;ts&quot;&gt;&lt;&#x2F;script&gt;# 批量注册全局组件可以参考element ui 其实就是遍历一下然后通过 app.component 注册# 配置局部组件&lt;template&gt;  &lt;div class&#x3D;&quot;wraps&quot;&gt;    &lt;layout-menu :flag&#x3D;&quot;flag&quot; @on-click&#x3D;&quot;getMenu&quot; @on-toogle&#x3D;&quot;getMenuItem&quot; :data&#x3D;&quot;menuList&quot; class&#x3D;&quot;wraps-left&quot;&gt;&lt;&#x2F;layout-menu&gt;    &lt;div class&#x3D;&quot;wraps-right&quot;&gt;      &lt;layout-header&gt; &lt;&#x2F;layout-header&gt;      &lt;layout-main class&#x3D;&quot;wraps-right-main&quot;&gt;&lt;&#x2F;layout-main&gt;    &lt;&#x2F;div&gt;  &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script setup lang&#x3D;&quot;ts&quot;&gt;import { reactive,ref } from &quot;vue&quot;;import layoutHeader from &quot;.&#x2F;Header.vue&quot;;import layoutMenu from &quot;.&#x2F;Menu.vue&quot;;import layoutMain from &quot;.&#x2F;Content.vue&quot;;就是在一个组件内（A） 通过import 去引入别的组件(B) 称之为局部组件应为B组件只能在A组件内使用 所以是局部组件如果C组件想用B组件 就需要C组件也手动import 引入 B 组件# 配置递归组件原理跟我们写js递归是一样的 自己调用自己 通过一个条件来结束递归 否则导致内存泄漏案例递归树在父组件配置数据结构 数组对象格式 传给子组件&lt;template&gt;  &lt;TreeCom :data&#x3D;&quot;data&quot;&#x2F;&gt;&lt;&#x2F;template&gt;&lt;script setup lang&#x3D;&quot;ts&quot;&gt;import {reactive} from &quot;vue&quot;;import TreeCom from &quot;@&#x2F;view&#x2F;TreeCom.vue&quot;;type TreeProps &#x3D; {  name: string,  icon?: string,  children?: TreeProps[] | []}const data &#x3D; reactive&lt;TreeProps[]&gt;([  {    name: &quot;no.1&quot;,    children: [      {        name: &quot;no.1-1&quot;,        children: [          {            name: &quot;no.1-1-1&quot;,          },        ],      },    ],  },  {    name: &quot;no.2&quot;,    children: [      {        name: &quot;no.2-1&quot;,      },    ],  },  {    name: &quot;no.3&quot;,  },])&lt;&#x2F;script&gt;子组件接收值 第一个scripttype TreeProps &#x3D; {  name: string,  icon?: string,  children?: TreeProps[] | []}let props&#x3D;defineProps&lt;{  data:TreeProps[]}&gt;();</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AAscript-%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E5%90%8D%E7%A7%B0%E4%B8%BA%E4%BA%86-%E9%80%92%E5%BD%92%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">子组件增加一个script 定义组件名称为了 递归用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E6%88%91%E4%BB%AC%E7%9A%84%E7%BB%84%E4%BB%B6%E5%AE%9A%E4%B9%89%E5%90%8D%E7%A7%B0%E6%9C%89%E5%A5%BD%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">2.1.</span> <span class="toc-text">给我们的组件定义名称有好几种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8%E5%A2%9E%E5%8A%A0%E4%B8%80%E4%B8%AAscript-%E9%80%9A%E8%BF%87-export-%E6%B7%BB%E5%8A%A0name"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.在增加一个script 通过 export 添加name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%9B%B4%E6%8E%A5%E4%BD%BF%E7%94%A8%E6%96%87%E4%BB%B6%E5%90%8D%E5%BD%93%E7%BB%84%E4%BB%B6%E5%90%8D"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.直接使用文件名当组件名</span></a></li></ol></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>

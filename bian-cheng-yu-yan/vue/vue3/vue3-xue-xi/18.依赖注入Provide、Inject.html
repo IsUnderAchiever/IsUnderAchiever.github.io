@@ -1,0 +1,113 @@
+<hr>
+<h2 id="permalink-“-编程语言-Vue-Vue3-Vue3学习-18-html”title-依赖注入Provide、Injectdate-2023-07-13-23-00-00categories-“vue3”tags-“vue3”"><a href="#permalink-“-编程语言-Vue-Vue3-Vue3学习-18-html”title-依赖注入Provide、Injectdate-2023-07-13-23-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;18.html”title: 依赖注入Provide、Injectdate: 2023-07-13 23:00:00categories: “vue3”tags: “vue3”"></a>permalink: “&#x2F;编程语言&#x2F;Vue&#x2F;Vue3&#x2F;Vue3学习&#x2F;18.html”<br>title: 依赖注入Provide、Inject<br>date: 2023-07-13 23:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="依赖注入Provide、Inject"><a href="#依赖注入Provide、Inject" class="headerlink" title="依赖注入Provide、Inject"></a>依赖注入Provide、Inject</h1><blockquote>
+<p>Home.vue</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div v-for=&quot;item in colorList&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;color&quot; v-model=&quot;colorVal&quot; :value=&quot;item.value&quot;&gt;{{item.showName}}
+  &lt;/div&gt;
+  &lt;A/&gt;
+  &lt;B/&gt;
+&lt;/template&gt;
+&lt;script setup lang=&#39;ts&#39;&gt;
+import {provide, reactive, ref} from &#39;vue&#39;
+import A from &#39;./A.vue&#39;
+import B from &#39;./B.vue&#39;
+type Color={
+  value:string,
+  showName:string
+}
+let colorList=reactive&lt;Array&lt;Color&gt;&gt;([{
+  value:&#39;yellow&#39;,
+  showName:&#39;黄色&#39;
+},{
+  value:&#39;red&#39;,
+  showName:&#39;红色&#39;
+},{
+  value:&#39;purple&#39;,
+  showName:&#39;紫色&#39;
+}])
+let colorVal=ref&lt;string&gt;(&#39;&#39;)
+provide(&#39;color&#39;,colorVal);
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>A.vue</p>
+<p><code>在css中也可以使用v-bind来绑定参数</code></p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;这是A组件&lt;/div&gt;
+  &lt;div id=&quot;attA&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {inject, reactive, ref} from &#39;vue&#39;;
+import type {Ref} from &quot;vue&quot;;
+let color=inject&lt;Ref&lt;string&gt;&gt;(&#39;color&#39;);
+&lt;/script&gt;
+&lt;style scoped&gt;
+#attA{
+  width: 30px;
+  height: 30px;
+  background: v-bind(color);
+}
+&lt;/style&gt;
+</code></pre>
+<blockquote>
+<p>B.vue</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;这是B组件&lt;/div&gt;
+  &lt;div id=&quot;attB&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {inject, reactive, ref} from &#39;vue&#39;;
+import type {Ref} from &quot;vue&quot;;
+let color=inject&lt;Ref&lt;string&gt;&gt;(&#39;color&#39;);
+&lt;/script&gt;
+&lt;style scoped&gt;
+#attB{
+  width: 30px;
+  height: 30px;
+  background: v-bind(color);
+}
+&lt;/style&gt;
+</code></pre>
+<blockquote>
+<p>注意，此时的参数可以在子组件中修改</p>
+<p>此时会导致父组件以及其他子组件的该参数都会发生改变</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;这是A组件&lt;/div&gt;
+  &lt;button @click=&quot;changeColor&quot;&gt;修改颜色&lt;/button&gt;
+  &lt;div id=&quot;attA&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {inject, reactive, ref} from &#39;vue&#39;;
+import type {Ref} from &quot;vue&quot;;
+let color=inject&lt;Ref&lt;string&gt;&gt;(&#39;color&#39;);
+let changeColor=()=&gt;{
+  color.value=&#39;black&#39;
+}
+&lt;/script&gt;
+&lt;style scoped&gt;
+#attA{
+  width: 30px;
+  height: 30px;
+  background: v-bind(color);
+}
+&lt;/style&gt;
+</code></pre>
+<blockquote>
+<p>若不希望子组件进行修改，可设置为<code>readonly</code></p>
+</blockquote>
+<pre><code class="javascript">let colorVal=ref&lt;string&gt;(&#39;&#39;)
+provide(&#39;color&#39;,readonly(colorVal));
+</code></pre>
+<blockquote>
+<p>子组件无法使用xxx.?value来进行修改，可采用以下两种方法<br><strong>1.默认值</strong></p>
+</blockquote>
+<pre><code class="vue">let color=inject&lt;Ref&lt;string&gt;&gt;(&#39;color&#39;,ref(&#39;red&#39;));
+</code></pre>
+<p><strong>2.非空断言</strong></p>
+<pre><code>color!.value=&#39;xxx&#39;
+</code></pre>
