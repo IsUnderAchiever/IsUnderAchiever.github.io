@@ -1,0 +1,195 @@
+<hr>
+<h2 id="title-sass学习date-2023-07-17-23-00-00categories-“vue3”tags-“vue3”"><a href="#title-sass学习date-2023-07-17-23-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="title: sass学习date: 2023-07-17 23:00:00categories: “vue3”tags: “vue3”"></a>title: sass学习<br>date: 2023-07-17 23:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="sass学习"><a href="#sass学习" class="headerlink" title="sass学习"></a>sass学习</h1><blockquote>
+<p><a href="https://www.sass.hk/docs/">sass官方文档</a></p>
+<p><a href="https://less.bootcss.com/#%E6%A6%82%E8%A7%88">less官方文档</a></p>
+<p><a href="https://xiaoman.blog.csdn.net/article/details/122832888">原博客</a></p>
+</blockquote>
+<p>bem架构</p>
+<p><code>BEM</code>实际上是<code>block</code>、<code>element</code>、<code>modifier</code>的缩写，分别为块层、元素层、修饰符层</p>
+<p>BEM 命名约定的模式是：</p>
+<pre><code class="css">.block {}
+ 
+.block__element {}
+ 
+.block--modifier {}
+</code></pre>
+<h3 id="嵌套规则"><a href="#嵌套规则" class="headerlink" title="嵌套规则"></a>嵌套规则</h3><blockquote>
+<p>Sass 允许将一套 CSS 样式嵌套进另一套样式中，内层的样式将它外层的选择器作为父选择器</p>
+</blockquote>
+<pre><code class="css">#main p {
+  color: #00ff00;
+  width: 97%;
+
+  .redbox {
+    background-color: #ff0000;
+    color: #000000;
+  }
+}
+</code></pre>
+<h3 id="父选择器"><a href="#父选择器" class="headerlink" title="父选择器 &amp;"></a>父选择器 <code>&amp;</code></h3><pre><code class="css">a {
+  font-weight: bold;
+  text-decoration: none;
+  &amp;:hover { text-decoration: underline; }
+  body.firefox &amp; { font-weight: normal; }
+}
+</code></pre>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量 $"></a>变量 <code>$</code></h3><pre><code class="css">$width: 5em;
+
+#main {
+  width: $width;
+}
+</code></pre>
+<h3 id="插值语句"><a href="#插值语句" class="headerlink" title="插值语句 #{}"></a>插值语句 <code>#{}</code></h3><pre><code class="css">$name: foo;
+$attr: border;
+
+p.#{$name} {
+  #{$attr}-color: blue;
+}
+</code></pre>
+<h3 id="at-root"><a href="#at-root" class="headerlink" title="@at-root"></a>@at-root</h3><pre><code class="css">@media print {
+  .page {
+    width: 8in;
+    @at-root (without: media) {
+      color: red;
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>编译后</p>
+</blockquote>
+<pre><code class="css">@media print {
+  .page {
+    width: 8in;
+  }
+}
+.page {
+  color: red;
+}
+</code></pre>
+<h3 id="定义混合指令-mixin"><a href="#定义混合指令-mixin" class="headerlink" title="定义混合指令 @mixin"></a>定义混合指令 <code>@mixin</code></h3><blockquote>
+<p>混合指令的用法是在 <code>@mixin</code> 后添加名称与样式，比如名为 <code>large-text</code> 的混合通过下面的代码定义：</p>
+</blockquote>
+<pre><code class="css">@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+</code></pre>
+<h3 id="引用混合样式-include"><a href="#引用混合样式-include" class="headerlink" title="引用混合样式 @include"></a>引用混合样式 <code>@include</code></h3><pre><code class="css">@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+
+.page-title {
+  @include large-text;
+  padding: 4px;
+  margin-top: 10px;
+}
+</code></pre>
+<blockquote>
+<p>编译后</p>
+</blockquote>
+<pre><code class="css">.page-title {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff0000;
+    padding: 4px;
+    margin-top: 10px;
+}
+</code></pre>
+<h3 id="练习-实现layout布局"><a href="#练习-实现layout布局" class="headerlink" title="练习:实现layout布局"></a>练习:实现layout布局</h3><pre><code class="css">$block-sel: &quot;-&quot; !default;
+$element-sel: &quot;__&quot; !default;
+$modifier-sel: &quot;--&quot; !default;
+$namespace:&#39;xm&#39; !default;
+@mixin bfc {
+    height: 100%;
+    overflow: hidden;
+}
+ 
+//混入
+@mixin b($block) {
+   $B: $namespace + $block-sel + $block; //变量
+   .#{$B}{ //插值语法#{}
+     @content; //内容替换
+   }
+}
+ 
+@mixin flex {
+    display: flex;
+}
+ 
+@mixin e($element) {
+    $selector:&amp;;
+    @at-root {
+        #{$selector + $element-sel + $element} {
+            @content;
+        }
+    }
+}
+ 
+@mixin m($modifier) {
+    $selector:&amp;;
+    @at-root {
+        #{$selector + $modifier-sel + $modifier} {
+            @content;
+        }
+    }
+}
+</code></pre>
+<p><strong>全局扩充sass</strong></p>
+<pre><code class="javascript">import { defineConfig } from &#39;vite&#39;
+import vue from &#39;@vitejs/plugin-vue&#39;
+ 
+// https://vitejs.dev/config/
+export default defineConfig({
+    plugins: [vue()],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: &quot;@import &#39;./src/bem.scss&#39;;&quot;
+            }
+        }
+    }
+})
+</code></pre>
+<p><strong>Vue 组件用法</strong></p>
+<pre><code class="vue">&lt;template&gt;
+    &lt;div class=&quot;xm-wraps&quot;&gt;
+         &lt;div&gt;
+            &lt;Menu&gt;&lt;/Menu&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;xm-wraps__right&quot;&gt;
+            &lt;Header&gt;&lt;/Header&gt;
+            &lt;Content&gt;&lt;/Content&gt;
+         &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+ 
+&lt;script lang=&quot;ts&quot; setup&gt;
+import { ref, reactive } from &quot;vue&quot;
+import Menu from &#39;./Menu/index.vue&#39;
+import Content from &#39;./Content/index.vue&#39;
+import Header from &#39;./Header/index.vue&#39;
+&lt;/script&gt;
+ 
+&lt;style lang=&quot;scss&quot; scoped&gt;
+@include b(&#39;wraps&#39;){
+    @include bfc;
+    @include flex;
+    @include e(right){
+        flex:1;
+        display: flex;
+        flex-direction: column;
+    }
+}
+&lt;/style&gt;
+</code></pre>

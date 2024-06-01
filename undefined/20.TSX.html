@@ -1,0 +1,233 @@
+<hr>
+<h2 id="title-TSXdate-2023-07-27-22-40-00categories-“vue3”tags-“vue3”"><a href="#title-TSXdate-2023-07-27-22-40-00categories-“vue3”tags-“vue3”" class="headerlink" title="title: TSXdate: 2023-07-27 22:40:00categories: “vue3”tags: “vue3”"></a>title: TSX<br>date: 2023-07-27 22:40:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="TSX"><a href="#TSX" class="headerlink" title="TSX"></a>TSX</h1><blockquote>
+<p>安装、配置</p>
+</blockquote>
+<pre><code class="bash">npm install @vitejs/plugin-vue-jsx -D
+</code></pre>
+<blockquote>
+<p>vite.config.ts</p>
+</blockquote>
+<pre><code class="ts">import vueJsx from &#39;@vitejs/plugin-vue-jsx&#39;
+
+plugins: [
+    vueJsx()
+]
+</code></pre>
+<h2 id="写法1"><a href="#写法1" class="headerlink" title="写法1"></a>写法1</h2><pre><code class="tsx">export default function (){
+    return (
+        &lt;div&gt;测试tsx&lt;/div&gt;
+    )
+}
+</code></pre>
+<pre><code class="vue">&lt;template&gt;
+  &lt;Test/&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&#39;ts&#39;&gt;
+import Test from &quot;@/view/Test.tsx&quot;;
+&lt;/script&gt;
+</code></pre>
+<h2 id="写法2"><a href="#写法2" class="headerlink" title="写法2"></a>写法2</h2><pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+export default defineComponent({
+    data(){
+        let age=23
+        return{
+            age
+        }
+    },
+    render(){
+        return(
+            &lt;div&gt;age:{this.age}&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<blockquote>
+<p>methods</p>
+</blockquote>
+<pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+export default defineComponent({
+    data(){
+        let age=23
+        return{
+            age
+        }
+    },
+    methods:{
+        test(){
+            console.log(&#39;测试方法运行&#39;);
+        }
+    },
+    render(){
+        return(
+            &lt;div onClick={()=&gt;this.test()}&gt;age:{this.age}&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<h2 id="写法3"><a href="#写法3" class="headerlink" title="写法3"></a>写法3</h2><pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+export default defineComponent({
+    setup(){
+        let age=23;
+        let test=()=&gt;{
+            console.log(&#39;测试方法已运行&#39;);
+        }
+        return ()=&gt;(
+            &lt;div onClick={test}&gt;age:{age}&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><blockquote>
+<p>支持</p>
+</blockquote>
+<pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+export default defineComponent({
+    setup(){
+        let flag:boolean=false;
+        return ()=&gt;(
+            &lt;div v-show={flag}&gt;hhh&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<blockquote>
+<p>ref</p>
+<p>在html标签中，需要使用<code>.value</code>来获取</p>
+</blockquote>
+<pre><code class="tsx">import {defineComponent, ref} from &quot;vue&quot;;
+export default defineComponent({
+    setup(){
+        let flag=ref&lt;boolean&gt;(false);
+        return ()=&gt;(
+            &lt;div v-show={flag.value}&gt;hhh&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<h2 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h2><blockquote>
+<p>不支持</p>
+<p><code>三元表达式写法</code></p>
+</blockquote>
+<pre><code class="tsx">import {defineComponent, ref} from &quot;vue&quot;;
+export default defineComponent({
+    setup(){
+        let flag=ref&lt;boolean&gt;(false);
+        return ()=&gt;(
+            &lt;div&gt;{flag.value?&#39;显示&#39;:&#39;隐藏&#39;}&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><blockquote>
+<p>不支持</p>
+<p><code>数组.map</code>遍历写法</p>
+</blockquote>
+<pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+export default defineComponent({
+    setup(){
+        let data=[
+            {
+                name:&#39;aaa&#39;,
+                age:12
+            },
+            {
+                name:&#39;bbb&#39;,
+                age:22
+            }
+        ]
+        return ()=&gt;(
+            &lt;div&gt;{data.map(item=&gt;{
+                return &lt;div&gt;name:{item.name}--age:{item.age}&lt;/div&gt;
+            })}&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+
+export default defineComponent({
+    setup() {
+        let data = [
+            {
+                name: &#39;aaa&#39;,
+                age: 12
+            },
+            {
+                name: &#39;bbb&#39;,
+                age: 22
+            }
+        ]
+        return () =&gt; (
+            &lt;div&gt;{data.map(item =&gt; {
+                return &lt;div name={item.name}&gt;{item.name}&lt;/div&gt;
+            })}&lt;/div&gt;
+        )
+    }
+})
+</code></pre>
+<h2 id="props-emit"><a href="#props-emit" class="headerlink" title="props&#x2F;emit"></a>props&#x2F;emit</h2><blockquote>
+<p>Test.tsx</p>
+</blockquote>
+<pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+
+interface Props {
+    name?: string
+}
+
+export default defineComponent({
+    props: {
+        name: String
+    },
+    emits: [&#39;on-click&#39;],
+    setup(props: Props, {emit}) {
+        let emitFun = (content: string) =&gt; {
+            console.log(&#39;触发了emit&#39;);
+            emit(&#39;on-click&#39;, content)
+        };
+        return () =&gt; (
+            &lt;&gt;
+                &lt;p&gt;{props.name}&lt;/p&gt;
+                &lt;button onClick={() =&gt; emitFun(&#39;测试内容&#39;)}&gt;点击&lt;/button&gt;
+            &lt;/&gt;
+        )
+    }
+})
+</code></pre>
+<blockquote>
+<p>Home.vue</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;Test name=&quot;马小跳&quot; @on-click=&quot;getEmit&quot;/&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&#39;ts&#39;&gt;
+import Test from &quot;@/view/Test.tsx&quot;;
+
+let getEmit=(item:string)=&gt;{
+  console.log(&#39;item:&#39;,item);
+}
+&lt;/script&gt;
+</code></pre>
+<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><pre><code class="tsx">import {defineComponent} from &quot;vue&quot;;
+
+export default defineComponent({
+    setup() {
+        const A = (_, {slots}) =&gt; (
+            &lt;&gt;
+                &lt;div&gt;{slots.default ? slots.default() : &#39;默认值&#39;}&lt;/div&gt;
+            &lt;/&gt;
+        )
+
+        const slot = {
+            default: () =&gt; (&lt;div&gt;default slots&lt;/div&gt;)
+        }
+
+        return () =&gt; (
+            &lt;&gt;
+                &lt;A v-slots={slot}/&gt;
+            &lt;/&gt;
+        )
+    }
+})
+</code></pre>

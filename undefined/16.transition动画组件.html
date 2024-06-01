@@ -1,0 +1,223 @@
+<hr>
+<h2 id="title-transition动画组件date-2023-07-24-20-00-00categories-“vue3”tags-“vue3”"><a href="#title-transition动画组件date-2023-07-24-20-00-00categories-“vue3”tags-“vue3”" class="headerlink" title="title: transition动画组件date: 2023-07-24 20:00:00categories: “vue3”tags: “vue3”"></a>title: transition动画组件<br>date: 2023-07-24 20:00:00<br>categories: “vue3”<br>tags: “vue3”</h2><h1 id="transition动画组件"><a href="#transition动画组件" class="headerlink" title="transition动画组件"></a>transition动画组件</h1><h3 id="自定义过渡-class-类名"><a href="#自定义过渡-class-类名" class="headerlink" title="自定义过渡 class 类名"></a>自定义过渡 class 类名</h3><p>trasnsition props</p>
+<ul>
+<li><code>enter-from-class</code></li>
+<li><code>enter-active-class</code></li>
+<li><code>enter-to-class</code></li>
+<li><code>leave-from-class</code></li>
+<li><code>leave-active-class</code></li>
+<li><code>leave-to-class</code></li>
+</ul>
+<p>自定义过度时间 单位毫秒</p>
+<p>你也可以分别指定进入和离开的持续时间：</p>
+<pre><code class="vue">&lt;transition :duration=&quot;1000&quot;&gt;...&lt;/transition&gt;
+
+
+&lt;transition :duration=&quot;{ enter: 500, leave: 800 }&quot;&gt;...&lt;/transition&gt;
+</code></pre>
+<pre><code class="vue">&lt;template&gt;
+  &lt;button @click=&quot;flag=!flag&quot;&gt;点击{{ flag ? &#39;隐藏&#39; : &#39;显示&#39; }}&lt;/button&gt;
+  &lt;transition leave-from-class=&quot;leaveFrom&quot; leave-active-class=&quot;leaveActive&quot; leave-to-class=&quot;leaveTo&quot;
+              enter-from-class=&quot;enterFrom&quot; enter-active-class=&quot;enterActive&quot; enter-to-class=&quot;enterTo&quot;&gt;
+    &lt;div id=&quot;att&quot; v-if=&quot;flag&quot;&gt;&lt;/div&gt;
+  &lt;/transition&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineAsyncComponent, reactive, ref} from &quot;vue&quot;;
+import A from &#39;./A.vue&#39;
+
+const flag = ref&lt;boolean&gt;(true)
+&lt;/script&gt;
+&lt;style scoped lang=&quot;scss&quot;&gt;
+#att {
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+.leaveFrom{
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+.leaveActive{
+  transition: all 1.5s ease;
+}
+
+.leaveTo{
+  margin: 10px 10px;
+  width: 0;
+  height: 0;
+  background: red;
+}
+
+.enterTo{
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+.enterActive{
+  transition: all 1s linear;
+}
+
+.enterFrom{
+  margin: 10px 10px;
+  width: 0;
+  height: 0;
+  background: red;
+}
+&lt;/style&gt;
+</code></pre>
+<p>通过自定义class 结合css动画库animate css</p>
+<pre><code class="bash">npm install animate.css
+</code></pre>
+<p><a href="https://animate.style/">官网</a></p>
+<p><strong>引入</strong> </p>
+<pre><code class="javascript">import &#39;animate.css&#39;
+</code></pre>
+<p>使用方法</p>
+<p>官方文档 <a href="https://animate.style/">Animate.css | A cross-browser library of CSS animations.</a></p>
+<pre><code class="vue">        &lt;transition
+            leave-active-class=&quot;animate__animated animate__bounceInLeft&quot;
+            enter-active-class=&quot;animate__animated animate__bounceInRight&quot;
+        &gt;
+            &lt;div v-if=&quot;flag&quot; class=&quot;box&quot;&gt;&lt;/div&gt;
+        &lt;/transition&gt;
+</code></pre>
+<pre><code class="vue">&lt;template&gt;
+  &lt;button @click=&quot;flag=!flag&quot;&gt;点击{{ flag ? &#39;隐藏&#39; : &#39;显示&#39; }}&lt;/button&gt;
+  &lt;transition leave-active-class=&quot;animate__animated animate__bounceInLeft&quot; enter-active-class=&quot;animate__animated animate__bounceInRight&quot;&gt;
+    &lt;div id=&quot;att&quot; v-if=&quot;flag&quot;&gt;&lt;/div&gt;
+  &lt;/transition&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineAsyncComponent, reactive, ref} from &quot;vue&quot;;
+import A from &#39;./A.vue&#39;
+import &#39;animate.css&#39;
+
+const flag = ref&lt;boolean&gt;(true)
+&lt;/script&gt;
+&lt;style scoped lang=&quot;scss&quot;&gt;
+#att {
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+.leaveFrom{
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+.leaveActive{
+  transition: all 1.5s ease;
+}
+
+.leaveTo{
+  margin: 10px 10px;
+  width: 0;
+  height: 0;
+  background: red;
+}
+
+.enterTo{
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+
+.enterActive{
+  transition: all 1s linear;
+}
+
+.enterFrom{
+  margin: 10px 10px;
+  width: 0;
+  height: 0;
+  background: red;
+}
+&lt;/style&gt;
+</code></pre>
+<h1 id="3-transition-生命周期8个"><a href="#3-transition-生命周期8个" class="headerlink" title="3.transition 生命周期8个"></a>3.transition 生命周期8个</h1><pre><code class="vue">  @before-enter=&quot;beforeEnter&quot; //对应enter-from
+  @enter=&quot;enter&quot;//对应enter-active
+  @after-enter=&quot;afterEnter&quot;//对应enter-to
+  @enter-cancelled=&quot;enterCancelled&quot;//显示过度打断
+  @before-leave=&quot;beforeLeave&quot;//对应leave-from
+  @leave=&quot;leave&quot;//对应enter-active
+  @after-leave=&quot;afterLeave&quot;//对应leave-to
+  @leave-cancelled=&quot;leaveCancelled&quot;//离开过度打断
+</code></pre>
+<p>当只用 JavaScript 过渡的时候，在 <strong><code>enter</code> 和 <code>leave</code> 钩子中必须使用 <code>done</code> 进行回调</strong></p>
+<p>结合gsap 动画库使用 <a href="https://greensock.com/">GreenSock</a></p>
+<pre><code class="bash">npm install gsap -S
+</code></pre>
+<p><strong>引入</strong></p>
+<pre><code class="javascript">import gsap from &#39;gsap&#39;
+</code></pre>
+<pre><code class="javascript">const beforeEnter = (el: Element) =&gt; {
+    console.log(&#39;进入之前from&#39;, el);
+}
+const Enter = (el: Element,done:Function) =&gt; {
+    console.log(&#39;过度曲线&#39;);
+    setTimeout(()=&gt;{
+       done()
+    },3000)
+}
+const AfterEnter = (el: Element) =&gt; {
+    console.log(&#39;to&#39;);
+}
+</code></pre>
+<pre><code class="vue">&lt;template&gt;
+  &lt;button @click=&quot;flag=!flag&quot;&gt;点击{{ flag ? &#39;隐藏&#39; : &#39;显示&#39; }}&lt;/button&gt;
+  &lt;transition @beforeEnter=&quot;enterFrom&quot; @enter=&quot;enterActive&quot;&gt;
+    &lt;div id=&quot;att&quot; v-if=&quot;flag&quot;&gt;&lt;/div&gt;
+  &lt;/transition&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineAsyncComponent, reactive, ref} from &quot;vue&quot;;
+import A from &#39;./A.vue&#39;
+import &#39;animate.css&#39;
+import gsap from &#39;gsap&#39;
+
+const flag = ref&lt;boolean&gt;(true)
+
+let enterFrom=(el:Element)=&gt;{
+  gsap.set(el,{
+    width:0,
+    height:0
+  });
+}
+let enterActive=(el:Element,done:gsap.Callback)=&gt;{
+  gsap.to(el,{
+    width:300,
+    height:300
+  });
+}
+&lt;/script&gt;
+&lt;style scoped lang=&quot;scss&quot;&gt;
+#att {
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  background: red;
+}
+&lt;/style&gt;
+</code></pre>
+<h1 id="4-appear"><a href="#4-appear" class="headerlink" title="4.appear"></a>4.appear</h1><p>通过这个属性可以设置初始节点过度 就是页面加载完成就开始动画 对应三个状态</p>
+<pre><code class="vue">appear-active-class=&quot;&quot;
+appear-from-class=&quot;&quot;
+appear-to-class=&quot;&quot;
+appear
+</code></pre>

@@ -1,0 +1,162 @@
+<h1 id="异步组件"><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h1><blockquote>
+<p>在大型应用中，我们可能需要将应用分割成小一些的代码块 并且减少主包的体积，这时候就可以使用<code>异步组件</code></p>
+</blockquote>
+<h2 id="顶层await"><a href="#顶层await" class="headerlink" title="顶层await"></a>顶层await</h2><blockquote>
+<p>在setup语法糖里面 使用方法</p>
+<p><code>&lt;script setup&gt;</code> 中可以使用顶层 await。结果代码会被编译成 async setup()</p>
+</blockquote>
+<pre><code class="javascript">&lt;script setup&gt;
+    const post = await fetch(`/api/post/1`).then(r =&gt; r.json())
+&lt;/script&gt;
+</code></pre>
+<p>父组件引用子组件 通过defineAsyncComponent加载异步配合import 函数模式便可以分包</p>
+<pre><code class="javascript">&lt;script setup lang=&quot;ts&quot;&gt;
+import { reactive, ref, markRaw, toRaw, defineAsyncComponent } from &#39;vue&#39;
+
+const Dialog = defineAsyncComponent(() =&gt; import(&#39;../../components/Dialog/index.vue&#39;))
+
+//完整写法
+
+const AsyncComp = defineAsyncComponent({
+  // 加载函数
+  loader: () =&gt; import(&#39;./Foo.vue&#39;),
+
+  // 加载异步组件时使用的组件
+  loadingComponent: LoadingComponent,
+  // 展示加载组件前的延迟时间，默认为 200ms
+  delay: 200,
+
+  // 加载失败后展示的组件
+  errorComponent: ErrorComponent,
+  // 如果提供了一个 timeout 时间限制，并超时了
+  // 也会显示这里配置的报错组件，默认值是：Infinity
+  timeout: 3000
+})
+</code></pre>
+<h1 id="suspense"><a href="#suspense" class="headerlink" title="suspense"></a>suspense</h1><p><code>&lt;suspense&gt;</code> 组件有两个插槽。它们都只接收一个直接子节点。<code>default</code> 插槽里的节点会尽可能展示出来。如果不能，则展示 <code>fallback</code> 插槽里的节点。</p>
+<pre><code class="javascript">     &lt;Suspense&gt;
+            &lt;template #default&gt;
+                &lt;Dialog&gt;
+                    &lt;template #default&gt;
+                        &lt;div&gt;我在哪儿&lt;/div&gt;
+                    &lt;/template&gt;
+                &lt;/Dialog&gt;
+            &lt;/template&gt;
+
+            &lt;template #fallback&gt;
+                &lt;div&gt;loading...&lt;/div&gt;
+            &lt;/template&gt;
+        &lt;/Suspense&gt;
+</code></pre>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><blockquote>
+<p>在数据请求到达之前，显示骨架，在获取到数据后，替换骨架</p>
+</blockquote>
+<blockquote>
+<p>public&#x2F;data.json</p>
+</blockquote>
+<pre><code class="json">{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;哆啦A梦&quot;,
+    &quot;age&quot;: 15,
+    &quot;url&quot;: &quot;https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp7.itc.cn%2Fq_70%2Fimages03%2F20200924%2F6a36f60e6c034d78b93901b57afca05d.jpeg&amp;refer=http%3A%2F%2Fp7.itc.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1656899135&amp;t=c53658ab441623ce626434ff0b974318&quot;,
+    &quot;desc&quot;: &quot;大雄的好朋友&quot;
+  }
+}
+</code></pre>
+<blockquote>
+<p>SkeletonVue.vue</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div id=&quot;att&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;span&gt;姓名:正在请求中...&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;span&gt;年龄:正在请求中...&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      头像:&lt;img alt=&quot;正在请求中...&quot; src=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      简介:&lt;span&gt;正在请求中...&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<blockquote>
+<p>Sync.vue</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div id=&quot;att&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;span&gt;姓名:{{ user.name }}&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;span&gt;年龄:{{ user.age }}&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header&quot;&gt;
+      头像:&lt;img :src=&quot;user.url&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      简介:&lt;span&gt;{{ user.desc }}&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {ref} from &quot;vue&quot;;
+import axios from &quot;axios&quot;;
+
+interface UserProps {
+  user: {
+    name: string,
+    age: number,
+    url: string;
+    desc: string
+  }
+}
+
+const {data} = await axios.get&lt;UserProps&gt;(&#39;./data.json&#39;)
+
+const user = ref&lt;{
+  name: string,
+  age: number,
+  url: string;
+  desc: string
+}&gt;();
+user.value = data.user
+console.log(&#39;data:&#39;, data);
+
+&lt;/script&gt;
+&lt;style scoped&gt;
+.header &gt; img {
+  width: 50px;
+  height: 50px;
+}
+&lt;/style&gt;
+</code></pre>
+<blockquote>
+<p>APP.vue</p>
+</blockquote>
+<pre><code class="vue">&lt;template&gt;
+  &lt;div&gt;
+    &lt;Suspense&gt;
+      &lt;template #default&gt;
+        &lt;Sync&gt;
+        &lt;/Sync&gt;
+      &lt;/template&gt;
+      &lt;template #fallback&gt;
+        &lt;SkeletonVue&gt;
+        &lt;/SkeletonVue&gt;
+      &lt;/template&gt;
+    &lt;/Suspense&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script setup lang=&quot;ts&quot;&gt;
+import {defineAsyncComponent, reactive, ref} from &quot;vue&quot;;
+import SkeletonVue from &quot;@/view/SkeletonVue.vue&quot;;
+
+const Sync = defineAsyncComponent(() =&gt; import(&#39;@/view/Sync.vue&#39;))
+&lt;/script&gt;
+</code></pre>
