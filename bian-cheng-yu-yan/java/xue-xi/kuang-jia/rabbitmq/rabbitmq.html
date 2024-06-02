@@ -13,7 +13,7 @@
     <meta name="description" content="RabbitMQ 以下具体内容参考自黑马程序员课程微服务开发框架SpringCloud+RabbitMQ+Docker+Redis+搜索+分布式微服务全技术栈课程  初识MQ同步调用微服务间基于Feign的调用就属于同步方式，存在一些问题。业务代码耦合严重，除此之外对性能影响也很严重，因为需要等待被调用的服务返回结果。不仅如此，而且如果被调用的服务中，有某个服务挂了，则整个服务调用都会出现问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RabbitMQ">
-<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/rabbitmq/rabbitmq.html">
+<meta property="og:url" content="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/rabbitmq/rabbitmq.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="RabbitMQ 以下具体内容参考自黑马程序员课程微服务开发框架SpringCloud+RabbitMQ+Docker+Redis+搜索+分布式微服务全技术栈课程  初识MQ同步调用微服务间基于Feign的调用就属于同步方式，存在一些问题。业务代码耦合严重，除此之外对性能影响也很严重，因为需要等待被调用的服务返回结果。不仅如此，而且如果被调用的服务中，有某个服务挂了，则整个服务调用都会出现问题。">
 <meta property="og:locale" content="zh_CN">
@@ -55,13 +55,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056577">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472228">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056577">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472228">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056577">
+            <link rel="stylesheet" href="/custom.css?v=1717340472228">
         
     
 
@@ -70,7 +70,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056577"></script>
+    <script async src="/js/app.js?v=1717340472228"></script>
     
      
 
@@ -108,9 +108,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -161,7 +161,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056577"></script>
+	<script async src="/js/search.js?v=1717340472228"></script>
 
 
 
@@ -463,7 +463,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/rabbitmq/rabbitmq.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;rabbitmq&#x2F;rabbitmq.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;rabbitmq&#x2F;rabbitmq.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/rabbitmq/rabbitmq.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;rabbitmq&#x2F;rabbitmq.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;rabbitmq&#x2F;rabbitmq.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 

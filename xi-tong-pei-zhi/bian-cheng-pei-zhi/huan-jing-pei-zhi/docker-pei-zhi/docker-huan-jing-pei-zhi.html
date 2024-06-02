@@ -13,7 +13,7 @@
     <meta name="description" content="Docker环境配置 安装VirtualBox 安装vagrant 安装完成vagrant后重启一下系统 验证vagrant是否安装成功 cmd输入vagrant，是否有命令提示    使用vagrant创建虚拟机——官方镜像仓库 vagrant init centos&#x2F;7 此时在E盘已经生成了一个名为“Vagrantfile”的文件	启动虚拟环境 vagrant up# 如果速度很慢，使用提前下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker配置">
-<meta property="og:url" content="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/docker-pei-zhi/docker-huan-jing-pei-zhi.html">
+<meta property="og:url" content="https://isunderachiever.github.io/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/docker-pei-zhi/docker-huan-jing-pei-zhi.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Docker环境配置 安装VirtualBox 安装vagrant 安装完成vagrant后重启一下系统 验证vagrant是否安装成功 cmd输入vagrant，是否有命令提示    使用vagrant创建虚拟机——官方镜像仓库 vagrant init centos&#x2F;7 此时在E盘已经生成了一个名为“Vagrantfile”的文件	启动虚拟环境 vagrant up# 如果速度很慢，使用提前下">
 <meta property="og:locale" content="zh_CN">
@@ -47,13 +47,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056867">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472528">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056867">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472528">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056867">
+            <link rel="stylesheet" href="/custom.css?v=1717340472528">
         
     
 
@@ -62,7 +62,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056867"></script>
+    <script async src="/js/app.js?v=1717340472528"></script>
     
      
 
@@ -100,9 +100,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -153,7 +153,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056867"></script>
+	<script async src="/js/search.js?v=1717340472528"></script>
 
 
 
@@ -248,7 +248,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">vagrant up<br><span class="hljs-comment"># 如果速度很慢，使用提前下载好的CentOS7镜像，速度嘎嘎快</span><br><span class="hljs-comment"># vagrant init centos/7 # 没初始化的，要初始化</span><br>vagrant box add centos/7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box<br>vagrant up<br></code></pre></td></tr></table></figure>
 <p>ctrl+c停掉</p>
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">vagrant ssh</span><br></code></pre></td></tr></table></figure>
-<p>提示[vagrant@localhost ~]$  连接成功，此时已经可以在VirtualBox内查看到该虚拟机<br>若提示 <a href="mailto:&#118;&#x61;&#103;&#x72;&#97;&#x6e;&#116;&#64;&#x31;&#x32;&#55;&#46;&#x30;&#46;&#x30;&#46;&#49;">&#118;&#x61;&#103;&#x72;&#97;&#x6e;&#116;&#64;&#x31;&#x32;&#55;&#46;&#x30;&#46;&#x30;&#46;&#49;</a>: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).<br>则输入命令set VAGRANT_PREFER_SYSTEM_BIN&#x3D;0 后再重新连接即可<br>退出vagrant的方法：输入命令exit<br>以文本的方式打开Vagrantfile，找到这一行配置<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png" alt="003更改网络配置" data-caption="003更改网络配置" loading="lazy"></p>
+<p>提示[vagrant@localhost ~]$  连接成功，此时已经可以在VirtualBox内查看到该虚拟机<br>若提示 <a href="mailto:&#118;&#x61;&#103;&#x72;&#97;&#110;&#x74;&#x40;&#x31;&#x32;&#55;&#x2e;&#x30;&#46;&#x30;&#x2e;&#x31;">&#118;&#x61;&#103;&#x72;&#97;&#110;&#x74;&#x40;&#x31;&#x32;&#55;&#x2e;&#x30;&#46;&#x30;&#x2e;&#x31;</a>: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).<br>则输入命令set VAGRANT_PREFER_SYSTEM_BIN&#x3D;0 后再重新连接即可<br>退出vagrant的方法：输入命令exit<br>以文本的方式打开Vagrantfile，找到这一行配置<br><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png" alt="003更改网络配置" data-caption="003更改网络配置" loading="lazy"></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;</span><br></code></pre></td></tr></table></figure>
 <p>所以我们需要将虚拟机改为192.168.56.XX<br>即更改为</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># config.vm.network &quot;private_network&quot;, ip: &quot;192.168.56.10&quot;</span><br></code></pre></td></tr></table></figure>
@@ -339,7 +339,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/docker-pei-zhi/docker-huan-jing-pei-zhi.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;huan-jing-pei-zhi&#x2F;docker-pei-zhi&#x2F;docker-huan-jing-pei-zhi.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;huan-jing-pei-zhi&#x2F;docker-pei-zhi&#x2F;docker-huan-jing-pei-zhi.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/xi-tong-pei-zhi/bian-cheng-pei-zhi/huan-jing-pei-zhi/docker-pei-zhi/docker-huan-jing-pei-zhi.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;huan-jing-pei-zhi&#x2F;docker-pei-zhi&#x2F;docker-huan-jing-pei-zhi.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;huan-jing-pei-zhi&#x2F;docker-pei-zhi&#x2F;docker-huan-jing-pei-zhi.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 

@@ -13,7 +13,7 @@
     <meta name="description" content="为什么要分组？数据分组是按照逻辑次序把具有重复值的字段进行合并。比如说，一个数据库存储了关于所有员工的信息，有些员工住在不同的城市里，有些员工住在同一个城市里。我们可能需要进行一个查询，了解每个指定城市里的员工的信息。这时就是在根据城市对员工进行分组，并且创建一个统计报告。假设我们想了解每个城市的员工的平均薪水，这时可以对SALARY字段使用AVG函数，并且使用GROUP BY子句把结果按照城市进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DB11_数据库分组与排序">
-<meta property="og:url" content="https://nexmoe.com/shu-ju-ku/mysql/da-shu-ju-xue-xi/db10-db11/db11-shu-ju-ku-fen-zu-yu-pai-xu.html">
+<meta property="og:url" content="https://isunderachiever.github.io/shu-ju-ku/mysql/da-shu-ju-xue-xi/db10-db11/db11-shu-ju-ku-fen-zu-yu-pai-xu.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="为什么要分组？数据分组是按照逻辑次序把具有重复值的字段进行合并。比如说，一个数据库存储了关于所有员工的信息，有些员工住在不同的城市里，有些员工住在同一个城市里。我们可能需要进行一个查询，了解每个指定城市里的员工的信息。这时就是在根据城市对员工进行分组，并且创建一个统计报告。假设我们想了解每个城市的员工的平均薪水，这时可以对SALARY字段使用AVG函数，并且使用GROUP BY子句把结果按照城市进">
 <meta property="og:locale" content="zh_CN">
@@ -32,13 +32,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056854">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472515">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056854">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472515">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056854">
+            <link rel="stylesheet" href="/custom.css?v=1717340472515">
         
     
 
@@ -47,7 +47,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056854"></script>
+    <script async src="/js/app.js?v=1717340472515"></script>
     
      
 
@@ -85,9 +85,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -138,7 +138,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056854"></script>
+	<script async src="/js/search.js?v=1717340472515"></script>
 
 
 
@@ -267,7 +267,7 @@ HAVING子句必须跟在GROUP BY子句之后,在ORDER BY子句之前。<br>聚�
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/shu-ju-ku/mysql/da-shu-ju-xue-xi/db10-db11/db11-shu-ju-ku-fen-zu-yu-pai-xu.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db10-db11&#x2F;db11-shu-ju-ku-fen-zu-yu-pai-xu.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db10-db11&#x2F;db11-shu-ju-ku-fen-zu-yu-pai-xu.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/shu-ju-ku/mysql/da-shu-ju-xue-xi/db10-db11/db11-shu-ju-ku-fen-zu-yu-pai-xu.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db10-db11&#x2F;db11-shu-ju-ku-fen-zu-yu-pai-xu.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db10-db11&#x2F;db11-shu-ju-ku-fen-zu-yu-pai-xu.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 

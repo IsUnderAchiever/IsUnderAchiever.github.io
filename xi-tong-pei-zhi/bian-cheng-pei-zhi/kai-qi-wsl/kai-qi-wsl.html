@@ -13,7 +13,7 @@
     <meta name="description" content="开启WSL 参考文章  基本配置 打开设置，选中应用    选择程序和功能    选择启用或关闭Windows功能    勾选Hyper-v和适用于Linux的Windows子系统，然后重启电脑   安装Linux子系统 注意使用管理员权限运行cmd或者powershell  # 下载或者更新wsl --update# 重新启动wsl --shutdown    前往微软商店下载Linux子系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开启WSL">
-<meta property="og:url" content="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/kai-qi-wsl/kai-qi-wsl.html">
+<meta property="og:url" content="https://isunderachiever.github.io/xi-tong-pei-zhi/bian-cheng-pei-zhi/kai-qi-wsl/kai-qi-wsl.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="开启WSL 参考文章  基本配置 打开设置，选中应用    选择程序和功能    选择启用或关闭Windows功能    勾选Hyper-v和适用于Linux的Windows子系统，然后重启电脑   安装Linux子系统 注意使用管理员权限运行cmd或者powershell  # 下载或者更新wsl --update# 重新启动wsl --shutdown    前往微软商店下载Linux子系统">
 <meta property="og:locale" content="zh_CN">
@@ -29,8 +29,13 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021226421.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021229951.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021228921.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022110343.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022112256.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115683.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115467.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115033.png">
 <meta property="article:published_time" content="2024-06-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-06-02T04:37:21.162Z">
+<meta property="article:modified_time" content="2024-06-02T13:26:12.986Z">
 <meta property="article:author" content="折影轻梦">
 <meta property="article:tag" content="开启WSL">
 <meta name="twitter:card" content="summary">
@@ -40,13 +45,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056530">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472182">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056530">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472182">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056530">
+            <link rel="stylesheet" href="/custom.css?v=1717340472182">
         
     
 
@@ -55,7 +60,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056530"></script>
+    <script async src="/js/app.js?v=1717340472182"></script>
     
      
 
@@ -93,9 +98,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -146,7 +151,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056530"></script>
+	<script async src="/js/search.js?v=1717340472182"></script>
 
 
 
@@ -281,6 +286,44 @@
 <p>客户端连接Redis成功</p>
 </blockquote>
 <p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021228921.png" alt="image-20240602122855884" data-caption="image-20240602122855884" loading="lazy"></p>
+<h2 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h2><blockquote>
+<p>输入密码后切换为<code>root</code>用户</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">sudo su<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>执行以下命令</p>
+<p><code>卸载WSL上自带的openssh并重装</code></p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">apt-get update<br><br>apt-get remove openssh-server <br><br>apt-get install openssh-server<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>修改ssh的配置</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">vim /etc/ssh/sshd_config<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>先按住<code>shift : </code></p>
+<p>输入<code>set nu</code>，回车即可显示行数</p>
+<p>找到<code>PermitRootLogin</code>，改为<code>yes</code></p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022110343.png" alt="image-20240602211021605" data-caption="image-20240602211021605" loading="lazy"></p>
+<blockquote>
+<p>将如下位置的注释取消掉</p>
+<p>然后保存并退出</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022112256.png" alt="image-20240602211209601" data-caption="image-20240602211209601" loading="lazy"></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">service ssh status<br><br>service ssh start<br></code></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115683.png" alt="image-20240602211333816" data-caption="image-20240602211333816" loading="lazy"></p>
+<blockquote>
+<p>ip直接写<code>127.0.0.1</code>即可</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115467.png" alt="image-20240602211512950" data-caption="image-20240602211512950" loading="lazy"></p>
+<blockquote>
+<p>配置用户名、密码</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115033.png" alt="image-20240602211528562" data-caption="image-20240602211528562" loading="lazy"></p>
 
     
   </article>
@@ -289,7 +332,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/kai-qi-wsl/kai-qi-wsl.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;kai-qi-wsl&#x2F;kai-qi-wsl.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;kai-qi-wsl&#x2F;kai-qi-wsl.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/xi-tong-pei-zhi/bian-cheng-pei-zhi/kai-qi-wsl/kai-qi-wsl.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;kai-qi-wsl&#x2F;kai-qi-wsl.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;kai-qi-wsl&#x2F;kai-qi-wsl.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
@@ -342,7 +385,7 @@
                               <button class="mdui-fab catalog" style="overflow:unset;">
                                   <i class="nexmoefont icon-i-catalog"></i>
                                   <div class="nexmoe-toc">
-                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%90%AFWSL"><span class="toc-number">1.</span> <span class="toc-text">开启WSL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Linux%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">安装Linux子系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdocker"><span class="toc-number">1.3.</span> <span class="toc-text">配置docker</span></a></li></ol></li></ol>
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%90%AFWSL"><span class="toc-number">1.</span> <span class="toc-text">开启WSL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Linux%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">安装Linux子系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdocker"><span class="toc-number">1.3.</span> <span class="toc-text">配置docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEssh"><span class="toc-number">1.4.</span> <span class="toc-text">配置ssh</span></a></li></ol></li></ol>
                                   </div>
                               </button>
                           

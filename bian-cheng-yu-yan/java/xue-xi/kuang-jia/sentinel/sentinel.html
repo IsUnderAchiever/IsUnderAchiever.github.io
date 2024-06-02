@@ -13,7 +13,7 @@
     <meta name="description" content="Sentinel初识Sentinel雪崩问题 故障的服务D，会导致服务A的tomcat资源耗尽 微服务调用链路中的某个服务故障，引起整个链路中的所有微服务都不可用，这就是雪崩。解决雪崩问题的常见方式有四种:   超时处理:设定超时时间，请求超过-定时间没有响应就返回错误信息，不会无休止等待 舱壁模式:限定每个业务能使用的线程数,避免耗尽整个tomcat的资源，因此也叫线程隔离。 熔断降级:由断路器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sentinel">
-<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/sentinel/sentinel.html">
+<meta property="og:url" content="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/sentinel/sentinel.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="Sentinel初识Sentinel雪崩问题 故障的服务D，会导致服务A的tomcat资源耗尽 微服务调用链路中的某个服务故障，引起整个链路中的所有微服务都不可用，这就是雪崩。解决雪崩问题的常见方式有四种:   超时处理:设定超时时间，请求超过-定时间没有响应就返回错误信息，不会无休止等待 舱壁模式:限定每个业务能使用的线程数,避免耗尽整个tomcat的资源，因此也叫线程隔离。 熔断降级:由断路器">
 <meta property="og:locale" content="zh_CN">
@@ -106,13 +106,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056574">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472222">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056574">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472222">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056574">
+            <link rel="stylesheet" href="/custom.css?v=1717340472222">
         
     
 
@@ -121,7 +121,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056574"></script>
+    <script async src="/js/app.js?v=1717340472222"></script>
     
      
 
@@ -159,9 +159,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -212,7 +212,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056574"></script>
+	<script async src="/js/search.js?v=1717340472222"></script>
 
 
 
@@ -573,7 +573,7 @@ Sentinel默认会将Controller方法做context整合,导致链路模式的流控
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/sentinel/sentinel.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;sentinel&#x2F;sentinel.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;sentinel&#x2F;sentinel.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/sentinel/sentinel.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;sentinel&#x2F;sentinel.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;sentinel&#x2F;sentinel.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 

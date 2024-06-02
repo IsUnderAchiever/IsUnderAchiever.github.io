@@ -13,7 +13,7 @@
     <meta name="description" content="3_事务 事务的概念 保证—组数据库的操作，要么同时成功，要么同时失败 如：A转账给B，A的钱减少，B的钱增加  事务的四大特性 隔离性多个事务之间要相互隔离，不能互相干扰 原子性指事务是一个不可分割的整体，类似一个不可分割的原子 —致性保障事务前后这组数据的状态是一致的。要么都是成功的，要么都是失败的。 持久性指事务一旦被提交，这组操作修改的数据就真的的发生变化了。即使接下来数据库故障也不应该对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3_事务">
-<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/spring-zheng-he-mybatis-junit-ji-shi-wu/3-sheng-ming-shi-shi-wu.html">
+<meta property="og:url" content="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/spring-zheng-he-mybatis-junit-ji-shi-wu/3-sheng-ming-shi-shi-wu.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="3_事务 事务的概念 保证—组数据库的操作，要么同时成功，要么同时失败 如：A转账给B，A的钱减少，B的钱增加  事务的四大特性 隔离性多个事务之间要相互隔离，不能互相干扰 原子性指事务是一个不可分割的整体，类似一个不可分割的原子 —致性保障事务前后这组数据的状态是一致的。要么都是成功的，要么都是失败的。 持久性指事务一旦被提交，这组操作修改的数据就真的的发生变化了。即使接下来数据库故障也不应该对">
 <meta property="og:locale" content="zh_CN">
@@ -30,13 +30,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056827">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472488">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056827">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472488">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056827">
+            <link rel="stylesheet" href="/custom.css?v=1717340472488">
         
     
 
@@ -45,7 +45,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056827"></script>
+    <script async src="/js/app.js?v=1717340472488"></script>
     
      
 
@@ -83,9 +83,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -136,7 +136,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056827"></script>
+	<script async src="/js/search.js?v=1717340472488"></script>
 
 
 
@@ -254,7 +254,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/spring-zheng-he-mybatis-junit-ji-shi-wu/3-sheng-ming-shi-shi-wu.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;spring-zheng-he-mybatis-junit-ji-shi-wu&#x2F;3-sheng-ming-shi-shi-wu.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;spring-zheng-he-mybatis-junit-ji-shi-wu&#x2F;3-sheng-ming-shi-shi-wu.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/spring-zheng-he-mybatis-junit-ji-shi-wu/3-sheng-ming-shi-shi-wu.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;spring-zheng-he-mybatis-junit-ji-shi-wu&#x2F;3-sheng-ming-shi-shi-wu.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;spring-zheng-he-mybatis-junit-ji-shi-wu&#x2F;3-sheng-ming-shi-shi-wu.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 

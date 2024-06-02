@@ -13,7 +13,7 @@
     <meta name="description" content="11_AOP原理-动态代理 实际上Spring的AOP其实底层就是使用动态代理来完成的。并且使用了两种动态代理分别是JDK的动态代理和Cglib动态代理。所以我们接下去来学习下这两种动态代理，理解下它们的不同点。  JDK动态代理 JDK的动态代理使用的java.lang.reflect.Proxy这个类来进行实现的。要求被代理（被增强)的类需要实现了接口。并且JDK动态代理也只能对接口中的方法进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="11_AOP原理-动态代理">
-<meta property="og:url" content="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/springaop/11-aop-yuan-li-dong-tai-dai-li.html">
+<meta property="og:url" content="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/springaop/11-aop-yuan-li-dong-tai-dai-li.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="11_AOP原理-动态代理 实际上Spring的AOP其实底层就是使用动态代理来完成的。并且使用了两种动态代理分别是JDK的动态代理和Cglib动态代理。所以我们接下去来学习下这两种动态代理，理解下它们的不同点。  JDK动态代理 JDK的动态代理使用的java.lang.reflect.Proxy这个类来进行实现的。要求被代理（被增强)的类需要实现了接口。并且JDK动态代理也只能对接口中的方法进">
 <meta property="og:locale" content="zh_CN">
@@ -27,13 +27,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056823">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472366">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056823">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472366">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056823">
+            <link rel="stylesheet" href="/custom.css?v=1717340472366">
         
     
 
@@ -42,7 +42,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056823"></script>
+    <script async src="/js/app.js?v=1717340472366"></script>
     
      
 
@@ -80,9 +80,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -133,7 +133,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056823"></script>
+	<script async src="/js/search.js?v=1717340472366"></script>
 
 
 
@@ -237,7 +237,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/springaop/11-aop-yuan-li-dong-tai-dai-li.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;springaop&#x2F;11-aop-yuan-li-dong-tai-dai-li.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;springaop&#x2F;11-aop-yuan-li-dong-tai-dai-li.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/bian-cheng-yu-yan/java/xue-xi/kuang-jia/spring/springaop/11-aop-yuan-li-dong-tai-dai-li.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;springaop&#x2F;11-aop-yuan-li-dong-tai-dai-li.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;bian-cheng-yu-yan&#x2F;java&#x2F;xue-xi&#x2F;kuang-jia&#x2F;spring&#x2F;springaop&#x2F;11-aop-yuan-li-dong-tai-dai-li.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 

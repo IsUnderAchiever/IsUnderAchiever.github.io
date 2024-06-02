@@ -13,7 +13,7 @@
     <meta name="description" content="访问控制原理MySQL的访问权限是通过两个方面来认证的。首先会进行用户的IP、用户名及密码校验，校验通过的用户，才能连接上MySQL,当连上后，用户进行任何操作时，MySQL都会对其所拥有的权限进行校验，拥有该权限，才会执行用户请求的操作。否则，不执行 分类和分配原则权限分类对数据的操作，比如增删改查。结构的操作，比如创建库，修改表结构等。管理方面的权限，比如创建用户、分配权限等分配原则给予最小权">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DB22_数据库安全管理">
-<meta property="og:url" content="https://nexmoe.com/shu-ju-ku/mysql/da-shu-ju-xue-xi/db20-db21-db22/db22-shu-ju-ku-an-quan-guan-li.html">
+<meta property="og:url" content="https://isunderachiever.github.io/shu-ju-ku/mysql/da-shu-ju-xue-xi/db20-db21-db22/db22-shu-ju-ku-an-quan-guan-li.html">
 <meta property="og:site_name" content="折影轻梦">
 <meta property="og:description" content="访问控制原理MySQL的访问权限是通过两个方面来认证的。首先会进行用户的IP、用户名及密码校验，校验通过的用户，才能连接上MySQL,当连上后，用户进行任何操作时，MySQL都会对其所拥有的权限进行校验，拥有该权限，才会执行用户请求的操作。否则，不执行 分类和分配原则权限分类对数据的操作，比如增删改查。结构的操作，比如创建库，修改表结构等。管理方面的权限，比如创建用户、分配权限等分配原则给予最小权">
 <meta property="og:locale" content="zh_CN">
@@ -27,13 +27,13 @@
 <link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
 
 
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056845">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717340472505">
     
-    <link rel="stylesheet" href="/css/style.css?v=1717303056845">
+    <link rel="stylesheet" href="/css/style.css?v=1717340472505">
 
     
         
-            <link rel="stylesheet" href="/custom.css?v=1717303056845">
+            <link rel="stylesheet" href="/custom.css?v=1717340472505">
         
     
 
@@ -42,7 +42,7 @@
 <script src="/lib/fancybox/fancybox.umd.js" async></script>
 
 
-    <script async src="/js/app.js?v=1717303056845"></script>
+    <script async src="/js/app.js?v=1717340472505"></script>
     
      
 
@@ -80,9 +80,9 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>168</div>
-        <div><span>标签</span>61</div>
-        <div><span>分类</span>62</div>
+        <div><span>文章</span>169</div>
+        <div><span>标签</span>62</div>
+        <div><span>分类</span>63</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -133,7 +133,7 @@
 </div>
 
 
-	<script async src="/js/search.js?v=1717303056845"></script>
+	<script async src="/js/search.js?v=1717340472505"></script>
 
 
 
@@ -293,7 +293,7 @@
       
     <div class="nexmoe-post-copyright">
         <strong>本文作者：</strong>折影轻梦<br>
-        <strong>本文链接：</strong><a href="https://nexmoe.com/shu-ju-ku/mysql/da-shu-ju-xue-xi/db20-db21-db22/db22-shu-ju-ku-an-quan-guan-li.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db20-db21-db22&#x2F;db22-shu-ju-ku-an-quan-guan-li.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db20-db21-db22&#x2F;db22-shu-ju-ku-an-quan-guan-li.html</a><br>
+        <strong>本文链接：</strong><a href="https://isunderachiever.github.io/shu-ju-ku/mysql/da-shu-ju-xue-xi/db20-db21-db22/db22-shu-ju-ku-an-quan-guan-li.html" title="https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db20-db21-db22&#x2F;db22-shu-ju-ku-an-quan-guan-li.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;isunderachiever.github.io&#x2F;shu-ju-ku&#x2F;mysql&#x2F;da-shu-ju-xue-xi&#x2F;db20-db21-db22&#x2F;db22-shu-ju-ku-an-quan-guan-li.html</a><br>
         
             <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
 
