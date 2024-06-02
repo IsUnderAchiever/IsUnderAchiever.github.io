@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+    
+    <title>开启WSL - 折影轻梦</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="折影轻梦,Mixcm,轻惋,觅漫者,小舒同学,Xiaoshu,Nexmoe,产品,Meteor,探索者小舒,伴学OS1,Theme,Design,Product">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="开启WSL 参考文章  基本配置 打开设置，选中应用    选择程序和功能    选择启用或关闭Windows功能    勾选Hyper-v和适用于Linux的Windows子系统，然后重启电脑   安装Linux子系统 注意使用管理员权限运行cmd或者powershell  # 下载或者更新wsl --update# 重新启动wsl --shutdown    前往微软商店下载Linux子系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开启WSL">
+<meta property="og:url" content="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/kai-qi-wsl/kai-qi-wsl.html">
+<meta property="og:site_name" content="折影轻梦">
+<meta property="og:description" content="开启WSL 参考文章  基本配置 打开设置，选中应用    选择程序和功能    选择启用或关闭Windows功能    勾选Hyper-v和适用于Linux的Windows子系统，然后重启电脑   安装Linux子系统 注意使用管理员权限运行cmd或者powershell  # 下载或者更新wsl --update# 重新启动wsl --shutdown    前往微软商店下载Linux子系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021209094.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021210976.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021211070.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021213639.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021218041.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021220128.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021221541.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021222300.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021224191.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021226421.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021229951.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021228921.png">
+<meta property="article:published_time" content="2024-06-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-02T04:37:21.162Z">
+<meta property="article:author" content="折影轻梦">
+<meta property="article:tag" content="开启WSL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021209094.png">
+    
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1717303056530">
+    
+    <link rel="stylesheet" href="/css/style.css?v=1717303056530">
+
+    
+        
+            <link rel="stylesheet" href="/custom.css?v=1717303056530">
+        
+    
+
+    
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+
+
+    <script async src="/js/app.js?v=1717303056530"></script>
+    
+     
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4D4ZJ9G024"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-4D4ZJ9G024");
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="mdui-drawer-body-left">
+    <div id="nexmoe-background">
+        <div class="nexmoe-bg" 
+            style="background-image: url(https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102206.jpg)"
+        ></div>
+        <div class="mdui-appbar mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+                <div class="mdui-toolbar-spacer"></div>
+                <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+                <a href="/" title="折影轻梦" class="mdui-btn mdui-btn-icon"><img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦"></a>
+            </div>
+        </div>
+    </div>
+    <div id="nexmoe-header">
+        <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="折影轻梦">
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/blog-img/master/about/202309161102017.jpg" alt="折影轻梦" alt="折影轻梦">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>168</div>
+        <div><span>标签</span>61</div>
+        <div><span>分类</span>62</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/life.html" title="我的生活">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的生活
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/about.html" title="关于博主">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博主
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+        
+            
+            <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        
+            <form id="search_form">
+                <label><input class="st-default-search-input" id="search_value" name="q" type="search" placeholder="搜索" style="
+                    font-size: 15px !important;
+                    height: 56px !important;
+                    background-image: none;
+                "></label>
+            </form>
+         
+    </div>
+</div>
+
+
+	<script async src="/js/search.js?v=1717303056530"></script>
+
+
+
+        
+            
+            <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://github.com/IsUnderAchiever/"
+			target="_blank"
+			mdui-tooltip="{content: 'QQ群'}"
+			style="
+				color: rgb(249, 174, 8);
+				background-color: rgba(249, 174, 8, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-QQ"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://space.bilibili.com/477448861/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		>
+	</div>
+</div>
+
+        
+            
+            
+            
+            
+            
+            
+    </aside>
+    <div class="nexmoe-copyright">
+        &copy; 2024 折影轻梦
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer -->
+    </div>
+    <div id="nexmoe-content">
+        <div class="nexmoe-primary">
+    <div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: NaN%;"> 
+            <img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/wallpaper/1b010eba-d3be-11ed-aa8e-b068e67533b2.jpg" alt="开启WSL" loading="lazy">
+            <h1>开启WSL</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年06月02日</a>
+        
+            <a class="nexmoefont icon-appstore-fill -link" href="/categories/%E5%BC%80%E5%90%AFWSL/">开启WSL</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="开启WSL"><a href="#开启WSL" class="headerlink" title="开启WSL"></a>开启WSL</h1><blockquote>
+<p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60750453/article/details/128636298">文章</a></p>
+</blockquote>
+<h2 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h2><blockquote>
+<p>打开设置，选中应用</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021209094.png" alt="image-20240602120930045" data-caption="image-20240602120930045" loading="lazy"></p>
+<blockquote>
+<p>选择<code>程序和功能</code></p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021210976.png" alt="image-20240602121020903" data-caption="image-20240602121020903" loading="lazy"></p>
+<blockquote>
+<p>选择<code>启用或关闭Windows功能</code></p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021211070.png" alt="image-20240602121149020" data-caption="image-20240602121149020" loading="lazy"></p>
+<blockquote>
+<p>勾选<code>Hyper-v</code>和<code>适用于Linux的Windows子系统</code>，然后重启电脑</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021213639.png" alt="image-20240602121327604" data-caption="image-20240602121327604" loading="lazy"></p>
+<h2 id="安装Linux子系统"><a href="#安装Linux子系统" class="headerlink" title="安装Linux子系统"></a>安装Linux子系统</h2><blockquote>
+<p>注意使用<code>管理员权限</code>运行<code>cmd</code>或者<code>powershell</code></p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 下载或者更新</span><br>wsl --update<br><span class="hljs-comment"># 重新启动</span><br>wsl --shutdown<br></code></pre></td></tr></table></figure>
+
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021218041.png" alt="image-20240602121840962" data-caption="image-20240602121840962" loading="lazy"></p>
+<blockquote>
+<p>前往<code>微软商店</code>下载Linux子系统</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021220128.png" alt="image-20240602122004003" data-caption="image-20240602122004003" loading="lazy"></p>
+<blockquote>
+<p>搜索Linux，安装心仪的系统，这里以ubuntu为例</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021221541.png" alt="image-20240602122124490" data-caption="image-20240602122124490" loading="lazy"></p>
+<blockquote>
+<p>启动系统后，会需要新建用户</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021222300.png" alt="image-20240602122257262" data-caption="image-20240602122257262" loading="lazy"></p>
+<blockquote>
+<p>输入自定义用户名以及密码，即可新建用户</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021224191.png" alt="image-20240602122403159" data-caption="image-20240602122403159" loading="lazy"></p>
+<h2 id="配置docker"><a href="#配置docker" class="headerlink" title="配置docker"></a>配置docker</h2><p>配置docker过程查看<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_60750453/article/details/128636298">博客</a></p>
+<blockquote>
+<p>以下是配置后的结果</p>
+<p>启动了两个容器，一个nginx，一个redis</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021226421.png" alt="image-20240602122619380" data-caption="image-20240602122619380" loading="lazy"></p>
+<blockquote>
+<p>输入<code>http://localhost:80/</code>访问nginx界面</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021229951.png" alt="image-20240602122744455" data-caption="image-20240602122744455" loading="lazy"></p>
+<blockquote>
+<p>客户端连接Redis成功</p>
+</blockquote>
+<p><img onerror="imgOnError(this);" data-fancybox="gallery" src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021228921.png" alt="image-20240602122855884" data-caption="image-20240602122855884" loading="lazy"></p>
+
+    
+  </article>
+
+  
+      
+    <div class="nexmoe-post-copyright">
+        <strong>本文作者：</strong>折影轻梦<br>
+        <strong>本文链接：</strong><a href="https://nexmoe.com/xi-tong-pei-zhi/bian-cheng-pei-zhi/kai-qi-wsl/kai-qi-wsl.html" title="https:&#x2F;&#x2F;nexmoe.com&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;kai-qi-wsl&#x2F;kai-qi-wsl.html" target="_blank" rel="noopener">https:&#x2F;&#x2F;nexmoe.com&#x2F;xi-tong-pei-zhi&#x2F;bian-cheng-pei-zhi&#x2F;kai-qi-wsl&#x2F;kai-qi-wsl.html</a><br>
+        
+            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+        
+    </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%BC%80%E5%90%AFWSL/" rel="tag">开启WSL</a>
+    
+</div>
+  
+  
+
+  
+      <div class="nexmoe-post-footer">
+          <script src="https://giscus.app/client.js"
+    data-repo="nexmoe/nexmoe.com"
+    data-repo-id="R_kgDOJI1XUA"
+    data-category="General"
+    data-category-id="DIC_kwDOJI1XUM4CU1nn"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+
+      </div>
+  
+</div>
+</div>
+        <div class="nexmoe-post-right">
+              <div class="nexmoe-fixed">
+                  <div class="nexmoe-tool"> 
+                    
+                      
+                        
+                          
+                          
+                              <button class="mdui-fab catalog" style="overflow:unset;">
+                                  <i class="nexmoefont icon-i-catalog"></i>
+                                  <div class="nexmoe-toc">
+                                      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%90%AFWSL"><span class="toc-number">1.</span> <span class="toc-text">开启WSL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Linux%E5%AD%90%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">安装Linux子系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEdocker"><span class="toc-number">1.3.</span> <span class="toc-text">配置docker</span></a></li></ol></li></ol>
+                                  </div>
+                              </button>
+                          
+                          
+                      
+                    
+                      <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+                  </div>
+              </div>
+            </div>
+    </div>
+    <div id="nexmoe-search-space">
+	<div class="search-container">
+		<div class="search-header">
+			<div class="search-input-container">
+				<input
+					class="search-input"
+					type="text"
+					placeholder="搜索"
+					oninput="sinput();"
+				/>
+			</div>
+			<a class="search-close" onclick="sclose();">×</a>
+		</div>
+		<div class="search-body"></div>
+	</div>
+</div>
+
+    
+    
+</body>
+
+</html>
