@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Flowable on 深海火锅店</title>
+        <link>https://IsUnderAchiever.github.io/categories/flowable/</link>
+        <description>Recent content in Flowable on 深海火锅店</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>深海火锅店</copyright>
+        <lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://IsUnderAchiever.github.io/categories/flowable/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Flowable</title>
+        <link>https://IsUnderAchiever.github.io/p/git/</link>
+        <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://IsUnderAchiever.github.io/p/git/</guid>
+        <description>&lt;img src="https://IsUnderAchiever.github.io/p/git/202412212118817.png" alt="Featured image of post Flowable" /&gt;&lt;h1 id=&#34;flowable&#34;&gt;Flowable
+&lt;/h1&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;一般数据对应表&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ge_bytearray&lt;/td&gt;
+          &lt;td&gt;通用的流程定义和流程资源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ge_property&lt;/td&gt;
+          &lt;td&gt;系统相关属性&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;流程历史记录表&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_actinst&lt;/td&gt;
+          &lt;td&gt;历史的流程实例&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_attachment&lt;/td&gt;
+          &lt;td&gt;历史的流程附件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_comment&lt;/td&gt;
+          &lt;td&gt;历史的说明性信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_detail&lt;/td&gt;
+          &lt;td&gt;历史的流程运行中的细节信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_entitylink&lt;/td&gt;
+          &lt;td&gt;任务参与者数据表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_identitylink&lt;/td&gt;
+          &lt;td&gt;历史的流程运行过程中用户关系&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_procinst&lt;/td&gt;
+          &lt;td&gt;历史的流程实例&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_taskinst&lt;/td&gt;
+          &lt;td&gt;历史的任务实例&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_tsk_log&lt;/td&gt;
+          &lt;td&gt;每一次执行可能会带上的数据&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_hi_varinst&lt;/td&gt;
+          &lt;td&gt;历史的流程运行中的变量信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;用户用户组表&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_bytearray&lt;/td&gt;
+          &lt;td&gt;二进制数据表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_group&lt;/td&gt;
+          &lt;td&gt;用户组信息表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_info&lt;/td&gt;
+          &lt;td&gt;用户信息详情表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_membership&lt;/td&gt;
+          &lt;td&gt;人与组关系表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_priv&lt;/td&gt;
+          &lt;td&gt;权限表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_priv_mapping&lt;/td&gt;
+          &lt;td&gt;用户或组权限关系表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_property&lt;/td&gt;
+          &lt;td&gt;属性表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_token&lt;/td&gt;
+          &lt;td&gt;系统登录日志表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_id_user&lt;/td&gt;
+          &lt;td&gt;用户表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;流程定义表&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;&lt;/td&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_re_deployment&lt;/td&gt;
+          &lt;td&gt;部署单元信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_re_model&lt;/td&gt;
+          &lt;td&gt;模型信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_re_procdef&lt;/td&gt;
+          &lt;td&gt;已部署的流程定义&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;运行实例表&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_actinst&lt;/td&gt;
+          &lt;td&gt;流程实例每一个活动对应的状态表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_deadletter_job&lt;/td&gt;
+          &lt;td&gt;作业失败表，失败次数&amp;gt;重试次数&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_entitylink&lt;/td&gt;
+          &lt;td&gt;实例的父子关系表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_event_subscr&lt;/td&gt;
+          &lt;td&gt;运行时事件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_execution&lt;/td&gt;
+          &lt;td&gt;运行时流程执行实例&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_external_job&lt;/td&gt;
+          &lt;td&gt;使用作业表来实现异步逻辑、计时器或历史处理&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_history_job&lt;/td&gt;
+          &lt;td&gt;历史作业表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_identitylink&lt;/td&gt;
+          &lt;td&gt;用户或组的数据及其与流程实例相关的角色表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_job&lt;/td&gt;
+          &lt;td&gt;运行时作业表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_suspended_job&lt;/td&gt;
+          &lt;td&gt;运行时挂起的定时作业表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_task&lt;/td&gt;
+          &lt;td&gt;正在运行的实例的每个未完成用户任务的条目&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_timer_job&lt;/td&gt;
+          &lt;td&gt;运行时定时器表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_ru_variable&lt;/td&gt;
+          &lt;td&gt;实例相关的变量&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;其他表&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/td&gt;
+          &lt;td&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_evt_log&lt;/td&gt;
+          &lt;td&gt;事件日志表&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;act_procdef_info&lt;/td&gt;
+          &lt;td&gt;流程定义信息&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202312040756384_repeat_1701647799480__678008.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20231204075630119&#34;
+	
+	
+&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202312040757810_repeat_1701647863829__348359.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20231204075743701&#34;
+	
+	
+&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202312040801820_repeat_1701648087833__670878.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20231204080127639&#34;
+	
+	
+&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202312040801844_repeat_1701648104859__083755.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20231204080144734&#34;
+	
+	
+&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

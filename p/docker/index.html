@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker配置">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker">
 <title>Docker</title>
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/docker/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Docker">
-<meta property='og:description' content="Docker配置">
+<meta property='og:description' content="Docker">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/docker/'>
 <meta property='og:site_name' content='深海火锅店'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-12-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-12-14T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/docker/dbc-docker-desktop-home.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-04-21T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/docker/dbc-docker-desktop-home.webp' />
 <meta name="twitter:title" content="Docker">
-<meta name="twitter:description" content="Docker配置"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Docker"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://IsUnderAchiever.github.io/p/docker/dbc-docker-desktop-home.webp' />
     </head>
     <body class="
@@ -283,46 +283,71 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#docker环境配置">Docker环境配置</a></li>
-    <li><a href="#使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch">使用vagrant创建虚拟机——<a href="https://app.vagrantup.com/boxes/search">官方镜像仓库</a></a></li>
-    <li><a href="#安装docker">安装docker</a>
+    <li><a href="#容器">容器</a>
       <ol>
-        <li><a href="#docker的镜像市场httpshubdockercom"><a href="https://hub.docker.com/">docker的镜像市场</a></a></li>
+        <li><a href="#容器继续运行的条件">容器继续运行的条件</a></li>
+        <li><a href="#容器的运行方式">容器的运行方式</a></li>
+        <li><a href="#删除容器">删除容器</a></li>
+        <li><a href="#进入容器执行命令">进入容器执行命令</a></li>
+        <li><a href="#查看容器日志">查看容器日志</a></li>
+        <li><a href="#容器文件拷贝">容器文件拷贝</a></li>
+        <li><a href="#停止容器">停止容器</a></li>
+        <li><a href="#运行容器">运行容器</a></li>
+        <li><a href="#run命令详解">run命令详解</a></li>
       </ol>
     </li>
-    <li><a href="#镜像加速">镜像加速</a></li>
-    <li><a href="#切换root用户">切换root用户</a></li>
-    <li><a href="#连接xshell">连接XShell</a></li>
-    <li><a href="#安装mysql">安装MySQL</a></li>
-    <li><a href="#redis配置">Redis配置</a>
+    <li><a href="#数据卷">数据卷</a>
       <ol>
-        <li>
+        <li><a href="#-v">-v</a></li>
+        <li><a href="#-e">-e</a></li>
+        <li><a href="#--name">&ndash;name</a></li>
+        <li><a href="#--restart">&ndash;restart</a></li>
+        <li><a href="#其他镜像和容器命令">其他镜像和容器命令</a></li>
+        <li><a href="#运行jar包">运行jar包</a></li>
+        <li><a href="#网络">网络</a></li>
+      </ol>
+    </li>
+    <li><a href="#dockerfile">DockerFile</a>
+      <ol>
+        <li><a href="#基本语法">基本语法</a></li>
+        <li><a href="#from">FROM</a></li>
+        <li><a href="#cmd">CMD</a></li>
+        <li><a href="#env">ENV</a></li>
+        <li><a href="#workdir">WORKDIR</a></li>
+        <li><a href="#run">RUN</a></li>
+        <li><a href="#add">ADD</a></li>
+        <li><a href="#expose">EXPOSE</a></li>
+        <li><a href="#copy">COPY</a></li>
+        <li><a href="#entrypoint">ENTRYPOINT</a></li>
+      </ol>
+    </li>
+    <li><a href="#优化部署流程">优化部署流程</a>
+      <ol>
+        <li><a href="#基础版">基础版</a>
           <ol>
-            <li></li>
+            <li><a href="#配置nginx反向代理">配置nginx反向代理</a></li>
+            <li><a href="#运行后端">运行后端</a></li>
+            <li><a href="#mysql">MySQL</a></li>
           </ol>
         </li>
-        <li><a href="#安装redis可视化工具">安装redis可视化工具</a></li>
+        <li><a href="#优化">优化</a></li>
       </ol>
     </li>
-    <li><a href="#docker安装elasticsearch">docker安装ElasticSearch</a>
+    <li><a href="#镜像推送到镜像仓库">镜像推送到镜像仓库</a>
       <ol>
-        <li><a href="#1黑马程序员视频内安装方法">1.黑马程序员视频内安装方法：</a></li>
-        <li><a href="#2网上的安装方法">2.网上的安装方法：</a></li>
-        <li><a href="#安装kibana">安装Kibana</a></li>
+        <li><a href="#注册docker-hub账号">注册<code>Docker Hub</code>账号</a></li>
+        <li><a href="#登录镜像仓库">登录镜像仓库</a></li>
+        <li><a href="#构建镜像">构建镜像</a></li>
+        <li><a href="#给镜像打上标签">给镜像打上标签</a></li>
+        <li><a href="#推送镜像">推送镜像</a></li>
       </ol>
     </li>
-    <li><a href="#安装ik分词器">安装ik分词器</a>
+    <li><a href="#dockercompose">DockerCompose</a>
       <ol>
-        <li><a href="#31在线安装ik插件较慢">3.1.在线安装ik插件（较慢）</a></li>
-        <li><a href="#32离线安装ik插件推荐">3.2.离线安装ik插件（推荐）</a></li>
-        <li><a href="#1查看数据卷目录">1）查看数据卷目录</a></li>
-        <li><a href="#2解压缩分词器安装包">2）解压缩分词器安装包</a></li>
-        <li><a href="#3上传到es容器的插件数据卷中">3）上传到es容器的插件数据卷中</a></li>
-        <li><a href="#4重启容器">4）重启容器</a></li>
-        <li><a href="#5测试">5）测试：</a></li>
+        <li><a href="#入门">入门</a></li>
+        <li><a href="#元素">元素</a></li>
       </ol>
     </li>
-    <li><a href="#33-扩展词词典">3.3 扩展词词典</a></li>
   </ol>
 </nav>
         </div>
@@ -353,8 +378,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" style="background-color: #2a9d8f; color: #fff;">
-                系统配置
+            <a href="/categories/docker/" >
+                Docker
             </a>
         
     </header>
@@ -367,7 +392,7 @@
     
         
         <h3 class="article-subtitle">
-            Docker配置
+            Docker
         </h3>
         
     </div>
@@ -388,7 +413,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2022-12-14</time>
+                <time class="article-time--published">2024-04-21</time>
             </div>
         
 
@@ -403,7 +428,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 10 分钟
+                    阅读时长: 16 分钟
                 </time>
             </div>
         
@@ -418,320 +443,141 @@
     <section class="article-content">
     
     
-    <h2 id="docker环境配置">Docker环境配置
-</h2><ol>
-<li>安装VirtualBox</li>
-<li>安装<a class="link" href="https://developer.hashicorp.com/vagrant/downloads"  target="_blank" rel="noopener"
-    >vagrant</a></li>
-<li>安装完成vagrant后重启一下系统</li>
-<li>验证vagrant是否安装成功
-<ul>
-<li>cmd输入vagrant，是否有命令提示</li>
-</ul>
-</li>
+    <h1 id="docker概念">Docker概念
+</h1><p><code>镜像</code>:相当于容器的模板
+<code>容器</code>:可以理解成轻量级的虚拟机
+<code>镜像仓库</code>:存放镜像的仓库，官方的镜像仓库 <a class="link" href="https://hub.docker.com/"  target="_blank" rel="noopener"
+    >https://hub.docker.com/</a>
+以下内容可能会使用到<code>某些文件</code><a class="link" href="https://wwl.lanzouj.com/iKTW01shae1c"  target="_blank" rel="noopener"
+    >下载链接</a></p>
+<blockquote>
+<p>可以使用镜像来不断创建容器，而镜像仓库则是存放镜像的地方</p>
+</blockquote>
+<h1 id="命令">命令
+</h1><blockquote>
+<p><a class="link" href="https://docs.docker.com/reference/cli/docker/image/ls/"  target="_blank" rel="noopener"
+    >官网文档</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 查看帮助文档</span>
+</span></span><span class="line"><span class="cl">docker --help
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看某一个命令的用法，如 pull</span>
+</span></span><span class="line"><span class="cl">docker pull --help
+</span></span><span class="line"><span class="cl"><span class="c1"># 下列命令中，[]括起来的可写可不写</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载镜像 标签如版本等，如果不指定标签，则默认是latest，如果不指定仓库，则默认是官方仓库</span>
+</span></span><span class="line"><span class="cl">docker pull <span class="o">[</span>镜像仓库/<span class="o">]</span>镜像名<span class="o">[</span>:标签<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看镜像</span>
+</span></span><span class="line"><span class="cl">docker images <span class="o">[</span>选项<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 衍生</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用帮助手册查看参数 docker images --help</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看镜像id</span>
+</span></span><span class="line"><span class="cl">docker images -q
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有镜像</span>
+</span></span><span class="line"><span class="cl">docker images -a
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有镜像id</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker images -aq/docker images -a -q</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出镜像名为mysql的镜像</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 例子 docker images --filter=reference=&#39;busy*:*libc&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># busybox             uclibc              e02e811dd08f        5 weeks ago         1.09 MB</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># busybox             glibc               21c16b6787c6        5 weeks ago         4.19 MB</span>
+</span></span><span class="line"><span class="cl">docker images --filter<span class="o">=</span><span class="nv">reference</span><span class="o">=</span><span class="s1">&#39;mysql&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出容器信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认显示正在运行的信息</span>
+</span></span><span class="line"><span class="cl">docker ps <span class="o">[</span>选项<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示全部容器</span>
+</span></span><span class="line"><span class="cl">docke ps -a
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出所有退出状态的容器</span>
+</span></span><span class="line"><span class="cl">    docker ps -f <span class="nv">status</span><span class="o">=</span>exited
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出所有退出状态的容器id</span>
+</span></span><span class="line"><span class="cl">docker ps -qf <span class="nv">status</span><span class="o">=</span>exited
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="容器">容器
+</h2><h3 id="容器继续运行的条件">容器继续运行的条件
+</h3><blockquote>
+<p><code>正常情况下</code>docker容器运行必须有一个前台进程，如果没有前台进程执行，容器认为空闲，就会自动退出</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 创建并运行容器</span>
+</span></span><span class="line"><span class="cl">docker run <span class="o">[</span>OPTIONS<span class="o">]</span> IMAGES <span class="o">[</span>COMMAND<span class="o">]</span> <span class="o">[</span>ARG...<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># options 选项，重点关注-d,-p,-v,-e,--restart</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># images 镜像信息，推介使用 镜像名:tag 的写法</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># command 创建容器后要执行的命令</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ars command命令的参数</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如</span>
+</span></span><span class="line"><span class="cl">docker run nginx:latest
+</span></span><span class="line"><span class="cl"><span class="c1"># 容器运行后执行 ls命令</span>
+</span></span><span class="line"><span class="cl">docker run nginx:latest ls
+</span></span><span class="line"><span class="cl">docker run nginx:latest ls -a
+</span></span><span class="line"><span class="cl">docker run -d nginx:latest ls -a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="容器的运行方式">容器的运行方式
+</h3><ol>
+<li>后台运行 <code>docker run nginx:latest</code></li>
+<li>默认运行 <code>docker run -d nginx:latest</code></li>
+<li>交互式运行 <code>docker run -it nginx:latest</code></li>
 </ol>
-<h2 id="使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch">使用vagrant创建虚拟机——<a class="link" href="https://app.vagrantup.com/boxes/search"  target="_blank" rel="noopener"
-    >官方镜像仓库</a>
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958195.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="001.初始化centos"
-	
-	
-></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant init centos/7
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时在E盘已经生成了一个名为“Vagrantfile”的文件
-启动虚拟环境
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958546.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="002.启动虚拟环境"
-	
-	
-></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant up
-</span></span><span class="line"><span class="cl"><span class="c1"># 如果速度很慢，使用提前下载好的CentOS7镜像，速度嘎嘎快</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># vagrant init centos/7 # 没初始化的，要初始化</span>
-</span></span><span class="line"><span class="cl">vagrant box add centos/7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
-</span></span><span class="line"><span class="cl">vagrant up
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>ctrl+c停掉</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vagrant ssh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>提示[vagrant@localhost ~]$  连接成功，此时已经可以在VirtualBox内查看到该虚拟机
-若提示 <a class="link" href="mailto:vagrant@127.0.0.1" >vagrant@127.0.0.1</a>: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
-则输入命令set VAGRANT_PREFER_SYSTEM_BIN=0 后再重新连接即可
-退出vagrant的方法：输入命令exit
-以文本的方式打开Vagrantfile，找到这一行配置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="003更改网络配置"
-	
-	
-></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>所以我们需要将虚拟机改为192.168.56.XX
-即更改为</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># config.vm.network &#34;private_network&#34;, ip: &#34;192.168.56.10&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">vagrant</span> <span class="n">reload</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>重启虚拟机</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant ssh
-</span></span><span class="line"><span class="cl">ip addr <span class="c1"># 查看虚拟机ip地址是否已经发生了改变</span>
-</span></span><span class="line"><span class="cl">ping 192.168.xxx <span class="c1"># 主机与虚拟机是否互相ping通</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="安装docker">安装docker
-</h2><p>概念：什么是docker？
-虚拟化容器技术。Docker基于镜像，可以秒级启动各种容器。每一种容器都是一个完整的运行环境，容器之间互相隔离。</p>
-<h3 id="docker的镜像市场httpshubdockercom"><a class="link" href="https://hub.docker.com/"  target="_blank" rel="noopener"
-    >docker的镜像市场</a>
-</h3><p><a class="link" href="https://docs.docker.com/engine/install/centos/"  target="_blank" rel="noopener"
-    >安装docker</a></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant ssh <span class="c1"># 连接虚拟机</span>
-</span></span><span class="line"><span class="cl">sudo yum remove docker <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-client <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-client-latest <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-common <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-latest <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-latest-logrotate <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-logrotate <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-engine
-</span></span><span class="line"><span class="cl"><span class="c1"># 卸载旧版本的docker</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo yum install -y yum-utils
-</span></span><span class="line"><span class="cl">sudo yum-config-manager <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-repo <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    https://download.docker.com/linux/centos/docker-ce.repo
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-</span></span><span class="line"><span class="cl"><span class="c1"># 过程需要输入y选择确认</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 启动docker</span>
-</span></span><span class="line"><span class="cl">sudo systemctl start docker
-</span></span><span class="line"><span class="cl"><span class="c1"># 查看docker版本</span>
-</span></span><span class="line"><span class="cl">docker -v
-</span></span><span class="line"><span class="cl"><span class="c1"># 查看docker安装了哪些镜像</span>
-</span></span><span class="line"><span class="cl">sudo docker images
-</span></span><span class="line"><span class="cl"><span class="c1"># 设置docker开机自启动</span>
-</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="镜像加速">镜像加速
-</h2><p>登录阿里云后，进入 控制台，左侧菜单找到 “产品与服务”，选择“容器镜像服务”，选择“镜像工具”，点击“镜像加速器”</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 执行以下四个命令</span>
-</span></span><span class="line"><span class="cl">sudo mkdir -p /etc/docker
-</span></span><span class="line"><span class="cl"><span class="c1">#----------------------------------</span>
-</span></span><span class="line"><span class="cl">sudo tee /etc/docker/daemon.json <span class="s">&lt;&lt;-&#39;EOF&#39;
-</span></span></span><span class="line"><span class="cl"><span class="s">{
-</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;registry-mirrors&#34;: [&#34;https://g9nk2v6o.mirror.aliyuncs.com&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="s">}
-</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#----------------------------------</span>
-</span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
-</span></span><span class="line"><span class="cl"><span class="c1">#----------------------------------</span>
-</span></span><span class="line"><span class="cl">sudo systemctl restart docker
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>/etc/docker/daemon.json</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;registry-mirrors&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://docker.m.daocloud.io&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://dockerproxy.com&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://docker.mirrors.ustc.edu.cn&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://docker.nju.edu.cn&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">],</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;exec-opts&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;native.cgroupdriver=systemd&#34;</span><span class="p">],</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log-driver&#34;</span><span class="p">:</span> <span class="s2">&#34;json-file&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log-opts&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max-size&#34;</span><span class="p">:</span> <span class="s2">&#34;100m&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;storage-driver&#34;</span><span class="p">:</span> <span class="s2">&#34;overlay2&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="切换root用户">切换root用户
-</h2><p>每次sudo很麻烦？直接切换root用户</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su root
-</span></span><span class="line"><span class="cl"><span class="c1"># 默认密码是vagrant</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="连接xshell">连接XShell
-</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant ssh
-</span></span><span class="line"><span class="cl"><span class="c1"># 切换为root用户</span>
-</span></span><span class="line"><span class="cl">sudo -i
-</span></span><span class="line"><span class="cl"><span class="c1"># 修改root用户密码</span>
-</span></span><span class="line"><span class="cl">passwd
-</span></span><span class="line"><span class="cl">sudo vi /etc/ssh/sshd_config
-</span></span><span class="line"><span class="cl"><span class="c1"># 找到PasswordAuthentication yes这一行，去掉前面的#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># # To disable tunneled clear text passwords, change to no here!</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># PasswordAuthentication yes</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># #PermitEmptyPasswords no</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># PasswordAuthentication no</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 保存后退出</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启sshd服务</span>
-</span></span><span class="line"><span class="cl">systemctl restart sshd
-</span></span><span class="line"><span class="cl"><span class="c1"># 使用ssh工具进行连接</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>详情请查看这篇<a class="link" href="https://blog.csdn.net/qq_43651260/article/details/128055181"  target="_blank" rel="noopener"
-    >博客</a></p>
-<h2 id="安装mysql">安装MySQL
-</h2><p>连接上虚拟机之后
-在docker镜像仓库搜索mysql，进入tags可查看版本信息</p>
-<div class="highlight"><div class="chroma">
+<blockquote>
+<p>-i 以交互模式运行容器，通常与-t一起使用</p>
+<p>-t 启动容器后，为容器分配一个命令行，通常与-i一起使用</p>
+<p>主要在学习阶段和调试的时候会使用到，并且一般容器的执行命令会使用bash,这样才能在进入容器后去执行命令</p>
+<p><code>docker run -it nginx:latest bash</code>如果这样执行，则会覆盖nginx镜像默认的执行命令，此时并不会运行nginx，而是进入容器内部执行bash脚本</p>
+<p>退出交互式<code>exit</code></p>
+</blockquote>
+<h3 id="删除容器">删除容器
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -753,224 +599,32 @@
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#------- 安装mysql5.7-----------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># docker pull mysql # 会下载最新的mysql</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 下载指定版本的mysql，比如5.7</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># docker pull mysql:5.7</span>
-</span></span><span class="line"><span class="cl">sudo docker pull mysql:5.7
-</span></span><span class="line"><span class="cl">sudo docker run -p 3306:3306 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/mysql/log:/var/log/mysql <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/mysql/data:/var/lib/mysql <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/mysql/conf:/etc/mysql <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d mysql:8.0.20 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name mysql
-</span></span><span class="line"><span class="cl"><span class="c1"># 查看mysql是否运行</span>
-</span></span><span class="line"><span class="cl">docker ps
-</span></span><span class="line"><span class="cl"><span class="c1"># 没有查看到容器</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#  查看,发现容器是退出状态</span>
-</span></span><span class="line"><span class="cl">docker ps -a
-</span></span><span class="line"><span class="cl"><span class="c1"># Exited</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 运行以下命令</span>
-</span></span><span class="line"><span class="cl">docker run -d -p 3306:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>root mysql
-</span></span><span class="line"><span class="cl"><span class="c1"># 若依然存在问题,可以停用并删除容器,重新启动mysql</span>
-</span></span><span class="line"><span class="cl">docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker rm <span class="o">[</span>选项<span class="o">]</span> <span class="o">[</span>容器ID或容器名...<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 例如 删除id为&#34;d34295b85f69&#34;的容器</span>
+</span></span><span class="line"><span class="cl">docker rm d34295b85f69
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除id为&#34;d34295b85f69&#34;和&#34;c0c9bf25c6a7&#34;的容器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 容器id使用空格隔开</span>
+</span></span><span class="line"><span class="cl">docker rm d34295b85f69 c0c9bf25c6a7
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行中的容器无法直接删除，解决办法</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.停止运行容器，然后删除</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.强制删除</span>
+</span></span><span class="line"><span class="cl">docker rm -f c0c9bf25c6a7
+</span></span><span class="line"><span class="cl"><span class="c1"># $()命令替换</span>
+</span></span><span class="line"><span class="cl">ls <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pwd 会显示当前目录</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ls $(pwd) 会打印当前目录下的内容</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除所有容器</span>
 </span></span><span class="line"><span class="cl">docker rm <span class="k">$(</span>docker ps -aq<span class="k">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 删除镜像</span>
-</span></span><span class="line"><span class="cl">docker rmi 镜像id
-</span></span><span class="line"><span class="cl"><span class="c1"># docker 删除报错:</span>
-</span></span><span class="line"><span class="cl">Error response from daemon: conflict: unable to delete 8e6aee9da407 <span class="o">(</span>must be forced<span class="o">)</span> - image is referenced in multiple repositories
-</span></span><span class="line"><span class="cl"><span class="c1"># 解决办法</span>
-</span></span><span class="line"><span class="cl">docker rmi -f 镜像id
-</span></span><span class="line"><span class="cl"><span class="c1"># docker 服务命令</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 启动：</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># systemctl start docker</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 守护进程重启：</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># systemctl daemon-reload</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启docker服务：</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># systemctl restart docker / service docker restart</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 关闭：</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># docker service docker stop / docker systemctl stop docker</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 问题解决之后------</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 进入配置文件挂载的目录下</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /mydata/mysql/conf
-</span></span><span class="line"><span class="cl"><span class="c1"># 编辑配置文件my.cnf</span>
-</span></span><span class="line"><span class="cl">vi my.cnf
-</span></span><span class="line"><span class="cl"><span class="o">[</span>client<span class="o">]</span>
-</span></span><span class="line"><span class="cl">default-character-set<span class="o">=</span>utf8
-</span></span><span class="line"><span class="cl"><span class="o">[</span>mysql<span class="o">]</span>
-</span></span><span class="line"><span class="cl">default-character-set<span class="o">=</span>utf8
-</span></span><span class="line"><span class="cl"><span class="o">[</span>mysqld<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">init_connect</span><span class="o">=</span><span class="s1">&#39;SET collation_connection = utf8_unicode_ci&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">init_connect</span><span class="o">=</span><span class="s1">&#39;SET NAMES utf8&#39;</span>
-</span></span><span class="line"><span class="cl">character-set-server<span class="o">=</span>utf8
-</span></span><span class="line"><span class="cl">collation-server<span class="o">=</span>utf8_unicode_ci
-</span></span><span class="line"><span class="cl">skip-character-set-client-handshake
-</span></span><span class="line"><span class="cl">skip-name-resolve
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启mysql容器</span>
-</span></span><span class="line"><span class="cl">docker restart mysql
-</span></span><span class="line"><span class="cl"><span class="c1"># 设置启动docker时，mysql自启动</span>
-</span></span><span class="line"><span class="cl">docker update mysql --restart<span class="o">=</span>always
-</span></span><span class="line"><span class="cl"><span class="c1">#------- 安装mysql8.0.20-----------------</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#拉取镜像</span>
-</span></span><span class="line"><span class="cl">docker pull mysql:8.0.20
-</span></span><span class="line"><span class="cl"><span class="c1">#启动镜像,用于拷贝配置文件到宿主机</span>
-</span></span><span class="line"><span class="cl">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> -d mysql:8.0.20
-</span></span><span class="line"><span class="cl"><span class="c1">#查看是否启动成功</span>
-</span></span><span class="line"><span class="cl">docker ps -a
-</span></span><span class="line"><span class="cl"><span class="c1">#新建挂载目录并拷贝配置文件</span>
-</span></span><span class="line"><span class="cl">mkdir -p /mysqldata/
-</span></span><span class="line"><span class="cl">docker cp  mysql:/etc/mysql /mysqldata/
-</span></span><span class="line"><span class="cl"><span class="c1">#检查是否运行成功</span>
-</span></span><span class="line"><span class="cl">docker ps -a
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启mysql容器</span>
-</span></span><span class="line"><span class="cl">docker restart mysql
-</span></span><span class="line"><span class="cl"><span class="c1"># 设置启动docker时，mysql自启动</span>
-</span></span><span class="line"><span class="cl">docker update mysql --restart<span class="o">=</span>always
-</span></span><span class="line"><span class="cl"><span class="c1"># 使用Navicat链接mysql</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ql自启动</span>
-</span></span><span class="line"><span class="cl">docker update mysql --restart<span class="o">=</span>always
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制删除所有容器</span>
+</span></span><span class="line"><span class="cl">docker rm -f <span class="k">$(</span>docker ps -aq<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除所有非运行状态的容器</span>
+</span></span><span class="line"><span class="cl">docker rm <span class="k">$(</span>docker ps -f <span class="nv">status</span><span class="o">=</span>exited -q<span class="k">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="redis配置">Redis配置
-</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载最新redis镜像</span>
-</span></span><span class="line"><span class="cl">docker pull redis
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958499.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="1"
-	
-	
-></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /mydata/redis/conf
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /mydata/redis/conf
-</span></span><span class="line"><span class="cl">touch redis.conf
-</span></span><span class="line"><span class="cl">docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d redis redis-server /etc/redis/redis.conf
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958293.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="2"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958909.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="3"
-	
-	
-></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 测试一下redis</span>
-</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis redis-cli
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958121.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="4"
-	
-	
-></p>
-<div class="highlight"><div class="chroma">
+</div><h3 id="进入容器执行命令">进入容器执行命令
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -981,37 +635,127 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># redis默认配置是没有持久化的</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 如果重启redis，再获取之前的数据就获取不到了</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 具体命令可查看下图</span>
-</span></span><span class="line"><span class="cl">vi redis.conf
-</span></span><span class="line"><span class="cl"><span class="c1"># 【输入 i 进入插入模式】</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 开启AOF持久化</span>
-</span></span><span class="line"><span class="cl">appendonly yes
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> <span class="o">[</span>选项<span class="o">]</span> 容器ID或容器名 命令<span class="o">[</span>参数...<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如 docker exec 容器id ls</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> 295731ae1fdf <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 但是一次只能携带一个命令，是否可以使用交互式的方式</span>
+</span></span><span class="line"><span class="cl">docke <span class="nb">exec</span> -it 295731ae1fdf bash
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用curl的方式来查看nginx容器是否运行</span>
+</span></span><span class="line"><span class="cl">curl http://127.0.0.1
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958706.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="5"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958530.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="6"
-	
-	
-></p>
-<h5 id="修改redis的密码">修改redis的密码
-</h5><div class="highlight"><div class="chroma">
+</div><h3 id="查看容器日志">查看容器日志
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker logs <span class="o">[</span>选项<span class="o">]</span> 容器ID或容器名
+</span></span><span class="line"><span class="cl">docker logs 295731ae1fdf
+</span></span><span class="line"><span class="cl"><span class="c1"># 持续输出容器中的日志</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 执行完并不会返回，而是会等待是否有新的日志</span>
+</span></span><span class="line"><span class="cl">docker logs -f 295731ae1fdf
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看最近的20条日志</span>
+</span></span><span class="line"><span class="cl">docker logs -n <span class="m">20</span> 295731ae1fdf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="容器文件拷贝">容器文件拷贝
+</h3><blockquote>
+<p>使用<code>docker cp</code>命令来实现容器与宿主机之间<code>文件和目录</code>的相互拷贝</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 把容器的文件拷贝到宿主机中</span>
+</span></span><span class="line"><span class="cl">docker cp <span class="o">[</span>OPTIONS<span class="o">]</span> CONTAINER:SRC_PATH DEST_PATH
+</span></span><span class="line"><span class="cl"><span class="c1"># docker cp 295731ae1fdf:/usr/share/nginx/html/index.html /home/index.html</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 把宿主机的文件拷贝到容器中</span>
+</span></span><span class="line"><span class="cl">docker cp <span class="o">[</span>OPTIONS<span class="o">]</span> SRC_PATH CONTAINER:DEST_PATH
+</span></span><span class="line"><span class="cl"><span class="c1"># docker cp /home/cp_test 295731ae1fdf:/home/cp_test</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="停止容器">停止容器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker stop <span class="o">[</span>容器ID或容器名...<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker stop 295731ae1fdf</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="运行容器">运行容器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker start <span class="o">[</span>容器ID或容器名...<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker start 295731ae1fdf</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="run命令详解">run命令详解
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">-p
+</span></span><span class="line"><span class="cl"><span class="c1"># 将宿主机的端口映射到docker容器端口，通过宿主机的端口访问容器端口</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 发布一个端口</span>
+</span></span><span class="line"><span class="cl">docker run -p 宿主机端口:容器端口 镜像名
+</span></span><span class="line"><span class="cl"><span class="c1">#发布多个端口</span>
+</span></span><span class="line"><span class="cl">docker run -p 宿主机端口1:容器端口1 -p 宿主机端口2:容器端口2 镜像名
+</span></span><span class="line"><span class="cl"><span class="c1"># 怎么知道容器需要发布哪些端口呢？</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.DockerHub的介绍</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.构建容器的DockerFile(EXPOSE 80)</span>
+</span></span><span class="line"><span class="cl">-v
+</span></span><span class="line"><span class="cl"><span class="c1"># 数据卷</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="数据卷">数据卷
+</h2><p>为什么要使用数据卷？</p>
+<ol>
+<li>需要把容器中的数据持久化保存</li>
+<li>需要在宿主机和容器之间完成数据共享</li>
+</ol>
+<blockquote>
+<p>将宿主机目录或文件挂载到容器中，实现宿主机和容器之间的数据共享和持久化</p>
+</blockquote>
+<h3 id="-v">-v
+</h3><ol>
+<li>-p 对外端口发布，即端口映射</li>
+<li>-v 数据卷</li>
+<li>-e 设置环境变量</li>
+<li>&ndash;name 容器命名</li>
+<li>&ndash;restart 容器退出后的重启策略</li>
+</ol>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1031,205 +775,55 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 创建容器时设置密码</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># docker run -itd --name redis-6379 -p 6379:6379 redis --requirepass 123456</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 为现有的redis创建密码或修改密码</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#1.进入redis的容器</span>
-</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it 容器ID bash
-</span></span><span class="line"><span class="cl"><span class="c1">#2.进入redis目录</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/bin
-</span></span><span class="line"><span class="cl"><span class="c1">#3.运行命令：</span>
-</span></span><span class="line"><span class="cl">redis-cli
-</span></span><span class="line"><span class="cl"><span class="c1">#4.查看现有的redis密码：</span>
-</span></span><span class="line"><span class="cl">config get requirepass
-</span></span><span class="line"><span class="cl"><span class="c1"># 这一步若报错(error) NOAUTH Authentication required.</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 是因为redis本身设置有密码，此时需要执行以下命令</span>
-</span></span><span class="line"><span class="cl">auth password<span class="p">;</span> <span class="c1"># password是之前设置的redis密码</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#5.设置redis密码</span>
-</span></span><span class="line"><span class="cl">config <span class="nb">set</span> requirepass 密码
-</span></span><span class="line"><span class="cl"><span class="c1"># 清空redis密码</span>
-</span></span><span class="line"><span class="cl">config <span class="nb">set</span> requirepass <span class="s2">&#34;&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="安装redis可视化工具">安装redis可视化工具
-</h3><p>链接：https://pan.baidu.com/s/10z0S6b9mo76CWK9y3spPRg?pwd=51tz
-提取码：51tz
-&ndash;来自百度网盘超级会员V3的分享
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958101.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="7"
-	
-	
->
-点击New Connection右边的按钮，可进入设置页面，设置语言
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959057.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="8"
-	
-	
-></p>
-<h2 id="docker安装elasticsearch">docker安装ElasticSearch
-</h2><h3 id="1黑马程序员视频内安装方法">1.黑马程序员视频内安装方法：
-</h3><p>链接：https://pan.baidu.com/s/1pGnbmkMjD8RXe5Y4xotfOA?pwd=ihe5
-提取码：ihe5
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202002537.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210510165308064"
-	
-	
->
-将其上传到虚拟机中，然后运行命令加载即可：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 导入数据</span>
-</span></span><span class="line"><span class="cl">docker load -i es.tar
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>同理还有<code>kibana</code>的tar包也需要这样做。
-运行docker命令，部署单点es：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--name es <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="s2">&#34;ES_JAVA_OPTS=-Xms512m -Xmx512m&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="s2">&#34;discovery.type=single-node&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v es-data:/usr/share/elasticsearch/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v es-plugins:/usr/share/elasticsearch/plugins <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --privileged <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --network es-net <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9200:9200 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9300:9300 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    elasticsearch:7.12.1
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -v 数据卷别名:容器目录<span class="o">[</span>:读写权限<span class="o">]</span> 镜像名
+</span></span><span class="line"><span class="cl">docker run -d -p 80:80 -v nginx_html:/usr/share/nginx/html nginx
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看数据卷信息</span>
+</span></span><span class="line"><span class="cl">docker inspect fcbc47e85323
+</span></span><span class="line"><span class="cl"><span class="c1"># 其中有一段信息如下</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;Mounts&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">            <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Type&#34;</span>: <span class="s2">&#34;volume&#34;</span>,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Name&#34;</span>: <span class="s2">&#34;nginx_html&#34;</span>,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Source&#34;</span>: <span class="s2">&#34;/var/lib/docker/volumes/nginx_html/_data&#34;</span>,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Destination&#34;</span>: <span class="s2">&#34;/usr/share/nginx/html&#34;</span>,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Driver&#34;</span>: <span class="s2">&#34;local&#34;</span>,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Mode&#34;</span>: <span class="s2">&#34;z&#34;</span>,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;RW&#34;</span>: true,
+</span></span><span class="line"><span class="cl">                <span class="s2">&#34;Propagation&#34;</span>: <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Type为volume，表示数据卷，Source即为我们数据卷的路径</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 可以cd到/var/lib/docker/volumes/nginx_html/_data里ls看一下，对应的是nginx中/usr/share/nginx/html的内容</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出数据卷</span>
+</span></span><span class="line"><span class="cl">docker volume ls
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看数据卷详情</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里nginx_html是别名</span>
+</span></span><span class="line"><span class="cl">docker volume inspect nginx_html
+</span></span><span class="line"><span class="cl">docker volume inspect 06f4db3290e6759861b085989a859257121aac46ad30e35fe26a1904f8ff7aea
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建数据卷</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># volume_test为数据卷的名字</span>
+</span></span><span class="line"><span class="cl">docker volume create volume_test
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除数据卷</span>
+</span></span><span class="line"><span class="cl">docker volume rm volume_test
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果需要删除的数据卷正在被使用，是没有办法直接删除的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制删除容器然后删除数据卷</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--name elasticsearch <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /home/tong/software/docker/elasticsearch/data:/usr/share/elasticsearch/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /home/tong/software/docker/elasticsearch/plugins:/usr/share/elasticsearch/plugins <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /home/tong/software/docker/elasticsearch/config:/usr/share/elasticsearch/config <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9200:9200 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9300:9300 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    elasticsearch:8.7.0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--name elasticsearch <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9200:9200 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9300:9300 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    elasticsearch:8.7.0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>命令解释：</p>
-<ul>
-<li><code>-e &quot;cluster.name=es-docker-cluster&quot;</code>：设置集群名称</li>
-<li><code>-e &quot;http.host=0.0.0.0&quot;</code>：监听的地址，可以外网访问</li>
-<li><code>-e &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</code>：内存大小</li>
-<li><code>-e &quot;discovery.type=single-node&quot;</code>：非集群模式</li>
-<li><code>-v es-data:/usr/share/elasticsearch/data</code>：挂载逻辑卷，绑定es的数据目录</li>
-<li><code>-v es-logs:/usr/share/elasticsearch/logs</code>：挂载逻辑卷，绑定es的日志目录</li>
-<li><code>-v es-plugins:/usr/share/elasticsearch/plugins</code>：挂载逻辑卷，绑定es的插件目录</li>
-<li><code>--privileged</code>：授予逻辑卷访问权</li>
-<li><code>--network es-net</code> ：加入一个名为es-net的网络中</li>
-<li><code>-p 9200:9200</code>：端口映射配置
-运行docker命令，部署kibana</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name kibana <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">ELASTICSEARCH_HOSTS</span><span class="o">=</span>http://es:9200 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>--network<span class="o">=</span>es-net <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 5601:5601  <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>kibana:7.12.1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li><code>--network es-net</code> ：加入一个名为es-net的网络中，与elasticsearch在同一个网络中</li>
-<li><code>-e ELASTICSEARCH_HOSTS=http://es:9200&quot;</code>：设置elasticsearch的地址，因为kibana已经与elasticsearch在一个网络，因此可以用容器名直接访问elasticsearch</li>
-<li><code>-p 5601:5601</code>：端口映射配置
-kibana启动一般比较慢，需要多等待一会，可以通过命令：</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker logs -f kibana
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>查看运行日志，当查看到下面的日志，说明成功：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202010279.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210109105135812"
-	
-	
-></p>
-<h3 id="2网上的安装方法">2.网上的安装方法：
-</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1245,79 +839,114 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：</li>
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载镜像文件</span>
-</span></span><span class="line"><span class="cl">docker pull elasticsearch:7.4.2
-</span></span><span class="line"><span class="cl"><span class="c1"># 创建搭载目录</span>
-</span></span><span class="line"><span class="cl">mkdir -p /mydata/elasticsearch/config
-</span></span><span class="line"><span class="cl">mkdir -p /mydata/elasticsearch/data
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;http.host: 0.0.0.0&#34;</span> &gt; /mydata/elasticsearch/config/elasticsearch.yml
-</span></span><span class="line"><span class="cl">docker run --name elasticsearch -p 9200:9200 -p 9300:9300 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e  <span class="s2">&#34;discovery.type=single-node&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">ES_JAVA_OPTS</span><span class="o">=</span><span class="s2">&#34;-Xms64m -Xmx512m&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/elasticsearch/data:/usr/share/elasticsearch/data <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v  /mydata/elasticsearch/plugins:/usr/share/elasticsearch/plugins <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d elasticsearch:7.4.2
-</span></span><span class="line"><span class="cl">docker ps# 查看容器状态 up 运行
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 手动安装jdk 也可以使用docker安装jdk</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker安装jdk在后文</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在/usr/local 目录下安装jdk</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local
+</span></span><span class="line"><span class="cl">wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf jdk-17_linux-x64_bin.tar.gz 
+</span></span><span class="line"><span class="cl"><span class="c1"># 将jdk-17改名为java</span>
+</span></span><span class="line"><span class="cl">mv jdk-17.0.10 jdk17
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入profile文件，按i进入编辑模式</span>
+</span></span><span class="line"><span class="cl">vim /etc/profile
+</span></span><span class="line"><span class="cl"><span class="c1"># 在文件最下方添加</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/jdk17
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$JAVA_HOME</span>/bin<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib/dt.jar:<span class="nv">$JAVA_HOME</span>/lib/tools.jar<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 按下Esc退出编辑模式</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下一步按住shift 再按俩次 z 键，保存配置文件信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新加载环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span><span class="line"><span class="cl"><span class="c1"># </span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /
+</span></span><span class="line"><span class="cl">java -version
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>若存在问题，查看这篇<a class="link" href="https://blog.csdn.net/qq_38327769/article/details/124847508?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167101576116800182116891%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167101576116800182116891&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-124847508-null-null.142%5ev68%5econtrol,201%5ev4%5eadd_ask,213%5ev2%5et3_control1&amp;utm_term=docker%E5%AE%89%E8%A3%85ElasticSearch&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener"
-    >博客</a>
-我这里的问题是启动的时候没问题，但是过一会有自动关闭
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959669.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="1"
-	
-	
->
-解决问题和上方博客中写的一样</p>
+</div><p><strong>练习</strong>
+将某html挂载到nginx目录下进行显示</p>
+<blockquote>
+<p><strong>第一个80</strong>端口是宿主机的端口，<strong>第二个80</strong>端口是容器nginx的端口</p>
+<p>将宿主机的<code>/home/html/index.html</code>挂载到容器的<code>/usr/share/nginx/html/index.html</code></p>
+<p>不过一般不会直接挂载html，一般挂载整个目录，包括html、css、js等</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod -R <span class="m">777</span> /mydata/elasticsearch/
-</span></span><span class="line"><span class="cl">docker start elasticsearch
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 80:80 -v /home/html/index.html:/usr/share/nginx/html/index.html nginx
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>查看运行结果
-http://虚拟机ip地址:9200/
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959677.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="2"
-	
-	
-></p>
-<h3 id="安装kibana">安装Kibana
-</h3><div class="highlight"><div class="chroma">
+</div><p>访问<code>http://虚拟机ip:80/</code></p>
+<blockquote>
+<p>如果我们将宿主机的<code>/home/html/index.html</code>改变内容，再次访问nginx，是否会发生变化</p>
+</blockquote>
+<h3 id="-e">-e
+</h3><p>容器中某些变量不能直接写死，需要让使用者在创建容器的时候指定，这种情况镜像中一般是定义环境变量来使用。例如mysql容器的root密码。遇到这种镜像创建的容器我就可以使用-e来设置环境变量的值。
+用法如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -e <span class="nv">变量名</span><span class="o">=</span>变量值 镜像名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>练习</strong></p>
+<ol>
+<li>后台运行mysql容器</li>
+<li>容器中的mysql可以被外部连接</li>
+<li>mysql容器的数据需要持久化存储，不能因为容器被删除而丢失</li>
+<li>mysql的root用户密码设置为root</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 3306:3306 -v /home/datadir:/var/lib/mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>root mysql:8.0.20
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="--name">&ndash;name
+</h3><p>容器命名
+<strong>练习</strong>
+发布一个nginx页面，为容器命名为nginx-test</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 81:80 --name nginx-test -v /home/html:/usr/share/nginx/html nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="--restart">&ndash;restart
+</h3><p>容器退出后的自动重启策略</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载镜像文件</span>
-</span></span><span class="line"><span class="cl">docker pull kibana:7.4.2
-</span></span><span class="line"><span class="cl"><span class="c1"># 安装容器</span>
-</span></span><span class="line"><span class="cl">docker run --name kibana -e <span class="nv">ELASTICSEARCH_HOSTS</span><span class="o">=</span>http://自己的IP:9200 -p 5601:5601 -d kibana:7.4.2
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run --restart 重启策略 镜像名
+</span></span><span class="line"><span class="cl"><span class="c1"># no 不自动重启</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># always 总自动重启</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># on-failure[:max-retries] 仅在非正常退出时，自动重启</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># unless-stopped 容器会在退出后自动重启，除非手动停止</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="安装ik分词器">安装ik分词器
-</h2><p><a class="link" href="https://github.com/medcl/elasticsearch-analysis-ik/releases"  target="_blank" rel="noopener"
-    >ik分词器下载地址</a></p>
-<h3 id="31在线安装ik插件较慢">3.1.在线安装ik插件（较慢）
+</div><h3 id="其他镜像和容器命令">其他镜像和容器命令
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1330,28 +959,68 @@ http://虚拟机ip地址:9200/
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 进入容器内部</span>
-</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it elasticsearch /bin/bash
-</span></span><span class="line"><span class="cl"><span class="c1"># 在线下载并安装</span>
-</span></span><span class="line"><span class="cl">./bin/elasticsearch-plugin  install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.12.1/elasticsearch-analysis-ik-7.12.1.zip
-</span></span><span class="line"><span class="cl"><span class="c1">#退出</span>
-</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#重启容器</span>
-</span></span><span class="line"><span class="cl">docker restart elasticsearch
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 查看镜像详细内容</span>
+</span></span><span class="line"><span class="cl">docker images inspect <span class="o">[</span>OPTIONS<span class="o">]</span> IMAGE <span class="o">[</span>IMAGE...<span class="o">]</span>
+</span></span><span class="line"><span class="cl">docker image inspect 7614ae9453d1
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看容器中的进程</span>
+</span></span><span class="line"><span class="cl">docker top CONTAINER<span class="o">[</span>ps CONTAINER<span class="o">]</span>
+</span></span><span class="line"><span class="cl">docker top redis
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看容器详细内容</span>
+</span></span><span class="line"><span class="cl">docker inspect 51764b94357b
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="32离线安装ik插件推荐">3.2.离线安装ik插件（推荐）
-</h3><h3 id="1查看数据卷目录">1）查看数据卷目录
-</h3><p>安装插件需要知道elasticsearch的plugins目录位置，而我们用了数据卷挂载，因此需要查看elasticsearch的数据卷目录，通过下面命令查看:</p>
-<div class="highlight"><div class="chroma">
+</div><h3 id="运行jar包">运行jar包
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># docker拉取java17</span>
+</span></span><span class="line"><span class="cl">docker pull openjdk:17-jdk
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行jar包</span>
+</span></span><span class="line"><span class="cl">java -jar xxx.jar
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据application.properties来穿参数</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行时参数，比如运行端口为8080，mysql的密码为root</span>
+</span></span><span class="line"><span class="cl">java -jar xxx.jar --server.port<span class="o">=</span><span class="m">8080</span> --spring.datasource.username<span class="o">=</span>root --spring.datasource.password<span class="o">=</span>root
+</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 8080:8080 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /usr/blog:/usr/blog <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name jar_test <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>openjdk:17-jdk java -jar /usr/blog/demo-0.0.1-SNAPSHOT.jar 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="网络">网络
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker volume inspect es-plugins
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker inspect mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>显示结果：</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240323184204498"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1365,73 +1034,201 @@ http://虚拟机ip地址:9200/
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;CreatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2022-05-06T10:06:34+08:00&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Driver&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Labels&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Mountpoint&#34;</span><span class="p">:</span> <span class="s2">&#34;/var/lib/docker/volumes/es-plugins/_data&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Name&#34;</span><span class="p">:</span> <span class="s2">&#34;es-plugins&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Options&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Scope&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">]</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 查看运行的容器</span>
+</span></span><span class="line"><span class="cl">docker ps -f <span class="nv">name</span><span class="o">=</span>jar_test
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入容器内部</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it jar_test bash
+</span></span><span class="line"><span class="cl"><span class="c1"># ping mysql试试</span>
+</span></span><span class="line"><span class="cl">ping 172.17.0.3
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建网络</span>
+</span></span><span class="line"><span class="cl">docker network create 网络名
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出网络信息</span>
+</span></span><span class="line"><span class="cl">docker network ls
+</span></span><span class="line"><span class="cl"><span class="c1"># 加入网络有两种方式</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1.在创建容器时加入</span>
+</span></span><span class="line"><span class="cl">docker run --network 网络名 镜像名
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.容器创建后加入</span>
+</span></span><span class="line"><span class="cl">docker network connect <span class="o">[</span>选项<span class="o">]</span> 网络名 容器名或容器id
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看网络详情</span>
+</span></span><span class="line"><span class="cl">docker network inspect 网络名或网络id
+</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 8080:8080 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /usr/blog:/usr/blog <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--network blog_test jar_test
+</span></span><span class="line"><span class="cl">--restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name jar_test <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>openjdk:17-jdk java -jar /usr/blog/demo-0.0.1-SNAPSHOT.jar <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="s2">&#34;--spring.datasource.url=jdbc:mysql://mysql:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;serverTimezone=UTC&amp;useSSL=false&amp;zeroDateTimeBehavior=CONVERT_TO_NULL&amp;allowPublicKeyRetrieval=true&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 在加入同一个网络后，这里spring.datasource.url并没有写ip地址了，而是写的容器名称mysql</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>说明plugins目录被挂载到了：<code>/var/lib/docker/volumes/es-plugins/_data </code>这个目录中。</p>
-<h3 id="2解压缩分词器安装包">2）解压缩分词器安装包
-</h3><p>下面我们需要把课前资料中的ik分词器解压缩，重命名为ik
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011441.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210506110249144"
-	
-	
-></p>
-<h3 id="3上传到es容器的插件数据卷中">3）上传到es容器的插件数据卷中
-</h3><p>也就是<code>/var/lib/docker/volumes/es-plugins/_data </code>：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011084.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210506110704293"
-	
-	
-></p>
-<h3 id="4重启容器">4）重启容器
-</h3><div class="highlight"><div class="chroma">
+</div><h2 id="dockerfile">DockerFile
+</h2><h3 id="基本语法">基本语法
+</h3><ol>
+<li>不区分大小写，但是最好习惯大写</li>
+<li>基本以FROM开头</li>
+<li><code>#</code>开头代表注释
+<strong>练习</strong>
+自定义一个镜像，运行容器后输出helloworld(如:echo helloworld)</li>
+</ol>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 4、重启容器</span>
-</span></span><span class="line"><span class="cl">docker restart es
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM centos:7
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;echo&#34;</span>,<span class="s2">&#34;helloworld&#34;</span><span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><blockquote>
+<p>将文件编译成镜像</p>
+<p>使用<code>-t</code>可以指定镜像的名字和标签、<code>-f</code>指定基于哪个dockerfile文件来进行构建镜像、<code>.</code>表示文件在当前路径下</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t hello:1.0 -f HelloWorld .
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试是否成功</span>
+</span></span><span class="line"><span class="cl">docker run hello:1.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="from">FROM
+</h3><blockquote>
+<p>用来定义基础镜像</p>
+<p><code>作用时机:构建镜像的时候</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 查看es日志</span>
-</span></span><span class="line"><span class="cl">docker logs -f es
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM 镜像名:标签名
+</span></span><span class="line"><span class="cl">FROM centos:7
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="5测试">5）测试：
-</h3><p>IK分词器包含两种模式：</p>
-<ul>
-<li><code>ik_smart</code>：最少切分</li>
-<li><code>ik_max_word</code>：最细切分</li>
-</ul>
+</div><h3 id="cmd">CMD
+</h3><blockquote>
+<p>用来定义容器运行时的默认命令，可以在docker run的时候覆盖掉CMD中定义的命令</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;命令1&#34;</span>,<span class="s2">&#34;参数1&#34;</span>,<span class="s2">&#34;参数2&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># CMD [&#34;echo&#34;,&#34;helloworld&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这种形式可以解析环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># CMD echo hello$HOME</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这种也可以解析环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># CMD [&#34;sh&#34;,&#34;-c&#34;,&#34;hello $HOME&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果在一个dockerfile中有多个CMD，则只执行最后一个CMD</span>
+</span></span><span class="line"><span class="cl">FROM centos:7
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;echo&#34;</span>,<span class="s2">&#34;helloworld&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">CMD <span class="nb">echo</span> hello,java
+</span></span><span class="line"><span class="cl">CMD <span class="nb">echo</span> hello,vue
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试一下</span>
+</span></span><span class="line"><span class="cl">docker build -t hello:2.0 -f HelloWorld .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="env">ENV
+</h3><blockquote>
+<p>用来定义环境变量</p>
+<p><code>ENV 变量名=&quot;变量值&quot;</code> 如<code>ENV DIR=&quot;/root&quot;</code></p>
+<p>作用时机为<code>构建镜像时</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ENV <span class="nv">DIR</span><span class="o">=</span><span class="s2">&#34;/root&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>需求：要求对打印内容进行改造，需要实现可以打印任意内容，具体内容在运行容器的时候通过环境变量的方式去指定</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM centos:7
+</span></span><span class="line"><span class="cl">ENV <span class="nv">NAME</span><span class="o">=</span><span class="s2">&#34;小花&#34;</span>
+</span></span><span class="line"><span class="cl">CMD <span class="nb">echo</span> hello,<span class="nv">$NAME</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>编译测试</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t test01:1.0 -f Test01 .
+</span></span><span class="line"><span class="cl">docker run test01:1.0
+</span></span><span class="line"><span class="cl"><span class="c1"># 也可以在运行时指定环境变量</span>
+</span></span><span class="line"><span class="cl">docker run -e <span class="nv">NAME</span><span class="o">=</span>小红 test01:1.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="workdir">WORKDIR
+</h3><blockquote>
+<p>用于设置当前工作的目录，如果该目录不存在会自动创建。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">WORKDIR 目录
+</span></span><span class="line"><span class="cl">WORKDIR /root/app
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>示例1</strong></p>
+<blockquote>
+<p>pwd打印出来是什么？</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1441,14 +1238,521 @@ http://虚拟机ip地址:9200/
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">/_analyze</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;analyzer&#34;</span><span class="p">:</span> <span class="s2">&#34;ik_max_word&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;黑马程序员学习java太棒了&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM centos:7
+</span></span><span class="line"><span class="cl">WORKDIR /a
+</span></span><span class="line"><span class="cl">WORKDIR b
+</span></span><span class="line"><span class="cl">WORKDIR c
+</span></span><span class="line"><span class="cl">CMD <span class="nb">pwd</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>结果：</p>
+</div><p>pwd打印<code>/a/b/c</code>
+<strong>示例2</strong></p>
+<blockquote>
+<p>WORKDIR指定目录的父目录不存在会怎么样？</p>
+<p><code>WORKDIR /a/b/c</code></p>
+<p><code>如果指定目录的父目录不存在，会自动创建</code>
+<strong>示例3</strong>
+WORKDIR指定的目录是否能使用环境变量</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM centos:7
+</span></span><span class="line"><span class="cl">ENV <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;/a&#34;</span>
+</span></span><span class="line"><span class="cl">WORKDIR <span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl">CMD <span class="nb">pwd</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>WORKDIR指定的目录<code>可以</code>使用环境变量</p>
+<h3 id="run">RUN
+</h3><blockquote>
+<p>用来在构建过程中要执行的命令</p>
+<p>而<code>CMD</code>则是在容器运行时执行命令</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">RUN <span class="nb">echo</span> abc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>练习</strong></p>
+<blockquote>
+<p>定义一个CONTENT变量,默认值为hellodocker, 在镜像的/app目录下创建一个sg目录，在其中创建一个content.txt文件, 文件的内容为CQNTENT变量的值。容器启动时打印content.txt的内容</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 如果是sh脚本，则可以这么实现</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CONTENT</span><span class="o">=</span><span class="s2">&#34;hellodocker&#34;</span>
+</span></span><span class="line"><span class="cl">mkdir -p /app/sg
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$CONTENT</span><span class="s2">&#34;</span> &gt; /app/sg/content.txt
+</span></span><span class="line"><span class="cl">cat /app/sg/content.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如何改成<code>DockerFile</code>的写法</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM centos:7
+</span></span><span class="line"><span class="cl">ENV <span class="nv">CONTENT</span><span class="o">=</span><span class="s2">&#34;hellodocker&#34;</span>
+</span></span><span class="line"><span class="cl">WORKDIR /app/sg
+</span></span><span class="line"><span class="cl">RUN <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$CONTENT</span><span class="s2">&#34;</span> &gt; /app/sg/content.txt
+</span></span><span class="line"><span class="cl">CMD cat /app/sg/content.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>测试</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t test01:1.0 -f Test01 .
+</span></span><span class="line"><span class="cl">docker run test01:1.0
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者</span>
+</span></span><span class="line"><span class="cl">docker run -it test01:1.0 bash
+</span></span><span class="line"><span class="cl">ls
+</span></span><span class="line"><span class="cl">cat content.txt 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>思考</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">[</span>root@10 dockerfile_test<span class="o">]</span><span class="c1"># docker run -e CONTENT=java  test01:1.0</span>
+</span></span><span class="line"><span class="cl">hellodocker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>为什么<code>docker run -e CONTENT=java  test01:1.0</code>的时候，输出的不是<code>java</code></p>
+<p>因为只有<code>CMD</code>是在docker运行时执行，而其他指令如<code>ENV、RUN等</code>是在构建镜像时执行</p>
+<p>所以输出的还是<code>hellodocker</code></p>
+</blockquote>
+<h3 id="add">ADD
+</h3><blockquote>
+<p>把构建上下文的文件或者网络文件添加到镜像</p>
+<p>如果文件是压缩包则自动解压，但是需要根据情况，如果是本地压缩包大概率没问题</p>
+<p>但如果是网络上的如<code>oss压缩包</code>可能又不会解压，需要根据实际情况来定</p>
+<p>作用时机为构建镜像的时候</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ADD 原路径 目标路径
+</span></span><span class="line"><span class="cl">ADD xxx.tar.gz .
+</span></span><span class="line"><span class="cl"><span class="c1"># 随便找一个 html+js+css的网页</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用如下命令将html目录打成html.tar.gz压缩包</span>
+</span></span><span class="line"><span class="cl">tar zcvf html.tar.gz html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>练习</strong>
+在构建目录下存放一个<code>gz压缩包</code>， 构建镜像的时候把这个包添加到镜像的/app录下解压，然后把其中的dist目录的内容存放到存放在nginx的htmI目录下，声明开放80端口</p>
+<blockquote>
+<p>dockerfile:Test01</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">ADD html.tar.gz .
+</span></span><span class="line"><span class="cl">RUN tar -xzvf html.tar.gz
+</span></span><span class="line"><span class="cl">RUN cp -r html/* /usr/share/nginx/html
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>测试</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker build -t test01:1.0 -f Test01 .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>报错如下</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-zed" data-lang="zed"><span class="line"><span class="cl"><span class="p">[</span><span class="o">+</span><span class="p">]</span><span class="w"> </span><span class="n">Building</span><span class="w"> </span><span class="err">0</span><span class="p">.</span><span class="err">4</span><span class="n">s</span><span class="w"> </span><span class="p">(</span><span class="err">6</span><span class="o">/</span><span class="err">7</span><span class="p">)</span><span class="w">                                                                                                                                                                                              </span><span class="n">docker</span><span class="o">:</span><span class="n">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">internal</span><span class="p">]</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="kt">definition</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">Test01</span><span class="w">                                                                                                                                                                               </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">transferring</span><span class="w"> </span><span class="n">dockerfile</span><span class="o">:</span><span class="w"> </span><span class="err">217</span><span class="n">B</span><span class="w">                                                                                                                                                                                           </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">internal</span><span class="p">]</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="n">metadata</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">docker</span><span class="p">.</span><span class="nn">io/library/</span><span class="n">nginx</span><span class="o">:</span><span class="n">latest</span><span class="w">                                                                                                                                                                </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="n">internal</span><span class="p">]</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="p">.</span><span class="n">dockerignore</span><span class="w">                                                                                                                                                                                              </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">transferring</span><span class="w"> </span><span class="n">context</span><span class="o">:</span><span class="w"> </span><span class="err">2</span><span class="n">B</span><span class="w">                                                                                                                                                                                                </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="err">1</span><span class="o">/</span><span class="err">4</span><span class="p">]</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="n">docker</span><span class="p">.</span><span class="nn">io/library/</span><span class="n">nginx</span><span class="o">:</span><span class="n">latest</span><span class="w">                                                                                                                                                                                  </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="err">2</span><span class="o">/</span><span class="err">4</span><span class="p">]</span><span class="w"> </span><span class="n">WORKDIR</span><span class="w"> </span><span class="o">/</span><span class="n">app</span><span class="w">                                                                                                                                                                                                         </span><span class="err">0</span><span class="p">.</span><span class="err">0</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">ERROR</span><span class="w"> </span><span class="p">[</span><span class="err">3</span><span class="o">/</span><span class="err">4</span><span class="p">]</span><span class="w"> </span><span class="n">RUN</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">xzvf</span><span class="w"> </span><span class="n">html</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="w">                                                                                                                                                                                      </span><span class="err">0</span><span class="p">.</span><span class="err">3</span><span class="n">s</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">------</span><span class="w">                                                                                                                                                                                                                              
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">[</span><span class="err">3</span><span class="o">/</span><span class="err">4</span><span class="p">]</span><span class="w"> </span><span class="n">RUN</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">xzvf</span><span class="w"> </span><span class="n">html</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="o">:</span><span class="w">                                                                                                                                                                                                 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">0</span><span class="p">.</span><span class="err">263</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="p">(</span><span class="n">child</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">html</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="o">:</span><span class="w"> </span><span class="n">Cannot</span><span class="w"> </span><span class="n">open</span><span class="o">:</span><span class="w"> </span><span class="n">No</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">directory</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">0</span><span class="p">.</span><span class="err">263</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="p">(</span><span class="n">child</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">recoverable</span><span class="o">:</span><span class="w"> </span><span class="n">exiting</span><span class="w"> </span><span class="n">now</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">0</span><span class="p">.</span><span class="err">263</span><span class="w"> </span><span class="n">tar</span><span class="o">:</span><span class="w"> </span><span class="n">Child</span><span class="w"> </span><span class="n">returned</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="err">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="err">0</span><span class="p">.</span><span class="err">263</span><span class="w"> </span><span class="n">tar</span><span class="o">:</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">recoverable</span><span class="o">:</span><span class="w"> </span><span class="n">exiting</span><span class="w"> </span><span class="n">now</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">Test01</span><span class="o">:</span><span class="err">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">--------------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="err">1</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">FROM</span><span class="w"> </span><span class="n">nginx</span><span class="o">:</span><span class="n">latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="err">2</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">WORKDIR</span><span class="w"> </span><span class="o">/</span><span class="n">app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="err">3</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">RUN</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">xzvf</span><span class="w"> </span><span class="n">html</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="err">4</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">RUN</span><span class="w"> </span><span class="n">cp</span><span class="w"> </span><span class="nn">html/</span><span class="o">*</span><span class="w"> </span><span class="o">/</span><span class="nn">usr/share/nginx/</span><span class="n">html</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="err">5</span><span class="w"> </span><span class="o">|</span><span class="w">     </span><span class="n">CMD</span><span class="w"> </span><span class="p">[</span><span class="err">&#34;</span><span class="n">nginx</span><span class="err">&#34;</span><span class="p">,</span><span class="err">&#34;</span><span class="o">-</span><span class="n">g</span><span class="err">&#34;</span><span class="p">,</span><span class="err">&#34;</span><span class="n">daemon</span><span class="w"> </span><span class="n">off</span><span class="p">;</span><span class="err">&#34;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">--------------------</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ERROR</span><span class="o">:</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">solve</span><span class="o">:</span><span class="w"> </span><span class="n">process</span><span class="w"> </span><span class="err">&#34;</span><span class="o">/</span><span class="nn">bin/</span><span class="n">sh</span><span class="w"> </span><span class="o">-</span><span class="n">c</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">xzvf</span><span class="w"> </span><span class="n">html</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span><span class="err">&#34;</span><span class="w"> </span><span class="n">did</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">complete</span><span class="w"> </span><span class="n">successfully</span><span class="o">:</span><span class="w"> </span><span class="n">exit</span><span class="w"> </span><span class="n">code</span><span class="o">:</span><span class="w"> </span><span class="err">2</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到是在解压tar.gz包的时候报错了，好像是没有找到文件
+<strong>那怎么调试呢？现在镜像都没构建，更别说进入到容器内部查看文件是否存在了</strong></p>
+<blockquote>
+<p>将Test01改成如下内容</p>
+<p>注释掉报错部分，先创建镜像，然后进入容器内部查看报错原因</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">ADD html.tar.gz .
+</span></span><span class="line"><span class="cl"><span class="c1">#RUN tar -xzvf html.tar.gz</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#RUN cp -r html/* /usr/share/nginx/html</span>
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>构建成功</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t test01:1.0 -f Test01 .
+</span></span><span class="line"><span class="cl">docker run -it test01:1.0 bash
+</span></span><span class="line"><span class="cl"><span class="c1"># ls发现tar.gz已经被自动解压了</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 说明ADD一个压缩包，会自动解压</span>
+</span></span><span class="line"><span class="cl">ls
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>最终将dockerFile改为如下</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">ADD html.tar.gz .
+</span></span><span class="line"><span class="cl">RUN cp -r html/* /usr/share/nginx/html
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>构建后运行镜像</p>
+<p>因为我虚拟机已经运行了一个nginx容器了，所以80端口已经被占用了，这里指定的端口是81</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 81:80 --name<span class="o">=</span>dockerfile_test01 test01:1.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>访问链接，这里<code>docker1</code>是指虚拟机的ip</p>
+<p>我这里是因为配了主机的<code>hosts</code>文件</p>
+<p>hosts文件路径：C:\Windows\System32\drivers\etc
+<strong><code>hosts</code>文件</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">192.168.56.10   docker1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>http://docker1:81/
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240324181016560.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240324181016560"
+	
+	
+></p>
+<h3 id="expose">EXPOSE
+</h3><blockquote>
+<p>暴露需要发布的端口，让镜像使用者知道应该发布哪些端口</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">EXPOSE 端口1 端口2
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span> <span class="m">8080</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>dockerfile</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">ADD html.tar.gz .
+</span></span><span class="line"><span class="cl">RUN cp -r html/* /usr/share/nginx/html
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span>
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="copy">COPY
+</h3><blockquote>
+<p>从构建上下文中复制内容到镜像中</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">COPY 原路径 目标路径
+</span></span><span class="line"><span class="cl">COPY html.tar.gz .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>COPY的作用和ADD好像非常类似，具体如何抉择？</p>
+<ol>
+<li><code>ADD</code>可以下载网络文件,并且可以自动解压</li>
+<li><code>COPY</code>就是单纯的拷贝
+<strong>练习</strong>
+在构建目录下存放一个html.tar.gz包，构建镜像的时候把这个包复制到镜像的/app目录下解压，然后把其中的dist目录的内容存放到存放在nginx的htmI目录下，声明开放80端口</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">COPY html.tar.gz .
+</span></span><span class="line"><span class="cl">RUN tar -xzvf html.tar.gz
+</span></span><span class="line"><span class="cl">RUN cp -r html/* /usr/share/nginx/html
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span>
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="entrypoint">ENTRYPOINT
+</h3><blockquote>
+<p>用来定义容器运行时的默认命令。docker run的时候无法覆盖ENTRYPOINT里的内容。</p>
+<p>运行时机在运行容器的时候</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;命令1&#34;</span>,<span class="s2">&#34;参数1&#34;</span>,<span class="s2">&#34;参数2&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;echo&#34;</span>,<span class="s2">&#34;helloworld&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>实际使用</strong></p>
+<blockquote>
+<p>实际使用往往是存在部分命令不能更改，也存在部分命令可以被更改</p>
+<p>比如<code>java -jar aaa.jar</code></p>
+<p>我们希望<code>java -jar</code>这部分命令是固定的，无法在运行时被修改</p>
+<p>而<code>jar</code>包的名称可以在运行时修改</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;java&#34;</span>,<span class="s2">&#34;-jar&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;aaa.jar&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>练习</strong>
+在上个案例要求的基础上，还要求容器的nginx的启动命令不能在运行容器时被覆盖</p>
+<blockquote>
+<p>分析一下这个练习</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 82:80 test01:1.0 bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行上述命令后，容器处于退出状态<code>Exited </code>
+为啥呢？因为<code>bash</code>将dockerfile最后一行的cmd命令覆盖了<code>CMD [&quot;nginx&quot;,&quot;-g&quot;,&quot;daemon off;&quot;]</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">COPY html.tar.gz .
+</span></span><span class="line"><span class="cl">RUN tar -xzvf html.tar.gz
+</span></span><span class="line"><span class="cl">RUN cp -r html/* /usr/share/nginx/html
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span>
+</span></span><span class="line"><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t entrypoint_test02:1.0 -f Test01 .
+</span></span><span class="line"><span class="cl">docker run -d -p 82:80 entrypoint_test02:1.0 bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>发现容器依然没有运行，查看容器日志</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d -p 82:80 entrypoint_test02:1.0 bash
+</span></span><span class="line"><span class="cl"><span class="c1">#fa075623cdbf3d01ead7b405c8d61b224e0f70e9fffcdb2a3c5bd91100ecd35d</span>
+</span></span><span class="line"><span class="cl">docker logs fa075623cdbf3d
+</span></span><span class="line"><span class="cl"><span class="c1">#nginx: invalid option: &#34;bash&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>因为此时在<code>nginx</code>容器内执行了<code>bash</code>命令，nginx无法识别</p>
+</blockquote>
+<h2 id="优化部署流程">优化部署流程
+</h2><blockquote>
+<p>我们希望后端的镜像当中就包含了后端的jar包，镜像启动的时候默认就是会启动该jar包，前端的镜像中就包含了前端的包</p>
+</blockquote>
+<h3 id="基础版">基础版
+</h3><h4 id="配置nginx反向代理">配置nginx反向代理
+</h4><p><code>/etc/nginx/conf.d/default.conf</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1491,195 +1795,529 @@ http://虚拟机ip地址:9200/
 </span><span class="lnt">38
 </span><span class="lnt">39
 </span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;tokens&#34;</span> <span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;黑马&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;程序员&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;程序&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;员&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_CHAR&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">3</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;学习&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">4</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;java&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;ENGLISH&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">5</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;太棒了&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">6</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;太棒&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">7</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;了&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_CHAR&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">8</span>
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">listen</span>       <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">listen</span>  <span class="p">[::]:</span><span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">server_name</span>  <span class="n">localhost</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#access_log  /var/log/nginx/host.access.log  main;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">root</span>   <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">index</span>  <span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">index</span><span class="o">.</span><span class="n">htm</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="33-扩展词词典">3.3 扩展词词典
-</h2><p>随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“奥力给”，“传智播客” 等。
-所以我们的词汇也需要不断的更新，IK分词器提供了扩展词汇的功能。
-1）打开IK分词器config目录：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012285.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210506112225508"
-	
-	
->
-2）在IKAnalyzer.cfg.xml配置文件内容添加：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE properties SYSTEM &#34;http://java.sun.com/dtd/properties.dtd&#34;&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;comment&gt;</span>IK Analyzer 扩展配置<span class="nt">&lt;/comment&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="c">&lt;!--用户可以在这里配置自己的扩展字典 *** 添加扩展词典--&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&#34;ext_dict&#34;</span><span class="nt">&gt;</span>ext.dic<span class="nt">&lt;/entry&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>3）新建一个 ext.dic，可以参考config目录下复制一个配置文件进行修改</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="na">传智播客</span>
-</span></span><span class="line"><span class="cl"><span class="na">奥力给</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>4）重启elasticsearch</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker restart es
-</span></span><span class="line"><span class="cl"><span class="c1"># 查看 日志</span>
-</span></span><span class="line"><span class="cl">docker logs -f elasticsearch
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012676.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20201115230900504"
-	
-	
->
-日志中已经成功加载ext.dic配置文件
-5）测试效果：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">/_analyze</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;analyzer&#34;</span><span class="p">:</span> <span class="s2">&#34;ik_max_word&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;传智播客Java就业超过90%,奥力给！&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">location</span> <span class="o">^~/</span><span class="n">api</span><span class="o">/</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">56.10</span><span class="p">:</span><span class="mi">8080</span><span class="o">/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#error_page  404              /404.html;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># redirect server error pages to the static page /50x.html</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="n">error_page</span>   <span class="mi">500</span> <span class="mi">502</span> <span class="mi">503</span> <span class="mi">504</span>  <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="o">.</span><span class="n">html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">location</span> <span class="o">=</span> <span class="o">/</span><span class="mi">50</span><span class="n">x</span><span class="o">.</span><span class="n">html</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">root</span>   <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#location ~ \.php$ {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    proxy_pass   http://127.0.0.1;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#location ~ \.php$ {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    root           html;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    fastcgi_pass   127.0.0.1:9000;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    fastcgi_index  index.php;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    include        fastcgi_params;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># deny access to .htaccess files, if Apache&#39;s document root</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># concurs with nginx&#39;s one</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#location ~ /\.ht {</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#    deny  all;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>注意当前文件的编码必须是 UTF-8 格式，严禁使用Windows记事本编辑</p>
+<p>主要是添加如下代码</p>
 </blockquote>
-
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">	location ^~/api/{
+</span></span><span class="line"><span class="cl">        proxy_pass http://192.168.56.10:8080/;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">...
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 我这里的nginx的镜像名为nginx-test</span>
+</span></span><span class="line"><span class="cl">docker inspect volume nginx-test
+</span></span><span class="line"><span class="cl"><span class="c1">#        &#34;Mounts&#34;: [</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#            {</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                &#34;Type&#34;: &#34;bind&#34;,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                &#34;Source&#34;: &#34;/home/html&#34;,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                &#34;Destination&#34;: &#34;/usr/share/nginx/html&#34;,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                &#34;Mode&#34;: &#34;&#34;,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                &#34;RW&#34;: true,</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#                &#34;Propagation&#34;: &#34;rprivate&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#            }</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#        ],</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>而nginx镜像配置的数据卷在宿主机的路径为<code>/home/html</code>，所以我们将前端文件放在宿主机的<code>/home/html</code>路径下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ll
+</span></span><span class="line"><span class="cl"><span class="c1">#total 16</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#drwxr-xr-x. 2 root root   57 Mar 24 13:13 assets</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-rw-r--r--. 1 root root 1169 Mar 24 15:07 default.conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-rw-r--r--. 1 root root  456 Mar 24 13:13 index.html</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-rw-r--r--. 1 root root  834 Mar 24 14:06 nginx.conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#-rw-r--r--. 1 root root 1497 Mar 20 23:01 vite.svg</span>
+</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#/home/html</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到时候前端输入<code>虚拟机ip:80/</code>就会显示<code>/home/html/index.html</code>文件
+如<code>http://192.168.56.10:80/</code>显示前端页面</p>
+<h4 id="运行后端">运行后端
+</h4><blockquote>
+<p>注意更换自己mysql的账号和密码</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 8080:8080 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /usr/blog:/usr/blog <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name jar_test <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>openjdk:17-jdk java -jar /usr/blog/demo.jar  --spring.datasource.username<span class="o">=</span>root --spring.datasource.password<span class="o">=</span><span class="m">123456</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>这里将jar包放在了<code>/usr/blog</code>下，也可以自己定义路径</p>
+</blockquote>
+<h4 id="mysql">MySQL
+</h4><p>还需要配置mysql,新建一个<code>test</code>数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">user</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="kp">auto_increment</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户编号&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">username</span><span class="w">  </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">  </span><span class="no">null</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;账号&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">password</span><span class="w">  </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">  </span><span class="no">null</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;密码&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nick_name</span><span class="w"> </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">  </span><span class="no">null</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;昵称&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">avatar</span><span class="w">    </span><span class="kt">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="no">null</span><span class="w"> </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;头像&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">comment</span><span class="w"> </span><span class="s1">&#39;用户表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="k">user</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">,</span><span class="w"> </span><span class="n">nick_name</span><span class="p">,</span><span class="w"> </span><span class="n">avatar</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;123456&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;默认昵称&#39;</span><span class="p">,</span><span class="w"> </span><span class="no">null</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="优化">优化
+</h3><blockquote>
+<p>dockerfile</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM openjdk:17-jdk
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">ADD demo.jar .
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">8080</span>
+</span></span><span class="line"><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;java&#34;</span>,<span class="s2">&#34;-jar&#34;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl">CMD <span class="o">[</span><span class="s2">&#34;demo.jar&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325062118495.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240325062118495"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/dockerfile_test
+</span></span><span class="line"><span class="cl">docker build -t demo_jar:1 -f /usr/dockerfile_test/demo_jar .
+</span></span><span class="line"><span class="cl"><span class="c1"># network 添加到同一个网络</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># mysql也需要</span>
+</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 8080:8080 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--network blog_test <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name jar_demo <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>demo_jar:1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>前端</p>
+<p><code>demo_ngxin</code>是dockerfile文件</p>
+<p>blog-vue下则是前端文件
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325071054576.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240325071054576"
+	
+	
+></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">FROM nginx:latest
+</span></span><span class="line"><span class="cl">WORKDIR /app
+</span></span><span class="line"><span class="cl">COPY blog-vue .
+</span></span><span class="line"><span class="cl">RUN cp -r dist/* /usr/share/nginx/html
+</span></span><span class="line"><span class="cl">EXPOSE <span class="m">80</span>
+</span></span><span class="line"><span class="cl">ENTRYPOINT <span class="o">[</span><span class="s2">&#34;nginx&#34;</span>,<span class="s2">&#34;-g&#34;</span>,<span class="s2">&#34;daemon off;&#34;</span><span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t blog_vue:1 -f demo_nginx .
+</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 80:80 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name blog_vue <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>blog_vue:1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>访问发现后端接口404，是因为基于nginx镜像<code>FROM nginx:latest</code>，这里反向代理依然需要配置</p>
+<p>解决方法：进入<code>blog_vue</code>容器内部重新配置反向代理</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it blog_vue bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="镜像推送到镜像仓库">镜像推送到镜像仓库
+</h2><h3 id="注册docker-hub账号">注册<code>Docker Hub</code>账号
+</h3><p>官网:https://hub.docker.com/</p>
+<h3 id="登录镜像仓库">登录镜像仓库
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker login
+</span></span><span class="line"><span class="cl"><span class="c1"># 然后输入账号密码即可登录</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="构建镜像">构建镜像
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker build -t username/镜像名:tag .
+</span></span><span class="line"><span class="cl"><span class="c1"># username是Docker Hub的帐号</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="给镜像打上标签">给镜像打上标签
+</h3><blockquote>
+<p>以便于与<code>Docker Hub</code>上的仓库关联</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 第一个镜像名是本地的镜像名</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 第二个镜像名是Docker Hub仓库中的镜像名</span>
+</span></span><span class="line"><span class="cl">docker tag username/镜像名:tag username/镜像名:tag
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="推送镜像">推送镜像
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker push username/镜像名:tag
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dockercompose">DockerCompose
+</h2><h3 id="入门">入门
+</h3><blockquote>
+<p>DockerCompose是用来定义和运行一个或多个容器(通常都是多个)运行和应用的工具</p>
+<p>当前版本的Docker不需要单独安装</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker compose version
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看版本</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test2</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:latest</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 运行以上定义的所有镜像</span>
+</span></span><span class="line"><span class="cl">docker compose up
+</span></span><span class="line"><span class="cl"><span class="c1"># -d 后台运行</span>
+</span></span><span class="line"><span class="cl">docker compose up -d
+</span></span><span class="line"><span class="cl"><span class="c1"># 会停止并删除yaml中运行的容器</span>
+</span></span><span class="line"><span class="cl">docker compose down
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="元素">元素
+</h3><ol>
+<li>command 覆盖容器启动后的默认指令</li>
+<li>environment 指定环境变量，相当于run的-e选项</li>
+<li>image 用来指定镜像</li>
+<li>networks 指定网络, 相当于run的&ndash;network</li>
+<li>ports 用来指定要发布的端口 ，相当于run的-p</li>
+<li>volumes 用来指定数据卷， 相当于-V</li>
+<li>restart 用来指定重启策略,相当于&ndash;restart</li>
+</ol>
+<p>docker-compose.yml:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">blog_mysql</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">mysql:8.0.20</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 已经存在的数据卷 mysql_data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">mysql_data:/var/lib/mysql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">3306</span><span class="p">:</span><span class="m">3306</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">blog_net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># redis</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">blog_redis</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">redis:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">redis_data:/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">6379</span><span class="p">:</span><span class="m">6379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;redis-server&#39;</span><span class="p">,</span><span class="s1">&#39;--appendonly&#39;</span><span class="p">,</span><span class="s1">&#39;yes&#39;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">blog_net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 后端服务</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sg_blog</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">sb_blog:01</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">8080</span><span class="p">:</span><span class="m">8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">blog_net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># 前端服务</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sg_blog_vue</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">sb_blog_vue:01</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">80</span><span class="p">:</span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">blog_net</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mysql_data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 表示数据卷已经存在，不需要自动创建</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">redis_data</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>设置好<code>docker-compose.yaml</code>后</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker compose up -d
+</span></span><span class="line"><span class="cl">docker compose down
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -1695,135 +2333,6 @@ http://虚拟机ip地址:9200/
     
 
     
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/golang/">
-        
-        
-            <div class="article-image">
-                <img src="/p/golang/202412211329268.ed537b66c6e56d6f9959a5dccf472624_hu3131990958319595278.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Golang"
-                        data-key="Golang" 
-                        data-hash="md5-7VN7ZsblbW&#43;ZWaXcz0cmJA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Golang</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/mongodb/">
-        
-        
-            <div class="article-image">
-                <img src="/p/mongodb/202412211349060.f14c3f3243851388b7373274a820ec49_hu2874642022067004224.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Mongodb"
-                        data-key="Mongodb" 
-                        data-hash="md5-8Uw/MkOFE4i3NzJ0qCDsSQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Mongodb</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/postgresql/">
-        
-        
-            <div class="article-image">
-                <img src="/p/postgresql/202412211414934.601bb0e934f9bb96d555b425806dcc8b_hu13948279321491746263.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post PostgreSQL"
-                        data-key="PostgreSQL" 
-                        data-hash="md5-YBuw6TT5u5bVVbQlgG3Miw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PostgreSQL</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/kotlin/">
-        
-        
-            <div class="article-image">
-                <img src="/p/kotlin/202412211343389.a4adb6085a58ba0b8e071a3287f4709f_hu9416951577885872956.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Kotlin"
-                        data-key="Kotlin" 
-                        data-hash="md5-pK22CFpYuguOBxoyh/Rwnw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Kotlin</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/php8/">
-        
-        
-            <div class="article-image">
-                <img src="/p/php8/202412211409504.79c89987bfb593c489d4110850d9d270_hu2555561391498824671.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post PHP8"
-                        data-key="PHP8" 
-                        data-hash="md5-eciZh7&#43;1k8SJ1BEIUNnScA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PHP8</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
 
      
     

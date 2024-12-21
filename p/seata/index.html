@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Seata">
+<title>Seata</title>
+
+<link rel='canonical' href='https://IsUnderAchiever.github.io/p/seata/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Seata">
+<meta property='og:description' content="Seata">
+<meta property='og:url' content='https://IsUnderAchiever.github.io/p/seata/'>
+<meta property='og:site_name' content='深海火锅店'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-04-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-04-16T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/seata/202412212130408.png' />
+<meta name="twitter:title" content="Seata">
+<meta name="twitter:description" content="Seata"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://IsUnderAchiever.github.io/p/seata/202412212130408.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/header_hu16240087013746809388.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😁</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">深海火锅店</a></h1>
+            <h2 class="site-description">记录我的成长史</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/477448861'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1734756297204" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4471" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M685.21 117.15c6.63-9.41 21.12-11.52 30.21-4.47 9.06 6.34 11.49 19.96 5.35 29.12-35.44 51.91-70.81 103.88-106.31 155.76-0.63 1.02-1.16 2.09-1.7 3.16 86.41 0.03 172.82 0.01 259.22 0.02 10.3-0.39 19.61 8.97 19.11 19.28 0.08 172.65 0.18 345.31 0.23 517.97 0.29 9.97-8.32 19.2-18.33 19.35-21.78 0.24-43.56-0.17-65.32 0.19-1.96 17.65-9.87 34.97-23.27 46.85-12.92 12-31.5 17.75-48.9 14.36-28.92-5.43-48.64-33.26-51.72-61.39-109.19 0.08-218.38 0.08-327.57 0-2.33 18.48-10.77 36.55-25.23 48.6-15.66 13.62-39.03 17.75-58.17 9.42-23.11-9.58-37.95-33.47-40.48-57.84-27.1-0.36-54.23 0.06-81.33-0.21-9.8-0.41-18.09-9.49-17.73-19.28 0.06-170.34 0.08-340.69 0.12-511.04 0.1-4.55-0.51-9.27 1.09-13.64 2.49-7.28 9.81-12.67 17.54-12.61 91.71-0.09 183.42 0.12 275.13-0.11-50.14-27.95-100.88-54.9-151.14-82.66-10.46-5.79-13.59-20.94-6.66-30.59 5.82-9.13 18.87-12.17 28.25-6.87 69.04 37.58 138.06 75.18 207.1 112.76 3.52 1.62 5.91 4.67 8.61 7.31 15.47 0.33 30.96 0.05 46.45 0.15 41.94-61.11 83.59-122.43 125.45-183.59M169.87 336.87c-0.09 161.25 0.16 322.48 0.35 483.72 228.11-0.17 456.22-0.07 684.33-0.05-0.02-161.22 0.22-322.46 0.07-483.68-228.25 0.01-456.5-0.02-684.75 0.01M271 857.38c2.22 11.33 10.44 23.52 23 24.07 12.45-0.26 21.53-12.56 22.95-24.07-15.32 0.05-30.64 0.02-45.95 0m452.05 0c1.42 11.5 10.51 23.79 22.95 24.07 12.54-0.55 20.85-12.71 22.99-24.06-15.31 0.01-30.63 0.04-45.94-0.01z" fill="#454545" p-id="4472"></path><path d="M221.28 374.37c3.83-0.94 7.81-0.61 11.72-0.65 188.33 0.01 376.65-0.01 564.98 0.01 10.85-0.43 20.67 9.41 20.08 20.27 0.14 123.33-0.02 246.66 0.16 369.99 0.13 8.3-5.4 16.35-13.29 19-4.14 1.52-8.61 1.18-12.93 1.19-188.67-0.04-377.35 0.06-566.02-0.04-12.39 0.23-21.58-12.32-19.69-24.15 0.06-122.01 0.04-244.03 0.11-366.04-0.24-8.92 6.15-17.52 14.88-19.58M243 410.18c-0.38 112.4 0.15 224.81 0.11 337.21 179.44 0.13 358.89 0.09 538.34 0.02 0.01-112.43 0.4-224.89-0.09-337.3-179.45 0.14-358.91-0.01-538.36 0.07z" fill="#454545" p-id="4473"></path><path d="M600.4 471.55c5.06-1.37 10.69-0.78 15.28 1.8 35.65 21.33 71.26 42.72 106.91 64.07 4.92 2.83 10.29 5.72 13.05 10.95 4.45 7.6 3.2 17.98-3.01 24.24-6.32 7.05-17.67 8.31-25.62 3.34-37.26-22.4-74.56-44.75-111.83-67.13-6.4-3.83-10.36-11.35-9.78-18.79 0.31-8.57 6.75-16.33 15-18.48zM405.42 481.48c8.67-1.08 17.67 4.03 21.1 12.09 4.57 9.77-0.18 22.57-10.12 26.85-33.02 15.3-66.04 30.58-99.07 45.84-9.66 4.53-22.34-0.1-26.68-9.87-4.95-9.45-0.72-22.17 8.73-26.97 30.72-14.34 61.56-28.44 92.31-42.72 4.46-1.98 8.79-4.61 13.73-5.22zM407.29 596.31c8.9-3.09 19.57 1.06 24.09 9.31 4.37 7.1 1.79 15.88 4.5 23.51 3.44 13.44 14.3 26.79 29.14 27.09 13.98 0.07 24.84-11.84 28.91-24.34 2.31-6.05 2.52-12.54 2.96-18.9 1.17-11.04 12.56-19.47 23.46-17.43 9.81 1.3 17.53 10.53 17.35 20.37-0.08 15.28 7.21 32.12 21.92 38.44 8.4 3.65 18.6 1.7 25.5-4.2 10.37-8.44 15.16-22.11 15.17-35.21 0.14-10.37 9.36-19.53 19.73-19.62 10.15-0.64 19.85 7.53 21.03 17.62 2.16 35.45-20.4 73.22-55.9 82.28-24.72 6.92-51.53-3.48-68.08-22.38-10.45 11.74-24.48 20.62-40.07 23.39-17.51 3.32-36.18-1.22-50.48-11.76-21.88-15.69-33.94-42.91-33.43-69.55 0.28-8.35 6.19-16.17 14.2-18.62z" fill="#454545" p-id="4474"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/IsUnderAchiever'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://IsUnderAchiever.github.io/en/" >English</option>
+                                
+                                    <option value="https://IsUnderAchiever.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#概念">概念</a>
+      <ol>
+        <li><a href="#事务的acid原则">事务的ACID原则</a></li>
+        <li><a href="#案例">案例</a></li>
+      </ol>
+    </li>
+    <li><a href="#理论知识">理论知识</a>
+      <ol>
+        <li><a href="#cap定理">CAP定理</a>
+          <ol>
+            <li><a href="#一致性">一致性</a></li>
+            <li><a href="#可用性">可用性</a></li>
+            <li><a href="#分区容错">分区容错</a></li>
+            <li><a href="#总结">总结</a></li>
+            <li><a href="#思考">思考</a></li>
+          </ol>
+        </li>
+        <li><a href="#base理论">BASE理论</a>
+          <ol>
+            <li><a href="#分布式事务模型">分布式事务模型</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#初识seata">初识Seata</a>
+      <ol>
+        <li><a href="#seata架构">Seata架构</a></li>
+        <li><a href="#安装seata">安装Seata</a>
+          <ol>
+            <li><a href="#下载">下载</a></li>
+            <li><a href="#配置nacos为注册中心和配置中心">配置nacos为注册中心和配置中心</a></li>
+          </ol>
+        </li>
+        <li><a href="#基本使用">基本使用</a></li>
+      </ol>
+    </li>
+    <li><a href="#动手实践">动手实践</a>
+      <ol>
+        <li><a href="#xa模式">XA模式</a>
+          <ol>
+            <li><a href="#概念-1">概念</a></li>
+            <li><a href="#seata中的xa模式">Seata中的XA模式</a></li>
+            <li><a href="#总结-1">总结</a></li>
+            <li><a href="#实现xa模式">实现XA模式</a></li>
+          </ol>
+        </li>
+        <li><a href="#at模式">AT模式</a>
+          <ol>
+            <li><a href="#概念-2">概念</a></li>
+            <li><a href="#总结-2">总结</a></li>
+            <li><a href="#at模式的脏写问题">AT模式的脏写问题</a></li>
+            <li><a href="#总结-3">总结</a></li>
+            <li><a href="#步骤">步骤</a></li>
+          </ol>
+        </li>
+        <li><a href="#tcc模式">TCC模式</a>
+          <ol>
+            <li><a href="#概念-3">概念</a></li>
+            <li><a href="#总结-4">总结</a></li>
+            <li><a href="#案例-1">案例</a></li>
+          </ol>
+        </li>
+        <li><a href="#saga模式">Saga模式</a></li>
+        <li><a href="#模式对比">模式对比</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/seata/">
+                <img src="/p/seata/202412212130408_hu14897593806550435400.png"
+                        srcset="/p/seata/202412212130408_hu14897593806550435400.png 800w, /p/seata/202412212130408_hu6181166237216641889.png 1600w"
+                        width="800" 
+                        height="338" 
+                        loading="lazy"
+                        alt="Featured image of post Seata" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/seata/" >
+                Seata
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/seata/">Seata</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Seata
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-04-16</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 17 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="seata">Seata
+</h1><h2 id="概念">概念
+</h2><h3 id="事务的acid原则">事务的ACID原则
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240410224007195"
+	
+	
+></p>
+<ol>
+<li>原子性
+事务中的所有操作，要么全部成功,要么全部失败</li>
+<li>一致性
+要保证数据库内部完整性约束、声明性约束</li>
+<li>隔离性
+对同一资源操作的事务不能同时发生</li>
+<li>持久性
+对数据库做的一切修改将永久保存,不管是否出现故障</li>
+</ol>
+<h3 id="案例">案例
+</h3><p>微服务下单业务，在下单时会调用订单服务，创建订单并写入数据库。然后订单服务调用账户服务和库存服务:</p>
+<ul>
+<li>账户服务负责扣减用户余额</li>
+<li>库存服务负责扣减商品库存
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240410224108029"
+	
+	
+></li>
+</ul>
+<blockquote>
+<p>我们希望<code>创建订单</code>、<code>扣减余额</code>、<code>扣件商品库存</code>三个操作<code>同时成功或者失败</code>
+<strong>这里新建三个数据库</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411202324161"
+	
+	
+>
+<strong>sentinel_account</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">account_tbl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w">      </span><span class="nb">int</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;账户编号&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">               </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;用户编号&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">money</span><span class="w">   </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;余额&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;账户表&#39;</span><span class="w"> </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                     </span><span class="n">row_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COMPACT</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                     
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">sentinel_account</span><span class="p">.</span><span class="n">account_tbl</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;user202103032042012&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>sentinel_order</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">order_tbl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w">             </span><span class="nb">int</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;订单编号&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">user_id</span><span class="w">        </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">  </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;用户编号&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">commodity_code</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">  </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;商品编码&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">count</span><span class="w">          </span><span class="nb">int</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;数量&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">money</span><span class="w">          </span><span class="nb">int</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;金额&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;订单表&#39;</span><span class="w"> </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                     </span><span class="n">row_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COMPACT</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>sentinel_storage</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">storage_tbl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w">             </span><span class="nb">int</span><span class="w"> </span><span class="n">auto_increment</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;库存编号&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">commodity_code</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">               </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;商品编码&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">count</span><span class="w">          </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;库存数量&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">constraint</span><span class="w"> </span><span class="n">commodity_code</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">unique</span><span class="w"> </span><span class="p">(</span><span class="n">commodity_code</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;库存表&#39;</span><span class="w"> </span><span class="n">charset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                     </span><span class="n">row_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">COMPACT</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                     
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">sentinel_storage</span><span class="p">.</span><span class="n">storage_tbl</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">commodity_code</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;100202003032041&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>基础项目的<a class="link" href="https://gitee.com/tongstyle/seata-demo"  target="_blank" rel="noopener"
+    >链接</a>
+<strong>调用<code>client</code>实现<code>扣余额</code>、<code>扣库存</code></strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411214609610"
+	
+	
+>
+使用<code>ApiFox</code>测试订单创建请求
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411220655902"
+	
+	
+>
+看看数据，发现该商品还剩下10个
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411220800785"
+	
+	
+>
+我们直接买20个，正常来讲<code>库存不足</code>应该要<code>失败</code>，这次用户要跟账户表保持一致
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411221346303"
+	
+	
+>
+报错
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411221519897"
+	
+	
+>
+刷新之后发现，库存表数量没变<code>(扣减失败)</code>，但是账户表<code>金额</code>被扣了
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411221600202"
+	
+	
+>
+<strong>它们每个服务是独立的</strong>，各自提交自己的事务，所以并没有达成事务的一致
+<strong><code>总结：在分布式系统下，一个业务跨越多个服务或数据源，每个服务都是一个分支事务， 要保证所有分支事务最终状态一致,这样的事务就是分布式事务。</code></strong></p>
+</blockquote>
+<h2 id="理论知识">理论知识
+</h2><h3 id="cap定理">CAP定理
+</h3><p>1998年，加州大学的计算机科学家Eric Brewer提出，分布式系统有三个指标:</p>
+<ol>
+<li>Consistency (<code>一致性</code>)</li>
+<li>Availability (<code>可用性</code>)</li>
+<li>Partition tolerance (<code>分区容错性</code>)
+Eric Brewer说，分布式系统无法<code>同时满足</code>这三个指标。这个结论就叫做<code>CAP定理</code>。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411221941042"
+	
+	
+></li>
+</ol>
+<h4 id="一致性">一致性
+</h4><p>Consistency (一致性) :用户访问分布式系统中的任意节点,得到的数据必须一致
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411222047176"
+	
+	
+></p>
+<h4 id="可用性">可用性
+</h4><p>Availability (可用性) :用户访问集群中的任意健康节点,必须能得到响应，而不是超时或拒绝
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411222133028"
+	
+	
+></p>
+<h4 id="分区容错">分区容错
+</h4><p>Partition (分区) :因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。
+Tolerance (容错) :在集群出现分区时,整个系统也要持续对外提供服务
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411222243057"
+	
+	
+></p>
+<h4 id="总结">总结
+</h4><p>分布式系统节点通过网络连接，一定会出现分区问题(P)，当分区出现时，系统的一致性(C)和可用性(A)就无法同时满足</p>
+<h4 id="思考">思考
+</h4><p>elasticsearch集群是CP还是AP?
+ES集群出现分区时，故障节点会被剔除集群，数据分片会重新分配到其它节点，保证数据一致。因此是低可用性，高一致性，属于CP</p>
+<h3 id="base理论">BASE理论
+</h3><p>BASE理论是对CAP的一种解决思路,包含三个思想:
+<code>Basically Available</code>(<strong><code>基本可用</code></strong>) :分布式系统在出现故障时，允许损失部分可用性，即保证核心可用。
+<code>SoftState</code> (<strong><code>软状态</code></strong>) :在一定时间内，允许出现中间状态，比如临时的不一致状态。
+<code>Eventually Consistent</code> (<strong><code>最终一致性</code></strong>) :虽然无法保证强-致性,但是在软状态结束后，最终达到数据一致。
+而分布式事务最大的问题是各个子事务的一致性问题，因此可以<strong>借鉴CAP定理和BASE理论</strong>:
+<code>AP模式</code>:各子事务分别执行和提交,允许出现结果不一致,然后采用弥补措施<code>恢复数据</code>即可，实现<code>最终一致</code>。
+<code>CP模式</code>:各个子事务执行后互相等待，同时提交,同时回滚,达成<code>强一致</code>。但事务等待过程中,处于弱可用状态。因为会锁定资源导致无法访问</p>
+<h4 id="分布式事务模型">分布式事务模型
+</h4><p>解决分布式事务，各个子系统之间必须能感知到彼此的事务状态，才能保证状态一致，因此需要一个事务协调者来协调每一个事务的参与者(子系统事务)。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411223154817"
+	
+	
+></p>
+<blockquote>
+<p>这里的子系统事务，称为分支事务;有关联的各个分支事务在一起称为全局事务</p>
+</blockquote>
+<h2 id="初识seata">初识Seata
+</h2><h3 id="seata架构">Seata架构
+</h3><p>Seata事务管理中有三个重要的角色:</p>
+<ol>
+<li>TC (Transaction Coordinator) -事务协调者:维护全局和分支事务的状态，协调全局事务提交或回滚。</li>
+<li>TM (Transaction Manager) -事务管理器:定义全局事务的范围、开始全局事务、提交或回滚全局事务。</li>
+<li>RM (Resource Manager) -资源管理器:管理分支事务处理的资源，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240411223721605"
+	
+	
+>
+Seata提供了四种不同的分布式事务解决方案:</li>
+</ol>
+<ul>
+<li>XA模式:强一致性分阶段事务模式，牺牲了一定的可用性，无业务侵入</li>
+<li>TCC模式:最终一致的分阶段事务模式，有业务侵入</li>
+<li>AT模式:最终一致的分阶段事务模式，无业务侵入，也是Seata的默认模式</li>
+<li>SAGA模式:长事务模式，有业务侵入</li>
+</ul>
+<h3 id="安装seata">安装Seata
+</h3><h4 id="下载">下载
+</h4><p>前往Github<a class="link" href="https://github.com/apache/incubator-seata"  target="_blank" rel="noopener"
+    >下载</a>，这里选择<code>seata-server-1.7.0</code>的版本</p>
+<h4 id="配置nacos为注册中心和配置中心">配置nacos为注册中心和配置中心
+</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412070658420"
+	
+	
+></p>
+<blockquote>
+<p><code>application.example.yml</code>的配置很全，我们copy需要的配置到<code>application.yml</code>即可
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412071007499"
+	
+	
+>
+<strong>修改后的配置</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c">#  Copyright 1999-2019 Seata.io Group.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  you may not use this file except in compliance with the License.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  You may obtain a copy of the License at</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  http://www.apache.org/licenses/LICENSE-2.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  Unless required by applicable law or agreed to in writing, software</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  distributed under the License is distributed on an &#34;AS IS&#34; BASIS,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  See the License for the specific language governing permissions and</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  limitations under the License.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">7091</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">logging</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l">classpath:logback-spring.xml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">file</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">${user.home}/logs/seata</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">extend</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">logstash-appender</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">destination</span><span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span><span class="p">:</span><span class="m">4560</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">kafka-appender</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">bootstrap-servers</span><span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span><span class="p">:</span><span class="m">9092</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">topic</span><span class="p">:</span><span class="w"> </span><span class="l">logback_to_logstash</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">console</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">user</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">seata</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">seata</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># support: nacos 、 consul 、 apollo 、 zk  、 etcd3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span><span class="p">:</span><span class="m">8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">d2455f6d-ed00-41ba-9915-09021bc0df6c</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># group: SEATA_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context-path</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">##if use MSE Nacos with auth, mutex with username/password attribute</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#access-key:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#secret-key:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">data-id</span><span class="p">:</span><span class="w"> </span><span class="l">seataServer.properties</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">registry</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># support: nacos 、 eureka 、 redis 、 zk  、 consul 、 etcd3 、 sofa</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">preferred-networks</span><span class="p">:</span><span class="w"> </span><span class="m">30.240</span><span class="l">.*</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span><span class="p">:</span><span class="m">8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># group: SEATA_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">d2455f6d-ed00-41ba-9915-09021bc0df6c</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context-path</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">##if use MSE Nacos with auth, mutex with username/password attribute</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#access-key:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c">#secret-key:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">store</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># support: file 、 db 、 redis</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l">db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#  server:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#    service-port: 8091 #If not configured, the default is &#39;${server.port} + 1000&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">security</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l">SeataSecretKey0c382ef121d778043159209298fd40bf3850a017</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tokenValidityInMilliseconds</span><span class="p">:</span><span class="w"> </span><span class="m">1800000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ignore</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">urls</span><span class="p">:</span><span class="w"> </span><span class="l">/,/**/*.css,/**/*.js,/**/*.html,/**/*.map,/**/*.svg,/**/*.png,/**/*.jpeg,/**/*.ico,/api/v1/auth/login</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>在<code>nacos</code>中新增配置</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412071132954"
+	
+	
+></p>
+<blockquote>
+<p>配置文件可以查看
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412071236353"
+	
+	
+>
+<strong>新增配置如下</strong>
+下面除了<code>db</code>外的配置都是默认的，写到nacos是为了方便后期修改，<code>db之外的配置</code>不写也没事</p>
+<p>这里的<code>driverClassName</code>我用的是<code>com.mysql.cj.jdbc.Driver</code>，注意修改成自己的数据库名、账号、密码</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="c1"># 数据存储方式，db代表数据库</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.mode</span><span class="o">=</span><span class="s">db</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.datasource</span><span class="o">=</span><span class="s">druid</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.dbType</span><span class="o">=</span><span class="s">mysql</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.driverClassName</span><span class="o">=</span><span class="s">com.mysql.cj.jdbc.Driver</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.url</span><span class="o">=</span><span class="s">jdbc:mysql://127.0.0.1:3306/seata?useUnicode=true&amp;rewriteBatchedStatements=true</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.user</span><span class="o">=</span><span class="s">root</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.password</span><span class="o">=</span><span class="s">123456</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.minConn</span><span class="o">=</span><span class="s">5</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.maxConn</span><span class="o">=</span><span class="s">30</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.globalTable</span><span class="o">=</span><span class="s">global_table</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.branchTable</span><span class="o">=</span><span class="s">branch_table</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.queryLimit</span><span class="o">=</span><span class="s">100</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.lockTable</span><span class="o">=</span><span class="s">lock_table</span>
+</span></span><span class="line"><span class="cl"><span class="na">store.db.maxWait</span><span class="o">=</span><span class="s">5000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 事务、日志等配置</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.recovery.committingRetryPeriod</span><span class="o">=</span><span class="s">1000</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.recovery.asynCommittingRetryPeriod</span><span class="o">=</span><span class="s">1000</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.recovery.rollbackingRetryPeriod</span><span class="o">=</span><span class="s">1000</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.recovery.timeoutRetryPeriod</span><span class="o">=</span><span class="s">1000</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.maxCommitRetryTimeout</span><span class="o">=</span><span class="s">-1</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.maxRollbackRetryTimeout</span><span class="o">=</span><span class="s">-1</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.rollbackRetryTimeoutUnlockEnable</span><span class="o">=</span><span class="s">false</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.undo.logSaveDays</span><span class="o">=</span><span class="s">7</span>
+</span></span><span class="line"><span class="cl"><span class="na">server.undo.logDeletePeriod</span><span class="o">=</span><span class="s">86400000</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 客户端与服务端传输方式</span>
+</span></span><span class="line"><span class="cl"><span class="na">transport.serialization</span><span class="o">=</span><span class="s">seata</span>
+</span></span><span class="line"><span class="cl"><span class="na">transport.compressor</span><span class="o">=</span><span class="s">none</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭metrics功能，提高性能</span>
+</span></span><span class="line"><span class="cl"><span class="na">metrics.enabled</span><span class="o">=</span><span class="s">false</span>
+</span></span><span class="line"><span class="cl"><span class="na">metrics.registryType</span><span class="o">=</span><span class="s">compact</span>
+</span></span><span class="line"><span class="cl"><span class="na">metrics.exporterList</span><span class="o">=</span><span class="s">prometheus</span>
+</span></span><span class="line"><span class="cl"><span class="na">metrics.exporterPrometheusPort</span><span class="o">=</span><span class="s">9898</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412071551150"
+	
+	
+></p>
+<blockquote>
+<p>db配置，注意这里新增一个<code>undo_log</code>表，该表的建表语句在sql中不存在</p>
+<p><strong>完整sql如下</strong></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- -------------------------------- The script used when storeMode is &#39;db&#39; --------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- the table to store GlobalSession data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">global_table</span><span class="o">`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="w">                       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">transaction_id</span><span class="o">`</span><span class="w">            </span><span class="nb">BIGINT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="w">                    </span><span class="n">TINYINT</span><span class="w">      </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">application_id</span><span class="o">`</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">transaction_service_group</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">transaction_name</span><span class="o">`</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">timeout</span><span class="o">`</span><span class="w">                   </span><span class="nb">INT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">begin_time</span><span class="o">`</span><span class="w">                </span><span class="nb">BIGINT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">application_data</span><span class="o">`</span><span class="w">          </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">2000</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">gmt_create</span><span class="o">`</span><span class="w">                </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">gmt_modified</span><span class="o">`</span><span class="w">              </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">idx_status_gmt_modified</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">gmt_modified</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">idx_transaction_id</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">transaction_id</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- the table to store BranchSession data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">branch_table</span><span class="o">`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="w">         </span><span class="nb">BIGINT</span><span class="w">       </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="w">               </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">transaction_id</span><span class="o">`</span><span class="w">    </span><span class="nb">BIGINT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">resource_group_id</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">resource_id</span><span class="o">`</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">branch_type</span><span class="o">`</span><span class="w">       </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="w">            </span><span class="n">TINYINT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">client_id</span><span class="o">`</span><span class="w">         </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">application_data</span><span class="o">`</span><span class="w">  </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">2000</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">gmt_create</span><span class="o">`</span><span class="w">        </span><span class="n">DATETIME</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">gmt_modified</span><span class="o">`</span><span class="w">      </span><span class="n">DATETIME</span><span class="p">(</span><span class="mi">6</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">idx_xid</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- the table to store lock data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">lock_table</span><span class="o">`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">row_key</span><span class="o">`</span><span class="w">        </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="w">            </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">transaction_id</span><span class="o">`</span><span class="w"> </span><span class="nb">BIGINT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="w">      </span><span class="nb">BIGINT</span><span class="w">       </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">resource_id</span><span class="o">`</span><span class="w">    </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="k">table_name</span><span class="o">`</span><span class="w">     </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">pk</span><span class="o">`</span><span class="w">             </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">36</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="w">         </span><span class="n">TINYINT</span><span class="w">      </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;0:locked ,1:rollbacking&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">gmt_create</span><span class="o">`</span><span class="w">     </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">gmt_modified</span><span class="o">`</span><span class="w">   </span><span class="n">DATETIME</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">row_key</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">idx_status</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">status</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">idx_branch_id</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">idx_xid</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">distributed_lock</span><span class="o">`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">lock_key</span><span class="o">`</span><span class="w">       </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">lock_value</span><span class="o">`</span><span class="w">     </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">`</span><span class="n">expire</span><span class="o">`</span><span class="w">         </span><span class="nb">BIGINT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">lock_key</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InnoDB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">distributed_lock</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="n">lock_key</span><span class="p">,</span><span class="w"> </span><span class="n">lock_value</span><span class="p">,</span><span class="w"> </span><span class="n">expire</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;AsyncCommitting&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">distributed_lock</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="n">lock_key</span><span class="p">,</span><span class="w"> </span><span class="n">lock_value</span><span class="p">,</span><span class="w"> </span><span class="n">expire</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;RetryCommitting&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">distributed_lock</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="n">lock_key</span><span class="p">,</span><span class="w"> </span><span class="n">lock_value</span><span class="p">,</span><span class="w"> </span><span class="n">expire</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;RetryRollbacking&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">distributed_lock</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="n">lock_key</span><span class="p">,</span><span class="w"> </span><span class="n">lock_value</span><span class="p">,</span><span class="w"> </span><span class="n">expire</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;TxTimeoutCheck&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 注意此处0.3.0+ 增加唯一索引 ux_undo_log
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">undo_log</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="w"> </span><span class="nb">bigint</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">context</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">rollback_info</span><span class="o">`</span><span class="w"> </span><span class="n">longblob</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">log_status</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">log_created</span><span class="o">`</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">log_modified</span><span class="o">`</span><span class="w"> </span><span class="n">datetime</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="o">`</span><span class="n">ext</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="o">`</span><span class="n">ux_undo_log</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">xid</span><span class="o">`</span><span class="p">,</span><span class="o">`</span><span class="n">branch_id</span><span class="o">`</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="o">=</span><span class="mi">1</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>而且<code>业务数据库也需要增加该表</code>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412071916161"
+	
+	
+>
+双击<code>seata-server.bat</code>启动即可
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412071937524"
+	
+	
+>
+服务已经注册到nacos中了
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412072014359"
+	
+	
+>
+注意命名空间，我们springboot的demo是<code>public</code>的，所以需要将seata的命名空间改为<code>public</code>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412072736505"
+	
+	
+></p>
+</blockquote>
+<h3 id="基本使用">基本使用
+</h3><blockquote>
+<p>引入依赖</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-alibaba-seata<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>在<code>微服务</code>中新增如下配置</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">registry</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># tc服务在nacos的注册名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 事务组，根据这个获取tc服务的cluster名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tx-service-group</span><span class="p">:</span><span class="w"> </span><span class="l">seata-demo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 事务组与TC服务cluster的映射关系</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">vgroup-mapping</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">seata-demo</span><span class="p">:</span><span class="w"> </span><span class="l">SH</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>完整的配置如下</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">server</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8070</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">application</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">account-service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cloud</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">discovery</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">import</span><span class="p">:</span><span class="w"> </span><span class="l">nacos:nacos-config-example.properties?refresh=true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">datasource</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 数据库驱动：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">driver-class-name</span><span class="p">:</span><span class="w"> </span><span class="l">com.mysql.cj.jdbc.Driver</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 数据库连接地址</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">defaultDataSource</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 数据库用户名&amp;密码：</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="m">123456</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 数据源名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">jdbc:mysql://localhost:3306/sentinel_account?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">mybatis-plus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">configuration</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 配置mybatis-plus 打印sql日志</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">log-impl</span><span class="p">:</span><span class="w"> </span><span class="l">org.apache.ibatis.logging.stdout.StdOutImpl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># mybatis-plus下划线转驼峰配置，默认为true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">map-underscore-to-camel-case</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># xml文件路径</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">mapper-locations</span><span class="p">:</span><span class="w"> </span><span class="l">classpath:/mapper/**/*.xml</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 配置mybatis-plus 包路径</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type-aliases-package</span><span class="p">:</span><span class="w"> </span><span class="l">com.example.account.entity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">registry</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># tc服务在nacos的注册名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 事务组，根据这个获取tc服务的cluster名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tx-service-group</span><span class="p">:</span><span class="w"> </span><span class="l">seata-demo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 事务组与TC服务cluster的映射关系</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">vgroup-mapping</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">seata-demo</span><span class="p">:</span><span class="w"> </span><span class="l">SH</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果需要锁定一个服务，我们需要确定以下四个配置</p>
+<ol>
+<li>命名空间</li>
+<li>服务分组</li>
+<li>服务名称</li>
+<li>集群名称
+<strong>集群如下</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412073342542"
+	
+	
+>
+再改一下<code>seata</code>的配置，配置<code>SH</code>集群
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412073612996"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412073639729"
+	
+	
+>
+我们并没有在微服务的<code>application</code>文件中配置<code>cluster</code>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412073752159"
+	
+	
+>
+并不能在<code>registry</code>下直接配置<code>cluster</code></li>
+</ol>
+<p>正确做法是配置<code>事务组</code>，将事务分组，比如<code>account</code>、<code>order</code>、<code>storage</code>将来会被同一个<code>tc</code>集群管理，所以需要将它们配置到同一个事务组下</p>
+<p>再根据<code>事务组</code>获取到映射关系，最终找到<code>集群名称</code></p>
+<p>这部分涉及到了<code>seata</code>的高可用，暂时不用过多深究
+<strong>启动服务</strong>
+启动微服务后，seata控命令窗口打印日志如下</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">RM register success,message:RegisterRMRequest{resourceIds=&#39;jdbc:mysql://localhost:3306/sentinel_account&#39;, version=&#39;1.7.0-native-rc2&#39;, applicationId=&#39;account-service&#39;, transactionServiceGroup=&#39;seata-demo&#39;, extraData=&#39;null&#39;},channel:[id: 0xc06aa8c5, L:/192.168.56.1:8091 - R:/192.168.56.1:57929],client version:1.7.0-native-rc2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="动手实践">动手实践
+</h2><h3 id="xa模式">XA模式
+</h3><h4 id="概念-1">概念
+</h4><blockquote>
+<p>XA规范是x/Open组织定义的分布式事务处理(DTP, Distributed Transaction Processing)标准，XA规范描述了全局的TM与局部的RM之间的接口，几乎所有主流的数据库都对XA规范提供了支持。XA模式是一种强一致性、低可用性的模式
+<strong>正常情况</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412075025182"
+	
+	
+>
+<strong>异常情况</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412075111494"
+	
+	
+></p>
+</blockquote>
+<h4 id="seata中的xa模式">Seata中的XA模式
+</h4><blockquote>
+<p>seata的XA模式做了一些调整,但大体相似
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412075313338"
+	
+	
+>
+<strong>RM一阶段的工作</strong>:</p>
+</blockquote>
+<ol>
+<li>注册分支事务到TC</li>
+<li>执行分支业务sq|但不提交</li>
+<li>报告执行状态到TC
+<strong>TC二阶段的工作</strong>:</li>
+</ol>
+<ul>
+<li>TC检测各分支事务执行状态
+​	a.如果都成功，通知所有RM提交事务
+​	b.如果有失败，通知所有RM回滚事务
+<strong>RM二阶段的工作</strong>:
+接收TC指令，提交或回滚事务</li>
+</ul>
+<h4 id="总结-1">总结
+</h4><p>XA模式的优点是什么?</p>
+<ol>
+<li>事务的强一致性,满足ACID原则。</li>
+<li>常用数据库都支持，实现简单，并且没有代码侵入
+XA模式的缺点是什么?</li>
+<li>因为一阶段需要锁定数据库资源，等待二阶段结束才释放，性能较差</li>
+<li>依赖关系型数据库实现事务(如redis就无法实现)</li>
+</ol>
+<h4 id="实现xa模式">实现XA模式
+</h4><ol>
+<li>修改<code>application.yml</code>文件，开启<code>XA</code>模式
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">registry</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># tc服务在nacos的注册名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 事务组，根据这个获取tc服务的cluster名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tx-service-group</span><span class="p">:</span><span class="w"> </span><span class="l">seata-demo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 事务组与TC服务cluster的映射关系</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">vgroup-mapping</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">seata-demo</span><span class="p">:</span><span class="w"> </span><span class="l">SH</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c"># 开启XA模式</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">data-source-proxy-mode</span><span class="p">:</span><span class="w"> </span><span class="l">XA</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>给发起全局事务的入口方法添加<code>@GlobalTransactional</code>注解
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">OrderService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AccountClient</span><span class="w"> </span><span class="n">accountClient</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">StorageClient</span><span class="w"> </span><span class="n">storageClient</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">OrderMapper</span><span class="w"> </span><span class="n">orderMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">OrderServiceImpl</span><span class="p">(</span><span class="n">AccountClient</span><span class="w"> </span><span class="n">accountClient</span><span class="p">,</span><span class="w"> </span><span class="n">StorageClient</span><span class="w"> </span><span class="n">storageClient</span><span class="p">,</span><span class="w"> </span><span class="n">OrderMapper</span><span class="w"> </span><span class="n">orderMapper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">accountClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountClient</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">storageClient</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">storageClient</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">orderMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">orderMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@GlobalTransactional</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Long</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="n">Order</span><span class="w"> </span><span class="n">order</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 创建订单</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">orderMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">order</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 扣用户余额</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">accountClient</span><span class="p">.</span><span class="na">deduct</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">getUserId</span><span class="p">(),</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="na">getMoney</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 扣库存</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">storageClient</span><span class="p">.</span><span class="na">deduct</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">getCommodityCode</span><span class="p">(),</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="na">getCount</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">FeignException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">log</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&#34;下单失败，原因:{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">contentUTF8</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">contentUTF8</span><span class="p">(),</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">order</span><span class="p">.</span><span class="na">getId</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>重启服务并测试
+<strong>运行前的数据</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412080441953"
+	
+	
+>
+<strong>运行后的数据</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412080512334"
+	
+	
+></li>
+</ol>
+<blockquote>
+<p>可以看到实现了<code>全局事务</code></p>
+</blockquote>
+<h3 id="at模式">AT模式
+</h3><h4 id="概念-2">概念
+</h4><blockquote>
+<p>AT模式同样是分阶段提交的事务模型，不过缺弥补了XA模型中资源锁定周期过长的缺陷。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412081358601"
+	
+	
+>
+阶段一RM的工作:</p>
+<ol>
+<li>注册分支事务</li>
+<li>记录<code>undo-log</code> (数据快照)</li>
+<li>执行业务sql并提交</li>
+<li>报告事务状态</li>
+</ol>
+<p>阶段二提交时RM的工作:
+删除undo-log即可</p>
+<p>阶段二回滚时RM的工作:
+根据undo-log恢复数据到更新前
+<strong>案例如下</strong>
+一个分支业务的SQL是这样的:</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">update</span><span class="w"> </span><span class="n">tb</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">money</span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412081715928"
+	
+	
+></p>
+<h4 id="总结-2">总结
+</h4><p>简述AT模式与XA模式最大的区别是什么?</p>
+<ul>
+<li>XA模式一阶段不提交事务，锁定资源; AT模式一阶段直接提交，不锁定资源。</li>
+<li>XA模式依赖数据库机制实现回滚; AT模式利用数据快照实现数据回滚。</li>
+<li><code>XA模式强一致</code>; <code>AT模式最终一致</code></li>
+</ul>
+<h4 id="at模式的脏写问题">AT模式的脏写问题
+</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412210846377"
+	
+	
+></p>
+<blockquote>
+<p>事务1在提交事务之后，紧接着被事务2获取到了锁，而事务1的全局事务需要回滚，则此时事务1会将<code>money</code>恢复到100，但是影响到了事务2的操作</p>
+<p>原因就是事务没有做到隔离，解决方式就是引入<code>全局锁</code>，标记对某行数据的拥有权，在事务提交前，其他事务无法修改
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240412211854987"
+	
+	
+>
+事务1在提交事务后，释放DB锁；而DB锁马上被事务2获取到了，但全局事务锁在事务1手上，事务2拿不到</p>
+<p>而DB锁在事务2手上，事务1拿不到，此时产生了死锁，但由于获取全局事务锁的过程有重试机制，任务超时会回滚并释放DB锁</p>
+<p>这时事务1获取到了DB锁
+<strong>有一个问题，如果在事务1的<code>1.3~2.1</code>过程中，有一个不被<code>seata</code>管理的事务修改了值，也会产生脏写问题</strong>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+在保存快照时，保存两份数据，一个是修改前的，一个是修改后的</p>
+<p>当释放全局锁时，对比修改后的数据，如果不一致，说明在这段时间有其他事务修改了数据</p>
+<p>这就没办法了，只能人工介入，这是比较极端的情况</p>
+</blockquote>
+<h4 id="总结-3">总结
+</h4><p>AT模式的优点:</p>
+<ol>
+<li>一阶段完成直接提交事务,释放数据库资源，性能比较好</li>
+<li>利用全局锁实现读写隔离</li>
+<li>没有代码侵入,框架自动完成回滚和提交
+AT模式的缺点:</li>
+<li>两阶段之间属于软状态，属于最终一致</li>
+<li>框架的快照功能会影响性能,但比XA模式要好很多</li>
+</ol>
+<h4 id="步骤">步骤
+</h4><ol>
+<li>
+<p>新建两张表，其中lock_table导入到TC服务关联的数据库，undo_log表导入到微服务关联的数据库，这些操作在Seata配置阶段已经做过了</p>
+</li>
+<li>
+<p>修改<code>application.yml</code>，将事务模式改为<code>AT</code>即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">seata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">registry</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">nacos</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">server-addr</span><span class="p">:</span><span class="w"> </span><span class="l">localhost:8848</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">public</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l">DEFAULT_GROUP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c"># tc服务在nacos的注册名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">application</span><span class="p">:</span><span class="w"> </span><span class="l">seata-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">nacos</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># 事务组，根据这个获取tc服务的cluster名称</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">tx-service-group</span><span class="p">:</span><span class="w"> </span><span class="l">seata-demo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># 事务组与TC服务cluster的映射关系</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">vgroup-mapping</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">seata-demo</span><span class="p">:</span><span class="w"> </span><span class="l">SH</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">data-source-proxy-mode</span><span class="p">:</span><span class="w"> </span><span class="l">AT</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>重启服务测试</p>
+</li>
+</ol>
+<h3 id="tcc模式">TCC模式
+</h3><h4 id="概念-3">概念
+</h4><p>TCC模式与AT模式非常相似,每阶段都是独立事务，不同的是TCC通过人工编码来实现数据恢复，而非自动恢复(生成快照)。需要实现三个方法:</p>
+<ol>
+<li>Try: 资源的检测和预留;</li>
+<li>Confirm: 完成资源操作业务;要求Try成功Confirm一定要能成功。</li>
+<li>Cancel: 预留资源释放,可以理解为try的反向操作。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240413063600514"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240413063809543"
+	
+	
+></li>
+</ol>
+<h4 id="总结-4">总结
+</h4><p>TCC模式的每个阶段是做什么的?</p>
+<ol>
+<li>Try:资源检查和预留</li>
+<li>Confirm:业务执行和提交</li>
+<li>Cancel:预留资源的释放
+TCC的优点是什么?</li>
+<li>一阶段完成直接提交事务,释放数据库资源,性能好</li>
+<li>相比AT模型，无需生成快照，无需使用全局锁，性能最强</li>
+<li>不依赖数据库事务，而是依赖补偿操作，可以用于非事务型数据库
+TCC的缺点是什么?</li>
+<li>有代码侵入，需要人为编写try、Confirm和Cancel接口，太麻烦</li>
+<li>软状态，事务是最终一致</li>
+<li>需要考虑Confirm和Cancel的失败情况，做好<code>幂等处理</code>。(失败后，seata会<code>重试</code>，需要考虑重复处理的情况)</li>
+</ol>
+<h4 id="案例-1">案例
+</h4><p>需求如下:</p>
+<ol>
+<li>修改account-service,编写try、confirm、 cancel逻辑</li>
+<li>try业务:添加冻结金额，扣减可用金额</li>
+<li>confirm业务:删除冻结金额</li>
+<li>cancel业务:删除冻结金额，恢复可用金额</li>
+<li>保证confirm、cancel接口的<code>幂等性</code>（业务接口不会因为重复调用出现问题）</li>
+<li>允许<code>空回滚</code></li>
+<li>拒绝<code>业务悬挂</code></li>
+</ol>
+<blockquote>
+<p>有几个需要注意的点，<code>资源预留</code>是为了修改目标数据的值，但是新增订单是一个新增逻辑，这并<code>不适合TCC模式</code>，用<code>AT模式</code>就很好了</p>
+<p>扣减余额和扣减库存可以使用TCC模式，在一个分布式事务当中既有<code>TCC模式</code>又有<code>AT模式</code>可以么？</p>
+<p>答案是可以的</p>
+</blockquote>
+<h5 id="空回滚问题">空回滚问题
+</h5><p>当某分支事务的try阶段阻塞时，可能导致全局事务超时而触发二阶段的cancel操作。在未执行try操作时先执行了cancel操作，这时cancel不能做回滚,就是<code>空回滚</code>。这里并没有进行<code>资源预留</code>也无法进行<code>回滚</code>，但是这里也不能进行报错，否则<code>Seata</code>会认为<code>cancel</code>失败，应该返回正常结束。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240413065417807"
+	
+	
+></p>
+<h5 id="业务悬挂">业务悬挂
+</h5><blockquote>
+<p>此时阻塞的业务终于畅通了，但是这个事务已经提交了，后续既没有进行<code>confirm</code>也没有执行<code>cancel</code></p>
+<p>对于已经空回滚的业务，如果以后继续执行try,就永远不可能confirm或cancel,这就是<code>业务悬挂</code>。应当阻止执行空回滚后的try操作，避免悬挂
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240413070301607"
+	
+	
+>
+为了避免<code>空回滚</code>，应该在<code>cancel</code>判断是否进行了<code>try</code></p>
+<p>为了避免<code>业务悬挂</code>，应该在<code>try</code>判断是否进行了<code>cancel</code></p>
+<p>这样就必须在数据库里记录当前状态，判断当前是在<code>try</code>？还是在<code>confirm</code>或者<code>cancel</code>？</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- auto-generated definition
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">accoutn_freeze_tbl_8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">xid</span><span class="w">          </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">188</span><span class="p">)</span><span class="w">           </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;事务编号&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">user_id</span><span class="w">      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w">           </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;用户编号`&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">freeze_money</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="n">unsigned</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;冻结金额&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">state</span><span class="w">        </span><span class="nb">int</span><span class="w">                    </span><span class="k">null</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;事务状态(0:try、1:confirm、2:cancel)&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;冻结金额表&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h6 id="try业务">try业务
+</h6><ol>
+<li>记录冻结金额和事务状态到account_ freeze表</li>
+<li>扣减account表可用金额</li>
+</ol>
+<h6 id="confirm业务">confirm业务
+</h6><p>根据xid删除account_freeze表的冻结记录</p>
+<h6 id="cancel业务">cancel业务
+</h6><ol>
+<li>修改account_ freeze表,冻结金额为0，state为2</li>
+<li>修改account表，恢复可用金额</li>
+</ol>
+<h6 id="如何判断是否空回滚">如何判断是否空回滚
+</h6><p>cancel业务中，根据xid查询account_freeze,如果为null则说明try还没做，需要空回滚</p>
+<h6 id="如何避免是否业务悬挂">如何避免是否业务悬挂
+</h6><p>try业务中，根据xid查询account_freeze如果已经存在则证明Cancel已经执行，拒绝执行try业务</p>
+<h5 id="代码实现">代码实现
+</h5><p>TCC的<code>Try</code>、<code>Confirm</code>、 <code>Cancel</code>方法都需要在接口中基于注解来声明，语法如下:</p>
+<blockquote>
+<p>name指定<code>try</code>方法、commitMethod指定<code>confirm</code>方法、rollbackMethod指定<code>cancel</code>方法</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">AccountTCCService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 从用户账户中扣款
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param userId 用户 ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param money  钱
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@TwoPhaseBusinessAction</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;deduct&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">commitMethod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;confirm&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">rollbackMethod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;cancel&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">deduct</span><span class="p">(</span><span class="nd">@BusinessActionContextParameter</span><span class="p">(</span><span class="n">paramName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;userId&#34;</span><span class="p">)</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="nd">@BusinessActionContextParameter</span><span class="p">(</span><span class="n">paramName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;money&#34;</span><span class="p">)</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">money</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">confirm</span><span class="p">(</span><span class="n">BusinessActionContext</span><span class="w"> </span><span class="n">context</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span><span class="n">BusinessActionContext</span><span class="w"> </span><span class="n">context</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@TableName</span><span class="p">(</span><span class="s">&#34;account_freeze_tbl&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AccountFreeze</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@TableId</span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IdType</span><span class="p">.</span><span class="na">INPUT</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">freezeMoney</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">state</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">State</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">TRY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CONFIRM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">CANCEL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">AccountFreezeMapper</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseMapper</span><span class="o">&lt;</span><span class="n">AccountFreeze</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AccountTCCServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AccountTCCService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AccountMapper</span><span class="w"> </span><span class="n">accountMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AccountFreezeMapper</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Autowired</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">AccountTCCServiceImpl</span><span class="p">(</span><span class="n">AccountMapper</span><span class="w"> </span><span class="n">accountMapper</span><span class="p">,</span><span class="w"> </span><span class="n">AccountFreezeMapper</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">accountMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">accountFreezeMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 扣除金额
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * TCC try方法
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param userId 用户 ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param money  钱
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Transactional</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deduct</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 获取事务id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RootContext</span><span class="p">.</span><span class="na">getXID</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 数据库字段设置为unsigned int，所以不能为负数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1.扣减金额</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountMapper</span><span class="p">.</span><span class="na">deduct</span><span class="p">(</span><span class="n">userId</span><span class="p">,</span><span class="n">money</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2.记录冻结金额、事务状态</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">AccountFreeze</span><span class="w"> </span><span class="n">accountFreeze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountFreeze</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setUserId</span><span class="p">(</span><span class="n">userId</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setFreezeMoney</span><span class="p">(</span><span class="n">money</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setState</span><span class="p">(</span><span class="n">AccountFreeze</span><span class="p">.</span><span class="na">State</span><span class="p">.</span><span class="na">TRY</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setXid</span><span class="p">(</span><span class="n">xid</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 确认
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * TCC confirm方法
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param context 上下文
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return boolean
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">confirm</span><span class="p">(</span><span class="n">BusinessActionContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 获取事务id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getXid</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 删除了一条数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">deleteById</span><span class="p">(</span><span class="n">xid</span><span class="p">)</span><span class="o">==</span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 取消
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * TCC cancel方法
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param context 上下文
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return boolean
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span><span class="n">BusinessActionContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 查询冻结记录</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getXid</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">AccountFreeze</span><span class="w"> </span><span class="n">accountFreeze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">selectById</span><span class="p">(</span><span class="n">xid</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1.恢复可用余额</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountMapper</span><span class="p">.</span><span class="na">refund</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">getUserId</span><span class="p">(),</span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">getFreezeMoney</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2.将冻结金额清零，状态设置为CANCEL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setFreezeMoney</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setState</span><span class="p">(</span><span class="n">AccountFreeze</span><span class="p">.</span><span class="na">State</span><span class="p">.</span><span class="na">CANCEL</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">updateById</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="o">==</span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>以上是基本内容</p>
+<p>接下来增加对于<code>空回滚</code>和<code>业务悬挂</code>的判断</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Slf4j</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AccountTCCServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AccountTCCService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AccountMapper</span><span class="w"> </span><span class="n">accountMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">AccountFreezeMapper</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Autowired</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">AccountTCCServiceImpl</span><span class="p">(</span><span class="n">AccountMapper</span><span class="w"> </span><span class="n">accountMapper</span><span class="p">,</span><span class="w"> </span><span class="n">AccountFreezeMapper</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">accountMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">accountFreezeMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 扣除金额
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * TCC try方法
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param userId 用户 ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param money  钱
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Transactional</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deduct</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 获取事务id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RootContext</span><span class="p">.</span><span class="na">getXID</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 判断业务悬挂</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">AccountFreeze</span><span class="w"> </span><span class="n">selectedById</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">selectById</span><span class="p">(</span><span class="n">xid</span><span class="p">);)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">selectedById</span><span class="o">!=</span><span class="kc">null</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// cancel已经执行过</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 数据库字段设置为unsigned int，所以不能为负数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1.扣减金额</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountMapper</span><span class="p">.</span><span class="na">deduct</span><span class="p">(</span><span class="n">userId</span><span class="p">,</span><span class="n">money</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2.记录冻结金额、事务状态</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">AccountFreeze</span><span class="w"> </span><span class="n">accountFreeze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AccountFreeze</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setUserId</span><span class="p">(</span><span class="n">userId</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setFreezeMoney</span><span class="p">(</span><span class="n">money</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setState</span><span class="p">(</span><span class="n">AccountFreeze</span><span class="p">.</span><span class="na">State</span><span class="p">.</span><span class="na">TRY</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setXid</span><span class="p">(</span><span class="n">xid</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 确认
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * TCC confirm方法
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param context 上下文
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return boolean
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">confirm</span><span class="p">(</span><span class="n">BusinessActionContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 获取事务id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getXid</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 删除了一条数据，删除数据本来就是幂等性的</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">deleteById</span><span class="p">(</span><span class="n">xid</span><span class="p">)</span><span class="o">==</span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 取消
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * TCC cancel方法
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @param context 上下文
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * @return boolean
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">cancel</span><span class="p">(</span><span class="n">BusinessActionContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 查询冻结记录</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">xid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getXid</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">userId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getActionContext</span><span class="p">(</span><span class="s">&#34;userId&#34;</span><span class="p">).</span><span class="na">toString</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">AccountFreeze</span><span class="w"> </span><span class="n">accountFreeze</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">selectById</span><span class="p">(</span><span class="n">xid</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 空回滚的判断</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">accountFreeze</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 记录空回滚的数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setUserId</span><span class="p">(</span><span class="n">userId</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setFreezeMoney</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setState</span><span class="p">(</span><span class="n">AccountFreeze</span><span class="p">.</span><span class="na">State</span><span class="p">.</span><span class="na">CANCEL</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setXid</span><span class="p">(</span><span class="n">xid</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 幂等性判断</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">getState</span><span class="p">()</span><span class="o">==</span><span class="n">AccountFreeze</span><span class="p">.</span><span class="na">State</span><span class="p">.</span><span class="na">CANCEL</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 已经执行过cancel方法了，无需重复执行</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 1.恢复可用余额</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountMapper</span><span class="p">.</span><span class="na">refund</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">getUserId</span><span class="p">(),</span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">getFreezeMoney</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 2.将冻结金额清零，状态设置为CANCEL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setFreezeMoney</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">accountFreeze</span><span class="p">.</span><span class="na">setState</span><span class="p">(</span><span class="n">AccountFreeze</span><span class="p">.</span><span class="na">State</span><span class="p">.</span><span class="na">CANCEL</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">accountFreezeMapper</span><span class="p">.</span><span class="na">updateById</span><span class="p">(</span><span class="n">accountFreeze</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">count</span><span class="o">==</span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="saga模式">Saga模式
+</h3><p>Saga模式是SEATA提供的长事务解决方案。也分为两个阶段:</p>
+<ol>
+<li>一阶段:直接提交本地事务</li>
+<li>二阶段:成功则什么都不做;失败则通过编写补偿业务来回滚
+Saga模式的缺点是没有隔离性
+Saga模式优点:</li>
+<li>事务参与者可以基于事件驱动实现异步调用，吞吐高</li>
+<li>一阶段直接提交事务，无锁，性能好</li>
+<li>不用编写TCC中的三个阶段，实现简单
+缺点:</li>
+<li>软状态持续时间不确定，时效性差</li>
+<li>没有锁，没有事务隔离，会有脏写</li>
+</ol>
+<h3 id="模式对比">模式对比
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240413205630731"
+	
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 深海火锅店
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

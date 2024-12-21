@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="04_Spring原理">
+<title>04_Spring原理</title>
+
+<link rel='canonical' href='https://IsUnderAchiever.github.io/p/04_spring%E5%8E%9F%E7%90%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="04_Spring原理">
+<meta property='og:description' content="04_Spring原理">
+<meta property='og:url' content='https://IsUnderAchiever.github.io/p/04_spring%E5%8E%9F%E7%90%86/'>
+<meta property='og:site_name' content='深海火锅店'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-12-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-12-17T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/04_spring%E5%8E%9F%E7%90%86/202412212036798.png' />
+<meta name="twitter:title" content="04_Spring原理">
+<meta name="twitter:description" content="04_Spring原理"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://IsUnderAchiever.github.io/p/04_spring%E5%8E%9F%E7%90%86/202412212036798.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/header_hu16240087013746809388.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😁</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">深海火锅店</a></h1>
+            <h2 class="site-description">记录我的成长史</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/477448861'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1734756297204" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4471" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M685.21 117.15c6.63-9.41 21.12-11.52 30.21-4.47 9.06 6.34 11.49 19.96 5.35 29.12-35.44 51.91-70.81 103.88-106.31 155.76-0.63 1.02-1.16 2.09-1.7 3.16 86.41 0.03 172.82 0.01 259.22 0.02 10.3-0.39 19.61 8.97 19.11 19.28 0.08 172.65 0.18 345.31 0.23 517.97 0.29 9.97-8.32 19.2-18.33 19.35-21.78 0.24-43.56-0.17-65.32 0.19-1.96 17.65-9.87 34.97-23.27 46.85-12.92 12-31.5 17.75-48.9 14.36-28.92-5.43-48.64-33.26-51.72-61.39-109.19 0.08-218.38 0.08-327.57 0-2.33 18.48-10.77 36.55-25.23 48.6-15.66 13.62-39.03 17.75-58.17 9.42-23.11-9.58-37.95-33.47-40.48-57.84-27.1-0.36-54.23 0.06-81.33-0.21-9.8-0.41-18.09-9.49-17.73-19.28 0.06-170.34 0.08-340.69 0.12-511.04 0.1-4.55-0.51-9.27 1.09-13.64 2.49-7.28 9.81-12.67 17.54-12.61 91.71-0.09 183.42 0.12 275.13-0.11-50.14-27.95-100.88-54.9-151.14-82.66-10.46-5.79-13.59-20.94-6.66-30.59 5.82-9.13 18.87-12.17 28.25-6.87 69.04 37.58 138.06 75.18 207.1 112.76 3.52 1.62 5.91 4.67 8.61 7.31 15.47 0.33 30.96 0.05 46.45 0.15 41.94-61.11 83.59-122.43 125.45-183.59M169.87 336.87c-0.09 161.25 0.16 322.48 0.35 483.72 228.11-0.17 456.22-0.07 684.33-0.05-0.02-161.22 0.22-322.46 0.07-483.68-228.25 0.01-456.5-0.02-684.75 0.01M271 857.38c2.22 11.33 10.44 23.52 23 24.07 12.45-0.26 21.53-12.56 22.95-24.07-15.32 0.05-30.64 0.02-45.95 0m452.05 0c1.42 11.5 10.51 23.79 22.95 24.07 12.54-0.55 20.85-12.71 22.99-24.06-15.31 0.01-30.63 0.04-45.94-0.01z" fill="#454545" p-id="4472"></path><path d="M221.28 374.37c3.83-0.94 7.81-0.61 11.72-0.65 188.33 0.01 376.65-0.01 564.98 0.01 10.85-0.43 20.67 9.41 20.08 20.27 0.14 123.33-0.02 246.66 0.16 369.99 0.13 8.3-5.4 16.35-13.29 19-4.14 1.52-8.61 1.18-12.93 1.19-188.67-0.04-377.35 0.06-566.02-0.04-12.39 0.23-21.58-12.32-19.69-24.15 0.06-122.01 0.04-244.03 0.11-366.04-0.24-8.92 6.15-17.52 14.88-19.58M243 410.18c-0.38 112.4 0.15 224.81 0.11 337.21 179.44 0.13 358.89 0.09 538.34 0.02 0.01-112.43 0.4-224.89-0.09-337.3-179.45 0.14-358.91-0.01-538.36 0.07z" fill="#454545" p-id="4473"></path><path d="M600.4 471.55c5.06-1.37 10.69-0.78 15.28 1.8 35.65 21.33 71.26 42.72 106.91 64.07 4.92 2.83 10.29 5.72 13.05 10.95 4.45 7.6 3.2 17.98-3.01 24.24-6.32 7.05-17.67 8.31-25.62 3.34-37.26-22.4-74.56-44.75-111.83-67.13-6.4-3.83-10.36-11.35-9.78-18.79 0.31-8.57 6.75-16.33 15-18.48zM405.42 481.48c8.67-1.08 17.67 4.03 21.1 12.09 4.57 9.77-0.18 22.57-10.12 26.85-33.02 15.3-66.04 30.58-99.07 45.84-9.66 4.53-22.34-0.1-26.68-9.87-4.95-9.45-0.72-22.17 8.73-26.97 30.72-14.34 61.56-28.44 92.31-42.72 4.46-1.98 8.79-4.61 13.73-5.22zM407.29 596.31c8.9-3.09 19.57 1.06 24.09 9.31 4.37 7.1 1.79 15.88 4.5 23.51 3.44 13.44 14.3 26.79 29.14 27.09 13.98 0.07 24.84-11.84 28.91-24.34 2.31-6.05 2.52-12.54 2.96-18.9 1.17-11.04 12.56-19.47 23.46-17.43 9.81 1.3 17.53 10.53 17.35 20.37-0.08 15.28 7.21 32.12 21.92 38.44 8.4 3.65 18.6 1.7 25.5-4.2 10.37-8.44 15.16-22.11 15.17-35.21 0.14-10.37 9.36-19.53 19.73-19.62 10.15-0.64 19.85 7.53 21.03 17.62 2.16 35.45-20.4 73.22-55.9 82.28-24.72 6.92-51.53-3.48-68.08-22.38-10.45 11.74-24.48 20.62-40.07 23.39-17.51 3.32-36.18-1.22-50.48-11.76-21.88-15.69-33.94-42.91-33.43-69.55 0.28-8.35 6.19-16.17 14.2-18.62z" fill="#454545" p-id="4474"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/IsUnderAchiever'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://IsUnderAchiever.github.io/en/" >English</option>
+                                
+                                    <option value="https://IsUnderAchiever.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#spring原理">Spring原理</a>
+      <ol>
+        <li><a href="#spring特点">Spring特点</a></li>
+        <li><a href="#轻量级">轻量级</a></li>
+        <li><a href="#控制反转">控制反转</a></li>
+        <li><a href="#面向切面">面向切面</a></li>
+        <li><a href="#容器">容器</a></li>
+        <li><a href="#框架集合">框架集合</a></li>
+        <li><a href="#spring核心组件">Spring核心组件</a></li>
+        <li><a href="#spring常用模块">Spring常用模块</a></li>
+        <li><a href="#spring主要包">Spring主要包</a></li>
+        <li><a href="#spring常用注解">Spring常用注解</a></li>
+        <li><a href="#spring第三方结合">Spring第三方结合</a></li>
+        <li><a href="#spring-ioc原理">Spring IOC原理</a></li>
+        <li><a href="#概念">概念</a></li>
+        <li><a href="#spring容器高层视图">Spring容器高层视图</a></li>
+        <li><a href="#ioc容器实现">IOC容器实现</a>
+          <ol>
+            <li><a href="#beanfactory-框架基础设施">BeanFactory-框架基础设施</a></li>
+            <li><a href="#applicationcontext-面向开发应用">ApplicationContext 面向开发应用</a></li>
+            <li><a href="#webapplication-体系架构">WebApplication 体系架构</a></li>
+          </ol>
+        </li>
+        <li><a href="#springbean作用域">SpringBean作用域</a></li>
+        <li><a href="#springbean生命周期">SpringBean生命周期</a></li>
+        <li><a href="#spring依赖注入四种方式">Spring依赖注入四种方式</a></li>
+        <li><a href="#5种不同方式的自动装配">5种不同方式的自动装配</a></li>
+        <li><a href="#spring-aop原理">Spring AOP原理</a></li>
+        <li><a href="#概念-1">概念</a></li>
+        <li><a href="#aop核心概念">AOP核心概念</a></li>
+        <li><a href="#aop两种代理方式">AOP两种代理方式</a></li>
+        <li><a href="#实现原理">实现原理</a></li>
+        <li><a href="#springmvc原理">SpringMVC原理</a></li>
+        <li><a href="#mvc流程">MVC流程</a></li>
+        <li><a href="#mvc常用注解">MVC常用注解</a></li>
+        <li><a href="#springboot原理">SpringBoot原理</a></li>
+        <li><a href="#jpa原理">JPA原理</a></li>
+        <li><a href="#事务">事务</a></li>
+        <li><a href="#本地事务">本地事务</a></li>
+        <li><a href="#分布式事务">分布式事务</a></li>
+        <li><a href="#两阶段提交">两阶段提交</a></li>
+        <li><a href="#mybatis缓存">MyBatis缓存</a></li>
+        <li><a href="#mybatis一级缓存原理sqlsession级别">MyBatis一级缓存原理（sqlsession级别）</a></li>
+        <li><a href="#二级缓存原理mapper级别">二级缓存原理（mapper级别）</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/04_spring%E5%8E%9F%E7%90%86/">
+                <img src="/p/04_spring%E5%8E%9F%E7%90%86/202412212036798_hu18039036192235098014.png"
+                        srcset="/p/04_spring%E5%8E%9F%E7%90%86/202412212036798_hu18039036192235098014.png 800w, /p/04_spring%E5%8E%9F%E7%90%86/202412212036798_hu4878295368521336578.png 1600w"
+                        width="800" 
+                        height="231" 
+                        loading="lazy"
+                        alt="Featured image of post 04_Spring原理" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/java/" >
+                Java
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/04_spring%E5%8E%9F%E7%90%86/">04_Spring原理</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            04_Spring原理
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2022-12-17</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 17 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="spring原理">Spring原理
+</h2><h3 id="spring特点">Spring特点
+</h3><blockquote>
+<p>它是一个全面的、企业应用开发一站式的解决方案，贯穿表现层、业务层、持久层。但是 Spring仍然可以和其他的框架无缝整合。</p>
+</blockquote>
+<h3 id="轻量级">轻量级
+</h3><h3 id="控制反转">控制反转
+</h3><h3 id="面向切面">面向切面
+</h3><h3 id="容器">容器
+</h3><h3 id="框架集合">框架集合
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942533.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="框架集合"
+	
+	
+></p>
+<h3 id="spring核心组件">Spring核心组件
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942720.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="spring核心组件"
+	
+	
+></p>
+<h3 id="spring常用模块">Spring常用模块
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942329.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="常用模块"
+	
+	
+></p>
+<h3 id="spring主要包">Spring主要包
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942662.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="主要jar包"
+	
+	
+></p>
+<h3 id="spring常用注解">Spring常用注解
+</h3><blockquote>
+<p>bean 注入与装配的的方式有很多种，可以通过 xml、get set 方式，、造函数或者注解等。简单易用的方式就是使用 Spring 的注解了，Spring 提供了大量的注解方式<br>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942615.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="spring常用注解"
+	
+	
+></p>
+</blockquote>
+<h3 id="spring第三方结合">Spring第三方结合
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942195.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="第三方框架集成"
+	
+	
+></p>
+<h3 id="spring-ioc原理">Spring IOC原理
+</h3><h3 id="概念">概念
+</h3><blockquote>
+<p>Spring 通过一个配置文件描述 Bean 及 Bean 之间的依赖关系，利用 Java 语言的反射功能实例化Bean 并建立 Bean 之间的依赖关系。 Spring 的 IoC 容器在完成这些底层工作的基础上，还提供了 Bean 实例缓存、生命周期管理、 Bean 实例代理、事件发布、资源装载等高级服务。</p>
+</blockquote>
+<h3 id="spring容器高层视图">Spring容器高层视图
+</h3><blockquote>
+<p>Spring 启动时读取应用程序提供的 Bean 配置信息，并在 Spring 容器中生成一份相应的 Bean 配置注册表，然后根据这张注册表实例化 Bean，装配好 Bean 之间的依赖关系，为上层应用提供准备就绪的运行环境。其中 Bean 缓存池为 HashMap 实现。</p>
+</blockquote>
+<h3 id="ioc容器实现">IOC容器实现
+</h3><h4 id="beanfactory-框架基础设施">BeanFactory-框架基础设施
+</h4><blockquote>
+<p>BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身；ApplicationContext 面向使用Spring 框架的开发者，几乎所有的应用场合我们都直接使用 ApplicationContext 而非底层的 BeanFactory</p>
+</blockquote>
+<ol>
+<li>BeanDefinitionRegistry 注册表：Spring 配置文件中每一个节点元素在 Spring 容器里都通过一个 BeanDefinition 对象表示，它描述了 Bean 的配置信息。而 BeanDefinitionRegistry 接口提供了向容器手工注册BeanDefinition 对象的方法</li>
+<li>BeanFactory 顶层接口：位于类结构树的顶端 ，它最主要的方法就是 getBean(String beanName)，该方法从容器中返回特定名称的 Bean，BeanFactory 的功能通过其他的接口得到不断扩展</li>
+<li>ListableBeanFactory：该接口定义了访问容器中 Bean 基本信息的若干方法，如查看 Bean 的个数、获取某一类型Bean 的配置名、查看容器中是否包括某一 Bean 等方法</li>
+<li>HierarchicalBeanFactory 父子级联：父子级联 IOC 容器的接口，子容器可以通过接口方法访问父容器； 通过HierarchicalBeanFactory 接口， Spring 的 IOC 容器可以建立父子层级关联的容器体系，子容器可以访问父容器中的 Bean，但父容器不能访问子容器的 Bean。Spring 使用父子容器实现了很多功能，比如在 Spring MVC 中，展现层 Bean 位于一个子容器中，而业务层和持久层的 Bean 位于父容器中。这样，展现层 Bean 就可以引用业务层和持久层的 Bean，而业务层和持久层的 Bean 则看不到展现层的 Bean</li>
+<li>ConfigurableBeanFactory：是一个重要的接口，增强了 IoC 容器的可定制性，它定义了设置类装载器、属性编辑器、容器初始化后置处理器等方法</li>
+<li>AutowireCapableBeanFactory 自动装配：定义了将容器中的 Bean 按某种规则（如按名字匹配、按类型匹配等）进行自动装配的方法</li>
+<li>SingletonBeanRegistry 运行期间注册单例 Bean：定义了允许在运行期间向容器注册单实例 Bean 的方法；对于单实例（ singleton）的 Bean 来说，BeanFactory 会缓存 Bean 实例，所以第二次使用 getBean() 获取 Bean 时将直接从IoC 容器的缓存中获取 Bean 实例。Spring 在 DefaultSingletonBeanRegistry 类中提供了一个用于缓存单实例 Bean 的缓存器，它是一个用 HashMap 实现的缓存器，单实例的 Bean 以beanName 为键保存在这个 HashMap中</li>
+<li>依赖日志框架：在初始化 BeanFactory 时，必须为其提供一种日志框架，比如使用 Log4J， 即在类路径下提供 Log4J 配置文件，这样启动 Spring 容器才不会报错</li>
+</ol>
+<h4 id="applicationcontext-面向开发应用">ApplicationContext 面向开发应用
+</h4><blockquote>
+<p>ApplicationContext由BeanFactory派生而来，提供了更多面向实际应用的功能。ApplicationContext 继承了 HierarchicalBeanFactory 和 ListableBeanFactory 接口，在此基础上，还通过多个其他的接口扩展了 BeanFactory 的功能</p>
+</blockquote>
+<ol>
+<li>ClassPathXmlApplicationContext：默认从类路径加载配置文件</li>
+<li>FileSystemXmlApplicationContext：默认从文件系统中装载配置文件</li>
+<li>ApplicationEventPublisher：让容器拥有发布应用上下文事件的功能，包括容器启动事件、关闭事件等。</li>
+<li>MessageSource：为应用提供 i18n 国际化消息访问的功能；</li>
+<li>ResourcePatternResolver ： 所 有 ApplicationContext 实现类都实现了类似于PathMatchingResourcePatternResolver 的功能，可以通过带前缀的 Ant 风格的资源文件路径装载 Spring 的配置文件。</li>
+<li>LifeCycle：该接口是 Spring 2.0 加入的，该接口提供了 start()和 stop()两个方法，主要用于控制异步处理过程。在具体使用时，该接口同时被 ApplicationContext 实现及具体Bean 实现，ApplicationContext 会将 start/stop 的信息传递给容器中所有实现了该接口的 Bean，以达到管理和控制 JMX、任务调度等目的。</li>
+<li>ConfigurableApplicationContext 扩展于 ApplicationContext，它新增加了两个主要的方法： refresh()和 close()，让 ApplicationContext 具有启动、刷新和关闭应用上下文的能力。在应用上下文关闭的情况下调用 refresh()即可启动应用上下文，在已经启动的状态下，调用 refresh()则清除缓存并重新装载配置信息，而调用 close()则可关闭应用上下文</li>
+</ol>
+<h4 id="webapplication-体系架构">WebApplication 体系架构
+</h4><blockquote>
+<p>WebApplicationContext 是专门为 Web 应用准备的，它允许从相对于 Web 根目录的路径中装载配置文件完成初始化工作。从 WebApplicationContext 中可以获得ServletContext 的引用，整个 Web 应用上下文对象将作为属性放置到 ServletContext 中，以便 Web 应用环境可以访问 Spring 应用上下文</p>
+</blockquote>
+<h3 id="springbean作用域">SpringBean作用域
+</h3><blockquote>
+<p>Spring 3 中为 Bean 定义了 5 中作用域，分别为 singleton（单例）、prototype（原型）、request、session 和 global session，5 种作用域说明如下：</p>
+</blockquote>
+<ol>
+<li>
+<p>singleton：单例模式（多线程下不安全）<br>
+singleton：单例模式，Spring IoC 容器中只会存在一个共享的 Bean 实例，无论有多少个Bean 引用它，始终指向同一对象。该模式在多线程下是不安全的。Singleton 作用域是Spring 中的缺省作用域，也可以显示的将 Bean 定义为 singleton 模式.<br>
+配置为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;userDao&#34;</span> <span class="na">class=</span><span class="s">&#34;com.ioc.UserDaoImpl&#34;</span> <span class="na">scope=</span><span class="s">&#34;singleton&#34;</span><span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>prototype:原型模式每次使用时创建：<br>
+prototype:原型模式，每次通过 Spring 容器获取 prototype 定义的 bean 时，容器都将创建一个新的 Bean 实例，每个 Bean 实例都有自己的属性和状态，而 singleton 全局只有一个对象。根据经验，对有状态的bean使用prototype作用域，而对无状态的bean使用singleton作用域。</p>
+</li>
+<li>
+<p>Request：一次 request 一个实例：<br>
+request：在一次 Http 请求中，容器会返回该 Bean 的同一实例。而对不同的 Http 请求则会产生新的 Bean，而且该 bean 仅在当前 Http Request 内有效,当前 Http 请求结束，该 bean实例也将会被销毁。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;loginAction&#34;</span> <span class="na">class=</span><span class="s">&#34;com.cnblogs.Login&#34;</span> <span class="na">scope=</span><span class="s">&#34;request&#34;</span><span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>session<br>
+session：在一次 Http Session 中，容器会返回该 Bean 的同一实例。而对不同的 Session 请求则会创建新的实例，该 bean 实例仅在当前 Session 内有效。同 Http 请求相同，每一次session 请求创建新的实例，而不同的实例之间不共享属性，且实例仅在自己的 session 请求内有效，请求结束，则实例将被销毁。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;userPreference&#34;</span> <span class="na">class=</span><span class="s">&#34;com.ioc.UserPreference&#34;</span> <span class="na">scope=</span><span class="s">&#34;session&#34;</span><span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>global Session<br>
+global Session：在一个全局的 Http Session 中，容器会返回该 Bean 的同一个实例，仅在使用 portlet context 时有效。</p>
+</li>
+</ol>
+<h3 id="springbean生命周期">SpringBean生命周期
+</h3><ol>
+<li>
+<blockquote>
+<p>实例化<br>
+实例化一个 Bean，也就是我们常说的 new。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>IOC 依赖注入<br>
+按照 Spring 上下文对实例化的 Bean 进行配置，也就是 IOC 注入。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>setBeanName 实现<br>
+如果这个 Bean 已经实现了 BeanNameAware 接口，会调用它实现的 setBeanName(String)方法，此处传递的就是 Spring 配置文件中 Bean 的 id 值</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>BeanFactoryAware 实现<br>
+如果这个 Bean 已经实现了 BeanFactoryAware 接口，会调用它实现的 setBeanFactory，setBeanFactory(BeanFactory)传递的是 Spring 工厂自身（可以用这个方式来获取其它 Bean，只需在 Spring 配置文件中配置一个普通的 Bean 就可以）。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>ApplicationContextAware 实现<br>
+如果这个 Bean 已经实现了 ApplicationContextAware 接口，会调用setApplicationContext(ApplicationContext)方法，传入 Spring 上下文（同样这个方式也可以实现步骤 4 的内容，但比 4 更好，因为 ApplicationContext 是 BeanFactory 的子接口，有更多的实现方法）</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>postProcessBeforeInitialization 接口实现-初始化预处理<br>
+如果这个 Bean 关联了 BeanPostProcessor 接口，将会调用postProcessBeforeInitialization(Object obj, String s)方法，BeanPostProcessor 经常被用作是 Bean 内容的更改，并且由于这个是在 Bean 初始化结束时调用那个的方法，也可以被应用于内存或缓存技术。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>init-method<br>
+如果 Bean 在 Spring 配置文件中配置了 init-method 属性会自动调用其配置的初始化方法。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>postProcessAfterInitialization<br>
+如果这个 Bean 关联了 BeanPostProcessor 接口，将会调用postProcessAfterInitialization(Object obj, String s)方法。<br>
+注：以上工作完成以后就可以应用这个 Bean 了，那这个 Bean 是一个 Singleton 的，所以一般情况下我们调用同一个 id 的 Bean 会是在内容地址相同的实例，当然在 Spring 配置文件中也可以配置非 Singleton。</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>Destroy 过期自动清理阶段<br>
+当 Bean 不再需要时，会经过清理阶段，如果 Bean 实现了 DisposableBean 这个接口，会调用那个其实现的 destroy()方法；</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<p>destroy-method 自配置清理<br>
+最后，如果这个 Bean 的 Spring 配置中配置了 destroy-method 属性，会自动调用其配置的销毁方法。</p>
+</blockquote>
+</li>
+</ol>
+<pre><code>![Bean在Spring Bean应用上下文中的生命周期](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942515.png)
+</code></pre>
+<blockquote>
+<p>（生命周期）</p>
+</blockquote>
+<ol start="11">
+<li>bean 标签有两个重要的属性（init-method 和 destroy-method）。用它们你可以自己定制初始化和注销方法。它们也有相应的注解（@PostConstruct 和@PreDestroy）。</li>
+</ol>
+<h3 id="spring依赖注入四种方式">Spring依赖注入四种方式
+</h3><blockquote>
+<p><code>构造器注入</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/*带参数，方便利用构造器进行注入*/</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="nf">CatDaoImpl</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">){</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">message</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;CatDaoImpl&#34;</span> <span class="na">class=</span><span class="s">&#34;com.CatDaoImpl&#34;</span><span class="nt">&gt;</span>   
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;constructor-arg</span> <span class="na">value=</span><span class="s">&#34; message &#34;</span><span class="nt">&gt;&lt;/constructor-arg&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/bean&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>setter 方法注入</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Id</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getId</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;id&#34;</span> <span class="na">class=</span><span class="s">&#34;com.id &#34;</span><span class="nt">&gt;</span>   
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;id&#34;</span> <span class="na">value=</span><span class="s">&#34;123&#34;</span><span class="nt">/&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/bean&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>静态工厂注入</code><br>
+静态工厂顾名思义，就是通过调用静态工厂的方法来获取自己需要的对象，为了让 spring 管理所有对象，我们不能直接通过工程类.静态方法()来获取对象，而是依然通过 spring 注入的形式获取</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DaoFactory</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//静态工厂   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">FactoryDao</span><span class="w"> </span><span class="nf">getStaticFactoryDaoImpl</span><span class="p">(){</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StaticFacotryDaoImpl</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SpringAction</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">FactoryDao</span><span class="w"> </span><span class="n">staticFactoryDao</span><span class="p">;</span><span class="w"> </span><span class="c1">//注入对象  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//注入对象的 set 方法   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setStaticFactoryDao</span><span class="p">(</span><span class="n">FactoryDao</span><span class="w"> </span><span class="n">staticFactoryDao</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">staticFactoryDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">staticFactoryDao</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//factory-method=&#34;getStaticFactoryDaoImpl&#34;指定调用哪个工厂方法</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;springAction&#34;</span> <span class="na">class=</span><span class="s">&#34; SpringAction&#34;</span> <span class="nt">&gt;</span>   
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--使用静态工厂的方法注入对象,对应下面的配置文件--&gt;</span>   
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;staticFactoryDao&#34;</span> <span class="na">ref=</span><span class="s">&#34;staticFactoryDao&#34;</span> <span class="nt">/&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/bean&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--此处获取对象的方式是从工厂类中获取静态方法--&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;staticFactoryDao&#34;</span> <span class="na">class=</span><span class="s">&#34;DaoFactory&#34;</span> <span class="na">factory-method=</span><span class="s">&#34;getStaticFactoryDaoImpl&#34;</span><span class="nt">&gt;&lt;/bean&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>实例工厂</code><br>
+实例工厂的意思是获取对象实例的方法不是静态的，所以你需要首先 new 工厂类，再调用普通的实例方法：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DaoFactory</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//实例工厂   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">FactoryDao</span><span class="w"> </span><span class="nf">getFactoryDaoImpl</span><span class="p">(){</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FactoryDaoImpl</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SpringAction</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">FactoryDao</span><span class="w"> </span><span class="n">factoryDao</span><span class="p">;</span><span class="w"> </span><span class="c1">//注入对象   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFactoryDao</span><span class="p">(</span><span class="n">FactoryDao</span><span class="w"> </span><span class="n">factoryDao</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">factoryDao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factoryDao</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;springAction&#34;</span> <span class="na">class=</span><span class="s">&#34;SpringAction&#34;</span><span class="nt">&gt;</span>   
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--使用实例工厂的方法注入对象,对应下面的配置文件--&gt;</span>   
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;factoryDao&#34;</span> <span class="na">ref=</span><span class="s">&#34;factoryDao&#34;</span><span class="nt">&gt;&lt;/property&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/bean&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--此处获取对象的方式是从工厂类中获取实例方法--&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;daoFactory&#34;</span> <span class="na">class=</span><span class="s">&#34;com.DaoFactory&#34;</span><span class="nt">&gt;&lt;/bean&gt;</span>   
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">&#34;factoryDao&#34;</span> <span class="na">factory-bean=</span><span class="s">&#34;daoFactory&#34;</span> <span class="na">factory-method=</span><span class="s">&#34;getFactoryDaoImpl&#34;</span><span class="nt">&gt;&lt;/bean&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5种不同方式的自动装配">5种不同方式的自动装配
+</h3><blockquote>
+<p>Spring 装配包括手动装配和自动装配，手动装配是有基于 xml 装配、构造方法、setter 方法等<br>
+自动装配有五种自动装配的方式，可以用来指导 Spring 容器用自动装配方式来进行依赖注入。</p>
+</blockquote>
+<ol>
+<li>no：默认的方式是不进行自动装配，通过显式设置 ref 属性来进行装配。</li>
+<li>byName：通过参数名 自动装配，Spring 容器在配置文件中发现 bean 的 autowire 属性被设置成 byname，之后容器试图匹配、装配和该 bean 的属性具有相同名字的 bean。</li>
+<li>byType：通过参数类型自动装配，Spring 容器在配置文件中发现 bean 的 autowire 属性被设置成 byType，之后容器试图匹配、装配和该 bean 的属性具有相同类型的 bean。如果有多个 bean 符合条件，则抛出错误。</li>
+<li>constructor：这个方式类似于 byType， 但是要提供给构造器参数，如果没有确定的带参数的构造器参数类型，将会抛出异常。</li>
+<li>autodetect：首先尝试使用 constructor 来自动装配，如果无法工作，则使用 byType 方式。</li>
+</ol>
+<h3 id="spring-aop原理">Spring AOP原理
+</h3><h3 id="概念-1">概念
+</h3><blockquote>
+<p>横切的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块，并将其命名为Aspect，即切面。所谓切面，简单说就是那些与业务无关，却为业务模块所共同调用的逻辑或责任封装起来，便于减少系统的重复代码，降低模块之间的耦合度，并有利于未来的可操作性和可维护性。<br>
+使用横切技术，AOP 把软件系统分为两个部分：核心关注点和横切关注点。业务处理的主要流程是核心关注点，与之关系不大的部分是横切关注点。横切关注点的一个特点是，他们经常发生在核心关注点的多处，而各处基本相似，比如权限认证、日志、事物。AOP 的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。<br>
+AOP 主要应用场景有：</p>
+</blockquote>
+<ol>
+<li>Authentication 权限</li>
+<li>Caching 缓存</li>
+<li>Context passing 内容传递</li>
+<li>Error handling 错误处理</li>
+<li>Lazy loading 懒加载</li>
+<li>Debugging 调试</li>
+<li>logging, tracing, profiling and monitoring 记录跟踪 优化 校准</li>
+<li>Performance optimization 性能优化</li>
+<li>Persistence 持久化</li>
+<li>Resource pooling 资源池</li>
+<li>Synchronization 同步</li>
+<li>Transactions 事务</li>
+</ol>
+<h3 id="aop核心概念">AOP核心概念
+</h3><blockquote>
+<p>1、切面（aspect）：类是对物体特征的抽象，切面就是对横切关注点的抽象<br>
+2、横切关注点：对哪些方法进行拦截，拦截后怎么处理，这些关注点称之为横切关注点。<br>
+3、连接点（joinpoint）：被拦截到的点，因为 Spring 只支持方法类型的连接点，所以在 Spring中连接点指的就是被拦截到的方法，实际上连接点还可以是字段或者构造器。<br>
+4、切入点（pointcut）：对连接点进行拦截的定义<br>
+5、通知（advice）：所谓通知指的就是指拦截到连接点之后要执行的代码，通知分为前置、后置、异常、最终、环绕通知五类。<br>
+6、目标对象：代理的目标对象<br>
+7、织入（weave）：将切面应用到目标对象并导致代理对象创建的过程<br>
+8、引入（introduction）：在不修改代码的前提下，引入可以在运行期为类动态地添加一些方法或字段</p>
+</blockquote>
+<h3 id="aop两种代理方式">AOP两种代理方式
+</h3><blockquote>
+<p>Spring 提供了两种方式来生成代理对象: JDKProxy 和 Cglib，具体使用哪种方式生成由AopProxyFactory 根据 AdvisedSupport 对象的配置来决定。默认的策略是如果目标类是接口，则使用 JDK 动态代理技术，否则使用 Cglib 来生成代理<br>
+<code>JDK 动态接口代理</code><br>
+JDK 动态代理主要涉及到 java.lang.reflect 包中的两个类：Proxy 和 InvocationHandler。InvocationHandler是一个接口，通过实现该接口定义横切逻辑，并通过反射机制调用目标类的代码，动态将横切逻辑和业务逻辑编制在一起。Proxy 利用 InvocationHandler 动态创建一个符合某一接口的实例，生成目标类的代理对象
+<code>CGLib 动态代理</code><br>
+CGLib 全称为 Code Generation Library，是一个强大的高性能，高质量的代码生成类库，可以在运行期扩展 Java 类与实现 Java 接口，CGLib 封装了 asm，可以在运行期动态生成新的 class。和 JDK 动态代理相比较：JDK 创建代理有一个限制，就是只能为接口创建代理实例，而对于没有通过接口定义业务方法的类，则可以通过 CGLib 创建动态代理。</p>
+</blockquote>
+<h3 id="实现原理">实现原理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Aspect</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TransactionDemo</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Pointcut</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">&#34;execution(* com.example.core.service.*.*.*(..))&#34;</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">point</span><span class="p">(){</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Before</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s">&#34;point()&#34;</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">before</span><span class="p">(){</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;transaction begin&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@AfterReturning</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;point()&#34;</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">after</span><span class="p">(){</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;transaction commit&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Around</span><span class="p">(</span><span class="s">&#34;point()&#34;</span><span class="p">)</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">around</span><span class="p">(</span><span class="n">ProceedingJoinPoint</span><span class="w"> </span><span class="n">joinPoint</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Throwable</span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;transaction begin&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">joinPoint</span><span class="p">.</span><span class="na">proceed</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;transaction commit&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="springmvc原理">SpringMVC原理
+</h3><blockquote>
+<p>Spring 的模型-视图-控制器（MVC）框架是围绕一个 DispatcherServlet 来设计的，这个 Servlet会把请求分发给各个处理器，并支持可配置的处理器映射、视图渲染、本地化、时区与主题渲染等，甚至还能支持文件上传。</p>
+</blockquote>
+<h3 id="mvc流程">MVC流程
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942258.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="MVC流程"
+	
+	
+></p>
+<blockquote>
+<p>Http 请求到 DispatcherServlet</p>
+</blockquote>
+<ol>
+<li>客户端请求提交到 DispatcherServlet</li>
+</ol>
+<blockquote>
+<p>HandlerMapping 寻找处理器</p>
+</blockquote>
+<ol start="2">
+<li>由 DispatcherServlet 控制器查询一个或多个 HandlerMapping，找到处理请求的Controller</li>
+</ol>
+<blockquote>
+<p>调用处理器 Controller</p>
+</blockquote>
+<ol start="3">
+<li>DispatcherServlet 将请求提交到 Controller。</li>
+</ol>
+<blockquote>
+<p>Controller 调用业务逻辑处理后，返回 ModelAndView</p>
+</blockquote>
+<ol start="4">
+<li>调用业务处理和返回结果：Controller 调用业务逻辑处理后，返回 ModelAndView。</li>
+</ol>
+<blockquote>
+<p>DispatcherServlet 查询 ModelAndView</p>
+</blockquote>
+<ol start="5">
+<li>处理视图映射并返回模型： DispatcherServlet 查询一个或多个 ViewResolver 视图解析器，找到 ModelAndView 指定的视图。</li>
+</ol>
+<blockquote>
+<p>ModelAndView 反馈浏览器 HTTP</p>
+</blockquote>
+<ol start="6">
+<li>Http 响应：视图负责将结果显示到客户端。</li>
+</ol>
+<h3 id="mvc常用注解">MVC常用注解
+</h3><ol>
+<li>@Controller</li>
+<li>@RestController</li>
+<li>@Component</li>
+<li>@Repository</li>
+<li>@Service</li>
+<li>@ResponseBody</li>
+<li>@RequestMapping</li>
+<li>@Autowired</li>
+<li>@PathVariable</li>
+<li>@RequestParam</li>
+<li>@RequestHeadler</li>
+</ol>
+<blockquote>
+<p>作用请查看上面 Spring常用注解 图解</p>
+</blockquote>
+<h3 id="springboot原理">SpringBoot原理
+</h3><blockquote>
+<p>Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用来简化新 Spring 应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot 致力于在蓬勃发展的快速应用开发领域(rapid application development)成为领导者。其特点如下：</p>
+</blockquote>
+<ol>
+<li>创建独立的 Spring 应用程序</li>
+<li>嵌入的 Tomcat，无需部署 WAR 文件</li>
+<li>简化 Maven 配置</li>
+<li>自动配置 Spring</li>
+<li>提供生产就绪型功能，如指标，健康检查和外部配置</li>
+<li>绝对没有代码生成和对 XML 没有要求配置</li>
+</ol>
+<h3 id="jpa原理">JPA原理
+</h3><h3 id="事务">事务
+</h3><blockquote>
+<p>事务是计算机应用中不可或缺的组件模型，它保证了用户操作的原子性 ( Atomicity )、一致性( Consistency )、隔离性 ( Isolation ) 和持久性 ( Durabilily)。</p>
+</blockquote>
+<h3 id="本地事务">本地事务
+</h3><blockquote>
+<p>紧密依赖于底层资源管理器(例如数据库连接)，事务处理局限在当前事务资源内。此种事务处理方式不存在对应用服务器的依赖，因而部署灵活却无法支持多数据源的分布式事务。<br>
+在数据库连接中使用本地事务示例如下：</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">transferAccount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">try</span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getDataSource</span><span class="p">().</span><span class="na">getConnection</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 将自动提交设置为 false，若设置为 true 则数据库将会把每一次数据更新认定为一个事务并自动提交  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">conn</span><span class="p">.</span><span class="na">setAutoCommit</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 将 A 账户中的金额减少 500  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmt</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">&#34;update t_account set amount = amount - 500 where account_id = &#39;A&#39;&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 将 B 账户中的金额增加 500   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmt</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">&#34;update t_account set amount = amount + 500 where account_id = &#39;B&#39;&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 提交事务  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">conn</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 事务提交：转账的两步操作同时成功  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">sqle</span><span class="p">){</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 发生异常，回滚在本事务中的操做  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">conn</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 事务回滚：转账的两步操作完全撤销  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmt</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">conn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="分布式事务">分布式事务
+</h3><blockquote>
+<p>Java 事务编程接口（JTA：Java Transaction API）和 Java 事务服务 (JTS；Java Transaction Service) 为 J2EE 平台提供了分布式事务服务。分布式事务（Distributed Transaction）包括事务管理器（Transaction Manager）和一个或多个支持 XA 协议的资源管理器 ( Resource Manager )。我们可以将资源管理器看做任意类型的持久化数据存储；事务管理器承担着所有事务参与单元的协调与控制。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">transferAccount</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">UserTransaction</span><span class="w"> </span><span class="n">userTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Connection</span><span class="w"> </span><span class="n">connA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmtA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Connection</span><span class="w"> </span><span class="n">connB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Statement</span><span class="w"> </span><span class="n">stmtB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">try</span><span class="p">{</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 获得 Transaction 管理对象  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userTx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UserTransaction</span><span class="p">)</span><span class="n">getContext</span><span class="p">().</span><span class="na">lookup</span><span class="p">(</span><span class="s">&#34;java:comp/UserTransaction&#34;</span><span class="p">);</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">connA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getDataSourceA</span><span class="p">().</span><span class="na">getConnection</span><span class="p">();</span><span class="c1">// 从数据库 A 中取得数据库连接  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">connB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getDataSourceB</span><span class="p">().</span><span class="na">getConnection</span><span class="p">();</span><span class="c1">// 从数据库 B 中取得数据库连接  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userTx</span><span class="p">.</span><span class="na">begin</span><span class="p">();</span><span class="w"> </span><span class="c1">// 启动事务  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmtA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connA</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span><span class="c1">// 将 A 账户中的金额减少 500   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmtA</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">&#34;update t_account set amount = amount - 500 where account_id = &#39;A&#39;&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 将 B 账户中的金额增加 500   </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmtB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connB</span><span class="p">.</span><span class="na">createStatement</span><span class="p">();</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">stmtB</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="s">&#34;update t_account set amount = amount + 500 where account_id = &#39;B&#39;&#34;</span><span class="p">);</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userTx</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span><span class="c1">// 提交事务  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 事务提交：转账的两步操作同时成功（数据库 A 和数据库 B 中的数据被同时更新）  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">sqle</span><span class="p">){</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 发生异常，回滚在本事务中的操纵  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">userTx</span><span class="p">.</span><span class="na">rollback</span><span class="p">();</span><span class="c1">// 事务回滚：数据库 A 和数据库 B 中的数据更新被同时撤销  </span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ne</span><span class="p">){</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">   
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="两阶段提交">两阶段提交
+</h3><blockquote>
+<p>两阶段提交主要保证了分布式事务的原子性：即所有结点要么全做要么全不做，所谓的两个阶段是指：第一阶段：准备阶段；第二阶段：提交阶段。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201941273.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="两阶段提交"
+	
+	
+>
+1 准备阶段<br>
+事务协调者(事务管理器)给每个参与者(资源管理器)发送 Prepare 消息，每个参与者要么直接返回失败(如权限验证失败)，要么在本地执行事务，写本地的 redo 和 undo 日志，但不提交，到达一种万事俱备，只欠东风的状态。
+2 提交阶段<br>
+如果协调者收到了参与者的失败消息或者超时，直接给每个参与者发送回滚(Rollback)消息；否则，发送提交(Commit)消息；参与者根据协调者的指令执行提交或者回滚操作，释放所有事务处理过程中使用的锁资源。(注意:必须在最后阶段释放锁资源)将提交分成两阶段进行的目的很明确，就是尽可能晚地提交事务，让事务在提交前尽可能地完成所有能完成的工作。</p>
+</blockquote>
+<h3 id="mybatis缓存">MyBatis缓存
+</h3><blockquote>
+<p>Mybatis 中有一级缓存和二级缓存，默认情况下一级缓存是开启的，而且是不能关闭的。一级缓存是指 SqlSession 级别的缓存，当在同一个 SqlSession 中进行相同的 SQL 语句查询时，第二次以后的查询不会从数据库查询，而是直接从缓存中获取，一级缓存最多缓存 1024 条 SQL。二级缓存是指可以跨 SqlSession 的缓存。是 mapper 级别的缓存，对于 mapper 级别的缓存不同的sqlsession 是可以共享的。
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942455.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="MyBatis缓存机制"
+	
+	
+></p>
+</blockquote>
+<h3 id="mybatis一级缓存原理sqlsession级别">MyBatis一级缓存原理（sqlsession级别）
+</h3><blockquote>
+<p>第一次发出一个查询 sql，sql 查询结果写入 sqlsession 的一级缓存中，缓存使用的数据结构是一个 map。
+key：MapperID+offset+limit+Sql+所有的入参
+value：用户信息
+同一个 sqlsession 再次发出相同的 sql，就从缓存中取出数据。如果两次中间出现 commit 操作（修改、添加、删除），本 sqlsession 中的一级缓存区域全部清空，下次再去缓存中查询不到所以要从数据库查询，从数据库查询到再写入缓存</p>
+</blockquote>
+<h3 id="二级缓存原理mapper级别">二级缓存原理（mapper级别）
+</h3><blockquote>
+<p>二级缓存的范围是 mapper 级别（mapper 同一个命名空间），mapper 以命名空间为单位创建缓存数据结构，结构是 map。mybatis 的二级缓存是通过 CacheExecutor 实现的。CacheExecutor其实是 Executor 的代理对象。所有的查询操作，在 CacheExecutor 中都会先匹配缓存中是否存在，不存在则查询数据库。
+具体使用需要配置：</p>
+</blockquote>
+<ol>
+<li>Mybatis 全局配置中启用二级缓存配置</li>
+<li>在对应的 Mapper.xml 中配置 cache 节点</li>
+<li>在对应的 select 查询节点中添加 useCache=true</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu5155801371712385131.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 谷粒商城"
+                        data-key="谷粒商城" 
+                        data-hash="md5-g&#43;Jrgc4Z5tPs5P2ZfECbfQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">谷粒商城</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/server.port%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E4%B8%8D%E7%94%9F%E6%95%88/">
+        
+        
+            <div class="article-image">
+                <img src="/p/server.port%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E4%B8%8D%E7%94%9F%E6%95%88/202412212133331.17160ff775d0c4cdc8a3406cfa05a128_hu5648387431953040294.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post server.port启动端口不生效"
+                        data-key="server.port启动端口不生效" 
+                        data-hash="md5-FxYP93XQxM3Io0Bs&#43;gWhKA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">server.port启动端口不生效</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/map%E4%B8%8E%E5%AE%9E%E4%BD%93%E8%BD%AC%E6%8D%A2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/map%E4%B8%8E%E5%AE%9E%E4%BD%93%E8%BD%AC%E6%8D%A2/202412212036798.6239d0d98413049b6c55a34b456087b1_hu16519776400703086887.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Map与实体转换"
+                        data-key="Map与实体转换" 
+                        data-hash="md5-YjnQ2YQTBJtsVaNLRWCHsQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Map与实体转换</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/povodaobodtopojo/">
+        
+        
+            <div class="article-image">
+                <img src="/p/povodaobodtopojo/202412212036798.6239d0d98413049b6c55a34b456087b1_hu16519776400703086887.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post PO、VO、DAO、BO、DTO、POJO"
+                        data-key="PO、VO、DAO、BO、DTO、POJO" 
+                        data-hash="md5-YjnQ2YQTBJtsVaNLRWCHsQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PO、VO、DAO、BO、DTO、POJO</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/thymeleaf/">
+        
+        
+            <div class="article-image">
+                <img src="/p/thymeleaf/202412211939238.ac4b28233b675f2a3353e7252f6f31af_hu2731044164903080209.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Thymeleaf"
+                        data-key="Thymeleaf" 
+                        data-hash="md5-rEsoIztnXyozU&#43;clL28xrw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Thymeleaf</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 深海火锅店
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
