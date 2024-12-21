@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker配置">
+<title>Docker</title>
+
+<link rel='canonical' href='https://IsUnderAchiever.github.io/p/docker/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Docker">
+<meta property='og:description' content="Docker配置">
+<meta property='og:url' content='https://IsUnderAchiever.github.io/p/docker/'>
+<meta property='og:site_name' content='深海火锅店'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-12-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-12-14T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/docker/dbc-docker-desktop-home.webp' />
+<meta name="twitter:title" content="Docker">
+<meta name="twitter:description" content="Docker配置"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://IsUnderAchiever.github.io/p/docker/dbc-docker-desktop-home.webp' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/header_hu16240087013746809388.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😁</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">深海火锅店</a></h1>
+            <h2 class="site-description">记录我的成长史</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/477448861'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1734756297204" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4471" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M685.21 117.15c6.63-9.41 21.12-11.52 30.21-4.47 9.06 6.34 11.49 19.96 5.35 29.12-35.44 51.91-70.81 103.88-106.31 155.76-0.63 1.02-1.16 2.09-1.7 3.16 86.41 0.03 172.82 0.01 259.22 0.02 10.3-0.39 19.61 8.97 19.11 19.28 0.08 172.65 0.18 345.31 0.23 517.97 0.29 9.97-8.32 19.2-18.33 19.35-21.78 0.24-43.56-0.17-65.32 0.19-1.96 17.65-9.87 34.97-23.27 46.85-12.92 12-31.5 17.75-48.9 14.36-28.92-5.43-48.64-33.26-51.72-61.39-109.19 0.08-218.38 0.08-327.57 0-2.33 18.48-10.77 36.55-25.23 48.6-15.66 13.62-39.03 17.75-58.17 9.42-23.11-9.58-37.95-33.47-40.48-57.84-27.1-0.36-54.23 0.06-81.33-0.21-9.8-0.41-18.09-9.49-17.73-19.28 0.06-170.34 0.08-340.69 0.12-511.04 0.1-4.55-0.51-9.27 1.09-13.64 2.49-7.28 9.81-12.67 17.54-12.61 91.71-0.09 183.42 0.12 275.13-0.11-50.14-27.95-100.88-54.9-151.14-82.66-10.46-5.79-13.59-20.94-6.66-30.59 5.82-9.13 18.87-12.17 28.25-6.87 69.04 37.58 138.06 75.18 207.1 112.76 3.52 1.62 5.91 4.67 8.61 7.31 15.47 0.33 30.96 0.05 46.45 0.15 41.94-61.11 83.59-122.43 125.45-183.59M169.87 336.87c-0.09 161.25 0.16 322.48 0.35 483.72 228.11-0.17 456.22-0.07 684.33-0.05-0.02-161.22 0.22-322.46 0.07-483.68-228.25 0.01-456.5-0.02-684.75 0.01M271 857.38c2.22 11.33 10.44 23.52 23 24.07 12.45-0.26 21.53-12.56 22.95-24.07-15.32 0.05-30.64 0.02-45.95 0m452.05 0c1.42 11.5 10.51 23.79 22.95 24.07 12.54-0.55 20.85-12.71 22.99-24.06-15.31 0.01-30.63 0.04-45.94-0.01z" fill="#454545" p-id="4472"></path><path d="M221.28 374.37c3.83-0.94 7.81-0.61 11.72-0.65 188.33 0.01 376.65-0.01 564.98 0.01 10.85-0.43 20.67 9.41 20.08 20.27 0.14 123.33-0.02 246.66 0.16 369.99 0.13 8.3-5.4 16.35-13.29 19-4.14 1.52-8.61 1.18-12.93 1.19-188.67-0.04-377.35 0.06-566.02-0.04-12.39 0.23-21.58-12.32-19.69-24.15 0.06-122.01 0.04-244.03 0.11-366.04-0.24-8.92 6.15-17.52 14.88-19.58M243 410.18c-0.38 112.4 0.15 224.81 0.11 337.21 179.44 0.13 358.89 0.09 538.34 0.02 0.01-112.43 0.4-224.89-0.09-337.3-179.45 0.14-358.91-0.01-538.36 0.07z" fill="#454545" p-id="4473"></path><path d="M600.4 471.55c5.06-1.37 10.69-0.78 15.28 1.8 35.65 21.33 71.26 42.72 106.91 64.07 4.92 2.83 10.29 5.72 13.05 10.95 4.45 7.6 3.2 17.98-3.01 24.24-6.32 7.05-17.67 8.31-25.62 3.34-37.26-22.4-74.56-44.75-111.83-67.13-6.4-3.83-10.36-11.35-9.78-18.79 0.31-8.57 6.75-16.33 15-18.48zM405.42 481.48c8.67-1.08 17.67 4.03 21.1 12.09 4.57 9.77-0.18 22.57-10.12 26.85-33.02 15.3-66.04 30.58-99.07 45.84-9.66 4.53-22.34-0.1-26.68-9.87-4.95-9.45-0.72-22.17 8.73-26.97 30.72-14.34 61.56-28.44 92.31-42.72 4.46-1.98 8.79-4.61 13.73-5.22zM407.29 596.31c8.9-3.09 19.57 1.06 24.09 9.31 4.37 7.1 1.79 15.88 4.5 23.51 3.44 13.44 14.3 26.79 29.14 27.09 13.98 0.07 24.84-11.84 28.91-24.34 2.31-6.05 2.52-12.54 2.96-18.9 1.17-11.04 12.56-19.47 23.46-17.43 9.81 1.3 17.53 10.53 17.35 20.37-0.08 15.28 7.21 32.12 21.92 38.44 8.4 3.65 18.6 1.7 25.5-4.2 10.37-8.44 15.16-22.11 15.17-35.21 0.14-10.37 9.36-19.53 19.73-19.62 10.15-0.64 19.85 7.53 21.03 17.62 2.16 35.45-20.4 73.22-55.9 82.28-24.72 6.92-51.53-3.48-68.08-22.38-10.45 11.74-24.48 20.62-40.07 23.39-17.51 3.32-36.18-1.22-50.48-11.76-21.88-15.69-33.94-42.91-33.43-69.55 0.28-8.35 6.19-16.17 14.2-18.62z" fill="#454545" p-id="4474"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/IsUnderAchiever'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://IsUnderAchiever.github.io/en/" >English</option>
+                                
+                                    <option value="https://IsUnderAchiever.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#docker环境配置">Docker环境配置</a></li>
+    <li><a href="#使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch">使用vagrant创建虚拟机——<a href="https://app.vagrantup.com/boxes/search">官方镜像仓库</a></a></li>
+    <li><a href="#安装docker">安装docker</a>
+      <ol>
+        <li><a href="#docker的镜像市场httpshubdockercom"><a href="https://hub.docker.com/">docker的镜像市场</a></a></li>
+      </ol>
+    </li>
+    <li><a href="#镜像加速">镜像加速</a></li>
+    <li><a href="#切换root用户">切换root用户</a></li>
+    <li><a href="#连接xshell">连接XShell</a></li>
+    <li><a href="#安装mysql">安装MySQL</a></li>
+    <li><a href="#redis配置">Redis配置</a>
+      <ol>
+        <li>
+          <ol>
+            <li></li>
+          </ol>
+        </li>
+        <li><a href="#安装redis可视化工具">安装redis可视化工具</a></li>
+      </ol>
+    </li>
+    <li><a href="#docker安装elasticsearch">docker安装ElasticSearch</a>
+      <ol>
+        <li><a href="#1黑马程序员视频内安装方法">1.黑马程序员视频内安装方法：</a></li>
+        <li><a href="#2网上的安装方法">2.网上的安装方法：</a></li>
+        <li><a href="#安装kibana">安装Kibana</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装ik分词器">安装ik分词器</a>
+      <ol>
+        <li><a href="#31在线安装ik插件较慢">3.1.在线安装ik插件（较慢）</a></li>
+        <li><a href="#32离线安装ik插件推荐">3.2.离线安装ik插件（推荐）</a></li>
+        <li><a href="#1查看数据卷目录">1）查看数据卷目录</a></li>
+        <li><a href="#2解压缩分词器安装包">2）解压缩分词器安装包</a></li>
+        <li><a href="#3上传到es容器的插件数据卷中">3）上传到es容器的插件数据卷中</a></li>
+        <li><a href="#4重启容器">4）重启容器</a></li>
+        <li><a href="#5测试">5）测试：</a></li>
+      </ol>
+    </li>
+    <li><a href="#33-扩展词词典">3.3 扩展词词典</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/docker/">
+                <img src="/p/docker/dbc-docker-desktop-home_hu1147097447787108081.webp"
+                        srcset="/p/docker/dbc-docker-desktop-home_hu1147097447787108081.webp 800w, /p/docker/dbc-docker-desktop-home_hu4396453130231862691.webp 1600w"
+                        width="800" 
+                        height="543" 
+                        loading="lazy"
+                        alt="Featured image of post Docker" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" style="background-color: #2a9d8f; color: #fff;">
+                系统配置
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/docker/">Docker</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Docker配置
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2022-12-14</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 10 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="docker环境配置">Docker环境配置
+</h2><ol>
+<li>安装VirtualBox</li>
+<li>安装<a class="link" href="https://developer.hashicorp.com/vagrant/downloads"  target="_blank" rel="noopener"
+    >vagrant</a></li>
+<li>安装完成vagrant后重启一下系统</li>
+<li>验证vagrant是否安装成功
+<ul>
+<li>cmd输入vagrant，是否有命令提示</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch">使用vagrant创建虚拟机——<a class="link" href="https://app.vagrantup.com/boxes/search"  target="_blank" rel="noopener"
+    >官方镜像仓库</a>
+</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958195.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="001.初始化centos"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant init centos/7
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时在E盘已经生成了一个名为“Vagrantfile”的文件
+启动虚拟环境
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958546.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="002.启动虚拟环境"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant up
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果速度很慢，使用提前下载好的CentOS7镜像，速度嘎嘎快</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># vagrant init centos/7 # 没初始化的，要初始化</span>
+</span></span><span class="line"><span class="cl">vagrant box add centos/7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
+</span></span><span class="line"><span class="cl">vagrant up
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ctrl+c停掉</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vagrant ssh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>提示[vagrant@localhost ~]$  连接成功，此时已经可以在VirtualBox内查看到该虚拟机
+若提示 <a class="link" href="mailto:vagrant@127.0.0.1" >vagrant@127.0.0.1</a>: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+则输入命令set VAGRANT_PREFER_SYSTEM_BIN=0 后再重新连接即可
+退出vagrant的方法：输入命令exit
+以文本的方式打开Vagrantfile，找到这一行配置
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="003更改网络配置"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># config.vm.network &#34;private_network&#34;, ip: &#34;192.168.33.10&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>所以我们需要将虚拟机改为192.168.56.XX
+即更改为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># config.vm.network &#34;private_network&#34;, ip: &#34;192.168.56.10&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">vagrant</span> <span class="n">reload</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重启虚拟机</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant ssh
+</span></span><span class="line"><span class="cl">ip addr <span class="c1"># 查看虚拟机ip地址是否已经发生了改变</span>
+</span></span><span class="line"><span class="cl">ping 192.168.xxx <span class="c1"># 主机与虚拟机是否互相ping通</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装docker">安装docker
+</h2><p>概念：什么是docker？
+虚拟化容器技术。Docker基于镜像，可以秒级启动各种容器。每一种容器都是一个完整的运行环境，容器之间互相隔离。</p>
+<h3 id="docker的镜像市场httpshubdockercom"><a class="link" href="https://hub.docker.com/"  target="_blank" rel="noopener"
+    >docker的镜像市场</a>
+</h3><p><a class="link" href="https://docs.docker.com/engine/install/centos/"  target="_blank" rel="noopener"
+    >安装docker</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant ssh <span class="c1"># 连接虚拟机</span>
+</span></span><span class="line"><span class="cl">sudo yum remove docker <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-client <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-client-latest <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-common <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-latest <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-latest-logrotate <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-logrotate <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>                  docker-engine
+</span></span><span class="line"><span class="cl"><span class="c1"># 卸载旧版本的docker</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo yum install -y yum-utils
+</span></span><span class="line"><span class="cl">sudo yum-config-manager <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --add-repo <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    https://download.docker.com/linux/centos/docker-ce.repo
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">sudo yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+</span></span><span class="line"><span class="cl"><span class="c1"># 过程需要输入y选择确认</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动docker</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start docker
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看docker版本</span>
+</span></span><span class="line"><span class="cl">docker -v
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看docker安装了哪些镜像</span>
+</span></span><span class="line"><span class="cl">sudo docker images
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置docker开机自启动</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="镜像加速">镜像加速
+</h2><p>登录阿里云后，进入 控制台，左侧菜单找到 “产品与服务”，选择“容器镜像服务”，选择“镜像工具”，点击“镜像加速器”</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 执行以下四个命令</span>
+</span></span><span class="line"><span class="cl">sudo mkdir -p /etc/docker
+</span></span><span class="line"><span class="cl"><span class="c1">#----------------------------------</span>
+</span></span><span class="line"><span class="cl">sudo tee /etc/docker/daemon.json <span class="s">&lt;&lt;-&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;registry-mirrors&#34;: [&#34;https://g9nk2v6o.mirror.aliyuncs.com&#34;]
+</span></span></span><span class="line"><span class="cl"><span class="s">}
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#----------------------------------</span>
+</span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl"><span class="c1">#----------------------------------</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>/etc/docker/daemon.json</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;registry-mirrors&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://docker.m.daocloud.io&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://dockerproxy.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://docker.mirrors.ustc.edu.cn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https://docker.nju.edu.cn&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;exec-opts&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;native.cgroupdriver=systemd&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log-driver&#34;</span><span class="p">:</span> <span class="s2">&#34;json-file&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;log-opts&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max-size&#34;</span><span class="p">:</span> <span class="s2">&#34;100m&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;storage-driver&#34;</span><span class="p">:</span> <span class="s2">&#34;overlay2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="切换root用户">切换root用户
+</h2><p>每次sudo很麻烦？直接切换root用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su root
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认密码是vagrant</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="连接xshell">连接XShell
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vagrant ssh
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换为root用户</span>
+</span></span><span class="line"><span class="cl">sudo -i
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改root用户密码</span>
+</span></span><span class="line"><span class="cl">passwd
+</span></span><span class="line"><span class="cl">sudo vi /etc/ssh/sshd_config
+</span></span><span class="line"><span class="cl"><span class="c1"># 找到PasswordAuthentication yes这一行，去掉前面的#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># # To disable tunneled clear text passwords, change to no here!</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># PasswordAuthentication yes</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># #PermitEmptyPasswords no</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># PasswordAuthentication no</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 保存后退出</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启sshd服务</span>
+</span></span><span class="line"><span class="cl">systemctl restart sshd
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用ssh工具进行连接</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>详情请查看这篇<a class="link" href="https://blog.csdn.net/qq_43651260/article/details/128055181"  target="_blank" rel="noopener"
+    >博客</a></p>
+<h2 id="安装mysql">安装MySQL
+</h2><p>连接上虚拟机之后
+在docker镜像仓库搜索mysql，进入tags可查看版本信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#------- 安装mysql5.7-----------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker pull mysql # 会下载最新的mysql</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载指定版本的mysql，比如5.7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker pull mysql:5.7</span>
+</span></span><span class="line"><span class="cl">sudo docker pull mysql:5.7
+</span></span><span class="line"><span class="cl">sudo docker run -p 3306:3306 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/mysql/log:/var/log/mysql <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/mysql/data:/var/lib/mysql <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/mysql/conf:/etc/mysql <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d mysql:8.0.20 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name mysql
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看mysql是否运行</span>
+</span></span><span class="line"><span class="cl">docker ps
+</span></span><span class="line"><span class="cl"><span class="c1"># 没有查看到容器</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  查看,发现容器是退出状态</span>
+</span></span><span class="line"><span class="cl">docker ps -a
+</span></span><span class="line"><span class="cl"><span class="c1"># Exited</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行以下命令</span>
+</span></span><span class="line"><span class="cl">docker run -d -p 3306:3306 -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>root mysql
+</span></span><span class="line"><span class="cl"><span class="c1"># 若依然存在问题,可以停用并删除容器,重新启动mysql</span>
+</span></span><span class="line"><span class="cl">docker stop <span class="k">$(</span>docker ps -q<span class="k">)</span>
+</span></span><span class="line"><span class="cl">docker rm <span class="k">$(</span>docker ps -aq<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除镜像</span>
+</span></span><span class="line"><span class="cl">docker rmi 镜像id
+</span></span><span class="line"><span class="cl"><span class="c1"># docker 删除报错:</span>
+</span></span><span class="line"><span class="cl">Error response from daemon: conflict: unable to delete 8e6aee9da407 <span class="o">(</span>must be forced<span class="o">)</span> - image is referenced in multiple repositories
+</span></span><span class="line"><span class="cl"><span class="c1"># 解决办法</span>
+</span></span><span class="line"><span class="cl">docker rmi -f 镜像id
+</span></span><span class="line"><span class="cl"><span class="c1"># docker 服务命令</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># systemctl start docker</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 守护进程重启：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># systemctl daemon-reload</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启docker服务：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># systemctl restart docker / service docker restart</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker service docker stop / docker systemctl stop docker</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 问题解决之后------</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入配置文件挂载的目录下</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /mydata/mysql/conf
+</span></span><span class="line"><span class="cl"><span class="c1"># 编辑配置文件my.cnf</span>
+</span></span><span class="line"><span class="cl">vi my.cnf
+</span></span><span class="line"><span class="cl"><span class="o">[</span>client<span class="o">]</span>
+</span></span><span class="line"><span class="cl">default-character-set<span class="o">=</span>utf8
+</span></span><span class="line"><span class="cl"><span class="o">[</span>mysql<span class="o">]</span>
+</span></span><span class="line"><span class="cl">default-character-set<span class="o">=</span>utf8
+</span></span><span class="line"><span class="cl"><span class="o">[</span>mysqld<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">init_connect</span><span class="o">=</span><span class="s1">&#39;SET collation_connection = utf8_unicode_ci&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">init_connect</span><span class="o">=</span><span class="s1">&#39;SET NAMES utf8&#39;</span>
+</span></span><span class="line"><span class="cl">character-set-server<span class="o">=</span>utf8
+</span></span><span class="line"><span class="cl">collation-server<span class="o">=</span>utf8_unicode_ci
+</span></span><span class="line"><span class="cl">skip-character-set-client-handshake
+</span></span><span class="line"><span class="cl">skip-name-resolve
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启mysql容器</span>
+</span></span><span class="line"><span class="cl">docker restart mysql
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置启动docker时，mysql自启动</span>
+</span></span><span class="line"><span class="cl">docker update mysql --restart<span class="o">=</span>always
+</span></span><span class="line"><span class="cl"><span class="c1">#------- 安装mysql8.0.20-----------------</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#拉取镜像</span>
+</span></span><span class="line"><span class="cl">docker pull mysql:8.0.20
+</span></span><span class="line"><span class="cl"><span class="c1">#启动镜像,用于拷贝配置文件到宿主机</span>
+</span></span><span class="line"><span class="cl">docker run -p 3306:3306 --name mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span><span class="m">123456</span> -d mysql:8.0.20
+</span></span><span class="line"><span class="cl"><span class="c1">#查看是否启动成功</span>
+</span></span><span class="line"><span class="cl">docker ps -a
+</span></span><span class="line"><span class="cl"><span class="c1">#新建挂载目录并拷贝配置文件</span>
+</span></span><span class="line"><span class="cl">mkdir -p /mysqldata/
+</span></span><span class="line"><span class="cl">docker cp  mysql:/etc/mysql /mysqldata/
+</span></span><span class="line"><span class="cl"><span class="c1">#检查是否运行成功</span>
+</span></span><span class="line"><span class="cl">docker ps -a
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启mysql容器</span>
+</span></span><span class="line"><span class="cl">docker restart mysql
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置启动docker时，mysql自启动</span>
+</span></span><span class="line"><span class="cl">docker update mysql --restart<span class="o">=</span>always
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用Navicat链接mysql</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ql自启动</span>
+</span></span><span class="line"><span class="cl">docker update mysql --restart<span class="o">=</span>always
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="redis配置">Redis配置
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载最新redis镜像</span>
+</span></span><span class="line"><span class="cl">docker pull redis
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958499.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /mydata/redis/conf
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /mydata/redis/conf
+</span></span><span class="line"><span class="cl">touch redis.conf
+</span></span><span class="line"><span class="cl">docker run -p 6379:6379 --name redis -v /mydata/redis/data:/data <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/redis/conf/redis.conf:/etc/redis/redis.conf <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d redis redis-server /etc/redis/redis.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958293.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958909.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="3"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 测试一下redis</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis redis-cli
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958121.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="4"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># redis默认配置是没有持久化的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果重启redis，再获取之前的数据就获取不到了</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 具体命令可查看下图</span>
+</span></span><span class="line"><span class="cl">vi redis.conf
+</span></span><span class="line"><span class="cl"><span class="c1"># 【输入 i 进入插入模式】</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 开启AOF持久化</span>
+</span></span><span class="line"><span class="cl">appendonly yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958706.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="5"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958530.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="6"
+	
+	
+></p>
+<h5 id="修改redis的密码">修改redis的密码
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 创建容器时设置密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># docker run -itd --name redis-6379 -p 6379:6379 redis --requirepass 123456</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 为现有的redis创建密码或修改密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#1.进入redis的容器</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it 容器ID bash
+</span></span><span class="line"><span class="cl"><span class="c1">#2.进入redis目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/bin
+</span></span><span class="line"><span class="cl"><span class="c1">#3.运行命令：</span>
+</span></span><span class="line"><span class="cl">redis-cli
+</span></span><span class="line"><span class="cl"><span class="c1">#4.查看现有的redis密码：</span>
+</span></span><span class="line"><span class="cl">config get requirepass
+</span></span><span class="line"><span class="cl"><span class="c1"># 这一步若报错(error) NOAUTH Authentication required.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 是因为redis本身设置有密码，此时需要执行以下命令</span>
+</span></span><span class="line"><span class="cl">auth password<span class="p">;</span> <span class="c1"># password是之前设置的redis密码</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#5.设置redis密码</span>
+</span></span><span class="line"><span class="cl">config <span class="nb">set</span> requirepass 密码
+</span></span><span class="line"><span class="cl"><span class="c1"># 清空redis密码</span>
+</span></span><span class="line"><span class="cl">config <span class="nb">set</span> requirepass <span class="s2">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装redis可视化工具">安装redis可视化工具
+</h3><p>链接：https://pan.baidu.com/s/10z0S6b9mo76CWK9y3spPRg?pwd=51tz
+提取码：51tz
+&ndash;来自百度网盘超级会员V3的分享
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958101.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="7"
+	
+	
+>
+点击New Connection右边的按钮，可进入设置页面，设置语言
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959057.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="8"
+	
+	
+></p>
+<h2 id="docker安装elasticsearch">docker安装ElasticSearch
+</h2><h3 id="1黑马程序员视频内安装方法">1.黑马程序员视频内安装方法：
+</h3><p>链接：https://pan.baidu.com/s/1pGnbmkMjD8RXe5Y4xotfOA?pwd=ihe5
+提取码：ihe5
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202002537.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210510165308064"
+	
+	
+>
+将其上传到虚拟机中，然后运行命令加载即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 导入数据</span>
+</span></span><span class="line"><span class="cl">docker load -i es.tar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>同理还有<code>kibana</code>的tar包也需要这样做。
+运行docker命令，部署单点es：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--name es <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="s2">&#34;ES_JAVA_OPTS=-Xms512m -Xmx512m&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="s2">&#34;discovery.type=single-node&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v es-data:/usr/share/elasticsearch/data <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v es-plugins:/usr/share/elasticsearch/plugins <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --privileged <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --network es-net <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9200:9200 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9300:9300 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    elasticsearch:7.12.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--name elasticsearch <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /home/tong/software/docker/elasticsearch/data:/usr/share/elasticsearch/data <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /home/tong/software/docker/elasticsearch/plugins:/usr/share/elasticsearch/plugins <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -v /home/tong/software/docker/elasticsearch/config:/usr/share/elasticsearch/config <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9200:9200 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9300:9300 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    elasticsearch:8.7.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--name elasticsearch <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9200:9200 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -p 9300:9300 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    elasticsearch:8.7.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>命令解释：</p>
+<ul>
+<li><code>-e &quot;cluster.name=es-docker-cluster&quot;</code>：设置集群名称</li>
+<li><code>-e &quot;http.host=0.0.0.0&quot;</code>：监听的地址，可以外网访问</li>
+<li><code>-e &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</code>：内存大小</li>
+<li><code>-e &quot;discovery.type=single-node&quot;</code>：非集群模式</li>
+<li><code>-v es-data:/usr/share/elasticsearch/data</code>：挂载逻辑卷，绑定es的数据目录</li>
+<li><code>-v es-logs:/usr/share/elasticsearch/logs</code>：挂载逻辑卷，绑定es的日志目录</li>
+<li><code>-v es-plugins:/usr/share/elasticsearch/plugins</code>：挂载逻辑卷，绑定es的插件目录</li>
+<li><code>--privileged</code>：授予逻辑卷访问权</li>
+<li><code>--network es-net</code> ：加入一个名为es-net的网络中</li>
+<li><code>-p 9200:9200</code>：端口映射配置
+运行docker命令，部署kibana</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name kibana <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">ELASTICSEARCH_HOSTS</span><span class="o">=</span>http://es:9200 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--network<span class="o">=</span>es-net <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-p 5601:5601  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>kibana:7.12.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>--network es-net</code> ：加入一个名为es-net的网络中，与elasticsearch在同一个网络中</li>
+<li><code>-e ELASTICSEARCH_HOSTS=http://es:9200&quot;</code>：设置elasticsearch的地址，因为kibana已经与elasticsearch在一个网络，因此可以用容器名直接访问elasticsearch</li>
+<li><code>-p 5601:5601</code>：端口映射配置
+kibana启动一般比较慢，需要多等待一会，可以通过命令：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker logs -f kibana
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看运行日志，当查看到下面的日志，说明成功：
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202010279.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210109105135812"
+	
+	
+></p>
+<h3 id="2网上的安装方法">2.网上的安装方法：
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载镜像文件</span>
+</span></span><span class="line"><span class="cl">docker pull elasticsearch:7.4.2
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建搭载目录</span>
+</span></span><span class="line"><span class="cl">mkdir -p /mydata/elasticsearch/config
+</span></span><span class="line"><span class="cl">mkdir -p /mydata/elasticsearch/data
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;http.host: 0.0.0.0&#34;</span> &gt; /mydata/elasticsearch/config/elasticsearch.yml
+</span></span><span class="line"><span class="cl">docker run --name elasticsearch -p 9200:9200 -p 9300:9300 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e  <span class="s2">&#34;discovery.type=single-node&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-e <span class="nv">ES_JAVA_OPTS</span><span class="o">=</span><span class="s2">&#34;-Xms64m -Xmx512m&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /mydata/elasticsearch/data:/usr/share/elasticsearch/data <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v  /mydata/elasticsearch/plugins:/usr/share/elasticsearch/plugins <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-d elasticsearch:7.4.2
+</span></span><span class="line"><span class="cl">docker ps# 查看容器状态 up 运行
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>若存在问题，查看这篇<a class="link" href="https://blog.csdn.net/qq_38327769/article/details/124847508?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167101576116800182116891%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167101576116800182116891&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-124847508-null-null.142%5ev68%5econtrol,201%5ev4%5eadd_ask,213%5ev2%5et3_control1&amp;utm_term=docker%E5%AE%89%E8%A3%85ElasticSearch&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener"
+    >博客</a>
+我这里的问题是启动的时候没问题，但是过一会有自动关闭
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959669.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1"
+	
+	
+>
+解决问题和上方博客中写的一样</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod -R <span class="m">777</span> /mydata/elasticsearch/
+</span></span><span class="line"><span class="cl">docker start elasticsearch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看运行结果
+http://虚拟机ip地址:9200/
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959677.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2"
+	
+	
+></p>
+<h3 id="安装kibana">安装Kibana
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 下载镜像文件</span>
+</span></span><span class="line"><span class="cl">docker pull kibana:7.4.2
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装容器</span>
+</span></span><span class="line"><span class="cl">docker run --name kibana -e <span class="nv">ELASTICSEARCH_HOSTS</span><span class="o">=</span>http://自己的IP:9200 -p 5601:5601 -d kibana:7.4.2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装ik分词器">安装ik分词器
+</h2><p><a class="link" href="https://github.com/medcl/elasticsearch-analysis-ik/releases"  target="_blank" rel="noopener"
+    >ik分词器下载地址</a></p>
+<h3 id="31在线安装ik插件较慢">3.1.在线安装ik插件（较慢）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 进入容器内部</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it elasticsearch /bin/bash
+</span></span><span class="line"><span class="cl"><span class="c1"># 在线下载并安装</span>
+</span></span><span class="line"><span class="cl">./bin/elasticsearch-plugin  install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.12.1/elasticsearch-analysis-ik-7.12.1.zip
+</span></span><span class="line"><span class="cl"><span class="c1">#退出</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#重启容器</span>
+</span></span><span class="line"><span class="cl">docker restart elasticsearch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="32离线安装ik插件推荐">3.2.离线安装ik插件（推荐）
+</h3><h3 id="1查看数据卷目录">1）查看数据卷目录
+</h3><p>安装插件需要知道elasticsearch的plugins目录位置，而我们用了数据卷挂载，因此需要查看elasticsearch的数据卷目录，通过下面命令查看:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker volume inspect es-plugins
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>显示结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;CreatedAt&#34;</span><span class="p">:</span> <span class="s2">&#34;2022-05-06T10:06:34+08:00&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Driver&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Labels&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Mountpoint&#34;</span><span class="p">:</span> <span class="s2">&#34;/var/lib/docker/volumes/es-plugins/_data&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Name&#34;</span><span class="p">:</span> <span class="s2">&#34;es-plugins&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Options&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Scope&#34;</span><span class="p">:</span> <span class="s2">&#34;local&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>说明plugins目录被挂载到了：<code>/var/lib/docker/volumes/es-plugins/_data </code>这个目录中。</p>
+<h3 id="2解压缩分词器安装包">2）解压缩分词器安装包
+</h3><p>下面我们需要把课前资料中的ik分词器解压缩，重命名为ik
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011441.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210506110249144"
+	
+	
+></p>
+<h3 id="3上传到es容器的插件数据卷中">3）上传到es容器的插件数据卷中
+</h3><p>也就是<code>/var/lib/docker/volumes/es-plugins/_data </code>：
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011084.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210506110704293"
+	
+	
+></p>
+<h3 id="4重启容器">4）重启容器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 4、重启容器</span>
+</span></span><span class="line"><span class="cl">docker restart es
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 查看es日志</span>
+</span></span><span class="line"><span class="cl">docker logs -f es
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5测试">5）测试：
+</h3><p>IK分词器包含两种模式：</p>
+<ul>
+<li><code>ik_smart</code>：最少切分</li>
+<li><code>ik_max_word</code>：最细切分</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">/_analyze</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;analyzer&#34;</span><span class="p">:</span> <span class="s2">&#34;ik_max_word&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;黑马程序员学习java太棒了&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;tokens&#34;</span> <span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;黑马&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;程序员&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;程序&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;员&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_CHAR&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;学习&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;java&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;ENGLISH&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;太棒了&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;太棒&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_WORD&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span> <span class="p">:</span> <span class="s2">&#34;了&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;start_offset&#34;</span> <span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;end_offset&#34;</span> <span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span> <span class="p">:</span> <span class="s2">&#34;CN_CHAR&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;position&#34;</span> <span class="p">:</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="33-扩展词词典">3.3 扩展词词典
+</h2><p>随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“奥力给”，“传智播客” 等。
+所以我们的词汇也需要不断的更新，IK分词器提供了扩展词汇的功能。
+1）打开IK分词器config目录：
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012285.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210506112225508"
+	
+	
+>
+2）在IKAnalyzer.cfg.xml配置文件内容添加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE properties SYSTEM &#34;http://java.sun.com/dtd/properties.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;comment&gt;</span>IK Analyzer 扩展配置<span class="nt">&lt;/comment&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!--用户可以在这里配置自己的扩展字典 *** 添加扩展词典--&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">&#34;ext_dict&#34;</span><span class="nt">&gt;</span>ext.dic<span class="nt">&lt;/entry&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>3）新建一个 ext.dic，可以参考config目录下复制一个配置文件进行修改</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="na">传智播客</span>
+</span></span><span class="line"><span class="cl"><span class="na">奥力给</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>4）重启elasticsearch</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker restart es
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看 日志</span>
+</span></span><span class="line"><span class="cl">docker logs -f elasticsearch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012676.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20201115230900504"
+	
+	
+>
+日志中已经成功加载ext.dic配置文件
+5）测试效果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="err">GET</span> <span class="err">/_analyze</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;analyzer&#34;</span><span class="p">:</span> <span class="s2">&#34;ik_max_word&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;text&#34;</span><span class="p">:</span> <span class="s2">&#34;传智播客Java就业超过90%,奥力给！&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意当前文件的编码必须是 UTF-8 格式，严禁使用Windows记事本编辑</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/golang/">
+        
+        
+            <div class="article-image">
+                <img src="/p/golang/202412211329268.ed537b66c6e56d6f9959a5dccf472624_hu3131990958319595278.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Golang"
+                        data-key="Golang" 
+                        data-hash="md5-7VN7ZsblbW&#43;ZWaXcz0cmJA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Golang</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/mongodb/">
+        
+        
+            <div class="article-image">
+                <img src="/p/mongodb/202412211349060.f14c3f3243851388b7373274a820ec49_hu2874642022067004224.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Mongodb"
+                        data-key="Mongodb" 
+                        data-hash="md5-8Uw/MkOFE4i3NzJ0qCDsSQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Mongodb</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/postgresql/">
+        
+        
+            <div class="article-image">
+                <img src="/p/postgresql/202412211414934.601bb0e934f9bb96d555b425806dcc8b_hu13948279321491746263.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post PostgreSQL"
+                        data-key="PostgreSQL" 
+                        data-hash="md5-YBuw6TT5u5bVVbQlgG3Miw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PostgreSQL</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/kotlin/">
+        
+        
+            <div class="article-image">
+                <img src="/p/kotlin/202412211343389.a4adb6085a58ba0b8e071a3287f4709f_hu9416951577885872956.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Kotlin"
+                        data-key="Kotlin" 
+                        data-hash="md5-pK22CFpYuguOBxoyh/Rwnw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Kotlin</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/php8/">
+        
+        
+            <div class="article-image">
+                <img src="/p/php8/202412211409504.79c89987bfb593c489d4110850d9d270_hu2555561391498824671.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post PHP8"
+                        data-key="PHP8" 
+                        data-hash="md5-eciZh7&#43;1k8SJ1BEIUNnScA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP8</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 深海火锅店
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
