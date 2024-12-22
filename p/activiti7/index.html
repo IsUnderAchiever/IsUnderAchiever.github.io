@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/activiti7/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Activiti7">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Activiti7">
 <meta property='og:description' content="Activiti7">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/activiti7/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -320,17 +320,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/activiti7/">
-                <img src="/p/activiti7/202412212108679_hu577348863410442819.png"
-                        srcset="/p/activiti7/202412212108679_hu577348863410442819.png 800w, /p/activiti7/202412212108679_hu9921576818094315109.png 1600w"
-                        width="800" 
-                        height="352" 
-                        loading="lazy"
-                        alt="Featured image of post Activiti7" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/activiti7/">
+            <img src="/p/activiti7/202412212108679_hu577348863410442819.png" srcset="/p/activiti7/202412212108679_hu577348863410442819.png 800w, /p/activiti7/202412212108679_hu9921576818094315109.png 1600w"  width="800"
+                height="352" loading="lazy" alt="Featured image of post Activiti7" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -399,6 +395,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -406,30 +407,24 @@
 </h1><h1 id="一activiti7概述">一、Activiti7概述
 </h1><p>官网地址：https://www.activiti.org/
   Activiti由Alfresco软件开发，目前最高版本Activiti 7。是BPMN的一个基于java的软件实现，不过Activiti 不仅仅包括BPMN，还有DMN决策表和CMMN Case管理引擎，并且有自己的用户管理、微服务API等一系列功能，是一个服务平台。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245900.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230517195056636"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245900.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245900.png" alt="image-20230517195056636"  />
+	</a>
+</div>
+</p>
 <h1 id="二activiti7的入门案例">二、Activiti7的入门案例
 </h1><p>官方手册：http://jeecg.com/activiti5.21/</p>
 <h2 id="1创建springboot项目">1.创建SpringBoot项目
 </h2><p>  现在开发中或者我们自己学习写案例都是通过SpringBoot脚手架工具来快速构建项目的。那么我们也就直接通过创建SpringBoot项目来给大家讲解相关的案例。创建一个普通的SpringBoot项目。指定版本为2.4.2即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245006.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230517211943193"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245006.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245006.png" alt="image-20230517211943193"  />
+	</a>
+</div>
+
   然后添加对应的依赖：Activiti7的依赖和MySQL的依赖</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -576,16 +571,13 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>相关的Activiti依赖加载进来了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245918.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230517212124728"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245918.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245918.png" alt="image-20230517212124728"  />
+	</a>
+</div>
+
 到这儿基本环境就OK了</p>
 <h2 id="2获取processengine">2.获取ProcessEngine
 </h2><h3 id="21-默认的方式">2.1 默认的方式
@@ -642,16 +634,13 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后我们就可以启动，但是出现了如下错误：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245332.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230517211345644"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245332.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245332.png" alt="image-20230517211345644"  />
+	</a>
+</div>
+
   出现这种情况只需要在mysql的连接字符串中添加上nullCatalogMeansCurrent=true，设置为只查当前连接的schema库即可。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -688,16 +677,13 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后执行程序正确。搞定。同时在数据库中创建了相关的表结构
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245982.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230517212912548"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245982.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245982.png" alt="image-20230517212912548"  />
+	</a>
+</div>
+</p>
 <h3 id="22-编程方式获取">2.2 编程方式获取
 </h3><p>  上面的配置文件的方式中的配置文件其实是一个Spring的配置文件，但是这并不意味着Activiti只能用于Spring环境。我们也可以通过编程的方式来使用配置文件，从而来构建ProcessEngineConfiguration对象，具体的实现如下：</p>
 <div class="highlight"><div class="chroma">
@@ -818,80 +804,59 @@
 <h2 id="3在线流程设计器">3.在线流程设计器
 </h2><p>  接下来我们通过官方提供的流程设计器来实现一个简单流程的设计。然后完成相关的部署和流程整体操作。
 官网下载地址：https://www.activiti.org/get-started 下载下来后解压缩
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245884.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519111655829"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245884.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245884.png" alt="image-20230519111655829"  />
+	</a>
+</div>
+
 进入到wars中。提供的有Activiti-app.war
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245820.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519111731391"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245820.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245820.png" alt="image-20230519111731391"  />
+	</a>
+</div>
+
 把这war包拷贝到Tomcat服务器中即可。注意Tomcat的版本不要高于8.5，然后Tomcat服务。访问 http://localhost:8080/activiti-app 即可。登录的账号密码是 admin  test
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245125.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519111931446"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245689.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519112000632"
-	
-	
->
-<img src="C:%5cUsers%5cdpb%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20230519112027397.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519112027397"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245125.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245125.png" alt="image-20230519111931446"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245689.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245689.png" alt="image-20230519112000632"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="C:%5cUsers%5cdpb%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20230519112027397.png">
+		<img src="C:%5cUsers%5cdpb%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20230519112027397.png" alt="image-20230519112027397"  />
+	</a>
+</div>
+
 点击create process 弹出窗口。录入相关的流程定义信息
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245281.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519112212684"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245281.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245281.png" alt="image-20230519112212684"  />
+	</a>
+</div>
+
 绘制好流程图后。保存并下载对应的xml文件
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246185.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519112253385"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246185.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246185.png" alt="image-20230519112253385"  />
+	</a>
+</div>
+
 得到的流程图的xml内容：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1042,16 +1007,13 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>流程部署的行为会涉及到数据库中的这两张表
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246862.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230519114622514"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246862.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246862.png" alt="image-20230519114622514"  />
+	</a>
+</div>
+
 然后我们可以通过Activiti提供的相关的API来获取流程部署和流程定义的相关信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1142,27 +1104,21 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>发起流程成功后。在对应的<code>act_ru_task</code>中就有一条对应的待办记录。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246137.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230520100457878"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246137.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246137.png" alt="image-20230520100457878"  />
+	</a>
+</div>
+
 对应的流程状态如下：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246104.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230520100513859"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246104.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246104.png" alt="image-20230520100513859"  />
+	</a>
+</div>
+</p>
 <h3 id="43-查询流程">4.3 查询流程
 </h3><p>  用户登录后要查看待办的任务信息。我们需要通过<code>TaskService</code>来实现查询操作。具体代码如下：</p>
 <div class="highlight"><div class="chroma">
@@ -1288,32 +1244,26 @@
           <td>历史记录：流程审批节点的记录信息</td>
       </tr>
       <tr>
-          <td><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246614.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="相关表结构"
-	
-	
-></td>
+          <td>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246614.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246614.png" alt="相关表结构"  />
+	</a>
+</div>
+</td>
           <td></td>
       </tr>
   </tbody>
 </table></div>
 <h1 id="三表达式">三、表达式
 </h1><h2 id="值表达式">值表达式
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246605.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230623091854461"
-	
-	
-></p>
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246605.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246605.png" alt="image-20230623091854461"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>${}</code></p>
 </blockquote>
@@ -1334,26 +1284,20 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="监听器">监听器
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246908.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230623132637416"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246049.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230623132659870"
-	
-	
-></p>
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246908.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246908.png" alt="image-20230623132637416"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246049.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246049.png" alt="image-20230623132659870"  />
+	</a>
+</div>
+</p>
 
 </section>
 

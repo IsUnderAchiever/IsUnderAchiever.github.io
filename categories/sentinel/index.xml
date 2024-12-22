@@ -19,16 +19,13 @@
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;故障的服务D，会导致服务A的tomcat资源耗尽&lt;/p&gt;
 &lt;p&gt;微服务调用链路中的某个服务故障，引起整个链路中的所有微服务都不可用，这就是&lt;code&gt;雪崩&lt;/code&gt;。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403074558194.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240403074558194&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403074558194.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403074558194.png&#34; alt=&#34;image-20240403074558194&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;解决雪崩问题的常见方式有四种:&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
@@ -38,22 +35,18 @@
 &lt;li&gt;流量控制:限制业务访问的QPS，避免服务因流量的突增而故障。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;技术选型&#34;&gt;技术选型
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403075332866.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240403075332866&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403075332866.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403075332866.png&#34; alt=&#34;image-20240403075332866&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;同类型的框架还有&lt;code&gt;Resilience4j&lt;/code&gt;、&lt;code&gt;Polly&lt;/code&gt;、&lt;code&gt;Envoy&lt;/code&gt;等&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;安装sentinel&#34;&gt;安装Sentinel
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alibaba/Sentinel/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Sentinel下载地址&lt;/a&gt;，选择&lt;code&gt;sentinel-dashboard-xxx.jar&lt;/code&gt;，自己新建一个&lt;code&gt;startup.txt&lt;/code&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alibaba/Sentinel/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;Sentinel下载地址&lt;/a&gt;，选择&lt;code&gt;sentinel-dashboard-xxx.jar&lt;/code&gt;，自己新建一个&lt;code&gt;startup.txt&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -62,16 +55,13 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java -jar sentinel-dashboard-1.8.5.jar
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080118647.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240403080118647&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080118647.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080118647.png&#34; alt=&#34;image-20240403080118647&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;然后将&lt;code&gt;startup.txt&lt;/code&gt;后缀改为&lt;code&gt;bat&lt;/code&gt;，双击运行&lt;/p&gt;
 &lt;p&gt;或者自定义启动端口号&lt;/p&gt;
@@ -84,31 +74,24 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;java -Dserver.port&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;8718&lt;/span&gt; -jar sentinel-dashboard-1.8.5.jar
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080917682.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240403080917682&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080917682.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080917682.png&#34; alt=&#34;image-20240403080917682&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;账号密码默认是&lt;code&gt;sentinel&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403081023548.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240403081023548&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403081023548.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403081023548.png&#34; alt=&#34;image-20240403081023548&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;配置开机自启动&lt;/strong&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_52288743/article/details/131084881#:~:text=Win%20%2B%20R%20%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%20%E5%9B%9E%E8%BD%A6%20shell%3ACommon%20Startup%20%E9%99%84%E5%8A%A0%EF%BC%9A%E5%A6%82%E9%9C%80%E6%9A%82%E5%81%9C%E8%87%AA%E5%90%AF%E5%8A%A8%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%85%B3%E9%97%AD,%E5%9C%A8%20%E5%90%AF%E5%8A%A8%20%E5%90%8E%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E8%AE%BF%E9%97%AE%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9D%A5%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%8E%A7%E6%95%B0%E6%8D%AE%E5%92%8C%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E3%80%82%20%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%9C%B0%E5%9D%80%E4%B8%BA%EF%BC%9Ahttp%3A%2F%2Flocalhost%3A8080%E3%80%82&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客链接&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_52288743/article/details/131084881#:~:text=Win%20%2B%20R%20%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%20%E5%9B%9E%E8%BD%A6%20shell%3ACommon%20Startup%20%E9%99%84%E5%8A%A0%EF%BC%9A%E5%A6%82%E9%9C%80%E6%9A%82%E5%81%9C%E8%87%AA%E5%90%AF%E5%8A%A8%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%85%B3%E9%97%AD,%E5%9C%A8%20%E5%90%AF%E5%8A%A8%20%E5%90%8E%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E8%AE%BF%E9%97%AE%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9D%A5%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%8E%A7%E6%95%B0%E6%8D%AE%E5%92%8C%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E3%80%82%20%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%9C%B0%E5%9D%80%E4%B8%BA%EF%BC%9Ahttp%3A%2F%2Flocalhost%3A8080%E3%80%82&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客链接&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;创建项目&#34;&gt;创建项目
 &lt;/h2&gt;&lt;blockquote&gt;
@@ -139,16 +122,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;spring.cloud.sentinel.transport.dashboard&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;localhost:8089&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407204039706.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407204039706&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407204039706.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407204039706.png&#34; alt=&#34;image-20240407204039706&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;sentinel主要采用&lt;code&gt;线程池隔离&lt;/code&gt;、&lt;code&gt;熔断降级&lt;/code&gt;、&lt;code&gt;流量控制&lt;/code&gt;的方式来解决雪崩问题&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -156,36 +136,27 @@
 &lt;/h2&gt;&lt;p&gt;簇点链路:就是项目内的调用链路,链路中被监控的每个接口就是一个资源。 默认情况下sentinel会监控SpringMVC的每一个端点(Endpoint) ，因此SpringMVC的每一个端点(Endpoint)就是调用链路中的一-个资源。
 流控、熔断等都是针对簇点链路中的资源来设置的，因此我们可以点击对应资源后面的按钮来设置规则:
 &lt;strong&gt;需求&lt;/strong&gt;:给/order/{orderld}这个资源设置流控规则，QPS不能超过5。然后进行压力测试。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407205129957.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407205129957&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210436655.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407210436655&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210503016.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407210503016&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407205129957.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407205129957.png&#34; alt=&#34;image-20240407205129957&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210436655.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210436655.png&#34; alt=&#34;image-20240407210436655&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210503016.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210503016.png&#34; alt=&#34;image-20240407210503016&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;流控模式&#34;&gt;流控模式
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;在添加限流规则时，点击高级选项，可以选择三种流控模式:&lt;/p&gt;
@@ -198,16 +169,13 @@
 &lt;h3 id=&#34;关联模式&#34;&gt;关联模式
 &lt;/h3&gt;&lt;p&gt;统计与当前资源相关的另一个资源，触发阈值时，对当前资源限流
 使用场景:比如用户支付时需要修改订单状态，同时用户要查询订单。查询和修改操作会争抢数据库锁,产生竞争。业务需求是有限支付和更新订单的业务,因此当修改订单业务触发阈值时，需要对查询订单业务限流，防止影响到更新订单的业务。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210759266.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407210759266&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210759266.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210759266.png&#34; alt=&#34;image-20240407210759266&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;需求&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;在OrderController新建两个端点: &lt;code&gt;/order/query&lt;/code&gt;和&lt;code&gt;/order/update&lt;/code&gt;, 无需实现业务&lt;/li&gt;
@@ -270,36 +238,27 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;然后访问一下 http://localhost:8090/order/query 和 http://localhost:8090/order/update、&lt;/p&gt;
 &lt;p&gt;对&lt;code&gt;/order/query&lt;/code&gt;添加流控
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211433491.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407211433491&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211555637.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407211555637&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211548557.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407211548557&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211433491.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211433491.png&#34; alt=&#34;image-20240407211433491&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211555637.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211555637.png&#34; alt=&#34;image-20240407211555637&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211548557.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211548557.png&#34; alt=&#34;image-20240407211548557&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 对&lt;code&gt;update&lt;/code&gt;压力测试，限流&lt;code&gt;query&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;满足下面条件可以使用关联模式:&lt;/p&gt;
 &lt;ol&gt;
@@ -313,16 +272,13 @@
 /test1 -&amp;gt; /common
 /test2 -&amp;gt; /common
 如果只希望统计从/test2进入到/common的请求，则可以这样配置:
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211931646.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407211931646&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211931646.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211931646.png&#34; alt=&#34;image-20240407211931646&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;需求&lt;/strong&gt;:有查询订单和创建订单业务,两者都需要查询商品。针对从查询订单进入到查询商品的请求统计并设置限流。
 步骤:&lt;/p&gt;
 &lt;ol&gt;
@@ -468,60 +424,45 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;如果不关闭&lt;code&gt;context整合&lt;/code&gt;，所有的&lt;code&gt;controller&lt;/code&gt;会被认为是同一个根链路发展而来的子链路&lt;/p&gt;
 &lt;p&gt;访问一下 http://localhost:8090/order/query 和 http://localhost:8090/order/save
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407212903207.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407212903207&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213029296.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407213029296&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407212903207.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407212903207.png&#34; alt=&#34;image-20240407212903207&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213029296.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213029296.png&#34; alt=&#34;image-20240407213029296&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 删除其他的流控规则
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213116501.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407213116501&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213116501.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213116501.png&#34; alt=&#34;image-20240407213116501&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 使用&lt;code&gt;Jmeter&lt;/code&gt;进行压力测试
 &lt;strong&gt;/order/save&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213258792.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407213258792&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213258792.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213258792.png&#34; alt=&#34;image-20240407213258792&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;/order/query&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213305172.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240407213305172&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213305172.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213305172.png&#34; alt=&#34;image-20240407213305172&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;总结&lt;/strong&gt;
 直接:对当前资源限流
 关联:高优先级资源触发阈值，对低优先级资源限流。
@@ -538,136 +479,100 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 &lt;h3 id=&#34;预热模式warm-up&#34;&gt;预热模式warm up
 &lt;/h3&gt;&lt;p&gt;warm up也叫预热模式，是应对服务冷启动的一种方案。&lt;code&gt;threshold&lt;/code&gt;为最大阈值，&lt;code&gt;coldFactor&lt;/code&gt;为冷启动因子，请求阈值初始值是&lt;code&gt;threshold/coldFactor&lt;/code&gt;,持续指定时长后，逐渐提高到&lt;code&gt;threshold&lt;/code&gt;值。而&lt;code&gt;coldFactor&lt;/code&gt;的默认值是3.
 例如，我设置QPS的&lt;code&gt;threshold&lt;/code&gt;为10，预热时间为5秒,那么&lt;code&gt;初始阈值&lt;/code&gt;就是&lt;code&gt;10/3&lt;/code&gt;，也就是3,然后在5秒后逐渐增长到10
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408064325063.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408064325063&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408064325063.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408064325063.png&#34; alt=&#34;image-20240408064325063&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;需求&lt;/strong&gt;
 给&lt;code&gt;/order/{id}&lt;/code&gt;这个资源设置限流,最大QPS为10,利用warm up效果,预热时长为5秒
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065105430.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408065105430&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065329162.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408065329162&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065457513.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408065457513&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065517390.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408065517390&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065105430.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065105430.png&#34; alt=&#34;image-20240408065105430&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065329162.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065329162.png&#34; alt=&#34;image-20240408065329162&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065457513.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065457513.png&#34; alt=&#34;image-20240408065457513&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065517390.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065517390.png&#34; alt=&#34;image-20240408065517390&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;排队等待&#34;&gt;排队等待
 &lt;/h3&gt;&lt;p&gt;当请求超过QPS阈值时，快速失败和warm up会拒绝新的请求并抛出异常。而排队等待则是让所有请求进入一个队列中,然后按照阈值允许的时间间隔依次执行。后来的请求必须等待前面执行完成，如果请求预期的等待时间超出最大时长,则会被拒绝。
 例如: QPS=5,意味着每&lt;code&gt;200ms&lt;/code&gt;处理一个队列中的请求; timeout = 2000， 意味着预期等待超过2000ms的请求会被拒绝并抛出异常
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065759385.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408065759385&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065827751.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408065827751&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065759385.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065759385.png&#34; alt=&#34;image-20240408065759385&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065827751.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065827751.png&#34; alt=&#34;image-20240408065827751&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;需求&lt;/strong&gt;
 给&lt;code&gt;/order/{id}&lt;/code&gt;这个资源设置限流，最大QPS为10， 利用排队的流控效果，超时时长设置为5s
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070509839.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408070509839&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070509839.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070509839.png&#34; alt=&#34;image-20240408070509839&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;而&lt;code&gt;Jmeter&lt;/code&gt;配置的&lt;code&gt;QPS&lt;/code&gt;是15，如果按照之前的情况（直接失败），则会有&lt;code&gt;5&lt;/code&gt;个&lt;code&gt;QPS&lt;/code&gt;无法处理
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070703747.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408070703747&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070729937.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408070729937&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070703747.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070703747.png&#34; alt=&#34;image-20240408070703747&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070729937.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070729937.png&#34; alt=&#34;image-20240408070729937&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 到后面请求超时则会直接失败
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070746902.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408070746902&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070809963.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408070809963&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070746902.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070746902.png&#34; alt=&#34;image-20240408070746902&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070809963.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070809963.png&#34; alt=&#34;image-20240408070809963&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;总结&#34;&gt;总结
 &lt;/h3&gt;&lt;p&gt;流控效果有哪些？&lt;/p&gt;
@@ -679,16 +584,13 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 &lt;h2 id=&#34;热点参数限流&#34;&gt;热点参数限流
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;之前的限流是统计访问某个资源的所有请求，判断是否超过QPS阈值。而热点参数限流是分别统计&lt;code&gt;参数值相同&lt;/code&gt;的请求,判断是否超过QPS阈值。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408071109096.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408071109096&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408071109096.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408071109096.png&#34; alt=&#34;image-20240408071109096&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;案例&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;给&lt;code&gt;/order/{id}&lt;/code&gt;这个资源添加热点参数限流，规则如下:&lt;/p&gt;
 &lt;ol&gt;
@@ -738,65 +640,50 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072009011.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408072009011&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072009011.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072009011.png&#34; alt=&#34;image-20240408072009011&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;可以看到&lt;code&gt;/order/1&lt;/code&gt;的&lt;code&gt;QPS&lt;/code&gt;是4
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072731930.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408072731930&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072731930.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072731930.png&#34; alt=&#34;image-20240408072731930&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 可以看到&lt;code&gt;/order/2&lt;/code&gt;的&lt;code&gt;QPS&lt;/code&gt;是10，全部通过
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072739726.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408072739726&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072739726.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072739726.png&#34; alt=&#34;image-20240408072739726&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 可以看到&lt;code&gt;/order/3&lt;/code&gt;的&lt;code&gt;QPS&lt;/code&gt;是默认阈值，即&lt;code&gt;2&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072747154.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408072747154&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072747154.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072747154.png&#34; alt=&#34;image-20240408072747154&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;隔离和降级&#34;&gt;隔离和降级
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;虽然限流可以尽量避免因高并发而引起的服务故障，但服务还会因为其它原因而故障。而要将这些故障控制在一定范围，避免雪崩，就要靠线程隔离(舱壁模式)和熔断降级手段了。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;不管是线程隔离还是熔断降级,都是对&lt;code&gt;客户端(调用方，示例中的服务A)&lt;/code&gt;的保护。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408073136305.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240408073136305&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408073136305.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408073136305.png&#34; alt=&#34;image-20240408073136305&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户端保护必须整合Feign和Sentinel。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
@@ -957,8 +844,7 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;这里整合feign各种报错，估计是版本原因&lt;/p&gt;
 &lt;p&gt;我尝试使用&lt;code&gt;2.3.12.RELEASE&lt;/code&gt;的springboot是可以实现&lt;code&gt;feign + nacos + sentinel&lt;/code&gt;的(还是jdk17)&lt;/p&gt;
-&lt;p&gt;demo链接放到github上了，&lt;a class=&#34;link&#34; href=&#34;https://github.com/IsUnderAchiever/sentinel-demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;demo链接放到github上了，&lt;a class=&#34;link&#34; href=&#34;https://github.com/IsUnderAchiever/sentinel-demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;做了个&lt;code&gt;springboot3、nacos、openfeign、sentinel&lt;/code&gt;的demo，还是上面的这个链接，请切换&lt;code&gt;boot3&lt;/code&gt;版本&lt;/p&gt;
 &lt;p&gt;springboot3报错解决，不使用&lt;code&gt;UserClientFallbackFactory&lt;/code&gt;，删除该文件，&lt;code&gt;feign.sentinel.enabled&lt;/code&gt;配置也删除&lt;/p&gt;
 &lt;p&gt;使用&lt;code&gt;@SentinelResource&lt;/code&gt;配合&lt;code&gt;blockHandler&lt;/code&gt;属性
@@ -995,39 +881,30 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;添加流控规则&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075355925.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410075355925&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075355925.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075355925.png&#34; alt=&#34;image-20240410075355925&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;访问provider服务&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075433734.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410075433734&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075433734.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075433734.png&#34; alt=&#34;image-20240410075433734&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;访问&lt;code&gt;provider&lt;/code&gt;自然是没有问题的，关键是&lt;code&gt;consumer&lt;/code&gt;那边怎么样
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075510088.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410075510088&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075510088.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075510088.png&#34; alt=&#34;image-20240410075510088&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 可以，也被限流了&lt;/p&gt;
 &lt;p&gt;需要注意的是&lt;code&gt;blockHandler&lt;/code&gt;指定的方法返回值要和&lt;code&gt;被标记@SentinelResource&lt;/code&gt;的方法&lt;code&gt;(这里是query)&lt;/code&gt;保持一致，得是&lt;code&gt;String&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;否则会报错如下&lt;/p&gt;
@@ -1096,8 +973,7 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;以上代码在github中，&lt;a class=&#34;link&#34; href=&#34;https://github.com/IsUnderAchiever/sentinel-demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以上代码在github中，&lt;a class=&#34;link&#34; href=&#34;https://github.com/IsUnderAchiever/sentinel-demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注意切换boot3分支，main分支使用的是2.3.12.RELEASE版本springboot，&lt;code&gt;2.3.12.RELEASE版本springboot&lt;/code&gt;可以正常使用自定义&lt;code&gt;FallbackFactory&lt;/code&gt;类&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;以上是关于大概的解法，下面展示&lt;code&gt;order&lt;/code&gt;和&lt;code&gt;user&lt;/code&gt;模块的写法
 &lt;strong&gt;user模块&lt;/strong&gt;
@@ -1147,162 +1023,123 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081054018.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410081054018&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081054018.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081054018.png&#34; alt=&#34;image-20240410081054018&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;又出现一个问题，springboot启动多个user实例，但是sentinel设置限流规则后只对其中一个实例有效
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081722803.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410081722803&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081732670.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410081732670&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081722803.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081722803.png&#34; alt=&#34;image-20240410081722803&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081732670.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081732670.png&#34; alt=&#34;image-20240410081732670&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 看&lt;code&gt;sentinel&lt;/code&gt;界面&lt;/p&gt;
 &lt;p&gt;在这里设置多个即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081809138.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410081809138&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081841313.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410081841313&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081809138.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081809138.png&#34; alt=&#34;image-20240410081809138&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081841313.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081841313.png&#34; alt=&#34;image-20240410081841313&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 order也有效
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081915014.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410081915014&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081915014.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081915014.png&#34; alt=&#34;image-20240410081915014&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;线程隔离&#34;&gt;线程隔离
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;左侧是&lt;code&gt;线程隔离&lt;/code&gt;，右侧是&lt;code&gt;信号量隔离&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073319242.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409073319242&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073319242.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073319242.png&#34; alt=&#34;image-20240409073319242&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 对比
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073605422.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409073605422&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073605422.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073605422.png&#34; alt=&#34;image-20240409073605422&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 将原本的&lt;code&gt;QPS&lt;/code&gt;换成&lt;code&gt;线程数&lt;/code&gt;即可
 &lt;strong&gt;需求&lt;/strong&gt;
 给UserClient的查询用户接口设置流控规则，线程数不能超过2。然后利用jemeter测试。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082119553.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410082119553&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082637264.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410082637264&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082119553.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082119553.png&#34; alt=&#34;image-20240410082119553&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082637264.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082637264.png&#34; alt=&#34;image-20240410082637264&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 这里的请求都是正常，因为之前配置了降级的逻辑，所以会直接返回一个&lt;code&gt;空的user对象&lt;/code&gt;，而不是报错&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;熔断降级&#34;&gt;熔断降级
 &lt;/h2&gt;&lt;h3 id=&#34;概念-1&#34;&gt;概念
 &lt;/h3&gt;&lt;p&gt;熔断降级是解决雪崩问题的重要手段。其思路是由断路器统计服务调用的异常比例、慢请求比例，如果超出阈值则会熔断该服务。即拦截访问该服务的一切请求;而当服务恢复时,断路器会放行访问该服务的请求。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074149240.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409074149240&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074149240.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074149240.png&#34; alt=&#34;image-20240409074149240&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h3 id=&#34;熔断策略--慢调用&#34;&gt;熔断策略&amp;ndash;慢调用
 &lt;/h3&gt;&lt;p&gt;断路器熔断策略有三种:&lt;code&gt;慢调用&lt;/code&gt;、&lt;code&gt;异常比例&lt;/code&gt;、&lt;code&gt;异常数&lt;/code&gt;
 慢调用:业务的响应时长(RT)大于指定时长的请求认定为慢调用请求。在指定时间内，如果请求数量超过设定的最小数量，慢调用比例大于设定的阈值，则触发熔断。例如:
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074310444.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409074310444&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074310444.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074310444.png&#34; alt=&#34;image-20240409074310444&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;解读&lt;/strong&gt;: RT超过500ms的调用是慢调用，统计最近10000ms内的请求，如果请求量超过10次,并且慢调用比例不低于0.5则触发熔断，熔断时长为5秒。然后进入half-open状态,放行一次请求做测试。
 &lt;strong&gt;需求&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;给UserClient的查询用户接口设置降级规则，慢调用的RT阈值为50ms,统计时间为1秒，最小请求数量为5，失败阈值比例为0.4,熔断时长为5&lt;/p&gt;
 &lt;p&gt;为了增加业务耗时，可以设置&lt;code&gt;Thread.sleep(60)&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083103666.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410083103666&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083103666.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083103666.png&#34; alt=&#34;image-20240410083103666&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1344,85 +1181,64 @@ order也有效
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;此时我们正常的响应时间是&lt;code&gt;71ms&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083240454.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410083240454&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083240454.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083240454.png&#34; alt=&#34;image-20240410083240454&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 快速访问多次后熔断，熔断之后已经不再去尝试了，而是直接返回失败结果，这里的时间为&lt;code&gt;4ms&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083454593.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410083454593&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083454593.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083454593.png&#34; alt=&#34;image-20240410083454593&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 服务的调用方响应如下
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083623355.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410083623355&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083623355.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083623355.png&#34; alt=&#34;image-20240410083623355&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 针对多实例也有效
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410084150507.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410084150507&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410084150507.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410084150507.png&#34; alt=&#34;image-20240410084150507&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;熔断策略--异常比例异常数&#34;&gt;熔断策略&amp;ndash;异常比例、异常数
 &lt;/h3&gt;&lt;p&gt;异常比例或异常数:统计指定时间内的调用，如果调用次数超过指定请求数，并且出现异常的比例达到设定的比例阈值(或超过指定异常数) ,则触发熔断。例如:
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074723270.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409074723270&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074746502.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409074746502&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074723270.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074723270.png&#34; alt=&#34;image-20240409074723270&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074746502.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074746502.png&#34; alt=&#34;image-20240409074746502&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;解读&lt;/strong&gt;:统计最近1000ms内的请求，如果请求量超过10次，并且异常比例不低于0.5,则触发熔断，熔断时长为5秒。然后进入half-open状态，放行一次 请求做测试。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;故意抛出异常即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210541628.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410210541628&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210541628.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210541628.png&#34; alt=&#34;image-20240410210541628&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1458,37 +1274,30 @@ order也有效
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210729986.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410210729986&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210729986.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210729986.png&#34; alt=&#34;image-20240410210729986&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果觉得直接返回报错不太友好，可以使用&lt;code&gt;@RestControllerAdvice&lt;/code&gt;来进行统一的异常处理，这里不过多介绍这个注解，先看看熔断是否生效
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210916311.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210916311.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210916311.png&#34; alt=&#34;&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 再看看&lt;code&gt;order&lt;/code&gt;服务调用是否正常
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410211017304.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410211017304&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410211017304.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410211017304.png&#34; alt=&#34;image-20240410211017304&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;总结-1&#34;&gt;总结
 &lt;/h3&gt;&lt;p&gt;Sentinel熔断降级的策略有哪些?
@@ -1502,16 +1311,13 @@ order也有效
 授权规则可以对调用方的来源做控制，有白名单和黑名单两种方式。
 白名单:来源(origin) 在白名单内的调用者允许访问
 黑名单:来源(origin)在黑名单内的调用者不允许访问
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409075531220.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409075531220&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409075531220.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409075531220.png&#34; alt=&#34;image-20240409075531220&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 例如，我们限定只允许从网关来的请求访问&lt;code&gt;order-service&lt;/code&gt;，不允许浏览器来直接访问,那么流控应用中就填写网关的名称.
 这里的&lt;code&gt;流控应用&lt;/code&gt;其实不是指的&lt;code&gt;网关服务&lt;/code&gt;的名称，而是指的&lt;code&gt;orign&lt;/code&gt;请求来源的名称
 Sentinel是通过&lt;code&gt;RequestOriginParser&lt;/code&gt;这个接口的parseOrigin来获取请求的来源的。
@@ -1686,76 +1492,58 @@ order服务&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;AddRequestHeader=origin,gateway&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220549522.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410220549522&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220549522.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220549522.png&#34; alt=&#34;image-20240410220549522&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;通过网关服务访问
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220636398.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410220636398&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220636398.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220636398.png&#34; alt=&#34;image-20240410220636398&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 直接访问
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220652041.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410220652041&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220652041.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220652041.png&#34; alt=&#34;image-20240410220652041&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;自定义异常结果&#34;&gt;自定义异常结果
 &lt;/h2&gt;&lt;p&gt;默认情况下，发生限流、降级、授权拦截时，都会抛出异常到调用方。如果要自定义异常时的返回结果，需要实现&lt;code&gt;BlockExceptionHandler&lt;/code&gt;接口
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081053921.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409081053921&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081053921.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081053921.png&#34; alt=&#34;image-20240409081053921&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;判断这里异常的类型，然后返回自定义结果
 &lt;strong&gt;而&lt;code&gt;BlockException&lt;/code&gt;包含很多个子类，分别对应不同的场景:&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081138373.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409081138373&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081138373.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081138373.png&#34; alt=&#34;image-20240409081138373&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 具体写法可参考
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081246546.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409081246546&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081246546.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081246546.png&#34; alt=&#34;image-20240409081246546&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 order服务&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1808,16 +1596,13 @@ order服务&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;重启服务后新建授权规则
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410221758019.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410221758019&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410221758019.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410221758019.png&#34; alt=&#34;image-20240410221758019&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 也可以使用&lt;code&gt;@SentinelResource&lt;/code&gt;注解方式&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1870,16 +1655,13 @@ order服务&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;配置授权规则
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410222328041.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410222328041&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410222328041.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410222328041.png&#34; alt=&#34;image-20240410222328041&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 虽然只能返回与使用&lt;code&gt;@SentinelResource&lt;/code&gt;注解标注的方法&lt;code&gt;相同&lt;/code&gt;的&lt;code&gt;返回值类型&lt;/code&gt;，但是在&lt;code&gt;springboot&lt;/code&gt;的&lt;code&gt;restful&lt;/code&gt;风格的api中，我们通常会统一返回结果
 如&lt;code&gt;JsonData&lt;/code&gt;或者&lt;code&gt;R&lt;/code&gt;等统一返回值类型&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1893,31 +1675,25 @@ order服务&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;pull模式&#34;&gt;pull模式
 &lt;/h4&gt;&lt;p&gt;pull模式:控制台将配置的规则推送到Sentinel客户端,而客户端会将配置规则保存在本地文件或数据库中。以后会定时去本地文件或数据库中查询，更新本地规则。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081715561.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409081715561&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081715561.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081715561.png&#34; alt=&#34;image-20240409081715561&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;由于是定时轮询读取，所以存在&lt;code&gt;时效性&lt;/code&gt;问题，导致了服务中&lt;code&gt;规则&lt;/code&gt;不一致的问题&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;push模式&#34;&gt;push模式
 &lt;/h4&gt;&lt;p&gt;push模式:控制台将配置规则推送到远程配置中心，例如Nacos。Sentinel客户 端监听Nacos,获取配置变更的推送消息，完成本地配置更新。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081844429.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240409081844429&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081844429.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081844429.png&#34; alt=&#34;image-20240409081844429&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h4 id=&#34;总结-2&#34;&gt;总结
 &lt;/h4&gt;&lt;p&gt;Sentinel的三种配置管理模式是什么?&lt;/p&gt;
 &lt;ol&gt;
@@ -1927,8 +1703,7 @@ order服务&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;实现push模式&#34;&gt;实现push模式
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_36763419/article/details/121560105&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客&lt;/a&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_36763419/article/details/121560105&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;
 push模式实现最为复杂，依赖于nacos,并且需要修改Sentinel控制台源码。
 &lt;strong&gt;引入依赖&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2110,16 +1885,13 @@ push模式实现最为复杂，依赖于nacos,并且需要修改Sentinel控制�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214414971.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410214414971&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214414971.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214414971.png&#34; alt=&#34;image-20240410214414971&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以上配置是指&lt;/p&gt;
 &lt;p&gt;resource：资源名。
@@ -2167,38 +1939,29 @@ clusterMode：是否集群。false 表示否，true 表示是。
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;测试一下是否可行
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214733973.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410214733973&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214733973.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214733973.png&#34; alt=&#34;image-20240410214733973&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 order也没问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214813076.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410214813076&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214813076.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214813076.png&#34; alt=&#34;image-20240410214813076&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 重启服务，查看&lt;code&gt;sentinel&lt;/code&gt;控制台，规则是否还存在
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214914582.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410214914582&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214914582.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214914582.png&#34; alt=&#34;image-20240410214914582&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 但是有个需要注意的点，这是&lt;code&gt;sentinel&lt;/code&gt;读&lt;code&gt;nacos&lt;/code&gt;配置的规则，而在&lt;code&gt;sentinel&lt;/code&gt;中配置的规则，不能同步到&lt;code&gt;nacos&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果需要让&lt;code&gt;sentinel&lt;/code&gt;的配置同步到&lt;code&gt;nacos&lt;/code&gt;，&lt;code&gt;nacos&lt;/code&gt;修改的配置&lt;code&gt;sentinel&lt;/code&gt;也能获取到，则需要修改&lt;code&gt;sentinel-dashboard.jar&lt;/code&gt;的源码了&lt;/p&gt;
 &lt;p&gt;网上也有教程&lt;/p&gt;

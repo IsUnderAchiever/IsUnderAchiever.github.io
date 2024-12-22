@@ -121,27 +121,21 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;有以上类，我们需要进行测试&lt;/p&gt;
 &lt;p&gt;在idea中按住&lt;code&gt;Ctrl+Shift+T&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292144145_repeat_1701265469164__211203.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129214419971&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292144145_repeat_1701265469164__211203.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292144145_repeat_1701265469164__211203.png&#34; alt=&#34;image-20231129214419971&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 勾选方法
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292145937_repeat_1701265524954__145173.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129214524901&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292145937_repeat_1701265524954__145173.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292145937_repeat_1701265524954__145173.png&#34; alt=&#34;image-20231129214524901&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 会生成以下模板&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -180,59 +174,44 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;我们将使用断言&lt;code&gt;Assert&lt;/code&gt;来完成测试
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292146882_repeat_1701265589895__016984.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129214629814&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292146882_repeat_1701265589895__016984.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292146882_repeat_1701265589895__016984.png&#34; alt=&#34;image-20231129214629814&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 我们将&lt;code&gt;预期值&lt;/code&gt;与&lt;code&gt;实际值&lt;/code&gt;进行比较
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147830_repeat_1701265633841__794593.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129214713781&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147718_repeat_1701265662728__041266.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129214742612&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147830_repeat_1701265633841__794593.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147830_repeat_1701265633841__794593.png&#34; alt=&#34;image-20231129214713781&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147718_repeat_1701265662728__041266.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147718_repeat_1701265662728__041266.png&#34; alt=&#34;image-20231129214742612&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 可以看到&lt;code&gt;100%测试覆盖率&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292150876_repeat_1701265821886__706483.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129215021768&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292150876_repeat_1701265821886__706483.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292150876_repeat_1701265821886__706483.png&#34; alt=&#34;image-20231129215021768&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 注释掉一个测试方法后，导致测试覆盖率不足100%，因为有部分代码未被测试到
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292151937_repeat_1701265892946__483201.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20231129215132836&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292151937_repeat_1701265892946__483201.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292151937_repeat_1701265892946__483201.png&#34; alt=&#34;image-20231129215132836&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 修改预期值后导致测试方法不通过&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;异常的情况&#34;&gt;异常的情况

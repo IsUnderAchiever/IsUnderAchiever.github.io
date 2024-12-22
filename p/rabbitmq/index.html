@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/rabbitmq/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="RabbitMq">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="RabbitMq">
 <meta property='og:description' content="RabbitMq">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/rabbitmq/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -326,17 +326,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/rabbitmq/">
-                <img src="/p/rabbitmq/202412212126390_hu12715439672147862960.png"
-                        srcset="/p/rabbitmq/202412212126390_hu12715439672147862960.png 800w, /p/rabbitmq/202412212126390_hu11719987494446538091.png 1600w"
-                        width="800" 
-                        height="201" 
-                        loading="lazy"
-                        alt="Featured image of post RabbitMq" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/rabbitmq/">
+            <img src="/p/rabbitmq/202412212126390_hu12715439672147862960.png" srcset="/p/rabbitmq/202412212126390_hu12715439672147862960.png 800w, /p/rabbitmq/202412212126390_hu11719987494446538091.png 1600w"  width="800"
+                height="201" loading="lazy" alt="Featured image of post RabbitMq" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -405,6 +401,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -416,28 +417,22 @@
 </h2><h3 id="同步调用">同步调用
 </h3><p>微服务间基于Feign的调用就属于同步方式，存在一些问题。业务代码耦合严重，除此之外对性能影响也很严重，因为需要等待被调用的服务返回结果。
 不仅如此，而且如果被调用的服务中，有某个服务挂了，则整个服务调用都会出现问题。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071726650.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402071726650"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071726650.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071726650.png" alt="image-20240402071726650"  />
+	</a>
+</div>
+</p>
 <h3 id="异步调用">异步调用
 </h3><p>异步调用常见实现就是事件驱动模式
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071919653.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402071919653"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071919653.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071919653.png" alt="image-20240402071919653"  />
+	</a>
+</div>
+
 <strong>优势</strong></p>
 <blockquote>
 <p>前三个解决了同步调用的问题</p>
@@ -447,16 +442,13 @@
 <li>性能提高，吞吐量升高，</li>
 <li>服务没有强依赖，无需担心级联失败问题</li>
 <li>流量削峰，broker能起到缓冲的作用，右侧的服务则按照自身能力来获取broker的事件
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402072322477.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402072322477"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402072322477.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402072322477.png" alt="image-20240402072322477"  />
+	</a>
+</div>
+
 <strong>劣势</strong></li>
 </ol>
 <blockquote>
@@ -467,112 +459,88 @@
 <li>架构复杂了，业务没有明显的流程线，不好追踪管理</li>
 </ol>
 <h3 id="mq选型">MQ选型
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073029943.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402073029943"
-	
-	
->
+</h3><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073029943.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073029943.png" alt="image-20240402073029943"  />
+	</a>
+</div>
+
 <strong>安装步骤省略</strong>
 rabbitmq的管理界面的端口为15672
 http://localhost:15672
 管理员的账号和密码是<code>guest</code></p>
 <h4 id="overview">Overview
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073427083.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402073427083"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073427083.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073427083.png" alt="image-20240402073427083"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>Overview</code>是总览，可以看到MQ的节点信息，当前为单节点运行，并不存在集群</p>
 </blockquote>
 <h4 id="connections">Connections
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073613643.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402073613643"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073613643.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073613643.png" alt="image-20240402073613643"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>无论是消息的<code>发布者</code>还是消息的<code>消费者</code>都需要与MQ建立连接</p>
 </blockquote>
 <h4 id="channels">Channels
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073847983.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402073847983"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073847983.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073847983.png" alt="image-20240402073847983"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>Channels</code>是通道，在建立连接后需要创建<code>Channels</code>通道，然后消息的<code>发布者</code>和消息的<code>消费者</code>才能基于<code>Channels</code>完成消息的<code>发布</code>和<code>消费</code></p>
 </blockquote>
 <h4 id="exchanges">Exchanges
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074101842.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402074101842"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074101842.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074101842.png" alt="image-20240402074101842"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>Exchanges</code>交换机用于接收来自生产者的消息，将它们推入队列</p>
 </blockquote>
 <h4 id="queues">Queues
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074226842.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402074226842"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074226842.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074226842.png" alt="image-20240402074226842"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>Queues</code>队列用来做消息存储</p>
 </blockquote>
 <h4 id="admin">Admin
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074543152.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402074543152"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074543152.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074543152.png" alt="image-20240402074543152"  />
+	</a>
+</div>
+</p>
 <h4 id="mq架构">MQ架构
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074637327.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402074637327"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074637327.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074637327.png" alt="image-20240402074637327"  />
+	</a>
+</div>
+</p>
 <h3 id="常见消息模型">常见消息模型
 </h3><blockquote>
 <p><code>基本消息队列</code>和<code>工作消息队列</code>没有使用到交换机，属于简单队列模型</p>
@@ -622,16 +590,13 @@ http://localhost:15672
 </span></span><span class="line"><span class="cl">        └─test
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402080719815.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402080719815"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402080719815.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402080719815.png" alt="image-20240402080719815"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>父级pom</p>
 </blockquote>
@@ -1007,16 +972,13 @@ http://localhost:15672
 <li>利用channel将消费者与队列绑定</li>
 </ol>
 <h2 id="springamqp">SpringAMQP
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402082842181.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402082842181"
-	
-	
->
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402082842181.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402082842181.png" alt="image-20240402082842181"  />
+	</a>
+</div>
+
 特征</p>
 <ol>
 <li>侦听器容器，用异步处理入站消息</li>
@@ -1112,29 +1074,23 @@ http://localhost:15672
 </span></span><span class="line"><span class="cl"><span class="na">spring.rabbitmq.password</span><span class="o">=</span><span class="s">123456</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210813058.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402210813058"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210813058.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210813058.png" alt="image-20240402210813058"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>点击<code>simple.queue</code></p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210928426.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402210928426"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210928426.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210928426.png" alt="image-20240402210928426"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>consumer工程的properties也同样配置</p>
 </blockquote>
@@ -1173,30 +1129,24 @@ http://localhost:15672
 </div><blockquote>
 <p>启动consumer工程后接收到消息</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211454812.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402211454812"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211454812.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211454812.png" alt="image-20240402211454812"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>发现<code>消息消失了</code>，因为这是MQ的机制，<code>阅后即焚</code>，消息不可重复消费</p>
 </blockquote>
 <h2 id="工作消息队列">工作消息队列
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211730081.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402211730081"
-	
-	
-></p>
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211730081.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211730081.png" alt="image-20240402211730081"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>两个消费者共同消费生产者发布的消息，由于消息<code>阅后即焚</code>的特性，所以只能消费者1消费一部分消息，消费者2消费一部分消息
 但是当发布的消息过多，两个消费者的能力不足，则多余的消息就会堆积在<code>队列</code>里
@@ -1458,16 +1408,13 @@ http://localhost:15672
 </h3><blockquote>
 <p>发布订阅模式与之前案例的区别就是允许将同一消息发送给多个消费者。实现方式是加入了exchange (交换机)。</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214519822.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402214519822"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214519822.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214519822.png" alt="image-20240402214519822"  />
+	</a>
+</div>
+</p>
 <p>常见exchange类型包括:</p>
 <ol>
 <li>Fanout: 广播</li>
@@ -1479,16 +1426,13 @@ http://localhost:15672
 </h3><blockquote>
 <p>Fanout Exchange会将接收到的消息路由到每一个跟其绑定的queue</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214633520.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402214633520"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214633520.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214633520.png" alt="image-20240402214633520"  />
+	</a>
+</div>
+</p>
 <p><strong>实现思路如下:</strong></p>
 <ol>
 <li>在consumer服务中，利用代码声明队列、交换机，并将两者绑定</li>
@@ -1619,26 +1563,20 @@ http://localhost:15672
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215642007.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402215642007"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215706608.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402215706608"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215642007.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215642007.png" alt="image-20240402215642007"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215706608.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215706608.png" alt="image-20240402215706608"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>配置<code>交换机</code>和<code>队列</code>以及它们的<code>绑定关系</code></p>
 </blockquote>
@@ -1853,16 +1791,13 @@ http://localhost:15672
 <p>发布者发送消息时，指定消息的RoutingKey</p>
 <p>Exchange将消息路由到BindingKey与消息RoutingKey一致的队列</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402220448895.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402220448895"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402220448895.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402220448895.png" alt="image-20240402220448895"  />
+	</a>
+</div>
+</p>
 <p><strong><code>需要注意</code></strong>：一个队列，可以绑定多个<code>key</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1935,16 +1870,13 @@ http://localhost:15672
 </div><blockquote>
 <p>启动<code>consumer</code>项目，前往rabbitmq网页。发现<code>direct.exchange</code>交换机和<code>directQueue1</code>、<code>directQueue2</code>队列已经声明了</p>
 <p>查看绑定关系
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402222040723.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240402222040723"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402222040723.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402222040723.png" alt="image-20240402222040723"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2012,16 +1944,13 @@ http://localhost:15672
 <code>#</code>:代指0个或多个单词
 <code>*</code>:代指一个单词</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065247801.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403065247801"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065247801.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065247801.png" alt="image-20240403065247801"  />
+	</a>
+</div>
+</p>
 <p><strong>实现思路如下</strong></p>
 <ol>
 <li>并利用@RabbitListener声明Exchange、Queue、RoutingKey</li>
@@ -2113,16 +2042,13 @@ http://localhost:15672
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>启动项目后，确认绑定关系
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065809837.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403065809837"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065809837.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065809837.png" alt="image-20240403065809837"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2292,16 +2218,13 @@ http://localhost:15672
 </div><blockquote>
 <p>这次将<code>consumer</code>项目关闭，我们重新发送信息，去<code>rabbitmq</code>管理页面看一看消息</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403071928081.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403071928081"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403071928081.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403071928081.png" alt="image-20240403071928081"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>rabbitmq原生只支持字节，但是spring允许我们发送对象，这是因为使用了jdk序列化，但是这种序列化有缺点</p>
 <ol>
@@ -2361,16 +2284,13 @@ http://localhost:15672
 </div><blockquote>
 <p>重新发送消息，前往rabbitmq管理页面查看</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403072815201.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403072815201"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403072815201.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403072815201.png" alt="image-20240403072815201"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>消息消费也需要配置<code>jackson</code>依赖、<code>RabbitMqConfig</code>，上面代码复制粘贴即可，这里不再重复</p>
 </blockquote>

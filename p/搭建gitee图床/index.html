@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="搭建Gitee图床">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="搭建Gitee图床">
 <meta property='og:description' content="搭建Gitee图床">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -266,17 +266,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/">
-                <img src="/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/202412211443704_hu17502669060222911446.png"
-                        srcset="/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/202412211443704_hu17502669060222911446.png 800w, /p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/202412211443704_hu7019943639226765074.png 1600w"
-                        width="800" 
-                        height="450" 
-                        loading="lazy"
-                        alt="Featured image of post 搭建Gitee图床" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/">
+            <img src="/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/202412211443704_hu17502669060222911446.png" srcset="/p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/202412211443704_hu17502669060222911446.png 800w, /p/%E6%90%AD%E5%BB%BAgitee%E5%9B%BE%E5%BA%8A/202412211443704_hu7019943639226765074.png 1600w"  width="800"
+                height="450" loading="lazy" alt="Featured image of post 搭建Gitee图床" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -345,6 +341,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -356,251 +357,186 @@
 <li>息流使用起来相对更加简单，有免费空间限制，如果只是编写文档也足够了
 在使用typora编写文档时，图片存储是个问题，虽然可以调整为相对路径存储，但是还需要保存好对应的本地图片，不然不知道图片被删掉了的话&hellip;</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120337.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120337.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120337.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>相对路径存储</p>
 <p>这个时候可以搭建一个图床，需要先下载名为【PicGo】的工具
-github下载地址 <a class="link" href="https://github.com/Molunerfinn/PicGo"  target="_blank" rel="noopener"
-    >https://github.com/Molunerfinn/PicGo</a>
-123网盘下载地址 <a class="link" href="https://www.123pan.com/s/tMU0Vv-31zUd.html"  target="_blank" rel="noopener"
-    >https://www.123pan.com/s/tMU0Vv-31zUd.html</a>
+github下载地址 <a class="link" href="https://github.com/Molunerfinn/PicGo"  target="_blank" rel="noopener" >https://github.com/Molunerfinn/PicGo</a>
+123网盘下载地址 <a class="link" href="https://www.123pan.com/s/tMU0Vv-31zUd.html"  target="_blank" rel="noopener" >https://www.123pan.com/s/tMU0Vv-31zUd.html</a>
 安装好PicGo默认即可，之后需要创建一个Gitee仓库</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121381.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121381.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121381.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>新建仓库</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122963.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122963.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122963.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>创建私有仓库</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121608.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
->
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121608.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121608.avif" alt="img"  />
+	</a>
+</div>
+
 个人主页</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121208.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121208.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121208.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>个人设置</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121102.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121102.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121102.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>私人令牌</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121096.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121096.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121096.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>生成新令牌</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122665.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122665.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122665.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>提交信息</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122065.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122065.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122065.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>复制令牌</p>
 <p><strong>这里很重要了，最好是保存一下生成的这串令牌，后续无法再查看到了</strong>
 接下来开始配置PicGo</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121970.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121970.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121970.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>安装插件</p>
 <p>安装一下【gitee】插件</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120865.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120865.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120865.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>配置Gitee信息</p>
 <p>上方的repo填写如下图片的地址</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121380.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121380.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121380.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>仓库地址</p>
 <p>token则填写生成的【私人令牌】
 <strong>接下来别忘了开源仓库</strong></p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120855.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120855.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120855.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>进入私有仓库</p>
 <p>找到仓库后进入</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121203.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121203.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121203.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>管理</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121432.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121432.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121432.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>设置仓库</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121081.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121081.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121081.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>添加readme文件</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120070.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120070.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120070.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>再次进入管理</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122254.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122254.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122254.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>开源Gitee仓库</p>
 <p>最后配置一下Typora的文件上传</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120802.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120802.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120802.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>配置Typora</p>
 <p>为了避免上传的图片重名，可以打开PicGo的【时间戳重命名】配置</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122554.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122554.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122554.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>配置时间戳</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122013.avif"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122013.avif">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122013.avif" alt="img"  />
+	</a>
+</div>
+</p>
 <p>typora上传图片结果</p>
 <p>最后提一嘴，我使用过阿里云OSS和Github的图床，阿里云OSS倒是没什么问题，可能会有少许收费，Github懂得都懂，连接不太好毕竟是在国外，可能会造成图片传不上去，或者传上去了显示不出来</p>
 
@@ -624,6 +560,30 @@ github下载地址 <a class="link" href="https://github.com/Molunerfinn/PicGo"  
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu5155801371712385131.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 博客配置"
+                        data-key="博客配置" 
+                        data-hash="md5-g&#43;Jrgc4Z5tPs5P2ZfECbfQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客配置</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -716,30 +676,6 @@ github下载地址 <a class="link" href="https://github.com/Molunerfinn/PicGo"  
 
         <div class="article-details">
             <h2 class="article-title">Kotlin</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/php8%E9%85%8D%E7%BD%AE/">
-        
-        
-            <div class="article-image">
-                <img src="/p/php8%E9%85%8D%E7%BD%AE/202412211409504.79c89987bfb593c489d4110850d9d270_hu2555561391498824671.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post PHP8"
-                        data-key="PHP8配置" 
-                        data-hash="md5-eciZh7&#43;1k8SJ1BEIUNnScA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PHP8</h2>
         </div>
     </a>
 </article>

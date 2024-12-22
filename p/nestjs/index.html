@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/nestjs/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="NestJs">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="NestJs">
 <meta property='og:description' content="NestJs">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/nestjs/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -394,17 +394,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/nestjs/">
-                <img src="/p/nestjs/202412212154588_hu3500528502701317104.png"
-                        srcset="/p/nestjs/202412212154588_hu3500528502701317104.png 800w, /p/nestjs/202412212154588_hu9556687964118842907.png 1600w"
-                        width="800" 
-                        height="349" 
-                        loading="lazy"
-                        alt="Featured image of post NestJs" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/nestjs/">
+            <img src="/p/nestjs/202412212154588_hu3500528502701317104.png" srcset="/p/nestjs/202412212154588_hu3500528502701317104.png 800w, /p/nestjs/202412212154588_hu9556687964118842907.png 1600w"  width="800"
+                height="349" loading="lazy" alt="Featured image of post NestJs" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -472,6 +468,11 @@
 </div>
 
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
     <section class="article-content">
     
@@ -890,8 +891,7 @@
 </div>
 </div><blockquote>
 <p>我们希望<code>@Get('http://xxx.com/xxx/list')</code>这样传入url来发起请求，但是装饰器默认会传入原型对象，所以不支持自定义参数</p>
-<p>所以这时候需要使用到装饰器工厂，<a class="link" href="https://www.tslang.cn/docs/handbook/decorators.html"  target="_blank" rel="noopener"
-    >查看资料</a></p>
+<p>所以这时候需要使用到装饰器工厂，<a class="link" href="https://www.tslang.cn/docs/handbook/decorators.html"  target="_blank" rel="noopener" >查看资料</a></p>
 </blockquote>
 <p>如果我们要定制一个修饰器如何应用到一个声明上，我们得写一个装饰器工厂函数。 <em>装饰器工厂</em>就是一个简单的函数，它返回一个表达式，以供装饰器在运行时调用。</p>
 <p>我们可以通过下面的方式来写一个装饰器工厂函数：</p>
@@ -912,8 +912,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>注意  下面<a class="link" href="https://www.tslang.cn/docs/handbook/decorators.html#method-decorators"  target="_blank" rel="noopener"
-    >方法装饰器</a>里有一个更加详细的例子。</p>
+<p>注意  下面<a class="link" href="https://www.tslang.cn/docs/handbook/decorators.html#method-decorators"  target="_blank" rel="noopener" >方法装饰器</a>里有一个更加详细的例子。</p>
 </blockquote>
 <p>下面是一个方法装饰器（<code>@enumerable</code>）的例子，应用于<code>Greeter</code>类的方法上</p>
 <div class="highlight"><div class="chroma">
@@ -961,8 +960,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这里的<code>@enumerable(false)</code>是一个<a class="link" href="https://www.tslang.cn/docs/handbook/decorators.html#decorator-factories"  target="_blank" rel="noopener"
-    >装饰器工厂</a>。 当装饰器 <code>@enumerable(false)</code>被调用时，它会修改属性描述符的<code>enumerable</code>属性。</p>
+</div><p>这里的<code>@enumerable(false)</code>是一个<a class="link" href="https://www.tslang.cn/docs/handbook/decorators.html#decorator-factories"  target="_blank" rel="noopener" >装饰器工厂</a>。 当装饰器 <code>@enumerable(false)</code>被调用时，它会修改属性描述符的<code>enumerable</code>属性。</p>
 <blockquote>
 <p>回到我们的主题，继续编写代码</p>
 </blockquote>
@@ -3281,16 +3279,13 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>在使用<code>apifox</code>或者<code>postman</code>发送请求后，<code>dist/images</code>下就已经存在了该文件</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047568.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240714210707281"
-	
-	
-></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047568.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047568.png" alt="image-20240714210707281"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>访问文件</p>
 <p>现在是无法访问到这张图片的，因为它是一个静态资源，所以还需要配置一个静态资源的访问目录</p>
@@ -5628,18 +5623,14 @@ Operators 纯函数可以处理管道的数据 如 map filter concat reduce 等<
 </h3><blockquote>
 <p>这里使用<code>React</code>和<code>NestJS</code>实现一个<code>CRUD</code></p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047227.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240718234211256"
-	
-	
-></p>
-<p><a class="link" href="https://www.123pan.com/s/tMU0Vv-OL6Ud.html"  target="_blank" rel="noopener"
-    >前端代码</a></p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047227.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047227.png" alt="image-20240718234211256"  />
+	</a>
+</div>
+</p>
+<p><a class="link" href="https://www.123pan.com/s/tMU0Vv-OL6Ud.html"  target="_blank" rel="noopener" >前端代码</a></p>
 <p>后端代码</p>
 <blockquote>
 <p>user.controller.ts</p>

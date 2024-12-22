@@ -15,8 +15,7 @@
         <guid>https://IsUnderAchiever.github.io/p/nginx%E6%8A%A5%E9%94%99/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/nginx%E6%8A%A5%E9%94%99/202412212222986.png" alt="Featured image of post Nginx报错" /&gt;&lt;h1 id=&#34;nginx&#34;&gt;Nginx
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/dotnet261010/p/12596185.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客&lt;/a&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/dotnet261010/p/12596185.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;
 前端正常显示，但是请求404
 比如&lt;code&gt;http://192.168.56.10/api/user/list&lt;/code&gt;报404，后端请求&lt;code&gt;http://192.168.56.10:8080/user/list&lt;/code&gt;正常显示
 &lt;strong&gt;出现问题的nginx配置如下&lt;/strong&gt;&lt;/p&gt;

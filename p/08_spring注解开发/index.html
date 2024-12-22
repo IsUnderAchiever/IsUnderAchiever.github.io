@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="08_Spring注解开发">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="08_Spring注解开发">
 <meta property='og:description' content="08_Spring注解开发">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -304,17 +304,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">
-                <img src="/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/202412212133331_hu211479134585629788.png"
-                        srcset="/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/202412212133331_hu211479134585629788.png 800w, /p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/202412212133331_hu17266170340933010716.png 1600w"
-                        width="800" 
-                        height="296" 
-                        loading="lazy"
-                        alt="Featured image of post 08_Spring注解开发" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">
+            <img src="/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/202412212133331_hu211479134585629788.png" srcset="/p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/202412212133331_hu211479134585629788.png 800w, /p/08_spring%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/202412212133331_hu17266170340933010716.png 1600w"  width="800"
+                height="296" loading="lazy" alt="Featured image of post 08_Spring注解开发" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -382,6 +378,11 @@
 </div>
 
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
     <section class="article-content">
     
@@ -614,26 +615,20 @@
 </div>
 </div><blockquote>
 <p>将uid为1的<code>user</code>的<code>status</code>字段更新为<code>睡觉</code>后查询输出
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201921812.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="1"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922865.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="2"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201921812.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201921812.png" alt="1"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922865.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922865.png" alt="2"  />
+	</a>
+</div>
+
 常用注解有<code>@Component</code>、<code>@Repository</code>、<code>@Service</code>、<code>@Controller</code></p>
 </blockquote>
 <h3 id="value">@Value
@@ -698,16 +693,13 @@
 <p>我这里<code>User类</code>并没有给<code>set方法</code>，并不影响运行结果，说明<code>@Value</code>并不依赖于<code>set方法</code></p>
 </blockquote>
 <h3 id="autowired">@Autowired
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922816.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="3"
-	
-	
-></p>
+</h3><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922816.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922816.png" alt="3"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -758,16 +750,13 @@
 此时<code>@Autowired</code>根据类型会找到多个类，此时会发生报错</p>
 <p><code>No qualifying bean of type 'org.example.dao.UserDao' available: expected single matching bean but found 2: userDao1,userDao2</code></p>
 <p>如何解决？
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922579.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="4"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922579.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922579.png" alt="4"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -801,16 +790,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922963.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="5"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922963.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201922963.png" alt="5"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>可以看到Idea这里也提示了报错信息</p>
 </blockquote>

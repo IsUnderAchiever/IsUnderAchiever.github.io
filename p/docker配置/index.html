@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/docker%E9%85%8D%E7%BD%AE/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Docker">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Docker">
 <meta property='og:description' content="Docker配置">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/docker%E9%85%8D%E7%BD%AE/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -336,17 +336,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/docker%E9%85%8D%E7%BD%AE/">
-                <img src="/p/docker%E9%85%8D%E7%BD%AE/dbc-docker-desktop-home_hu1147097447787108081.webp"
-                        srcset="/p/docker%E9%85%8D%E7%BD%AE/dbc-docker-desktop-home_hu1147097447787108081.webp 800w, /p/docker%E9%85%8D%E7%BD%AE/dbc-docker-desktop-home_hu4396453130231862691.webp 1600w"
-                        width="800" 
-                        height="543" 
-                        loading="lazy"
-                        alt="Featured image of post Docker" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/docker%E9%85%8D%E7%BD%AE/">
+            <img src="/p/docker%E9%85%8D%E7%BD%AE/dbc-docker-desktop-home_hu1147097447787108081.webp" srcset="/p/docker%E9%85%8D%E7%BD%AE/dbc-docker-desktop-home_hu1147097447787108081.webp 800w, /p/docker%E9%85%8D%E7%BD%AE/dbc-docker-desktop-home_hu4396453130231862691.webp 1600w"  width="800"
+                height="543" loading="lazy" alt="Featured image of post Docker" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -415,14 +411,18 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
     <h2 id="docker环境配置">Docker环境配置
 </h2><ol>
 <li>安装VirtualBox</li>
-<li>安装<a class="link" href="https://developer.hashicorp.com/vagrant/downloads"  target="_blank" rel="noopener"
-    >vagrant</a></li>
+<li>安装<a class="link" href="https://developer.hashicorp.com/vagrant/downloads"  target="_blank" rel="noopener" >vagrant</a></li>
 <li>安装完成vagrant后重启一下系统</li>
 <li>验证vagrant是否安装成功
 <ul>
@@ -430,18 +430,14 @@
 </ul>
 </li>
 </ol>
-<h2 id="使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch">使用vagrant创建虚拟机——<a class="link" href="https://app.vagrantup.com/boxes/search"  target="_blank" rel="noopener"
-    >官方镜像仓库</a>
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958195.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="001.初始化centos"
-	
-	
-></p>
+<h2 id="使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch">使用vagrant创建虚拟机——<a class="link" href="https://app.vagrantup.com/boxes/search"  target="_blank" rel="noopener" >官方镜像仓库</a>
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958195.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958195.png" alt="001.初始化centos"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -452,16 +448,13 @@
 </div>
 </div><p>此时在E盘已经生成了一个名为“Vagrantfile”的文件
 启动虚拟环境
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958546.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="002.启动虚拟环境"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958546.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958546.png" alt="002.启动虚拟环境"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -492,16 +485,13 @@
 则输入命令set VAGRANT_PREFER_SYSTEM_BIN=0 后再重新连接即可
 退出vagrant的方法：输入命令exit
 以文本的方式打开Vagrantfile，找到这一行配置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="003更改网络配置"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png" alt="003更改网络配置"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -544,10 +534,8 @@
 </div><h2 id="安装docker">安装docker
 </h2><p>概念：什么是docker？
 虚拟化容器技术。Docker基于镜像，可以秒级启动各种容器。每一种容器都是一个完整的运行环境，容器之间互相隔离。</p>
-<h3 id="docker的镜像市场httpshubdockercom"><a class="link" href="https://hub.docker.com/"  target="_blank" rel="noopener"
-    >docker的镜像市场</a>
-</h3><p><a class="link" href="https://docs.docker.com/engine/install/centos/"  target="_blank" rel="noopener"
-    >安装docker</a></p>
+<h3 id="docker的镜像市场httpshubdockercom"><a class="link" href="https://hub.docker.com/"  target="_blank" rel="noopener" >docker的镜像市场</a>
+</h3><p><a class="link" href="https://docs.docker.com/engine/install/centos/"  target="_blank" rel="noopener" >安装docker</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -726,8 +714,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 使用ssh工具进行连接</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>详情请查看这篇<a class="link" href="https://blog.csdn.net/qq_43651260/article/details/128055181"  target="_blank" rel="noopener"
-    >博客</a></p>
+</div><p>详情请查看这篇<a class="link" href="https://blog.csdn.net/qq_43651260/article/details/128055181"  target="_blank" rel="noopener" >博客</a></p>
 <h2 id="安装mysql">安装MySQL
 </h2><p>连接上虚拟机之后
 在docker镜像仓库搜索mysql，进入tags可查看版本信息</p>
@@ -902,16 +889,13 @@
 </span></span><span class="line"><span class="cl">docker pull redis
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958499.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="1"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958499.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958499.png" alt="1"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -930,26 +914,20 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>-d redis redis-server /etc/redis/redis.conf
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958293.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="2"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958909.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="3"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958293.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958293.png" alt="2"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958909.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958909.png" alt="3"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -960,16 +938,13 @@
 </span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis redis-cli
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958121.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="4"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958121.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958121.png" alt="4"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -990,26 +965,20 @@
 </span></span><span class="line"><span class="cl">appendonly yes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958706.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="5"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958530.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="6"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958706.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958706.png" alt="5"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958530.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958530.png" alt="6"  />
+	</a>
+</div>
+</p>
 <h5 id="修改redis的密码">修改redis的密码
 </h5><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1057,41 +1026,32 @@
 </h3><p>链接：https://pan.baidu.com/s/10z0S6b9mo76CWK9y3spPRg?pwd=51tz
 提取码：51tz
 &ndash;来自百度网盘超级会员V3的分享
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958101.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="7"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958101.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958101.png" alt="7"  />
+	</a>
+</div>
+
 点击New Connection右边的按钮，可进入设置页面，设置语言
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959057.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="8"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959057.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959057.png" alt="8"  />
+	</a>
+</div>
+</p>
 <h2 id="docker安装elasticsearch">docker安装ElasticSearch
 </h2><h3 id="1黑马程序员视频内安装方法">1.黑马程序员视频内安装方法：
 </h3><p>链接：https://pan.baidu.com/s/1pGnbmkMjD8RXe5Y4xotfOA?pwd=ihe5
 提取码：ihe5
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202002537.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210510165308064"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202002537.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202002537.png" alt="image-20210510165308064"  />
+	</a>
+</div>
+
 将其上传到虚拟机中，然后运行命令加载即可：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1218,16 +1178,13 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：</li>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>查看运行日志，当查看到下面的日志，说明成功：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202010279.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210109105135812"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202010279.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202010279.png" alt="image-20210109105135812"  />
+	</a>
+</div>
+</p>
 <h3 id="2网上的安装方法">2.网上的安装方法：
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1263,19 +1220,15 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：</li>
 </span></span><span class="line"><span class="cl">docker ps# 查看容器状态 up 运行
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>若存在问题，查看这篇<a class="link" href="https://blog.csdn.net/qq_38327769/article/details/124847508?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167101576116800182116891%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167101576116800182116891&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-124847508-null-null.142%5ev68%5econtrol,201%5ev4%5eadd_ask,213%5ev2%5et3_control1&amp;utm_term=docker%E5%AE%89%E8%A3%85ElasticSearch&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener"
-    >博客</a>
+</div><p>若存在问题，查看这篇<a class="link" href="https://blog.csdn.net/qq_38327769/article/details/124847508?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167101576116800182116891%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=167101576116800182116891&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-124847508-null-null.142%5ev68%5econtrol,201%5ev4%5eadd_ask,213%5ev2%5et3_control1&amp;utm_term=docker%E5%AE%89%E8%A3%85ElasticSearch&amp;spm=1018.2226.3001.4187"  target="_blank" rel="noopener" >博客</a>
 我这里的问题是启动的时候没问题，但是过一会有自动关闭
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959669.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="1"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959669.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959669.png" alt="1"  />
+	</a>
+</div>
+
 解决问题和上方博客中写的一样</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1289,16 +1242,13 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：</li>
 </div>
 </div><p>查看运行结果
 http://虚拟机ip地址:9200/
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959677.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="2"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959677.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959677.png" alt="2"  />
+	</a>
+</div>
+</p>
 <h3 id="安装kibana">安装Kibana
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1315,8 +1265,7 @@ http://虚拟机ip地址:9200/
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="安装ik分词器">安装ik分词器
-</h2><p><a class="link" href="https://github.com/medcl/elasticsearch-analysis-ik/releases"  target="_blank" rel="noopener"
-    >ik分词器下载地址</a></p>
+</h2><p><a class="link" href="https://github.com/medcl/elasticsearch-analysis-ik/releases"  target="_blank" rel="noopener" >ik分词器下载地址</a></p>
 <h3 id="31在线安装ik插件较慢">3.1.在线安装ik插件（较慢）
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1383,28 +1332,22 @@ http://虚拟机ip地址:9200/
 </div><p>说明plugins目录被挂载到了：<code>/var/lib/docker/volumes/es-plugins/_data </code>这个目录中。</p>
 <h3 id="2解压缩分词器安装包">2）解压缩分词器安装包
 </h3><p>下面我们需要把课前资料中的ik分词器解压缩，重命名为ik
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011441.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210506110249144"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011441.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011441.png" alt="image-20210506110249144"  />
+	</a>
+</div>
+</p>
 <h3 id="3上传到es容器的插件数据卷中">3）上传到es容器的插件数据卷中
 </h3><p>也就是<code>/var/lib/docker/volumes/es-plugins/_data </code>：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011084.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210506110704293"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011084.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011084.png" alt="image-20210506110704293"  />
+	</a>
+</div>
+</p>
 <h3 id="4重启容器">4）重启容器
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1593,16 +1536,13 @@ http://虚拟机ip地址:9200/
 </h2><p>随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“奥力给”，“传智播客” 等。
 所以我们的词汇也需要不断的更新，IK分词器提供了扩展词汇的功能。
 1）打开IK分词器config目录：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012285.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20210506112225508"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012285.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012285.png" alt="image-20210506112225508"  />
+	</a>
+</div>
+
 2）在IKAnalyzer.cfg.xml配置文件内容添加：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1648,16 +1588,13 @@ http://虚拟机ip地址:9200/
 </span></span><span class="line"><span class="cl">docker logs -f elasticsearch
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012676.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20201115230900504"
-	
-	
->
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012676.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012676.png" alt="image-20201115230900504"  />
+	</a>
+</div>
+
 日志中已经成功加载ext.dic配置文件
 5）测试效果：</p>
 <div class="highlight"><div class="chroma">
@@ -1700,6 +1637,30 @@ http://虚拟机ip地址:9200/
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu5155801371712385131.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 博客配置"
+                        data-key="博客配置" 
+                        data-hash="md5-g&#43;Jrgc4Z5tPs5P2ZfECbfQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客配置</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -1792,30 +1753,6 @@ http://虚拟机ip地址:9200/
 
         <div class="article-details">
             <h2 class="article-title">Kotlin</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/php8%E9%85%8D%E7%BD%AE/">
-        
-        
-            <div class="article-image">
-                <img src="/p/php8%E9%85%8D%E7%BD%AE/202412211409504.79c89987bfb593c489d4110850d9d270_hu2555561391498824671.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post PHP8"
-                        data-key="PHP8配置" 
-                        data-hash="md5-eciZh7&#43;1k8SJ1BEIUNnScA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PHP8</h2>
         </div>
     </a>
 </article>

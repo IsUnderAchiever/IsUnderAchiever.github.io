@@ -17,10 +17,8 @@
 &lt;/h1&gt;&lt;h2 id=&#34;基本要点&#34;&gt;基本要点
 &lt;/h2&gt;&lt;h3 id=&#34;基础&#34;&gt;基础
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/overview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.angularc.cn/introduce.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;中文文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/overview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.angularc.cn/introduce.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;中文文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;安装脚手架&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -121,8 +119,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:4200/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;访问页面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://localhost:4200/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;访问页面&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;http://localhost:4200/&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;项目结构解析&#34;&gt;项目结构解析
@@ -429,12 +426,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如果你不希望使用独立组件，其实在使用独立组件之前，Angular 代码使用 &lt;code&gt;NgModule&lt;/code&gt; 作为导入和使用其他组件的机制&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/ngmodules&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;参考文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/ngmodules&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;参考文档&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;管理动态数据&#34;&gt;管理动态数据
 &lt;/h3&gt;&lt;h4 id=&#34;定义状态&#34;&gt;定义状态
-&lt;/h4&gt;&lt;p&gt;要定义状态，你可以在组件内使用&lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;类字段语法&lt;/a&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;要定义状态，你可以在组件内使用&lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;类字段语法&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;例如，使用 &lt;code&gt;TodoListItem&lt;/code&gt; 组件，创建两个你想要跟踪的属性：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;taskTitle&lt;/code&gt; — 任务的标题&lt;/li&gt;
@@ -882,8 +877,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;共享逻辑&#34;&gt;共享逻辑
-&lt;/h3&gt;&lt;p&gt;当你需要在组件之间共享逻辑时，Angular 利用 &lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/di&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;依赖注入&lt;/a&gt;的设计模式，允许你创建一个“服务”，从而允许你将代码注入组件，并从单一事实之源管理它&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;当你需要在组件之间共享逻辑时，Angular 利用 &lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/di&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;依赖注入&lt;/a&gt;的设计模式，允许你创建一个“服务”，从而允许你将代码注入组件，并从单一事实之源管理它&lt;/p&gt;
 &lt;h4 id=&#34;服务&#34;&gt;服务
 &lt;/h4&gt;&lt;p&gt;服务是可重用的代码片段，可以被注入&lt;/p&gt;
 &lt;p&gt;类似于定义组件，服务由以下内容组成：&lt;/p&gt;
@@ -1016,8 +1010,7 @@
 &lt;/div&gt;&lt;h2 id=&#34;深度指南&#34;&gt;深度指南
 &lt;/h2&gt;&lt;h3 id=&#34;组件的剖析&#34;&gt;组件的剖析
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;如何导入以及使用其他&lt;code&gt;独立组件&lt;/code&gt;在上方&lt;code&gt;基本要点&lt;/code&gt;中已经了解到，如果希望使用&lt;code&gt;NgModule&lt;/code&gt;的方式而非&lt;code&gt;独立组件&lt;/code&gt;，可以参考&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/ngmodules&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如何导入以及使用其他&lt;code&gt;独立组件&lt;/code&gt;在上方&lt;code&gt;基本要点&lt;/code&gt;中已经了解到，如果希望使用&lt;code&gt;NgModule&lt;/code&gt;的方式而非&lt;code&gt;独立组件&lt;/code&gt;，可以参考&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/ngmodules&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;组件选择器&#34;&gt;组件选择器
 &lt;/h4&gt;&lt;h5 id=&#34;类型选择器&#34;&gt;类型选择器
@@ -1043,8 +1036,7 @@
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;需要注意的是&lt;/code&gt;&lt;/strong&gt;，&lt;strong&gt;组件选择器是区分大小写的&lt;/strong&gt;&lt;/p&gt;
 &lt;h5 id=&#34;选择器类型&#34;&gt;选择器类型
 &lt;/h5&gt;&lt;blockquote&gt;
-&lt;p&gt;Angular 在组件选择器中支持一组 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;基本 CSS 选择器类型&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Angular 在组件选择器中支持一组 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;基本 CSS 选择器类型&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -1072,14 +1064,10 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;Angular 组件选择器不支持组合器，包括 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;后代组合器&lt;/a&gt;或 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;子组合器&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Angular 组件选择器不支持指定 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;命名空间&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Angular 组件选择器不支持组合器，包括 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;后代组合器&lt;/a&gt;或 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;子组合器&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Angular 组件选择器不支持指定 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;命名空间&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;not伪类&#34;&gt;&lt;code&gt;:not&lt;/code&gt;伪类
-&lt;/h5&gt;&lt;p&gt;Angular 支持 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/:not&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;伪类 &lt;code&gt;:not&lt;/code&gt;&lt;/a&gt;，可以将这个伪类附加到任何其他选择器上，以缩小组件选择器匹配的元素范围&lt;/p&gt;
+&lt;/h5&gt;&lt;p&gt;Angular 支持 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/:not&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;伪类 &lt;code&gt;:not&lt;/code&gt;&lt;/a&gt;，可以将这个伪类附加到任何其他选择器上，以缩小组件选择器匹配的元素范围&lt;/p&gt;
 &lt;p&gt;可以定义一个 &lt;code&gt;[dropzone]&lt;/code&gt;属性选择器并阻止匹配 &lt;code&gt;textarea&lt;/code&gt;元素&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1283,16 +1271,13 @@
 &lt;p&gt;angular默认情况采用这种模拟封装，这样指定的样式只在模板中生效，不对其他模板造成干扰&lt;/p&gt;
 &lt;p&gt;框架会为每个组件实例生成唯一一个HTML属性，并且会将该属性添加到组件模板中的元素，以及将该属性插入到组件样式定义的css选择器中&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;在封装模式下，angular支持&lt;code&gt;:host&lt;/code&gt;和&lt;code&gt;:host-context()&lt;/code&gt;伪类，而无需使用 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Shadow DOM&lt;/a&gt;。在编译期间，框架将这些伪类转换为属性，因此在运行时不遵循这些本地伪类的规则（例如浏览器兼容性、特异性）。Angular 的模拟封装模式不支持与 Shadow DOM 相关的任何其他伪类，例如 &lt;code&gt;::shadow&lt;/code&gt; 或  &lt;code&gt;::part&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;在封装模式下，angular支持&lt;code&gt;:host&lt;/code&gt;和&lt;code&gt;:host-context()&lt;/code&gt;伪类，而无需使用 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;Shadow DOM&lt;/a&gt;。在编译期间，框架将这些伪类转换为属性，因此在运行时不遵循这些本地伪类的规则（例如浏览器兼容性、特异性）。Angular 的模拟封装模式不支持与 Shadow DOM 相关的任何其他伪类，例如 &lt;code&gt;::shadow&lt;/code&gt; 或  &lt;code&gt;::part&lt;/code&gt;。&lt;/p&gt;
 &lt;h5 id=&#34;viewencapsulationshadowdom&#34;&gt;&lt;code&gt;ViewEncapsulation.ShadowDom&lt;/code&gt;
 &lt;/h5&gt;&lt;blockquote&gt;
-&lt;p&gt;这种模式通过使用 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Web 标准 Shadow DOM API&lt;/a&gt; 来限定组件内的样式作用域。启用这种模式时，Angular 会将一个 shadow root 附着到组件的宿主元素，并将组件的模板和样式渲染到对应的 shadow 树中。&lt;/p&gt;
+&lt;p&gt;这种模式通过使用 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;Web 标准 Shadow DOM API&lt;/a&gt; 来限定组件内的样式作用域。启用这种模式时，Angular 会将一个 shadow root 附着到组件的宿主元素，并将组件的模板和样式渲染到对应的 shadow 树中。&lt;/p&gt;
 &lt;p&gt;此模式严格保证 &lt;em&gt;只有&lt;/em&gt;该组件的样式适用于组件模板中的元素。全局样式不能影响影子树中的元素，影子树中的样式也不能影响影子树外的元素。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;然而，启用 &lt;code&gt;ShadowDom&lt;/code&gt; 封装不仅仅影响样式作用域。在 shadow 树中渲染组件会影响事件传播、与 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;`` API&lt;/a&gt; 的交互，以及浏览器开发者工具显示元素的方式。在启用此选项之前，务必理解在你的应用中使用 Shadow DOM 的全部影响。&lt;/p&gt;
+&lt;p&gt;然而，启用 &lt;code&gt;ShadowDom&lt;/code&gt; 封装不仅仅影响样式作用域。在 shadow 树中渲染组件会影响事件传播、与 &lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;`` API&lt;/a&gt; 的交互，以及浏览器开发者工具显示元素的方式。在启用此选项之前，务必理解在你的应用中使用 Shadow DOM 的全部影响。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ViewEncapsulation.None&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这种模式会禁用组件的所有样式封装。任何与组件关联的样式都会作为全局样式来处理。&lt;/p&gt;
 &lt;h5 id=&#34;定义样式&#34;&gt;定义样式
@@ -2601,8 +2586,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;管道&#34;&gt;管道
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7085762568223981605&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7085762568223981605&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2951,38 +2935,32 @@
   &lt;tbody&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngOnChanges()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;当 Angular 设置或重新设置数据绑定的输入属性时响应。该方法接受当前和上一属性值的 &lt;code&gt;SimpleChanges&lt;/code&gt; 对象 &lt;strong&gt;注意&lt;/strong&gt;： 这发生得比较频繁，所以你在这里执行的任何操作都会显著影响性能。欲知详情，参阅本文档的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#onchanges&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;使用变更检测钩子&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;当 Angular 设置或重新设置数据绑定的输入属性时响应。该方法接受当前和上一属性值的 &lt;code&gt;SimpleChanges&lt;/code&gt; 对象 &lt;strong&gt;注意&lt;/strong&gt;： 这发生得比较频繁，所以你在这里执行的任何操作都会显著影响性能。欲知详情，参阅本文档的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#onchanges&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;使用变更检测钩子&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;如果组件绑定过输入属性，那么在 &lt;code&gt;ngOnInit()&lt;/code&gt; 之前以及所绑定的一个或多个输入属性的值发生变化时都会调用。 &lt;strong&gt;注意&lt;/strong&gt;： 如果你的组件没有输入属性，或者你使用它时没有提供任何输入属性，那么框架就不会调用 &lt;code&gt;ngOnChanges()&lt;/code&gt;。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngOnInit()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;在 Angular 第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。欲知详情，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#oninit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;初始化组件或指令&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;在 Angular 第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。欲知详情，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#oninit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;初始化组件或指令&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;在第一轮 &lt;code&gt;ngOnChanges()&lt;/code&gt; 完成之后调用，只调用&lt;strong&gt;一次&lt;/strong&gt;。而且即使没有调用过 &lt;code&gt;ngOnChanges()&lt;/code&gt;，也仍然会调用 &lt;code&gt;ngOnInit()&lt;/code&gt;（比如当模板中没有绑定任何输入属性时）。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngDoCheck()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#docheck&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;自定义变更检测&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#docheck&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;自定义变更检测&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;紧跟在每次执行变更检测时的 &lt;code&gt;ngOnChanges()&lt;/code&gt; 和 首次执行变更检测时的 &lt;code&gt;ngOnInit()&lt;/code&gt; 后调用。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngAfterContentInit()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;当 Angular 把外部内容投影进组件视图或指令所在的视图之后调用。 欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;响应内容中的变更&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;当 Angular 把外部内容投影进组件视图或指令所在的视图之后调用。 欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;响应内容中的变更&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;第一次 &lt;code&gt;ngDoCheck()&lt;/code&gt; 之后调用，只调用一次。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngAfterContentChecked()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;每当 Angular 检查完被投影到组件或指令中的内容之后调用。 欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;响应被投影内容的变更&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;每当 Angular 检查完被投影到组件或指令中的内容之后调用。 欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;响应被投影内容的变更&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngAfterContentInit()&lt;/code&gt; 和每次 &lt;code&gt;ngDoCheck()&lt;/code&gt; 之后调用。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngAfterViewInit()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;当 Angular 初始化完组件视图及其子视图或包含该指令的视图之后调用。 欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#afterview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;响应视图变更&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;当 Angular 初始化完组件视图及其子视图或包含该指令的视图之后调用。 欲知详情和范例，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#afterview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;响应视图变更&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;第一次 &lt;code&gt;ngAfterContentChecked()&lt;/code&gt; 之后调用，只调用一次。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
@@ -2992,15 +2970,13 @@
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;ngOnDestroy()&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;每当 Angular 每次销毁指令/组件之前调用并清扫。在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。欲知详情，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#ondestroy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;在实例销毁时进行清理&lt;/a&gt;。&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;每当 Angular 每次销毁指令/组件之前调用并清扫。在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。欲知详情，参阅本文档中的&lt;a class=&#34;link&#34; href=&#34;http://ubuntu-notebook:8015/guide/lifecycle-hooks#ondestroy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;在实例销毁时进行清理&lt;/a&gt;。&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;在 Angular 销毁指令或组件之前立即调用。&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h4 id=&#34;父子组件传参&#34;&gt;父子组件传参
-&lt;/h4&gt;&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7205841266906398781&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7205841266906398781&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;父传子&#34;&gt;父传子
 &lt;/h5&gt;&lt;p&gt;&lt;code&gt;@Input()&lt;/code&gt; 和 &lt;code&gt;@Output()&lt;/code&gt; 为子组件提供了一种与其父组件通信的方法。&lt;code&gt;@Input()&lt;/code&gt; 允许父组件更新子组件中的数据。相反，&lt;code&gt;@Output()&lt;/code&gt; 允许子组件向父组件发送数据。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3463,8 +3439,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;路由&#34;&gt;路由
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/routing/router-tutorial&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://angular.cn/guide/routing/router-tutorial&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;app.routes.ts&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

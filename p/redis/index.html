@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/redis/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Redis">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Redis">
 <meta property='og:description' content="Redis">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/redis/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -349,17 +349,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/redis/">
-                <img src="/p/redis/202412212127078_hu16638025092699005739.png"
-                        srcset="/p/redis/202412212127078_hu16638025092699005739.png 800w, /p/redis/202412212127078_hu17236364133365147914.png 1600w"
-                        width="800" 
-                        height="395" 
-                        loading="lazy"
-                        alt="Featured image of post Redis" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/redis/">
+            <img src="/p/redis/202412212127078_hu16638025092699005739.png" srcset="/p/redis/202412212127078_hu16638025092699005739.png 800w, /p/redis/202412212127078_hu17236364133365147914.png 1600w"  width="800"
+                height="395" loading="lazy" alt="Featured image of post Redis" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -427,6 +423,11 @@
 </div>
 
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
     <section class="article-content">
     
@@ -572,16 +573,13 @@ Redis基于内存，单节点能存储的数据量难以满足海量数据需求
 <p>这里有一句<code>Saving the final RDB snapshot before exiting.</code></p>
 <p>Redis将文件保存在运行目录中</p>
 <p>我这是<code>windows</code>系统，如果是<code>linux</code>则使用<code>ls</code>、<code>ll</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240415211506657"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png" alt="image-20240415211506657"  />
+	</a>
+</div>
+
 但是我们担心如果突然宕机还没来得及持久化怎么办，我们更加希望隔一段时间持久化一次</p>
 <p>Redis内部有触发RDB的机制，可以在redis.conf文件中找到， 格式如下:</p>
 </blockquote>
@@ -624,29 +622,23 @@ Redis基于内存，单节点能存储的数据量难以满足海量数据需求
 </div>
 </div><blockquote>
 <p>bgsave开始时会<code>fork</code>主进程得到子进程，子进程共享主进程的内存数据。完成fork后读取内存数据并写入RDB文件。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240415213015095"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png" alt="image-20240415213015095"  />
+	</a>
+</div>
+
 fork采用的是copy-on-write技术:
 当主进程执行读操作时,访问共享内存;
 当主进程执行写操作时，则会拷贝一份数据，执行写操作。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240415213600960"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png" alt="image-20240415213600960"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h4 id="总结">总结
 </h4><p>RDB方式bgsave的基本流程?</p>
@@ -702,28 +694,22 @@ AOF默认是关闭的，需要修改redis.conf配置文件来开启AOF:</p>
 </span></span><span class="line"><span class="cl"><span class="na">appendfsync</span> <span class="s">no</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240415214253132"
-	
-	
->
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png" alt="image-20240415214253132"  />
+	</a>
+</div>
+
 由于AOF记录的是命令操作，而不是直接记录值，所以会比RDB文件大很多
 因为是记录命令, AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一-次写操作才有意义。通过执行bgrewriteaof命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240415214743582"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png" alt="image-20240415214743582"  />
+	</a>
+</div>
+
 Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也可以在redis.conf中配置:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -740,29 +726,23 @@ Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>RDB</code>和<code>AOF</code>各有自己的优缺点，如果对数据安全性要求较高,在实际开发中往往会结合两者来使用。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240415215054692"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png" alt="image-20240415215054692"  />
+	</a>
+</div>
+</p>
 <h2 id="redis主从">Redis主从
 </h2><blockquote>
 <p>单节点Redis的并发能力是有上限的，要近一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416063931474"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png" alt="image-20240416063931474"  />
+	</a>
+</div>
+
 开启RDB，关闭AOF</p>
 <p>一主二从 A（B、C） 一个master两个slave/replica</p>
 </blockquote>
@@ -785,104 +765,77 @@ Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="windows">windows
-</h3><p>windows配置redis集群查看<a class="link" href="https://blog.csdn.net/weixin_41846320/article/details/83753667"  target="_blank" rel="noopener"
-    >该博客</a></p>
+</h3><p>windows配置redis集群查看<a class="link" href="https://blog.csdn.net/weixin_41846320/article/details/83753667"  target="_blank" rel="noopener" >该博客</a></p>
 <blockquote>
 <p>主节点
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416070837220"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png" alt="image-20240416070837220"  />
+	</a>
+</div>
+
 从节点
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416070901240"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416070908369"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png" alt="image-20240416070901240"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png" alt="image-20240416070908369"  />
+	</a>
+</div>
+
 从节点只能读数据，不能写数据
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416071004714"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png" alt="image-20240416071004714"  />
+	</a>
+</div>
+
 关闭主节点后，从节点的状态
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416071252667"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png" alt="image-20240416071252667"  />
+	</a>
+</div>
+
 重启主节点后，从节点的状态
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240416071420341"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png" alt="image-20240416071420341"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="linux">linux
 </h3><blockquote>
-<p>接下来演示<code>docker配置redis集群</code>，参考<a class="link" href="https://blog.csdn.net/weixin_43025151/article/details/134205482"  target="_blank" rel="noopener"
-    >博客链接</a>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421125052157"
-	
-	
->
+<p>接下来演示<code>docker配置redis集群</code>，参考<a class="link" href="https://blog.csdn.net/weixin_43025151/article/details/134205482"  target="_blank" rel="noopener" >博客链接</a>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png" alt="image-20240421125052157"  />
+	</a>
+</div>
+
 可以看到本地已经拉取了<code>redis</code>镜像
 在<code>/root</code>目录下新建一个<code>redis.conf</code>文件和<code>data</code>目录
 <code>data</code>用以存储redis持久化文件，<code>redis.conf</code>作为redis的配置文件，这里配置<code>主从集群</code>，所以需要新建三个<code>conf</code>和<code>data</code>，目录及文件如下
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421135026402"
-	
-	
->
-<code>redis-7001.conf</code>下载<a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/redis-7001.conf"  target="_blank" rel="noopener"
-    >链接</a></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png" alt="image-20240421135026402"  />
+	</a>
+</div>
+
+<code>redis-7001.conf</code>下载<a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/redis-7001.conf"  target="_blank" rel="noopener" >链接</a></p>
 <p>启动容器，这里使用<code>7001</code>作为端口号</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -903,30 +856,24 @@ Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也�
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>redis-server /etc/redis/redis.conf
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421133144513"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png" alt="image-20240421133144513"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>配置文件直接复制7001即可，反正将来也是以容器为单位启动，不会造成端口冲突，但是虚拟机(宿主机)的端口映射则不能都写7001了</p>
 <p>7001端口已经被<code>master</code>占据了，剩下两个<code>slave</code>使用<code>7002、7003</code></p>
 <p>修改对应的持久化目录
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421140154283"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png" alt="image-20240421140154283"  />
+	</a>
+</div>
+
 <code>redis-7001.conf</code>文件中添加如下配置</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1013,16 +960,13 @@ Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也�
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis-master redis-cli info replication
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421142455620"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png" alt="image-20240421142455620"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -1041,27 +985,21 @@ Redis也会在<code>触发阈值</code>时自动去重写AOF文件。阈值也�
 </div>
 </div><blockquote>
 <p>slave1
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421142858831"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png" alt="image-20240421142858831"  />
+	</a>
+</div>
+
 slave2
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421142916435"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png" alt="image-20240421142916435"  />
+	</a>
+</div>
+
 此时停止master</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1072,16 +1010,13 @@ slave2
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker stop redis-master
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421143048582"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png" alt="image-20240421143048582"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>尝试向slave中写入数据</p>
 </blockquote>
@@ -1097,52 +1032,40 @@ slave2
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> name tigerhhzz11
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421143606124"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png" alt="image-20240421143606124"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>向master中写入数据，在slave中读出
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421143752145"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421143738686"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png" alt="image-20240421143752145"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png" alt="image-20240421143738686"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="数据同步原理">数据同步原理
 </h2><h3 id="步骤">步骤
 </h3><p>主从第一次同步是<code>全量同步</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421144659573"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png" alt="image-20240421144659573"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>master怎么知道slave是否是第一次请求数据呢？这里会用到两个很重要的概念:</p>
 <p><code>Replication id</code>:简称replid, 是数据集的标记，id一致则说明是同一数据集。每一个master都有唯一的replid,slave则会<code>继承</code>master节点的replid</p>
@@ -1187,32 +1110,26 @@ slave2
 </ol>
 <h3 id="增量同步">增量同步
 </h3><p>主从第一次同步是<code>全量同步</code>,但如果slave重启后同步，则执行<code>增量同步</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421150448468"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png" alt="image-20240421150448468"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>repl_baklog</code>本质是一个<code>环形数组</code>，slave与master数据之间的差异=master-slave（图中红色线段的部分）</p>
 <p>当数据记完一圈后，会覆盖掉上次的内容继续往下记载，slave也会继续跟着master往后同步数据</p>
 <p>但是这样就存在<code>无法进行增量同步</code>的情况</p>
 <p><code>repl_baklog</code>大小有上限，写满后会覆盖最早的数据。如果slave断开时间过久，导致数据被覆盖,则无法实现增量同步，只能再次全量同步。</p>
 <p>如果master已经覆盖掉上一次的内容，开始记入第二圈的数据，而slave由于某种原因宕机，导致master覆盖的数据并没有同步完成
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421151021414"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png" alt="image-20240421151021414"  />
+	</a>
+</div>
+
 此时就只能做全量同步了，无法进行增量同步</p>
 <p>应当尽可能的减少全量同步，因为它的性能较差。或许可以进一步优化全量同步的性能</p>
 <p>可以从以下几个方面来优化Redis主从就集群:</p>
@@ -1229,16 +1146,13 @@ slave2
 </li>
 <li>
 <p>限制一个master上的slave节点数量，如果实在是太多slave,则可以采用<code>主-从-从</code>链式结构，减少master压力
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421151554098"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png" alt="image-20240421151554098"  />
+	</a>
+</div>
+</p>
 </li>
 </ol>
 </blockquote>
@@ -1263,32 +1177,26 @@ Redis提供了哨兵(Sentinel) 机制来实现主从集群的自动故障恢复�
 <strong>监控</strong>: Sentinel 会不断检查您的master和slave是否按预期工作
 <strong>自动故障恢复</strong>:如果master故障，Sentinel会将一个slave提升为master。当故障实例恢复后也以新的master为主
 <strong>通知</strong>: Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421195306145"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png" alt="image-20240421195306145"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h4 id="服务状态监控">服务状态监控
 </h4><p>Sentinel基于心跳机制监测服务状态,每隔1秒向集群的每个实例发送ping命令:</p>
 <ul>
 <li>主观下线:如果某sentinel节点发现某实例未在规定时间响应，则认为该实例主观下线。</li>
 <li>客观下线:若超过指定数量( quorum)的sentinel都认为该实例主观下线，则该实例客观下线。quorum值最好超过Sentinel实例数量的一半。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421200042664"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png" alt="image-20240421200042664"  />
+	</a>
+</div>
+</li>
 </ul>
 <h4 id="选举新的master">选举新的master
 </h4><p>一旦发现master故障，sentinel需 要在salve中选择- -一个作为新的master,选择依据是这样的:</p>
@@ -1304,16 +1212,13 @@ Redis提供了哨兵(Sentinel) 机制来实现主从集群的自动故障恢复�
 <li>sentinel给 备选的slave1节点发送<code>slaveof no one</code>命令,让该节点成为master</li>
 <li>sentinel给所有其它slave发送<code>slaveof 192.168.150.101 7002</code>命令，让这些slave成为新master的从节点，开始从新的master上同步数据。</li>
 <li>最后，sentinel将故障节点标记为slave,当故障节点恢复后会自动成为新的master的slave节点
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421201712016"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png" alt="image-20240421201712016"  />
+	</a>
+</div>
+</li>
 </ol>
 <h4 id="总结-3">总结
 </h4><p>Sentinel的三个作用是什么?</p>
@@ -1332,16 +1237,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <h3 id="搭建哨兵集群">搭建哨兵集群
 </h3><blockquote>
 <p>手动创建<code>sentinel</code>下的<code>s1、s2、s3</code>，然后配置<code>sentinel.conf</code>文件
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421210126992"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png" alt="image-20240421210126992"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1372,16 +1274,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </ul>
 <blockquote>
 <p>启动<code>sentinel</code>的<code>jar</code>包
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421210646154"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png" alt="image-20240421210646154"  />
+	</a>
+</div>
+
 启动三个sentinel容器</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1443,28 +1342,22 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it sentinel-1 redis-cli -h 192.168.56.10 -p <span class="m">27001</span> info sentinel
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421222424683"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png" alt="image-20240421222424683"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>注意目录对应关系，如果在运行容器时，将<code>conf</code>路径写错了，则可能出现如下情况
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240421222751214"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png" alt="image-20240421222751214"  />
+	</a>
+</div>
+
 此时停止<code>redis-master</code>节点，查看<code>sentinel</code>日志</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1477,29 +1370,23 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </span></span><span class="line"><span class="cl">docker logs sentinel-1
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422064431835"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png" alt="image-20240422064431835"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>解决办法，直接挂载整个目录，而不是只挂载某个conf文件，注意<code>权限</code>设置为777，目录和文件都要设置</p>
 <p><code>chmod 777 -R &lt;file&gt;</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422073450817"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png" alt="image-20240422073450817"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1552,16 +1439,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </div><blockquote>
 <p>但是日志打印还有一个警告
 <strong>1:X 21 Apr 2024 23:33:24.072 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422073645324"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png" alt="image-20240422073645324"  />
+	</a>
+</div>
+
 解决办法</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1572,16 +1456,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">vim /etc/sysctl.conf
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422074046273"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png" alt="image-20240422074046273"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>文件新增如下内容</p>
 </blockquote>
@@ -1659,16 +1540,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </div>
 </div><blockquote>
 <p>问题已经解决
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422075110021"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png" alt="image-20240422075110021"  />
+	</a>
+</div>
+
 停掉<code>redis-master</code></p>
 <p>查看sentinel日志</p>
 </blockquote>
@@ -1680,16 +1558,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker logs sentinel-3
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422080023345"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png" alt="image-20240422080023345"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>查看redis节点状态，发现<code>7003</code>确实成为<code>master</code>了</p>
 </blockquote>
@@ -1701,28 +1576,22 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it redis-slave2 redis-cli info replication
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422075815065"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png" alt="image-20240422075815065"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>重启<code>7001</code>，发现原来的<code>master</code>变成<code>slave</code>了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422080253175"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png" alt="image-20240422080253175"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="redistemplate的哨兵模式">RedisTemplate的哨兵模式
 </h3><blockquote>
@@ -1871,29 +1740,23 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422082247840"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png" alt="image-20240422082247840"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>报错<code>io.lettuce.core.RedisCommandExecutionException: ERR No such master with that name</code></p>
 <p>名称改为<code>redis-master</code>，与<code>sentinel.conf</code>文件中的配置保持一致
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422082422321"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png" alt="image-20240422082422321"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1939,28 +1802,22 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </div>
 </div><blockquote>
 <p>访问<code>http://localhost:8080/get/name</code>(得有一个叫name的数据)
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422082543326"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png" alt="image-20240422082543326"  />
+	</a>
+</div>
+
 <strong>可以看到这里通过7002来获取数据</strong>
 访问<code>http://localhost:8080/set/name/333</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422082647557"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png" alt="image-20240422082647557"  />
+	</a>
+</div>
+
 <strong>可以看到这里通过7003来设置数据</strong>
 重启<code>redis-slave2</code></p>
 </blockquote>
@@ -1974,115 +1831,85 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </div>
 </div><blockquote>
 <p>此时<code>slave1(7002)</code>被选为master
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422083027509"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422083109475"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png" alt="image-20240422083027509"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png" alt="image-20240422083109475"  />
+	</a>
+</div>
+
 <code>7003</code>为<code>replica</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422083125383"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png" alt="image-20240422083125383"  />
+	</a>
+</div>
+
 使用idea连接虚拟机</p>
 <p><code>Deployment-&gt;Configuration</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201104329"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png" alt="image-20240422201104329"  />
+	</a>
+</div>
+
 新建<code>SFTP</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201138710"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201502055"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png" alt="image-20240422201138710"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png" alt="image-20240422201502055"  />
+	</a>
+</div>
+
 查看虚拟机文件</p>
 <p><code>Deployment-&gt;Browse Remote Host</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201551614"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png" alt="image-20240422201551614"  />
+	</a>
+</div>
+
 右侧就可以看到虚拟机的文件信息了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201634100"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png" alt="image-20240422201634100"  />
+	</a>
+</div>
+
 打开命令窗口</p>
 <p>点击<code>Tools-&gt;Start SSH Session</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201705287"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422201727483"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png" alt="image-20240422201705287"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png" alt="image-20240422201727483"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="redis分片集群">Redis分片集群
 </h2><blockquote>
@@ -2182,30 +2009,24 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </span></span><span class="line"><span class="cl"><span class="na">cluster-config-file</span> <span class="s">nodes-6379.conf</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422204825169"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png" alt="image-20240422204825169"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>重命名<code>redis.conf</code>为<code>redis1.conf</code>，并复制成其他五份<code>redis2.conf、redis3.conf、redis4.conf、redis5.conf、redis6.conf</code></p>
 <p>这6份配置文件内容完全相同</p>
 <p>更改文件之后记得上传
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422205154155"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png" alt="image-20240422205154155"  />
+	</a>
+</div>
+
 停止之前运行的<code>redis、sentinel</code>容器</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -2216,16 +2037,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker stop redis-master redis-slave1 redis-slave2 sentinel-1 sentinel-2 sentinel-3
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422205342819"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png" alt="image-20240422205342819"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -2348,16 +2166,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 </span></span><span class="line"><span class="cl">redis-cli --cluster create --cluster-replicas <span class="m">1</span> 192.168.56.10:8001 192.168.56.10:8002 192.168.56.10:8003 192.168.56.10:9001 192.168.56.10:9002 192.168.56.10:9003
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422210937770"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png" alt="image-20240422210937770"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>查看节点信息</p>
 </blockquote>
@@ -2369,31 +2184,25 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli -c -p <span class="m">8003</span> cluster nodes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240422211623156"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png" alt="image-20240422211623156"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>这样就可以查看到节点的信息了</p>
 </blockquote>
 <h3 id="散列插槽">散列插槽
 </h3><p>Redis会把每一个master节 点映射到0~16383共16384个插槽(hashslot) 上，查看集群信息时就能看到:
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240423215451539"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png" alt="image-20240423215451539"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>我们这里插槽分布如下</p>
 <div class="table-wrapper"><table>
@@ -2440,16 +2249,13 @@ Sentinel如何判断一个redis实例是否健康?</li>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli -c -p <span class="m">8001</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240423221028770"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png" alt="image-20240423221028770"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>redis会先算出插槽的值，最后找到对应的ip及端口，存储(获取)对应redis实例里的数据
 Redis如何判断某个key应该在哪个实例?</p>
@@ -2472,16 +2278,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 </span></span><span class="line"><span class="cl">redis-cli --cluster <span class="nb">help</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424073841796"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png" alt="image-20240424073841796"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>向集群中添加一个新的master节点,并向其中存储num = 10
 <strong>需求</strong>
@@ -2493,8 +2296,7 @@ Redis如何判断某个key应该在哪个实例?</p>
 <li>新增redis(master)实例到集群</li>
 <li>分配插槽，使其能够存储<code>num</code>作为key(hashkey为<code>2765</code>)</li>
 </ol>
-<p>参考<a class="link" href="https://www.cnblogs.com/zhoujinyi/p/11606935.html"  target="_blank" rel="noopener"
-    >博客</a>
+<p>参考<a class="link" href="https://www.cnblogs.com/zhoujinyi/p/11606935.html"  target="_blank" rel="noopener" >博客</a>
 <strong>复制一份<code>redis7.conf</code>文件</strong></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -2515,16 +2317,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--port <span class="m">8004</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424080947181"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png" alt="image-20240424080947181"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>可以看到集群节点里并没有新建的<code>8004</code></p>
 </blockquote>
@@ -2538,16 +2337,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 </span></span><span class="line"><span class="cl">redis-cli -c -p <span class="m">8003</span> cluster nodes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424082942970"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png" alt="image-20240424082942970"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>查看帮助文档</p>
 </blockquote>
@@ -2559,16 +2355,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli --cluster <span class="nb">help</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424082917801"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png" alt="image-20240424082917801"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>添加节点到集群</p>
 </blockquote>
@@ -2580,16 +2373,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli --cluster add-node 192.168.56.10:8004 192.168.56.10:8003
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424202128104"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png" alt="image-20240424202128104"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>再次查看集群信息，可以看到<code>8004</code>是作为master的，但是并没有给它分配插槽</p>
 </blockquote>
@@ -2601,28 +2391,22 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli -c -p <span class="m">8003</span> cluster nodes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424202157821"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png" alt="image-20240424202157821"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>接下来需要为<code>8004</code>分配至少<code>0~2765</code>的插槽，这里就直接分配前<code>3000</code>个了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424204432417"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png" alt="image-20240424204432417"  />
+	</a>
+</div>
+
 输入<code>yes</code></p>
 <p>再次查看节点信息，可以看到已经分配了<code>0-2999</code>的插槽</p>
 </blockquote>
@@ -2634,16 +2418,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli -p <span class="m">8004</span> cluster nodes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424204721576"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png" alt="image-20240424204721576"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>试一下获取<code>num</code>，可以看到是从8004上获取的数据</p>
 </blockquote>
@@ -2655,40 +2436,31 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli -c -p <span class="m">8001</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424204902473"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png" alt="image-20240424204902473"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><strong>练习</strong></p>
 <p>删除8004节点
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424205045856"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png" alt="image-20240424205045856"  />
+	</a>
+</div>
+
 转移插槽
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424205333760"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png" alt="image-20240424205333760"  />
+	</a>
+</div>
+
 删除节点，可以看到<code>8004</code>节点已经被移除</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -2699,28 +2471,22 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli --cluster del-node 192.168.56.10:8004 969b40741ba2c93557ff9013a774f98322f77ba0
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424205522582"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png" alt="image-20240424205522582"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>删除容器
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424205605167"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png" alt="image-20240424205605167"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2736,41 +2502,32 @@ Redis如何判断某个key应该在哪个实例?</p>
 </h3><h4 id="自动故障转移">自动故障转移
 </h4><blockquote>
 <p>当集群中有一个master宕机会发生什么呢?
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424205957402"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png" alt="image-20240424205957402"  />
+	</a>
+</div>
+
 重新启动8002
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424210155393"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png" alt="image-20240424210155393"  />
+	</a>
+</div>
+
 可以看到<code>8002</code>变成了<code>master</code>，而<code>9002</code>变成了<code>slaver</code>，实现了自动故障转移</p>
 </blockquote>
 <h4 id="手动故障转移">手动故障转移
 </h4><p>利用<code>cluster failover</code>命令可以手动让集群中的某个master宕机，切换到执行cluster failover命令的这个slave节点，实现无感知的数据迁移。其流程如下:
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424210353844"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png" alt="image-20240424210353844"  />
+	</a>
+</div>
+
 手动的Failover支持三种不同模式:</p>
 <ol>
 <li>缺省:默认的流程，如图1~6步</li>
@@ -2780,16 +2537,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 <blockquote>
 <p><strong>练习</strong></p>
 <p>手动故障转移，让<code>8002</code>重新变成master
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424210932755"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png" alt="image-20240424210932755"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2801,16 +2555,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 </div>
 </div><blockquote>
 <p>看到<code>8002</code>重新变成master
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424211012127"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png" alt="image-20240424211012127"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="redistemplate">RedisTemplate
 </h3><p>RedisTemplate底层同样基于lettuce实现了分片集群的支持，而使用的步骤与哨兵模式基本一致:</p>
@@ -2855,16 +2606,13 @@ Redis如何判断某个key应该在哪个实例?</p>
 </div><blockquote>
 <p>访问<code>http://localhost:8080/get/a</code></p>
 <p>查看日志，通过<code>9003</code>获取到<code>a</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424212554166"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png" alt="image-20240424212554166"  />
+	</a>
+</div>
+
 查看节点信息</p>
 <p><code>9003</code>的master是<code>8003</code></p>
 </blockquote>
@@ -2876,29 +2624,23 @@ Redis如何判断某个key应该在哪个实例?</p>
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">redis-cli -c -p <span class="m">8003</span> cluster nodes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424212728958"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png" alt="image-20240424212728958"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>访问<code>http://localhost:8080/set/a/666</code></p>
 <p>通过<code>8003</code>去set值
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240424212846737"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png" alt="image-20240424212846737"  />
+	</a>
+</div>
+</p>
 </blockquote>
 
 </section>

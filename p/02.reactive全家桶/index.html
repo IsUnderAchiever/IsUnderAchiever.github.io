@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="02.Reactive全家桶">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="02.Reactive全家桶">
 <meta property='og:description' content="02.Reactive全家桶">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -299,17 +299,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/">
-                <img src="/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/202412211946837_hu552104859302402075.png"
-                        srcset="/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/202412211946837_hu552104859302402075.png 800w, /p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/202412211946837_hu13638028890851848407.png 1600w"
-                        width="800" 
-                        height="373" 
-                        loading="lazy"
-                        alt="Featured image of post 02.Reactive全家桶" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/">
+            <img src="/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/202412211946837_hu552104859302402075.png" srcset="/p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/202412211946837_hu552104859302402075.png 800w, /p/02.reactive%E5%85%A8%E5%AE%B6%E6%A1%B6/202412211946837_hu13638028890851848407.png 1600w"  width="800"
+                height="373" loading="lazy" alt="Featured image of post 02.Reactive全家桶" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -378,6 +374,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -387,26 +388,20 @@
 <p>reactive(&rsquo;&rsquo;)不支持string类型</p>
 <p>查看源码可知，只支持引用类型，object、map、set</p>
 <p>而ref都支持
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132214501.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230713221217293"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132214316.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230713221436279"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132214501.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132214501.png" alt="image-20230713221217293"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132214316.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132214316.png" alt="image-20230713221436279"  />
+	</a>
+</div>
+
 reactive在赋值时无需使用<code>.value</code></p>
 <p>而ref需要</p>
 </blockquote>
@@ -605,16 +600,13 @@ reactive在赋值时无需使用<code>.value</code></p>
 </div><h2 id="readonly">readonly
 </h2><blockquote>
 <p>无法修改readonly修饰的值，报错<code>Attempt to assign to const or readonly variable </code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132232965.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230713223221913"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132232965.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132232965.png" alt="image-20230713223221913"  />
+	</a>
+</div>
+
 但是会受<code>reactive</code>影响</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -649,16 +641,13 @@ reactive在赋值时无需使用<code>.value</code></p>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132234118.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230713223406071"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132234118.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132234118.png" alt="image-20230713223406071"  />
+	</a>
+</div>
+</p>
 <h2 id="shallowreactive">shallowReactive
 </h2><blockquote>
 <p>与<code>shallowRef</code>类似</p>
@@ -710,16 +699,13 @@ reactive在赋值时无需使用<code>.value</code></p>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132249201.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230713224921165"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132249201.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132249201.png" alt="image-20230713224921165"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>不是说好不改变视图的吗？</p>
 <p>和<code>shallowRef</code>一样，shallowReactive也会受reactive影响</p>

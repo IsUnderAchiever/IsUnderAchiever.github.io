@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/09_java%E6%B3%9B%E5%9E%8B/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="09_Java泛型">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="09_Java泛型">
 <meta property='og:description' content="09_Java泛型">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/09_java%E6%B3%9B%E5%9E%8B/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -302,17 +302,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/09_java%E6%B3%9B%E5%9E%8B/">
-                <img src="/p/09_java%E6%B3%9B%E5%9E%8B/202412212036798_hu18039036192235098014.png"
-                        srcset="/p/09_java%E6%B3%9B%E5%9E%8B/202412212036798_hu18039036192235098014.png 800w, /p/09_java%E6%B3%9B%E5%9E%8B/202412212036798_hu4878295368521336578.png 1600w"
-                        width="800" 
-                        height="231" 
-                        loading="lazy"
-                        alt="Featured image of post 09_Java泛型" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/09_java%E6%B3%9B%E5%9E%8B/">
+            <img src="/p/09_java%E6%B3%9B%E5%9E%8B/202412212036798_hu18039036192235098014.png" srcset="/p/09_java%E6%B3%9B%E5%9E%8B/202412212036798_hu18039036192235098014.png 800w, /p/09_java%E6%B3%9B%E5%9E%8B/202412212036798_hu4878295368521336578.png 1600w"  width="800"
+                height="231" loading="lazy" alt="Featured image of post 09_Java泛型" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -381,12 +377,16 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
     <h2 id="java泛型">Java泛型
-</h2><p><a class="link" href="https://www.bilibili.com/video/BV1ds4y1E7uW/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=0de2cc95ad0adc3e9ec15f6dcede1a20"  target="_blank" rel="noopener"
-    >参考视频</a></p>
+</h2><p><a class="link" href="https://www.bilibili.com/video/BV1ds4y1E7uW/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=0de2cc95ad0adc3e9ec15f6dcede1a20"  target="_blank" rel="noopener" >参考视频</a></p>
 <h3 id="在类上">在类上
 </h3><blockquote>
 <p>这是个打印integer的类，但也仅仅只能打印integer了</p>
@@ -566,16 +566,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330491.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="泛型继承"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330491.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330491.png" alt="泛型继承"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>这个时候就会报错了，因为泛型写了<code>&lt;T extends Animal&gt;</code>，改写成如下写法后正确</p>
 </blockquote>
@@ -631,48 +628,36 @@
 </div>
 </div><blockquote>
 <p>eat方法定义在Animal类中，但如果取消掉类上的<code>&lt;T extends Animal&gt;</code>后，这行代码会报错
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330591.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401130433407"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331352.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401130709488"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330591.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330591.png" alt="image-20230401130433407"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331352.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331352.png" alt="image-20230401130709488"  />
+	</a>
+</div>
+
 但是java不支持多继承，所以如果还需要同时继承Animal怎么办，参考如下写法</p>
 <p>但是注意，<code>接口要写在后面</code>，如果调换位置会报错
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330482.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401130833543"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330279.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401131024843"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330482.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330482.png" alt="image-20230401130833543"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330279.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330279.png" alt="image-20230401131024843"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -766,27 +751,21 @@
 </div><h3 id="在方法上">在方法上
 </h3><blockquote>
 <p>作用在方法上
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330520.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401131313812"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330520.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330520.png" alt="image-20230401131313812"  />
+	</a>
+</div>
+
 注意，这个时候他并不知道T是一个泛型，你需要”告诉他”
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331778.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401131402488"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331778.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331778.png" alt="image-20230401131402488"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -816,16 +795,13 @@
 </div>
 </div><blockquote>
 <p>当然，也可以写多个参数
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330133.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401131824195"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330133.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330133.png" alt="image-20230401131824195"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -882,40 +858,31 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330061.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401132537492"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330061.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330061.png" alt="image-20230401132537492"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>泛型通配符
 <strong>首先，来看一下下面这个问题</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331588.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401133025790"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331588.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331588.png" alt="image-20230401133025790"  />
+	</a>
+</div>
+
 <strong>报错如下</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331449.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401133013989"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331449.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331449.png" alt="image-20230401133013989"  />
+	</a>
+</div>
+
 <strong>是不是觉得很奇怪？Integer是Object的子类，为什么不能这么传值呢?</strong></p>
 <p>对，Integer是Object的子类没错，但是这里是<code>List&lt;Object&gt;</code>和<code>List&lt;Integer&gt;</code></p>
 <p><code>List&lt;Integer&gt;</code>并不是<code>List&lt;Object&gt;</code>的子类</p>
@@ -978,16 +945,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331926.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230401133723105"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331926.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331926.png" alt="image-20230401133723105"  />
+	</a>
+</div>
+</p>
 
 </section>
 

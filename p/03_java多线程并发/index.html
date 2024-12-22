@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="03_Java多线程并发">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="03_Java多线程并发">
 <meta property='og:description' content="03_Java多线程并发">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -403,17 +403,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">
-                <img src="/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/202412212036798_hu18039036192235098014.png"
-                        srcset="/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/202412212036798_hu18039036192235098014.png 800w, /p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/202412212036798_hu4878295368521336578.png 1600w"
-                        width="800" 
-                        height="231" 
-                        loading="lazy"
-                        alt="Featured image of post 03_Java多线程并发" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">
+            <img src="/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/202412212036798_hu18039036192235098014.png" srcset="/p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/202412212036798_hu18039036192235098014.png 800w, /p/03_java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/202412212036798_hu4878295368521336578.png 1600w"  width="800"
+                height="231" loading="lazy" alt="Featured image of post 03_Java多线程并发" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -481,6 +477,11 @@
 </div>
 
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
     <section class="article-content">
     
@@ -748,16 +749,13 @@
 正常结束：run()或 call()方法执行完成，线程正常结束。
 异常结束：线程抛出一个未捕获的 Exception 或 Error。
 调用 stop：直接调用该线程的 stop()方法来结束该线程—该方法通常容易导致死锁，不推荐使用。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="线程状态转换"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png" alt="线程状态转换"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="终止线程的4种方式">终止线程的4种方式
 </h3><h3 id="正常运行结束">正常运行结束

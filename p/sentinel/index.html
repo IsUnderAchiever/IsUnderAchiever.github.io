@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/sentinel/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Sentinel">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Sentinel">
 <meta property='og:description' content="Sentinel">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/sentinel/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -344,17 +344,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/sentinel/">
-                <img src="/p/sentinel/202412212132620_hu701254416230554796.png"
-                        srcset="/p/sentinel/202412212132620_hu701254416230554796.png 800w, /p/sentinel/202412212132620_hu13517439120624731598.png 1600w"
-                        width="800" 
-                        height="419" 
-                        loading="lazy"
-                        alt="Featured image of post Sentinel" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/sentinel/">
+            <img src="/p/sentinel/202412212132620_hu701254416230554796.png" srcset="/p/sentinel/202412212132620_hu701254416230554796.png 800w, /p/sentinel/202412212132620_hu13517439120624731598.png 1600w"  width="800"
+                height="419" loading="lazy" alt="Featured image of post Sentinel" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -423,6 +419,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -432,16 +433,13 @@
 </h3><blockquote>
 <p>故障的服务D，会导致服务A的tomcat资源耗尽</p>
 <p>微服务调用链路中的某个服务故障，引起整个链路中的所有微服务都不可用，这就是<code>雪崩</code>。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403074558194.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403074558194"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403074558194.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403074558194.png" alt="image-20240403074558194"  />
+	</a>
+</div>
+
 <strong>解决雪崩问题的常见方式有四种:</strong></p>
 </blockquote>
 <ol>
@@ -451,22 +449,18 @@
 <li>流量控制:限制业务访问的QPS，避免服务因流量的突增而故障。</li>
 </ol>
 <h3 id="技术选型">技术选型
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403075332866.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403075332866"
-	
-	
-></p>
+</h3><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403075332866.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403075332866.png" alt="image-20240403075332866"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>同类型的框架还有<code>Resilience4j</code>、<code>Polly</code>、<code>Envoy</code>等</p>
 </blockquote>
 <h3 id="安装sentinel">安装Sentinel
-</h3><p><a class="link" href="https://github.com/alibaba/Sentinel/releases"  target="_blank" rel="noopener"
-    >Sentinel下载地址</a>，选择<code>sentinel-dashboard-xxx.jar</code>，自己新建一个<code>startup.txt</code></p>
+</h3><p><a class="link" href="https://github.com/alibaba/Sentinel/releases"  target="_blank" rel="noopener" >Sentinel下载地址</a>，选择<code>sentinel-dashboard-xxx.jar</code>，自己新建一个<code>startup.txt</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -475,16 +469,13 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">java -jar sentinel-dashboard-1.8.5.jar
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080118647.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403080118647"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080118647.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080118647.png" alt="image-20240403080118647"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>然后将<code>startup.txt</code>后缀改为<code>bat</code>，双击运行</p>
 <p>或者自定义启动端口号</p>
@@ -497,31 +488,24 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">java -Dserver.port<span class="o">=</span><span class="m">8718</span> -jar sentinel-dashboard-1.8.5.jar
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080917682.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403080917682"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080917682.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403080917682.png" alt="image-20240403080917682"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>账号密码默认是<code>sentinel</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403081023548.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240403081023548"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403081023548.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403081023548.png" alt="image-20240403081023548"  />
+	</a>
+</div>
+
 <strong>配置开机自启动</strong>
-<a class="link" href="https://blog.csdn.net/qq_52288743/article/details/131084881#:~:text=Win%20%2B%20R%20%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%20%E5%9B%9E%E8%BD%A6%20shell%3ACommon%20Startup%20%E9%99%84%E5%8A%A0%EF%BC%9A%E5%A6%82%E9%9C%80%E6%9A%82%E5%81%9C%E8%87%AA%E5%90%AF%E5%8A%A8%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%85%B3%E9%97%AD,%E5%9C%A8%20%E5%90%AF%E5%8A%A8%20%E5%90%8E%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E8%AE%BF%E9%97%AE%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9D%A5%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%8E%A7%E6%95%B0%E6%8D%AE%E5%92%8C%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E3%80%82%20%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%9C%B0%E5%9D%80%E4%B8%BA%EF%BC%9Ahttp%3A%2F%2Flocalhost%3A8080%E3%80%82"  target="_blank" rel="noopener"
-    >博客链接</a></p>
+<a class="link" href="https://blog.csdn.net/qq_52288743/article/details/131084881#:~:text=Win%20%2B%20R%20%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%20%E5%9B%9E%E8%BD%A6%20shell%3ACommon%20Startup%20%E9%99%84%E5%8A%A0%EF%BC%9A%E5%A6%82%E9%9C%80%E6%9A%82%E5%81%9C%E8%87%AA%E5%90%AF%E5%8A%A8%E5%8F%AF%E4%BB%A5%E5%9C%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E8%BF%9B%E8%A1%8C%E5%85%B3%E9%97%AD,%E5%9C%A8%20%E5%90%AF%E5%8A%A8%20%E5%90%8E%EF%BC%8C%E6%82%A8%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E8%AE%BF%E9%97%AE%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9D%A5%E6%9F%A5%E7%9C%8B%E7%9B%91%E6%8E%A7%E6%95%B0%E6%8D%AE%E5%92%8C%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E3%80%82%20%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%20Sentinel%20%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%9C%B0%E5%9D%80%E4%B8%BA%EF%BC%9Ahttp%3A%2F%2Flocalhost%3A8080%E3%80%82"  target="_blank" rel="noopener" >博客链接</a></p>
 </blockquote>
 <h2 id="创建项目">创建项目
 </h2><blockquote>
@@ -552,16 +536,13 @@
 </span></span><span class="line"><span class="cl"><span class="na">spring.cloud.sentinel.transport.dashboard</span><span class="o">=</span><span class="s">localhost:8089</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407204039706.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407204039706"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407204039706.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407204039706.png" alt="image-20240407204039706"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>sentinel主要采用<code>线程池隔离</code>、<code>熔断降级</code>、<code>流量控制</code>的方式来解决雪崩问题</p>
 </blockquote>
@@ -569,36 +550,27 @@
 </h2><p>簇点链路:就是项目内的调用链路,链路中被监控的每个接口就是一个资源。 默认情况下sentinel会监控SpringMVC的每一个端点(Endpoint) ，因此SpringMVC的每一个端点(Endpoint)就是调用链路中的一-个资源。
 流控、熔断等都是针对簇点链路中的资源来设置的，因此我们可以点击对应资源后面的按钮来设置规则:
 <strong>需求</strong>:给/order/{orderld}这个资源设置流控规则，QPS不能超过5。然后进行压力测试。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407205129957.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407205129957"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210436655.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407210436655"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210503016.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407210503016"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407205129957.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407205129957.png" alt="image-20240407205129957"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210436655.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210436655.png" alt="image-20240407210436655"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210503016.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210503016.png" alt="image-20240407210503016"  />
+	</a>
+</div>
+</p>
 <h2 id="流控模式">流控模式
 </h2><blockquote>
 <p>在添加限流规则时，点击高级选项，可以选择三种流控模式:</p>
@@ -611,16 +583,13 @@
 <h3 id="关联模式">关联模式
 </h3><p>统计与当前资源相关的另一个资源，触发阈值时，对当前资源限流
 使用场景:比如用户支付时需要修改订单状态，同时用户要查询订单。查询和修改操作会争抢数据库锁,产生竞争。业务需求是有限支付和更新订单的业务,因此当修改订单业务触发阈值时，需要对查询订单业务限流，防止影响到更新订单的业务。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210759266.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407210759266"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210759266.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407210759266.png" alt="image-20240407210759266"  />
+	</a>
+</div>
+
 <strong>需求</strong></p>
 <ol>
 <li>在OrderController新建两个端点: <code>/order/query</code>和<code>/order/update</code>, 无需实现业务</li>
@@ -683,36 +652,27 @@
 </div><blockquote>
 <p>然后访问一下 http://localhost:8090/order/query 和 http://localhost:8090/order/update、</p>
 <p>对<code>/order/query</code>添加流控
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211433491.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407211433491"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211555637.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407211555637"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211548557.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407211548557"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211433491.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211433491.png" alt="image-20240407211433491"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211555637.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211555637.png" alt="image-20240407211555637"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211548557.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211548557.png" alt="image-20240407211548557"  />
+	</a>
+</div>
+
 对<code>update</code>压力测试，限流<code>query</code></p>
 <p>满足下面条件可以使用关联模式:</p>
 <ol>
@@ -726,16 +686,13 @@
 /test1 -&gt; /common
 /test2 -&gt; /common
 如果只希望统计从/test2进入到/common的请求，则可以这样配置:
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211931646.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407211931646"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211931646.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407211931646.png" alt="image-20240407211931646"  />
+	</a>
+</div>
+
 <strong>需求</strong>:有查询订单和创建订单业务,两者都需要查询商品。针对从查询订单进入到查询商品的请求统计并设置限流。
 步骤:</p>
 <ol>
@@ -881,60 +838,45 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 </div><blockquote>
 <p>如果不关闭<code>context整合</code>，所有的<code>controller</code>会被认为是同一个根链路发展而来的子链路</p>
 <p>访问一下 http://localhost:8090/order/query 和 http://localhost:8090/order/save
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407212903207.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407212903207"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213029296.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407213029296"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407212903207.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407212903207.png" alt="image-20240407212903207"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213029296.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213029296.png" alt="image-20240407213029296"  />
+	</a>
+</div>
+
 删除其他的流控规则
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213116501.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407213116501"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213116501.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213116501.png" alt="image-20240407213116501"  />
+	</a>
+</div>
+
 使用<code>Jmeter</code>进行压力测试
 <strong>/order/save</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213258792.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407213258792"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213258792.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213258792.png" alt="image-20240407213258792"  />
+	</a>
+</div>
+
 <strong>/order/query</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213305172.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407213305172"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213305172.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407213305172.png" alt="image-20240407213305172"  />
+	</a>
+</div>
+
 <strong>总结</strong>
 直接:对当前资源限流
 关联:高优先级资源触发阈值，对低优先级资源限流。
@@ -951,136 +893,100 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 <h3 id="预热模式warm-up">预热模式warm up
 </h3><p>warm up也叫预热模式，是应对服务冷启动的一种方案。<code>threshold</code>为最大阈值，<code>coldFactor</code>为冷启动因子，请求阈值初始值是<code>threshold/coldFactor</code>,持续指定时长后，逐渐提高到<code>threshold</code>值。而<code>coldFactor</code>的默认值是3.
 例如，我设置QPS的<code>threshold</code>为10，预热时间为5秒,那么<code>初始阈值</code>就是<code>10/3</code>，也就是3,然后在5秒后逐渐增长到10
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408064325063.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408064325063"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408064325063.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408064325063.png" alt="image-20240408064325063"  />
+	</a>
+</div>
+
 <strong>需求</strong>
 给<code>/order/{id}</code>这个资源设置限流,最大QPS为10,利用warm up效果,预热时长为5秒
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065105430.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408065105430"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065329162.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408065329162"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065457513.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408065457513"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065517390.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408065517390"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065105430.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065105430.png" alt="image-20240408065105430"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065329162.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065329162.png" alt="image-20240408065329162"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065457513.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065457513.png" alt="image-20240408065457513"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065517390.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065517390.png" alt="image-20240408065517390"  />
+	</a>
+</div>
+</p>
 <h3 id="排队等待">排队等待
 </h3><p>当请求超过QPS阈值时，快速失败和warm up会拒绝新的请求并抛出异常。而排队等待则是让所有请求进入一个队列中,然后按照阈值允许的时间间隔依次执行。后来的请求必须等待前面执行完成，如果请求预期的等待时间超出最大时长,则会被拒绝。
 例如: QPS=5,意味着每<code>200ms</code>处理一个队列中的请求; timeout = 2000， 意味着预期等待超过2000ms的请求会被拒绝并抛出异常
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065759385.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408065759385"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065827751.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408065827751"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065759385.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065759385.png" alt="image-20240408065759385"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065827751.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408065827751.png" alt="image-20240408065827751"  />
+	</a>
+</div>
+
 <strong>需求</strong>
 给<code>/order/{id}</code>这个资源设置限流，最大QPS为10， 利用排队的流控效果，超时时长设置为5s
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070509839.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408070509839"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070509839.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070509839.png" alt="image-20240408070509839"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>而<code>Jmeter</code>配置的<code>QPS</code>是15，如果按照之前的情况（直接失败），则会有<code>5</code>个<code>QPS</code>无法处理
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070703747.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408070703747"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070729937.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408070729937"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070703747.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070703747.png" alt="image-20240408070703747"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070729937.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070729937.png" alt="image-20240408070729937"  />
+	</a>
+</div>
+
 到后面请求超时则会直接失败
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070746902.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408070746902"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070809963.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408070809963"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070746902.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070746902.png" alt="image-20240408070746902"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070809963.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408070809963.png" alt="image-20240408070809963"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="总结">总结
 </h3><p>流控效果有哪些？</p>
@@ -1092,16 +998,13 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 <h2 id="热点参数限流">热点参数限流
 </h2><blockquote>
 <p>之前的限流是统计访问某个资源的所有请求，判断是否超过QPS阈值。而热点参数限流是分别统计<code>参数值相同</code>的请求,判断是否超过QPS阈值。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408071109096.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408071109096"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408071109096.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408071109096.png" alt="image-20240408071109096"  />
+	</a>
+</div>
+
 <strong>案例</strong></p>
 <p>给<code>/order/{id}</code>这个资源添加热点参数限流，规则如下:</p>
 <ol>
@@ -1151,65 +1054,50 @@ Sentinel默认只标记Controller中的方法为资源，如果要标记其它�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072009011.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408072009011"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072009011.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072009011.png" alt="image-20240408072009011"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>可以看到<code>/order/1</code>的<code>QPS</code>是4
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072731930.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408072731930"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072731930.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072731930.png" alt="image-20240408072731930"  />
+	</a>
+</div>
+
 可以看到<code>/order/2</code>的<code>QPS</code>是10，全部通过
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072739726.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408072739726"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072739726.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072739726.png" alt="image-20240408072739726"  />
+	</a>
+</div>
+
 可以看到<code>/order/3</code>的<code>QPS</code>是默认阈值，即<code>2</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072747154.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408072747154"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072747154.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408072747154.png" alt="image-20240408072747154"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="隔离和降级">隔离和降级
 </h2><blockquote>
 <p><strong>虽然限流可以尽量避免因高并发而引起的服务故障，但服务还会因为其它原因而故障。而要将这些故障控制在一定范围，避免雪崩，就要靠线程隔离(舱壁模式)和熔断降级手段了。</strong></p>
 <p>不管是线程隔离还是熔断降级,都是对<code>客户端(调用方，示例中的服务A)</code>的保护。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408073136305.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240408073136305"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408073136305.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240408073136305.png" alt="image-20240408073136305"  />
+	</a>
+</div>
+
 SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户端保护必须整合Feign和Sentinel。</p>
 </blockquote>
 <ol>
@@ -1370,8 +1258,7 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 </div><blockquote>
 <p>这里整合feign各种报错，估计是版本原因</p>
 <p>我尝试使用<code>2.3.12.RELEASE</code>的springboot是可以实现<code>feign + nacos + sentinel</code>的(还是jdk17)</p>
-<p>demo链接放到github上了，<a class="link" href="https://github.com/IsUnderAchiever/sentinel-demo"  target="_blank" rel="noopener"
-    >链接</a></p>
+<p>demo链接放到github上了，<a class="link" href="https://github.com/IsUnderAchiever/sentinel-demo"  target="_blank" rel="noopener" >链接</a></p>
 <p>做了个<code>springboot3、nacos、openfeign、sentinel</code>的demo，还是上面的这个链接，请切换<code>boot3</code>版本</p>
 <p>springboot3报错解决，不使用<code>UserClientFallbackFactory</code>，删除该文件，<code>feign.sentinel.enabled</code>配置也删除</p>
 <p>使用<code>@SentinelResource</code>配合<code>blockHandler</code>属性
@@ -1408,39 +1295,30 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>添加流控规则</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075355925.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410075355925"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075355925.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075355925.png" alt="image-20240410075355925"  />
+	</a>
+</div>
+
 <strong>访问provider服务</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075433734.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410075433734"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075433734.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075433734.png" alt="image-20240410075433734"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>访问<code>provider</code>自然是没有问题的，关键是<code>consumer</code>那边怎么样
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075510088.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410075510088"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075510088.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410075510088.png" alt="image-20240410075510088"  />
+	</a>
+</div>
+
 可以，也被限流了</p>
 <p>需要注意的是<code>blockHandler</code>指定的方法返回值要和<code>被标记@SentinelResource</code>的方法<code>(这里是query)</code>保持一致，得是<code>String</code></p>
 <p>否则会报错如下</p>
@@ -1509,8 +1387,7 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>以上代码在github中，<a class="link" href="https://github.com/IsUnderAchiever/sentinel-demo"  target="_blank" rel="noopener"
-    >链接</a></p>
+<p>以上代码在github中，<a class="link" href="https://github.com/IsUnderAchiever/sentinel-demo"  target="_blank" rel="noopener" >链接</a></p>
 <p><strong>注意切换boot3分支，main分支使用的是2.3.12.RELEASE版本springboot，<code>2.3.12.RELEASE版本springboot</code>可以正常使用自定义<code>FallbackFactory</code>类</strong></p>
 <p>以上是关于大概的解法，下面展示<code>order</code>和<code>user</code>模块的写法
 <strong>user模块</strong>
@@ -1560,162 +1437,123 @@ SpringCloud中，微服务调用都是通过Feign来实现的，因此做客户�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081054018.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410081054018"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081054018.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081054018.png" alt="image-20240410081054018"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>又出现一个问题，springboot启动多个user实例，但是sentinel设置限流规则后只对其中一个实例有效
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081722803.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410081722803"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081732670.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410081732670"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081722803.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081722803.png" alt="image-20240410081722803"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081732670.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081732670.png" alt="image-20240410081732670"  />
+	</a>
+</div>
+
 看<code>sentinel</code>界面</p>
 <p>在这里设置多个即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081809138.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410081809138"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081841313.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410081841313"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081809138.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081809138.png" alt="image-20240410081809138"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081841313.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081841313.png" alt="image-20240410081841313"  />
+	</a>
+</div>
+
 order也有效
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081915014.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410081915014"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081915014.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410081915014.png" alt="image-20240410081915014"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="线程隔离">线程隔离
 </h2><blockquote>
 <p>左侧是<code>线程隔离</code>，右侧是<code>信号量隔离</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073319242.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409073319242"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073319242.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073319242.png" alt="image-20240409073319242"  />
+	</a>
+</div>
+
 对比
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073605422.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409073605422"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073605422.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409073605422.png" alt="image-20240409073605422"  />
+	</a>
+</div>
+
 将原本的<code>QPS</code>换成<code>线程数</code>即可
 <strong>需求</strong>
 给UserClient的查询用户接口设置流控规则，线程数不能超过2。然后利用jemeter测试。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082119553.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410082119553"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082637264.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410082637264"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082119553.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082119553.png" alt="image-20240410082119553"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082637264.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410082637264.png" alt="image-20240410082637264"  />
+	</a>
+</div>
+
 这里的请求都是正常，因为之前配置了降级的逻辑，所以会直接返回一个<code>空的user对象</code>，而不是报错</p>
 </blockquote>
 <h2 id="熔断降级">熔断降级
 </h2><h3 id="概念-1">概念
 </h3><p>熔断降级是解决雪崩问题的重要手段。其思路是由断路器统计服务调用的异常比例、慢请求比例，如果超出阈值则会熔断该服务。即拦截访问该服务的一切请求;而当服务恢复时,断路器会放行访问该服务的请求。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074149240.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409074149240"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074149240.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074149240.png" alt="image-20240409074149240"  />
+	</a>
+</div>
+</p>
 <h3 id="熔断策略--慢调用">熔断策略&ndash;慢调用
 </h3><p>断路器熔断策略有三种:<code>慢调用</code>、<code>异常比例</code>、<code>异常数</code>
 慢调用:业务的响应时长(RT)大于指定时长的请求认定为慢调用请求。在指定时间内，如果请求数量超过设定的最小数量，慢调用比例大于设定的阈值，则触发熔断。例如:
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074310444.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409074310444"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074310444.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074310444.png" alt="image-20240409074310444"  />
+	</a>
+</div>
+
 <strong>解读</strong>: RT超过500ms的调用是慢调用，统计最近10000ms内的请求，如果请求量超过10次,并且慢调用比例不低于0.5则触发熔断，熔断时长为5秒。然后进入half-open状态,放行一次请求做测试。
 <strong>需求</strong></p>
 <blockquote>
 <p>给UserClient的查询用户接口设置降级规则，慢调用的RT阈值为50ms,统计时间为1秒，最小请求数量为5，失败阈值比例为0.4,熔断时长为5</p>
 <p>为了增加业务耗时，可以设置<code>Thread.sleep(60)</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083103666.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410083103666"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083103666.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083103666.png" alt="image-20240410083103666"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1757,85 +1595,64 @@ order也有效
 </div>
 </div><blockquote>
 <p>此时我们正常的响应时间是<code>71ms</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083240454.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410083240454"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083240454.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083240454.png" alt="image-20240410083240454"  />
+	</a>
+</div>
+
 快速访问多次后熔断，熔断之后已经不再去尝试了，而是直接返回失败结果，这里的时间为<code>4ms</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083454593.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410083454593"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083454593.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083454593.png" alt="image-20240410083454593"  />
+	</a>
+</div>
+
 服务的调用方响应如下
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083623355.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410083623355"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083623355.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410083623355.png" alt="image-20240410083623355"  />
+	</a>
+</div>
+
 针对多实例也有效
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410084150507.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410084150507"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410084150507.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410084150507.png" alt="image-20240410084150507"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="熔断策略--异常比例异常数">熔断策略&ndash;异常比例、异常数
 </h3><p>异常比例或异常数:统计指定时间内的调用，如果调用次数超过指定请求数，并且出现异常的比例达到设定的比例阈值(或超过指定异常数) ,则触发熔断。例如:
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074723270.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409074723270"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074746502.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409074746502"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074723270.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074723270.png" alt="image-20240409074723270"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074746502.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409074746502.png" alt="image-20240409074746502"  />
+	</a>
+</div>
+
 <strong>解读</strong>:统计最近1000ms内的请求，如果请求量超过10次，并且异常比例不低于0.5,则触发熔断，熔断时长为5秒。然后进入half-open状态，放行一次 请求做测试。</p>
 <blockquote>
 <p>故意抛出异常即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210541628.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410210541628"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210541628.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210541628.png" alt="image-20240410210541628"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1871,37 +1688,30 @@ order也有效
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210729986.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410210729986"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210729986.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210729986.png" alt="image-20240410210729986"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>如果觉得直接返回报错不太友好，可以使用<code>@RestControllerAdvice</code>来进行统一的异常处理，这里不过多介绍这个注解，先看看熔断是否生效
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210916311.png"
-	
-	
-	
-	loading="lazy"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210916311.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410210916311.png" alt=""  />
+	</a>
+</div>
+
 再看看<code>order</code>服务调用是否正常
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410211017304.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410211017304"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410211017304.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410211017304.png" alt="image-20240410211017304"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="总结-1">总结
 </h3><p>Sentinel熔断降级的策略有哪些?
@@ -1915,16 +1725,13 @@ order也有效
 授权规则可以对调用方的来源做控制，有白名单和黑名单两种方式。
 白名单:来源(origin) 在白名单内的调用者允许访问
 黑名单:来源(origin)在黑名单内的调用者不允许访问
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409075531220.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409075531220"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409075531220.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409075531220.png" alt="image-20240409075531220"  />
+	</a>
+</div>
+
 例如，我们限定只允许从网关来的请求访问<code>order-service</code>，不允许浏览器来直接访问,那么流控应用中就填写网关的名称.
 这里的<code>流控应用</code>其实不是指的<code>网关服务</code>的名称，而是指的<code>orign</code>请求来源的名称
 Sentinel是通过<code>RequestOriginParser</code>这个接口的parseOrigin来获取请求的来源的。
@@ -2099,76 +1906,58 @@ order服务</p>
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="l">AddRequestHeader=origin,gateway</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220549522.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410220549522"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220549522.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220549522.png" alt="image-20240410220549522"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>通过网关服务访问
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220636398.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410220636398"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220636398.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220636398.png" alt="image-20240410220636398"  />
+	</a>
+</div>
+
 直接访问
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220652041.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410220652041"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220652041.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410220652041.png" alt="image-20240410220652041"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="自定义异常结果">自定义异常结果
 </h2><p>默认情况下，发生限流、降级、授权拦截时，都会抛出异常到调用方。如果要自定义异常时的返回结果，需要实现<code>BlockExceptionHandler</code>接口
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081053921.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409081053921"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081053921.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081053921.png" alt="image-20240409081053921"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>判断这里异常的类型，然后返回自定义结果
 <strong>而<code>BlockException</code>包含很多个子类，分别对应不同的场景:</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081138373.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409081138373"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081138373.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081138373.png" alt="image-20240409081138373"  />
+	</a>
+</div>
+
 具体写法可参考
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081246546.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409081246546"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081246546.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081246546.png" alt="image-20240409081246546"  />
+	</a>
+</div>
+
 order服务</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -2221,16 +2010,13 @@ order服务</p>
 </div>
 </div><blockquote>
 <p>重启服务后新建授权规则
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410221758019.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410221758019"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410221758019.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410221758019.png" alt="image-20240410221758019"  />
+	</a>
+</div>
+
 也可以使用<code>@SentinelResource</code>注解方式</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -2283,16 +2069,13 @@ order服务</p>
 </div>
 </div><blockquote>
 <p>配置授权规则
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410222328041.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410222328041"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410222328041.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410222328041.png" alt="image-20240410222328041"  />
+	</a>
+</div>
+
 虽然只能返回与使用<code>@SentinelResource</code>注解标注的方法<code>相同</code>的<code>返回值类型</code>，但是在<code>springboot</code>的<code>restful</code>风格的api中，我们通常会统一返回结果
 如<code>JsonData</code>或者<code>R</code>等统一返回值类型</p>
 </blockquote>
@@ -2306,31 +2089,25 @@ order服务</p>
 </ol>
 <h4 id="pull模式">pull模式
 </h4><p>pull模式:控制台将配置的规则推送到Sentinel客户端,而客户端会将配置规则保存在本地文件或数据库中。以后会定时去本地文件或数据库中查询，更新本地规则。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081715561.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409081715561"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081715561.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081715561.png" alt="image-20240409081715561"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>由于是定时轮询读取，所以存在<code>时效性</code>问题，导致了服务中<code>规则</code>不一致的问题</p>
 </blockquote>
 <h4 id="push模式">push模式
 </h4><p>push模式:控制台将配置规则推送到远程配置中心，例如Nacos。Sentinel客户 端监听Nacos,获取配置变更的推送消息，完成本地配置更新。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081844429.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240409081844429"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081844429.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240409081844429.png" alt="image-20240409081844429"  />
+	</a>
+</div>
+</p>
 <h4 id="总结-2">总结
 </h4><p>Sentinel的三种配置管理模式是什么?</p>
 <ol>
@@ -2340,8 +2117,7 @@ order服务</p>
 </ol>
 <h3 id="实现push模式">实现push模式
 </h3><blockquote>
-<p>参考<a class="link" href="https://blog.csdn.net/qq_36763419/article/details/121560105"  target="_blank" rel="noopener"
-    >博客</a>
+<p>参考<a class="link" href="https://blog.csdn.net/qq_36763419/article/details/121560105"  target="_blank" rel="noopener" >博客</a>
 push模式实现最为复杂，依赖于nacos,并且需要修改Sentinel控制台源码。
 <strong>引入依赖</strong></p>
 </blockquote>
@@ -2523,16 +2299,13 @@ push模式实现最为复杂，依赖于nacos,并且需要修改Sentinel控制�
 </span></span><span class="line"><span class="cl"><span class="p">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214414971.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410214414971"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214414971.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214414971.png" alt="image-20240410214414971"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>以上配置是指</p>
 <p>resource：资源名。
@@ -2580,38 +2353,29 @@ clusterMode：是否集群。false 表示否，true 表示是。
 </div>
 </div><blockquote>
 <p>测试一下是否可行
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214733973.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410214733973"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214733973.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214733973.png" alt="image-20240410214733973"  />
+	</a>
+</div>
+
 order也没问题
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214813076.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410214813076"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214813076.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214813076.png" alt="image-20240410214813076"  />
+	</a>
+</div>
+
 重启服务，查看<code>sentinel</code>控制台，规则是否还存在
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214914582.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410214914582"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214914582.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410214914582.png" alt="image-20240410214914582"  />
+	</a>
+</div>
+
 但是有个需要注意的点，这是<code>sentinel</code>读<code>nacos</code>配置的规则，而在<code>sentinel</code>中配置的规则，不能同步到<code>nacos</code></p>
 <p>如果需要让<code>sentinel</code>的配置同步到<code>nacos</code>，<code>nacos</code>修改的配置<code>sentinel</code>也能获取到，则需要修改<code>sentinel-dashboard.jar</code>的源码了</p>
 <p>网上也有教程</p>

@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/angular/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Angular">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Angular">
 <meta property='og:description' content="Angular">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/angular/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -389,17 +389,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/angular/">
-                <img src="/p/angular/202412211941020_hu3045037043165314187.png"
-                        srcset="/p/angular/202412211941020_hu3045037043165314187.png 800w, /p/angular/202412211941020_hu6748268721587395231.png 1600w"
-                        width="800" 
-                        height="319" 
-                        loading="lazy"
-                        alt="Featured image of post Angular" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/angular/">
+            <img src="/p/angular/202412211941020_hu3045037043165314187.png" srcset="/p/angular/202412211941020_hu3045037043165314187.png 800w, /p/angular/202412211941020_hu6748268721587395231.png 1600w"  width="800"
+                height="319" loading="lazy" alt="Featured image of post Angular" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -468,6 +464,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -475,10 +476,8 @@
 </h1><h2 id="基本要点">基本要点
 </h2><h3 id="基础">基础
 </h3><blockquote>
-<p><a class="link" href="https://angular.cn/overview"  target="_blank" rel="noopener"
-    >官方文档</a></p>
-<p><a class="link" href="https://www.angularc.cn/introduce.html"  target="_blank" rel="noopener"
-    >中文文档</a></p>
+<p><a class="link" href="https://angular.cn/overview"  target="_blank" rel="noopener" >官方文档</a></p>
+<p><a class="link" href="https://www.angularc.cn/introduce.html"  target="_blank" rel="noopener" >中文文档</a></p>
 <p>安装脚手架</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -579,8 +578,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p><a class="link" href="http://localhost:4200/"  target="_blank" rel="noopener"
-    >访问页面</a></p>
+<p><a class="link" href="http://localhost:4200/"  target="_blank" rel="noopener" >访问页面</a></p>
 <p><code>http://localhost:4200/</code></p>
 </blockquote>
 <h3 id="项目结构解析">项目结构解析
@@ -887,12 +885,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果你不希望使用独立组件，其实在使用独立组件之前，Angular 代码使用 <code>NgModule</code> 作为导入和使用其他组件的机制</p>
-<p><a class="link" href="https://angular.cn/guide/ngmodules"  target="_blank" rel="noopener"
-    >参考文档</a></p>
+<p><a class="link" href="https://angular.cn/guide/ngmodules"  target="_blank" rel="noopener" >参考文档</a></p>
 <h3 id="管理动态数据">管理动态数据
 </h3><h4 id="定义状态">定义状态
-</h4><p>要定义状态，你可以在组件内使用<a class="link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields"  target="_blank" rel="noopener"
-    >类字段语法</a></p>
+</h4><p>要定义状态，你可以在组件内使用<a class="link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields"  target="_blank" rel="noopener" >类字段语法</a></p>
 <p>例如，使用 <code>TodoListItem</code> 组件，创建两个你想要跟踪的属性：</p>
 <ol>
 <li><code>taskTitle</code> — 任务的标题</li>
@@ -1340,8 +1336,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="共享逻辑">共享逻辑
-</h3><p>当你需要在组件之间共享逻辑时，Angular 利用 <a class="link" href="https://angular.cn/guide/di"  target="_blank" rel="noopener"
-    >依赖注入</a>的设计模式，允许你创建一个“服务”，从而允许你将代码注入组件，并从单一事实之源管理它</p>
+</h3><p>当你需要在组件之间共享逻辑时，Angular 利用 <a class="link" href="https://angular.cn/guide/di"  target="_blank" rel="noopener" >依赖注入</a>的设计模式，允许你创建一个“服务”，从而允许你将代码注入组件，并从单一事实之源管理它</p>
 <h4 id="服务">服务
 </h4><p>服务是可重用的代码片段，可以被注入</p>
 <p>类似于定义组件，服务由以下内容组成：</p>
@@ -1474,8 +1469,7 @@
 </div><h2 id="深度指南">深度指南
 </h2><h3 id="组件的剖析">组件的剖析
 </h3><blockquote>
-<p>如何导入以及使用其他<code>独立组件</code>在上方<code>基本要点</code>中已经了解到，如果希望使用<code>NgModule</code>的方式而非<code>独立组件</code>，可以参考<a class="link" href="https://angular.cn/guide/ngmodules"  target="_blank" rel="noopener"
-    >文档</a></p>
+<p>如何导入以及使用其他<code>独立组件</code>在上方<code>基本要点</code>中已经了解到，如果希望使用<code>NgModule</code>的方式而非<code>独立组件</code>，可以参考<a class="link" href="https://angular.cn/guide/ngmodules"  target="_blank" rel="noopener" >文档</a></p>
 </blockquote>
 <h4 id="组件选择器">组件选择器
 </h4><h5 id="类型选择器">类型选择器
@@ -1501,8 +1495,7 @@
 <p><strong><code>需要注意的是</code></strong>，<strong>组件选择器是区分大小写的</strong></p>
 <h5 id="选择器类型">选择器类型
 </h5><blockquote>
-<p>Angular 在组件选择器中支持一组 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors"  target="_blank" rel="noopener"
-    >基本 CSS 选择器类型</a></p>
+<p>Angular 在组件选择器中支持一组 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors"  target="_blank" rel="noopener" >基本 CSS 选择器类型</a></p>
 </blockquote>
 <div class="table-wrapper"><table>
   <thead>
@@ -1530,14 +1523,10 @@
       </tr>
   </tbody>
 </table></div>
-<p>Angular 组件选择器不支持组合器，包括 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator"  target="_blank" rel="noopener"
-    >后代组合器</a>或 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator"  target="_blank" rel="noopener"
-    >子组合器</a></p>
-<p>Angular 组件选择器不支持指定 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course"  target="_blank" rel="noopener"
-    >命名空间</a></p>
+<p>Angular 组件选择器不支持组合器，包括 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator"  target="_blank" rel="noopener" >后代组合器</a>或 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator"  target="_blank" rel="noopener" >子组合器</a></p>
+<p>Angular 组件选择器不支持指定 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/SVG/Namespaces_Crash_Course"  target="_blank" rel="noopener" >命名空间</a></p>
 <h5 id="not伪类"><code>:not</code>伪类
-</h5><p>Angular 支持 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not"  target="_blank" rel="noopener"
-    >伪类 <code>:not</code></a>，可以将这个伪类附加到任何其他选择器上，以缩小组件选择器匹配的元素范围</p>
+</h5><p>Angular 支持 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not"  target="_blank" rel="noopener" >伪类 <code>:not</code></a>，可以将这个伪类附加到任何其他选择器上，以缩小组件选择器匹配的元素范围</p>
 <p>可以定义一个 <code>[dropzone]</code>属性选择器并阻止匹配 <code>textarea</code>元素</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1741,16 +1730,13 @@
 <p>angular默认情况采用这种模拟封装，这样指定的样式只在模板中生效，不对其他模板造成干扰</p>
 <p>框架会为每个组件实例生成唯一一个HTML属性，并且会将该属性添加到组件模板中的元素，以及将该属性插入到组件样式定义的css选择器中</p>
 </blockquote>
-<p>在封装模式下，angular支持<code>:host</code>和<code>:host-context()</code>伪类，而无需使用 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"  target="_blank" rel="noopener"
-    >Shadow DOM</a>。在编译期间，框架将这些伪类转换为属性，因此在运行时不遵循这些本地伪类的规则（例如浏览器兼容性、特异性）。Angular 的模拟封装模式不支持与 Shadow DOM 相关的任何其他伪类，例如 <code>::shadow</code> 或  <code>::part</code>。</p>
+<p>在封装模式下，angular支持<code>:host</code>和<code>:host-context()</code>伪类，而无需使用 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"  target="_blank" rel="noopener" >Shadow DOM</a>。在编译期间，框架将这些伪类转换为属性，因此在运行时不遵循这些本地伪类的规则（例如浏览器兼容性、特异性）。Angular 的模拟封装模式不支持与 Shadow DOM 相关的任何其他伪类，例如 <code>::shadow</code> 或  <code>::part</code>。</p>
 <h5 id="viewencapsulationshadowdom"><code>ViewEncapsulation.ShadowDom</code>
 </h5><blockquote>
-<p>这种模式通过使用 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"  target="_blank" rel="noopener"
-    >Web 标准 Shadow DOM API</a> 来限定组件内的样式作用域。启用这种模式时，Angular 会将一个 shadow root 附着到组件的宿主元素，并将组件的模板和样式渲染到对应的 shadow 树中。</p>
+<p>这种模式通过使用 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM"  target="_blank" rel="noopener" >Web 标准 Shadow DOM API</a> 来限定组件内的样式作用域。启用这种模式时，Angular 会将一个 shadow root 附着到组件的宿主元素，并将组件的模板和样式渲染到对应的 shadow 树中。</p>
 <p>此模式严格保证 <em>只有</em>该组件的样式适用于组件模板中的元素。全局样式不能影响影子树中的元素，影子树中的样式也不能影响影子树外的元素。</p>
 </blockquote>
-<p>然而，启用 <code>ShadowDom</code> 封装不仅仅影响样式作用域。在 shadow 树中渲染组件会影响事件传播、与 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots"  target="_blank" rel="noopener"
-    >`` API</a> 的交互，以及浏览器开发者工具显示元素的方式。在启用此选项之前，务必理解在你的应用中使用 Shadow DOM 的全部影响。</p>
+<p>然而，启用 <code>ShadowDom</code> 封装不仅仅影响样式作用域。在 shadow 树中渲染组件会影响事件传播、与 <a class="link" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots"  target="_blank" rel="noopener" >`` API</a> 的交互，以及浏览器开发者工具显示元素的方式。在启用此选项之前，务必理解在你的应用中使用 Shadow DOM 的全部影响。</p>
 <p><code>ViewEncapsulation.None</code></p>
 <p>这种模式会禁用组件的所有样式封装。任何与组件关联的样式都会作为全局样式来处理。</p>
 <h5 id="定义样式">定义样式
@@ -3059,8 +3045,7 @@
 </div>
 </div><h3 id="管道">管道
 </h3><blockquote>
-<p>参考<a class="link" href="https://juejin.cn/post/7085762568223981605"  target="_blank" rel="noopener"
-    >博客</a></p>
+<p>参考<a class="link" href="https://juejin.cn/post/7085762568223981605"  target="_blank" rel="noopener" >博客</a></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3409,38 +3394,32 @@
   <tbody>
       <tr>
           <td style="text-align: left"><code>ngOnChanges()</code></td>
-          <td style="text-align: left">当 Angular 设置或重新设置数据绑定的输入属性时响应。该方法接受当前和上一属性值的 <code>SimpleChanges</code> 对象 <strong>注意</strong>： 这发生得比较频繁，所以你在这里执行的任何操作都会显著影响性能。欲知详情，参阅本文档的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#onchanges"  target="_blank" rel="noopener"
-    >使用变更检测钩子</a>。</td>
+          <td style="text-align: left">当 Angular 设置或重新设置数据绑定的输入属性时响应。该方法接受当前和上一属性值的 <code>SimpleChanges</code> 对象 <strong>注意</strong>： 这发生得比较频繁，所以你在这里执行的任何操作都会显著影响性能。欲知详情，参阅本文档的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#onchanges"  target="_blank" rel="noopener" >使用变更检测钩子</a>。</td>
           <td style="text-align: left">如果组件绑定过输入属性，那么在 <code>ngOnInit()</code> 之前以及所绑定的一个或多个输入属性的值发生变化时都会调用。 <strong>注意</strong>： 如果你的组件没有输入属性，或者你使用它时没有提供任何输入属性，那么框架就不会调用 <code>ngOnChanges()</code>。</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>ngOnInit()</code></td>
-          <td style="text-align: left">在 Angular 第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。欲知详情，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#oninit"  target="_blank" rel="noopener"
-    >初始化组件或指令</a>。</td>
+          <td style="text-align: left">在 Angular 第一次显示数据绑定和设置指令/组件的输入属性之后，初始化指令/组件。欲知详情，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#oninit"  target="_blank" rel="noopener" >初始化组件或指令</a>。</td>
           <td style="text-align: left">在第一轮 <code>ngOnChanges()</code> 完成之后调用，只调用<strong>一次</strong>。而且即使没有调用过 <code>ngOnChanges()</code>，也仍然会调用 <code>ngOnInit()</code>（比如当模板中没有绑定任何输入属性时）。</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>ngDoCheck()</code></td>
-          <td style="text-align: left">检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#docheck"  target="_blank" rel="noopener"
-    >自定义变更检测</a>。</td>
+          <td style="text-align: left">检测，并在发生 Angular 无法或不愿意自己检测的变化时作出反应。欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#docheck"  target="_blank" rel="noopener" >自定义变更检测</a>。</td>
           <td style="text-align: left">紧跟在每次执行变更检测时的 <code>ngOnChanges()</code> 和 首次执行变更检测时的 <code>ngOnInit()</code> 后调用。</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>ngAfterContentInit()</code></td>
-          <td style="text-align: left">当 Angular 把外部内容投影进组件视图或指令所在的视图之后调用。 欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent"  target="_blank" rel="noopener"
-    >响应内容中的变更</a>。</td>
+          <td style="text-align: left">当 Angular 把外部内容投影进组件视图或指令所在的视图之后调用。 欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent"  target="_blank" rel="noopener" >响应内容中的变更</a>。</td>
           <td style="text-align: left">第一次 <code>ngDoCheck()</code> 之后调用，只调用一次。</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>ngAfterContentChecked()</code></td>
-          <td style="text-align: left">每当 Angular 检查完被投影到组件或指令中的内容之后调用。 欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent"  target="_blank" rel="noopener"
-    >响应被投影内容的变更</a>。</td>
+          <td style="text-align: left">每当 Angular 检查完被投影到组件或指令中的内容之后调用。 欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#aftercontent"  target="_blank" rel="noopener" >响应被投影内容的变更</a>。</td>
           <td style="text-align: left"><code>ngAfterContentInit()</code> 和每次 <code>ngDoCheck()</code> 之后调用。</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>ngAfterViewInit()</code></td>
-          <td style="text-align: left">当 Angular 初始化完组件视图及其子视图或包含该指令的视图之后调用。 欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#afterview"  target="_blank" rel="noopener"
-    >响应视图变更</a>。</td>
+          <td style="text-align: left">当 Angular 初始化完组件视图及其子视图或包含该指令的视图之后调用。 欲知详情和范例，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#afterview"  target="_blank" rel="noopener" >响应视图变更</a>。</td>
           <td style="text-align: left">第一次 <code>ngAfterContentChecked()</code> 之后调用，只调用一次。</td>
       </tr>
       <tr>
@@ -3450,15 +3429,13 @@
       </tr>
       <tr>
           <td style="text-align: left"><code>ngOnDestroy()</code></td>
-          <td style="text-align: left">每当 Angular 每次销毁指令/组件之前调用并清扫。在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。欲知详情，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#ondestroy"  target="_blank" rel="noopener"
-    >在实例销毁时进行清理</a>。</td>
+          <td style="text-align: left">每当 Angular 每次销毁指令/组件之前调用并清扫。在这儿反订阅可观察对象和分离事件处理器，以防内存泄漏。欲知详情，参阅本文档中的<a class="link" href="http://ubuntu-notebook:8015/guide/lifecycle-hooks#ondestroy"  target="_blank" rel="noopener" >在实例销毁时进行清理</a>。</td>
           <td style="text-align: left">在 Angular 销毁指令或组件之前立即调用。</td>
       </tr>
   </tbody>
 </table></div>
 <h4 id="父子组件传参">父子组件传参
-</h4><p>参考<a class="link" href="https://juejin.cn/post/7205841266906398781"  target="_blank" rel="noopener"
-    >博客</a></p>
+</h4><p>参考<a class="link" href="https://juejin.cn/post/7205841266906398781"  target="_blank" rel="noopener" >博客</a></p>
 <h5 id="父传子">父传子
 </h5><p><code>@Input()</code> 和 <code>@Output()</code> 为子组件提供了一种与其父组件通信的方法。<code>@Input()</code> 允许父组件更新子组件中的数据。相反，<code>@Output()</code> 允许子组件向父组件发送数据。</p>
 <div class="highlight"><div class="chroma">
@@ -3921,8 +3898,7 @@
 </div>
 </div><h3 id="路由">路由
 </h3><blockquote>
-<p>参考<a class="link" href="https://angular.cn/guide/routing/router-tutorial"  target="_blank" rel="noopener"
-    >文档</a></p>
+<p>参考<a class="link" href="https://angular.cn/guide/routing/router-tutorial"  target="_blank" rel="noopener" >文档</a></p>
 </blockquote>
 <p><strong>app.routes.ts</strong></p>
 <div class="highlight"><div class="chroma">

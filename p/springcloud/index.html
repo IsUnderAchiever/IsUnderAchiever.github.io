@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/springcloud/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="SpringCloud">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="SpringCloud">
 <meta property='og:description' content="SpringCloud">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/springcloud/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -354,17 +354,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/springcloud/">
-                <img src="/p/springcloud/202412212133331_hu211479134585629788.png"
-                        srcset="/p/springcloud/202412212133331_hu211479134585629788.png 800w, /p/springcloud/202412212133331_hu17266170340933010716.png 1600w"
-                        width="800" 
-                        height="296" 
-                        loading="lazy"
-                        alt="Featured image of post SpringCloud" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/springcloud/">
+            <img src="/p/springcloud/202412212133331_hu211479134585629788.png" srcset="/p/springcloud/202412212133331_hu211479134585629788.png 800w, /p/springcloud/202412212133331_hu17266170340933010716.png 1600w"  width="800"
+                height="296" loading="lazy" alt="Featured image of post SpringCloud" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -432,6 +428,11 @@
 </div>
 
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
     <section class="article-content">
     
@@ -855,38 +856,29 @@ cloud-demo/pom.xml</li>
 </div>
 </div><blockquote>
 <p>这里使用<code>idea</code>自带的数据库管理工具来新建数据库
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085254211.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404085254211"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085254211.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085254211.png" alt="image-20240404085254211"  />
+	</a>
+</div>
+
 user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-order</code></p>
 <p>右键数据库，选择创建表
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085443159.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404085443159"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085814092.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404085814092"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085443159.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085443159.png" alt="image-20240404085443159"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085814092.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404085814092.png" alt="image-20240404085814092"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -962,16 +954,13 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 <p>我们的<code>需求</code>是:<strong><code>根据订单id查询订单的同时，把订单所属的用户信息一起返回</code></strong></p>
 <p>这里就是<code>MyBatisX</code>一键生成<code>mapper</code>、<code>service</code>代码了</p>
 <p>这里需要注意个问题<code>表名</code>不要叫<code>order</code>，order属于数据库的关键字，选择<code>orders</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404090905809.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404090905809"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404090905809.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404090905809.png" alt="image-20240404090905809"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h4 id="编写controller代码">编写controller代码
 </h4><div class="highlight"><div class="chroma">
@@ -1253,16 +1242,13 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </div>
 </div><blockquote>
 <p>访问http://localhost:8090/order/1
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404112131695.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404112131695"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404112131695.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404112131695.png" alt="image-20240404112131695"  />
+	</a>
+</div>
+
 以上，实现了跨入服务的远程调用</p>
 </blockquote>
 <h3 id="eureka">Eureka
@@ -1273,16 +1259,13 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 代码中使用<code>硬编码</code>将url写在代码中，将来如果部署成集群，则<code>硬编码</code>应该怎么办？
 应该选择哪一台？选的那一台实例是否依然正常？
 <code>Eureka</code>、<code>Nacos</code>可以实现上述需求
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404112656015.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404112656015"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404112656015.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404112656015.png" alt="image-20240404112656015"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>在每一个服务启动时，将自己的服务信息注册到<code>Eureka</code>中，这时候<code>Eureka</code>中已经存储了相关的<code>Order</code>和<code>User</code>服务的信息</p>
 <p>在<code>Order</code>服务调用<code>User</code>服务时，<code>Order</code>服务前往<code>Eureka</code>中找到<code>User</code>服务的url</p>
@@ -1576,16 +1559,13 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span><span class="line"><span class="cl"><span class="na">eureka.server.eviction-interval-timer-in-ms</span><span class="o">=</span><span class="s">2000</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404125646354.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404125646354"
-	
-	
->
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404125646354.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404125646354.png" alt="image-20240404125646354"  />
+	</a>
+</div>
+
 <code>Eureka</code>配置成功，只是此时并没有服务注册到<code>Eureka</code></p>
 <h4 id="服务注册">服务注册
 </h4><blockquote>
@@ -1627,70 +1607,52 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span><span class="line"><span class="cl"><span class="na">eureka.client.service-url.defaultZone</span><span class="o">=</span><span class="s">http://localhost:8070/eureka/</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130043753.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130043753"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130043753.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130043753.png" alt="image-20240404130043753"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>可以看到此时服务已经注册到<code>Eureka</code>了，但这些服务都是一个实例，启动多个实例试试
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130440728.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130440728"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130440728.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130440728.png" alt="image-20240404130440728"  />
+	</a>
+</div>
+
 如果找不到<code>Services</code>，可以在<code>View - Tool Windows</code>处添加
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130540152.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130540152"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130540152.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130540152.png" alt="image-20240404130540152"  />
+	</a>
+</div>
+
 右键服务，选择<code>Copy Configuration</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130611273.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130611273"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130728336.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130728336"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130811273.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130811273"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130611273.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130611273.png" alt="image-20240404130611273"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130728336.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130728336.png" alt="image-20240404130728336"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130811273.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130811273.png" alt="image-20240404130811273"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1704,27 +1666,21 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </div>
 </div><blockquote>
 <p>右键启动该实例
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130916547.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130916547"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130916547.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130916547.png" alt="image-20240404130916547"  />
+	</a>
+</div>
+
 前往<code>Eureka</code>页面查看
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130945137.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404130945137"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130945137.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404130945137.png" alt="image-20240404130945137"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h4 id="服务发现">服务发现
 </h4><blockquote>
@@ -1842,8 +1798,7 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </div>
 </div><blockquote>
 <p>如果报错<code>No instances available for user-service</code></p>
-<p>请查看<a class="link" href="https://blog.csdn.net/Kevinnsm/article/details/117117061"  target="_blank" rel="noopener"
-    >博客</a>
+<p>请查看<a class="link" href="https://blog.csdn.net/Kevinnsm/article/details/117117061"  target="_blank" rel="noopener" >博客</a>
 如果依然不能解决，请查看<code>application.properties</code>里是否配置了如下内容，如果是，删除后重启即可解决</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -1856,16 +1811,13 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span><span class="line"><span class="cl"><span class="na">eureka.client.fetch-registry</span><span class="o">=</span><span class="s">false</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404152215166.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404152215166"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404152215166.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404152215166.png" alt="image-20240404152215166"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>这样就可以通过<code>服务名</code>的方式来完成服务之间的调用，哪怕服务启动了<code>多个实例</code></p>
 </blockquote>
@@ -1873,165 +1825,123 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </h4><h5 id="基础">基础
 </h5><blockquote>
 <p><code>Ribbon</code>实现负载均衡
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404152632326.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404152632326"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404152632326.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404152632326.png" alt="image-20240404152632326"  />
+	</a>
+</div>
+
 <code>Ribbon</code>是如何实现负载均衡的呢？
 添加了<code>@LoadBalanced</code>注解后，表明该<code>RestTemplate</code>发起的请求，需要被<code>Ribbon</code>来拦截处理</p>
 <p>而拦截的动作是<code>LoadBalancerInterceptor</code>来完成的</p>
 <p><code>idea</code>中按两下<code>shift</code>后搜索即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153010079.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404153010079"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153010079.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153010079.png" alt="image-20240404153010079"  />
+	</a>
+</div>
+
 而<code>LoadBalancerInterceptor</code>类实现了<code>ClientHttpRequestInterceptor</code>接口
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153426292.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404153426292"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153426292.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153426292.png" alt="image-20240404153426292"  />
+	</a>
+</div>
+
 它会去拦截由客户端发起的<code>Http</code>请求，而<code>RestTemplate</code>正是一个发<code>Http</code>请求的客户端</p>
 <p><code>LoadBalancerInterceptor</code>类实现了<code>intercept</code>方法</p>
 <p>在<code>LoadBalancerInterceptor</code>打断点调试一下，<code>debug</code>运行<code>Order</code></p>
 <p>发现请求确实被<code>LoadBalancerInterceptor</code>拦截了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153840301.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404153840301"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153840301.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404153840301.png" alt="image-20240404153840301"  />
+	</a>
+</div>
+
 可以看到<code>Order</code>服务发起了一个<code>Http</code>请求，Url是<code>http://user-service/user/1</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154021714.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404154021714"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154021714.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154021714.png" alt="image-20240404154021714"  />
+	</a>
+</div>
+
 执行完<code>String serviceName = originalUri.getHost();</code>代码之后，获取到了主机名<code>user-service</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154138579.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404154138579"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154304632.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404154304632"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154138579.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154138579.png" alt="image-20240404154138579"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154304632.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404154304632.png" alt="image-20240404154304632"  />
+	</a>
+</div>
+
 进入<code>loadBalancer.execute</code>方法，继续执行
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404155350933.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404155350933"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404155350933.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404155350933.png" alt="image-20240404155350933"  />
+	</a>
+</div>
+
 发现这里已经获取到<code>User</code>服务的<code>ip</code>了，我们运行了多个<code>User</code>服务的实例，这里大家可能看到的是<code>8080</code>或者<code>8090</code></p>
 <p>是在这一行代码上获取到了<code>User</code>服务
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404155904705.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404155904705"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404155904705.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404155904705.png" alt="image-20240404155904705"  />
+	</a>
+</div>
+
 那它怎么知道或者按什么规则来获取的<code>其中一个User服务</code>呢？</p>
 <p>继续进去，发现可能是在<code>loadBalancer.choose</code>获取到的
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160035088.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404160035088"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160035088.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160035088.png" alt="image-20240404160035088"  />
+	</a>
+</div>
+
 再往里走就是一个接口了<code>ReactiveLoadBalancer</code></p>
 <p>按住<code>Ctrl H</code>查看这个接口的实现类
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160119331.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404160119331"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160330743.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404160330743"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160119331.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160119331.png" alt="image-20240404160119331"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160330743.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160330743.png" alt="image-20240404160330743"  />
+	</a>
+</div>
+
 这里<code>Eureka</code>默认的调度机制其实是<code>轮询</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160846349.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404160846349"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404161057944.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404161057944"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160846349.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404160846349.png" alt="image-20240404160846349"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404161057944.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404161057944.png" alt="image-20240404161057944"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h5 id="策略">策略
 </h5><p>通过定义IRule实现可以修改负载均衡规则，有两种方式:
@@ -2080,22 +1990,17 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </div>
 </div><h3 id="nacos">Nacos
 </h3><h4 id="安装">安装
-</h4><p><a class="link" href="https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E"  target="_blank" rel="noopener"
-    >SpringBoot、SpringCloud、Alibaba版本对应关系</a>
-<a class="link" href="https://github.com/alibaba/nacos/releases"  target="_blank" rel="noopener"
-    >Nacos下载</a>
+</h4><p><a class="link" href="https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E"  target="_blank" rel="noopener" >SpringBoot、SpringCloud、Alibaba版本对应关系</a>
+<a class="link" href="https://github.com/alibaba/nacos/releases"  target="_blank" rel="noopener" >Nacos下载</a>
 选择<code>2.2.1</code>版本的<code>Naocs</code>
 <code>nacos-2.2.1/bin/startup.cmd</code>用vscode或者记事本打开
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404230331406.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404230331406.png"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404230331406.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404230331406.png" alt="image-20240404230331406.png"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>双击发现闪退，在结尾处加上如下代码</p>
 </blockquote>
@@ -2109,43 +2014,33 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span><span class="line"><span class="cl">endlocal
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404230832876.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404230832876"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404230832876.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404230832876.png" alt="image-20240404230832876"  />
+	</a>
+</div>
+</p>
 <blockquote>
-<p>再次双击，查看到报错信息，找到<a class="link" href="https://blog.csdn.net/u013833472/article/details/129913944"  target="_blank" rel="noopener"
-    >博客</a></p>
+<p>再次双击，查看到报错信息，找到<a class="link" href="https://blog.csdn.net/u013833472/article/details/129913944"  target="_blank" rel="noopener" >博客</a></p>
 <p>还需要配置conf<code>目录下的</code>application.properties</p>
 <p><strong>nacos.core.auth.default.token.secret.key</strong>
 这个参数必须配置为<code>base64</code>编码而且不能小于32位，随便找个在线网站编码一下即可
 重新启动nacos
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404231527819.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404231527819"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404231540377.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404231540377"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404231527819.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404231527819.png" alt="image-20240404231527819"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404231540377.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404231540377.png" alt="image-20240404231540377"  />
+	</a>
+</div>
+
 账号密码都是<code>nacos</code>
 在父工程中配置pom.xml</p>
 </blockquote>
@@ -2337,37 +2232,29 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span><span class="line"><span class="cl"><span class="na">spring.cloud.nacos.config.import-check.enabled</span><span class="o">=</span><span class="s">false</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404212510998.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404212510998"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404212510998.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404212510998.png" alt="image-20240404212510998"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>测试一下负载均衡是否可用</p>
 <p>此时还没有意识到事情的<code>严重性</code>，然后就一直报错了</p>
 </blockquote>
 <h4 id="解决报错">解决报错
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404212744756.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240404212744756"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404212744756.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240404212744756.png" alt="image-20240404212744756"  />
+	</a>
+</div>
+</p>
 <blockquote>
-<p>查看<a class="link" href="https://blog.csdn.net/weixin_43887184/article/details/124036205"  target="_blank" rel="noopener"
-    >博客</a></p>
+<p>查看<a class="link" href="https://blog.csdn.net/weixin_43887184/article/details/124036205"  target="_blank" rel="noopener" >博客</a></p>
 <p>因为Netflix的组件从2020年开始停止维护，因此spring cloud会逐渐弃用他家的组件,Ribbon就在其中</p>
-<p>依然没有解决该错误后，前往官网查看，发现官方给了<a class="link" href="https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-cloud-example/nacos-spring-cloud-config-example"  target="_blank" rel="noopener"
-    >例子</a></p>
+<p>依然没有解决该错误后，前往官网查看，发现官方给了<a class="link" href="https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-cloud-example/nacos-spring-cloud-config-example"  target="_blank" rel="noopener" >例子</a></p>
 <p>但是版本跟我们的有区别</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -2473,16 +2360,13 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>上网查询资料发现应该是版本不匹配，后打开依赖分析，发现有一堆<code>依赖都不匹配</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405223449119.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240405223449119"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405223449119.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405223449119.png" alt="image-20240405223449119"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>nacos-client</code>版本改为<code>1.4.4</code>后以上报错解决，但是依然无法实现<code>RestTemplate</code>调用服务</p>
 <p>问题也是出在依赖上</p>
@@ -2946,57 +2830,44 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </span></span><span class="line"><span class="cl"><span class="na">spring.cloud.nacos.config.import-check.enabled</span><span class="o">=</span><span class="s">false</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><a class="link" href="https://gitee.com/tongstyle/cloud-demo"  target="_blank" rel="noopener"
-    >项目Gitee地址</a>，切换到<code>nacos</code>分支即可
+</div><p><a class="link" href="https://gitee.com/tongstyle/cloud-demo"  target="_blank" rel="noopener" >项目Gitee地址</a>，切换到<code>nacos</code>分支即可
 测试发现，<code>负载均衡</code>也可以使用</p>
 <h4 id="服务分级存储模型">服务分级存储模型
 </h4><h5 id="入门">入门
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405225820668.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240405225820668"
-	
-	
-></p>
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405225820668.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405225820668.png" alt="image-20240405225820668"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>每个服务启动多个实例，将这些实例划分到不同的集群</p>
 <p>服务调用尽可能选择本地集群的服务，跨集群调用延迟较高</p>
 <p>本地集群不可访问时，再去访问其它集群
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405230059593.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240405230059593"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405230059593.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240405230059593.png" alt="image-20240405230059593"  />
+	</a>
+</div>
+
 点击Nacos服务 <code>&quot;详情&quot;</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406062803062.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406062803062"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406062803062.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406062803062.png" alt="image-20240406062803062"  />
+	</a>
+</div>
+
 <code>集群</code>是<code>default</code>，即没有集群
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406062856800.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406062856800"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406062856800.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406062856800.png" alt="image-20240406062856800"  />
+	</a>
+</div>
+
 配置集群属性</p>
 </blockquote>
 <ol>
@@ -3015,42 +2886,33 @@ user数据库如下，输入<code>cloud-user</code>，order同理<code>cloud-ord
 </div></li>
 <li>
 <p>在Nacos控制台看到集群的变化
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406065730248.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406065730248"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406065730248.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406065730248.png" alt="image-20240406065730248"  />
+	</a>
+</div>
+
 再起一个<code>User</code>服务实例，现在是<code>3</code>个<code>User</code>服务实例了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406065908160.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406065908160"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406065908160.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406065908160.png" alt="image-20240406065908160"  />
+	</a>
+</div>
+</p>
 </li>
 </ol>
 <blockquote>
 <p>将<code>UserApplication1</code>和<code>UserApplication2</code>设置到<code>JS</code>江苏集群，将<code>UserApplication3</code>设置到<code>HN</code>湖南集群</p>
 <p>启动<code>UserApplication1</code>和<code>UserApplication2</code>，然后将集群改为<code>HN</code>，启动<code>UserApplication3</code>即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406070456323.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406070456323"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406070456323.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406070456323.png" alt="image-20240406070456323"  />
+	</a>
+</div>
+
 <strong>总结</strong>
 Nacos服务分级存储模型</p>
 </blockquote>
@@ -3062,16 +2924,13 @@ Nacos服务分级存储模型</p>
 <h5 id="服务集群属性">服务集群属性
 </h5><blockquote>
 <p>这样配置还不算完，我们需要让<code>Order</code>服务调用<code>User</code>服务时，优先选择本地集群
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406071112676.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406071112676"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406071112676.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406071112676.png" alt="image-20240406071112676"  />
+	</a>
+</div>
+
 这里并没有优先使用<code>JS</code>的<code>User</code>服务，依然采用的是<code>轮询</code>方案</p>
 <p>服务在选择实例时，是由<code>负载均衡</code>决定的，这里并没有配置，所以采用的是默认<code>轮询</code></p>
 </blockquote>
@@ -3092,8 +2951,7 @@ Nacos服务分级存储模型</p>
 </div><blockquote>
 <p>实现以上配置之后即可完成实现优先访问本地集群的服务</p>
 <p>实测之后发现只能在较低版本的Nacos中生效，高版本的Nacos已经取消了对Ribbon的支持</p>
-<p>解决办法查看<a class="link" href="https://blog.csdn.net/qq_38050728/article/details/121924621"  target="_blank" rel="noopener"
-    >博客</a>,实测可行</p>
+<p>解决办法查看<a class="link" href="https://blog.csdn.net/qq_38050728/article/details/121924621"  target="_blank" rel="noopener" >博客</a>,实测可行</p>
 <p>但是随着Spring Cloud Gateway或者其他更先进的API Gateway的广泛应用，以及服务网格（Service Mesh）架构的发展</p>
 <p>例如采用Istio或阿里云的ASM（Application Service Mesh），这种跨可用区或跨集群的流量调度通常会交由服务网格层面处理，而非仅仅依赖客户端SDK内置的负载均衡机制</p>
 <p>那么可能需要转向服务网格或Spring Cloud Gateway级别的路由规则定义，所以负载均衡应该由网关服务来承担，而非消费服务自身</p>
@@ -3106,16 +2964,13 @@ Nacos提供了权重配置来控制访问频率,权重越大则访问频率越�
 <ol>
 <li>在Nacos控制台可以设置实例的权重值，首先选中实例后面的编辑按钮</li>
 <li>将权重设置为0.1,测试可以发现8081被访问到的频率大大降低（权重值位于0~1之间）
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406090249907.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406090249907"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406090249907.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406090249907.png" alt="image-20240406090249907"  />
+	</a>
+</div>
+</li>
 </ol>
 <blockquote>
 <p>那这个时候理论上，<code>8081</code>的访问次数应该是<code>8080</code>的<code>1/10</code>，测试发现确实如此，权重配置已经生效</p>
@@ -3131,28 +2986,22 @@ Nacos提供了权重配置来控制访问频率,权重越大则访问频率越�
 <p>Nacos中服务存储和数据存储的最外层都是一个名为<code>命名空间(namespace)</code>的东西，用来做最外层隔离</p>
 <p>Namespace &gt; Group &gt; Service(服务) &gt; 集群 &gt; 实例</p>
 <p><code>Group </code>用作分组，可以将相关度较高的业务划分为一个组
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091659048.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406091659048"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091659048.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091659048.png" alt="image-20240406091659048"  />
+	</a>
+</div>
+
 此时就可以看到<code>dev</code>命名空间了，但是里面没有任何服务啊</p>
 <p>需要去代码层面添加<code>命名空间</code>配置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091755109.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406091755109"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091755109.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091755109.png" alt="image-20240406091755109"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3164,51 +3013,39 @@ Nacos提供了权重配置来控制访问频率,权重越大则访问频率越�
 </span></span><span class="line"><span class="cl"><span class="na">spring.cloud.nacos.discovery.namespace</span><span class="o">=</span><span class="s">d2455f6d-ed00-41ba-9915-09021bc0df6c</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091941001.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406091941001"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091941001.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406091941001.png" alt="image-20240406091941001"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>重启<code>order</code>服务</p>
 <p>发现在<code>dev</code>下可以看到<code>order</code>服务，而<code>user</code>服务仍然还在<code>public</code>下
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092054361.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406092054361"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092129960.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406092129960"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092054361.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092054361.png" alt="image-20240406092054361"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092129960.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092129960.png" alt="image-20240406092129960"  />
+	</a>
+</div>
+
 测试一下能否调用</p>
 <p><strong>不行</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092150037.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406092150037"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092150037.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406092150037.png" alt="image-20240406092150037"  />
+	</a>
+</div>
+
 报错如下</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -3223,31 +3060,25 @@ Nacos提供了权重配置来控制访问频率,权重越大则访问频率越�
 <p>没有找到可用的实例，因为它们处在不同的命名空间下</p>
 </blockquote>
 <h4 id="nacos注册中心原理">Nacos注册中心原理
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E6%88%AA%E5%9B%BE20240406132746.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="QQ截图20240406132746"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E6%88%AA%E5%9B%BE20240406132746.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E6%88%AA%E5%9B%BE20240406132746.png" alt="QQ截图20240406132746"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>服务的<code>消费者</code>并不是每次都去拉去<code>提供者</code>的信息，而是会将拉去的服务列表进行缓存</p>
 <p>而一直不拉取服务也不行，因为服务提供者的信息可能变化，所以需要每隔一段时间比如30s拉取一次</p>
 <p>但是<code>Nacos</code>和<code>Eureka</code>还有一些差别在健康检测方面</p>
 <p><code>Nacos</code>会将所有的服务提供者分为<code>临时实例</code>和<code>非临时实例</code>，所有实例默认都是<code>临时实例</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406133353590.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406133353590"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406133353590.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406133353590.png" alt="image-20240406133353590"  />
+	</a>
+</div>
+
 临时实例在<code>Nacos</code>中的健康检测是心跳检测，<code>临时实例</code>每隔一段时间向<code>Nacos</code>发送心跳，但频率会比<code>Eureka</code>的快一些</p>
 <p>一旦心跳检测出现异常、不跳了，<code>Nacos</code>就会将其在服务列表中直接<code>剔除</code></p>
 <p><code>非临时实例</code>不需要做心跳检测，而是<code>Nacos</code>主动发请求询问<code>实例</code>是否正常</p>
@@ -3267,28 +3098,22 @@ Nacos提供了权重配置来控制访问频率,权重越大则访问频率越�
 </span></span><span class="line"><span class="cl"><span class="na">spring.cloud.nacos.discovery.ephemeral</span><span class="o">=</span><span class="s">false</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406134615899.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406134615899"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406134615899.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406134615899.png" alt="image-20240406134615899"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>停止服务
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406134705641.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406134705641"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406134705641.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406134705641.png" alt="image-20240406134705641"  />
+	</a>
+</div>
+
 Nacos支持服务端主动检测提供者状态:临时实例采用心跳模式，非临时实例采用主动检测模式</p>
 </blockquote>
 <ol>
@@ -3303,16 +3128,13 @@ Nacos与eureka的共同点
 </h4><blockquote>
 <p>将一些配置信息放在<code>Nacos</code>上，如<code>数据库</code>、<code>MyBatis</code>，而且这些配置可以<code>动态刷新</code>，无需重启项目</p>
 <p>一般写的是开关类型的配置，如赋值<code>true</code>就开启某个活动
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406153222831.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406153222831"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406153222831.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406153222831.png" alt="image-20240406153222831"  />
+	</a>
+</div>
+
 在 Nacos Spring Cloud 中，<code>dataId</code> 的完整格式如下：</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -3325,8 +3147,7 @@ Nacos与eureka的共同点
 </div>
 </div><ul>
 <li><code>prefix</code> 默认为 <code>spring.application.name</code> 的值，也可以通过配置项 <code>spring.cloud.nacos.config.prefix</code>来配置。</li>
-<li><code>spring.profiles.active</code> 即为当前环境对应的 profile，详情可以参考 <a class="link" href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html#boot-features-profiles"  target="_blank" rel="noopener"
-    >Spring Boot文档</a>。 <strong>注意：当 <code>spring.profiles.active</code> 为空时，对应的连接符 <code>-</code> 也将不存在，dataId 的拼接格式变成 <code>${prefix}.${file-extension}</code></strong></li>
+<li><code>spring.profiles.active</code> 即为当前环境对应的 profile，详情可以参考 <a class="link" href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html#boot-features-profiles"  target="_blank" rel="noopener" >Spring Boot文档</a>。 <strong>注意：当 <code>spring.profiles.active</code> 为空时，对应的连接符 <code>-</code> 也将不存在，dataId 的拼接格式变成 <code>${prefix}.${file-extension}</code></strong></li>
 <li><code>file-exetension</code> 为配置内容的数据格式，可以通过配置项 <code>spring.cloud.nacos.config.file-extension</code> 来配置。目前只支持 <code>properties</code> 和 <code>yaml</code> 类型。</li>
 </ul>
 <blockquote>
@@ -3346,16 +3167,13 @@ Nacos与eureka的共同点
 </span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406161144635.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406161144635"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406161144635.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406161144635.png" alt="image-20240406161144635"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>这里我就直接把<code>application.properties</code>中的<code>DB配置</code>和<code>MyBatis</code>配置写进来了
 <strong>order-service-dev.properties</strong></p>
@@ -3627,16 +3445,13 @@ Nacos与eureka的共同点
 </div>
 </div><blockquote>
 <p>重启项目后，访问配置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406162720924.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406162720924"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406162720924.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406162720924.png" alt="image-20240406162720924"  />
+	</a>
+</div>
+
 修改配置后，<code>不重启</code>项目</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -3651,16 +3466,13 @@ Nacos与eureka的共同点
 </span></span><span class="line"><span class="cl"><span class="na">author.description</span><span class="o">=</span><span class="s">第一次发布</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406162807556.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406162807556"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406162807556.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406162807556.png" alt="image-20240406162807556"  />
+	</a>
+</div>
+</p>
 <ul>
 <li>方式二:使用@ConfigurationProperties注解
 新建<code>Author.java</code></li>
@@ -3741,28 +3553,22 @@ Nacos与eureka的共同点
 </div>
 </div><blockquote>
 <p>依然可以实现动态更新配置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406163238867.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406163238867"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406163238867.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406163238867.png" alt="image-20240406163238867"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h4 id="多环境配置共享">多环境配置共享
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182210993.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406182210993"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182210993.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182210993.png" alt="image-20240406182210993"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>nacos</code>/order-service-dev.properties</p>
 </blockquote>
@@ -3895,27 +3701,21 @@ Nacos与eureka的共同点
 </h4><blockquote>
 <p>将nacos持久化到数据库</p>
 <p>**<code>注意</code>**先导出一份配置，待会持久化到mysql之后导入之前的配置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182620580.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406182620580"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182620580.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182620580.png" alt="image-20240406182620580"  />
+	</a>
+</div>
+
 打开<code>SQL</code>执行界面
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182656584.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406182656584"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182656584.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406182656584.png" alt="image-20240406182656584"  />
+	</a>
+</div>
+
 注意不要直接执行，需要<code>新建数据库</code>，这里命令为<code>nacos_config</code></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -3926,71 +3726,53 @@ Nacos与eureka的共同点
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">use</span><span class="w"> </span><span class="n">nacos_config</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406183031988.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406183031988"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184136353.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406184136353"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406183031988.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406183031988.png" alt="image-20240406183031988"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184136353.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184136353.png" alt="image-20240406184136353"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>注意<code>账号</code>、<code>密码</code>不要写错
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184229297.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406184229297"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184229297.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184229297.png" alt="image-20240406184229297"  />
+	</a>
+</div>
+
 否则会报错如下
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184247861.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406184247861"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184247861.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184247861.png" alt="image-20240406184247861"  />
+	</a>
+</div>
+
 导入之前的配置（<code>order-service-dev.properties</code>、<code>order-service.properties</code>、<code>user-service-dev.properties</code>）
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184827019.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406184827019"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184827019.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406184827019.png" alt="image-20240406184827019"  />
+	</a>
+</div>
+
 可以看到数据库里已经保存了该配置的数据
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406185007386.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406185007386"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406185007386.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406185007386.png" alt="image-20240406185007386"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="feign">Feign
 </h2><h3 id="入门-1">入门
@@ -4010,8 +3792,7 @@ Nacos与eureka的共同点
 <ol>
 <li>代码可读性差，编程体验不统一</li>
 <li>参数复杂URL难以维护
-<code>Feign</code>是一个<code>声明式</code>的<code>http客户端</code>，官方地址: <a class="link" href="https://github.com/OpenFeign/feign"  target="_blank" rel="noopener"
-    >https://github.com/OpenFeign/feign</a>
+<code>Feign</code>是一个<code>声明式</code>的<code>http客户端</code>，官方地址: <a class="link" href="https://github.com/OpenFeign/feign"  target="_blank" rel="noopener" >https://github.com/OpenFeign/feign</a>
 其作用就是帮助我们优雅的实现http请求的发送,解决上面提到的问题。</li>
 <li>启动类上添加<code>@EnableFeignClients</code>注解</li>
 <li><code>@FeignClient(&quot;provider-service&quot;)</code>注解指定服务名，并复制<code>服务发布者</code>的controller方法到<code>interface</code>里，如</li>
@@ -4303,16 +4084,13 @@ Nacos与eureka的共同点
 <p>还是回到主题<code>feign</code>来</p>
 </blockquote>
 <h3 id="feign自定义配置">Feign自定义配置
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/%E6%97%A0%E6%A0%87%E9%A2%98.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="无标题"
-	
-	
-></p>
+</h3><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/%E6%97%A0%E6%A0%87%E9%A2%98.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/%E6%97%A0%E6%A0%87%E9%A2%98.png" alt="无标题"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -4438,16 +4216,13 @@ Nacos与eureka的共同点
 </blockquote>
 <ol>
 <li>方式一(继承):给消费者的FeignClient和提供者的controller定义统-的父接口作为标准。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406215310739.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406215310739"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406215310739.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406215310739.png" alt="image-20240406215310739"  />
+	</a>
+</div>
+
 <strong>缺点</strong></li>
 </ol>
 <ul>
@@ -4456,31 +4231,25 @@ Nacos与eureka的共同点
 </ul>
 <ol start="2">
 <li>方式二( 抽取) :将FeignClient抽取为独立模块,并且把接口有关的POJO、默认的Feign配置都放到这个模块中，提供给所有消费者使用
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406215531738.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406215531738"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406215531738.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406215531738.png" alt="image-20240406215531738"  />
+	</a>
+</div>
+
 <strong>缺点</strong>
 引用了过多的api，或许<code>order</code>只需要引入<code>user</code>的一两个<code>api</code>即可，但是现在却全部引入了</li>
 </ol>
 <blockquote>
 <p>尝试一下方式二，现在再新建两个项目<code>common</code>和<code>feign-api</code>，将一些公共类抽取到<code>common</code>中，如实体类<code>User</code>或者<code>Order</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406222235617.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406222235617"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406222235617.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406222235617.png" alt="image-20240406222235617"  />
+	</a>
+</div>
+
 common/pom.xml</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -4835,16 +4604,13 @@ common/pom.xml</p>
 </div>
 </div><blockquote>
 <p>因为包扫描的问题，<code>order</code>服务的默认包扫描在<code>com.example.order</code>下，但是<code>feign-api</code>的包在<code>com.example.feign.api</code>下
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406222933521.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406222933521"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406222933521.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406222933521.png" alt="image-20240406222933521"  />
+	</a>
+</div>
+
 建议选第二种</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -4879,16 +4645,13 @@ common/pom.xml</p>
 </div>
 </div><blockquote>
 <p>再次启动即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406223012310.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406223012310"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406223012310.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406223012310.png" alt="image-20240406223012310"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="gateway">Gateway
 </h2><h3 id="入门-2">入门
@@ -4898,16 +4661,13 @@ common/pom.xml</p>
 <li>身份认证和权限校验</li>
 <li>服务路由、 负载均衡</li>
 <li>请求限流
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406223620424.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240406223620424"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406223620424.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240406223620424.png" alt="image-20240406223620424"  />
+	</a>
+</div>
+
 在SpringCloud中网关的实现包括两种:</li>
 <li>gateway</li>
 <li>zuul
@@ -5028,39 +4788,30 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">8888</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071648831.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407071648831"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071705475.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407071705475"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071648831.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071648831.png" alt="image-20240407071648831"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071705475.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071705475.png" alt="image-20240407071705475"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>可以看到已经成功路由到<code>order</code>服务了</p>
 <p>整个流程如下图所示
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071801233.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407071801233"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071801233.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407071801233.png" alt="image-20240407071801233"  />
+	</a>
+</div>
+
 路由配置包括</p>
 </blockquote>
 <ol>
@@ -5072,19 +4823,15 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 <h3 id="路由断言工厂">路由断言工厂
 </h3><p>我们在配置文件中写的断言规则只是字符串,这些字符串会被Predicate Factory读取并处理,转变为路由判断的条件
 例如<code>Path=/user/**</code>是按照路径匹配，这个规则是由<code>org.springframework.cloud.gateway.handler.predicate.PathRoutePredicateFactory</code>类来处理的
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407072100082.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407072100082"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407072100082.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407072100082.png" alt="image-20240407072100082"  />
+	</a>
+</div>
+</p>
 <blockquote>
-<p>详细查看<a class="link" href="https://spring.io/projects/spring-cloud-gateway"  target="_blank" rel="noopener"
-    >spring官网</a></p>
+<p>详细查看<a class="link" href="https://spring.io/projects/spring-cloud-gateway"  target="_blank" rel="noopener" >spring官网</a></p>
 <p>这里试一下<code>After</code>，如果不知道时间格式怎么写，可以使用如下方法打印</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -5180,26 +4927,20 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 </blockquote>
 <h3 id="路由过滤器">路由过滤器
 </h3><p>GatewayFilter是网关中提供的一种过滤器，可以对进入网关的请求和微服务返回的响应做处理
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407073828621.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407073828621"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407073840487.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407073840487"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407073828621.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407073828621.png" alt="image-20240407073828621"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407073840487.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407073840487.png" alt="image-20240407073840487"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -5403,16 +5144,13 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 <p>区别在于<code>GatewayFilter</code>通过配置定义，处理逻辑是固定的。而<code>GlobalFilter</code>的逻辑需要自己写代码实现。</p>
 <p>感觉和<code>default-filters</code>很像，但是如果需要自定义一些复杂的逻辑，就得使用<code>GatewayFilter</code>了</p>
 <p>定义方式是实现<code>GatewayFilter</code>接口
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407075426584.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407075426584"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407075426584.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407075426584.png" alt="image-20240407075426584"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -5588,27 +5326,21 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 </div>
 </div><blockquote>
 <p>访问http://localhost:8888/order/1
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407080630998.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407080630998"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407080630998.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407080630998.png" alt="image-20240407080630998"  />
+	</a>
+</div>
+
 访问http://localhost:8888/order/1?authorization=admin
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407080653461.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407080653461"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407080653461.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407080653461.png" alt="image-20240407080653461"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="过滤器执行顺序">过滤器执行顺序
 </h3><blockquote>
@@ -5616,26 +5348,20 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 请求路由后，会将当前路由过滤器和DefaultFjlter、GlobalFilter, 合并到一个过滤器链(集合)中，排序后依次执行每个过滤器</p>
 <p>在<code>GatewayFilterAdapter</code>中<code>GatewayFilter</code>被适配成了<code>GatewayFilter</code></p>
 <p>网关中的所有过滤器最终都是<code>GatewayFilter</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081153557.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407081153557"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081341725.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407081341725"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081153557.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081153557.png" alt="image-20240407081153557"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081341725.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081341725.png" alt="image-20240407081341725"  />
+	</a>
+</div>
+
 <strong>过滤器执行顺序</strong></p>
 </blockquote>
 <ol>
@@ -5643,16 +5369,13 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 <li>GlobalFilter通过实现Ordered接口，或者添加@Order注解来指定order值，由我们自己指定</li>
 <li>路由过滤器和defaultFilter的order由Spring指定,默认是按照声明顺序从1递增。</li>
 <li>当过滤器的order值一样时， 会按照<code>defaultFilter</code> &gt;<code>路由过滤器</code>&gt; <code>GlobalFilter</code>的顺序执行。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081533812.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407081533812"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081533812.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407081533812.png" alt="image-20240407081533812"  />
+	</a>
+</div>
+</li>
 </ol>
 <h4 id="跨域问题处理">跨域问题处理
 </h4><blockquote>
@@ -5660,21 +5383,17 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 跨域:域名不一致就是跨域，主要包括:</p>
 </blockquote>
 <ol>
-<li>域名不同: <a class="link" href="https://www.taobao.com"  target="_blank" rel="noopener"
-    >www.taobao.com</a> 和www.taobao.org和www.jd.com和miaosha.jd.com</li>
+<li>域名不同: <a class="link" href="https://www.taobao.com"  target="_blank" rel="noopener" >www.taobao.com</a> 和www.taobao.org和www.jd.com和miaosha.jd.com</li>
 <li>域名相同，端口不同: localhost:8080和localhost8081
 跨域问题:浏览器禁止请求的发起者与服务端发生跨域ajax请求,请求被浏览器拦截的问题
 网关处理跨域采用的同样是CORS方案,并且只需要简单配置即可实现
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407082008295.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407082008295"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407082008295.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407082008295.png" alt="image-20240407082008295"  />
+	</a>
+</div>
+</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -5760,16 +5479,13 @@ Zuul是基于Servlet的实现，属于阻塞式编程。而SpringCloudGateway则
 </div>
 </div><blockquote>
 <p>使用<code>VS Code</code>启动
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407082338156.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240407082338156"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407082338156.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240407082338156.png" alt="image-20240407082338156"  />
+	</a>
+</div>
+
 配置</p>
 </blockquote>
 <div class="highlight"><div class="chroma">

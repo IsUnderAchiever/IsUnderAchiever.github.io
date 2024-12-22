@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="14.Teleport传送组件">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="14.Teleport传送组件">
 <meta property='og:description' content="14.Teleport传送组件">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -304,17 +304,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/">
-                <img src="/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/202412211946837_hu552104859302402075.png"
-                        srcset="/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/202412211946837_hu552104859302402075.png 800w, /p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/202412211946837_hu13638028890851848407.png 1600w"
-                        width="800" 
-                        height="373" 
-                        loading="lazy"
-                        alt="Featured image of post 14.Teleport传送组件" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/">
+            <img src="/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/202412211946837_hu552104859302402075.png" srcset="/p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/202412211946837_hu552104859302402075.png 800w, /p/14.teleport%E4%BC%A0%E9%80%81%E7%BB%84%E4%BB%B6/202412211946837_hu13638028890851848407.png 1600w"  width="800"
+                height="373" loading="lazy" alt="Featured image of post 14.Teleport传送组件" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -382,6 +378,11 @@
 </div>
 
 </header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 
     <section class="article-content">
     
@@ -518,16 +519,13 @@
 </span></span><span class="line"><span class="cl">&lt;/style&gt;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121995.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121995.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121995.png" alt="img"  />
+	</a>
+</div>
+</p>
 <h3 id="多个使用场景">多个使用场景
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -563,62 +561,47 @@
 </div>
 </div><h3 id="源码解析">源码解析
 </h3><p>在创建teleport 组件的时候会经过patch 方法 然后调用teleport 的process 方法
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121902.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121902.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121902.png" alt="img"  />
+	</a>
+</div>
+
 主要是创建 更新 和删除的逻辑
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121086.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121086.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121086.png" alt="img"  />
+	</a>
+</div>
+
 他通过 resolveTarget 函数 获取了props.to 和 querySelect 获取 了目标元素
 然后判断是否有disabled 如果有则 to 属性不生效 否则 挂载新的位置
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121972.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121972.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121972.png" alt="img"  />
+	</a>
+</div>
+
 新节点disabled 为 true  旧节点disabled false 就把子节点移动回容器
 如果新节点disabled 为 false 旧节点为true 就把子节点移动到目标元素
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121942.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121942.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121942.png" alt="img"  />
+	</a>
+</div>
+
 遍历teleport 子节点进行unmount方法去移除
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121056.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="img"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121056.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307232121056.png" alt="img"  />
+	</a>
+</div>
+</p>
 
 </section>
 

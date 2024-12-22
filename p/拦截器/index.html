@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/%E6%8B%A6%E6%88%AA%E5%99%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="拦截器">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="拦截器">
 <meta property='og:description' content="拦截器">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/%E6%8B%A6%E6%88%AA%E5%99%A8/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -266,17 +266,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/%E6%8B%A6%E6%88%AA%E5%99%A8/">
-                <img src="/p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331_hu211479134585629788.png"
-                        srcset="/p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331_hu211479134585629788.png 800w, /p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331_hu17266170340933010716.png 1600w"
-                        width="800" 
-                        height="296" 
-                        loading="lazy"
-                        alt="Featured image of post 拦截器" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/%E6%8B%A6%E6%88%AA%E5%99%A8/">
+            <img src="/p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331_hu211479134585629788.png" srcset="/p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331_hu211479134585629788.png 800w, /p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331_hu17266170340933010716.png 1600w"  width="800"
+                height="296" loading="lazy" alt="Featured image of post 拦截器" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -345,6 +341,11 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
@@ -354,20 +355,16 @@
 <img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132201695.png" alt="拦截器请求参数" style="zoom:80%;" />
 输出了一下请求路径，发现如下
 <img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132202244.png" alt="拦截器" style="zoom:80%;" />
-<a class="link" href="https://www.cnblogs.com/fnlingnzb-learner/p/16476760.html"  target="_blank" rel="noopener"
-    >参考博客</a>
+<a class="link" href="https://www.cnblogs.com/fnlingnzb-learner/p/16476760.html"  target="_blank" rel="noopener" >参考博客</a>
 至于为什么会请求error，应该是没有找到favicon.ico的请求
 <code>解决方法如下</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132208874.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230313220847762"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132208874.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132208874.png" alt="image-20230313220847762"  />
+	</a>
+</div>
+</p>
 <ol>
 <li>放过favicon.ico请求</li>
 <li>static里增加一个图标即可</li>

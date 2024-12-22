@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/aot%E5%AD%A6%E4%B9%A0/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="AOT学习">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="AOT学习">
 <meta property='og:description' content="AOT学习">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/aot%E5%AD%A6%E4%B9%A0/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -315,17 +315,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/aot%E5%AD%A6%E4%B9%A0/">
-                <img src="/p/aot%E5%AD%A6%E4%B9%A0/202412212133331_hu211479134585629788.png"
-                        srcset="/p/aot%E5%AD%A6%E4%B9%A0/202412212133331_hu211479134585629788.png 800w, /p/aot%E5%AD%A6%E4%B9%A0/202412212133331_hu17266170340933010716.png 1600w"
-                        width="800" 
-                        height="296" 
-                        loading="lazy"
-                        alt="Featured image of post AOT学习" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/aot%E5%AD%A6%E4%B9%A0/">
+            <img src="/p/aot%E5%AD%A6%E4%B9%A0/202412212133331_hu211479134585629788.png" srcset="/p/aot%E5%AD%A6%E4%B9%A0/202412212133331_hu211479134585629788.png 800w, /p/aot%E5%AD%A6%E4%B9%A0/202412212133331_hu17266170340933010716.png 1600w"  width="800"
+                height="296" loading="lazy" alt="Featured image of post AOT学习" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -394,14 +390,18 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
     <h1 id="aot学习">AOT学习
 </h1><h2 id="aot学习-1">AOT学习
 </h2><blockquote>
-<p><a class="link" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?spm_id_from=333.337.search-card.all.click&amp;vd_source=0de2cc95ad0adc3e9ec15f6dcede1a20"  target="_blank" rel="noopener"
-    >选自 尚硅谷Spring6教程</a></p>
+<p><a class="link" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?spm_id_from=333.337.search-card.all.click&amp;vd_source=0de2cc95ad0adc3e9ec15f6dcede1a20"  target="_blank" rel="noopener" >选自 尚硅谷Spring6教程</a></p>
 </blockquote>
 <h3 id="jit">JIT
 </h3><blockquote>
@@ -432,16 +432,13 @@ AOT 编译能直接将源代码转化为机器码，内存占用低，启动速�
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.java -&gt; .class -&gt; (使用jaotc编译工具) -&gt; .so（程序函数库,即编译好的可以供其他程序使用的代码和数据）
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048128.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207113544080"
-	
-	
->
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048128.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048128.png" alt="image-20221207113544080"  />
+	</a>
+</div>
+
 <strong>（3）AOT的优点</strong>
 **简单来讲，**Java 虚拟机加载已经预编译成二进制库，可以直接执行。不必等待及时编译器的预热，减少 Java 应用给人带来“第一次运行慢” 的不良体验。
 在程序运行前编译，可以避免在运行时的编译性能消耗和内存消耗<br>
@@ -466,163 +463,119 @@ Native Image 是一项创新技术，可将 Java 代码编译成独立的本机�
 <h3 id="112演示native-image构建过程">11.2、演示Native Image构建过程
 </h3><h4 id="1121graalvm安装">11.2.1、GraalVM安装
 </h4><h5 id="1下载graalvm">（1）下载GraalVM
-</h5><p>进入官网下载：<a class="link" href="https://www.graalvm.org/downloads/"  target="_blank" rel="noopener"
-    >https://www.graalvm.org/downloads/</a>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048367.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207153944132"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048924.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207152841304"
-	
-	
-></p>
+</h5><p>进入官网下载：<a class="link" href="https://www.graalvm.org/downloads/"  target="_blank" rel="noopener" >https://www.graalvm.org/downloads/</a>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048367.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048367.png" alt="image-20221207153944132"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048924.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048924.png" alt="image-20221207152841304"  />
+	</a>
+</div>
+</p>
 <h5 id="2配置环境变量">（2）配置环境变量
 </h5><p><strong>添加GRAALVM_HOME</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048933.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207110539954"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048933.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048933.png" alt="image-20221207110539954"  />
+	</a>
+</div>
+
 <strong>把JAVA_HOME修改为graalvm的位置</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048943.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207153724340"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048943.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048943.png" alt="image-20221207153724340"  />
+	</a>
+</div>
+
 <strong>把Path修改位graalvm的bin位置</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048946.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207153755732"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048946.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048946.png" alt="image-20221207153755732"  />
+	</a>
+</div>
+
 <strong>使用命令查看是否安装成功</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048964.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207153642253"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048964.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048964.png" alt="image-20221207153642253"  />
+	</a>
+</div>
+</p>
 <h5 id="3安装native-image插件">（3）安装native-image插件
 </h5><p><strong>使用命令 gu install native-image下载安装</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048010.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207155009832"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048010.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048010.png" alt="image-20221207155009832"  />
+	</a>
+</div>
+</p>
 <h4 id="1122安装c的编译环境">11.2.2、安装C++的编译环境
 </h4><h5 id="1下载visual-studio安装软件">（1）下载Visual Studio安装软件
-</h5><p><a class="link" href="https://visualstudio.microsoft.com/zh-hans/downloads/"  target="_blank" rel="noopener"
-    >https://visualstudio.microsoft.com/zh-hans/downloads/</a>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048496.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221219112426052"
-	
-	
-></p>
+</h5><p><a class="link" href="https://visualstudio.microsoft.com/zh-hans/downloads/"  target="_blank" rel="noopener" >https://visualstudio.microsoft.com/zh-hans/downloads/</a>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048496.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048496.png" alt="image-20221219112426052"  />
+	</a>
+</div>
+</p>
 <h5 id="2安装visual-studio">（2）安装Visual Studio
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048493.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207155726572"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048516.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207155756512"
-	
-	
-></p>
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048493.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048493.png" alt="image-20221207155726572"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048516.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048516.png" alt="image-20221207155756512"  />
+	</a>
+</div>
+</p>
 <h5 id="3添加visual-studio环境变量">（3）添加Visual Studio环境变量
 </h5><p>配置INCLUDE、LIB和Path
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048521.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207110947997"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048535.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111012582"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048545.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111105569"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048521.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048521.png" alt="image-20221207110947997"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048535.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048535.png" alt="image-20221207111012582"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048545.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048545.png" alt="image-20221207111105569"  />
+	</a>
+</div>
+</p>
 <h5 id="4打开工具在工具中操作">（4）打开工具，在工具中操作
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048484.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111206279"
-	
-	
-></p>
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048484.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048484.png" alt="image-20221207111206279"  />
+	</a>
+</div>
+</p>
 <h4 id="1123编写代码构建native-image">11.2.3、编写代码，构建Native Image
 </h4><h5 id="1编写java代码">（1）编写Java代码
 </h5><div class="highlight"><div class="chroma">
@@ -642,106 +595,79 @@ Native Image 是一项创新技术，可将 Java 代码编译成独立的本机�
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="2复制文件到目录执行编译">（2）复制文件到目录，执行编译
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048482.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111420056"
-	
-	
-></p>
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048482.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048482.png" alt="image-20221207111420056"  />
+	</a>
+</div>
+</p>
 <h5 id="3native-image-进行构建">（3）Native Image 进行构建
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048499.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111509837"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048512.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111609878"
-	
-	
-></p>
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048499.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048499.png" alt="image-20221207111509837"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048512.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048512.png" alt="image-20221207111609878"  />
+	</a>
+</div>
+</p>
 <h5 id="4查看构建的文件">（4）查看构建的文件
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048087.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111644950"
-	
-	
-></p>
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048087.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048087.png" alt="image-20221207111644950"  />
+	</a>
+</div>
+</p>
 <h5 id="5执行构建的文件">（5）执行构建的文件
-</h5><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048109.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111731150"
-	
-	
->
+</h5><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048109.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048109.png" alt="image-20221207111731150"  />
+	</a>
+</div>
+
 可以看到这个Hello最终打包产出的二进制文件大小为11M，这是包含了SVM和JDK各种库后的大小，虽然相比C/C++的二进制文件来说体积偏大，但是对比完整JVM来说，可以说是已经是非常小了。
 相比于使用JVM运行，Native Image的速度要快上不少，cpu占用也更低一些，从官方提供的各类实验数据也可以看出Native Image对于启动速度和内存占用带来的提升是非常显著的：
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048122.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207111947283"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048125.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20221207112009852"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048122.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048122.png" alt="image-20221207111947283"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048125.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112048125.png" alt="image-20221207112009852"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>如果报错如下
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112219840.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230411221933712"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112219840.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112219840.png" alt="image-20230411221933712"  />
+	</a>
+</div>
+
 <code>原因，权限不够，以管理员权限启动即可</code>
 环境配置</p>
 <p>如果想像这样添加多行，那么在添加第一行的时候，加一个英文的分号，即 ;
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112220560.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230411222039492"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112220560.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112220560.png" alt="image-20230411222039492"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -759,16 +685,13 @@ Native Image 是一项创新技术，可将 Java 代码编译成独立的本机�
 </span></span><span class="line"><span class="cl">C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112221435.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230411222158372"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112221435.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112221435.png" alt="image-20230411222158372"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -783,16 +706,13 @@ Native Image 是一项创新技术，可将 Java 代码编译成独立的本机�
 </span></span><span class="line"><span class="cl">D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112223251.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230411222305184"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112223251.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304112223251.png" alt="image-20230411222305184"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1

@@ -154,16 +154,13 @@ Redis基于内存，单节点能存储的数据量难以满足海量数据需求
 &lt;p&gt;这里有一句&lt;code&gt;Saving the final RDB snapshot before exiting.&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Redis将文件保存在运行目录中&lt;/p&gt;
 &lt;p&gt;我这是&lt;code&gt;windows&lt;/code&gt;系统，如果是&lt;code&gt;linux&lt;/code&gt;则使用&lt;code&gt;ls&lt;/code&gt;、&lt;code&gt;ll&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240415211506657&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415211506657.png&#34; alt=&#34;image-20240415211506657&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 但是我们担心如果突然宕机还没来得及持久化怎么办，我们更加希望隔一段时间持久化一次&lt;/p&gt;
 &lt;p&gt;Redis内部有触发RDB的机制，可以在redis.conf文件中找到， 格式如下:&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -206,29 +203,23 @@ Redis基于内存，单节点能存储的数据量难以满足海量数据需求
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;bgsave开始时会&lt;code&gt;fork&lt;/code&gt;主进程得到子进程，子进程共享主进程的内存数据。完成fork后读取内存数据并写入RDB文件。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240415213015095&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213015095.png&#34; alt=&#34;image-20240415213015095&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 fork采用的是copy-on-write技术:
 当主进程执行读操作时,访问共享内存;
 当主进程执行写操作时，则会拷贝一份数据，执行写操作。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240415213600960&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415213600960.png&#34; alt=&#34;image-20240415213600960&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;总结&#34;&gt;总结
 &lt;/h4&gt;&lt;p&gt;RDB方式bgsave的基本流程?&lt;/p&gt;
@@ -284,28 +275,22 @@ AOF默认是关闭的，需要修改redis.conf配置文件来开启AOF:&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;appendfsync&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;no&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240415214253132&#34;
-	
-	
-&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214253132.png&#34; alt=&#34;image-20240415214253132&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 由于AOF记录的是命令操作，而不是直接记录值，所以会比RDB文件大很多
 因为是记录命令, AOF文件会比RDB文件大的多。而且AOF会记录对同一个key的多次写操作，但只有最后一-次写操作才有意义。通过执行bgrewriteaof命令，可以让AOF文件执行重写功能，用最少的命令达到相同效果。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240415214743582&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415214743582.png&#34; alt=&#34;image-20240415214743582&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 Redis也会在&lt;code&gt;触发阈值&lt;/code&gt;时自动去重写AOF文件。阈值也可以在redis.conf中配置:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -322,29 +307,23 @@ Redis也会在&lt;code&gt;触发阈值&lt;/code&gt;时自动去重写AOF文件�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;RDB&lt;/code&gt;和&lt;code&gt;AOF&lt;/code&gt;各有自己的优缺点，如果对数据安全性要求较高,在实际开发中往往会结合两者来使用。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240415215054692&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240415215054692.png&#34; alt=&#34;image-20240415215054692&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h2 id=&#34;redis主从&#34;&gt;Redis主从
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;单节点Redis的并发能力是有上限的，要近一步提高Redis的并发能力，就需要搭建主从集群，实现读写分离。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416063931474&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416063931474.png&#34; alt=&#34;image-20240416063931474&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 开启RDB，关闭AOF&lt;/p&gt;
 &lt;p&gt;一主二从 A（B、C） 一个master两个slave/replica&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -367,104 +346,77 @@ Redis也会在&lt;code&gt;触发阈值&lt;/code&gt;时自动去重写AOF文件�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;windows&#34;&gt;windows
-&lt;/h3&gt;&lt;p&gt;windows配置redis集群查看&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_41846320/article/details/83753667&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;该博客&lt;/a&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;windows配置redis集群查看&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_41846320/article/details/83753667&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;该博客&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;主节点
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416070837220&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070837220.png&#34; alt=&#34;image-20240416070837220&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 从节点
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416070901240&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416070908369&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070901240.png&#34; alt=&#34;image-20240416070901240&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416070908369.png&#34; alt=&#34;image-20240416070908369&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 从节点只能读数据，不能写数据
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416071004714&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071004714.png&#34; alt=&#34;image-20240416071004714&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 关闭主节点后，从节点的状态
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416071252667&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071252667.png&#34; alt=&#34;image-20240416071252667&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 重启主节点后，从节点的状态
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240416071420341&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240416071420341.png&#34; alt=&#34;image-20240416071420341&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;linux&#34;&gt;linux
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;接下来演示&lt;code&gt;docker配置redis集群&lt;/code&gt;，参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_43025151/article/details/134205482&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客链接&lt;/a&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421125052157&#34;
-	
-	
-&gt;
+&lt;p&gt;接下来演示&lt;code&gt;docker配置redis集群&lt;/code&gt;，参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_43025151/article/details/134205482&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客链接&lt;/a&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421125052157.png&#34; alt=&#34;image-20240421125052157&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 可以看到本地已经拉取了&lt;code&gt;redis&lt;/code&gt;镜像
 在&lt;code&gt;/root&lt;/code&gt;目录下新建一个&lt;code&gt;redis.conf&lt;/code&gt;文件和&lt;code&gt;data&lt;/code&gt;目录
 &lt;code&gt;data&lt;/code&gt;用以存储redis持久化文件，&lt;code&gt;redis.conf&lt;/code&gt;作为redis的配置文件，这里配置&lt;code&gt;主从集群&lt;/code&gt;，所以需要新建三个&lt;code&gt;conf&lt;/code&gt;和&lt;code&gt;data&lt;/code&gt;，目录及文件如下
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421135026402&#34;
-	
-	
-&gt;
-&lt;code&gt;redis-7001.conf&lt;/code&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/redis-7001.conf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421135026402.png&#34; alt=&#34;image-20240421135026402&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;code&gt;redis-7001.conf&lt;/code&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/redis-7001.conf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;启动容器，这里使用&lt;code&gt;7001&lt;/code&gt;作为端口号&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -485,30 +437,24 @@ Redis也会在&lt;code&gt;触发阈值&lt;/code&gt;时自动去重写AOF文件�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;redis-server /etc/redis/redis.conf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421133144513&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421133144513.png&#34; alt=&#34;image-20240421133144513&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;配置文件直接复制7001即可，反正将来也是以容器为单位启动，不会造成端口冲突，但是虚拟机(宿主机)的端口映射则不能都写7001了&lt;/p&gt;
 &lt;p&gt;7001端口已经被&lt;code&gt;master&lt;/code&gt;占据了，剩下两个&lt;code&gt;slave&lt;/code&gt;使用&lt;code&gt;7002、7003&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;修改对应的持久化目录
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421140154283&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421140154283.png&#34; alt=&#34;image-20240421140154283&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;code&gt;redis-7001.conf&lt;/code&gt;文件中添加如下配置&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -595,16 +541,13 @@ Redis也会在&lt;code&gt;触发阈值&lt;/code&gt;时自动去重写AOF文件�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it redis-master redis-cli info replication
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421142455620&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142455620.png&#34; alt=&#34;image-20240421142455620&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -623,27 +566,21 @@ Redis也会在&lt;code&gt;触发阈值&lt;/code&gt;时自动去重写AOF文件�
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;slave1
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421142858831&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142858831.png&#34; alt=&#34;image-20240421142858831&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 slave2
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421142916435&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421142916435.png&#34; alt=&#34;image-20240421142916435&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 此时停止master&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -654,16 +591,13 @@ slave2
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker stop redis-master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421143048582&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143048582.png&#34; alt=&#34;image-20240421143048582&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;尝试向slave中写入数据&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -679,52 +613,40 @@ slave2
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; name tigerhhzz11
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421143606124&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143606124.png&#34; alt=&#34;image-20240421143606124&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;向master中写入数据，在slave中读出
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421143752145&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421143738686&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143752145.png&#34; alt=&#34;image-20240421143752145&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421143738686.png&#34; alt=&#34;image-20240421143738686&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;数据同步原理&#34;&gt;数据同步原理
 &lt;/h2&gt;&lt;h3 id=&#34;步骤&#34;&gt;步骤
 &lt;/h3&gt;&lt;p&gt;主从第一次同步是&lt;code&gt;全量同步&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421144659573&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421144659573.png&#34; alt=&#34;image-20240421144659573&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;master怎么知道slave是否是第一次请求数据呢？这里会用到两个很重要的概念:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Replication id&lt;/code&gt;:简称replid, 是数据集的标记，id一致则说明是同一数据集。每一个master都有唯一的replid,slave则会&lt;code&gt;继承&lt;/code&gt;master节点的replid&lt;/p&gt;
@@ -769,32 +691,26 @@ slave2
 &lt;/ol&gt;
 &lt;h3 id=&#34;增量同步&#34;&gt;增量同步
 &lt;/h3&gt;&lt;p&gt;主从第一次同步是&lt;code&gt;全量同步&lt;/code&gt;,但如果slave重启后同步，则执行&lt;code&gt;增量同步&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421150448468&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421150448468.png&#34; alt=&#34;image-20240421150448468&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;repl_baklog&lt;/code&gt;本质是一个&lt;code&gt;环形数组&lt;/code&gt;，slave与master数据之间的差异=master-slave（图中红色线段的部分）&lt;/p&gt;
 &lt;p&gt;当数据记完一圈后，会覆盖掉上次的内容继续往下记载，slave也会继续跟着master往后同步数据&lt;/p&gt;
 &lt;p&gt;但是这样就存在&lt;code&gt;无法进行增量同步&lt;/code&gt;的情况&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;repl_baklog&lt;/code&gt;大小有上限，写满后会覆盖最早的数据。如果slave断开时间过久，导致数据被覆盖,则无法实现增量同步，只能再次全量同步。&lt;/p&gt;
 &lt;p&gt;如果master已经覆盖掉上一次的内容，开始记入第二圈的数据，而slave由于某种原因宕机，导致master覆盖的数据并没有同步完成
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421151021414&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151021414.png&#34; alt=&#34;image-20240421151021414&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 此时就只能做全量同步了，无法进行增量同步&lt;/p&gt;
 &lt;p&gt;应当尽可能的减少全量同步，因为它的性能较差。或许可以进一步优化全量同步的性能&lt;/p&gt;
 &lt;p&gt;可以从以下几个方面来优化Redis主从就集群:&lt;/p&gt;
@@ -811,16 +727,13 @@ slave2
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;限制一个master上的slave节点数量，如果实在是太多slave,则可以采用&lt;code&gt;主-从-从&lt;/code&gt;链式结构，减少master压力
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421151554098&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240421151554098.png&#34; alt=&#34;image-20240421151554098&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
@@ -845,32 +758,26 @@ Redis提供了哨兵(Sentinel) 机制来实现主从集群的自动故障恢复�
 &lt;strong&gt;监控&lt;/strong&gt;: Sentinel 会不断检查您的master和slave是否按预期工作
 &lt;strong&gt;自动故障恢复&lt;/strong&gt;:如果master故障，Sentinel会将一个slave提升为master。当故障实例恢复后也以新的master为主
 &lt;strong&gt;通知&lt;/strong&gt;: Sentinel充当Redis客户端的服务发现来源，当集群发生故障转移时，会将最新信息推送给Redis的客户端
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421195306145&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010655.png&#34; alt=&#34;image-20240421195306145&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;服务状态监控&#34;&gt;服务状态监控
 &lt;/h4&gt;&lt;p&gt;Sentinel基于心跳机制监测服务状态,每隔1秒向集群的每个实例发送ping命令:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;主观下线:如果某sentinel节点发现某实例未在规定时间响应，则认为该实例主观下线。&lt;/li&gt;
 &lt;li&gt;客观下线:若超过指定数量( quorum)的sentinel都认为该实例主观下线，则该实例客观下线。quorum值最好超过Sentinel实例数量的一半。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421200042664&#34;
-	
-	
-&gt;&lt;/li&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212010983.png&#34; alt=&#34;image-20240421200042664&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;选举新的master&#34;&gt;选举新的master
 &lt;/h4&gt;&lt;p&gt;一旦发现master故障，sentinel需 要在salve中选择- -一个作为新的master,选择依据是这样的:&lt;/p&gt;
@@ -886,16 +793,13 @@ Redis提供了哨兵(Sentinel) 机制来实现主从集群的自动故障恢复�
 &lt;li&gt;sentinel给 备选的slave1节点发送&lt;code&gt;slaveof no one&lt;/code&gt;命令,让该节点成为master&lt;/li&gt;
 &lt;li&gt;sentinel给所有其它slave发送&lt;code&gt;slaveof 192.168.150.101 7002&lt;/code&gt;命令，让这些slave成为新master的从节点，开始从新的master上同步数据。&lt;/li&gt;
 &lt;li&gt;最后，sentinel将故障节点标记为slave,当故障节点恢复后会自动成为新的master的slave节点
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421201712016&#34;
-	
-	
-&gt;&lt;/li&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212017069.png&#34; alt=&#34;image-20240421201712016&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;总结-3&#34;&gt;总结
 &lt;/h4&gt;&lt;p&gt;Sentinel的三个作用是什么?&lt;/p&gt;
@@ -914,16 +818,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;h3 id=&#34;搭建哨兵集群&#34;&gt;搭建哨兵集群
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;手动创建&lt;code&gt;sentinel&lt;/code&gt;下的&lt;code&gt;s1、s2、s3&lt;/code&gt;，然后配置&lt;code&gt;sentinel.conf&lt;/code&gt;文件
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421210126992&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212101080.png&#34; alt=&#34;image-20240421210126992&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -954,16 +855,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;启动&lt;code&gt;sentinel&lt;/code&gt;的&lt;code&gt;jar&lt;/code&gt;包
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421210646154&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212106197.png&#34; alt=&#34;image-20240421210646154&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 启动三个sentinel容器&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1025,28 +923,22 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it sentinel-1 redis-cli -h 192.168.56.10 -p &lt;span class=&#34;m&#34;&gt;27001&lt;/span&gt; info sentinel
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421222424683&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212224751.png&#34; alt=&#34;image-20240421222424683&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意目录对应关系，如果在运行容器时，将&lt;code&gt;conf&lt;/code&gt;路径写错了，则可能出现如下情况
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240421222751214&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404212227284.png&#34; alt=&#34;image-20240421222751214&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 此时停止&lt;code&gt;redis-master&lt;/code&gt;节点，查看&lt;code&gt;sentinel&lt;/code&gt;日志&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1059,29 +951,23 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs sentinel-1
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422064431835&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220644926.png&#34; alt=&#34;image-20240422064431835&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;解决办法，直接挂载整个目录，而不是只挂载某个conf文件，注意&lt;code&gt;权限&lt;/code&gt;设置为777，目录和文件都要设置&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;chmod 777 -R &amp;lt;file&amp;gt;&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422073450817&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220734941.png&#34; alt=&#34;image-20240422073450817&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1134,16 +1020,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;但是日志打印还有一个警告
 &lt;strong&gt;1:X 21 Apr 2024 23:33:24.072 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422073645324&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220736397.png&#34; alt=&#34;image-20240422073645324&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 解决办法&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1154,16 +1037,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim /etc/sysctl.conf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422074046273&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220740344.png&#34; alt=&#34;image-20240422074046273&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;文件新增如下内容&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1241,16 +1121,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;问题已经解决
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422075110021&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220751093.png&#34; alt=&#34;image-20240422075110021&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 停掉&lt;code&gt;redis-master&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;查看sentinel日志&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1262,16 +1139,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs sentinel-3
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422080023345&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220800499.png&#34; alt=&#34;image-20240422080023345&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;查看redis节点状态，发现&lt;code&gt;7003&lt;/code&gt;确实成为&lt;code&gt;master&lt;/code&gt;了&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1283,28 +1157,22 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it redis-slave2 redis-cli info replication
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422075815065&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220758218.png&#34; alt=&#34;image-20240422075815065&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;重启&lt;code&gt;7001&lt;/code&gt;，发现原来的&lt;code&gt;master&lt;/code&gt;变成&lt;code&gt;slave&lt;/code&gt;了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422080253175&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220802251.png&#34; alt=&#34;image-20240422080253175&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;redistemplate的哨兵模式&#34;&gt;RedisTemplate的哨兵模式
 &lt;/h3&gt;&lt;blockquote&gt;
@@ -1453,29 +1321,23 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422082247840&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220822902.png&#34; alt=&#34;image-20240422082247840&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;报错&lt;code&gt;io.lettuce.core.RedisCommandExecutionException: ERR No such master with that name&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;名称改为&lt;code&gt;redis-master&lt;/code&gt;，与&lt;code&gt;sentinel.conf&lt;/code&gt;文件中的配置保持一致
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422082422321&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220824380.png&#34; alt=&#34;image-20240422082422321&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1521,28 +1383,22 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;访问&lt;code&gt;http://localhost:8080/get/name&lt;/code&gt;(得有一个叫name的数据)
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422082543326&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220825414.png&#34; alt=&#34;image-20240422082543326&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;可以看到这里通过7002来获取数据&lt;/strong&gt;
 访问&lt;code&gt;http://localhost:8080/set/name/333&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422082647557&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220826733.png&#34; alt=&#34;image-20240422082647557&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;可以看到这里通过7003来设置数据&lt;/strong&gt;
 重启&lt;code&gt;redis-slave2&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1556,115 +1412,85 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;此时&lt;code&gt;slave1(7002)&lt;/code&gt;被选为master
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422083027509&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422083109475&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220830568.png&#34; alt=&#34;image-20240422083027509&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831656.png&#34; alt=&#34;image-20240422083109475&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;code&gt;7003&lt;/code&gt;为&lt;code&gt;replica&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422083125383&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404220831464.png&#34; alt=&#34;image-20240422083125383&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 使用idea连接虚拟机&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Deployment-&amp;gt;Configuration&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201104329&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011412.png&#34; alt=&#34;image-20240422201104329&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 新建&lt;code&gt;SFTP&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201138710&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201502055&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222011833.png&#34; alt=&#34;image-20240422201138710&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015126.png&#34; alt=&#34;image-20240422201502055&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 查看虚拟机文件&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Deployment-&amp;gt;Browse Remote Host&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201551614&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222015689.png&#34; alt=&#34;image-20240422201551614&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 右侧就可以看到虚拟机的文件信息了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201634100&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222016266.png&#34; alt=&#34;image-20240422201634100&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 打开命令窗口&lt;/p&gt;
 &lt;p&gt;点击&lt;code&gt;Tools-&amp;gt;Start SSH Session&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201705287&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422201727483&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017371.png&#34; alt=&#34;image-20240422201705287&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222017656.png&#34; alt=&#34;image-20240422201727483&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;redis分片集群&#34;&gt;Redis分片集群
 &lt;/h2&gt;&lt;blockquote&gt;
@@ -1764,30 +1590,24 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;cluster-config-file&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;nodes-6379.conf&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422204825169&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222048262.png&#34; alt=&#34;image-20240422204825169&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;重命名&lt;code&gt;redis.conf&lt;/code&gt;为&lt;code&gt;redis1.conf&lt;/code&gt;，并复制成其他五份&lt;code&gt;redis2.conf、redis3.conf、redis4.conf、redis5.conf、redis6.conf&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这6份配置文件内容完全相同&lt;/p&gt;
 &lt;p&gt;更改文件之后记得上传
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422205154155&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222051246.png&#34; alt=&#34;image-20240422205154155&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 停止之前运行的&lt;code&gt;redis、sentinel&lt;/code&gt;容器&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1798,16 +1618,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker stop redis-master redis-slave1 redis-slave2 sentinel-1 sentinel-2 sentinel-3
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422205342819&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222053908.png&#34; alt=&#34;image-20240422205342819&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1930,16 +1747,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli --cluster create --cluster-replicas &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; 192.168.56.10:8001 192.168.56.10:8002 192.168.56.10:8003 192.168.56.10:9001 192.168.56.10:9002 192.168.56.10:9003
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422210937770&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222109918.png&#34; alt=&#34;image-20240422210937770&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;查看节点信息&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1951,31 +1765,25 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -c -p &lt;span class=&#34;m&#34;&gt;8003&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240422211623156&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404222116235.png&#34; alt=&#34;image-20240422211623156&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这样就可以查看到节点的信息了&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;散列插槽&#34;&gt;散列插槽
 &lt;/h3&gt;&lt;p&gt;Redis会把每一个master节 点映射到0~16383共16384个插槽(hashslot) 上，查看集群信息时就能看到:
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240423215451539&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232154657.png&#34; alt=&#34;image-20240423215451539&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我们这里插槽分布如下&lt;/p&gt;
 &lt;table&gt;
@@ -2022,16 +1830,13 @@ Sentinel如何判断一个redis实例是否健康?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -c -p &lt;span class=&#34;m&#34;&gt;8001&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240423221028770&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404232210854.png&#34; alt=&#34;image-20240423221028770&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;redis会先算出插槽的值，最后找到对应的ip及端口，存储(获取)对应redis实例里的数据
 Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
@@ -2054,16 +1859,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli --cluster &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424073841796&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240738901.png&#34; alt=&#34;image-20240424073841796&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;向集群中添加一个新的master节点,并向其中存储num = 10
 &lt;strong&gt;需求&lt;/strong&gt;
@@ -2075,8 +1877,7 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;li&gt;新增redis(master)实例到集群&lt;/li&gt;
 &lt;li&gt;分配插槽，使其能够存储&lt;code&gt;num&lt;/code&gt;作为key(hashkey为&lt;code&gt;2765&lt;/code&gt;)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/zhoujinyi/p/11606935.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;博客&lt;/a&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/zhoujinyi/p/11606935.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;
 &lt;strong&gt;复制一份&lt;code&gt;redis7.conf&lt;/code&gt;文件&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2097,16 +1898,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--port &lt;span class=&#34;m&#34;&gt;8004&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424080947181&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240809279.png&#34; alt=&#34;image-20240424080947181&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;可以看到集群节点里并没有新建的&lt;code&gt;8004&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2120,16 +1918,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -c -p &lt;span class=&#34;m&#34;&gt;8003&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424082942970&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242013465.png&#34; alt=&#34;image-20240424082942970&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;查看帮助文档&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2141,16 +1936,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli --cluster &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424082917801&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404240829903.png&#34; alt=&#34;image-20240424082917801&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;添加节点到集群&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2162,16 +1954,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli --cluster add-node 192.168.56.10:8004 192.168.56.10:8003
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424202128104&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021196.png&#34; alt=&#34;image-20240424202128104&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;再次查看集群信息，可以看到&lt;code&gt;8004&lt;/code&gt;是作为master的，但是并没有给它分配插槽&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2183,28 +1972,22 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -c -p &lt;span class=&#34;m&#34;&gt;8003&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424202157821&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242021909.png&#34; alt=&#34;image-20240424202157821&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;接下来需要为&lt;code&gt;8004&lt;/code&gt;分配至少&lt;code&gt;0~2765&lt;/code&gt;的插槽，这里就直接分配前&lt;code&gt;3000&lt;/code&gt;个了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424204432417&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242044685.png&#34; alt=&#34;image-20240424204432417&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 输入&lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;再次查看节点信息，可以看到已经分配了&lt;code&gt;0-2999&lt;/code&gt;的插槽&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2216,16 +1999,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -p &lt;span class=&#34;m&#34;&gt;8004&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424204721576&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242047718.png&#34; alt=&#34;image-20240424204721576&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;试一下获取&lt;code&gt;num&lt;/code&gt;，可以看到是从8004上获取的数据&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2237,40 +2017,31 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -c -p &lt;span class=&#34;m&#34;&gt;8001&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424204902473&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242049543.png&#34; alt=&#34;image-20240424204902473&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;删除8004节点
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424205045856&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242050050.png&#34; alt=&#34;image-20240424205045856&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 转移插槽
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424205333760&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242053831.png&#34; alt=&#34;image-20240424205333760&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 删除节点，可以看到&lt;code&gt;8004&lt;/code&gt;节点已经被移除&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2281,28 +2052,22 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli --cluster del-node 192.168.56.10:8004 969b40741ba2c93557ff9013a774f98322f77ba0
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424205522582&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242055720.png&#34; alt=&#34;image-20240424205522582&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;删除容器
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424205605167&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242056356.png&#34; alt=&#34;image-20240424205605167&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2318,41 +2083,32 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;自动故障转移&#34;&gt;自动故障转移
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;当集群中有一个master宕机会发生什么呢?
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424205957402&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242059554.png&#34; alt=&#34;image-20240424205957402&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 重新启动8002
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424210155393&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242101468.png&#34; alt=&#34;image-20240424210155393&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 可以看到&lt;code&gt;8002&lt;/code&gt;变成了&lt;code&gt;master&lt;/code&gt;，而&lt;code&gt;9002&lt;/code&gt;变成了&lt;code&gt;slaver&lt;/code&gt;，实现了自动故障转移&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;手动故障转移&#34;&gt;手动故障转移
 &lt;/h4&gt;&lt;p&gt;利用&lt;code&gt;cluster failover&lt;/code&gt;命令可以手动让集群中的某个master宕机，切换到执行cluster failover命令的这个slave节点，实现无感知的数据迁移。其流程如下:
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424210353844&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242103921.png&#34; alt=&#34;image-20240424210353844&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 手动的Failover支持三种不同模式:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;缺省:默认的流程，如图1~6步&lt;/li&gt;
@@ -2362,16 +2118,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;练习&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;手动故障转移，让&lt;code&gt;8002&lt;/code&gt;重新变成master
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424210932755&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242109850.png&#34; alt=&#34;image-20240424210932755&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2383,16 +2136,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;看到&lt;code&gt;8002&lt;/code&gt;重新变成master
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424211012127&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242110235.png&#34; alt=&#34;image-20240424211012127&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;redistemplate&#34;&gt;RedisTemplate
 &lt;/h3&gt;&lt;p&gt;RedisTemplate底层同样基于lettuce实现了分片集群的支持，而使用的步骤与哨兵模式基本一致:&lt;/p&gt;
@@ -2437,16 +2187,13 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;访问&lt;code&gt;http://localhost:8080/get/a&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;查看日志，通过&lt;code&gt;9003&lt;/code&gt;获取到&lt;code&gt;a&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424212554166&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242125244.png&#34; alt=&#34;image-20240424212554166&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 查看节点信息&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;9003&lt;/code&gt;的master是&lt;code&gt;8003&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2458,29 +2205,23 @@ Redis如何判断某个key应该在哪个实例?&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;redis-cli -c -p &lt;span class=&#34;m&#34;&gt;8003&lt;/span&gt; cluster nodes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424212728958&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242127034.png&#34; alt=&#34;image-20240424212728958&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;访问&lt;code&gt;http://localhost:8080/set/a/666&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;通过&lt;code&gt;8003&lt;/code&gt;去set值
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240424212846737&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242128817.png&#34; alt=&#34;image-20240424212846737&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         </item>

@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="04_实现声明式事务">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="04_实现声明式事务">
 <meta property='og:description' content="04_实现声明式事务">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -298,17 +298,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
-                <img src="/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/202412212133331_hu211479134585629788.png"
-                        srcset="/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/202412212133331_hu211479134585629788.png 800w, /p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/202412212133331_hu17266170340933010716.png 1600w"
-                        width="800" 
-                        height="296" 
-                        loading="lazy"
-                        alt="Featured image of post 04_实现声明式事务" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/">
+            <img src="/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/202412212133331_hu211479134585629788.png" srcset="/p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/202412212133331_hu211479134585629788.png 800w, /p/04_%E5%AE%9E%E7%8E%B0%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1/202412212133331_hu17266170340933010716.png 1600w"  width="800"
+                height="296" loading="lazy" alt="Featured image of post 04_实现声明式事务" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -377,20 +373,22 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
     <h1 id="4_实现声明式事务">4_实现声明式事务
-</h1><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201818047.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="202301201818047.png"
-	
-	
-></p>
+</h1><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201818047.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201818047.png" alt="202301201818047.png"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>这里会发生异常，用来模拟支付过程中的突发情况导致支付失败，如网络原因等</p>
 <p>测试后发现，前者的余额已经增加，但后者的余额由于发生异常导致没有减少</p>

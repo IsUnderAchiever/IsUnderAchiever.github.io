@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/seata/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Seata">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Seata">
 <meta property='og:description' content="Seata">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/seata/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -362,17 +362,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/seata/">
-                <img src="/p/seata/202412212130408_hu14897593806550435400.png"
-                        srcset="/p/seata/202412212130408_hu14897593806550435400.png 800w, /p/seata/202412212130408_hu6181166237216641889.png 1600w"
-                        width="800" 
-                        height="338" 
-                        loading="lazy"
-                        alt="Featured image of post Seata" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/seata/">
+            <img src="/p/seata/202412212130408_hu14897593806550435400.png" srcset="/p/seata/202412212130408_hu14897593806550435400.png 800w, /p/seata/202412212130408_hu6181166237216641889.png 1600w"  width="800"
+                height="338" loading="lazy" alt="Featured image of post Seata" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -441,22 +437,24 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
     <h1 id="seata">Seata
 </h1><h2 id="概念">概念
 </h2><h3 id="事务的acid原则">事务的ACID原则
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410224007195"
-	
-	
-></p>
+</h3><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png" alt="image-20240410224007195"  />
+	</a>
+</div>
+</p>
 <ol>
 <li>原子性
 事务中的所有操作，要么全部成功,要么全部失败</li>
@@ -472,30 +470,24 @@
 <ul>
 <li>账户服务负责扣减用户余额</li>
 <li>库存服务负责扣减商品库存
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240410224108029"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png" alt="image-20240410224108029"  />
+	</a>
+</div>
+</li>
 </ul>
 <blockquote>
 <p>我们希望<code>创建订单</code>、<code>扣减余额</code>、<code>扣件商品库存</code>三个操作<code>同时成功或者失败</code>
 <strong>这里新建三个数据库</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411202324161"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png" alt="image-20240411202324161"  />
+	</a>
+</div>
+
 <strong>sentinel_account</strong></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -589,74 +581,55 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>基础项目的<a class="link" href="https://gitee.com/tongstyle/seata-demo"  target="_blank" rel="noopener"
-    >链接</a>
+<p>基础项目的<a class="link" href="https://gitee.com/tongstyle/seata-demo"  target="_blank" rel="noopener" >链接</a>
 <strong>调用<code>client</code>实现<code>扣余额</code>、<code>扣库存</code></strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411214609610"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png" alt="image-20240411214609610"  />
+	</a>
+</div>
+
 使用<code>ApiFox</code>测试订单创建请求
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411220655902"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png" alt="image-20240411220655902"  />
+	</a>
+</div>
+
 看看数据，发现该商品还剩下10个
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411220800785"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png" alt="image-20240411220800785"  />
+	</a>
+</div>
+
 我们直接买20个，正常来讲<code>库存不足</code>应该要<code>失败</code>，这次用户要跟账户表保持一致
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411221346303"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png" alt="image-20240411221346303"  />
+	</a>
+</div>
+
 报错
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411221519897"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png" alt="image-20240411221519897"  />
+	</a>
+</div>
+
 刷新之后发现，库存表数量没变<code>(扣减失败)</code>，但是账户表<code>金额</code>被扣了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411221600202"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png" alt="image-20240411221600202"  />
+	</a>
+</div>
+
 <strong>它们每个服务是独立的</strong>，各自提交自己的事务，所以并没有达成事务的一致
 <strong><code>总结：在分布式系统下，一个业务跨越多个服务或数据源，每个服务都是一个分支事务， 要保证所有分支事务最终状态一致,这样的事务就是分布式事务。</code></strong></p>
 </blockquote>
@@ -668,54 +641,42 @@
 <li>Availability (<code>可用性</code>)</li>
 <li>Partition tolerance (<code>分区容错性</code>)
 Eric Brewer说，分布式系统无法<code>同时满足</code>这三个指标。这个结论就叫做<code>CAP定理</code>。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411221941042"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png" alt="image-20240411221941042"  />
+	</a>
+</div>
+</li>
 </ol>
 <h4 id="一致性">一致性
 </h4><p>Consistency (一致性) :用户访问分布式系统中的任意节点,得到的数据必须一致
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411222047176"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png" alt="image-20240411222047176"  />
+	</a>
+</div>
+</p>
 <h4 id="可用性">可用性
 </h4><p>Availability (可用性) :用户访问集群中的任意健康节点,必须能得到响应，而不是超时或拒绝
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411222133028"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png" alt="image-20240411222133028"  />
+	</a>
+</div>
+</p>
 <h4 id="分区容错">分区容错
 </h4><p>Partition (分区) :因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。
 Tolerance (容错) :在集群出现分区时,整个系统也要持续对外提供服务
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411222243057"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png" alt="image-20240411222243057"  />
+	</a>
+</div>
+</p>
 <h4 id="总结">总结
 </h4><p>分布式系统节点通过网络连接，一定会出现分区问题(P)，当分区出现时，系统的一致性(C)和可用性(A)就无法同时满足</p>
 <h4 id="思考">思考
@@ -731,16 +692,13 @@ ES集群出现分区时，故障节点会被剔除集群，数据分片会重新
 <code>CP模式</code>:各个子事务执行后互相等待，同时提交,同时回滚,达成<code>强一致</code>。但事务等待过程中,处于弱可用状态。因为会锁定资源导致无法访问</p>
 <h4 id="分布式事务模型">分布式事务模型
 </h4><p>解决分布式事务，各个子系统之间必须能感知到彼此的事务状态，才能保证状态一致，因此需要一个事务协调者来协调每一个事务的参与者(子系统事务)。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411223154817"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png" alt="image-20240411223154817"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>这里的子系统事务，称为分支事务;有关联的各个分支事务在一起称为全局事务</p>
 </blockquote>
@@ -751,16 +709,13 @@ ES集群出现分区时，故障节点会被剔除集群，数据分片会重新
 <li>TC (Transaction Coordinator) -事务协调者:维护全局和分支事务的状态，协调全局事务提交或回滚。</li>
 <li>TM (Transaction Manager) -事务管理器:定义全局事务的范围、开始全局事务、提交或回滚全局事务。</li>
 <li>RM (Resource Manager) -资源管理器:管理分支事务处理的资源，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240411223721605"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png" alt="image-20240411223721605"  />
+	</a>
+</div>
+
 Seata提供了四种不同的分布式事务解决方案:</li>
 </ol>
 <ul>
@@ -771,31 +726,24 @@ Seata提供了四种不同的分布式事务解决方案:</li>
 </ul>
 <h3 id="安装seata">安装Seata
 </h3><h4 id="下载">下载
-</h4><p>前往Github<a class="link" href="https://github.com/apache/incubator-seata"  target="_blank" rel="noopener"
-    >下载</a>，这里选择<code>seata-server-1.7.0</code>的版本</p>
+</h4><p>前往Github<a class="link" href="https://github.com/apache/incubator-seata"  target="_blank" rel="noopener" >下载</a>，这里选择<code>seata-server-1.7.0</code>的版本</p>
 <h4 id="配置nacos为注册中心和配置中心">配置nacos为注册中心和配置中心
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412070658420"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png" alt="image-20240412070658420"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p><code>application.example.yml</code>的配置很全，我们copy需要的配置到<code>application.yml</code>即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412071007499"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png" alt="image-20240412071007499"  />
+	</a>
+</div>
+
 <strong>修改后的配置</strong></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -955,28 +903,22 @@ Seata提供了四种不同的分布式事务解决方案:</li>
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>在<code>nacos</code>中新增配置</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412071132954"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png" alt="image-20240412071132954"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>配置文件可以查看
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412071236353"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png" alt="image-20240412071236353"  />
+	</a>
+</div>
+
 <strong>新增配置如下</strong>
 下面除了<code>db</code>外的配置都是默认的，写到nacos是为了方便后期修改，<code>db之外的配置</code>不写也没事</p>
 <p>这里的<code>driverClassName</code>我用的是<code>com.mysql.cj.jdbc.Driver</code>，注意修改成自己的数据库名、账号、密码</p>
@@ -1053,16 +995,13 @@ Seata提供了四种不同的分布式事务解决方案:</li>
 </span></span><span class="line"><span class="cl"><span class="na">metrics.exporterPrometheusPort</span><span class="o">=</span><span class="s">9898</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412071551150"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png" alt="image-20240412071551150"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>db配置，注意这里新增一个<code>undo_log</code>表，该表的建表语句在sql中不存在</p>
 <p><strong>完整sql如下</strong></p>
@@ -1241,49 +1180,37 @@ Seata提供了四种不同的分布式事务解决方案:</li>
 </div>
 </div><blockquote>
 <p>而且<code>业务数据库也需要增加该表</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412071916161"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png" alt="image-20240412071916161"  />
+	</a>
+</div>
+
 双击<code>seata-server.bat</code>启动即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412071937524"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png" alt="image-20240412071937524"  />
+	</a>
+</div>
+
 服务已经注册到nacos中了
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412072014359"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png" alt="image-20240412072014359"  />
+	</a>
+</div>
+
 注意命名空间，我们springboot的demo是<code>public</code>的，所以需要将seata的命名空间改为<code>public</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412072736505"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png" alt="image-20240412072736505"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h3 id="基本使用">基本使用
 </h3><blockquote>
@@ -1463,48 +1390,36 @@ Seata提供了四种不同的分布式事务解决方案:</li>
 <li>服务名称</li>
 <li>集群名称
 <strong>集群如下</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412073342542"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png" alt="image-20240412073342542"  />
+	</a>
+</div>
+
 再改一下<code>seata</code>的配置，配置<code>SH</code>集群
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412073612996"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412073639729"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png" alt="image-20240412073612996"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png" alt="image-20240412073639729"  />
+	</a>
+</div>
+
 我们并没有在微服务的<code>application</code>文件中配置<code>cluster</code>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412073752159"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png" alt="image-20240412073752159"  />
+	</a>
+</div>
+
 并不能在<code>registry</code>下直接配置<code>cluster</code></li>
 </ol>
 <p>正确做法是配置<code>事务组</code>，将事务分组，比如<code>account</code>、<code>order</code>、<code>storage</code>将来会被同一个<code>tc</code>集群管理，所以需要将它们配置到同一个事务组下</p>
@@ -1527,41 +1442,32 @@ Seata提供了四种不同的分布式事务解决方案:</li>
 </h4><blockquote>
 <p>XA规范是x/Open组织定义的分布式事务处理(DTP, Distributed Transaction Processing)标准，XA规范描述了全局的TM与局部的RM之间的接口，几乎所有主流的数据库都对XA规范提供了支持。XA模式是一种强一致性、低可用性的模式
 <strong>正常情况</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412075025182"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png" alt="image-20240412075025182"  />
+	</a>
+</div>
+
 <strong>异常情况</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412075111494"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png" alt="image-20240412075111494"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h4 id="seata中的xa模式">Seata中的XA模式
 </h4><blockquote>
 <p>seata的XA模式做了一些调整,但大体相似
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412075313338"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png" alt="image-20240412075313338"  />
+	</a>
+</div>
+
 <strong>RM一阶段的工作</strong>:</p>
 </blockquote>
 <ol>
@@ -1708,27 +1614,21 @@ XA模式的缺点是什么?</li>
 </div></li>
 <li>重启服务并测试
 <strong>运行前的数据</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412080441953"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png" alt="image-20240412080441953"  />
+	</a>
+</div>
+
 <strong>运行后的数据</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412080512334"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png" alt="image-20240412080512334"  />
+	</a>
+</div>
+</li>
 </ol>
 <blockquote>
 <p>可以看到实现了<code>全局事务</code></p>
@@ -1737,16 +1637,13 @@ XA模式的缺点是什么?</li>
 </h3><h4 id="概念-2">概念
 </h4><blockquote>
 <p>AT模式同样是分阶段提交的事务模型，不过缺弥补了XA模型中资源锁定周期过长的缺陷。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412081358601"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png" alt="image-20240412081358601"  />
+	</a>
+</div>
+
 阶段一RM的工作:</p>
 <ol>
 <li>注册分支事务</li>
@@ -1769,16 +1666,13 @@ XA模式的缺点是什么?</li>
 <pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">update</span><span class="w"> </span><span class="n">tb</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">money</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">money</span><span class="o">-</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412081715928"
-	
-	
-></p>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png" alt="image-20240412081715928"  />
+	</a>
+</div>
+</p>
 <h4 id="总结-2">总结
 </h4><p>简述AT模式与XA模式最大的区别是什么?</p>
 <ul>
@@ -1787,41 +1681,34 @@ XA模式的缺点是什么?</li>
 <li><code>XA模式强一致</code>; <code>AT模式最终一致</code></li>
 </ul>
 <h4 id="at模式的脏写问题">AT模式的脏写问题
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412210846377"
-	
-	
-></p>
+</h4><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png" alt="image-20240412210846377"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>事务1在提交事务之后，紧接着被事务2获取到了锁，而事务1的全局事务需要回滚，则此时事务1会将<code>money</code>恢复到100，但是影响到了事务2的操作</p>
 <p>原因就是事务没有做到隔离，解决方式就是引入<code>全局锁</code>，标记对某行数据的拥有权，在事务提交前，其他事务无法修改
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240412211854987"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png" alt="image-20240412211854987"  />
+	</a>
+</div>
+
 事务1在提交事务后，释放DB锁；而DB锁马上被事务2获取到了，但全局事务锁在事务1手上，事务2拿不到</p>
 <p>而DB锁在事务2手上，事务1拿不到，此时产生了死锁，但由于获取全局事务锁的过程有重试机制，任务超时会回滚并释放DB锁</p>
 <p>这时事务1获取到了DB锁
 <strong>有一个问题，如果在事务1的<code>1.3~2.1</code>过程中，有一个不被<code>seata</code>管理的事务修改了值，也会产生脏写问题</strong>
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png"
-	
-	
-	
-	loading="lazy"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png" alt=""  />
+	</a>
+</div>
+
 在保存快照时，保存两份数据，一个是修改前的，一个是修改后的</p>
 <p>当释放全局锁时，对比修改后的数据，如果不一致，说明在这段时间有其他事务修改了数据</p>
 <p>这就没办法了，只能人工介入，这是比较极端的情况</p>
@@ -1897,26 +1784,20 @@ AT模式的缺点:</li>
 <li>Try: 资源的检测和预留;</li>
 <li>Confirm: 完成资源操作业务;要求Try成功Confirm一定要能成功。</li>
 <li>Cancel: 预留资源释放,可以理解为try的反向操作。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240413063600514"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240413063809543"
-	
-	
-></li>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png" alt="image-20240413063600514"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png" alt="image-20240413063809543"  />
+	</a>
+</div>
+</li>
 </ol>
 <h4 id="总结-4">总结
 </h4><p>TCC模式的每个阶段是做什么的?</p>
@@ -1951,30 +1832,24 @@ TCC的缺点是什么?</li>
 </blockquote>
 <h5 id="空回滚问题">空回滚问题
 </h5><p>当某分支事务的try阶段阻塞时，可能导致全局事务超时而触发二阶段的cancel操作。在未执行try操作时先执行了cancel操作，这时cancel不能做回滚,就是<code>空回滚</code>。这里并没有进行<code>资源预留</code>也无法进行<code>回滚</code>，但是这里也不能进行报错，否则<code>Seata</code>会认为<code>cancel</code>失败，应该返回正常结束。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240413065417807"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png" alt="image-20240413065417807"  />
+	</a>
+</div>
+</p>
 <h5 id="业务悬挂">业务悬挂
 </h5><blockquote>
 <p>此时阻塞的业务终于畅通了，但是这个事务已经提交了，后续既没有进行<code>confirm</code>也没有执行<code>cancel</code></p>
 <p>对于已经空回滚的业务，如果以后继续执行try,就永远不可能confirm或cancel,这就是<code>业务悬挂</code>。应当阻止执行空回滚后的try操作，避免悬挂
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240413070301607"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png" alt="image-20240413070301607"  />
+	</a>
+</div>
+
 为了避免<code>空回滚</code>，应该在<code>cancel</code>判断是否进行了<code>try</code></p>
 <p>为了避免<code>业务悬挂</code>，应该在<code>try</code>判断是否进行了<code>cancel</code></p>
 <p>这样就必须在数据库里记录当前状态，判断当前是在<code>try</code>？还是在<code>confirm</code>或者<code>cancel</code>？</p>
@@ -2449,16 +2324,13 @@ Saga模式优点:</li>
 <li>没有锁，没有事务隔离，会有脏写</li>
 </ol>
 <h3 id="模式对比">模式对比
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240413205630731"
-	
-	
-></p>
+</h3><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png" alt="image-20240413205630731"  />
+	</a>
+</div>
+</p>
 
 </section>
 

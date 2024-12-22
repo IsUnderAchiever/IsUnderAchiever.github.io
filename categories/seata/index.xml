@@ -16,16 +16,13 @@
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/seata/202412212130408.png" alt="Featured image of post Seata" /&gt;&lt;h1 id=&#34;seata&#34;&gt;Seata
 &lt;/h1&gt;&lt;h2 id=&#34;概念&#34;&gt;概念
 &lt;/h2&gt;&lt;h3 id=&#34;事务的acid原则&#34;&gt;事务的ACID原则
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410224007195&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224007195.png&#34; alt=&#34;image-20240410224007195&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;原子性
 事务中的所有操作，要么全部成功,要么全部失败&lt;/li&gt;
@@ -41,30 +38,24 @@
 &lt;ul&gt;
 &lt;li&gt;账户服务负责扣减用户余额&lt;/li&gt;
 &lt;li&gt;库存服务负责扣减商品库存
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240410224108029&#34;
-	
-	
-&gt;&lt;/li&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240410224108029.png&#34; alt=&#34;image-20240410224108029&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我们希望&lt;code&gt;创建订单&lt;/code&gt;、&lt;code&gt;扣减余额&lt;/code&gt;、&lt;code&gt;扣件商品库存&lt;/code&gt;三个操作&lt;code&gt;同时成功或者失败&lt;/code&gt;
 &lt;strong&gt;这里新建三个数据库&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411202324161&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411202324161.png&#34; alt=&#34;image-20240411202324161&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;sentinel_account&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -158,74 +149,55 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;基础项目的&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/tongstyle/seata-demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;链接&lt;/a&gt;
+&lt;p&gt;基础项目的&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/tongstyle/seata-demo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;
 &lt;strong&gt;调用&lt;code&gt;client&lt;/code&gt;实现&lt;code&gt;扣余额&lt;/code&gt;、&lt;code&gt;扣库存&lt;/code&gt;&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411214609610&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411214609610.png&#34; alt=&#34;image-20240411214609610&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 使用&lt;code&gt;ApiFox&lt;/code&gt;测试订单创建请求
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411220655902&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220655902.png&#34; alt=&#34;image-20240411220655902&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 看看数据，发现该商品还剩下10个
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411220800785&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411220800785.png&#34; alt=&#34;image-20240411220800785&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 我们直接买20个，正常来讲&lt;code&gt;库存不足&lt;/code&gt;应该要&lt;code&gt;失败&lt;/code&gt;，这次用户要跟账户表保持一致
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411221346303&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221346303.png&#34; alt=&#34;image-20240411221346303&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 报错
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411221519897&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221519897.png&#34; alt=&#34;image-20240411221519897&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 刷新之后发现，库存表数量没变&lt;code&gt;(扣减失败)&lt;/code&gt;，但是账户表&lt;code&gt;金额&lt;/code&gt;被扣了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411221600202&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221600202.png&#34; alt=&#34;image-20240411221600202&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;它们每个服务是独立的&lt;/strong&gt;，各自提交自己的事务，所以并没有达成事务的一致
 &lt;strong&gt;&lt;code&gt;总结：在分布式系统下，一个业务跨越多个服务或数据源，每个服务都是一个分支事务， 要保证所有分支事务最终状态一致,这样的事务就是分布式事务。&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -237,54 +209,42 @@
 &lt;li&gt;Availability (&lt;code&gt;可用性&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Partition tolerance (&lt;code&gt;分区容错性&lt;/code&gt;)
 Eric Brewer说，分布式系统无法&lt;code&gt;同时满足&lt;/code&gt;这三个指标。这个结论就叫做&lt;code&gt;CAP定理&lt;/code&gt;。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411221941042&#34;
-	
-	
-&gt;&lt;/li&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411221941042.png&#34; alt=&#34;image-20240411221941042&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;一致性&#34;&gt;一致性
 &lt;/h4&gt;&lt;p&gt;Consistency (一致性) :用户访问分布式系统中的任意节点,得到的数据必须一致
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411222047176&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222047176.png&#34; alt=&#34;image-20240411222047176&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h4 id=&#34;可用性&#34;&gt;可用性
 &lt;/h4&gt;&lt;p&gt;Availability (可用性) :用户访问集群中的任意健康节点,必须能得到响应，而不是超时或拒绝
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411222133028&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222133028.png&#34; alt=&#34;image-20240411222133028&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h4 id=&#34;分区容错&#34;&gt;分区容错
 &lt;/h4&gt;&lt;p&gt;Partition (分区) :因为网络故障或其它原因导致分布式系统中的部分节点与其它节点失去连接，形成独立分区。
 Tolerance (容错) :在集群出现分区时,整个系统也要持续对外提供服务
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411222243057&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411222243057.png&#34; alt=&#34;image-20240411222243057&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h4 id=&#34;总结&#34;&gt;总结
 &lt;/h4&gt;&lt;p&gt;分布式系统节点通过网络连接，一定会出现分区问题(P)，当分区出现时，系统的一致性(C)和可用性(A)就无法同时满足&lt;/p&gt;
 &lt;h4 id=&#34;思考&#34;&gt;思考
@@ -300,16 +260,13 @@ ES集群出现分区时，故障节点会被剔除集群，数据分片会重新
 &lt;code&gt;CP模式&lt;/code&gt;:各个子事务执行后互相等待，同时提交,同时回滚,达成&lt;code&gt;强一致&lt;/code&gt;。但事务等待过程中,处于弱可用状态。因为会锁定资源导致无法访问&lt;/p&gt;
 &lt;h4 id=&#34;分布式事务模型&#34;&gt;分布式事务模型
 &lt;/h4&gt;&lt;p&gt;解决分布式事务，各个子系统之间必须能感知到彼此的事务状态，才能保证状态一致，因此需要一个事务协调者来协调每一个事务的参与者(子系统事务)。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411223154817&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223154817.png&#34; alt=&#34;image-20240411223154817&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这里的子系统事务，称为分支事务;有关联的各个分支事务在一起称为全局事务&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -320,16 +277,13 @@ ES集群出现分区时，故障节点会被剔除集群，数据分片会重新
 &lt;li&gt;TC (Transaction Coordinator) -事务协调者:维护全局和分支事务的状态，协调全局事务提交或回滚。&lt;/li&gt;
 &lt;li&gt;TM (Transaction Manager) -事务管理器:定义全局事务的范围、开始全局事务、提交或回滚全局事务。&lt;/li&gt;
 &lt;li&gt;RM (Resource Manager) -资源管理器:管理分支事务处理的资源，与TC交谈以注册分支事务和报告分支事务的状态，并驱动分支事务提交或回滚。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240411223721605&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411223721605.png&#34; alt=&#34;image-20240411223721605&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -340,31 +294,24 @@ Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;安装seata&#34;&gt;安装Seata
 &lt;/h3&gt;&lt;h4 id=&#34;下载&#34;&gt;下载
-&lt;/h4&gt;&lt;p&gt;前往Github&lt;a class=&#34;link&#34; href=&#34;https://github.com/apache/incubator-seata&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;下载&lt;/a&gt;，这里选择&lt;code&gt;seata-server-1.7.0&lt;/code&gt;的版本&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;前往Github&lt;a class=&#34;link&#34; href=&#34;https://github.com/apache/incubator-seata&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;下载&lt;/a&gt;，这里选择&lt;code&gt;seata-server-1.7.0&lt;/code&gt;的版本&lt;/p&gt;
 &lt;h4 id=&#34;配置nacos为注册中心和配置中心&#34;&gt;配置nacos为注册中心和配置中心
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412070658420&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412070658420.png&#34; alt=&#34;image-20240412070658420&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;application.example.yml&lt;/code&gt;的配置很全，我们copy需要的配置到&lt;code&gt;application.yml&lt;/code&gt;即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412071007499&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071007499.png&#34; alt=&#34;image-20240412071007499&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;修改后的配置&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -524,28 +471,22 @@ Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;在&lt;code&gt;nacos&lt;/code&gt;中新增配置&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412071132954&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071132954.png&#34; alt=&#34;image-20240412071132954&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;配置文件可以查看
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412071236353&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071236353.png&#34; alt=&#34;image-20240412071236353&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;新增配置如下&lt;/strong&gt;
 下面除了&lt;code&gt;db&lt;/code&gt;外的配置都是默认的，写到nacos是为了方便后期修改，&lt;code&gt;db之外的配置&lt;/code&gt;不写也没事&lt;/p&gt;
 &lt;p&gt;这里的&lt;code&gt;driverClassName&lt;/code&gt;我用的是&lt;code&gt;com.mysql.cj.jdbc.Driver&lt;/code&gt;，注意修改成自己的数据库名、账号、密码&lt;/p&gt;
@@ -622,16 +563,13 @@ Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;metrics.exporterPrometheusPort&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;9898&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412071551150&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071551150.png&#34; alt=&#34;image-20240412071551150&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;db配置，注意这里新增一个&lt;code&gt;undo_log&lt;/code&gt;表，该表的建表语句在sql中不存在&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;完整sql如下&lt;/strong&gt;&lt;/p&gt;
@@ -810,49 +748,37 @@ Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;而且&lt;code&gt;业务数据库也需要增加该表&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412071916161&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071916161.png&#34; alt=&#34;image-20240412071916161&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 双击&lt;code&gt;seata-server.bat&lt;/code&gt;启动即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412071937524&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412071937524.png&#34; alt=&#34;image-20240412071937524&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 服务已经注册到nacos中了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412072014359&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072014359.png&#34; alt=&#34;image-20240412072014359&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 注意命名空间，我们springboot的demo是&lt;code&gt;public&lt;/code&gt;的，所以需要将seata的命名空间改为&lt;code&gt;public&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412072736505&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412072736505.png&#34; alt=&#34;image-20240412072736505&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;基本使用&#34;&gt;基本使用
 &lt;/h3&gt;&lt;blockquote&gt;
@@ -1032,48 +958,36 @@ Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;li&gt;服务名称&lt;/li&gt;
 &lt;li&gt;集群名称
 &lt;strong&gt;集群如下&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412073342542&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073342542.png&#34; alt=&#34;image-20240412073342542&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 再改一下&lt;code&gt;seata&lt;/code&gt;的配置，配置&lt;code&gt;SH&lt;/code&gt;集群
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412073612996&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412073639729&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073612996.png&#34; alt=&#34;image-20240412073612996&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073639729.png&#34; alt=&#34;image-20240412073639729&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 我们并没有在微服务的&lt;code&gt;application&lt;/code&gt;文件中配置&lt;code&gt;cluster&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412073752159&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412073752159.png&#34; alt=&#34;image-20240412073752159&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 并不能在&lt;code&gt;registry&lt;/code&gt;下直接配置&lt;code&gt;cluster&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;正确做法是配置&lt;code&gt;事务组&lt;/code&gt;，将事务分组，比如&lt;code&gt;account&lt;/code&gt;、&lt;code&gt;order&lt;/code&gt;、&lt;code&gt;storage&lt;/code&gt;将来会被同一个&lt;code&gt;tc&lt;/code&gt;集群管理，所以需要将它们配置到同一个事务组下&lt;/p&gt;
@@ -1096,41 +1010,32 @@ Seata提供了四种不同的分布式事务解决方案:&lt;/li&gt;
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;XA规范是x/Open组织定义的分布式事务处理(DTP, Distributed Transaction Processing)标准，XA规范描述了全局的TM与局部的RM之间的接口，几乎所有主流的数据库都对XA规范提供了支持。XA模式是一种强一致性、低可用性的模式
 &lt;strong&gt;正常情况&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412075025182&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075025182.png&#34; alt=&#34;image-20240412075025182&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;异常情况&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412075111494&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075111494.png&#34; alt=&#34;image-20240412075111494&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;seata中的xa模式&#34;&gt;Seata中的XA模式
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;seata的XA模式做了一些调整,但大体相似
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412075313338&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412075313338.png&#34; alt=&#34;image-20240412075313338&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;RM一阶段的工作&lt;/strong&gt;:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
@@ -1277,27 +1182,21 @@ XA模式的缺点是什么?&lt;/li&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;重启服务并测试
 &lt;strong&gt;运行前的数据&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412080441953&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080441953.png&#34; alt=&#34;image-20240412080441953&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 &lt;strong&gt;运行后的数据&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412080512334&#34;
-	
-	
-&gt;&lt;/li&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412080512334.png&#34; alt=&#34;image-20240412080512334&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;可以看到实现了&lt;code&gt;全局事务&lt;/code&gt;&lt;/p&gt;
@@ -1306,16 +1205,13 @@ XA模式的缺点是什么?&lt;/li&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;概念-2&#34;&gt;概念
 &lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;AT模式同样是分阶段提交的事务模型，不过缺弥补了XA模型中资源锁定周期过长的缺陷。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412081358601&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081358601.png&#34; alt=&#34;image-20240412081358601&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 阶段一RM的工作:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;注册分支事务&lt;/li&gt;
@@ -1338,16 +1234,13 @@ XA模式的缺点是什么?&lt;/li&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;update&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;account&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;money&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;money&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;where&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412081715928&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412081715928.png&#34; alt=&#34;image-20240412081715928&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h4 id=&#34;总结-2&#34;&gt;总结
 &lt;/h4&gt;&lt;p&gt;简述AT模式与XA模式最大的区别是什么?&lt;/p&gt;
 &lt;ul&gt;
@@ -1356,41 +1249,34 @@ XA模式的缺点是什么?&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;XA模式强一致&lt;/code&gt;; &lt;code&gt;AT模式最终一致&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;at模式的脏写问题&#34;&gt;AT模式的脏写问题
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412210846377&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412210846377.png&#34; alt=&#34;image-20240412210846377&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;事务1在提交事务之后，紧接着被事务2获取到了锁，而事务1的全局事务需要回滚，则此时事务1会将&lt;code&gt;money&lt;/code&gt;恢复到100，但是影响到了事务2的操作&lt;/p&gt;
 &lt;p&gt;原因就是事务没有做到隔离，解决方式就是引入&lt;code&gt;全局锁&lt;/code&gt;，标记对某行数据的拥有权，在事务提交前，其他事务无法修改
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240412211854987&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240412211854987.png&#34; alt=&#34;image-20240412211854987&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 事务1在提交事务后，释放DB锁；而DB锁马上被事务2获取到了，但全局事务锁在事务1手上，事务2拿不到&lt;/p&gt;
 &lt;p&gt;而DB锁在事务2手上，事务1拿不到，此时产生了死锁，但由于获取全局事务锁的过程有重试机制，任务超时会回滚并释放DB锁&lt;/p&gt;
 &lt;p&gt;这时事务1获取到了DB锁
 &lt;strong&gt;有一个问题，如果在事务1的&lt;code&gt;1.3~2.1&lt;/code&gt;过程中，有一个不被&lt;code&gt;seata&lt;/code&gt;管理的事务修改了值，也会产生脏写问题&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/QQ%E5%9B%BE%E7%89%8720240412212956.png&#34; alt=&#34;&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 在保存快照时，保存两份数据，一个是修改前的，一个是修改后的&lt;/p&gt;
 &lt;p&gt;当释放全局锁时，对比修改后的数据，如果不一致，说明在这段时间有其他事务修改了数据&lt;/p&gt;
 &lt;p&gt;这就没办法了，只能人工介入，这是比较极端的情况&lt;/p&gt;
@@ -1466,26 +1352,20 @@ AT模式的缺点:&lt;/li&gt;
 &lt;li&gt;Try: 资源的检测和预留;&lt;/li&gt;
 &lt;li&gt;Confirm: 完成资源操作业务;要求Try成功Confirm一定要能成功。&lt;/li&gt;
 &lt;li&gt;Cancel: 预留资源释放,可以理解为try的反向操作。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240413063600514&#34;
-	
-	
-&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240413063809543&#34;
-	
-	
-&gt;&lt;/li&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063600514.png&#34; alt=&#34;image-20240413063600514&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413063809543.png&#34; alt=&#34;image-20240413063809543&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;总结-4&#34;&gt;总结
 &lt;/h4&gt;&lt;p&gt;TCC模式的每个阶段是做什么的?&lt;/p&gt;
@@ -1520,30 +1400,24 @@ TCC的缺点是什么?&lt;/li&gt;
 &lt;/blockquote&gt;
 &lt;h5 id=&#34;空回滚问题&#34;&gt;空回滚问题
 &lt;/h5&gt;&lt;p&gt;当某分支事务的try阶段阻塞时，可能导致全局事务超时而触发二阶段的cancel操作。在未执行try操作时先执行了cancel操作，这时cancel不能做回滚,就是&lt;code&gt;空回滚&lt;/code&gt;。这里并没有进行&lt;code&gt;资源预留&lt;/code&gt;也无法进行&lt;code&gt;回滚&lt;/code&gt;，但是这里也不能进行报错，否则&lt;code&gt;Seata&lt;/code&gt;会认为&lt;code&gt;cancel&lt;/code&gt;失败，应该返回正常结束。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240413065417807&#34;
-	
-	
-&gt;&lt;/p&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413065417807.png&#34; alt=&#34;image-20240413065417807&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;h5 id=&#34;业务悬挂&#34;&gt;业务悬挂
 &lt;/h5&gt;&lt;blockquote&gt;
 &lt;p&gt;此时阻塞的业务终于畅通了，但是这个事务已经提交了，后续既没有进行&lt;code&gt;confirm&lt;/code&gt;也没有执行&lt;code&gt;cancel&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;对于已经空回滚的业务，如果以后继续执行try,就永远不可能confirm或cancel,这就是&lt;code&gt;业务悬挂&lt;/code&gt;。应当阻止执行空回滚后的try操作，避免悬挂
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240413070301607&#34;
-	
-	
-&gt;
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413070301607.png&#34; alt=&#34;image-20240413070301607&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+
 为了避免&lt;code&gt;空回滚&lt;/code&gt;，应该在&lt;code&gt;cancel&lt;/code&gt;判断是否进行了&lt;code&gt;try&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;为了避免&lt;code&gt;业务悬挂&lt;/code&gt;，应该在&lt;code&gt;try&lt;/code&gt;判断是否进行了&lt;code&gt;cancel&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这样就必须在数据库里记录当前状态，判断当前是在&lt;code&gt;try&lt;/code&gt;？还是在&lt;code&gt;confirm&lt;/code&gt;或者&lt;code&gt;cancel&lt;/code&gt;？&lt;/p&gt;
@@ -2018,16 +1892,13 @@ Saga模式优点:&lt;/li&gt;
 &lt;li&gt;没有锁，没有事务隔离，会有脏写&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;模式对比&#34;&gt;模式对比
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240413205630731&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240413205630731.png&#34; alt=&#34;image-20240413205630731&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 </description>
         </item>
         

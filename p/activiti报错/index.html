@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://IsUnderAchiever.github.io/p/activiti%E6%8A%A5%E9%94%99/'>
 
-<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Activiti报错">
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Activiti报错">
 <meta property='og:description' content="Activiti报错">
 <meta property='og:url' content='https://IsUnderAchiever.github.io/p/activiti%E6%8A%A5%E9%94%99/'>
 <meta property='og:site_name' content='深海火锅店'>
@@ -301,17 +301,13 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/activiti%E6%8A%A5%E9%94%99/">
-                <img src="/p/activiti%E6%8A%A5%E9%94%99/202412212108679_hu577348863410442819.png"
-                        srcset="/p/activiti%E6%8A%A5%E9%94%99/202412212108679_hu577348863410442819.png 800w, /p/activiti%E6%8A%A5%E9%94%99/202412212108679_hu9921576818094315109.png 1600w"
-                        width="800" 
-                        height="352" 
-                        loading="lazy"
-                        alt="Featured image of post Activiti报错" />
-                
-            </a>
-        </div>
+    <div class="article-image">
+        <a href="/p/activiti%E6%8A%A5%E9%94%99/">
+            <img src="/p/activiti%E6%8A%A5%E9%94%99/202412212108679_hu577348863410442819.png" srcset="/p/activiti%E6%8A%A5%E9%94%99/202412212108679_hu577348863410442819.png 800w, /p/activiti%E6%8A%A5%E9%94%99/202412212108679_hu9921576818094315109.png 1600w"  width="800"
+                height="352" loading="lazy" alt="Featured image of post Activiti报错" />
+            
+        </a>
+    </div>
     
 
     <div class="article-details">
@@ -380,18 +376,20 @@
 
 </header>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
     <section class="article-content">
     
     
     <h1 id="遭遇问题">遭遇问题
 </h1><h2 id="404">404
 </h2><p><code>http://localhost:8080/activiti-app</code>访问报404
-在activiti官网上下的文件，<a class="link" href="https://www.activiti.org/get-started"  target="_blank" rel="noopener"
-    >官网链接</a>，<a class="link" href="https://www.123pan.com/s/tMU0Vv-REzUd.html"  target="_blank" rel="noopener"
-    >网盘链接</a>
+在activiti官网上下的文件，<a class="link" href="https://www.activiti.org/get-started"  target="_blank" rel="noopener" >官网链接</a>，<a class="link" href="https://www.123pan.com/s/tMU0Vv-REzUd.html"  target="_blank" rel="noopener" >网盘链接</a>
 看了一下tomcat，是因为<code>activiti-app.war</code>没有被解压
-怀疑是war包有问题，又去github下载了（实际可能不是），<a class="link" href="https://www.123pan.com/s/tMU0Vv-DEzUd.html"  target="_blank" rel="noopener"
-    >链接</a>
+怀疑是war包有问题，又去github下载了（实际可能不是），<a class="link" href="https://www.123pan.com/s/tMU0Vv-DEzUd.html"  target="_blank" rel="noopener" >链接</a>
 后来没办法，试过直接用zip解压，但是启动tomcat时候报错了，即便删掉重新启动还是会报错
 最后清了一下tomcat缓存就成功了
 <strong>以下是清理Tomcat的步骤：</strong></p>
@@ -422,41 +420,31 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="配置mysql">配置MySQL
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152350068.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="202306242243706"
-	
-	
-></p>
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152350068.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152350068.png" alt="202306242243706"  />
+	</a>
+</div>
+</p>
 <blockquote>
-<p>查看<a class="link" href="https://blog.csdn.net/zxw75192/article/details/94749796"  target="_blank" rel="noopener"
-    >博客</a></p>
+<p>查看<a class="link" href="https://blog.csdn.net/zxw75192/article/details/94749796"  target="_blank" rel="noopener" >博客</a></p>
 <p>启动依然还有报错，需要将mysql连接包复制到lib文件夹下</p>
 <p>不确定对mysql连接包的版本有没有要求，我刚开始用的是<code>8.0.30</code>版本，依然存在报错，改为<code>8.0.17</code>后即可，记得删除原本5.xx版本的jar包
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349359.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="202306242243379"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349743.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="202306242243046"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349359.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349359.png" alt="202306242243379"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349743.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349743.png" alt="202306242243046"  />
+	</a>
+</div>
+
 再次启动，报错如下</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -481,16 +469,13 @@
 <p>修改配置文件</p>
 <p>添加<code>nullCatalogMeansCurrent=true</code>即可
 datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?<code>nullCatalogMeansCurrent=true</code>&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349643.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="202306242243027"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349643.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349643.png" alt="202306242243027"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="junit报错">junit报错
 </h2><blockquote>
@@ -736,73 +721,55 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?<code>nullCatalogMeansCur
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="获取processengine对象报错">获取ProcessEngine对象报错
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152348161.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="202306242243865"
-	
-	
-></p>
+</h2><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152348161.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152348161.png" alt="202306242243865"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>jdk从8更换为11即可
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243610.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230622131628898"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243919.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230622131642302"
-	
-	
->
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243195.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230622131646360"
-	
-	
-></p>
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243610.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243610.png" alt="image-20230622131628898"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243919.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243919.png" alt="image-20230622131642302"  />
+	</a>
+</div>
+
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243195.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243195.png" alt="image-20230622131646360"  />
+	</a>
+</div>
+</p>
 </blockquote>
 <h2 id="流程部署后查询不到">流程部署后查询不到
 </h2><blockquote>
 <p>那是因为没有部署成功
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243154.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230623095814972"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243154.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243154.png" alt="image-20230623095814972"  />
+	</a>
+</div>
+
 这两个<code>xml</code>文件，图标都不一样，是文件的命名有问题
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243943.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20230623095858036"
-	
-	
->
+
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243943.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243943.png" alt="image-20230623095858036"  />
+	</a>
+</div>
+
 将文件名改为<code>xxx.bpmn20</code>即可</p>
 </blockquote>
 

@@ -427,8 +427,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;我们希望&lt;code&gt;@Get(&#39;http://xxx.com/xxx/list&#39;)&lt;/code&gt;这样传入url来发起请求，但是装饰器默认会传入原型对象，所以不支持自定义参数&lt;/p&gt;
-&lt;p&gt;所以这时候需要使用到装饰器工厂，&lt;a class=&#34;link&#34; href=&#34;https://www.tslang.cn/docs/handbook/decorators.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;查看资料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;所以这时候需要使用到装饰器工厂，&lt;a class=&#34;link&#34; href=&#34;https://www.tslang.cn/docs/handbook/decorators.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;查看资料&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果我们要定制一个修饰器如何应用到一个声明上，我们得写一个装饰器工厂函数。 &lt;em&gt;装饰器工厂&lt;/em&gt;就是一个简单的函数，它返回一个表达式，以供装饰器在运行时调用。&lt;/p&gt;
 &lt;p&gt;我们可以通过下面的方式来写一个装饰器工厂函数：&lt;/p&gt;
@@ -449,8 +448,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;注意  下面&lt;a class=&#34;link&#34; href=&#34;https://www.tslang.cn/docs/handbook/decorators.html#method-decorators&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;方法装饰器&lt;/a&gt;里有一个更加详细的例子。&lt;/p&gt;
+&lt;p&gt;注意  下面&lt;a class=&#34;link&#34; href=&#34;https://www.tslang.cn/docs/handbook/decorators.html#method-decorators&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;方法装饰器&lt;/a&gt;里有一个更加详细的例子。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;下面是一个方法装饰器（&lt;code&gt;@enumerable&lt;/code&gt;）的例子，应用于&lt;code&gt;Greeter&lt;/code&gt;类的方法上&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -498,8 +496,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这里的&lt;code&gt;@enumerable(false)&lt;/code&gt;是一个&lt;a class=&#34;link&#34; href=&#34;https://www.tslang.cn/docs/handbook/decorators.html#decorator-factories&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;装饰器工厂&lt;/a&gt;。 当装饰器 &lt;code&gt;@enumerable(false)&lt;/code&gt;被调用时，它会修改属性描述符的&lt;code&gt;enumerable&lt;/code&gt;属性。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;这里的&lt;code&gt;@enumerable(false)&lt;/code&gt;是一个&lt;a class=&#34;link&#34; href=&#34;https://www.tslang.cn/docs/handbook/decorators.html#decorator-factories&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;装饰器工厂&lt;/a&gt;。 当装饰器 &lt;code&gt;@enumerable(false)&lt;/code&gt;被调用时，它会修改属性描述符的&lt;code&gt;enumerable&lt;/code&gt;属性。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;回到我们的主题，继续编写代码&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2818,16 +2815,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在使用&lt;code&gt;apifox&lt;/code&gt;或者&lt;code&gt;postman&lt;/code&gt;发送请求后，&lt;code&gt;dist/images&lt;/code&gt;下就已经存在了该文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047568.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240714210707281&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047568.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047568.png&#34; alt=&#34;image-20240714210707281&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;访问文件&lt;/p&gt;
 &lt;p&gt;现在是无法访问到这张图片的，因为它是一个静态资源，所以还需要配置一个静态资源的访问目录&lt;/p&gt;
@@ -5165,18 +5159,14 @@ Operators 纯函数可以处理管道的数据 如 map filter concat reduce 等&
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;这里使用&lt;code&gt;React&lt;/code&gt;和&lt;code&gt;NestJS&lt;/code&gt;实现一个&lt;code&gt;CRUD&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047227.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240718234211256&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.123pan.com/s/tMU0Vv-OL6Ud.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;前端代码&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047227.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212047227.png&#34; alt=&#34;image-20240718234211256&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.123pan.com/s/tMU0Vv-OL6Ud.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;前端代码&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;后端代码&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;user.controller.ts&lt;/p&gt;
