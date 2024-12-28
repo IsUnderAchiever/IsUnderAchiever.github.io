@@ -285,6 +285,7 @@
   <ol>
     <li><a href="#部署">部署</a></li>
     <li><a href="#修改root密码">修改root密码</a></li>
+    <li><a href="#gitlab-runner">Gitlab-Runner</a></li>
   </ol>
 </nav>
         </div>
@@ -535,7 +536,41 @@
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="gitlab-runner">Gitlab-Runner
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 创建容器</span>
+</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--name gitlab-runner <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-v /srv/gitlab-runner/config:/etc/gitlab-runner <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>gitlab/gitlab-runner:latest
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 初始化注册，此时需要输入url等信息，这些信息获取步骤如下图所示</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it gitlab-runner gitlab-runner register
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281325707.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281325707.png" alt="image-20241227164149717"  />
+	</a>
+</div>
+</p>
+
 </section>
 
 
@@ -556,6 +591,30 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker部署Gitlab、Gitlab-Runner"
+                        data-key="Docker部署Gitlab、Gitlab-Runner" 
+                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker部署Gitlab、Gitlab-Runner</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
@@ -648,30 +707,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Docker部署Portainer</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/docker/">
-        
-        
-            <div class="article-image">
-                <img src="/p/docker/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Docker"
-                        data-key="Docker" 
-                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Docker</h2>
         </div>
     </a>
 </article>

@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker部署Gitlab、Gitlab-Runner">
+<title>Docker部署Gitlab、Gitlab-Runner</title>
+
+<link rel='canonical' href='https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/'>
+
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="Docker部署Gitlab、Gitlab-Runner">
+<meta property='og:description' content="Docker部署Gitlab、Gitlab-Runner">
+<meta property='og:url' content='https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/'>
+<meta property='og:site_name' content='深海火锅店'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-12-28T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-28T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home.webp' />
+<meta name="twitter:title" content="Docker部署Gitlab、Gitlab-Runner">
+<meta name="twitter:description" content="Docker部署Gitlab、Gitlab-Runner"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home.webp' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/header_hu16240087013746809388.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😁</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">深海火锅店</a></h1>
+            <h2 class="site-description">记录我的成长史</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/477448861'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1734756297204" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4471" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M685.21 117.15c6.63-9.41 21.12-11.52 30.21-4.47 9.06 6.34 11.49 19.96 5.35 29.12-35.44 51.91-70.81 103.88-106.31 155.76-0.63 1.02-1.16 2.09-1.7 3.16 86.41 0.03 172.82 0.01 259.22 0.02 10.3-0.39 19.61 8.97 19.11 19.28 0.08 172.65 0.18 345.31 0.23 517.97 0.29 9.97-8.32 19.2-18.33 19.35-21.78 0.24-43.56-0.17-65.32 0.19-1.96 17.65-9.87 34.97-23.27 46.85-12.92 12-31.5 17.75-48.9 14.36-28.92-5.43-48.64-33.26-51.72-61.39-109.19 0.08-218.38 0.08-327.57 0-2.33 18.48-10.77 36.55-25.23 48.6-15.66 13.62-39.03 17.75-58.17 9.42-23.11-9.58-37.95-33.47-40.48-57.84-27.1-0.36-54.23 0.06-81.33-0.21-9.8-0.41-18.09-9.49-17.73-19.28 0.06-170.34 0.08-340.69 0.12-511.04 0.1-4.55-0.51-9.27 1.09-13.64 2.49-7.28 9.81-12.67 17.54-12.61 91.71-0.09 183.42 0.12 275.13-0.11-50.14-27.95-100.88-54.9-151.14-82.66-10.46-5.79-13.59-20.94-6.66-30.59 5.82-9.13 18.87-12.17 28.25-6.87 69.04 37.58 138.06 75.18 207.1 112.76 3.52 1.62 5.91 4.67 8.61 7.31 15.47 0.33 30.96 0.05 46.45 0.15 41.94-61.11 83.59-122.43 125.45-183.59M169.87 336.87c-0.09 161.25 0.16 322.48 0.35 483.72 228.11-0.17 456.22-0.07 684.33-0.05-0.02-161.22 0.22-322.46 0.07-483.68-228.25 0.01-456.5-0.02-684.75 0.01M271 857.38c2.22 11.33 10.44 23.52 23 24.07 12.45-0.26 21.53-12.56 22.95-24.07-15.32 0.05-30.64 0.02-45.95 0m452.05 0c1.42 11.5 10.51 23.79 22.95 24.07 12.54-0.55 20.85-12.71 22.99-24.06-15.31 0.01-30.63 0.04-45.94-0.01z" fill="#454545" p-id="4472"></path><path d="M221.28 374.37c3.83-0.94 7.81-0.61 11.72-0.65 188.33 0.01 376.65-0.01 564.98 0.01 10.85-0.43 20.67 9.41 20.08 20.27 0.14 123.33-0.02 246.66 0.16 369.99 0.13 8.3-5.4 16.35-13.29 19-4.14 1.52-8.61 1.18-12.93 1.19-188.67-0.04-377.35 0.06-566.02-0.04-12.39 0.23-21.58-12.32-19.69-24.15 0.06-122.01 0.04-244.03 0.11-366.04-0.24-8.92 6.15-17.52 14.88-19.58M243 410.18c-0.38 112.4 0.15 224.81 0.11 337.21 179.44 0.13 358.89 0.09 538.34 0.02 0.01-112.43 0.4-224.89-0.09-337.3-179.45 0.14-358.91-0.01-538.36 0.07z" fill="#454545" p-id="4473"></path><path d="M600.4 471.55c5.06-1.37 10.69-0.78 15.28 1.8 35.65 21.33 71.26 42.72 106.91 64.07 4.92 2.83 10.29 5.72 13.05 10.95 4.45 7.6 3.2 17.98-3.01 24.24-6.32 7.05-17.67 8.31-25.62 3.34-37.26-22.4-74.56-44.75-111.83-67.13-6.4-3.83-10.36-11.35-9.78-18.79 0.31-8.57 6.75-16.33 15-18.48zM405.42 481.48c8.67-1.08 17.67 4.03 21.1 12.09 4.57 9.77-0.18 22.57-10.12 26.85-33.02 15.3-66.04 30.58-99.07 45.84-9.66 4.53-22.34-0.1-26.68-9.87-4.95-9.45-0.72-22.17 8.73-26.97 30.72-14.34 61.56-28.44 92.31-42.72 4.46-1.98 8.79-4.61 13.73-5.22zM407.29 596.31c8.9-3.09 19.57 1.06 24.09 9.31 4.37 7.1 1.79 15.88 4.5 23.51 3.44 13.44 14.3 26.79 29.14 27.09 13.98 0.07 24.84-11.84 28.91-24.34 2.31-6.05 2.52-12.54 2.96-18.9 1.17-11.04 12.56-19.47 23.46-17.43 9.81 1.3 17.53 10.53 17.35 20.37-0.08 15.28 7.21 32.12 21.92 38.44 8.4 3.65 18.6 1.7 25.5-4.2 10.37-8.44 15.16-22.11 15.17-35.21 0.14-10.37 9.36-19.53 19.73-19.62 10.15-0.64 19.85 7.53 21.03 17.62 2.16 35.45-20.4 73.22-55.9 82.28-24.72 6.92-51.53-3.48-68.08-22.38-10.45 11.74-24.48 20.62-40.07 23.39-17.51 3.32-36.18-1.22-50.48-11.76-21.88-15.69-33.94-42.91-33.43-69.55 0.28-8.35 6.19-16.17 14.2-18.62z" fill="#454545" p-id="4474"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/IsUnderAchiever'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://IsUnderAchiever.github.io/en/" >English</option>
+                                
+                                    <option value="https://IsUnderAchiever.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#部署gitlab容器">部署Gitlab容器</a></li>
+    <li><a href="#准备gitlab-runner">准备Gitlab-Runner</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/">
+            <img src="/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home_hu1147097447787108081.webp" srcset="/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home_hu1147097447787108081.webp 800w, /p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home_hu4396453130231862691.webp 1600w"  width="800"
+                height="543" loading="lazy" alt="Featured image of post Docker部署Gitlab、Gitlab-Runner" />
+            
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/docker/" style="background-color: #2a9d8f; color: #fff;">
+                Docker
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/">Docker部署Gitlab、Gitlab-Runner</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Docker部署Gitlab、Gitlab-Runner
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-12-28</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 7 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    <section class="article-content">
+    
+    
+    <h1 id="docker部署gitlabgitlab-runner">Docker部署Gitlab、Gitlab-Runner
+</h1><blockquote>
+<p>参考<a class="link" href="https://www.bilibili.com/video/BV18z421e7pL/?spm_id_from=333.337.search-card.all.click"  target="_blank" rel="noopener" >视频</a></p>
+</blockquote>
+<h2 id="部署gitlab容器">部署Gitlab容器
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 删除之前创建的容器</span>
+</span></span><span class="line"><span class="cl">docker rm -f gitlab
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除数据卷</span>
+</span></span><span class="line"><span class="cl">docker volume rm gitlab-etc
+</span></span><span class="line"><span class="cl">docker volume rm gitlab-log
+</span></span><span class="line"><span class="cl">docker volume rm gitlab-opt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker volume create gitlab-etc
+</span></span><span class="line"><span class="cl">docker volume create gitlab-log
+</span></span><span class="line"><span class="cl">docker volume create gitlab-opt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker pull gitlab/gitlab-ce:17.7.0-ce.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动容器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意这里指定了hostname，这点非常重要，会影响到后序配置runner，改成主机的ip即可</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里gitlab版本号需要和后续的gitlab-runner匹配</span>
+</span></span><span class="line"><span class="cl">docker run <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -itd  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -p 9980:80 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -p 9922:22 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -p 9943:443 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -v gitlab-etc:/etc/gitlab  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -v gitlab-log:/var/log/gitlab <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> -v gitlab-opt:/var/opt/gitlab <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --privileged<span class="o">=</span><span class="nb">true</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --name gitlab <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> --hostname 192.168.42.128 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>gitlab/gitlab-ce:latest
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker logs -f gitlab
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看gitlab初始root密码</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it gitlab grep <span class="s1">&#39;Password:&#39;</span> /etc/gitlab/initial_root_password
+</span></span><span class="line"><span class="cl"><span class="c1"># Password: DMLAQsQVh5YIi5+y4/b3nkAAXiZHscm2RGoACUc41R4=</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#进容器内部</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it gitlab /bin/bash
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="c1">#修改gitlab.rb</span>
+</span></span><span class="line"><span class="cl">vi /etc/gitlab/gitlab.rb
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="c1">#加入如下</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ==========================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#gitlab访问地址，可以写域名。如果端口不写的话默认为80端口</span>
+</span></span><span class="line"><span class="cl">external_url <span class="s1">&#39;http://192.168.42.128:9980&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#ssh主机ip</span>
+</span></span><span class="line"><span class="cl">gitlab_rails<span class="o">[</span><span class="s1">&#39;gitlab_ssh_host&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;192.168.42.128&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#ssh连接端口</span>
+</span></span><span class="line"><span class="cl">gitlab_rails<span class="o">[</span><span class="s1">&#39;gitlab_shell_ssh_port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="m">9922</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 显式设置 Nginx 监听端口</span>
+</span></span><span class="line"><span class="cl">nginx<span class="o">[</span><span class="s1">&#39;listen_port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="m">80</span>
+</span></span><span class="line"><span class="cl">nginx<span class="o">[</span><span class="s1">&#39;listen_https&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ==========================================</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 让配置生效</span>
+</span></span><span class="line"><span class="cl">gitlab-ctl reconfigure
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /var/opt/gitlab/nginx/conf/gitlab-http.conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这是容器内nginx的配置文件，如果有需要可以进行修改，我们这里默认即可</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">vi /opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml
+</span></span><span class="line"><span class="cl"><span class="c1"># ==========================================</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 改为如下配置</span>
+</span></span><span class="line"><span class="cl">gitlab:
+</span></span><span class="line"><span class="cl">  host: 192.168.42.128
+</span></span><span class="line"><span class="cl">  port: <span class="m">9980</span> <span class="c1"># 这里改为9980</span>
+</span></span><span class="line"><span class="cl">  https: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ==========================================</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#重启gitlab </span>
+</span></span><span class="line"><span class="cl">gitlab-ctl restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 可以直接在这里修改root密码，或者在ui页面进行修改</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 此时依然是在容器内部</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入控制台</span>
+</span></span><span class="line"><span class="cl">gitlab-rails console -e production
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="c1"># 查询id为1的用户，id为1的用户是超级管理员</span>
+</span></span><span class="line"><span class="cl"><span class="nv">user</span> <span class="o">=</span> User.where<span class="o">(</span>id:1<span class="o">)</span>.first
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改密码为tong123456，另外密码设置有强度检测，不要设置`123456`，会失败的</span>
+</span></span><span class="line"><span class="cl">user.password<span class="o">=</span><span class="s1">&#39;tong123456&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 保存</span>
+</span></span><span class="line"><span class="cl">user.save!
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>登陆后，先重置一下密码</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320950.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320950.png" alt="image-20241227214209162"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320530.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320530.png" alt="image-20241227214225177"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320146.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320146.png" alt="image-20241227214244718"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320526.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320526.png" alt="image-20241227214309591"  />
+	</a>
+</div>
+</p>
+<h2 id="准备gitlab-runner">准备Gitlab-Runner
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 配置jdk21</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/
+</span></span><span class="line"><span class="cl">wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tar -zxvf jdk-21_linux-x64_bin.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &gt;&gt; /etc/profile <span class="s">&lt;&lt;-&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">export JAVA_HOME=/usr/local/jdk-21.0.5
+</span></span></span><span class="line"><span class="cl"><span class="s">export PATH=$PATH:$JAVA_HOME/bin
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span><span class="line"><span class="cl">java -version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置maven</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local/
+</span></span><span class="line"><span class="cl">wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tar -zxvf apache-maven-3.9.9-bin.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &gt;&gt; /etc/profile <span class="s">&lt;&lt;-&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">export MVN_HOME=/usr/local/apache-maven-3.9.9
+</span></span></span><span class="line"><span class="cl"><span class="s">export PATH=$PATH:$MVN_HOME/bin
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span><span class="line"><span class="cl">mvn --version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置gitlab-runner</span>
+</span></span><span class="line"><span class="cl">curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner//script.rpm.sh <span class="p">|</span> sudo bash
+</span></span><span class="line"><span class="cl"><span class="c1"># 提示:The repository is setup! You can now install packages.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载一直超时，最后还是使用代理下载的</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>http://192.168.0.16:7899
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://192.168.0.16:7899
+</span></span><span class="line"><span class="cl"><span class="c1"># 下载完之后一定要取消代理</span>
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> http_proxy
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> https_proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装gitlab-runner，版本与gitlab镜像保持一致(版本相差不大即可)</span>
+</span></span><span class="line"><span class="cl">yum install -y gitlab-runner-17.7.0-1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 虽然gitlab runner安装好了，但是现在还不能直接用</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认gitlab runner使用的是一个低权限的用户`gitlab-runner`，这会对之后的cicd有很大的影响</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看用户，这个用户权限太低了</span>
+</span></span><span class="line"><span class="cl">cut -d: -f1 /etc/passwd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 执行以下命令，删除gitlab-runner原始信息</span>
+</span></span><span class="line"><span class="cl">gitlab-runner uninstall
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装并设置--user(设置为root),工作目录是/home/gitlab-runner</span>
+</span></span><span class="line"><span class="cl">gitlab-runner install --working-directory /home/docker/gitlab/gitlab-runner --user root
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启gitlab-runner</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl start gitlab-runner
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> gitlab-runner
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看当前runner用户</span>
+</span></span><span class="line"><span class="cl">ps aux<span class="p">|</span>grep gitlab-runner
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320796.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320796.png" alt="image-20241227224134959"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320765.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320765.png" alt="image-20241227224211312"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>写上<code>shared</code>，直接点击<code>create</code></p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320057.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320057.png" alt="image-20241228102543566"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>复制命令进行注册</p>
+<p>我这里注册失败过很多次，分享一下排查过程，首先说我的原因，是因为挂了<code>http</code>代理</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 首先检查gitlab和gitlab-runner版本是否匹配</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 我刚开始curl http://192.168.42.128:9980是没有响应的</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 然后修改容器内部的配置文件/etc/gitlab/gitlab.rb，以下是原来的配置文件</span>
+</span></span><span class="line"><span class="cl">external_url <span class="s1">&#39;http://192.168.42.128&#39;</span>
+</span></span><span class="line"><span class="cl">gitlab_rails<span class="o">[</span><span class="s1">&#39;gitlab_ssh_host&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;192.168.42.128&#39;</span>
+</span></span><span class="line"><span class="cl">gitlab_rails<span class="o">[</span><span class="s1">&#39;gitlab_shell_ssh_port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="m">9922</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改为如下配置</span>
+</span></span><span class="line"><span class="cl">external_url <span class="s1">&#39;http://192.168.42.128:9980&#39;</span>
+</span></span><span class="line"><span class="cl">gitlab_rails<span class="o">[</span><span class="s1">&#39;gitlab_ssh_host&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;192.168.42.128&#39;</span>
+</span></span><span class="line"><span class="cl">gitlab_rails<span class="o">[</span><span class="s1">&#39;gitlab_shell_ssh_port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="m">9922</span>
+</span></span><span class="line"><span class="cl">nginx<span class="o">[</span><span class="s1">&#39;listen_port&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="m">80</span>
+</span></span><span class="line"><span class="cl">nginx<span class="o">[</span><span class="s1">&#39;listen_https&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 执行命令，生效配置</span>
+</span></span><span class="line"><span class="cl">gitlab-ctl reconfigure
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /var/opt/gitlab/nginx/conf/gitlab-http.conf文件时gitlab内部nginx的配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 我这里默认即可，监听80端口</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /opt/gitlab/embedded/service/gitlab-rails/config/gitlab.yml配置文件配置如下</span>
+</span></span><span class="line"><span class="cl">gitlab:
+</span></span><span class="line"><span class="cl">  host: 192.168.42.128
+</span></span><span class="line"><span class="cl">  port: <span class="m">9980</span>
+</span></span><span class="line"><span class="cl">  https: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看nginx的配置文件/var/log/gitlab/nginx/error.log</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 我这里文件为空，没有内容</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 这样修改配置之后执行以下命令</span>
+</span></span><span class="line"><span class="cl">curl -v http://192.168.42.128:9980
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 此时有响应了，响应如下</span>
+</span></span><span class="line"><span class="cl">* Rebuilt URL to: http://192.168.42.128:9980/
+</span></span><span class="line"><span class="cl">* Uses proxy env variable <span class="nv">http_proxy</span> <span class="o">==</span> <span class="s1">&#39;http://192.168.0.16:7899&#39;</span>
+</span></span><span class="line"><span class="cl">*   Trying 192.168.0.16...
+</span></span><span class="line"><span class="cl">* TCP_NODELAY <span class="nb">set</span>
+</span></span><span class="line"><span class="cl">* Connected to 192.168.0.16 <span class="o">(</span>192.168.0.16<span class="o">)</span> port <span class="m">7899</span> <span class="o">(</span><span class="c1">#0)</span>
+</span></span><span class="line"><span class="cl">&gt; GET http://192.168.42.128:9980/ HTTP/1.1
+</span></span><span class="line"><span class="cl">&gt; Host: 192.168.42.128:9980
+</span></span><span class="line"><span class="cl">&gt; User-Agent: curl/7.61.1
+</span></span><span class="line"><span class="cl">&gt; Accept: */*
+</span></span><span class="line"><span class="cl">&gt; Proxy-Connection: Keep-Alive
+</span></span><span class="line"><span class="cl">&gt; 
+</span></span><span class="line"><span class="cl">&lt; HTTP/1.1 <span class="m">502</span> Bad Gateway
+</span></span><span class="line"><span class="cl">&lt; Connection: keep-alive
+</span></span><span class="line"><span class="cl">&lt; Keep-Alive: <span class="nv">timeout</span><span class="o">=</span><span class="m">4</span>
+</span></span><span class="line"><span class="cl">&lt; Proxy-Connection: keep-alive
+</span></span><span class="line"><span class="cl">&lt; Content-Length: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">&lt; 
+</span></span><span class="line"><span class="cl">* Connection <span class="c1">#0 to host 192.168.0.16 left intact</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 原因是因为挂了http代理，前面yum下载超时才挂的代理</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消代理</span>
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> http_proxy
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> https_proxy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新注册之后成功，结果如下</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@192 ~<span class="o">]</span><span class="c1"># gitlab-runner register  --url http://192.168.42.128:9980  --token glrt-t1_tjt1C9_KNQJRRiRc37-k</span>
+</span></span><span class="line"><span class="cl">Runtime platform                                    <span class="nv">arch</span><span class="o">=</span>amd64 <span class="nv">os</span><span class="o">=</span>linux <span class="nv">pid</span><span class="o">=</span><span class="m">209111</span> <span class="nv">revision</span><span class="o">=</span>3153ccc6 <span class="nv">version</span><span class="o">=</span>17.7.0
+</span></span><span class="line"><span class="cl">Running in system-mode.                            
+</span></span><span class="line"><span class="cl">                                                   
+</span></span><span class="line"><span class="cl">Enter the GitLab instance URL <span class="o">(</span><span class="k">for</span> example, https://gitlab.com/<span class="o">)</span>:
+</span></span><span class="line"><span class="cl"><span class="o">[</span>http://192.168.42.128:9980<span class="o">]</span>: 
+</span></span><span class="line"><span class="cl">Verifying runner... is valid                        <span class="nv">runner</span><span class="o">=</span>t1_tjt1C9
+</span></span><span class="line"><span class="cl">Enter a name <span class="k">for</span> the runner. This is stored only in the <span class="nb">local</span> config.toml file:
+</span></span><span class="line"><span class="cl"><span class="o">[</span>192.168.42.128<span class="o">]</span>: 
+</span></span><span class="line"><span class="cl">Enter an executor: ssh, docker, docker-windows, docker-autoscaler, shell, parallels, virtualbox, docker+machine, kubernetes, instance, custom:
+</span></span><span class="line"><span class="cl">shell
+</span></span><span class="line"><span class="cl">Runner registered successfully. Feel free to start it, but <span class="k">if</span> it<span class="err">&#39;</span>s running already the config should be automatically reloaded!
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">Configuration <span class="o">(</span>with the authentication token<span class="o">)</span> was saved in <span class="s2">&#34;/etc/gitlab-runner/config.toml&#34;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320103.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320103.png" alt="image-20241228103712513"  />
+	</a>
+</div>
+</p>
+<p>此时runner已经进入<code>Online</code>状态</p>
+<blockquote>
+<p>gitlab配置<code>ssh</code>参考<a class="link" href="https://blog.csdn.net/weixin_45710060/article/details/121752880"  target="_blank" rel="noopener" >博客</a></p>
+<p>这里我就直接省略了</p>
+<p>这里在<code>gitlab</code>新建一个项目</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321015.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321015.png" alt="image-20241228104030641"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321867.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321867.png" alt="image-20241228104048753"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321485.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321485.png" alt="image-20241228104127834"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321622.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321622.png" alt="image-20241228104300647"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>这里先把代码<code>clone</code>下来</p>
+<p>先随便写个demo即可，重点关注项目下的两个文件</p>
+<p>新建两个文件<code>.gitlab-ci.yml</code>和<code>Dockerfile</code></p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321320.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321320.png" alt="image-20241228115239957"  />
+	</a>
+</div>
+</p>
+<p><strong>Dockerfile</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> openjdk:21</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ADD</span> ./target/boot-demo-0.0.1-SNAPSHOT.jar /usr/local<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;java&#34;</span><span class="p">,</span><span class="s2">&#34;-jar&#34;</span><span class="p">,</span><span class="s2">&#34;/usr/local/boot-demo-0.0.1-SNAPSHOT.jar&#34;</span><span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8080</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>.gitlab-ci.yml</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">stages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">build-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">push-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">mvn clean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">mvn package</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">target/*.jar</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">build-image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">build-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker build -t tong/boot-demo:$CI_COMMIT_TAG .</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">push-image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">push-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker push 192.168.0.16:8010/tong/boot-demo:$CI_COMMIT_TAG</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>为防止后续部署报错，建议先手动执行下，看看是否能运行起来</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mvn clean package
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入target目录</span>
+</span></span><span class="line"><span class="cl">java -jar boot-demo-0.0.1-SNAPSHOT.jar
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动没问题就行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>创建token，在push代码时需要用到</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321228.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321228.png" alt="image-20241228114809975"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>勾选需要的权限，点击创建</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321277.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321277.png" alt="image-20241228114922692"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>push代码时，填入对应的token</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321438.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321438.png" alt="image-20241228114937324"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>可以看到现在代码已经push上来了</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321995.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321995.png" alt="image-20241228115504787"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321522.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321522.png" alt="image-20241228115529433"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322187.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322187.png" alt="image-20241228115546297"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>注意分支要选择自己提交代码的分支</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322181.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322181.png" alt="image-20241228115637008"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>这里build失败是因为<code>gitlab yml</code>里的命令有问题，先看看<code>build</code>的镜像是否能正常运行</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322268.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322268.png" alt="image-20241228124144668"  />
+	</a>
+</div>
+</p>
+<p>稍作修改</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322319.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322319.png" alt="image-20241228124227087"  />
+	</a>
+</div>
+</p>
+<p>前面<code>build</code>是成功了</p>
+<p>查看下本地镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">[</span>root@192 jar<span class="o">]</span><span class="c1"># docker image ls tong/boot-demo</span>
+</span></span><span class="line"><span class="cl">REPOSITORY       TAG              IMAGE ID       CREATED          SIZE
+</span></span><span class="line"><span class="cl">tong/boot-demo   0.0.1-SNAPSHOT   58b8922d0b3d   <span class="m">13</span> minutes ago   524MB
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@192 jar<span class="o">]</span><span class="c1"># docker run -d --name boot-demo -p 8012:8080 tong/boot-demo:0.0.1-SNAPSHOT</span>
+</span></span><span class="line"><span class="cl">6af3dad70224e9d613da84ad5d7e1317733107749a5f8546683c3f353928a4ff
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@192 jar<span class="o">]</span><span class="c1"># docker logs boot-demo</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  .   ____          _            __ _ _
+</span></span><span class="line"><span class="cl"> /<span class="se">\\</span> / ___<span class="s1">&#39;_ __ _ _(_)_ __  __ _ \ \ \ \
+</span></span></span><span class="line"><span class="cl"><span class="s1">( ( )\___ | &#39;</span>_ <span class="p">|</span> <span class="s1">&#39;_| | &#39;</span>_ <span class="se">\/</span> _<span class="sb">`</span> <span class="p">|</span> <span class="se">\ \ \ \
+</span></span></span><span class="line"><span class="cl"><span class="se"></span> <span class="se">\\</span>/  ___<span class="o">)</span><span class="p">|</span> <span class="p">|</span>_<span class="o">)</span><span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="p">|</span> <span class="o">||</span> <span class="o">(</span>_<span class="p">|</span> <span class="p">|</span>  <span class="o">)</span> <span class="o">)</span> <span class="o">)</span> <span class="o">)</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;  |____| .__|_| |_|_| |_\__, | / / / /
+</span></span></span><span class="line"><span class="cl"><span class="s1"> =========|_|==============|___/=/_/_/_/
+</span></span></span><span class="line"><span class="cl"><span class="s1"> :: Spring Boot ::               (v2.6.13)
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:56.844  INFO 1 --- [           main] org.tong.TongApplication                 : Starting TongApplication using Java 21 on 6af3dad70224 with PID 1 (/usr/local/boot-demo-0.0.1-SNAPSHOT.jar started by root in /)
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:56.846  INFO 1 --- [           main] org.tong.TongApplication                 : No active profile set, falling back to 1 default profile: &#34;default&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:57.332  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:57.339  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:57.339  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:57.382  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:57.383  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 505 ms
+</span></span></span><span class="line"><span class="cl"><span class="s1">2024-12-28 04:44:57.575  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path &#39;</span><span class="err">&#39;</span>
+</span></span><span class="line"><span class="cl">2024-12-28 04:44:57.580  INFO <span class="m">1</span> --- <span class="o">[</span>           main<span class="o">]</span> org.tong.TongApplication                 : Started TongApplication in 0.969 seconds <span class="o">(</span>JVM running <span class="k">for</span> 1.201<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>可以看到这里已经成功启动了，访问下试试</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322496.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322496.png" alt="image-20241228124606450"  />
+	</a>
+</div>
+</p>
+<blockquote>
+<p>接口正常，接下来重新修改下<code>dockerfile</code>完整过一遍</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 先把原来的容器删掉</span>
+</span></span><span class="line"><span class="cl">docker rm -f boot-demo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>我这里是搭建了私人的docker仓库，如果需要push到<code>dockerhub</code>，需要先登录</p>
+<p>命令改成<code>docker push tong/boot-demo:$CI_COMMIT_TAG</code>即可</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 登录dockerhub</span>
+</span></span><span class="line"><span class="cl">docker login
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl">stages:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  - build<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  - build-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  - tag-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  - push-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  - run-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>build:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  stage: build<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  rules:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - <span class="k">if</span>: <span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      allow_failure: false<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - when: never<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  tags:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - shared<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  script:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - mvn clean<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - mvn package<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  artifacts:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    paths:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      - target/*.jar<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>build-image:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  stage: build-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  rules:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - <span class="k">if</span>: <span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      allow_failure: false<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - when: never<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  tags:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - shared<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  script:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - docker build -t tong/boot-demo:<span class="nv">$CI_COMMIT_TAG</span> .<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>tag-image:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  stage: tag-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  rules:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - <span class="k">if</span>: <span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      allow_failure: false<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - when: never<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  tags:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - shared<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  script:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - docker tag tong/boot-demo:<span class="nv">$CI_COMMIT_TAG</span> 192.168.0.16:8010/tong/boot-demo:<span class="nv">$CI_COMMIT_TAG</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>push-image:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  stage: push-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  rules:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - <span class="k">if</span>: <span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      allow_failure: false<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - when: never<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  tags:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - shared<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  script:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - docker push 192.168.0.16:8010/tong/boot-demo:<span class="nv">$CI_COMMIT_TAG</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">run</span>-image:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  stage: push-image<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  rules:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - <span class="k">if</span>: <span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>      allow_failure: false<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - when: never<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  tags:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - shared<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>  script:<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>    - docker run -d --name boot-demo -p 8012:8080 192.168.0.16:8010/tong/boot-demo:<span class="nv">$CI_COMMIT_TAG</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322016.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322016.png" alt="image-20241228124846469"  />
+	</a>
+</div>
+</p>
+<p>可以看到这里已经成功了，访问接口也没问题</p>
+<blockquote>
+<p>pom.xml</p>
+<p>设置<code>&lt;finalName&gt;boot-demo&lt;/finalName&gt;</code>表示打包之后的名字</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span class="line"><span class="cl">         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>boot-demo<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>0.0.2-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;name&gt;</span>boot-demo<span class="nt">&lt;/name&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;description&gt;</span>boot-demo<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;java.version&gt;</span>17<span class="nt">&lt;/java.version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;project.reporting.outputEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.reporting.outputEncoding&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;spring-boot.version&gt;</span>2.6.13<span class="nt">&lt;/spring-boot.version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.projectlombok<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>lombok<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;optional&gt;</span>true<span class="nt">&lt;/optional&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>spring-boot-dependencies<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>${spring-boot.version}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependencyManagement&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;finalName&gt;</span>boot-demo<span class="nt">&lt;/finalName&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>3.10.1<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;source&gt;</span>${java.version}<span class="nt">&lt;/source&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;target&gt;</span>${java.version}<span class="nt">&lt;/target&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;encoding&gt;</span>UTF-8<span class="nt">&lt;/encoding&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;version&gt;</span>${spring-boot.version}<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;mainClass&gt;</span>org.tong.TongApplication<span class="nt">&lt;/mainClass&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;executions&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;execution&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;id&gt;</span>repackage<span class="nt">&lt;/id&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;goals&gt;</span>
+</span></span><span class="line"><span class="cl">                            <span class="nt">&lt;goal&gt;</span>repackage<span class="nt">&lt;/goal&gt;</span>
+</span></span><span class="line"><span class="cl">                        <span class="nt">&lt;/goals&gt;</span>
+</span></span><span class="line"><span class="cl">                    <span class="nt">&lt;/execution&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;/executions&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/build&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/project&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>dockerfile</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> openjdk:21</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ADD</span> ./target/boot-demo.jar /usr/local<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;java&#34;</span><span class="p">,</span><span class="s2">&#34;-jar&#34;</span><span class="p">,</span><span class="s2">&#34;/usr/local/boot-demo.jar&#34;</span><span class="p">]</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8080</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>.gitlab-ci.yml</code></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">stages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">build-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">tag-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">push-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">run-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">mvn clean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">mvn package</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">paths</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">target/*.jar</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">build-image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">build-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker rmi tong/boot-demo:${CI_COMMIT_TAG} || true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker build -t tong/boot-demo:$CI_COMMIT_TAG .</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">tag-image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">tag-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker tag tong/boot-demo:$CI_COMMIT_TAG 192.168.0.16:8010/tong/boot-demo:$CI_COMMIT_TAG</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">push-image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">push-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker push 192.168.0.16:8010/tong/boot-demo:$CI_COMMIT_TAG</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">run-image</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">push-image</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rules</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;$CI_COMMIT_TAG&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">allow_failure</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l">never</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">shared</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker rm -f boot-demo || true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">docker run -d --name boot-demo -p 8012:8080 192.168.0.16:8010/tong/boot-demo:$CI_COMMIT_TAG</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BAdocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BAdocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker搭建私人Docker镜像仓库"
+                        data-key="Docker搭建私人Docker镜像仓库" 
+                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker搭建私人Docker镜像仓库</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E9%83%A8%E7%BD%B2gitlab/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E9%83%A8%E7%BD%B2gitlab/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker部署Gitlab"
+                        data-key="Docker部署Gitlab" 
+                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker部署Gitlab</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E9%83%A8%E7%BD%B2jenkins/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E9%83%A8%E7%BD%B2jenkins/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker部署Jenkins"
+                        data-key="Docker部署Jenkins" 
+                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker部署Jenkins</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E9%83%A8%E7%BD%B2nginx/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E9%83%A8%E7%BD%B2nginx/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker部署Nginx"
+                        data-key="Docker部署Nginx" 
+                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker部署Nginx</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E9%83%A8%E7%BD%B2portainer/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E9%83%A8%E7%BD%B2portainer/dbc-docker-desktop-home.8df46523fe558d0ffe31d4da0af71759_hu12127540679528425330.webp" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Docker部署Portainer"
+                        data-key="Docker部署Portainer" 
+                        data-hash="md5-jfRlI/5VjQ/&#43;MdTaCvcXWQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker部署Portainer</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 深海火锅店
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
