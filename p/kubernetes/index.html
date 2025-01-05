@@ -413,7 +413,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 61 分钟
+                    阅读时长: 64 分钟
                 </time>
             </div>
         
@@ -5367,6 +5367,9 @@ Pod（容器组）是 Kubernetes 中最小的可部署单元。一个 Pod（容�
 </span><span class="lnt">28
 </span><span class="lnt">29
 </span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
@@ -5374,6 +5377,9 @@ Pod（容器组）是 Kubernetes 中最小的可部署单元。一个 Pod（容�
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fluentd</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="c"># 匹配po</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">logging</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
@@ -5401,41 +5407,289 @@ Pod（容器组）是 Kubernetes 中最小的可部署单元。一个 Pod（容�
 </span></span></span><span class="line"><span class="cl"><span class="w">           </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">varlog</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h5 id="指定-node-节点">指定 Node 节点
-</h5><p>DaemonSet 会忽略 Node 的 unschedulable 状态，有两种方式来指定 Pod 只运行在指定的 Node 节点上：</p>
-<ul>
-<li>nodeSelector：只调度到匹配指定 label 的 Node 上</li>
-<li>nodeAffinity：功能更丰富的 Node 选择器，比如支持集合操作</li>
-<li>podAffinity：调度到满足条件的 Pod 所在的 Node 上</li>
-</ul>
-<blockquote>
-<p>nodeSelector</p>
-</blockquote>
-<p>先为 Node 打上标签</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">kubectl label nodes k8s-node1 <span class="nv">svc_type</span><span class="o">=</span>microsvc
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 查看daemonset</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master daemonset<span class="o">]</span><span class="c1"># kubectl get ds</span>
+</span></span><span class="line"><span class="cl">NAME      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+</span></span><span class="line"><span class="cl">fluentd   <span class="m">2</span>         <span class="m">2</span>         <span class="m">0</span>       <span class="m">2</span>            <span class="m">0</span>           &lt;none&gt;          8s
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看对应的po</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get po --show-labels</span>
+</span></span><span class="line"><span class="cl">NAME            READY   STATUS    RESTARTS   AGE   LABELS
+</span></span><span class="line"><span class="cl">dns-test        1/1     Running   <span class="m">0</span>          12d   <span class="nv">run</span><span class="o">=</span>dns-test
+</span></span><span class="line"><span class="cl">fluentd-drcr8   1/1     Running   <span class="m">0</span>          13m   <span class="nv">app</span><span class="o">=</span>logging,controller-revision-hash<span class="o">=</span>b96747bc7,id<span class="o">=</span>fluentd,pod-template-generation<span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">fluentd-ndlcf   1/1     Running   <span class="m">0</span>          13m   <span class="nv">app</span><span class="o">=</span>logging,controller-revision-hash<span class="o">=</span>b96747bc7,id<span class="o">=</span>fluentd,pod-template-generation<span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">web-0           1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-0
+</span></span><span class="line"><span class="cl">web-1           1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-1
+</span></span><span class="line"><span class="cl">web-2           1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-2
+</span></span><span class="line"><span class="cl">web-3           1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-3
+</span></span><span class="line"><span class="cl">web-4           1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-4
+</span></span><span class="line"><span class="cl">web-5           1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-5
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看标签，因为没有选择需要部署的节点，所以现在往每一个非master节点都部署了一份</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get nodes --show-labels</span>
+</span></span><span class="line"><span class="cl">NAME         STATUS   ROLES                  AGE   VERSION   LABELS
+</span></span><span class="line"><span class="cl">k8s-master   Ready    control-plane,master   82d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-master,kubernetes.io/os<span class="o">=</span>linux,node-role.kubernetes.io/control-plane<span class="o">=</span>,node-role.kubernetes.io/master<span class="o">=</span>,node.kubernetes.io/exclude-from-external-load-balancers<span class="o">=</span>
+</span></span><span class="line"><span class="cl">k8s-node1    Ready    &lt;none&gt;                 82d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-node1,kubernetes.io/os<span class="o">=</span>linux
+</span></span><span class="line"><span class="cl">k8s-node2    Ready    &lt;none&gt;                 82d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-node2,kubernetes.io/os<span class="o">=</span>linux
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新编辑daemonset</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl edit ds fluentd</span>
+</span></span><span class="line"><span class="cl">daemonset.apps/fluentd edited
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>然后再 daemonset 配置中设置 nodeSelector</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">spec</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">template</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">spec</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="nt">nodeSelector</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">svc_type</span><span class="p">:</span><span class="w"> </span><span class="l">microsvc</span><span class="w">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Please edit the object below. Lines beginning with a &#39;#&#39; will be ignored,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># and an empty file will abort the edit. If an error occurs while saving this file will be</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># reopened with the relevant failures.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">DaemonSet</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">deprecated.daemonset.template.generation</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;2024-12-30T13:34:32Z&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">generation</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fluentd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">resourceVersion</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;205641&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l">022c628c-ca36-4c97-b149-f201569ed32e</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">revisionHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">logging</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">creationTimestamp</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">logging</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l">fluentd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fluentd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">FLUENTD_ARGS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span>-<span class="l">qq</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">agilestacks/fluentd-elasticsearch:v1.3.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">IfNotPresent</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">fluentd-es</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">terminationMessagePath</span><span class="p">:</span><span class="w"> </span><span class="l">/dev/termination-log</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">terminationMessagePolicy</span><span class="p">:</span><span class="w"> </span><span class="l">File</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">volumeMounts</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l">/var/lib/docker/containers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">containers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span>- <span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l">/varlog</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">varlog</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dnsPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">ClusterFirst</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nodeSelector</span><span class="p">:</span><span class="w"> </span><span class="c">## 添加这两行，用来选择对应label的nodes节点</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">microservices</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">schedulerName</span><span class="p">:</span><span class="w"> </span><span class="l">default-scheduler</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">securityContext</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">terminationGracePeriodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">hostPath</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/var/lib/docker/containers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">...</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 我们这边nodes节点没有匹配`type: microservices`的，所以下面没有daemonset</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get nodes --show-labels</span>
+</span></span><span class="line"><span class="cl">NAME         STATUS   ROLES                  AGE   VERSION   LABELS
+</span></span><span class="line"><span class="cl">k8s-master   Ready    control-plane,master   83d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-master,kubernetes.io/os<span class="o">=</span>linux,node-role.kubernetes.io/control-plane<span class="o">=</span>,node-role.kubernetes.io/master<span class="o">=</span>,node.kubernetes.io/exclude-from-external-load-balancers<span class="o">=</span>
+</span></span><span class="line"><span class="cl">k8s-node1    Ready    &lt;none&gt;                 83d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-node1,kubernetes.io/os<span class="o">=</span>linux
+</span></span><span class="line"><span class="cl">k8s-node2    Ready    &lt;none&gt;                 82d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-node2,kubernetes.io/os<span class="o">=</span>linux
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get po --show-labels</span>
+</span></span><span class="line"><span class="cl">NAME       READY   STATUS    RESTARTS   AGE   LABELS
+</span></span><span class="line"><span class="cl">dns-test   1/1     Running   <span class="m">0</span>          12d   <span class="nv">run</span><span class="o">=</span>dns-test
+</span></span><span class="line"><span class="cl">web-0      1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-0
+</span></span><span class="line"><span class="cl">web-1      1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-1
+</span></span><span class="line"><span class="cl">web-2      1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-2
+</span></span><span class="line"><span class="cl">web-3      1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-3
+</span></span><span class="line"><span class="cl">web-4      1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-4
+</span></span><span class="line"><span class="cl">web-5      1/1     Running   <span class="m">0</span>          11d   <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-5
+</span></span><span class="line"><span class="cl"><span class="c1"># 给nodes节点增加label</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl label nodes k8s-node1 type=microservices</span>
+</span></span><span class="line"><span class="cl">node/k8s-node1 labeled
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get nodes --show-labels</span>
+</span></span><span class="line"><span class="cl">NAME         STATUS   ROLES                  AGE   VERSION   LABELS
+</span></span><span class="line"><span class="cl">k8s-master   Ready    control-plane,master   83d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-master,kubernetes.io/os<span class="o">=</span>linux,node-role.kubernetes.io/control-plane<span class="o">=</span>,node-role.kubernetes.io/master<span class="o">=</span>,node.kubernetes.io/exclude-from-external-load-balancers<span class="o">=</span>
+</span></span><span class="line"><span class="cl">k8s-node1    Ready    &lt;none&gt;                 83d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-node1,kubernetes.io/os<span class="o">=</span>linux,type<span class="o">=</span>microservices
+</span></span><span class="line"><span class="cl">k8s-node2    Ready    &lt;none&gt;                 83d   v1.23.6   beta.kubernetes.io/arch<span class="o">=</span>amd64,beta.kubernetes.io/os<span class="o">=</span>linux,kubernetes.io/arch<span class="o">=</span>amd64,kubernetes.io/hostname<span class="o">=</span>k8s-node2,kubernetes.io/os<span class="o">=</span>linux
+</span></span><span class="line"><span class="cl"><span class="c1"># 这个时候就自动增加了一个ds</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get ds</span>
+</span></span><span class="line"><span class="cl">NAME      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR        AGE
+</span></span><span class="line"><span class="cl">fluentd   <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       <span class="m">1</span>            <span class="m">1</span>           <span class="nv">type</span><span class="o">=</span>microservices   21m
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看发现果然`fluentd-7rxmk`被部署到k8s-node1上了</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get po --show-labels -o wide</span>
+</span></span><span class="line"><span class="cl">NAME            READY   STATUS    RESTARTS   AGE   IP               NODE        NOMINATED NODE   READINESS GATES   LABELS
+</span></span><span class="line"><span class="cl">dns-test        1/1     Running   <span class="m">0</span>          12d   10.244.169.129   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">run</span><span class="o">=</span>dns-test
+</span></span><span class="line"><span class="cl">fluentd-7rxmk   1/1     Running   <span class="m">0</span>          73s   10.244.36.67     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>logging,controller-revision-hash<span class="o">=</span>5b4769fc56,id<span class="o">=</span>fluentd,pod-template-generation<span class="o">=</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">web-0           1/1     Running   <span class="m">0</span>          11d   10.244.36.71     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-0
+</span></span><span class="line"><span class="cl">web-1           1/1     Running   <span class="m">0</span>          11d   10.244.169.136   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-1
+</span></span><span class="line"><span class="cl">web-2           1/1     Running   <span class="m">0</span>          11d   10.244.169.135   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-2
+</span></span><span class="line"><span class="cl">web-3           1/1     Running   <span class="m">0</span>          11d   10.244.36.70     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-3
+</span></span><span class="line"><span class="cl">web-4           1/1     Running   <span class="m">0</span>          11d   10.244.36.69     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-4
+</span></span><span class="line"><span class="cl">web-5           1/1     Running   <span class="m">0</span>          11d   10.244.169.134   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-5
+</span></span><span class="line"><span class="cl"><span class="c1"># 再给k8s-node2加一个标签</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl label no k8s-node2 type=microservices</span>
+</span></span><span class="line"><span class="cl">node/k8s-node2 labeled
+</span></span><span class="line"><span class="cl"><span class="c1"># 这边也自动部署了第二个fluentd(fluentd-zjrqp)</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master k8s<span class="o">]</span><span class="c1"># kubectl get po --show-labels -o wide</span>
+</span></span><span class="line"><span class="cl">NAME            READY   STATUS    RESTARTS   AGE     IP               NODE        NOMINATED NODE   READINESS GATES   LABELS
+</span></span><span class="line"><span class="cl">dns-test        1/1     Running   <span class="m">0</span>          12d     10.244.169.129   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">run</span><span class="o">=</span>dns-test
+</span></span><span class="line"><span class="cl">fluentd-7rxmk   1/1     Running   <span class="m">0</span>          2m53s   10.244.36.67     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>logging,controller-revision-hash<span class="o">=</span>5b4769fc56,id<span class="o">=</span>fluentd,pod-template-generation<span class="o">=</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">fluentd-zjrqp   1/1     Running   <span class="m">0</span>          3s      10.244.169.131   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>logging,controller-revision-hash<span class="o">=</span>5b4769fc56,id<span class="o">=</span>fluentd,pod-template-generation<span class="o">=</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">web-0           1/1     Running   <span class="m">0</span>          11d     10.244.36.71     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-0
+</span></span><span class="line"><span class="cl">web-1           1/1     Running   <span class="m">0</span>          11d     10.244.169.136   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-1
+</span></span><span class="line"><span class="cl">web-2           1/1     Running   <span class="m">0</span>          11d     10.244.169.135   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-2
+</span></span><span class="line"><span class="cl">web-3           1/1     Running   <span class="m">0</span>          11d     10.244.36.70     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-3
+</span></span><span class="line"><span class="cl">web-4           1/1     Running   <span class="m">0</span>          11d     10.244.36.69     k8s-node1   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-4
+</span></span><span class="line"><span class="cl">web-5           1/1     Running   <span class="m">0</span>          11d     10.244.169.134   k8s-node2   &lt;none&gt;           &lt;none&gt;            <span class="nv">app</span><span class="o">=</span>nginx,controller-revision-hash<span class="o">=</span>web-7974cc466,statefulset.kubernetes.io/pod-name<span class="o">=</span>web-5
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p>nodeAffinity</p>
@@ -5573,12 +5827,39 @@ Pod（容器组）是 Kubernetes 中最小的可部署单元。一个 Pod（容�
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="滚动更新-1">滚动更新
-</h5><p>不建议使用 RollingUpdate，建议使用 OnDelete 模式，这样避免频繁更新 ds</p>
+</h5><blockquote>
+<p>不建议使用 RollingUpdate，建议使用 OnDelete 模式，这样避免频繁更新 ds</p>
+<p>默认daemonset滚动更新的模式是<code>RollingUpdate</code></p>
+<p>但是不建议使用<code>RollingUpdate</code>，建议使用<code>Ondelete</code></p>
+<p>因为如果我们希望对某个节点的ds进行更新，那么此时会将所有结点的ds全部更新</p>
+<p>如果使用<code>Ondelete</code>，我们只需要将需要更新的<code>po</code>删掉即可，会自动创建并更新</p>
+</blockquote>
 <h4 id="hpa-自动扩缩容">HPA 自动扩/缩容
 </h4><p>通过观察 pod 的 cpu、内存使用率或自定义 metrics 指标进行自动的扩容或缩容 pod 的数量。</p>
-<p>通常用于 Deployment，不适用于无法扩/缩容的对象，如 DaemonSet</p>
+<p>通常用于 Deployment，不适用于无法扩/缩容的对象，如 <code>DaemonSet</code></p>
 <p>控制管理器每隔30s（可以通过–horizontal-pod-autoscaler-sync-period修改）查询metrics的资源使用情况</p>
-<h5 id="开启指标服务">开启指标服务
+<blockquote>
+<p>这里演示就先将副本数改成1，让他自动扩容</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master deployments<span class="o">]</span><span class="c1"># ll</span>
+</span></span><span class="line"><span class="cl">total <span class="m">4</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">569</span> Dec <span class="m">15</span> 21:52 nginx-deploy.yaml
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@k8s-master deployments<span class="o">]</span><span class="c1"># vim nginx-deploy.yaml</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># spec:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   replicas: 1 # 副本数</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="开启指标服务">开启指标服务
 </h5><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -5612,12 +5893,99 @@ Pod（容器组）是 Kubernetes 中最小的可部署单元。一个 Pod（容�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="cpu内存指标监控">cpu、内存指标监控
-</h5><p>实现 cpu 或内存的监控，首先有个前提条件是该对象必须配置了 resources.requests.cpu 或 resources.requests.memory 才可以，可以配置当 cpu/memory 达到上述配置的百分比后进行扩容或缩容</p>
+</h5><p>实现 cpu 或内存的监控，首先有个前提条件是该对象必须配置了 <code>resources.requests.cpu</code> 或 <code>resources.requests.memory</code> 才可以，可以配置当 cpu/memory 达到上述配置的百分比后进行扩容或缩容</p>
 <p>创建一个 HPA：</p>
 <ol>
 <li>
 <p>先准备一个好一个有做资源限制的 deployment</p>
-</li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">apps/v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">default</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">revisionHistoryLimit</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">selector</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">strategy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">rollingUpdate</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">maxSurge</span><span class="p">:</span><span class="w"> </span><span class="m">25</span><span class="l">%</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">maxUnavailable</span><span class="p">:</span><span class="w"> </span><span class="m">25</span><span class="l">%</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">RollingUpdate</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">metadata</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">labels</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-deploy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">spec</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">containers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">nginx:1.7.9</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">IfNotPresent</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">nginx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="c"># 配置资源限制，配小一点，便于测试自动扩容</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">limits</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l">100m</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l">128Mi</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">requests</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l">100m</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l">128Mi</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">restartPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">Always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">terminationGracePeriodSeconds</span><span class="p">:</span><span class="w"> </span><span class="m">30</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们之前已经创建过一个<code>nginx-deploy</code>了，这次直接替换就好</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">kubectl replace -f nginx-deploy.yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>执行命令</p>
 <div class="highlight"><div class="chroma">
@@ -5680,7 +6048,7 @@ Pod（容器组）是 Kubernetes 中最小的可部署单元。一个 Pod（容�
         
             2020 - 
         
-        2024 深海火锅店
+        2025 深海火锅店
     </section>
     
     <section class="powerby">
