@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="3. Layout模块">
+<title>3. Layout模块</title>
+
+<link rel='canonical' href='https://IsUnderAchiever.github.io/p/3.-layout%E6%A8%A1%E5%9D%97/'>
+
+<link rel="stylesheet" href="/scss/style.min.b85f3de2f132c41bcf65396d29447bd98774c1cff192b74d7f75bc7b72545eb8.css"><meta property='og:title' content="3. Layout模块">
+<meta property='og:description' content="3. Layout模块">
+<meta property='og:url' content='https://IsUnderAchiever.github.io/p/3.-layout%E6%A8%A1%E5%9D%97/'>
+<meta property='og:site_name' content='深海火锅店'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-03T00:00:00&#43;00:00'/><meta property='og:image' content='https://IsUnderAchiever.github.io/p/3.-layout%E6%A8%A1%E5%9D%97/202412212156937.png' />
+<meta name="twitter:title" content="3. Layout模块">
+<meta name="twitter:description" content="3. Layout模块"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://IsUnderAchiever.github.io/p/3.-layout%E6%A8%A1%E5%9D%97/202412212156937.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/header_hu16240087013746809388.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">😁</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">深海火锅店</a></h1>
+            <h2 class="site-description">记录我的成长史</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/477448861'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1734756297204" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4471" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M685.21 117.15c6.63-9.41 21.12-11.52 30.21-4.47 9.06 6.34 11.49 19.96 5.35 29.12-35.44 51.91-70.81 103.88-106.31 155.76-0.63 1.02-1.16 2.09-1.7 3.16 86.41 0.03 172.82 0.01 259.22 0.02 10.3-0.39 19.61 8.97 19.11 19.28 0.08 172.65 0.18 345.31 0.23 517.97 0.29 9.97-8.32 19.2-18.33 19.35-21.78 0.24-43.56-0.17-65.32 0.19-1.96 17.65-9.87 34.97-23.27 46.85-12.92 12-31.5 17.75-48.9 14.36-28.92-5.43-48.64-33.26-51.72-61.39-109.19 0.08-218.38 0.08-327.57 0-2.33 18.48-10.77 36.55-25.23 48.6-15.66 13.62-39.03 17.75-58.17 9.42-23.11-9.58-37.95-33.47-40.48-57.84-27.1-0.36-54.23 0.06-81.33-0.21-9.8-0.41-18.09-9.49-17.73-19.28 0.06-170.34 0.08-340.69 0.12-511.04 0.1-4.55-0.51-9.27 1.09-13.64 2.49-7.28 9.81-12.67 17.54-12.61 91.71-0.09 183.42 0.12 275.13-0.11-50.14-27.95-100.88-54.9-151.14-82.66-10.46-5.79-13.59-20.94-6.66-30.59 5.82-9.13 18.87-12.17 28.25-6.87 69.04 37.58 138.06 75.18 207.1 112.76 3.52 1.62 5.91 4.67 8.61 7.31 15.47 0.33 30.96 0.05 46.45 0.15 41.94-61.11 83.59-122.43 125.45-183.59M169.87 336.87c-0.09 161.25 0.16 322.48 0.35 483.72 228.11-0.17 456.22-0.07 684.33-0.05-0.02-161.22 0.22-322.46 0.07-483.68-228.25 0.01-456.5-0.02-684.75 0.01M271 857.38c2.22 11.33 10.44 23.52 23 24.07 12.45-0.26 21.53-12.56 22.95-24.07-15.32 0.05-30.64 0.02-45.95 0m452.05 0c1.42 11.5 10.51 23.79 22.95 24.07 12.54-0.55 20.85-12.71 22.99-24.06-15.31 0.01-30.63 0.04-45.94-0.01z" fill="#454545" p-id="4472"></path><path d="M221.28 374.37c3.83-0.94 7.81-0.61 11.72-0.65 188.33 0.01 376.65-0.01 564.98 0.01 10.85-0.43 20.67 9.41 20.08 20.27 0.14 123.33-0.02 246.66 0.16 369.99 0.13 8.3-5.4 16.35-13.29 19-4.14 1.52-8.61 1.18-12.93 1.19-188.67-0.04-377.35 0.06-566.02-0.04-12.39 0.23-21.58-12.32-19.69-24.15 0.06-122.01 0.04-244.03 0.11-366.04-0.24-8.92 6.15-17.52 14.88-19.58M243 410.18c-0.38 112.4 0.15 224.81 0.11 337.21 179.44 0.13 358.89 0.09 538.34 0.02 0.01-112.43 0.4-224.89-0.09-337.3-179.45 0.14-358.91-0.01-538.36 0.07z" fill="#454545" p-id="4473"></path><path d="M600.4 471.55c5.06-1.37 10.69-0.78 15.28 1.8 35.65 21.33 71.26 42.72 106.91 64.07 4.92 2.83 10.29 5.72 13.05 10.95 4.45 7.6 3.2 17.98-3.01 24.24-6.32 7.05-17.67 8.31-25.62 3.34-37.26-22.4-74.56-44.75-111.83-67.13-6.4-3.83-10.36-11.35-9.78-18.79 0.31-8.57 6.75-16.33 15-18.48zM405.42 481.48c8.67-1.08 17.67 4.03 21.1 12.09 4.57 9.77-0.18 22.57-10.12 26.85-33.02 15.3-66.04 30.58-99.07 45.84-9.66 4.53-22.34-0.1-26.68-9.87-4.95-9.45-0.72-22.17 8.73-26.97 30.72-14.34 61.56-28.44 92.31-42.72 4.46-1.98 8.79-4.61 13.73-5.22zM407.29 596.31c8.9-3.09 19.57 1.06 24.09 9.31 4.37 7.1 1.79 15.88 4.5 23.51 3.44 13.44 14.3 26.79 29.14 27.09 13.98 0.07 24.84-11.84 28.91-24.34 2.31-6.05 2.52-12.54 2.96-18.9 1.17-11.04 12.56-19.47 23.46-17.43 9.81 1.3 17.53 10.53 17.35 20.37-0.08 15.28 7.21 32.12 21.92 38.44 8.4 3.65 18.6 1.7 25.5-4.2 10.37-8.44 15.16-22.11 15.17-35.21 0.14-10.37 9.36-19.53 19.73-19.62 10.15-0.64 19.85 7.53 21.03 17.62 2.16 35.45-20.4 73.22-55.9 82.28-24.72 6.92-51.53-3.48-68.08-22.38-10.45 11.74-24.48 20.62-40.07 23.39-17.51 3.32-36.18-1.22-50.48-11.76-21.88-15.69-33.94-42.91-33.43-69.55 0.28-8.35 6.19-16.17 14.2-18.62z" fill="#454545" p-id="4474"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/IsUnderAchiever'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://IsUnderAchiever.github.io/en/" >English</option>
+                                
+                                    <option value="https://IsUnderAchiever.github.io/" selected>中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-基本结构搭建">1. 基本结构搭建</a></li>
+    <li><a href="#2-二级路由配置">2. 二级路由配置</a></li>
+    <li><a href="#3-菜单高亮显示">3. 菜单高亮显示</a></li>
+    <li><a href="#4-展示个人信息">4. 展示个人信息</a></li>
+    <li><a href="#5-退出登录实现">5. 退出登录实现</a></li>
+    <li><a href="#6-处理token失效">6. 处理Token失效</a></li>
+    <li><a href="#7-首页home图表展示">7. 首页Home图表展示</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/3.-layout%E6%A8%A1%E5%9D%97/">
+            <img src="/p/3.-layout%E6%A8%A1%E5%9D%97/202412212156937_hu4503541427566225261.png" srcset="/p/3.-layout%E6%A8%A1%E5%9D%97/202412212156937_hu4503541427566225261.png 800w, /p/3.-layout%E6%A8%A1%E5%9D%97/202412212156937_hu3011347402964719729.png 1600w"  width="800"
+                height="385" loading="lazy" alt="Featured image of post 3. Layout模块" />
+            
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/react/" style="background-color: #2a9d8f; color: #fff;">
+                React
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/3.-layout%E6%A8%A1%E5%9D%97/">3. Layout模块</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            3. Layout模块
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-03-03</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>本文转载自<a class="link" href="https://www.bilibili.com/video/BV1Z44y1K7Fj/?spm_id_from=333.1387.0.0"  target="_blank" rel="noopener" >B站 柴柴前端教书匠</a></p>
+</blockquote>
+<h1 id="3-layout模块">3. Layout模块
+</h1><h2 id="1-基本结构搭建">1. 基本结构搭建
+</h2><p><code>本节目标:</code>  能够使用antd搭建基础布局</p>
+<p><strong>实现步骤</strong></p>
+<ol>
+<li>打开 antd/Layout 布局组件文档，找到示例：顶部-侧边布局-通栏</li>
+<li>拷贝示例代码到我们的 Layout 页面中</li>
+<li>分析并调整页面布局</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>pages/Layout/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Layout</span><span class="p">,</span> <span class="nx">Menu</span><span class="p">,</span> <span class="nx">Popconfirm</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;antd&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">HomeOutlined</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">DiffOutlined</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">EditOutlined</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">LogoutOutlined</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@ant-design/icons&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;./index.scss&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">Header</span><span class="p">,</span> <span class="nx">Sider</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">Layout</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">GeekLayout</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Header</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;header&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;logo&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;user-info&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;user-name&#34;</span><span class="p">&gt;</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;user-logout&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">Popconfirm</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;是否确认退出？&#34;</span> <span class="na">okText</span><span class="o">=</span><span class="s">&#34;退出&#34;</span> <span class="na">cancelText</span><span class="o">=</span><span class="s">&#34;取消&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">LogoutOutlined</span> <span class="p">/&gt;</span> <span class="nx">退出</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">Popconfirm</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Header</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Sider</span> <span class="na">width</span><span class="o">=</span><span class="p">{</span><span class="mi">200</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;site-layout-background&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">Menu</span>
+</span></span><span class="line"><span class="cl">            <span class="na">mode</span><span class="o">=</span><span class="s">&#34;inline&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">theme</span><span class="o">=</span><span class="s">&#34;dark&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">defaultSelectedKeys</span><span class="o">=</span><span class="p">{[</span><span class="s1">&#39;1&#39;</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">            <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="nx">borderRight</span><span class="o">:</span> <span class="mi">0</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">HomeOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">数据概览</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">DiffOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">内容管理</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;3&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">              <span class="nx">发布文章</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">Menu</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">Sider</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Layout</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;layout-content&#34;</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">padding</span><span class="o">:</span> <span class="mi">20</span> <span class="p">}}&gt;</span><span class="nx">内容</span><span class="p">&lt;/</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">GeekLayout</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Layout/index.scss</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">ant-layout</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">header</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">logo</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="s1">&#39;~@/assets/logo.png&#39;</span><span class="p">)</span> <span class="kc">no-repeat</span> <span class="kc">center</span> <span class="o">/</span> <span class="mi">160</span><span class="kt">px</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">layout-content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">overflow-y</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">user-info</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding-right</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="err">.user-name</span> <span class="err">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">user-logout</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">ant-layout-header</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-二级路由配置">2. 二级路由配置
+</h2><p><code>本节目标:</code>  能够在右侧内容区域展示左侧菜单对应的页面内容</p>
+<p><strong>使用步骤</strong></p>
+<ol>
+<li>在 pages 目录中，分别创建：Home（数据概览）/Article（内容管理）/Publish（发布文章）页面文件夹</li>
+<li>分别在三个文件夹中创建 index.js 并创建基础组件后导出</li>
+<li>在app.js中配置嵌套子路由，在layout.js中配置二级路由出口</li>
+<li>使用 Link 修改左侧菜单内容，与子路由规则匹配实现路由切换</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>pages/Home/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Home</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Home</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Home</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Article/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Article</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Article</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Article</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Publish/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Publish</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="nx">Publish</span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Publish</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>app.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="s">&#34;/&#34;</span> <span class="na">element</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">AuthRoute</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Layout</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">AuthRoute</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="cm">/* 二级路由默认页面 */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Route</span> <span class="na">index</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Home</span> <span class="p">/&gt;}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="s">&#34;article&#34;</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Article</span> <span class="p">/&gt;}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="s">&#34;publish&#34;</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Publish</span> <span class="p">/&gt;}</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">Route</span> <span class="na">path</span><span class="o">=</span><span class="s">&#34;/login&#34;</span> <span class="na">element</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">Login</span><span class="p">/&gt;}&gt;&lt;/</span><span class="nt">Route</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Layout/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// 配置Link组件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">Menu</span>
+</span></span><span class="line"><span class="cl">    <span class="na">mode</span><span class="o">=</span><span class="s">&#34;inline&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">theme</span><span class="o">=</span><span class="s">&#34;dark&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="nx">borderRight</span><span class="o">:</span> <span class="mi">0</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="na">selectedKeys</span><span class="o">=</span><span class="p">{[</span><span class="nx">selectedKey</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">HomeOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span><span class="nx">数据概览</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">DiffOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;/article&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/article&#34;</span><span class="p">&gt;</span><span class="nx">内容管理</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;/publish&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/publish&#34;</span><span class="p">&gt;</span><span class="nx">发布文章</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">Menu</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 二级路由对应显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">&lt;</span><span class="nt">Layout</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;layout-content&#34;</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">padding</span><span class="o">:</span> <span class="mi">20</span> <span class="p">}}&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="cm">/* 二级路由默认页面 */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">Outlet</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-菜单高亮显示">3. 菜单高亮显示
+</h2><p><code>本节目标:</code>  能够在页面刷新的时候保持对应菜单高亮</p>
+<blockquote>
+<p>思路</p>
+<ol>
+<li>Menu组件的selectedKeys属性与Menu.Item组件的key属性发生匹配的时候，Item组件即可高亮</li>
+<li>页面刷新时，将<code>当前访问页面的路由地址</code>作为 Menu 选中项的值（selectedKeys）即可</li>
+</ol>
+</blockquote>
+<p><strong>实现步骤</strong></p>
+<ol>
+<li>将 Menu 的<code>key</code> 属性修改为与其对应的路由地址</li>
+<li>获取到当前正在访问页面的路由地址</li>
+<li>将当前路由地址设置为 <code>selectedKeys</code> 属性的值</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>pages/Layout/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useLocation</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-router-dom&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">GeekLayout</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">useLocation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 这里是当前浏览器上的路径地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">selectedKey</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">&lt;</span><span class="nt">Menu</span>
+</span></span><span class="line"><span class="cl">      <span class="na">mode</span><span class="o">=</span><span class="s">&#34;inline&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">theme</span><span class="o">=</span><span class="s">&#34;dark&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">selectedKeys</span><span class="o">=</span><span class="p">{[</span><span class="nx">selectedKey</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">      <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="nx">borderRight</span><span class="o">:</span> <span class="mi">0</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">HomeOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span><span class="nx">数据概览</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">DiffOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;/article&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/article&#34;</span><span class="p">&gt;</span><span class="nx">内容管理</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Menu.Item</span> <span class="na">icon</span><span class="o">=</span><span class="p">{&lt;</span><span class="nt">EditOutlined</span> <span class="p">/&gt;}</span> <span class="na">key</span><span class="o">=</span><span class="s">&#34;/publish&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">Link</span> <span class="na">to</span><span class="o">=</span><span class="s">&#34;/publish&#34;</span><span class="p">&gt;</span><span class="nx">发布文章</span><span class="p">&lt;/</span><span class="nt">Link</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Menu.Item</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Menu</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-展示个人信息">4. 展示个人信息
+</h2><p><code>本节目标:</code>  能够在页面右上角展示登录用户名</p>
+<p><strong>实现步骤</strong></p>
+<ol>
+<li>在store中新增userStore.js模块，在其中定义获取用户信息的mobx代码</li>
+<li>在store的入口文件中组合新增的userStore模块</li>
+<li>在Layout组件中调用action函数获取用户数据</li>
+<li>在Layout组件中获取个人信息并展示</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>store/user.Store.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 用户模块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">makeAutoObservable</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;mobx&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">http</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@/utils&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">UserStore</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">userInfo</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">makeAutoObservable</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">getUserInfo</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/user/profile&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">userInfo</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">UserStore</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>store/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">LoginStore</span> <span class="nx">from</span> <span class="s1">&#39;./login.Store&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">UserStore</span> <span class="nx">from</span> <span class="s1">&#39;./user.Store&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">RootStore</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 组合模块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">loginStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoginStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">userStore</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">StoresContext</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createContext</span><span class="p">(</span><span class="k">new</span> <span class="nx">RootStore</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">useStore</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">React</span><span class="p">.</span><span class="nx">useContext</span><span class="p">(</span><span class="nx">StoresContext</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Layout/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">observer</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;mobx-react-lite&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">GeekLayout</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">userStore</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 获取用户数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">userStore</span><span class="p">.</span><span class="nx">getUserInfo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">userStore</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Header</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;header&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;logo&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;user-info&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;user-name&#34;</span><span class="p">&gt;{</span><span class="nx">userStore</span><span class="p">.</span><span class="nx">userInfo</span><span class="p">.</span><span class="nx">name</span><span class="p">}&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">Header</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span><span class="cm">/* 省略无关代码 */</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Layout</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">observer</span><span class="p">(</span><span class="nx">GeekLayout</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-退出登录实现">5. 退出登录实现
+</h2><p><code>本节目标:</code>  能够实现退出登录功能</p>
+<p><strong>实现步骤</strong></p>
+<ol>
+<li>为气泡确认框添加确认回调事件</li>
+<li>在<code>store/login.Store.js</code> 中新增退出登录的action函数，在其中删除token</li>
+<li>在回调事件中，调用loginStore中的退出action</li>
+<li>退出后，返回登录页面</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>store/login.Store.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">LoginStore</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 退出登录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">loginOut</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">token</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">clearToken</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">LoginStore</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Layout/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="c1">// login out
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">navigate</span> <span class="o">=</span> <span class="nx">useNavigate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">onLogout</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">loginStore</span><span class="p">.</span><span class="nx">loginOut</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">navigate</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;user-logout&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">Popconfirm</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;是否确认退出？&#34;</span> <span class="na">okText</span><span class="o">=</span><span class="s">&#34;退出&#34;</span> <span class="na">cancelText</span><span class="o">=</span><span class="s">&#34;取消&#34;</span> <span class="na">onConfirm</span><span class="o">=</span><span class="p">{</span><span class="nx">onLogout</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">LogoutOutlined</span> <span class="p">/&gt;</span> <span class="nx">退出</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">Popconfirm</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-处理token失效">6. 处理Token失效
+</h2><p><code>本节目标:</code>  能够在响应拦截器中处理token失效</p>
+<blockquote>
+<p>说明：为了能够在非组件环境下拿到路由信息，需要我们安装一个history包</p>
+</blockquote>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202503032211919.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202503032211919.png" alt="202503032211919.png"  />
+	</a>
+</div>
+</p>
+<p><strong>实现步骤</strong></p>
+<ol>
+<li>安装history包：<code>yarn add history</code></li>
+<li>创建 <code>utils/history.js</code>文件</li>
+<li>在app.js中使用我们新建的路由并配置history参数</li>
+<li>通过响应拦截器处理 token 失效，如果发现是401调回到登录页</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>utils/history.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// https://github.com/remix-run/react-router/issues/8264
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">createBrowserHistory</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;history&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">unstable_HistoryRouter</span> <span class="nx">as</span> <span class="nx">HistoryRouter</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-router-dom&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">createBrowserHistory</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">HistoryRouter</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">history</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>app.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">HistoryRouter</span><span class="p">,</span> <span class="nx">history</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./utils/history&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">HistoryRouter</span> <span class="na">history</span><span class="o">=</span><span class="p">{</span><span class="nx">history</span><span class="p">}&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="p">...</span><span class="nx">省略无关代码</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">HistoryRouter</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">App</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>utils/http.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">history</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./history&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">http</span><span class="p">.</span><span class="nx">interceptors</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">data</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">401</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 删除token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">clearToken</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// 跳转到登录页
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">reject</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-首页home图表展示">7. 首页Home图表展示
+</h2><p><code>本节目标:</code>  实现首页echart图表封装展示</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202503032211924.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202503032211924.png" alt="202503032211924.png"  />
+	</a>
+</div>
+</p>
+<p><strong>需求描述：</strong></p>
+<ol>
+<li>使用eharts配合react封装柱状图组件Bar</li>
+<li>要求组件的标题title，横向数据xData，纵向数据yData，样式style可定制</li>
+</ol>
+<p><strong>代码实现</strong></p>
+<p><code>components/Bar/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">echarts</span> <span class="nx">from</span> <span class="s1">&#39;echarts&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useRef</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">echartInit</span> <span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">xData</span><span class="p">,</span> <span class="nx">sData</span><span class="p">,</span> <span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">myChart</span> <span class="o">=</span> <span class="nx">echarts</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 绘制图表
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">myChart</span><span class="p">.</span><span class="nx">setOption</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">title</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">text</span><span class="o">:</span> <span class="nx">title</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">tooltip</span><span class="o">:</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">xAxis</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">data</span><span class="o">:</span> <span class="nx">xData</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">yAxis</span><span class="o">:</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">series</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;销量&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="o">:</span> <span class="nx">sData</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Bar</span> <span class="p">({</span> <span class="nx">style</span><span class="p">,</span> <span class="nx">xData</span><span class="p">,</span> <span class="nx">sData</span><span class="p">,</span> <span class="nx">title</span> <span class="p">})</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 1. 先不考虑传参问题  静态数据渲染到页面中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 2. 把那些用户可能定制的参数 抽象props (1.定制大小 2.data 以及说明文字)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">nodeRef</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">echartInit</span><span class="p">(</span><span class="nx">nodeRef</span><span class="p">.</span><span class="nx">current</span><span class="p">,</span> <span class="nx">xData</span><span class="p">,</span> <span class="nx">sData</span><span class="p">,</span> <span class="nx">title</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="p">[</span><span class="nx">xData</span><span class="p">,</span> <span class="nx">sData</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">nodeRef</span><span class="p">}</span> <span class="na">style</span><span class="o">=</span><span class="p">{</span><span class="nx">style</span><span class="p">}&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Bar</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Home/index.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Bar</span> <span class="nx">from</span> <span class="s2">&#34;@/components/Bar&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="s1">&#39;./index.scss&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">Home</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&#34;home&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Bar</span>
+</span></span><span class="line"><span class="cl">        <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;500px&#39;</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;400px&#39;</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xData</span><span class="o">=</span><span class="p">{[</span><span class="s1">&#39;vue&#39;</span><span class="p">,</span> <span class="s1">&#39;angular&#39;</span><span class="p">,</span> <span class="s1">&#39;react&#39;</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">sData</span><span class="o">=</span><span class="p">{[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">title</span><span class="o">=</span><span class="s">&#39;三大框架满意度&#39;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Bar</span>
+</span></span><span class="line"><span class="cl">        <span class="na">style</span><span class="o">=</span><span class="p">{{</span> <span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;500px&#39;</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;400px&#39;</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">xData</span><span class="o">=</span><span class="p">{[</span><span class="s1">&#39;vue&#39;</span><span class="p">,</span> <span class="s1">&#39;angular&#39;</span><span class="p">,</span> <span class="s1">&#39;react&#39;</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">sData</span><span class="o">=</span><span class="p">{[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">70</span><span class="p">]}</span>
+</span></span><span class="line"><span class="cl">        <span class="na">title</span><span class="o">=</span><span class="s">&#39;三大框架使用度&#39;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">Home</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>pages/Home/index.scss</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">home</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="heading">
+</h1><blockquote>
+<p>更新: 2022-09-18 17:07:51<br>
+原文: <a class="link" href="https://www.yuque.com/fechaichai/tzzlh1/sa1mxw"  target="_blank" rel="noopener" >https://www.yuque.com/fechaichai/tzzlh1/sa1mxw</a></p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/1.-%E9%A1%B9%E7%9B%AE%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87/">
+        
+        
+            <div class="article-image">
+                <img src="/p/1.-%E9%A1%B9%E7%9B%AE%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87/202412212156937.32c002155d3afe906f55fcfd8a4dc5e8_hu9443036023673401627.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 1. 项目前置准备"
+                        data-key="1. 项目前置准备" 
+                        data-hash="md5-MsACFV06/pBvVfz9ik3F6A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">1. 项目前置准备</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/2.-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/">
+        
+        
+            <div class="article-image">
+                <img src="/p/2.-%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97/202412212156937.32c002155d3afe906f55fcfd8a4dc5e8_hu9443036023673401627.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 2. 登录模块"
+                        data-key="2. 登录模块" 
+                        data-hash="md5-MsACFV06/pBvVfz9ik3F6A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">2. 登录模块</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/4.-%E6%96%87%E7%AB%A0%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97/">
+        
+        
+            <div class="article-image">
+                <img src="/p/4.-%E6%96%87%E7%AB%A0%E7%AE%A1%E7%90%86%E6%A8%A1%E5%9D%97/202412212156937.32c002155d3afe906f55fcfd8a4dc5e8_hu9443036023673401627.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 4. 文章管理模块"
+                        data-key="4. 文章管理模块" 
+                        data-hash="md5-MsACFV06/pBvVfz9ik3F6A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">4. 文章管理模块</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/5.-%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%A8%A1%E5%9D%97/">
+        
+        
+            <div class="article-image">
+                <img src="/p/5.-%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E6%A8%A1%E5%9D%97/202412212156937.32c002155d3afe906f55fcfd8a4dc5e8_hu9443036023673401627.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 5. 发布文章模块"
+                        data-key="5. 发布文章模块" 
+                        data-hash="md5-MsACFV06/pBvVfz9ik3F6A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">5. 发布文章模块</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/6.-%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/">
+        
+        
+            <div class="article-image">
+                <img src="/p/6.-%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/202412212156937.32c002155d3afe906f55fcfd8a4dc5e8_hu9443036023673401627.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 6. 项目打包"
+                        data-key="6. 项目打包" 
+                        data-hash="md5-MsACFV06/pBvVfz9ik3F6A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">6. 项目打包</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2025 深海火锅店
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
