@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://IsUnderAchiever.github.io/</loc>
-    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,49 @@
                 hreflang="zh-cn"
                 href="https://IsUnderAchiever.github.io/"
                 />
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/</loc>
+    <lastmod>2025-04-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://IsUnderAchiever.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://IsUnderAchiever.github.io/categories/"
+                />
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/kubernetes_2/</loc>
+    <lastmod>2025-04-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/p/kubernetes_2/</loc>
+    <lastmod>2025-04-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/post/</loc>
+    <lastmod>2025-04-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/react/</loc>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/p/react-%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/</loc>
+    <lastmod>2025-04-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/p/react19--vite--tailwindcss4--antd5/</loc>
+    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/trae/</loc>
+    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/p/trae/</loc>
+    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/openwrt/</loc>
+    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/p/openwrt/</loc>
+    <lastmod>2025-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://IsUnderAchiever.github.io/p/1.-%E9%A1%B9%E7%9B%AE%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87/</loc>
     <lastmod>2025-03-03T00:00:00+00:00</lastmod>
@@ -33,26 +76,7 @@
     <loc>https://IsUnderAchiever.github.io/p/6.-%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85/</loc>
     <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://IsUnderAchiever.github.io/categories/</loc>
-    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://IsUnderAchiever.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://IsUnderAchiever.github.io/categories/"
-                />
-  </url><url>
     <loc>https://IsUnderAchiever.github.io/p/mobx/</loc>
-    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://IsUnderAchiever.github.io/post/</loc>
-    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://IsUnderAchiever.github.io/categories/react/</loc>
     <lastmod>2025-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://IsUnderAchiever.github.io/p/reactrouter/</loc>
@@ -86,6 +110,12 @@
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://IsUnderAchiever.github.io/p/kubernetes/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/kubernetes_1/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/p/kubernetes_1/</loc>
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://IsUnderAchiever.github.io/categories/minio/</loc>

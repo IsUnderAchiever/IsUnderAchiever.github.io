@@ -7,13 +7,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>深海火锅店</copyright>
-        <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://IsUnderAchiever.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 30 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://IsUnderAchiever.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Kubernetes_2</title>
+        <link>https://IsUnderAchiever.github.io/categories/kubernetes_2/</link>
+        <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://IsUnderAchiever.github.io/categories/kubernetes_2/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>React</title>
         <link>https://IsUnderAchiever.github.io/categories/react/</link>
-        <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate>
         
         <guid>https://IsUnderAchiever.github.io/categories/react/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/categories/react/e18e84b29ccc6fb230d2.webp" alt="Featured image of post React" /&gt;</description>
+        </item>
+        <item>
+        <title>Trae</title>
+        <link>https://IsUnderAchiever.github.io/categories/trae/</link>
+        <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://IsUnderAchiever.github.io/categories/trae/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>OpenWRT</title>
+        <link>https://IsUnderAchiever.github.io/categories/openwrt/</link>
+        <pubDate>Sun, 13 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://IsUnderAchiever.github.io/categories/openwrt/</guid>
+        <description></description>
         </item>
         <item>
         <title>Docker</title>
@@ -30,6 +54,14 @@
         
         <guid>https://IsUnderAchiever.github.io/categories/kubernetes/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/categories/kubernetes/ef1b5497b405e49106c.jpg" alt="Featured image of post Kubernetes" /&gt;</description>
+        </item>
+        <item>
+        <title>Kubernetes_1</title>
+        <link>https://IsUnderAchiever.github.io/categories/kubernetes_1/</link>
+        <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://IsUnderAchiever.github.io/categories/kubernetes_1/</guid>
+        <description></description>
         </item>
         <item>
         <title>Minio</title>
