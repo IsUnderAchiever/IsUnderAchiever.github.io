@@ -106,12 +106,6 @@
     <loc>https://IsUnderAchiever.github.io/p/docker%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BAdocker%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93/</loc>
     <lastmod>2024-12-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://IsUnderAchiever.github.io/categories/kubernetes/</loc>
-    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://IsUnderAchiever.github.io/p/kubernetes/</loc>
-    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://IsUnderAchiever.github.io/categories/kubernetes_1/</loc>
     <lastmod>2024-12-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -672,6 +666,8 @@
   </url><url>
     <loc>https://IsUnderAchiever.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://IsUnderAchiever.github.io/categories/kubernetes/</loc>
   </url><url>
     <loc>https://IsUnderAchiever.github.io/tags/</loc>
     <xhtml:link
