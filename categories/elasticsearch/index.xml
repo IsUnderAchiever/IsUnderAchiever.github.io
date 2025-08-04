@@ -7,7 +7,107 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>深海火锅店</copyright>
-        <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://IsUnderAchiever.github.io/categories/elasticsearch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://IsUnderAchiever.github.io/categories/elasticsearch/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Elasticsearch搭配MySQL</title>
+        <link>https://IsUnderAchiever.github.io/p/elasticsearch%E6%90%AD%E9%85%8Dmysql/</link>
+        <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://IsUnderAchiever.github.io/p/elasticsearch%E6%90%AD%E9%85%8Dmysql/</guid>
+        <description>&lt;img src="https://IsUnderAchiever.github.io/p/elasticsearch%E6%90%AD%E9%85%8Dmysql/202412212115512.png" alt="Featured image of post Elasticsearch搭配MySQL" /&gt;&lt;h1 id=&#34;elasticsearch搭配mysql&#34;&gt;Elasticsearch搭配MySQL
+&lt;/h1&gt;&lt;h2 id=&#34;单用mysql的痛点&#34;&gt;单用MySQL的痛点
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;单表数据承载有限度，不严谨的说:超过千万就要考虑分表&lt;/li&gt;
+&lt;li&gt;全文检索场景在MySQL中弱爆了，ngram fulltext索引就是玩笑&lt;/li&gt;
+&lt;li&gt;Innodb索引的B+树(左侧列原则)要根据不同的场景创建超多索引，导致写性能爆炸&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用es构建索引hash分表实现&#34;&gt;使用ES构建索引+Hash分表实现
+&lt;/h2&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092210440.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092210440.png&#34; alt=&#34;image-20250609221018323&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;用户在筛选了条件以及输入检索关键词之后，先显示查询结果页面，主要包含以下信息&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;封面图&lt;/li&gt;
+&lt;li&gt;价格&lt;/li&gt;
+&lt;li&gt;标题&lt;/li&gt;
+&lt;li&gt;评价数量&lt;/li&gt;
+&lt;li&gt;店铺信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那么此时其实已经查询出了商品的id列表，这是一个存储id的集合。此时可以使用id号对n进行取模（hash分表）&lt;/p&gt;
+&lt;p&gt;到对应的数据库中把完整的商品信息提取出来&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;商品基本信息&lt;/li&gt;
+&lt;li&gt;封面信息&lt;/li&gt;
+&lt;li&gt;轮播图信息&lt;/li&gt;
+&lt;li&gt;规格信息&lt;/li&gt;
+&lt;li&gt;评论信息等等&amp;hellip;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;为什么不直接使用es存储所有的商品数据&#34;&gt;为什么不直接使用ES存储所有的商品数据
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;非关系型表达，大量的反范式存储,导致维护基础数据异常(新增异常,修改异常,删除异常) , 需要MySQL做托底&lt;/li&gt;
+&lt;li&gt;不支持事务，一致性需要自 己维护&lt;/li&gt;
+&lt;li&gt;从存储的角度来说，Elasticsearch是基于 “字段”的，大行超多字段性能并不好&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;esmysql数据同步问题&#34;&gt;ES、MySQL数据同步问题
+&lt;/h2&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092224820.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092224820.png&#34; alt=&#34;image-20250609222431673&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;数据同步方案&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1、同步双写&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;应用的数据，同步双写到mysql和es&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;p&gt;1、业务简单；&lt;/p&gt;
+&lt;p&gt;2、实时性高；&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;p&gt;1、硬编码，有mysql写入，就要写写入es的代码&lt;/p&gt;
+&lt;p&gt;2、业务强耦合&lt;/p&gt;
+&lt;p&gt;3、双写业务丢失&lt;/p&gt;
+&lt;p&gt;4、两个都写降低性能，增加单位方法的耗时和性能&lt;/p&gt;
+&lt;p&gt;2、异步双写（应用双写）（MQ异步）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、借助mq实现异步的多源写入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;p&gt;1、性能高；&lt;/p&gt;
+&lt;p&gt;2、不易出现数据丢失问题；（主要来源于mq消息的消费保障机制，比如es宕机或写入失败还能重新消费mq消息）；&lt;/p&gt;
+&lt;p&gt;3、多源写入之间相互隔离。便于扩展更多的数据源写入&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;p&gt;1、硬编码，接入新的数据源需要实现新的消费者代码；&lt;/p&gt;
+&lt;p&gt;2、系统复杂度增加，映入了消息中间件&lt;/p&gt;
+&lt;p&gt;3、数据实时问题，mq是异步消费，用户输入，不一定会马上同步让他看到&lt;/p&gt;
+&lt;p&gt;3、基于sql抽取（定时任务）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、用定时器处理，常用方案新增一个timestamp字段，比较此字段来确认变更数据。再写入es&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;p&gt;1、不改原代码，没有硬编码；&lt;/p&gt;
+&lt;p&gt;2、没有业务强耦合，不改变原来程序的性能；&lt;/p&gt;
+&lt;p&gt;3、worker代码编写简单，不需要考虑增删改查；&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;p&gt;1、对mysql的轮训压力&lt;/p&gt;
+&lt;p&gt;2、数据有时间延迟&lt;/p&gt;
+&lt;p&gt;优化的方案：&lt;/p&gt;
+&lt;p&gt;1、轮寻放到压力不大的从库上&lt;/p&gt;
+&lt;p&gt;2、借助logstash实现数据同步&lt;/p&gt;
+&lt;p&gt;4、基于Binlog实时同步&lt;/p&gt;
+&lt;p&gt;实施步骤&lt;/p&gt;
+&lt;p&gt;1、读取mysql 的binlog日志，获取指定表的日志信息；&lt;/p&gt;
+&lt;p&gt;2、将读取的信息转为mq；&lt;/p&gt;
+&lt;p&gt;3、编写一个mq消费程序；&lt;/p&gt;
+&lt;p&gt;4、不断消费mq，每费完一条消息，将消息写入到es中；&lt;/p&gt;
+&lt;p&gt;数据迁移工具&lt;/p&gt;
+&lt;p&gt;1、canal （原理是伪装成mysql的从数据库）&lt;/p&gt;
+&lt;p&gt;2、阿里云DTS （需付费）&lt;/p&gt;
+&lt;p&gt;3、databus&lt;/p&gt;
+&lt;p&gt;4、Flink&lt;/p&gt;
+&lt;p&gt;5、CloudCanal&lt;/p&gt;
+&lt;p&gt;6、Maxwell&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Elasticsearct复习</title>
         <link>https://IsUnderAchiever.github.io/p/elasticsearct%E5%A4%8D%E4%B9%A0/</link>
         <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
@@ -14318,10 +14418,11 @@ aggs代表聚合，与query同级，此时query的作用是?
 		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132141026.png&#34; alt=&#34;image-20230525145544098&#34;  /&gt;
 	&lt;/a&gt;
 &lt;/div&gt;
-
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132141404.png&#34; alt=&#34;image-20230525150351576&#34; style=&#34;zoom:80%;&#34; /&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;酒店定义如下但是注意一个问题&#34;&gt;酒店定义如下，但是&lt;code&gt;注意一个问题&lt;/code&gt;
-&lt;/h3&gt;&lt;p&gt;name、brand、business等字段都要参与搜索，也就是说用户输入的关键词可能是多个关键字（查询条件不是一个值，而是多个值）&lt;/p&gt;
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;name、brand、business等字段都要参与搜索，也就是说用户输入的关键词可能是多个关键字（查询条件不是一个值，而是多个值）&lt;/p&gt;
 &lt;p&gt;可以使用&lt;code&gt;copy_to&lt;/code&gt;属性，将当前字段拷贝到指定字段&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -17557,118 +17658,231 @@ void termQueryTest() throws IOException {
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Elasticsearch基础</title>
-        <link>https://IsUnderAchiever.github.io/p/git/</link>
+        <title>Elasticsearch基础文档操作</title>
+        <link>https://IsUnderAchiever.github.io/p/elasticsearch/</link>
         <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://IsUnderAchiever.github.io/p/git/</guid>
-        <description>&lt;img src="https://IsUnderAchiever.github.io/p/git/202412212115512.png" alt="Featured image of post Elasticsearch基础" /&gt;&lt;h2 id=&#34;elasticsearch基础&#34;&gt;Elasticsearch基础
+        <guid>https://IsUnderAchiever.github.io/p/elasticsearch/</guid>
+        <description>&lt;img src="https://IsUnderAchiever.github.io/p/elasticsearch/202412212115512.png" alt="Featured image of post Elasticsearch基础文档操作" /&gt;&lt;h2 id=&#34;elasticsearch基础&#34;&gt;Elasticsearch基础
 &lt;/h2&gt;&lt;h4 id=&#34;环境配置&#34;&gt;环境配置
-&lt;/h4&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242225995.png&#34; alt=&#34;image-20230224222550808&#34; style=&#34;zoom:80%;&#34; /&gt;
-![image-20230224221154537](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242212916.png)
-### 创建、查询、删除、修改 索引库
-```cmd
-# Click the Variables button, above, to create your own variables.
-GET ${exampleVariable1} // _search
-{
-  &#34;query&#34;: {
-    &#34;${exampleVariable2}&#34;: {} // match_all
-  }
-}
-GET _analyze
-{
-  &#34;analyzer&#34;: &#34;pinyin&#34;,
-  &#34;text&#34;: &#34;刘德华&#34;
-}
-GET _analyze
-{
-  &#34;analyzer&#34;: &#34;ik_smart&#34;,
-  &#34;text&#34;: &#34;我的字典里没有白嫖&#34;
-}
-GET _analyze
-{
-  &#34;analyzer&#34;: &#34;ik_max_word&#34;,
-  &#34;text&#34;: &#34;我的字典里没有白嫖&#34;
-}
-# 创建索引库
-PUT /user
-{
-  &#34;mappings&#34;: {
-    &#34;properties&#34;: {
-      &#34;id&#34;:{
-        &#34;type&#34;:&#34;keyword&#34;,
-        &#34;index&#34;:false
-      },
-      &#34;nick_name&#34;: {
-        &#34;type&#34;: &#34;text&#34;,
-        &#34;analyzer&#34;: &#34;ik_smart&#34;
-      },
-      &#34;username&#34;: {
-        &#34;type&#34;: &#34;keyword&#34;,
-        &#34;index&#34;: false
-      },
-      &#34;password&#34;: {
-        &#34;type&#34;: &#34;keyword&#34;,
-        &#34;index&#34;: false
-      }
-    }
-  }
-}
-# 查找索引库
-GET /user
-# 删除索引库
-DELETE /user
-# 修改索引库
-# 事实上，索引库创建后是不允许修改的
-# 修改字段时会导致原有的倒排索引失效
-# 禁止修改原有的字段，但可以添加新的字段
-# 一定要是一个全新的字段名，不能与原有的字段名相同
-# 修改索引库的本质是，添加新字段
-PUT /user/_mapping
-{
-  &#34;properties&#34;:{
-    &#34;新字段名&#34;:{
-      &#34;type&#34;:&#34;integer&#34;
-    }
-  }
-}
-```
-### 文档的CRUD操作
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242234225.png&#34; alt=&#34;image-20230224223438156&#34; style=&#34;zoom:80%;&#34; /&gt;
-```cmd
-# 插入文档
-POST /user/_doc/1
-{
-  &#34;nick_name&#34;:&#34;小美&#34;
-}
-# 查询文档
-GET /user/_doc/1
-# 删除文档
-DELETE /user/_doc/1
-```
-#### 修改文档
-![image-20230224224312857](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242243003.png)
-```cmd
-# 全量修改文档
-PUT /user/_doc/1
-{
-  &#34;nick_name&#34;:&#34;小美&#34;
-}
-# 新增
-# 由于不存在id为2的文档
-PUT /user/_doc/2
-{
-  &#34;nick_name&#34;:&#34;妹妹&#34;
-}
-# 局部修改字段
-POST /user/_update/1
-{
-  &#34;doc&#34;:{
-    &#34;nick_name&#34;:&#34;小美&#34;
-  }
-}
-```
-</description>
+&lt;/h4&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242212916.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242212916.png&#34; alt=&#34;image-20230224221154537&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;创建查询删除修改-索引库&#34;&gt;创建、查询、删除、修改 索引库
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;55
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;56
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;57
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;58
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;59
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;60
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;61
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;62
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;63
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;64
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# Click the Variables button, above, to create your own variables.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GET ${exampleVariable1} // _search
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;query&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;${exampleVariable2}&amp;#34;&lt;/span&gt;: {} // match_all
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GET _analyze
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;analyzer&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;pinyin&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;text&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;刘德华&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GET _analyze
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;analyzer&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;ik_smart&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;text&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;我的字典里没有白嫖&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GET _analyze
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;analyzer&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;ik_max_word&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;text&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;我的字典里没有白嫖&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建索引库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PUT /user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;mappings&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;:{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;keyword&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;index&amp;#34;&lt;/span&gt;:false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;nick_name&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;text&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;analyzer&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;ik_smart&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;username&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;keyword&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;index&amp;#34;&lt;/span&gt;: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      },
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;keyword&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s2&#34;&gt;&amp;#34;index&amp;#34;&lt;/span&gt;: false
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 查找索引库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GET /user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 删除索引库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DELETE /user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 修改索引库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 事实上，索引库创建后是不允许修改的
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 修改字段时会导致原有的倒排索引失效
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 禁止修改原有的字段，但可以添加新的字段
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 一定要是一个全新的字段名，不能与原有的字段名相同
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 修改索引库的本质是，添加新字段
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PUT /user/_mapping
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;:{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;新字段名&amp;#34;&lt;/span&gt;:{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;integer&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;文档的crud操作&#34;&gt;文档的CRUD操作
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 插入文档
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;POST /user/_doc/1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;nick_name&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;小美&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 查询文档
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;GET /user/_doc/1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 删除文档
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DELETE /user/_doc/1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;修改文档&#34;&gt;修改文档
+&lt;/h4&gt;&lt;p&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242243003.png&#34;&gt;
+		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202302242243003.png&#34; alt=&#34;image-20230224224312857&#34;  /&gt;
+	&lt;/a&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 全量修改文档
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PUT /user/_doc/1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;nick_name&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;小美&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 新增
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 由于不存在id为2的文档
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PUT /user/_doc/2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;nick_name&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;妹妹&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 局部修改字段
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;POST /user/_update/1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;doc&amp;#34;&lt;/span&gt;:{
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;nick_name&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;小美&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         
     </channel>
