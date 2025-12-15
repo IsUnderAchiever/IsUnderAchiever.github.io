@@ -284,6 +284,7 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#gitlabgitlab-runner">Gitlab、Gitlab Runner</a></li>
+    <li><a href="#外网访问">外网访问</a></li>
   </ol>
 </nav>
         </div>
@@ -360,7 +361,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -444,7 +445,35 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  gitlab/gitlab-runner:latest
 </span></span></code></pre></td></tr></table>
 </div>
-</div><blockquote>
+</div><p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225343474.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225343474.png" alt="image-20251215225343474"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225551627.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225551627.png" alt="image-20251215225551627"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225617911.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225617911.png" alt="image-20251215225617911"  />
+	</a>
+</div>
+</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225632442.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225632442.png" alt="image-20251215225632442"  />
+	</a>
+</div>
+</p>
+<blockquote>
 <p>点击设置、CI/CD,选择Runner，点击<code>创建项目Runner</code>，标签随便写一个即可，这里我写的是<code>shared</code></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -478,11 +507,25 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时重新查看CICD设置，可以看到流水线已经注册成功了</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225652128.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225652128.png" alt="image-20251215225652128"  />
+	</a>
+</div>
+</p>
 <blockquote>
 <p>注意这里有个坑，如果流水线注册之后，看到代码运行流水线失败，此时你可能会删除掉流水线重新注册。
 你应该重新提交代码运行新的流水线，而不是重新运行旧的流水线，否则仍然会运行旧的流水线导致报错。</p>
 </blockquote>
 <p>在项目根目录下创建<code>.gitlab-ci.yml</code>文件</p>
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225717480.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225717480.png" alt="image-20251215225717480"  />
+	</a>
+</div>
+</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -503,7 +546,26 @@
 这里15是jobid，根据自己实际情况来</p>
 </blockquote>
 <p>访问<code>http://10.0.0.7:8080/tongwh/bilibili-download/-/jobs/15</code></p>
-
+<p>
+<div class="post-img-view">
+	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225743041.png">
+		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225743041.png" alt="image-20251215225743041"  />
+	</a>
+</div>
+</p>
+<h2 id="外网访问">外网访问
+</h2><p>这里我是使用<code>ddns</code>+<code>动态公网ip</code>+<code>域名</code>实现的远程访问方案</p>
+<p>动态公网ip可以找运营商申请
+ddns项目我推介使用<code>ddns-go</code>，可使用docker部署</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d --name ddns-go --restart<span class="o">=</span>always --net<span class="o">=</span>host -v /data/volumes/ddns-go:/root jeessy/ddns-go
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
