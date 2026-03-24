@@ -23,13 +23,16 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm create vite@latest
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448712.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448712.png&#34; alt=&#34;Pasted image 20250525121822.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448712.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525121822.png&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -316,13 +319,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448713.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448713.png&#34; alt=&#34;Pasted image 20250525124545.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448713.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525124545.png&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tailwindcss4&#34;&gt;Tailwindcss4
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -556,11 +562,14 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;可参考&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7241863128962482234&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;文档&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;可参考&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7241863128962482234&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;文档&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;约定式路由&#34;&gt;约定式路由
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;实现约定式路由可以使用&lt;code&gt;vite-plugin-pages&lt;/code&gt;插件
-参考&lt;a class=&#34;link&#34; href=&#34;https://www.viterc.cn/en/vite-plugin-pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;Vite 中文文档&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7347251816617705522&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;约定式路由生成神器：vite-plugin-pages&lt;/a&gt;&lt;/p&gt;
+参考&lt;a class=&#34;link&#34; href=&#34;https://www.viterc.cn/en/vite-plugin-pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vite 中文文档&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7347251816617705522&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;约定式路由生成神器：vite-plugin-pages&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -571,13 +580,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;目录结构如下
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448714.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448714.png&#34; alt=&#34;Pasted image 20250525191237.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448714.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525191237.png&#34;
+	
+	
+&gt;
 vite.config.ts&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -960,13 +972,16 @@ vite.config.ts&lt;/p&gt;
 &lt;p&gt;在一些常用的前端框架中其实都有&lt;code&gt;约定式路由&lt;/code&gt;的功能，比如nuxtjs、nextjs、umi、icejs&amp;hellip;
 他们不必配置route文件，而是会根据当前项目目录结构自动生成路由配置&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448562.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448562.png&#34; alt=&#34;Pasted image 20250525163729.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448562.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525163729.png&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;接下来我们要在vite里实现类似的效果&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1052,13 +1067,16 @@ vite.config.ts&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;新建如下目录结构
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448563.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448563.png&#34; alt=&#34;Pasted image 20250525173850.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448563.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525173850.png&#34;
+	
+	
+&gt;
 &lt;code&gt;types/page.ts&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1123,13 +1141,16 @@ vite.config.ts&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;打印结果如下
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448564.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448564.png&#34; alt=&#34;Pasted image 20250525173015.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448564.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525173015.png&#34;
+	
+	
+&gt;
 这里打印的key就是导入模块的属性名，value就是动态导入的函数&lt;/p&gt;
 &lt;p&gt;如果希望使用全局导入的方法，需要配置&lt;code&gt;eager&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1146,21 +1167,27 @@ vite.config.ts&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;pageModules:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pageModules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448565.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448565.png&#34; alt=&#34;Pasted image 20250525173243.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448565.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525173243.png&#34;
+	
+	
+&gt;
 这里其实有一个default属性，如下
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448566.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448566.png&#34; alt=&#34;Pasted image 20250525173332.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448566.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525173332.png&#34;
+	
+	
+&gt;
 可以直接将default进行导入&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1178,13 +1205,16 @@ vite.config.ts&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;pageModules:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pageModules&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448567.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448567.png&#34; alt=&#34;Pasted image 20250525173423.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448567.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525173423.png&#34;
+	
+	
+&gt;
 接下来需要将配置转成数组的格式&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1204,13 +1234,16 @@ vite.config.ts&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;routes:&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;routes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448568.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448568.png&#34; alt=&#34;Pasted image 20250525173605.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448568.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525173605.png&#34;
+	
+	
+&gt;
 我们希望能够配置一个类似如下结构的路由&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1607,7 +1640,9 @@ vite使用的是rollup进行打包，有一个要求，&lt;code&gt;import&lt;/co
 &lt;h2 id=&#34;vite插件&#34;&gt;vite插件
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;实现约定式路由可以使用&lt;code&gt;vite-plugin-pages&lt;/code&gt;插件
-参考&lt;a class=&#34;link&#34; href=&#34;https://www.viterc.cn/en/vite-plugin-pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;Vite 中文文档&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7347251816617705522&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;约定式路由生成神器：vite-plugin-pages&lt;/a&gt;&lt;/p&gt;
+参考&lt;a class=&#34;link&#34; href=&#34;https://www.viterc.cn/en/vite-plugin-pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vite 中文文档&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7347251816617705522&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;约定式路由生成神器：vite-plugin-pages&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1618,13 +1653,16 @@ vite使用的是rollup进行打包，有一个要求，&lt;code&gt;import&lt;/co
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;目录结构如下
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448570.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448570.png&#34; alt=&#34;Pasted image 20250525191237.png&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448570.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pasted image 20250525191237.png&#34;
+	
+	
+&gt;
 vite.config.ts&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

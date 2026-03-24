@@ -298,13 +298,17 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-    <div class="article-image">
-        <a href="/p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/">
-            <img src="/p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/202506081450325_hu10793814415300756376.png" srcset="/p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/202506081450325_hu10793814415300756376.png 800w, /p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/202506081450325_hu14026708890714871921.png 1600w"  width="800"
-                height="452" loading="lazy" alt="Featured image of post 约定式路由" />
-            
-        </a>
-    </div>
+        <div class="article-image">
+            <a href="/p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/">
+                <img src="/p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/202506081450325_hu10793814415300756376.png"
+                        srcset="/p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/202506081450325_hu10793814415300756376.png 800w, /p/%E7%BA%A6%E5%AE%9A%E5%BC%8F%E8%B7%AF%E7%94%B1/202506081450325_hu14026708890714871921.png 1600w"
+                        width="800" 
+                        height="452" 
+                        loading="lazy"
+                        alt="Featured image of post 约定式路由" />
+                
+            </a>
+        </div>
     
 
     <div class="article-details">
@@ -372,11 +376,6 @@
 </div>
 
 </header>
-
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.min.js"></script>
-<link rel="stylesheet" href="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.css" />
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.js"></script>
-
 
     <section class="article-content">
     
@@ -504,13 +503,16 @@
 <p>在一些常用的前端框架中其实都有<code>约定式路由</code>的功能，比如nuxtjs、nextjs、umi、icejs&hellip;
 他们不必配置route文件，而是会根据当前项目目录结构自动生成路由配置</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448562.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448562.png" alt="Pasted image 20250525163729.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448562.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525163729.png"
+	
+	
+></p>
 <blockquote>
 <p>接下来我们要在vite里实现类似的效果</p>
 </blockquote>
@@ -596,13 +598,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>新建如下目录结构
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448563.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448563.png" alt="Pasted image 20250525173850.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448563.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525173850.png"
+	
+	
+>
 <code>types/page.ts</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -667,13 +672,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>打印结果如下
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448564.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448564.png" alt="Pasted image 20250525173015.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448564.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525173015.png"
+	
+	
+>
 这里打印的key就是导入模块的属性名，value就是动态导入的函数</p>
 <p>如果希望使用全局导入的方法，需要配置<code>eager</code></p>
 <div class="highlight"><div class="chroma">
@@ -690,21 +698,27 @@
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;pageModules:&#39;</span><span class="p">,</span> <span class="nx">pageModules</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448565.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448565.png" alt="Pasted image 20250525173243.png"  />
-	</a>
-</div>
-
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448565.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525173243.png"
+	
+	
+>
 这里其实有一个default属性，如下
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448566.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448566.png" alt="Pasted image 20250525173332.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448566.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525173332.png"
+	
+	
+>
 可以直接将default进行导入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -722,13 +736,16 @@
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;pageModules:&#39;</span><span class="p">,</span> <span class="nx">pageModules</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448567.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448567.png" alt="Pasted image 20250525173423.png"  />
-	</a>
-</div>
-
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448567.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525173423.png"
+	
+	
+>
 接下来需要将配置转成数组的格式</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -748,13 +765,16 @@
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;routes:&#39;</span><span class="p">,</span> <span class="nx">routes</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448568.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448568.png" alt="Pasted image 20250525173605.png"  />
-	</a>
-</div>
-
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448568.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525173605.png"
+	
+	
+>
 我们希望能够配置一个类似如下结构的路由</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1151,7 +1171,9 @@ vite使用的是rollup进行打包，有一个要求，<code>import</code>内部
 <h2 id="vite插件">vite插件
 </h2><blockquote>
 <p>实现约定式路由可以使用<code>vite-plugin-pages</code>插件
-参考<a class="link" href="https://www.viterc.cn/en/vite-plugin-pages.html"  target="_blank" rel="noopener" >Vite 中文文档</a>、<a class="link" href="https://juejin.cn/post/7347251816617705522"  target="_blank" rel="noopener" >约定式路由生成神器：vite-plugin-pages</a></p>
+参考<a class="link" href="https://www.viterc.cn/en/vite-plugin-pages.html"  target="_blank" rel="noopener"
+    >Vite 中文文档</a>、<a class="link" href="https://juejin.cn/post/7347251816617705522"  target="_blank" rel="noopener"
+    >约定式路由生成神器：vite-plugin-pages</a></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1162,13 +1184,16 @@ vite使用的是rollup进行打包，有一个要求，<code>import</code>内部
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>目录结构如下
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448570.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448570.png" alt="Pasted image 20250525191237.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081448570.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250525191237.png"
+	
+	
+>
 vite.config.ts</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1393,7 +1418,7 @@ vite.config.ts</p>
         
             2020 - 
         
-        2025 深海火锅店
+        2026 深海火锅店
     </section>
     
     <section class="powerby">
@@ -1466,25 +1491,25 @@ vite.config.ts</p>
     </div>
 
 </div><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/default-skin.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

@@ -325,13 +325,17 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-    <div class="article-image">
-        <a href="/p/kubernetes_2/">
-            <img src="/p/kubernetes_2/202412242125601_hu6944413584555012341.png" srcset="/p/kubernetes_2/202412242125601_hu6944413584555012341.png 800w, /p/kubernetes_2/202412242125601_hu13128054618936277471.png 1600w"  width="800"
-                height="388" loading="lazy" alt="Featured image of post Kubernetes_2" />
-            
-        </a>
-    </div>
+        <div class="article-image">
+            <a href="/p/kubernetes_2/">
+                <img src="/p/kubernetes_2/202412242125601_hu6944413584555012341.png"
+                        srcset="/p/kubernetes_2/202412242125601_hu6944413584555012341.png 800w, /p/kubernetes_2/202412242125601_hu13128054618936277471.png 1600w"
+                        width="800" 
+                        height="388" 
+                        loading="lazy"
+                        alt="Featured image of post Kubernetes_2" />
+                
+            </a>
+        </div>
     
 
     <div class="article-details">
@@ -400,11 +404,6 @@
 
 </header>
 
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.min.js"></script>
-<link rel="stylesheet" href="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.css" />
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.js"></script>
-
-
     <section class="article-content">
     
     
@@ -413,25 +412,31 @@
 </h2><blockquote>
 <p>Service 负责东西流量、Ingress 负责南北流量</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306614.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306614.png" alt="202505122306614.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306614.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="202505122306614.png"
+	
+	
+></p>
 <blockquote>
 <p>Service 根据选择器(比如 app=nginx-deploy)选中对应节点的 pod，如何找到对应 pod 的 IP 呢
 Endpoint 会对容器内 Pod 的 ip 进行管理
 当执行 kubectl 命令操作时候，请求到了 master 的 api-server 上面，api-server 根据 ip 找到对应的 service，service 找到 endpoint，endpoint 根据 iptables 转发找到目标服务器的 kube-proxy，最终找到对应的 pod 容器</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306617.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306617.png" alt="202505122306617.png"  />
-	</a>
-</div>
-
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306617.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="202505122306617.png"
+	
+	
+>
 新建一个<code>nginx-svc.yaml</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1097,42 +1102,56 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 </h2><blockquote>
 <p>左侧是传统 nginx 的负载均衡版本，右侧是 k8s 版本的负载均衡</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307025.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307025.png" alt="202505122307025.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307025.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="202505122307025.png"
+	
+	
+></p>
 <h3 id="安装-ingress-nginx">安装 ingress-nginx
 </h3><blockquote>
-<p>官方<a class="link" href="https://kubernetes.io/zh-cn/docs/concepts/services-networking/ingress/"  target="_blank" rel="noopener" >文档</a></p>
+<p>官方<a class="link" href="https://kubernetes.io/zh-cn/docs/concepts/services-networking/ingress/"  target="_blank" rel="noopener"
+    >文档</a></p>
 </blockquote>
 <p>这里有很多的控制器，我们使用 ingress-nginx
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307136.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307136.png" alt="202505122307136.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307136.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="202505122307136.png"
+	
+	
+></p>
 <p>以下是官方文档
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307254.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307254.png" alt="202505122307254.png"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307604.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307604.png" alt="202505122307604.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307254.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="202505122307254.png"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307604.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="202505122307604.png"
+	
+	
+></p>
 <h4 id="安装-helm">安装 helm
-</h4><p><a class="link" href="https://get.helm.sh/helm-v3.2.3-linux-amd64.tar.gz"  target="_blank" rel="noopener" >下载链接</a></p>
+</h4><p><a class="link" href="https://get.helm.sh/helm-v3.2.3-linux-amd64.tar.gz"  target="_blank" rel="noopener"
+    >下载链接</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1409,7 +1428,8 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 </span></span><span class="line"><span class="cl"><span class="c1"># 尚硅谷这里k8s的配置方法是使用yaml而非helm，看个人需要</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111809272.yaml"  target="_blank" rel="noopener" >values.yaml</a></p>
+</div><p><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111809272.yaml"  target="_blank" rel="noopener"
+    >values.yaml</a></p>
 <p>上面已经创建了<code>nginx-svc</code>和<code>nginx-deploy</code></p>
 <p>请确认你是否已经创建</p>
 <div class="highlight"><div class="chroma">
@@ -1551,36 +1571,48 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 </div><blockquote>
 <p>配置一下hosts文件，让指定域名指向k8s主节点，我这里是<code>116.148.120.214</code></p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959307.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959307.png" alt="image-20250611183347556"  />
-	</a>
-</div>
-</p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959890.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959890.png" alt="image-20250611185819088"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959307.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250611183347556"
+	
+	
+></p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959890.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250611185819088"
+	
+	
+></p>
 <p>访问<code>http://k8s.wolfcode.cn:31982/</code>响应404，这是正常的，因为我们配置了前缀<code>/api</code></p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001136.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001136.png" alt="image-20250611200054736"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001136.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250611200054736"
+	
+	
+></p>
 <p>访问<code>http://k8s.wolfcode.cn:31982/api</code>响应结果如下</p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001892.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001892.png" alt="image-20250611200123743"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001892.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250611200123743"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -2394,7 +2426,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
         
             2020 - 
         
-        2025 深海火锅店
+        2026 深海火锅店
     </section>
     
     <section class="powerby">
@@ -2467,25 +2499,25 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
     </div>
 
 </div><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/default-skin.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

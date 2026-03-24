@@ -15,7 +15,8 @@
         <guid>https://IsUnderAchiever.github.io/p/beetl3/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/beetl3/202412232109437.png" alt="Featured image of post Beetl3" /&gt;&lt;h1 id=&#34;beetl3&#34;&gt;beetl3
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://static.kancloud.cn/xiandafu/beetl3_guide/1992542&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;参考文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://static.kancloud.cn/xiandafu/beetl3_guide/1992542&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;基础入门&#34;&gt;基础入门
 &lt;/h2&gt;&lt;h3 id=&#34;安装&#34;&gt;安装
@@ -116,7 +117,8 @@
 &lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;Beetl 支持为模板自定义定界符和占位符，如本例子采用的默认占位符号 &lt;code&gt;${}&lt;/code&gt;。 后面可以看到，可以定义任意其他符号，比如&lt;code&gt;#{}&lt;/code&gt; 或者 &lt;code&gt;##&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;如果不想写代码直接体验 Beetl 提供的基本功能，可以使用 &lt;a class=&#34;link&#34; href=&#34;http://ibeetl.com/beetlonline/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;http://ibeetl.com/beetlonline/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;如果不想写代码直接体验 Beetl 提供的基本功能，可以使用 &lt;a class=&#34;link&#34; href=&#34;http://ibeetl.com/beetlonline/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://ibeetl.com/beetlonline/&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;模板基础配置&#34;&gt;模板基础配置

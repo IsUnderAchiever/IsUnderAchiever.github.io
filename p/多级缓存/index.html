@@ -341,13 +341,17 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-    <div class="article-image">
-        <a href="/p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/">
-            <img src="/p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu16312903020603335827.jpg" srcset="/p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu16312903020603335827.jpg 800w, /p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu18238743223137916243.jpg 1600w"  width="800"
-                height="534" loading="lazy" alt="Featured image of post 多级缓存" />
-            
-        </a>
-    </div>
+        <div class="article-image">
+            <a href="/p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/">
+                <img src="/p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu16312903020603335827.jpg"
+                        srcset="/p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu16312903020603335827.jpg 800w, /p/%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98/pawel-czerwinski-8uZPynIu-rQ-unsplash_hu18238743223137916243.jpg 1600w"
+                        width="800" 
+                        height="534" 
+                        loading="lazy"
+                        alt="Featured image of post 多级缓存" />
+                
+            </a>
+        </div>
     
 
     <div class="article-details">
@@ -416,11 +420,6 @@
 
 </header>
 
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.min.js"></script>
-<link rel="stylesheet" href="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.css" />
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.js"></script>
-
-
     <section class="article-content">
     
     
@@ -430,33 +429,42 @@
 <p>传统的缓存策略一般是请求到达Tomcat后，先查询Redis,如果未命中则查询数据库，存在下面的问题:
 请求要经过Tomcat处理，Tomcat的性能成为整个系统的瓶颈
 Redis缓存失效时，会对数据库产生冲击
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242144598.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242144598.png" alt="image-20240424214450555"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242144598.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240424214450555"
+	
+	
+></p>
 </blockquote>
 <h2 id="多级缓存方案">多级缓存方案
 </h2><p>多级缓存就是充分利用请求处理的每个环节,分别添加缓存，减轻Tomcat压力，提升服务性能:
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242147940.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242147940.png" alt="image-20240424214727874"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242147940.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240424214727874"
+	
+	
+></p>
 <blockquote>
 <p>减轻了<code>tomcat</code>的压力，避免了对数据库的压力，需要在nginx内部实现对于redis、tomcat访问的业务代码</p>
 <p>将来会将<code>nginx</code>部署为集群
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242149087.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242149087.png" alt="image-20240424214908046"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404242149087.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240424214908046"
+	
+	
+></p>
 </blockquote>
 <ol>
 <li>JVM进程缓存(Tomcat缓存)</li>
@@ -555,21 +563,27 @@ Redis缓存失效时，会对数据库产生冲击
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>navicat新建连接
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250741940.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250741940.png" alt="image-20240425074130881"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250741940.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425074130881"
+	
+	
+>
 新建数据库
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250742532.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250742532.png" alt="image-20240425074220509"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250742532.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425074220509"
+	
+	
+>
 执行sql</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -651,15 +665,20 @@ Redis缓存失效时，会对数据库产生冲击
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SET</span><span class="w"> </span><span class="n">FOREIGN_KEY_CHECKS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250744238.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250744238.png" alt="image-20240425074417184"  />
-	</a>
-</div>
-
-<a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250755125.rar"  target="_blank" rel="noopener" >基本工程下载</a>
-<a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250758691.rar"  target="_blank" rel="noopener" >nginx配置</a>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250744238.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425074417184"
+	
+	
+>
+<a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250755125.rar"  target="_blank" rel="noopener"
+    >基本工程下载</a>
+<a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250758691.rar"  target="_blank" rel="noopener"
+    >nginx配置</a>
 在nginx目录下，运行命令启动nginx</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -669,34 +688,43 @@ Redis缓存失效时，会对数据库产生冲击
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">start nginx.exe
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250801495.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250801495.png" alt="image-20240425080100462"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250801495.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425080100462"
+	
+	
+></p>
 <blockquote>
 <p>访问页面<code>http://localhost/item.html?id=10001</code>
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250801005.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250801005.png" alt="image-20240425080135891"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250801005.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425080135891"
+	
+	
+>
 现在，页面是假数据展示的。我们需要向服务器发送ajax请求，查询商品数据。
 打开控制台，可以看到页面有发起<code>ajax</code>查询数据
 而这个请求地址同样是80端口，所以被当前的nginx反向代理了。
 查看nginx的conf目录下的<code>nginx.conf</code>文件
 其中的关键配置如下：
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250804293.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250804293.png" alt="image-20210816114416561"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404250804293.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210816114416561"
+	
+	
+>
 其中的192.168.150.101是我的虚拟机IP，也就是我的Nginx业务集群要部署的地方：
 完整内容如下：</p>
 </blockquote>
@@ -1203,13 +1231,16 @@ Redis缓存失效时，会对数据库产生冲击
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>执行结果如下</strong>
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404252104807.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404252104807.png" alt="image-20240425210357720"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404252104807.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425210357720"
+	
+	
+></p>
 <h3 id="函数">函数
 </h3><blockquote>
 <p>定义函数的语法</p>
@@ -1299,7 +1330,8 @@ Redis缓存失效时，会对数据库产生冲击
 </h2><h3 id="openrestry">OpenRestry
 </h3><h4 id="安装">安装
 </h4><blockquote>
-<p><a class="link" href="https://openresty.org/cn/download.html"  target="_blank" rel="noopener" >官网</a>
+<p><a class="link" href="https://openresty.org/cn/download.html"  target="_blank" rel="noopener"
+    >官网</a>
 OpenResty是-个基于Nginx的高性能Web平台，用于方便地搭建能够处理超高并发、扩展性极高的动态Web应用、Web服务和动态网关。具备下列特点:</p>
 </blockquote>
 <ul>
@@ -1471,30 +1503,39 @@ opm是OpenResty的一个管理工具，可以帮助我们安装一个第三方�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后访问页面：http://192.168.56.10:8081，注意ip地址替换为你自己的虚拟机IP：
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404252154083.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404252154083.png" alt="image-20240425215453990"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404252154083.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240425215453990"
+	
+	
+></p>
 <h4 id="入门">入门
-</h4><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271937233.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271937233.png" alt="image-20240427193749125"  />
-	</a>
-</div>
-</p>
+</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271937233.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427193749125"
+	
+	
+></p>
 <blockquote>
 <p>访问<code>http://localhost/item.html?id=10001</code>商品详情页，发送的请求是<code>http://localhost/api/item/10001</code>
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271939787.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271939787.png" alt="image-20240427193945728"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271939787.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427193945728"
+	
+	
+>
 nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code>，而刚刚部署的<code>OpenRestry</code>在8081，这里<code>OpenRestry</code>需要做一些业务处理
 步骤一:修改nginx.conf文件
 1.在nginx.conf的http 下面，添加对OpenResty的Lua模块的加载:</p>
@@ -1532,13 +1573,16 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271947581.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271947581.png" alt="image-20240427194735493"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404271947581.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427194735493"
+	
+	
+></p>
 <blockquote>
 <ol>
 <li>在nginx目录下新建文件夹<code>lua</code></li>
@@ -1567,23 +1611,29 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </span></span></code></pre></td></tr></table>
 </div>
 </div></blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272006323.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272006323.png" alt="image-20240427200628182"  />
-	</a>
-</div>
-
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272006323.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427200628182"
+	
+	
+>
 可以看到<strong>lua脚本</strong>已经生效了</p>
 <h4 id="请求参数">请求参数
 </h4><p>OpenResty提供了各种API用来获取不同类型的请求参数:
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272013371.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272013371.png" alt="image-20240427201344237"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272013371.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427201344237"
+	
+	
+>
 <strong>案例</strong>
 获取请求路径中的商品id信息，拼接到json结果中返回</p>
 <div class="highlight"><div class="chroma">
@@ -1604,28 +1654,37 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </span></span><span class="line"><span class="cl">        }
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272021885.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272021885.png" alt="image-20240427202103810"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272021225.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272021225.png" alt="image-20240427202117153"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272021885.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427202103810"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404272021225.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240427202117153"
+	
+	
+></p>
 <h4 id="封装http请求工具">封装http请求工具
-</h4><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280759689.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280759689.png" alt="image-20240428075935605"  />
-	</a>
-</div>
-
+</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280759689.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240428075935605"
+	
+	
+>
 <strong>案例</strong>
 这里要修改item.lua,满足下面的需求:</p>
 <ol>
@@ -1680,22 +1739,28 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </span></span><span class="line"><span class="cl">        }
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280808615.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280808615.png" alt="image-20240428080836536"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280808615.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240428080836536"
+	
+	
+></p>
 <blockquote>
 <p>封装通用http请求
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280816959.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280816959.png" alt="image-20240428081628881"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404280816959.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240428081628881"
+	
+	
+></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1740,58 +1805,76 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>再次请求即可
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292010118.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292010118.png" alt="image-20240429201037008"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292010118.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429201037008"
+	
+	
+></p>
 <blockquote>
 <p>咱先理一下请求的过程</p>
 </blockquote>
 <ol>
 <li>首先nginx里的html发送ajax请求<code>http://localhost/api/item/10001</code></li>
 <li>nginx反向代理给<code>192.168.56.10:8081</code>
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292013794.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292013794.png" alt="image-20240429201307731"  />
-	</a>
-</div>
-</li>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292013794.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429201307731"
+	
+	
+></li>
 <li>而虚拟机的<code>openresty</code>由<code>item.lua</code>来处理这个请求
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292014207.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292014207.png" alt="image-20240429201412119"  />
-	</a>
-</div>
-</li>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292014207.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429201412119"
+	
+	
+></li>
 <li><code>item.lua</code>通过封装好的请求工具发送请求
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292018619.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292018619.png" alt="image-20240429201806527"  />
-	</a>
-</div>
-</li>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292018619.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429201806527"
+	
+	
+></li>
 <li>而<code>openresty</code>本身也具有nginx的功能，将请求反向代理到windows主机上
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292018327.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292018327.png" alt="image-20240429201852232"  />
-	</a>
-</div>
-</li>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292018327.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429201852232"
+	
+	
+></li>
 <li>后端接收到请求，响应数据
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292019049.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292019049.png" alt="image-20240429201955918"  />
-	</a>
-</div>
-</li>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292019049.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429201955918"
+	
+	
+></li>
 </ol>
 <blockquote>
 <p>现在数据还不完整，还需要查询库存信息返回，此时只有商品信息</p>
@@ -1890,44 +1973,56 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nginx -s reload
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292030122.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292030122.png" alt="image-20240429203042025"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404292030122.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240429203042025"
+	
+	
+></p>
 <h3 id="tomcat集群的负载均衡">Tomcat集群的负载均衡
 </h3><blockquote>
 <p>既然要配置负载均衡，那请求就不能只指向一个ip了，需要配置集群
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300745207.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300745207.png" alt="image-20240430074537126"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300745207.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430074537126"
+	
+	
+>
 **查询缓存过程:**查询8081，如果<code>缓存</code>存在则直接返回，如果不存在，在查询数据库之后，存入<code>进程缓存</code>中，下次即可从进程缓存获取数据
 <code>但是</code>，<strong>进程缓存无法共享</strong>，就是<code>8081</code>的进程缓存无法与<code>8082</code>共享
 我们希望查询商品id为<code>10001</code>在第一次查询之后永远都有缓存，该如何做？
 我们必须要让<code>10001</code>的请求每次都查询同一台服务器，这样就可以让缓存一直生效
 修改nginx负载均衡算法</p>
 <p>对请求uri采用hash算法，使在请求相同的商品时能走到同一台服务器
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300752746.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300752746.png" alt="image-20240430075210681"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300752746.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430075210681"
+	
+	
+>
 <strong>配置集群</strong>
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300756714.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300756714.png" alt="image-20240430075622620"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300756714.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430075622620"
+	
+	
+></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -2021,29 +2116,38 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </div>
 </div><blockquote>
 <p>继续复制一台Springboot实例，并启动
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300757137.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300757137.png" alt="image-20240430075741082"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300757137.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430075741082"
+	
+	
+>
 访问<code>http://localhost/item.html?id=10002</code>和<code>http://localhost/item.html?id=10001</code></p>
 <p>负载均衡已实现，而在多次访问时，并没有mysql日志打印，说明是查询缓存得到的数据
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300800606.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300800606.png" alt="image-20240430080001509"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300800644.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300800644.png" alt="image-20240430080008547"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300800606.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430080001509"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300800644.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430080008547"
+	
+	
+></p>
 </blockquote>
 <h3 id="添加redis需求">添加Redis需求
 </h3><blockquote>
@@ -2278,13 +2382,16 @@ nginx在捕获到<code>/api</code>请求后，转给了虚拟机<code>8081</code
 </div>
 </div><blockquote>
 <p>访问<code>http://localhost/item.html?id=10004</code>界面，实现了缓存预热的功能
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300821701.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300821701.png" alt="image-20240430082142624"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202404300821701.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240430082142624"
+	
+	
+></p>
 </blockquote>
 <h4 id="查询redis缓存">查询Redis缓存
 </h4><blockquote>
@@ -2620,20 +2727,26 @@ OpenResty提供了操作Redis的模块，我们只要引入该模块就能直接
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>更新Redis数据，重新查看网页，发现已经变成<code>22</code>寸了
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062026467.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062026467.png" alt="image-20240506202615377"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062026232.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062026232.png" alt="image-20240506202636120"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062026467.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506202615377"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062026232.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506202636120"
+	
+	
+></p>
 <h4 id="nginx本地缓存">Nginx本地缓存
 </h4><blockquote>
 <p>优先查询<code>OpenResty本地缓存</code>，其次是Redis，最后是Tomcat</p>
@@ -2673,13 +2786,16 @@ OpenResty提供了操作Redis的模块，我们只要引入该模块就能直接
 </div>
 </div></li>
 </ul>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062044303.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062044303.png" alt="image-20240506204425210"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062044303.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506204425210"
+	
+	
+></p>
 <blockquote>
 <p>修改<code>item.lua</code>，优先查询nginx本地缓存，其次是redis、tomcat、mysql</p>
 <p>查询Redis、Tomcat成功后，将缓存信息写入本地缓存，并设置有效期</p>
@@ -2803,44 +2919,56 @@ OpenResty提供了操作Redis的模块，我们只要引入该模块就能直接
 </ul>
 <blockquote>
 <p>基于MQ的异步通知
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062124605.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062124605.png" alt="image-20240506212404397"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062124605.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506212404397"
+	
+	
+>
 基于Canal的异步通知
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062125223.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062125223.png" alt="image-20240506212506025"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062125223.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506212506025"
+	
+	
+>
 Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如下:</p>
 </blockquote>
 <ul>
 <li>MySQL master将数据变更写入二进制日志( binary log)，其中记录的数据叫做binary log events</li>
 <li>MySQL slave将master的binary log events拷贝到它的中继日志(relay log)</li>
 <li>MySQL slave重放relay log中事件,将数据变更反映它自己的数据
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062127347.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062127347.png" alt="image-20240506212739255"  />
-	</a>
-</div>
-</li>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062127347.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506212739255"
+	
+	
+></li>
 </ul>
 <h3 id="初识canal">初识Canal
 </h3><p>Canal就是把自己伪装成MySQL的一个slave节 点,从而监听master的binary log变化。再把得到的变化信息通知给Canal的客户端，进而完成对其它数据库的同步。
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062128659.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062128659.png" alt="image-20240506212852571"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405062128659.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240506212852571"
+	
+	
+></p>
 <h3 id="开启mysql主从">开启MySQL主从
 </h3><blockquote>
 <p>修改配置文件</p>
@@ -2873,13 +3001,16 @@ Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如�
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker restart mysql-demo
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070800294.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070800294.png" alt="image-20240507080007082"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070800294.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240507080007082"
+	
+	
+></p>
 <h3 id="设置用户权限">设置用户权限
 </h3><p>接下来添加一个用于数据同步的用户，出于安全的考虑，这里仅提供对<code>heima</code>这个库的操作权限</p>
 <div class="highlight"><div class="chroma">
@@ -2895,20 +3026,26 @@ Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如�
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行成功后，查看到该用户
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070803813.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070803813.png" alt="image-20240507080342715"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070804039.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070804039.png" alt="image-20240507080458864"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070803813.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240507080342715"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070804039.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240507080458864"
+	
+	
+></p>
 <blockquote>
 <p>如果从库的<code>position</code>小于主库的<code>position</code>，则证明有数据需要同步</p>
 </blockquote>
@@ -3043,13 +3180,16 @@ Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如�
 </span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">server</span><span class="p">:</span><span class="w"> </span><span class="m">192.168.56.10</span><span class="p">:</span><span class="m">11111</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070826797.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070826797.png" alt="image-20240507082657564"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070826797.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240507082657564"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -3102,13 +3242,16 @@ Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如�
 </div>
 </div><blockquote>
 <p>此时<code>Canal</code>还无法将表的字段映射到对应的<code>DTO</code>，需要添加<code>Canal</code>的注解进行指定
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070829863.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070829863.png" alt="image-20240507082940638"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405070829863.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240507082940638"
+	
+	
+></p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -3485,7 +3628,7 @@ Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如�
         
             2020 - 
         
-        2025 深海火锅店
+        2026 深海火锅店
     </section>
     
     <section class="powerby">
@@ -3558,25 +3701,25 @@ Canal是基于mysql的主从同步来实现的，MySQL主从同步的原理如�
     </div>
 
 </div><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/default-skin.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

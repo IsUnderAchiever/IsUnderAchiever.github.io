@@ -89,14 +89,18 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    driver: bridge
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;访问&lt;a class=&#34;link&#34; href=&#34;http://127.0.0.1:51117&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;127.0.0.1:51117&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215230142299.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215230142299.png&#34; alt=&#34;image-20251215230142299&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;访问&lt;a class=&#34;link&#34; href=&#34;http://127.0.0.1:51117&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;127.0.0.1:51117&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215230142299.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215230142299&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -169,34 +173,46 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  gitlab/gitlab-runner:latest
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225343474.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225343474.png&#34; alt=&#34;image-20251215225343474&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225551627.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225551627.png&#34; alt=&#34;image-20251215225551627&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225617911.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225617911.png&#34; alt=&#34;image-20251215225617911&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225632442.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225632442.png&#34; alt=&#34;image-20251215225632442&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225343474.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225343474&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225551627.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225551627&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225617911.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225617911&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225632442.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225632442&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;点击设置、CI/CD,选择Runner，点击&lt;code&gt;创建项目Runner&lt;/code&gt;，标签随便写一个即可，这里我写的是&lt;code&gt;shared&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -231,25 +247,31 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此时重新查看CICD设置，可以看到流水线已经注册成功了&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225652128.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225652128.png&#34; alt=&#34;image-20251215225652128&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225652128.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225652128&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意这里有个坑，如果流水线注册之后，看到代码运行流水线失败，此时你可能会删除掉流水线重新注册。
 你应该重新提交代码运行新的流水线，而不是重新运行旧的流水线，否则仍然会运行旧的流水线导致报错。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;在项目根目录下创建&lt;code&gt;.gitlab-ci.yml&lt;/code&gt;文件&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225717480.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225717480.png&#34; alt=&#34;image-20251215225717480&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225717480.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225717480&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -270,13 +292,16 @@
 这里15是jobid，根据自己实际情况来&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;访问&lt;code&gt;http://10.0.0.7:8080/tongwh/bilibili-download/-/jobs/15&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225743041.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225743041.png&#34; alt=&#34;image-20251215225743041&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo06/image-20251215225743041.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20251215225743041&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;外网访问&#34;&gt;外网访问
 &lt;/h2&gt;&lt;p&gt;这里我是使用&lt;code&gt;ddns&lt;/code&gt;+&lt;code&gt;动态公网ip&lt;/code&gt;+&lt;code&gt;域名&lt;/code&gt;实现的远程访问方案&lt;/p&gt;
 &lt;p&gt;动态公网ip可以找运营商申请
@@ -353,13 +378,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;访问&lt;code&gt;ip:9200&lt;/code&gt;即可&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092303101.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092303101.png&#34; alt=&#34;image-20250609224350686&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506092303101.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250609224350686&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;安装kibana&#34;&gt;安装Kibana
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -451,7 +479,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;访问8080端口发现404，详情可以查看该&lt;a class=&#34;link&#34; href=&#34;https://cloud.tencent.com/developer/article/1704573&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;
+&lt;p&gt;访问8080端口发现404，详情可以查看该&lt;a class=&#34;link&#34; href=&#34;https://cloud.tencent.com/developer/article/1704573&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;
 进行修改操作，首先进入容器内部,在&lt;code&gt;/usr/local/tomcat/&lt;/code&gt;目录下有&lt;code&gt;webapps&lt;/code&gt;目录和&lt;code&gt;webapps.dist&lt;/code&gt;目录
 直接删除&lt;code&gt;webapps&lt;/code&gt;目录，将&lt;code&gt;webapps.dist&lt;/code&gt;改名为&lt;code&gt;webapps&lt;/code&gt;，然后重启docker容器即可&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -564,7 +593,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/div&gt;&lt;h2 id=&#34;部署activiti流程设计器&#34;&gt;部署Activiti流程设计器
 &lt;/h2&gt;&lt;h3 id=&#34;步骤&#34;&gt;步骤
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;接下来将部署Activiti流程设计器,下载&lt;a class=&#34;link&#34; href=&#34;https://www.activiti.org/get-started&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;
+&lt;p&gt;接下来将部署Activiti流程设计器,下载&lt;a class=&#34;link&#34; href=&#34;https://www.activiti.org/get-started&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;
 解压之后在&lt;code&gt;activiti-6.0.0\wars&lt;/code&gt;下有三个&lt;code&gt;war&lt;/code&gt;包，我们需要部署到&lt;code&gt;tomcat&lt;/code&gt;容器上&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -654,13 +684,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;用户名/密码&lt;/code&gt;是:&lt;code&gt;admin/test&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601471.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601471.png&#34; alt=&#34;image-20250101120727141&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601471.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250101120727141&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;持久化&#34;&gt;持久化
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;修改&lt;code&gt;activiti-app.war\WEB-INF\classes\META-INF\activiti-app\activiti-app.properties&lt;/code&gt;文件&lt;/p&gt;
@@ -709,30 +742,41 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;p&gt;上传现在的&lt;code&gt;mysql-connector-java-8.0.17.jar&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;将修改好的war包上传到服务器上进行部署，依然是上述流程，这里不再演示&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601630.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601630.png&#34; alt=&#34;image-20250101123807292&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601630.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250101123807292&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;可以看到已经自动初始化了这些表，持久化已经完成了&lt;/p&gt;
 &lt;h3 id=&#34;汉化&#34;&gt;汉化
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.jianshu.com/p/f3947908d18a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客1&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_19734597/article/details/87784216&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客2&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_26458903/article/details/90409026&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.jianshu.com/p/f3947908d18a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客1&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_19734597/article/details/87784216&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客2&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_26458903/article/details/90409026&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这里不再演示，直接放链接&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;原版链接&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253297.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;activiti-admin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253298.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;activiti-app&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253299.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;activiti-rest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253297.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;activiti-admin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253298.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;activiti-app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253299.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;activiti-rest&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;汉化版链接:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;这款汉化版不够彻底，需要参考下这个&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_26458903/article/details/90409026&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;的配置&lt;/p&gt;
+&lt;p&gt;这款汉化版不够彻底，需要参考下这个&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_26458903/article/details/90409026&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;的配置&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253300.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;activiti-app&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253300.war&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;activiti-app&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;dockercompose部署&#34;&gt;DockerCompose部署
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;在连接mysql时候直接写&lt;code&gt;ip&lt;/code&gt;还是硬伤，如果有一种方法能直接指定就好了&lt;/p&gt;
@@ -832,13 +876,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;p&gt;主要注意下端口是否被占用，&lt;code&gt;activiti_tomcat&lt;/code&gt;容器绑定的是宿主机的&lt;code&gt;8012&lt;/code&gt;端口&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;activiti_mysql&lt;/code&gt;绑定的是宿主机的&lt;code&gt;3307&lt;/code&gt;端口&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602976.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602976.png&#34; alt=&#34;image-20250101155458911&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602976.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250101155458911&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -881,25 +928,32 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3574a781ae9f   mysql:latest             &lt;span class=&#34;s2&#34;&gt;&amp;#34;docker-entrypoint.s…&amp;#34;&lt;/span&gt;   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307-&amp;gt;3306/tcp, &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;::&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;:3307-&amp;gt;3306/tcp   activiti_mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602152.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602152.png&#34; alt=&#34;image-20250101160015096&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602432.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602432.png&#34; alt=&#34;image-20250101160036444&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602152.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250101160015096&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602432.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250101160036444&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以上是汉化之后的的效果&lt;/p&gt;
 &lt;p&gt;以下是下载链接&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;activiti_tomcat镜像&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1A9lVyppWHkxwb0HFvnigcw?pwd=qigs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;activiti_tomcat镜像&lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1A9lVyppWHkxwb0HFvnigcw?pwd=qigs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;activiti_tomcat是自制的activiti流程设计器docker镜像，默认会连接同一个网络下activiti_mysql容器进行持久化(注意提前创建activiti6ui数据库)&lt;/p&gt;
 &lt;p&gt;这里镜像有点大我是用命令压缩过一次了，这里传不上去github，我就直接传百度网盘了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -922,7 +976,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
         <guid>https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlabgitlab-runner/dbc-docker-desktop-home.webp" alt="Featured image of post Docker部署Gitlab、Gitlab-Runner" /&gt;&lt;h1 id=&#34;docker部署gitlabgitlab-runner&#34;&gt;Docker部署Gitlab、Gitlab-Runner
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV18z421e7pL/?spm_id_from=333.337.search-card.all.click&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;视频&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV18z421e7pL/?spm_id_from=333.337.search-card.all.click&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;视频&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;部署gitlab容器&#34;&gt;部署Gitlab容器
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1108,34 +1163,46 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;登陆后，先重置一下密码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320950.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320950.png&#34; alt=&#34;image-20241227214209162&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320530.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320530.png&#34; alt=&#34;image-20241227214225177&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320146.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320146.png&#34; alt=&#34;image-20241227214244718&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320526.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320526.png&#34; alt=&#34;image-20241227214309591&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320950.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227214209162&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320530.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227214225177&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320146.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227214244718&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320526.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227214309591&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;准备gitlab-runner&#34;&gt;准备Gitlab-Runner
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1263,30 +1330,39 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps aux&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;grep gitlab-runner
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320796.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320796.png&#34; alt=&#34;image-20241227224134959&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320765.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320765.png&#34; alt=&#34;image-20241227224211312&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320796.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227224134959&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320765.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227224211312&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;写上&lt;code&gt;shared&lt;/code&gt;，直接点击&lt;code&gt;create&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320057.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320057.png&#34; alt=&#34;image-20241228102543566&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320057.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228102543566&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;复制命令进行注册&lt;/p&gt;
 &lt;p&gt;我这里注册失败过很多次，分享一下排查过程，首先说我的原因，是因为挂了&lt;code&gt;http&lt;/code&gt;代理&lt;/p&gt;
@@ -1439,59 +1515,78 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Configuration &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;with the authentication token&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; was saved in &lt;span class=&#34;s2&#34;&gt;&amp;#34;/etc/gitlab-runner/config.toml&amp;#34;&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320103.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320103.png&#34; alt=&#34;image-20241228103712513&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281320103.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228103712513&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;此时runner已经进入&lt;code&gt;Online&lt;/code&gt;状态&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;gitlab配置&lt;code&gt;ssh&lt;/code&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_45710060/article/details/121752880&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;gitlab配置&lt;code&gt;ssh&lt;/code&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_45710060/article/details/121752880&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这里我就直接省略了&lt;/p&gt;
 &lt;p&gt;这里在&lt;code&gt;gitlab&lt;/code&gt;新建一个项目&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321015.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321015.png&#34; alt=&#34;image-20241228104030641&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321867.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321867.png&#34; alt=&#34;image-20241228104048753&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321485.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321485.png&#34; alt=&#34;image-20241228104127834&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321622.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321622.png&#34; alt=&#34;image-20241228104300647&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321015.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228104030641&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321867.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228104048753&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321485.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228104127834&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321622.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228104300647&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这里先把代码&lt;code&gt;clone&lt;/code&gt;下来&lt;/p&gt;
 &lt;p&gt;先随便写个demo即可，重点关注项目下的两个文件&lt;/p&gt;
 &lt;p&gt;新建两个文件&lt;code&gt;.gitlab-ci.yml&lt;/code&gt;和&lt;code&gt;Dockerfile&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321320.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321320.png&#34; alt=&#34;image-20241228115239957&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321320.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228115239957&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1620,85 +1715,112 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;创建token，在push代码时需要用到&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321228.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321228.png&#34; alt=&#34;image-20241228114809975&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321228.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228114809975&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;勾选需要的权限，点击创建&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321277.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321277.png&#34; alt=&#34;image-20241228114922692&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321277.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228114922692&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;push代码时，填入对应的token&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321438.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321438.png&#34; alt=&#34;image-20241228114937324&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321438.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228114937324&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;可以看到现在代码已经push上来了&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321995.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321995.png&#34; alt=&#34;image-20241228115504787&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321522.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321522.png&#34; alt=&#34;image-20241228115529433&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322187.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322187.png&#34; alt=&#34;image-20241228115546297&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321995.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228115504787&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281321522.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228115529433&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322187.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228115546297&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;注意分支要选择自己提交代码的分支&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322181.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322181.png&#34; alt=&#34;image-20241228115637008&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322181.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228115637008&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这里build失败是因为&lt;code&gt;gitlab yml&lt;/code&gt;里的命令有问题，先看看&lt;code&gt;build&lt;/code&gt;的镜像是否能正常运行&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322268.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322268.png&#34; alt=&#34;image-20241228124144668&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322268.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228124144668&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;稍作修改&lt;/p&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322319.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322319.png&#34; alt=&#34;image-20241228124227087&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322319.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228124227087&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;前面&lt;code&gt;build&lt;/code&gt;是成功了&lt;/p&gt;
 &lt;p&gt;查看下本地镜像&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1758,13 +1880,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;可以看到这里已经成功启动了，访问下试试&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322496.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322496.png&#34; alt=&#34;image-20241228124606450&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322496.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228124606450&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;接口正常，接下来重新修改下&lt;code&gt;dockerfile&lt;/code&gt;完整过一遍&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1928,13 +2053,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&lt;/span&gt;    - docker run -d --name boot-demo -p 8012:8080 192.168.0.16:8010/tong/boot-demo:&lt;span class=&#34;nv&#34;&gt;$CI_COMMIT_TAG&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322016.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322016.png&#34; alt=&#34;image-20241228124846469&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281322016.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241228124846469&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;可以看到这里已经成功了，访问接口也没问题&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;pom.xml&lt;/p&gt;
@@ -2659,7 +2787,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
         <guid>https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlab/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2gitlab/dbc-docker-desktop-home.webp" alt="Featured image of post Docker部署Gitlab" /&gt;&lt;h1 id=&#34;docker部署gitlab&#34;&gt;Docker部署Gitlab
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/BThinker/article/details/124097795&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/BThinker/article/details/124097795&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;部署&#34;&gt;部署
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2838,13 +2967,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it gitlab-runner gitlab-runner register
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281325707.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281325707.png&#34; alt=&#34;image-20241227164149717&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412281325707.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241227164149717&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2856,7 +2988,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2jenkins/dbc-docker-desktop-home.webp" alt="Featured image of post Docker部署Jenkins" /&gt;&lt;h1 id=&#34;docker部署jenkins&#34;&gt;Docker部署Jenkins
 &lt;/h1&gt;&lt;h2 id=&#34;部署&#34;&gt;部署
 &lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Aaaaaaatwl/article/details/140314323&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Aaaaaaatwl/article/details/140314323&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2900,13 +3033,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs -f 8605cc78de0d
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412222147430.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412222147430.png&#34; alt=&#34;image-20241222214704308&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412222147430.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241222214704308&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这就是&lt;code&gt;管理员密码&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -2985,13 +3121,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker restart 8605cc78de0d
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412232126132.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412232126132.png&#34; alt=&#34;image-20241222215448277&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412232126132.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241222215448277&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;我这边遇到了这个问题，查看日志发现启动成功了，但是无法访问&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3025,13 +3164,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker restart 8605cc78de0d
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412232126188.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412232126188.png&#34; alt=&#34;image-20241222215855486&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412232126188.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241222215855486&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;将日志里的管理员密码粘贴进来，文章上面已经提过了&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;点击安装推介的插件&lt;/li&gt;
@@ -3134,7 +3276,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
         <guid>https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2portainer/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/docker%E9%83%A8%E7%BD%B2portainer/dbc-docker-desktop-home.webp" alt="Featured image of post Docker部署Portainer" /&gt;&lt;h1 id=&#34;docker部署portainer&#34;&gt;Docker部署Portainer
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/jks212454/article/details/130828096&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;资料&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/jks212454/article/details/130828096&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;资料&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;拉取镜像&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3179,7 +3322,8 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;访问&lt;a class=&#34;link&#34; href=&#34;http://docker-learning.com:9000/#!/2/docker/containers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;url&lt;/a&gt;即可&lt;/p&gt;
+&lt;p&gt;访问&lt;a class=&#34;link&#34; href=&#34;http://docker-learning.com:9000/#!/2/docker/containers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;url&lt;/a&gt;即可&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;http://docker-learning.com:9000/#!/2/docker/containers&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
@@ -3193,14 +3337,17 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/docker/dbc-docker-desktop-home.webp" alt="Featured image of post Docker" /&gt;&lt;h1 id=&#34;docker概念&#34;&gt;Docker概念
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;镜像&lt;/code&gt;:相当于容器的模板
 &lt;code&gt;容器&lt;/code&gt;:可以理解成轻量级的虚拟机
-&lt;code&gt;镜像仓库&lt;/code&gt;:存放镜像的仓库，官方的镜像仓库 &lt;a class=&#34;link&#34; href=&#34;https://hub.docker.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;https://hub.docker.com/&lt;/a&gt;
-以下内容可能会使用到&lt;code&gt;某些文件&lt;/code&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwl.lanzouj.com/iKTW01shae1c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;下载链接&lt;/a&gt;&lt;/p&gt;
+&lt;code&gt;镜像仓库&lt;/code&gt;:存放镜像的仓库，官方的镜像仓库 &lt;a class=&#34;link&#34; href=&#34;https://hub.docker.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hub.docker.com/&lt;/a&gt;
+以下内容可能会使用到&lt;code&gt;某些文件&lt;/code&gt;&lt;a class=&#34;link&#34; href=&#34;https://wwl.lanzouj.com/iKTW01shae1c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;下载链接&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;可以使用镜像来不断创建容器，而镜像仓库则是存放镜像的地方&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&#34;命令&#34;&gt;命令
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/reference/cli/docker/image/ls/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;官网文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/reference/cli/docker/image/ls/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3755,13 +3902,16 @@ ddns项目我推介使用&lt;code&gt;ddns-go&lt;/code&gt;，可使用docker部�
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker inspect mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png&#34; alt=&#34;image-20240323184204498&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240323184204498.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240323184204498&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -4304,13 +4454,16 @@ WORKDIR指定的目录是否能使用环境变量&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;http://docker1:81/
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240324181016560.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240324181016560.png&#34; alt=&#34;image-20240324181016560&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240324181016560.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240324181016560&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;expose&#34;&gt;EXPOSE
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;暴露需要发布的端口，让镜像使用者知道应该发布哪些端口&lt;/p&gt;
@@ -4730,13 +4883,16 @@ WORKDIR指定的目录是否能使用环境变量&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CMD &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;demo.jar&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325062118495.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325062118495.png&#34; alt=&#34;image-20240325062118495&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325062118495.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240325062118495&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -4767,13 +4923,16 @@ WORKDIR指定的目录是否能使用环境变量&lt;/p&gt;
 &lt;p&gt;前端&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;demo_ngxin&lt;/code&gt;是dockerfile文件&lt;/p&gt;
 &lt;p&gt;blog-vue下则是前端文件
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325071054576.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325071054576.png&#34; alt=&#34;image-20240325071054576&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240325071054576.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240325071054576&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

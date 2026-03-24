@@ -16,35 +16,45 @@
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/minio/202412242319462.png" alt="Featured image of post Minio" /&gt;&lt;h1 id=&#34;springboot整合minio&#34;&gt;Springboot整合Minio
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;我这里已经使用Docker配置了一个Minio容器&lt;/p&gt;
-&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Darling_qi/article/details/124743303&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Darling_qi/article/details/124743303&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321020.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321020.png&#34; alt=&#34;image-20241224215936201&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321020.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241224215936201&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;创建桶&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321023.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321023.png&#34; alt=&#34;image-20241224222232971&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321023.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241224222232971&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;点进去之后，设置为&lt;code&gt;public&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321212.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321212.png&#34; alt=&#34;image-20241224222317547&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321212.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241224222317547&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以下是SpringBoot代码&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;pom.xml&lt;/code&gt;&lt;/p&gt;
@@ -829,15 +839,19 @@
 &lt;p&gt;这里需要注意一下，文件类型选择&lt;code&gt;file&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;键&lt;/code&gt;名字选择代码里&lt;code&gt;@RequestParam(&amp;quot;file&amp;quot;)&lt;/code&gt;里的名字，这里是&lt;code&gt;file&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;
-&lt;div class=&#34;post-img-view&#34;&gt;
-	&lt;a data-fancybox=&#34;gallery&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321366.png&#34;&gt;
-		&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321366.png&#34; alt=&#34;image-20241224224406493&#34;  /&gt;
-	&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242321366.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241224224406493&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;最后postman测试全部通过，测试&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242301146.json&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最后postman测试全部通过，测试&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412242301146.json&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         </item>

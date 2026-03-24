@@ -320,13 +320,17 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-    <div class="article-image">
-        <a href="/p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/">
-            <img src="/p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png" srcset="/p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png 800w, /p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/202506081432952_hu16346413643767610849.png 1600w"  width="800"
-                height="316" loading="lazy" alt="Featured image of post Nexus搭建Maven私服" />
-            
-        </a>
-    </div>
+        <div class="article-image">
+            <a href="/p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/">
+                <img src="/p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png"
+                        srcset="/p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png 800w, /p/nexus%E6%90%AD%E5%BB%BAmaven%E7%A7%81%E6%9C%8D/202506081432952_hu16346413643767610849.png 1600w"
+                        width="800" 
+                        height="316" 
+                        loading="lazy"
+                        alt="Featured image of post Nexus搭建Maven私服" />
+                
+            </a>
+        </div>
     
 
     <div class="article-details">
@@ -395,16 +399,13 @@
 
 </header>
 
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.min.js"></script>
-<link rel="stylesheet" href="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.css" />
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.js"></script>
-
-
     <section class="article-content">
     
     
     <h1 id="nexus搭建maven私服">Nexus搭建Maven私服
-</h1><p>参考<a class="link" href="https://developer.aliyun.com/article/1328445"  target="_blank" rel="noopener" >Nexus私服搭建与Maven仓库</a>、<a class="link" href="https://blog.csdn.net/z562743237/article/details/108852509"  target="_blank" rel="noopener" >MAVEN 私有仓库搭建与配置</a></p>
+</h1><p>参考<a class="link" href="https://developer.aliyun.com/article/1328445"  target="_blank" rel="noopener"
+    >Nexus私服搭建与Maven仓库</a>、<a class="link" href="https://blog.csdn.net/z562743237/article/details/108852509"  target="_blank" rel="noopener"
+    >MAVEN 私有仓库搭建与配置</a></p>
 <h2 id="启动容器">启动容器
 </h2><p><strong>1. 拉取镜像并启动容器</strong></p>
 <div class="highlight"><div class="chroma">
@@ -789,15 +790,19 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># Server: bfe/1.0.8.18</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这里网络并没有问题，随后根据<a class="link" href="https://blog.csdn.net/u014331288/article/details/107891984"  target="_blank" rel="noopener" >此博客</a>的操作解决了该问题</p>
+</div><p>这里网络并没有问题，随后根据<a class="link" href="https://blog.csdn.net/u014331288/article/details/107891984"  target="_blank" rel="noopener"
+    >此博客</a>的操作解决了该问题</p>
 <p>涉及到登录的地方可以先看后面的内容，查看<code>admin</code>的登陆密码</p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425969.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425969.png" alt="Pasted image 20250601013923.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425969.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601013923.png"
+	
+	
+></p>
 <p>这里为了验证效果，先清空容器日志重启一下容器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -840,37 +845,49 @@
 <hr>
 <h2 id="配置maven仓库">配置Maven仓库
 </h2><h3 id="新建仓库可选">新建仓库（可选）
-</h3><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425795.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425795.png" alt="Pasted image 20250531234731.png"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081426471.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081426471.png" alt="Pasted image 20250531234736.png"  />
-	</a>
-</div>
-</p>
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425795.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250531234731.png"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081426471.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250531234736.png"
+	
+	
+></p>
 <h3 id="配置maven">配置Maven
-</h3><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427863.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427863.png" alt="Pasted image 20250531234832.png"  />
-	</a>
-</div>
-
+</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427863.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250531234832.png"
+	
+	
+>
 找到maven的配置文件
 新增如下内容
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427444.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427444.png" alt="Pasted image 20250531235542.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427444.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250531235542.png"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -908,13 +925,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>新增如下内容
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427288.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427288.png" alt="Pasted image 20250531235722.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427288.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250531235722.png"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -934,13 +954,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>url在此处cv
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427487.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427487.png" alt="Pasted image 20250531235704.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427487.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250531235704.png"
+	
+	
+>
 这里最好还是加上一个阿里云的镜像</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -976,13 +999,16 @@
 </div>
 </div><h3 id="上传某个项目的jar包">上传某个项目的Jar包
 </h3><p>在项目中如下配置即可
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427406.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427406.png" alt="Pasted image 20250601000117.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427406.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601000117.png"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1016,41 +1042,54 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>注意这里的id(nexus-snapshots、nexus-releases)要和之前maven/conf/setting.xml里配置的id一样</p>
-<p>idea点击maven的<code>deploy</code>，如果遇到401错误，请查看<a class="link" href="https://blog.csdn.net/qq_43302195/article/details/128684987"  target="_blank" rel="noopener" >此博客</a></p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427701.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427701.png" alt="Pasted image 20250601002008.png"  />
-	</a>
-</div>
-</p>
+<p>idea点击maven的<code>deploy</code>，如果遇到401错误，请查看<a class="link" href="https://blog.csdn.net/qq_43302195/article/details/128684987"  target="_blank" rel="noopener"
+    >此博客</a></p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427701.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601002008.png"
+	
+	
+></p>
 <p>然后就可以在nexus上看到当前项目的jar包了
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427251.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427251.png" alt="Pasted image 20250601002245.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427251.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601002245.png"
+	
+	
+></p>
 <h2 id="上传jar包">上传Jar包
 </h2><h3 id="单个上传">单个上传
 </h3><blockquote>
 <p>除了上传项目的jar包外，如果希望连其他常用的jar包也进行上传，根据如下步骤可以实现</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427911.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427911.png" alt="Pasted image 20250601003059.png"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427080.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427080.png" alt="Pasted image 20250601003146.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427911.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601003059.png"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427080.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601003146.png"
+	
+	
+></p>
 <h3 id="批量上传">批量上传
 </h3><blockquote>
 <p>这个脚本有一个问题，批量设置了groupId为自定义的值，而我其实更希望和maven仓库的groupId保持一致</p>
@@ -1323,44 +1362,59 @@
 <p>其实可以完全不上传本地 JAR 包 ，而是直接通过 Nexus 的 代理仓库（Proxy Repository） 功能，将 Maven 官方仓库（如 Maven Central）或阿里云镜像（如阿里云 Maven 镜像）代理到 Nexus 服务器中。这样，当项目请求依赖时，Nexus 会自动从远程仓库下载并缓存，无需手动上传 JAR 包</p>
 </blockquote>
 <p>url输入<code>https://maven.aliyun.com/repository/public/</code>
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427359.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427359.png" alt="Pasted image 20250601005445.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427359.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601005445.png"
+	
+	
+>
 需要在public上配置刚刚新建的仓库
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427684.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427684.png" alt="Pasted image 20250601005530.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427684.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601005530.png"
+	
+	
+>
 这里要注意下仓库顺序。maven查找依赖时会依次遍历仓库组中的仓库，我这里直接移到最上面
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427141.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427141.png" alt="Pasted image 20250601012726.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427141.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601012726.png"
+	
+	
+>
 然后注释掉其他的仓库配置，在idea里clean之后install即可下载jar包到nexus
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427774.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427774.png" alt="Pasted image 20250601012806.png"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427908.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427908.png" alt="Pasted image 20250601012832.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427774.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601012806.png"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427908.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601012832.png"
+	
+	
+>
 同样的方法也可以配置maven官方仓库</p>
 
 </section>
@@ -1519,7 +1573,7 @@
         
             2020 - 
         
-        2025 深海火锅店
+        2026 深海火锅店
     </section>
     
     <section class="powerby">
@@ -1592,25 +1646,25 @@
     </div>
 
 </div><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/default-skin.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

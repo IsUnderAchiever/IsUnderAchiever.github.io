@@ -305,13 +305,17 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-    <div class="article-image">
-        <a href="/p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/">
-            <img src="/p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png" srcset="/p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png 800w, /p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/202506081432952_hu16346413643767610849.png 1600w"  width="800"
-                height="316" loading="lazy" alt="Featured image of post Nexus搭建Docker私服" />
-            
-        </a>
-    </div>
+        <div class="article-image">
+            <a href="/p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/">
+                <img src="/p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png"
+                        srcset="/p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/202506081432952_hu13836851400137187146.png 800w, /p/nexus%E6%90%AD%E5%BB%BAdocker%E7%A7%81%E6%9C%8D/202506081432952_hu16346413643767610849.png 1600w"
+                        width="800" 
+                        height="316" 
+                        loading="lazy"
+                        alt="Featured image of post Nexus搭建Docker私服" />
+                
+            </a>
+        </div>
     
 
     <div class="article-details">
@@ -379,11 +383,6 @@
 </div>
 
 </header>
-
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.min.js"></script>
-<link rel="stylesheet" href="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.css" />
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.js"></script>
-
 
     <section class="article-content">
     
@@ -506,13 +505,16 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo journalctl -u docker.service -n <span class="m">100</span> <span class="p">|</span> grep <span class="s2">&#34;pull&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428086.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428086.png" alt="Pasted image 20250601094848.png"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428086.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601094848.png"
+	
+	
+></p>
 <h1 id="nexus新建仓库">Nexus新建仓库
 </h1><h2 id="proxy仓库">Proxy仓库
 </h2><p>接下来在nexus新建proxy仓库，刚刚我已经测试过了<code>daemon.json</code>里的源暂时都是可用的
@@ -522,13 +524,16 @@
 新建<code>docker(proxy)</code>仓库，name随意即可，我这里取名<code>docker-proxy-ussh</code>
 以下是需要注意的几个地方，其他位置默认即可</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428087.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428087.png" alt="Pasted image 20250601101120.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428087.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601101120.png"
+	
+	
+></p>
 <h2 id="group仓库">Group仓库
 </h2><blockquote>
 <p>新建<code>docker(group)</code>仓库，我这里取名<code>docker-public</code>
@@ -536,37 +541,46 @@
 http端口选择8082，允许匿名pull
 最重要的是将刚刚创建的proxy仓库添加为成员</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428088.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428088.png" alt="Pasted image 20250601101548.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428088.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601101548.png"
+	
+	
+></p>
 <h2 id="hosted仓库">Hosted仓库
 </h2><blockquote>
 <p>hosted仓库用于<code>docker push</code>将本地镜像push到nexus仓库
 而以上的proxy主要用于<code>docker pull</code></p>
 </blockquote>
 <p>配置如下
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428089.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428089.png" alt="Pasted image 20250601101919.png"  />
-	</a>
-</div>
-</p>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428089.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601101919.png"
+	
+	
+></p>
 <h2 id="realms">Realms
 </h2><blockquote>
 <p>点击将<code>Docker Bearer Token Realm</code>配置到右侧的<code>Active</code>,然后点击<code>Save</code></p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428090.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428090.png" alt="Pasted image 20250601102150.png"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428090.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601102150.png"
+	
+	
+></p>
 <h1 id="pull">pull
 </h1><h2 id="配置daemon">配置Daemon
 </h2><div class="highlight"><div class="chroma">
@@ -653,7 +667,8 @@ http端口选择8082，允许匿名pull
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>在github上看到相同的issue，且还未关闭
-<a class="link" href="https://github.com/sonatype/nexus-public/issues/565"  target="_blank" rel="noopener" >Docker repository - Unsupported protocol scheme &ldquo;null&rdquo; #565</a></p>
+<a class="link" href="https://github.com/sonatype/nexus-public/issues/565"  target="_blank" rel="noopener"
+    >Docker repository - Unsupported protocol scheme &ldquo;null&rdquo; #565</a></p>
 <p>此issue里提供了两种解决方案</p>
 <ol>
 <li>取消匿名pull选项</li>
@@ -684,13 +699,16 @@ http端口选择8082，允许匿名pull
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>这里我使用第一种方案，取消匿名pull后登陆成功
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428091.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428091.png" alt="Pasted image 20250601121259.png"  />
-	</a>
-</div>
-
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428091.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601121259.png"
+	
+	
+>
 拉取一个镜像试试</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -700,13 +718,16 @@ http端口选择8082，允许匿名pull
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker pull 116.148.120.214:8082/mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428092.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428092.png" alt="Pasted image 20250601122141.png"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428092.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601122141.png"
+	
+	
+></p>
 <h2 id="nginx反向代理携带认证信息">nginx反向代理携带认证信息
 </h2><p>这里是因为neuxs的bug，取消匿名pull之后无法login，所以需要配置代理
 如果你的版本可以使用匿名pull，则直接开启匿名pull即可，无需再配置代理</p>
@@ -735,7 +756,8 @@ http端口选择8082，允许匿名pull
 </span></span><span class="line"><span class="cl"><span class="c1"># 6月 01 12:41:42 tongwh dockerd[2878504]: time=&#34;2025-06-01T12:41:42.211650285+08:00&#34; level=info msg=&#34;Attempting next endpoint for pull after error: Head http://116.148.120.214:8082/v2/library/mysql/manifests/latest: no basic auth credentials&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>参考<a class="link" href="https://www.kubernetes.org.cn/7994.html#:~:text=%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8CDocker%E5%81%8F%E7%88%B1%E4%BD%BF%E7%94%A8auths%E4%B8%AD%E7%9A%84https%3A%2F%2F%E7%9A%84%E5%87%AD%E8%AF%81%EF%BC%8C%E5%B9%B6%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8%E7%A9%BA%E5%87%AD%E8%AF%81%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E3%80%82%20%E5%9B%A0%E6%AD%A4%EF%BC%8C%E4%BC%9A%E6%9C%89no%20basic%20auth%20credentials%E9%94%99%E8%AF%AF%E3%80%82,%E9%80%9A%E8%BF%87%E4%B8%8A%E6%96%87%EF%BC%8C%E6%88%91%E4%BB%AC%E7%A1%AE%E5%AE%9A%E4%BA%86%E9%97%AE%E9%A2%98%E6%98%AF%E4%B8%80%E4%B8%AA%E7%A9%BA%E5%87%AD%E8%AF%81%E8%A2%AB%E6%B7%BB%E5%8A%A0%E5%88%B0%20Docker%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6config.json%20%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B0%B1%E5%BE%88%E5%AE%B9%E6%98%93%20%E8%A7%A3%E5%86%B3%E8%AF%A5%E9%97%AE%E9%A2%98%E3%80%82%20%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%81%9A%E7%9A%84%E5%B0%B1%E6%98%AF%E6%B7%BB%E5%8A%A0%E4%B8%80%E6%9D%A1if%E8%AF%AD%E5%8F%A5%E4%BB%A5%E8%B7%B3%E8%BF%87%E7%A9%BA%E5%87%AD%E6%8D%AE%EF%BC%9A%20%E5%BE%88%E5%A4%9A%E4%BD%BF%E7%94%A8Docker%E7%9A%84%E7%BB%84%E7%BB%87%EF%BC%8C%E5%8F%AF%E8%83%BD%E4%BB%8D%E5%9C%A8%E4%BD%BF%E7%94%A8%E4%BC%A0%E7%BB%9F%E7%9A%84auths%E6%96%B9%E6%B3%95%E3%80%82"  target="_blank" rel="noopener" >Docker私有镜像拉取错误no basic auth credentials</a>
+</div><p>参考<a class="link" href="https://www.kubernetes.org.cn/7994.html#:~:text=%E4%B8%8D%E5%B9%B8%E7%9A%84%E6%98%AF%EF%BC%8CDocker%E5%81%8F%E7%88%B1%E4%BD%BF%E7%94%A8auths%E4%B8%AD%E7%9A%84https%3A%2F%2F%E7%9A%84%E5%87%AD%E8%AF%81%EF%BC%8C%E5%B9%B6%E5%B0%9D%E8%AF%95%E4%BD%BF%E7%94%A8%E7%A9%BA%E5%87%AD%E8%AF%81%E6%8B%89%E5%8F%96%E9%95%9C%E5%83%8F%E3%80%82%20%E5%9B%A0%E6%AD%A4%EF%BC%8C%E4%BC%9A%E6%9C%89no%20basic%20auth%20credentials%E9%94%99%E8%AF%AF%E3%80%82,%E9%80%9A%E8%BF%87%E4%B8%8A%E6%96%87%EF%BC%8C%E6%88%91%E4%BB%AC%E7%A1%AE%E5%AE%9A%E4%BA%86%E9%97%AE%E9%A2%98%E6%98%AF%E4%B8%80%E4%B8%AA%E7%A9%BA%E5%87%AD%E8%AF%81%E8%A2%AB%E6%B7%BB%E5%8A%A0%E5%88%B0%20Docker%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6config.json%20%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E5%B0%B1%E5%BE%88%E5%AE%B9%E6%98%93%20%E8%A7%A3%E5%86%B3%E8%AF%A5%E9%97%AE%E9%A2%98%E3%80%82%20%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%81%9A%E7%9A%84%E5%B0%B1%E6%98%AF%E6%B7%BB%E5%8A%A0%E4%B8%80%E6%9D%A1if%E8%AF%AD%E5%8F%A5%E4%BB%A5%E8%B7%B3%E8%BF%87%E7%A9%BA%E5%87%AD%E6%8D%AE%EF%BC%9A%20%E5%BE%88%E5%A4%9A%E4%BD%BF%E7%94%A8Docker%E7%9A%84%E7%BB%84%E7%BB%87%EF%BC%8C%E5%8F%AF%E8%83%BD%E4%BB%8D%E5%9C%A8%E4%BD%BF%E7%94%A8%E4%BC%A0%E7%BB%9F%E7%9A%84auths%E6%96%B9%E6%B3%95%E3%80%82"  target="_blank" rel="noopener"
+    >Docker私有镜像拉取错误no basic auth credentials</a>
 知道了为啥会出现这个报错，但是<strong>Docker Credentials Store</strong> 无法直接解决我们现在的问题，考虑使用nginx反向代理解决认证传递</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -841,13 +863,16 @@ http端口选择8082，允许匿名pull
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428093.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428093.png" alt="Pasted image 20250601131936.png"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428093.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601131936.png"
+	
+	
+></p>
 <h1 id="push">push
 </h1><blockquote>
 <p>执行下面的命令进行push</p>
@@ -963,20 +988,26 @@ http端口选择8082，允许匿名pull
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428094.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428094.png" alt="Pasted image 20250601220219.png"  />
-	</a>
-</div>
-
-
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428095.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428095.png" alt="Pasted image 20250601220514.png"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428094.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601220219.png"
+	
+	
+>
+<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428095.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Pasted image 20250601220514.png"
+	
+	
+></p>
 
 </section>
 
@@ -1134,7 +1165,7 @@ http端口选择8082，允许匿名pull
         
             2020 - 
         
-        2025 深海火锅店
+        2026 深海火锅店
     </section>
     
     <section class="powerby">
@@ -1207,25 +1238,25 @@ http端口选择8082，允许匿名pull
     </div>
 
 </div><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/default-skin.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

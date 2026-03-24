@@ -305,13 +305,17 @@
             <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
-    <div class="article-image">
-        <a href="/p/docker%E9%83%A8%E7%BD%B2tomcat/">
-            <img src="/p/docker%E9%83%A8%E7%BD%B2tomcat/dbc-docker-desktop-home_hu1147097447787108081.webp" srcset="/p/docker%E9%83%A8%E7%BD%B2tomcat/dbc-docker-desktop-home_hu1147097447787108081.webp 800w, /p/docker%E9%83%A8%E7%BD%B2tomcat/dbc-docker-desktop-home_hu4396453130231862691.webp 1600w"  width="800"
-                height="543" loading="lazy" alt="Featured image of post Docker部署Tomcat" />
-            
-        </a>
-    </div>
+        <div class="article-image">
+            <a href="/p/docker%E9%83%A8%E7%BD%B2tomcat/">
+                <img src="/p/docker%E9%83%A8%E7%BD%B2tomcat/dbc-docker-desktop-home_hu1147097447787108081.webp"
+                        srcset="/p/docker%E9%83%A8%E7%BD%B2tomcat/dbc-docker-desktop-home_hu1147097447787108081.webp 800w, /p/docker%E9%83%A8%E7%BD%B2tomcat/dbc-docker-desktop-home_hu4396453130231862691.webp 1600w"
+                        width="800" 
+                        height="543" 
+                        loading="lazy"
+                        alt="Featured image of post Docker部署Tomcat" />
+                
+            </a>
+        </div>
     
 
     <div class="article-details">
@@ -380,11 +384,6 @@
 
 </header>
 
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.min.js"></script>
-<link rel="stylesheet" href="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.css" />
-<script src="http://116.148.120.214:25608/markdown-img/img/PicGo05/jquery.fancybox.min.js"></script>
-
-
     <section class="article-content">
     
     
@@ -402,7 +401,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>访问8080端口发现404，详情可以查看该<a class="link" href="https://cloud.tencent.com/developer/article/1704573"  target="_blank" rel="noopener" >博客</a>
+<p>访问8080端口发现404，详情可以查看该<a class="link" href="https://cloud.tencent.com/developer/article/1704573"  target="_blank" rel="noopener"
+    >博客</a>
 进行修改操作，首先进入容器内部,在<code>/usr/local/tomcat/</code>目录下有<code>webapps</code>目录和<code>webapps.dist</code>目录
 直接删除<code>webapps</code>目录，将<code>webapps.dist</code>改名为<code>webapps</code>，然后重启docker容器即可</p>
 </blockquote>
@@ -515,7 +515,8 @@
 </div><h2 id="部署activiti流程设计器">部署Activiti流程设计器
 </h2><h3 id="步骤">步骤
 </h3><blockquote>
-<p>接下来将部署Activiti流程设计器,下载<a class="link" href="https://www.activiti.org/get-started"  target="_blank" rel="noopener" >链接</a>
+<p>接下来将部署Activiti流程设计器,下载<a class="link" href="https://www.activiti.org/get-started"  target="_blank" rel="noopener"
+    >链接</a>
 解压之后在<code>activiti-6.0.0\wars</code>下有三个<code>war</code>包，我们需要部署到<code>tomcat</code>容器上</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
@@ -605,13 +606,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>用户名/密码</code>是:<code>admin/test</code></p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601471.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601471.png" alt="image-20250101120727141"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601471.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250101120727141"
+	
+	
+></p>
 <h3 id="持久化">持久化
 </h3><blockquote>
 <p>修改<code>activiti-app.war\WEB-INF\classes\META-INF\activiti-app\activiti-app.properties</code>文件</p>
@@ -660,30 +664,41 @@
 <p>上传现在的<code>mysql-connector-java-8.0.17.jar</code></p>
 <p>将修改好的war包上传到服务器上进行部署，依然是上述流程，这里不再演示</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601630.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601630.png" alt="image-20250101123807292"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011601630.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250101123807292"
+	
+	
+></p>
 <p>可以看到已经自动初始化了这些表，持久化已经完成了</p>
 <h3 id="汉化">汉化
 </h3><blockquote>
-<p>参考<a class="link" href="https://www.jianshu.com/p/f3947908d18a"  target="_blank" rel="noopener" >博客1</a>、<a class="link" href="https://blog.csdn.net/qq_19734597/article/details/87784216"  target="_blank" rel="noopener" >博客2</a>、<a class="link" href="https://blog.csdn.net/qq_26458903/article/details/90409026"  target="_blank" rel="noopener" >博客3</a></p>
+<p>参考<a class="link" href="https://www.jianshu.com/p/f3947908d18a"  target="_blank" rel="noopener"
+    >博客1</a>、<a class="link" href="https://blog.csdn.net/qq_19734597/article/details/87784216"  target="_blank" rel="noopener"
+    >博客2</a>、<a class="link" href="https://blog.csdn.net/qq_26458903/article/details/90409026"  target="_blank" rel="noopener"
+    >博客3</a></p>
 <p>这里不再演示，直接放链接</p>
 </blockquote>
 <p>原版链接</p>
 <ol>
-<li><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253297.war"  target="_blank" rel="noopener" >activiti-admin</a></li>
-<li><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253298.war"  target="_blank" rel="noopener" >activiti-app</a></li>
-<li><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253299.war"  target="_blank" rel="noopener" >activiti-rest</a></li>
+<li><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253297.war"  target="_blank" rel="noopener"
+    >activiti-admin</a></li>
+<li><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253298.war"  target="_blank" rel="noopener"
+    >activiti-app</a></li>
+<li><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253299.war"  target="_blank" rel="noopener"
+    >activiti-rest</a></li>
 </ol>
 <p>汉化版链接:</p>
 <blockquote>
-<p>这款汉化版不够彻底，需要参考下这个<a class="link" href="https://blog.csdn.net/qq_26458903/article/details/90409026"  target="_blank" rel="noopener" >博客</a>的配置</p>
+<p>这款汉化版不够彻底，需要参考下这个<a class="link" href="https://blog.csdn.net/qq_26458903/article/details/90409026"  target="_blank" rel="noopener"
+    >博客</a>的配置</p>
 </blockquote>
-<p><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253300.war"  target="_blank" rel="noopener" >activiti-app</a></p>
+<p><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011253300.war"  target="_blank" rel="noopener"
+    >activiti-app</a></p>
 <h3 id="dockercompose部署">DockerCompose部署
 </h3><blockquote>
 <p>在连接mysql时候直接写<code>ip</code>还是硬伤，如果有一种方法能直接指定就好了</p>
@@ -783,13 +798,16 @@
 <p>主要注意下端口是否被占用，<code>activiti_tomcat</code>容器绑定的是宿主机的<code>8012</code>端口</p>
 <p><code>activiti_mysql</code>绑定的是宿主机的<code>3307</code>端口</p>
 </blockquote>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602976.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602976.png" alt="image-20250101155458911"  />
-	</a>
-</div>
-</p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602976.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250101155458911"
+	
+	
+></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -832,25 +850,32 @@
 </span></span><span class="line"><span class="cl">3574a781ae9f   mysql:latest             <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307-&gt;3306/tcp, <span class="o">[</span>::<span class="o">]</span>:3307-&gt;3306/tcp   activiti_mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602152.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602152.png" alt="image-20250101160015096"  />
-	</a>
-</div>
-</p>
-<p>
-<div class="post-img-view">
-	<a data-fancybox="gallery" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602432.png">
-		<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602432.png" alt="image-20250101160036444"  />
-	</a>
-</div>
-</p>
+</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602152.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250101160015096"
+	
+	
+></p>
+<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202501011602432.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250101160036444"
+	
+	
+></p>
 <blockquote>
 <p>以上是汉化之后的的效果</p>
 <p>以下是下载链接</p>
 </blockquote>
-<p>activiti_tomcat镜像<a class="link" href="https://pan.baidu.com/s/1A9lVyppWHkxwb0HFvnigcw?pwd=qigs"  target="_blank" rel="noopener" >链接</a></p>
+<p>activiti_tomcat镜像<a class="link" href="https://pan.baidu.com/s/1A9lVyppWHkxwb0HFvnigcw?pwd=qigs"  target="_blank" rel="noopener"
+    >链接</a></p>
 <p>activiti_tomcat是自制的activiti流程设计器docker镜像，默认会连接同一个网络下activiti_mysql容器进行持久化(注意提前创建activiti6ui数据库)</p>
 <p>这里镜像有点大我是用命令压缩过一次了，这里传不上去github，我就直接传百度网盘了</p>
 <div class="highlight"><div class="chroma">
@@ -1020,7 +1045,7 @@
         
             2020 - 
         
-        2025 深海火锅店
+        2026 深海火锅店
     </section>
     
     <section class="powerby">
@@ -1093,25 +1118,25 @@
     </div>
 
 </div><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/default-skin.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="http://116.148.120.214:25608/markdown-img/img/PicGo05/photoswipe.min.css"crossorigin="anonymous"
+                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="http://116.148.120.214:25608/markdown-img/img/PicGo05/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
