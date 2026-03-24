@@ -303,7 +303,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152332452.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152332452.png&#34;
 	
 	
 	
@@ -355,7 +355,7 @@
 &lt;/h2&gt;&lt;h2 id=&#34;sql片段抽取&#34;&gt;如果使用#{}，他是预编译的sq可以防止SQL注入攻击
 如果使用${}，他是直接把参数值拿来进行拼接，这样会有SQL注入的危险
 SQL片段抽取
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152332762.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152332762.png&#34;
 	
 	
 	
@@ -835,7 +835,7 @@ SQL片段抽取
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;解决方法3：自定义映射规则&lt;code&gt;(继承映射规则)&lt;/code&gt;
 问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333538.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333538.png&#34;
 	
 	
 	
@@ -845,7 +845,7 @@ SQL片段抽取
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333012.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333012.png&#34;
 	
 	
 	
@@ -856,7 +856,7 @@ SQL片段抽取
 	
 &gt;
 正确展示
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333925.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333925.png&#34;
 	
 	
 	
@@ -870,7 +870,7 @@ SQL片段抽取
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;一对一&#34;&gt;一对一
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333203.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333203.png&#34;
 	
 	
 	
@@ -885,7 +885,7 @@ SQL片段抽取
 &lt;p&gt;首先需要明确通过什么来查什么？&lt;/p&gt;
 &lt;p&gt;我们现在需要通过使用者来查询他的手机，所以需要在使用者的属性里新建一个&lt;code&gt;手机&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;别忘了生成对应属性的get、set等方法哦
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333832.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333832.png&#34;
 	
 	
 	
@@ -935,7 +935,7 @@ SQL片段抽取
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;写法1&lt;/code&gt;&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333837.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333837.png&#34;
 	
 	
 	
@@ -946,7 +946,7 @@ SQL片段抽取
 	
 &gt;
 &lt;strong&gt;&lt;code&gt;写法2&lt;/code&gt;&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333222.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333222.png&#34;
 	
 	
 	
@@ -958,7 +958,7 @@ SQL片段抽取
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以上两种写法都能查询到结果
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334376.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334376.png&#34;
 	
 	
 	
@@ -972,7 +972,7 @@ SQL片段抽取
 &lt;h3 id=&#34;一对多&#34;&gt;一对多
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;接下来测试一对多，将&lt;code&gt;Phone phone&lt;/code&gt; 改成&lt;code&gt;List&amp;lt;Phone&amp;gt; phones&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333231.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333231.png&#34;
 	
 	
 	
@@ -982,7 +982,7 @@ SQL片段抽取
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333771.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333771.png&#34;
 	
 	
 	
@@ -992,7 +992,7 @@ SQL片段抽取
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333000.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333000.png&#34;
 	
 	
 	
@@ -1106,7 +1106,7 @@ SQL片段抽取
 &lt;ol&gt;
 &lt;li&gt;查找到对应的手机id&lt;code&gt;(可能是多部)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;根据手机id查找到对应的手机
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152333713.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152333713.png&#34;
 	
 	
 	
@@ -1116,7 +1116,7 @@ SQL片段抽取
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334236.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334236.png&#34;
 	
 	
 	
@@ -1127,7 +1127,7 @@ SQL片段抽取
 	
 &gt;
 在方法上右键，选择copy reference
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334627.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334627.png&#34;
 	
 	
 	
@@ -1137,7 +1137,7 @@ SQL片段抽取
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334106.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334106.png&#34;
 	
 	
 	
@@ -1148,7 +1148,7 @@ SQL片段抽取
 	
 &gt;
 &lt;strong&gt;将id作为参数传给findRoleByUserId方法&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334214.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334214.png&#34;
 	
 	
 	
@@ -1161,7 +1161,7 @@ SQL片段抽取
 查看打印的日志&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;可以看到执行了两个sql
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334856.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334856.png&#34;
 	
 	
 	
@@ -1174,7 +1174,7 @@ SQL片段抽取
 分布查询里的&lt;code&gt;按需加载&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334047.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334047.png&#34;
 	
 	
 	
@@ -1184,7 +1184,7 @@ SQL片段抽取
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334497.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334497.png&#34;
 	
 	
 	
@@ -1325,7 +1325,7 @@ SQL片段抽取
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;pagehelper的版本不要太高，否则匹配会出现问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334867.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334867.png&#34;
 	
 	
 	
@@ -1451,7 +1451,7 @@ MyBatis缓存&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;mapper里的注释不要写在sql里&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152334703.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152334703.png&#34;
 	
 	
 	

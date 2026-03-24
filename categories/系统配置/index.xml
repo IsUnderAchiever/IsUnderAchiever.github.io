@@ -1045,7 +1045,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo journalctl -u docker.service -n &lt;span class=&#34;m&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep &lt;span class=&#34;s2&#34;&gt;&amp;#34;pull&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428086.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428086.png&#34;
 	
 	
 	
@@ -1064,7 +1064,7 @@
 新建&lt;code&gt;docker(proxy)&lt;/code&gt;仓库，name随意即可，我这里取名&lt;code&gt;docker-proxy-ussh&lt;/code&gt;
 以下是需要注意的几个地方，其他位置默认即可&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428087.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428087.png&#34;
 	
 	
 	
@@ -1081,7 +1081,7 @@
 http端口选择8082，允许匿名pull
 最重要的是将刚刚创建的proxy仓库添加为成员&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428088.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428088.png&#34;
 	
 	
 	
@@ -1097,7 +1097,7 @@ http端口选择8082，允许匿名pull
 而以上的proxy主要用于&lt;code&gt;docker pull&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;配置如下
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428089.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428089.png&#34;
 	
 	
 	
@@ -1111,7 +1111,7 @@ http端口选择8082，允许匿名pull
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;点击将&lt;code&gt;Docker Bearer Token Realm&lt;/code&gt;配置到右侧的&lt;code&gt;Active&lt;/code&gt;,然后点击&lt;code&gt;Save&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428090.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428090.png&#34;
 	
 	
 	
@@ -1239,7 +1239,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里我使用第一种方案，取消匿名pull后登陆成功
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428091.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428091.png&#34;
 	
 	
 	
@@ -1258,7 +1258,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker pull 116.148.120.214:8082/mysql
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428092.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428092.png&#34;
 	
 	
 	
@@ -1403,7 +1403,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428093.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428093.png&#34;
 	
 	
 	
@@ -1528,7 +1528,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428094.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428094.png&#34;
 	
 	
 	
@@ -1538,7 +1538,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428095.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428095.png&#34;
 	
 	
 	
@@ -1584,7 +1584,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#   huawei ------- https://repo.huaweicloud.com/repository/npm/&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428471.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428471.png&#34;
 	
 	
 	
@@ -1595,7 +1595,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;这里配置了华为的proxy&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428472.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428472.png&#34;
 	
 	
 	
@@ -1606,7 +1606,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;新建一个group，并将proxy仓库加入组&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428473.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428473.png&#34;
 	
 	
 	
@@ -1636,7 +1636,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm install
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428474.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428474.png&#34;
 	
 	
 	
@@ -1688,7 +1688,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;配置proxy仓库&#34;&gt;配置Proxy仓库
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428380.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428380.png&#34;
 	
 	
 	
@@ -1701,7 +1701,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;注意这里不要加&lt;code&gt;simple&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428381.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428381.png&#34;
 	
 	
 	
@@ -1715,7 +1715,7 @@ http端口选择8082，允许匿名pull
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;将Proxy添加到Group组&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428382.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428382.png&#34;
 	
 	
 	
@@ -1834,7 +1834,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# [notice] To update, run: python.exe -m pip install --upgrade pip&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428383.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428383.png&#34;
 	
 	
 	
@@ -1848,7 +1848,7 @@ http端口选择8082，允许匿名pull
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;hosted用来上传本地pypi包&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428384.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428384.png&#34;
 	
 	
 	
@@ -1913,7 +1913,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python setup.py sdist bdist_wheel
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428385.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428385.png&#34;
 	
 	
 	
@@ -2042,7 +2042,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;twine upload --repository nexus dist/*
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081428386.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081428386.png&#34;
 	
 	
 	
@@ -2451,7 +2451,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;&lt;p&gt;这里网络并没有问题，随后根据&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/u014331288/article/details/107891984&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;此博客&lt;/a&gt;的操作解决了该问题&lt;/p&gt;
 &lt;p&gt;涉及到登录的地方可以先看后面的内容，查看&lt;code&gt;admin&lt;/code&gt;的登陆密码&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425969.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081425969.png&#34;
 	
 	
 	
@@ -2503,7 +2503,7 @@ http端口选择8082，允许匿名pull
 &lt;hr&gt;
 &lt;h2 id=&#34;配置maven仓库&#34;&gt;配置Maven仓库
 &lt;/h2&gt;&lt;h3 id=&#34;新建仓库可选&#34;&gt;新建仓库（可选）
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081425795.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081425795.png&#34;
 	
 	
 	
@@ -2513,7 +2513,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081426471.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081426471.png&#34;
 	
 	
 	
@@ -2524,7 +2524,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置maven&#34;&gt;配置Maven
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427863.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427863.png&#34;
 	
 	
 	
@@ -2536,7 +2536,7 @@ http端口选择8082，允许匿名pull
 &gt;
 找到maven的配置文件
 新增如下内容
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427444.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427444.png&#34;
 	
 	
 	
@@ -2583,7 +2583,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;新增如下内容
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427288.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427288.png&#34;
 	
 	
 	
@@ -2612,7 +2612,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;url在此处cv
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427487.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427487.png&#34;
 	
 	
 	
@@ -2657,7 +2657,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;上传某个项目的jar包&#34;&gt;上传某个项目的Jar包
 &lt;/h3&gt;&lt;p&gt;在项目中如下配置即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427406.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427406.png&#34;
 	
 	
 	
@@ -2702,7 +2702,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;&lt;p&gt;注意这里的id(nexus-snapshots、nexus-releases)要和之前maven/conf/setting.xml里配置的id一样&lt;/p&gt;
 &lt;p&gt;idea点击maven的&lt;code&gt;deploy&lt;/code&gt;，如果遇到401错误，请查看&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_43302195/article/details/128684987&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;此博客&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427701.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427701.png&#34;
 	
 	
 	
@@ -2713,7 +2713,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;然后就可以在nexus上看到当前项目的jar包了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427251.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427251.png&#34;
 	
 	
 	
@@ -2728,7 +2728,7 @@ http端口选择8082，允许匿名pull
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;除了上传项目的jar包外，如果希望连其他常用的jar包也进行上传，根据如下步骤可以实现&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427911.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427911.png&#34;
 	
 	
 	
@@ -2738,7 +2738,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427080.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427080.png&#34;
 	
 	
 	
@@ -3020,7 +3020,7 @@ http端口选择8082，允许匿名pull
 &lt;p&gt;其实可以完全不上传本地 JAR 包 ，而是直接通过 Nexus 的 代理仓库（Proxy Repository） 功能，将 Maven 官方仓库（如 Maven Central）或阿里云镜像（如阿里云 Maven 镜像）代理到 Nexus 服务器中。这样，当项目请求依赖时，Nexus 会自动从远程仓库下载并缓存，无需手动上传 JAR 包&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;url输入&lt;code&gt;https://maven.aliyun.com/repository/public/&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427359.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427359.png&#34;
 	
 	
 	
@@ -3031,7 +3031,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;
 需要在public上配置刚刚新建的仓库
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427684.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427684.png&#34;
 	
 	
 	
@@ -3042,7 +3042,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;
 这里要注意下仓库顺序。maven查找依赖时会依次遍历仓库组中的仓库，我这里直接移到最上面
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427141.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427141.png&#34;
 	
 	
 	
@@ -3053,7 +3053,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;
 然后注释掉其他的仓库配置，在idea里clean之后install即可下载jar包到nexus
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427774.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427774.png&#34;
 	
 	
 	
@@ -3063,7 +3063,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506081427908.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506081427908.png&#34;
 	
 	
 	
@@ -3157,7 +3157,7 @@ http端口选择8082，允许匿名pull
 选择&lt;code&gt;windows-amd64.msi&lt;/code&gt;版本即可&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;配置环境变量&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211327280.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211327280.png&#34;
 	
 	
 	
@@ -3177,7 +3177,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;还需要配置&lt;code&gt;GOPATH&lt;/code&gt;作为以后存放go项目的位置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211327750.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211327750.png&#34;
 	
 	
 	
@@ -3196,7 +3196,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go version
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211328112.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211328112.png&#34;
 	
 	
 	
@@ -3207,7 +3207,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;配置&lt;code&gt;GoLand&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211328325.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211328325.png&#34;
 	
 	
 	
@@ -3237,7 +3237,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211328495.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211328495.png&#34;
 	
 	
 	
@@ -3262,7 +3262,7 @@ http端口选择8082，允许匿名pull
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_43405300/article/details/120017878&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考博客&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211346668.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211346668.png&#34;
 	
 	
 	
@@ -3272,7 +3272,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211346999.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211346999.png&#34;
 	
 	
 	
@@ -3282,7 +3282,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211346630.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211346630.png&#34;
 	
 	
 	
@@ -3292,7 +3292,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347937.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347937.png&#34;
 	
 	
 	
@@ -3305,7 +3305,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;如果采用&lt;code&gt;msi&lt;/code&gt;安装，则无需继续后续步骤配置为&lt;code&gt;本地服务&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347850.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347850.png&#34;
 	
 	
 	
@@ -3322,7 +3322,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;运行MongoDB服务&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347573.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347573.png&#34;
 	
 	
 	
@@ -3344,7 +3344,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在浏览器中打开如下&lt;a class=&#34;link&#34; href=&#34;http://localhost:27017/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;链接&lt;/a&gt;&lt;code&gt;http://localhost:27017&lt;/code&gt;，可以看到如下页面就表示服务启动成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347452.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347452.png&#34;
 	
 	
 	
@@ -3357,7 +3357,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;新建log目录用来存放日志&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347833.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347833.png&#34;
 	
 	
 	
@@ -3380,7 +3380,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;logpath=D:\env\Database\MongoDB\data\log\mongo.log
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347647.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347647.png&#34;
 	
 	
 	
@@ -3401,7 +3401,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mongod -dbpath &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\env\Database\MongoDB\data\db&amp;#34;&lt;/span&gt; -logpath &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\env\Database\MongoDB\data\log\mongo.log&amp;#34;&lt;/span&gt; -install -serviceName &lt;span class=&#34;s2&#34;&gt;&amp;#34;MongoDB&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347084.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347084.png&#34;
 	
 	
 	
@@ -3411,7 +3411,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347407.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347407.png&#34;
 	
 	
 	
@@ -3424,7 +3424,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;使用&lt;code&gt;navicat&lt;/code&gt;连接mongodb&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211347440.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211347440.png&#34;
 	
 	
 	
@@ -3452,7 +3452,7 @@ http端口选择8082，允许匿名pull
     &gt;参考博客2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;不要跟着截图一路走下去，后续有报错，先看完解决方法，尽量避免报错！！！&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211411361.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211411361.png&#34;
 	
 	
 	
@@ -3462,7 +3462,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211411214.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211411214.png&#34;
 	
 	
 	
@@ -3472,7 +3472,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211411410.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211411410.png&#34;
 	
 	
 	
@@ -3482,7 +3482,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211411172.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211411172.png&#34;
 	
 	
 	
@@ -3495,7 +3495,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;这里报了一个警告&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211411168.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211411168.png&#34;
 	
 	
 	
@@ -3510,7 +3510,7 @@ http端口选择8082，允许匿名pull
     &gt;参考博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;但我尝试之后并未解决&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211411192.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211411192.png&#34;
 	
 	
 	
@@ -3520,7 +3520,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412635.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412635.png&#34;
 	
 	
 	
@@ -3530,7 +3530,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412870.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412870.png&#34;
 	
 	
 	
@@ -3540,7 +3540,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412221.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412221.png&#34;
 	
 	
 	
@@ -3553,7 +3553,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;重新安装时，选择&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412879.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412879.png&#34;
 	
 	
 	
@@ -3577,7 +3577,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;initdb -D &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\env\Database\PostgreSQL\data&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412997.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412997.png&#34;
 	
 	
 	
@@ -3598,7 +3598,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pg_ctl.exe register -N postgresql17 -D D:&lt;span class=&#34;se&#34;&gt;\e&lt;/span&gt;nv&lt;span class=&#34;se&#34;&gt;\D&lt;/span&gt;atabase&lt;span class=&#34;se&#34;&gt;\P&lt;/span&gt;ostgreSQL&lt;span class=&#34;se&#34;&gt;\d&lt;/span&gt;ata
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412644.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412644.png&#34;
 	
 	
 	
@@ -3608,7 +3608,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412210.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412210.png&#34;
 	
 	
 	
@@ -3622,7 +3622,7 @@ http端口选择8082，允许匿名pull
 &lt;p&gt;配置环境变量&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;新建如下配置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412976.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412976.png&#34;
 	
 	
 	
@@ -3654,7 +3654,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;navicat连接postgresql&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211412136.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211412136.png&#34;
 	
 	
 	
@@ -3693,7 +3693,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;initdb -D &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\env\Database\PostgreSQL\data&amp;#34;&lt;/span&gt; -E UTF-8 --locale&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Chinese
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211413204.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211413204.png&#34;
 	
 	
 	
@@ -3703,7 +3703,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211413582.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211413582.png&#34;
 	
 	
 	
@@ -3719,7 +3719,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;再次打开psql，username输入&lt;code&gt;Administrator&lt;/code&gt;，其他默认&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211413512.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211413512.png&#34;
 	
 	
 	
@@ -3740,7 +3740,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;至此成功&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211413293.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211413293.png&#34;
 	
 	
 	
@@ -3750,7 +3750,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211413398.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211413398.png&#34;
 	
 	
 	
@@ -3792,7 +3792,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kotlinc -version
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211341484.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211341484.png&#34;
 	
 	
 	
@@ -3833,7 +3833,7 @@ http端口选择8082，允许匿名pull
     &gt;链接&lt;/a&gt;
 注意这里要下载&lt;code&gt;Thread Safe&lt;/code&gt;的版本，而不是&lt;code&gt;Non Thread Safe&lt;/code&gt;，否则后期整合Apache时会出现缺少必要文件&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211405792.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211405792.png&#34;
 	
 	
 	
@@ -3853,7 +3853,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;php.exe -v
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211405673.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211405673.png&#34;
 	
 	
 	
@@ -3881,7 +3881,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;php -v
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211405725.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211405725.png&#34;
 	
 	
 	
@@ -3898,7 +3898,7 @@ http端口选择8082，允许匿名pull
 下载&lt;code&gt;Win64&lt;/code&gt;版本，解压之后关注&lt;code&gt;Apache24&lt;/code&gt;目录的配置即可&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;配置&lt;code&gt;Apache24\conf\httpd.conf&lt;/code&gt;文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211405099.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211405099.png&#34;
 	
 	
 	
@@ -3909,7 +3909,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;这里&lt;code&gt;SRVROOT&lt;/code&gt;设置为自己的目录，&lt;strong&gt;需要&lt;/strong&gt;&lt;code&gt;注意&lt;/code&gt;路径中不要写&lt;code&gt;\&lt;/code&gt;，而是&lt;code&gt;/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406597.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406597.png&#34;
 	
 	
 	
@@ -3932,7 +3932,7 @@ http端口选择8082，允许匿名pull
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里成功设置了开机自动运行&lt;/p&gt;
 &lt;p&gt;也可以双击**&lt;code&gt;Apache24\bin\ApacheMonitor.exe&lt;/code&gt;**文件也可以看到如下界面，点击start即可启动&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406236.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406236.png&#34;
 	
 	
 	
@@ -3943,7 +3943,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;输入url查看，正常显示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406125.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406125.png&#34;
 	
 	
 	
@@ -3964,7 +3964,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;extension_dir&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\env\PHP8\ext&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406957.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406957.png&#34;
 	
 	
 	
@@ -4055,7 +4055,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/IfModule&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406303.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406303.png&#34;
 	
 	
 	
@@ -4107,7 +4107,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;这里的&lt;code&gt;Path&lt;/code&gt;替换成自己的安装目录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406599.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406599.png&#34;
 	
 	
 	
@@ -4117,7 +4117,7 @@ http端口选择8082，允许匿名pull
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406645.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406645.png&#34;
 	
 	
 	
@@ -4128,7 +4128,7 @@ http端口选择8082，允许匿名pull
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;页面默认存放在&lt;code&gt;htdocs&lt;/code&gt;目录下，这里我就不修改了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211406881.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211406881.png&#34;
 	
 	
 	
@@ -4165,7 +4165,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;&amp;lt;/html&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211407617.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211407617.png&#34;
 	
 	
 	
@@ -4293,7 +4293,7 @@ http端口选择8082，允许匿名pull
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;username&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nick_name&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;TB_USER&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412211407803.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412211407803.png&#34;
 	
 	
 	
@@ -4320,7 +4320,7 @@ http端口选择8082，允许匿名pull
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;打开设置，选中应用&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021209094.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021209094.png&#34;
 	
 	
 	
@@ -4333,7 +4333,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;选择&lt;code&gt;程序和功能&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021210976.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021210976.png&#34;
 	
 	
 	
@@ -4346,7 +4346,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;选择&lt;code&gt;启用或关闭Windows功能&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021211070.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021211070.png&#34;
 	
 	
 	
@@ -4359,7 +4359,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;勾选&lt;code&gt;Hyper-v&lt;/code&gt;和&lt;code&gt;适用于Linux的Windows子系统&lt;/code&gt;，然后重启电脑&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021213639.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021213639.png&#34;
 	
 	
 	
@@ -4387,7 +4387,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wsl --shutdown
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021218041.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021218041.png&#34;
 	
 	
 	
@@ -4400,7 +4400,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;前往&lt;code&gt;微软商店&lt;/code&gt;下载Linux子系统&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021220128.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021220128.png&#34;
 	
 	
 	
@@ -4413,7 +4413,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;搜索Linux，安装心仪的系统，这里以ubuntu为例&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021221541.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021221541.png&#34;
 	
 	
 	
@@ -4426,7 +4426,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;启动系统后，会需要新建用户&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021222300.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021222300.png&#34;
 	
 	
 	
@@ -4439,7 +4439,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;输入自定义用户名以及密码，即可新建用户&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021224191.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021224191.png&#34;
 	
 	
 	
@@ -4456,7 +4456,7 @@ http端口选择8082，允许匿名pull
 &lt;p&gt;以下是配置后的结果&lt;/p&gt;
 &lt;p&gt;启动了两个容器，一个nginx，一个redis&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021226421.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021226421.png&#34;
 	
 	
 	
@@ -4469,7 +4469,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;输入&lt;code&gt;http://localhost:80/&lt;/code&gt;访问nginx界面&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021229951.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021229951.png&#34;
 	
 	
 	
@@ -4482,7 +4482,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;客户端连接Redis成功&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406021228921.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406021228921.png&#34;
 	
 	
 	
@@ -4540,7 +4540,7 @@ http端口选择8082，允许匿名pull
 &lt;p&gt;输入&lt;code&gt;set nu&lt;/code&gt;，回车即可显示行数&lt;/p&gt;
 &lt;p&gt;找到&lt;code&gt;PermitRootLogin&lt;/code&gt;，改为&lt;code&gt;yes&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022110343.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406022110343.png&#34;
 	
 	
 	
@@ -4554,7 +4554,7 @@ http端口选择8082，允许匿名pull
 &lt;p&gt;将如下位置的注释取消掉&lt;/p&gt;
 &lt;p&gt;然后保存并退出&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022112256.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406022112256.png&#34;
 	
 	
 	
@@ -4576,7 +4576,7 @@ http端口选择8082，允许匿名pull
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;service ssh start
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115683.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406022115683.png&#34;
 	
 	
 	
@@ -4589,7 +4589,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;ip直接写&lt;code&gt;127.0.0.1&lt;/code&gt;即可&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115467.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406022115467.png&#34;
 	
 	
 	
@@ -4602,7 +4602,7 @@ http端口选择8082，允许匿名pull
 &lt;blockquote&gt;
 &lt;p&gt;配置用户名、密码&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo02/202406022115033.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo02/202406022115033.png&#34;
 	
 	
 	
@@ -4647,7 +4647,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 &lt;p&gt;第二步：&lt;strong&gt;Oracle 11g服务端安装&lt;/strong&gt;
 1、解压已经下载的文件，将两个压缩文件包同时解压到同一个目录下，点击“确定”。如下图所示：
 2、打开安装包路径，找到【setup.exe】双击安装。如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242247395.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242247395.png&#34;
 	
 	
 	
@@ -4660,7 +4660,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 &lt;p&gt;3、安装前请确保电脑或服务器已经安装好microsoft .net framework&lt;/p&gt;
 &lt;p&gt;3.5。&lt;strong&gt;如不知如何进行安装，可参考（点击后边文字即刻跳转）：&lt;/strong&gt;&lt;a class=&#34;link&#34; href=&#34;http://mp.weixin.qq.com/s?__biz=MzI1NTQyNzg3MQ==&amp;amp;mid=2247484749&amp;amp;idx=1&amp;amp;sn=75c14e2055ab80c49fc1892da341cd42&amp;amp;chksm=ea37513ddd40d82b6a93d4778712544878850630960b6b7decf27520744ebbceaf98368672a0&amp;amp;scene=21#wechat_redirect&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;如何在内网环境下离线安装.NET Framework3.5&lt;/a&gt;。双击安装等待。弹出安装窗口，配置安全更新，如图所示，点“下一步”，提示未提供邮件地址，点“是”跳过。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248200.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248200.png&#34;
 	
 	
 	
@@ -4670,7 +4670,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248314.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248314.png&#34;
 	
 	
 	
@@ -4681,7 +4681,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;4、安装选项配置，如图所示，点击“下一步”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248326.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248326.png&#34;
 	
 	
 	
@@ -4692,7 +4692,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;5、系统类配置，可根据自己需求进行选择。这里选择“桌面类”安装。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248154.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248154.png&#34;
 	
 	
 	
@@ -4703,7 +4703,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;6、典型安装配置，可按实际情况修改安装路径，输入管理口令后点“下一点”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248736.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248736.png&#34;
 	
 	
 	
@@ -4715,7 +4715,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;因为是学习环境，所以口令输入比较简单，会提示密码复杂度校验提醒，安装会有如下提示，点“是”跳过即可。&lt;/p&gt;
 &lt;p&gt;7、先决条件检查，物理环境检查无问题，进度条100%，安装自动跳转到下个安装界面。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242247352.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242247352.png&#34;
 	
 	
 	
@@ -4726,7 +4726,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;8、概要配置界面预览，如下图所示，点“完成”开始安装产品，等待，大概20分钟左右。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248272.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248272.png&#34;
 	
 	
 	
@@ -4737,7 +4737,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;安装过程中弹出“创建克隆数据库正在进行”，继续等待即可。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248643.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248643.png&#34;
 	
 	
 	
@@ -4748,7 +4748,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;弹框，可查看“口令管理”，建议点点看看就可以了，不必要纠结，点击口令管理下的“确定”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242248920.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242248920.png&#34;
 	
 	
 	
@@ -4758,7 +4758,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242249652.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242249652.png&#34;
 	
 	
 	
@@ -4769,7 +4769,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;9、数据库创建完成，如图所示，点击“关闭”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242249804.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242249804.png&#34;
 	
 	
 	
@@ -4796,7 +4796,7 @@ Oracle客户端：Oracle Win64_11gR2_client&lt;/p&gt;
 &lt;li&gt;息流使用起来相对更加简单，有免费空间限制，如果只是编写文档也足够了
 在使用typora编写文档时，图片存储是个问题，虽然可以调整为相对路径存储，但是还需要保存好对应的本地图片，不然不知道图片被删掉了的话&amp;hellip;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120337.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012120337.avif&#34;
 	
 	
 	
@@ -4813,7 +4813,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 123网盘下载地址 &lt;a class=&#34;link&#34; href=&#34;https://www.123pan.com/s/tMU0Vv-31zUd.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.123pan.com/s/tMU0Vv-31zUd.html&lt;/a&gt;
 安装好PicGo默认即可，之后需要创建一个Gitee仓库&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121381.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121381.avif&#34;
 	
 	
 	
@@ -4824,7 +4824,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;新建仓库&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122963.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012122963.avif&#34;
 	
 	
 	
@@ -4835,7 +4835,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;创建私有仓库&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121608.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121608.avif&#34;
 	
 	
 	
@@ -4846,7 +4846,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;
 个人主页&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121208.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121208.avif&#34;
 	
 	
 	
@@ -4857,7 +4857,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;个人设置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121102.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121102.avif&#34;
 	
 	
 	
@@ -4868,7 +4868,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;私人令牌&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121096.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121096.avif&#34;
 	
 	
 	
@@ -4879,7 +4879,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;生成新令牌&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122665.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012122665.avif&#34;
 	
 	
 	
@@ -4890,7 +4890,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;提交信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122065.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012122065.avif&#34;
 	
 	
 	
@@ -4903,7 +4903,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;p&gt;复制令牌&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;这里很重要了，最好是保存一下生成的这串令牌，后续无法再查看到了&lt;/strong&gt;
 接下来开始配置PicGo&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121970.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121970.avif&#34;
 	
 	
 	
@@ -4915,7 +4915,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &gt;&lt;/p&gt;
 &lt;p&gt;安装插件&lt;/p&gt;
 &lt;p&gt;安装一下【gitee】插件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120865.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012120865.avif&#34;
 	
 	
 	
@@ -4927,7 +4927,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &gt;&lt;/p&gt;
 &lt;p&gt;配置Gitee信息&lt;/p&gt;
 &lt;p&gt;上方的repo填写如下图片的地址&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121380.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121380.avif&#34;
 	
 	
 	
@@ -4940,7 +4940,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;p&gt;仓库地址&lt;/p&gt;
 &lt;p&gt;token则填写生成的【私人令牌】
 &lt;strong&gt;接下来别忘了开源仓库&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120855.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012120855.avif&#34;
 	
 	
 	
@@ -4952,7 +4952,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &gt;&lt;/p&gt;
 &lt;p&gt;进入私有仓库&lt;/p&gt;
 &lt;p&gt;找到仓库后进入&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121203.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121203.avif&#34;
 	
 	
 	
@@ -4963,7 +4963,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;管理&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121432.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121432.avif&#34;
 	
 	
 	
@@ -4974,7 +4974,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;设置仓库&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012121081.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012121081.avif&#34;
 	
 	
 	
@@ -4985,7 +4985,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;添加readme文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120070.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012120070.avif&#34;
 	
 	
 	
@@ -4996,7 +4996,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;再次进入管理&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122254.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012122254.avif&#34;
 	
 	
 	
@@ -5008,7 +5008,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &gt;&lt;/p&gt;
 &lt;p&gt;开源Gitee仓库&lt;/p&gt;
 &lt;p&gt;最后配置一下Typora的文件上传&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012120802.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012120802.avif&#34;
 	
 	
 	
@@ -5020,7 +5020,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &gt;&lt;/p&gt;
 &lt;p&gt;配置Typora&lt;/p&gt;
 &lt;p&gt;为了避免上传的图片重名，可以打开PicGo的【时间戳重命名】配置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122554.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012122554.avif&#34;
 	
 	
 	
@@ -5031,7 +5031,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;配置时间戳&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307012122013.avif&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307012122013.avif&#34;
 	
 	
 	
@@ -5055,7 +5055,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;h1 id=&#34;当请求跑通之后可以保存为接口生成api文档&#34;&gt;当请求跑通之后，可以保存为接口，生成api文档
 &lt;/h1&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143521.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143521.png&#34;
 	
 	
 	
@@ -5068,7 +5068,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;blockquote&gt;
 &lt;h1 id=&#34;新建接口&#34;&gt;新建接口
 &lt;/h1&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143846.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143846.png&#34;
 	
 	
 	
@@ -5081,7 +5081,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;blockquote&gt;
 &lt;h1 id=&#34;数据模型&#34;&gt;数据模型
 &lt;/h1&gt;&lt;p&gt;此时可以定义成功后的响应，也可以引用一下其他的数据模型
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143387.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143387.png&#34;
 	
 	
 	
@@ -5092,7 +5092,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;
 新建BaseResponse接口
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143577.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143577.png&#34;
 	
 	
 	
@@ -5103,7 +5103,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;
 引用数据模型
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143967.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143967.png&#34;
 	
 	
 	
@@ -5114,7 +5114,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;
 同理可以把data也引用对应的实体类数据模型（user、book、order&amp;hellip;）
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143959.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143959.png&#34;
 	
 	
 	
@@ -5124,7 +5124,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143630.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143630.png&#34;
 	
 	
 	
@@ -5134,7 +5134,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143145.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143145.png&#34;
 	
 	
 	
@@ -5146,7 +5146,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &gt;&lt;/p&gt;
 &lt;h1 id=&#34;自动生成测试数据&#34;&gt;自动生成测试数据
 &lt;/h1&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143362.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143362.png&#34;
 	
 	
 	
@@ -5156,7 +5156,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202307132143452.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202307132143452.png&#34;
 	
 	
 	
@@ -5183,7 +5183,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://sourceforge.net/projects/mingw-w64/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;mingw-w64&lt;/a&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042136827.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042136827.png&#34;
 	
 	
 	
@@ -5193,7 +5193,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042136625.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042136625.png&#34;
 	
 	
 	
@@ -5211,7 +5211,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;在环境变量的path中添加&lt;code&gt;mingw64下bin的路径&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042147983.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042147983.png&#34;
 	
 	
 	
@@ -5232,7 +5232,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;cmd输入&lt;code&gt;gcc -v&lt;/code&gt;，若显示如下，表示成功&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042148397.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042148397.png&#34;
 	
 	
 	
@@ -5243,7 +5243,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置clion&#34;&gt;配置Clion
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042203281.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042203281.png&#34;
 	
 	
 	
@@ -5253,7 +5253,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042204470.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042204470.png&#34;
 	
 	
 	
@@ -5263,7 +5263,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304042223851.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304042223851.png&#34;
 	
 	
 	
@@ -5289,7 +5289,7 @@ github下载地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Molun
 &lt;p&gt;暂时还没有&lt;code&gt;以webstorm&lt;/code&gt;打开的快捷方式
 win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303261149268.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303261149268.png&#34;
 	
 	
 	
@@ -5302,12 +5302,12 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;新建项，命名为webstorm&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303261151163.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303261151163.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;步骤4&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;点击&lt;code&gt;默认项&lt;/code&gt;，输入&lt;code&gt;Open Folder as WebStorm Project&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303261153982.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303261153982.png&#34;
 	
 	
 	
@@ -5320,7 +5320,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;设置图标&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303261200992.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303261200992.png&#34;
 	
 	
 	
@@ -5335,7 +5335,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 赋值webStorm文件路径
 设置之前新建的Icon的值&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303261158016.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303261158016.png&#34;
 	
 	
 	
@@ -5363,7 +5363,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;工具&lt;/li&gt;
 &lt;li&gt;设置&lt;/li&gt;
 &lt;li&gt;常用配置（拉到最下面）
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303251042326.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303251042326.png&#34;
 	
 	
 	
@@ -5376,7 +5376,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;运行到谷歌浏览器失败&#34;&gt;运行到谷歌浏览器失败
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303251043245.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303251043245.png&#34;
 	
 	
 	
@@ -5401,7 +5401,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;spring-tool-suite-3.9.18 遇到的问题如下&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042031029.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042031029.png&#34;
 	
 	
 	
@@ -5414,7 +5414,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/boss_way/article/details/89762651&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;解决方法&lt;/a&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042044014.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042044014.png&#34;
 	
 	
 	
@@ -5425,7 +5425,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042043262.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042043262.png&#34;
 	
 	
 	
@@ -5440,7 +5440,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;java_home配置也没有问题，确实是1.8的路径
 &lt;code&gt;原因&lt;/code&gt;出在oracle这里，将oracle一道java环境变量之下即可&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042046603.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042046603.png&#34;
 	
 	
 	
@@ -5450,7 +5450,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042047656.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042047656.png&#34;
 	
 	
 	
@@ -5477,7 +5477,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
     &gt;spring-tool-suite-4-4.3.1&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;配置&#34;&gt;配置
 &lt;/h1&gt;&lt;h3 id=&#34;取消空格或分号自动补全&#34;&gt;取消空格或分号自动补全
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042155213.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042155213.png&#34;
 	
 	
 	
@@ -5487,7 +5487,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042157756.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042157756.png&#34;
 	
 	
 	
@@ -5510,7 +5510,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;这个是按照我的习惯配置的，如果不需要配置，请直接跳过
 复制整行，如idea的ctrl+d，我习惯配置alt+d&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042201724.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042201724.png&#34;
 	
 	
 	
@@ -5523,7 +5523,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;这个是代码提示快捷键&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042202915.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042202915.png&#34;
 	
 	
 	
@@ -5539,7 +5539,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;全局查找(Find Text in File)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;开启注解提示&#34;&gt;开启注解提示
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042208202.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042208202.png&#34;
 	
 	
 	
@@ -5550,7 +5550,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置maven&#34;&gt;配置maven
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042218553.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042218553.png&#34;
 	
 	
 	
@@ -5560,7 +5560,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042219006.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042219006.png&#34;
 	
 	
 	
@@ -5570,7 +5570,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042219331.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042219331.png&#34;
 	
 	
 	
@@ -5580,7 +5580,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042210436.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042210436.png&#34;
 	
 	
 	
@@ -5591,7 +5591,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置本地java&#34;&gt;配置本地java
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042212336.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042212336.png&#34;
 	
 	
 	
@@ -5601,7 +5601,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042211998.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042211998.png&#34;
 	
 	
 	
@@ -5612,7 +5612,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;编码配置&#34;&gt;编码配置
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042214349.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042214349.png&#34;
 	
 	
 	
@@ -5622,7 +5622,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042217141.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042217141.png&#34;
 	
 	
 	
@@ -5632,7 +5632,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042222959.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042222959.png&#34;
 	
 	
 	
@@ -5642,7 +5642,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042223387.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042223387.png&#34;
 	
 	
 	
@@ -5652,7 +5652,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042231342.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042231342.png&#34;
 	
 	
 	
@@ -5662,7 +5662,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042232754.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042232754.png&#34;
 	
 	
 	
@@ -5681,7 +5681,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;双击jar包&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042235194.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042235194.png&#34;
 	
 	
 	
@@ -5691,7 +5691,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042237892.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042237892.png&#34;
 	
 	
 	
@@ -5701,7 +5701,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042237464.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042237464.png&#34;
 	
 	
 	
@@ -5712,7 +5712,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置字体&#34;&gt;配置字体
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042240852.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042240852.png&#34;
 	
 	
 	
@@ -5722,7 +5722,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042240321.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042240321.png&#34;
 	
 	
 	
@@ -5733,7 +5733,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置代码模板&#34;&gt;配置代码模板
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042246198.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042246198.png&#34;
 	
 	
 	
@@ -5743,7 +5743,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042246563.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042246563.png&#34;
 	
 	
 	
@@ -5754,7 +5754,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;自动导包&#34;&gt;自动导包
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042259918.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042259918.png&#34;
 	
 	
 	
@@ -5766,7 +5766,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;配置tomcat&#34;&gt;配置tomcat
 &lt;/h3&gt;&lt;p&gt;window》show view》other》servers&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042323516.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042323516.png&#34;
 	
 	
 	
@@ -5776,7 +5776,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042323961.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042323961.png&#34;
 	
 	
 	
@@ -5787,7 +5787,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;普通的java项目如何使用jar包&#34;&gt;普通的java项目如何使用jar包
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042305719.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042305719.png&#34;
 	
 	
 	
@@ -5797,7 +5797,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042305639.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042305639.png&#34;
 	
 	
 	
@@ -5807,7 +5807,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042305134.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042305134.png&#34;
 	
 	
 	
@@ -5828,7 +5828,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/tomcat%E9%85%8D%E7%BD%AE/202412211436947.png" alt="Featured image of post Tomcat" /&gt;&lt;h2 id=&#34;tomcat安装及配置&#34;&gt;tomcat安装及配置
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.123pan.com/s/tMU0Vv-3wiUd.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;tomcat-8.5.87安装&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042313516.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042313516.png&#34;
 	
 	
 	
@@ -5838,7 +5838,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042313799.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042313799.png&#34;
 	
 	
 	
@@ -5870,7 +5870,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;tomcat乱码&#34;&gt;tomcat乱码
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042325595.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042325595.png&#34;
 	
 	
 	
@@ -5880,7 +5880,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042325524.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042325524.png&#34;
 	
 	
 	
@@ -5890,7 +5890,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042327056.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042327056.png&#34;
 	
 	
 	
@@ -5900,7 +5900,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303042328781.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303042328781.png&#34;
 	
 	
 	
@@ -5947,7 +5947,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
         
         <guid>https://IsUnderAchiever.github.io/p/mysql%E9%85%8D%E7%BD%AE/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/mysql%E9%85%8D%E7%BD%AE/202412211354776.png" alt="Featured image of post MySQL" /&gt;&lt;h2 id=&#34;mysql安装&#34;&gt;MySQL安装
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241824907.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241824907.png&#34;
 	
 	
 	
@@ -5957,7 +5957,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241824984.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241824984.png&#34;
 	
 	
 	
@@ -5967,7 +5967,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241825584.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241825584.png&#34;
 	
 	
 	
@@ -5977,7 +5977,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241827181.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241827181.png&#34;
 	
 	
 	
@@ -5987,7 +5987,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241827607.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241827607.png&#34;
 	
 	
 	
@@ -5999,7 +5999,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;一直next
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241827318.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241827318.png&#34;
 	
 	
 	
@@ -6009,7 +6009,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241828735.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241828735.png&#34;
 	
 	
 	
@@ -6032,7 +6032,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:\MySQL\MySQL Server 8.0\bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241831905.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241831905.png&#34;
 	
 	
 	
@@ -6042,7 +6042,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301241831631.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301241831631.png&#34;
 	
 	
 	
@@ -6109,7 +6109,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
         
         <guid>https://IsUnderAchiever.github.io/p/powerdesigner%E9%85%8D%E7%BD%AE/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/powerdesigner%E9%85%8D%E7%BD%AE/202412211427344.png" alt="Featured image of post PowerDesigner" /&gt;&lt;h2 id=&#34;powerdesigner安装&#34;&gt;PowerDesigner安装
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202032386.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202032386.png&#34;
 	
 	
 	
@@ -6119,7 +6119,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202032397.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202032397.png&#34;
 	
 	
 	
@@ -6129,7 +6129,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202032595.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202032595.png&#34;
 	
 	
 	
@@ -6139,7 +6139,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202032030.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202032030.png&#34;
 	
 	
 	
@@ -6149,7 +6149,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202032733.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202032733.png&#34;
 	
 	
 	
@@ -6159,7 +6159,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033572.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033572.png&#34;
 	
 	
 	
@@ -6169,7 +6169,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033116.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033116.png&#34;
 	
 	
 	
@@ -6179,7 +6179,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033576.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033576.png&#34;
 	
 	
 	
@@ -6189,7 +6189,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033855.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033855.png&#34;
 	
 	
 	
@@ -6203,7 +6203,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;复制&lt;code&gt;pdflm16.dll破解文件&lt;/code&gt;至安装文件夹，替换掉原本的文件&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033838.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033838.png&#34;
 	
 	
 	
@@ -6217,7 +6217,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;安装PowerDesigner之后，右键新建又多出了超级多的文件，这一步就是删除掉这些&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033294.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033294.png&#34;
 	
 	
 	
@@ -6233,7 +6233,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;win+R输入regedit，回车&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033306.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033306.png&#34;
 	
 	
 	
@@ -6274,7 +6274,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033380.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033380.png&#34;
 	
 	
 	
@@ -6284,7 +6284,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202033196.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202033196.png&#34;
 	
 	
 	
@@ -6325,7 +6325,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;自动注释模板&#34;&gt;自动注释模板
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202034968.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202034968.png&#34;
 	
 	
 	
@@ -6352,7 +6352,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;修改编码&#34;&gt;修改编码
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035922.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035922.png&#34;
 	
 	
 	
@@ -6363,7 +6363,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;自动导包&#34;&gt;自动导包
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035660.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035660.png&#34;
 	
 	
 	
@@ -6374,7 +6374,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;忽视代码大小写&#34;&gt;忽视代码大小写
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035162.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035162.png&#34;
 	
 	
 	
@@ -6385,7 +6385,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;关闭自动更新&#34;&gt;关闭自动更新
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035515.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035515.png&#34;
 	
 	
 	
@@ -6396,7 +6396,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;tab页多行显示设置&#34;&gt;tab页多行显示设置
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035522.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035522.png&#34;
 	
 	
 	
@@ -6407,7 +6407,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;java注释优化代码注释前空格格式&#34;&gt;Java注释优化代码注释前空格格式
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035055.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035055.png&#34;
 	
 	
 	
@@ -6418,7 +6418,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;开启代码自动编译&#34;&gt;开启代码自动编译
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035166.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035166.png&#34;
 	
 	
 	
@@ -6429,7 +6429,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;去除idea自带的iml文件以及idea文件夹&#34;&gt;去除idea自带的.iml文件，以及.idea文件夹
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035328.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035328.png&#34;
 	
 	
 	
@@ -6440,7 +6440,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;配置maven&#34;&gt;配置maven
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035538.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035538.png&#34;
 	
 	
 	
@@ -6451,7 +6451,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;idea启动时展开项目列表&#34;&gt;idea启动时展开项目列表
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035773.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035773.png&#34;
 	
 	
 	
@@ -6462,7 +6462,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;pom文件依赖报黄&#34;&gt;pom文件依赖报黄
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035003.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035003.png&#34;
 	
 	
 	
@@ -6475,7 +6475,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;配置yml模板&#34;&gt;配置YML模板
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;1.这种是直接添加new的文件
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202035663.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202035663.png&#34;
 	
 	
 	
@@ -6486,7 +6486,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;
 2.这种才类似添加用户的模板
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202059382.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202059382.png&#34;
 	
 	
 	
@@ -6496,7 +6496,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202101373.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202101373.png&#34;
 	
 	
 	
@@ -6852,7 +6852,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;idea本地缓存异常&#34;&gt;idea本地缓存异常
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202043446.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202043446.png&#34;
 	
 	
 	
@@ -6862,7 +6862,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202044621.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202044621.png&#34;
 	
 	
 	
@@ -6873,7 +6873,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;mybatis-plus-xml报黄&#34;&gt;mybatis-plus xml报黄
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202047784.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202047784.png&#34;
 	
 	
 	
@@ -6883,7 +6883,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202047981.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202047981.png&#34;
 	
 	
 	
@@ -6894,7 +6894,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;类上注释报黄&#34;&gt;类上注释报黄
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202049704.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202049704.png&#34;
 	
 	
 	
@@ -6904,7 +6904,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202050458.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202050458.png&#34;
 	
 	
 	
@@ -6914,7 +6914,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202051282.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202051282.png&#34;
 	
 	
 	
@@ -6930,7 +6930,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;description:,createDate:  ==  @description:  @createDate:&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;mapper层注入爆红红色波浪线&#34;&gt;mapper层注入爆红，红色波浪线
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202055161.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202055161.png&#34;
 	
 	
 	
@@ -6941,7 +6941,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;lombok-requires-enabled-annotation-processin&#34;&gt;Lombok requires enabled annotation processin
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202115626.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202115626.png&#34;
 	
 	
 	
@@ -6960,7 +6960,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;li&gt;更新lombok版本&lt;/li&gt;
 &lt;li&gt;mvn clean后重新导入&lt;/li&gt;
 &lt;li&gt;加入 &lt;code&gt;-Djps.track.ap.dependencies=false&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111004136.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111004136.png&#34;
 	
 	
 	
@@ -6976,7 +6976,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;原因，可能是之前创建项目后删除重建，所以idea排除了这个模块&lt;/p&gt;
 &lt;p&gt;Setting-&amp;gt;Build Tools-&amp;gt;Maven-&amp;gt;Ignored Files &lt;code&gt;去掉勾选项即可&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111006961.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111006961.png&#34;
 	
 	
 	
@@ -6987,7 +6987,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;打开项目后没有显示项目结构&#34;&gt;打开项目后没有显示项目结构
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303251205970.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303251205970.png&#34;
 	
 	
 	
@@ -7000,7 +7000,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;选择import&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303251205358.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303251205358.png&#34;
 	
 	
 	
@@ -7010,7 +7010,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303251206868.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303251206868.png&#34;
 	
 	
 	
@@ -7020,7 +7020,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303251206023.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303251206023.png&#34;
 	
 	
 	
@@ -7031,7 +7031,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;idea配置项目根目录&#34;&gt;idea配置项目根目录
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304022202424.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304022202424.png&#34;
 	
 	
 	
@@ -7044,7 +7044,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;h2 id=&#34;idea好用的插件&#34;&gt;idea好用的插件
 &lt;/h2&gt;&lt;h3 id=&#34;alibaba-java-coding-guidelines&#34;&gt;Alibaba Java Coding Guidelines
 &lt;/h3&gt;&lt;p&gt;阿里代码规范检查工具
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027067.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027067.png&#34;
 	
 	
 	
@@ -7056,7 +7056,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;codeglance2&#34;&gt;CodeGlance2
 &lt;/h3&gt;&lt;p&gt;代码缩略图
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027408.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027408.png&#34;
 	
 	
 	
@@ -7068,7 +7068,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;easy-javadoc&#34;&gt;Easy Javadoc
 &lt;/h3&gt;&lt;p&gt;自动生成类和方法的注释
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027132.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027132.png&#34;
 	
 	
 	
@@ -7081,7 +7081,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;gitee&#34;&gt;Gitee
 &lt;/h3&gt;&lt;p&gt;将项目分享至gitee
 将gitee项目克隆值idea
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027083.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027083.png&#34;
 	
 	
 	
@@ -7091,7 +7091,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027557.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027557.png&#34;
 	
 	
 	
@@ -7103,7 +7103,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;leetcode-editor&#34;&gt;LeetCode Editor
 &lt;/h3&gt;&lt;p&gt;LeetCode刷题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027757.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027757.png&#34;
 	
 	
 	
@@ -7115,7 +7115,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;maven-helper&#34;&gt;Maven Helper
 &lt;/h3&gt;&lt;p&gt;解决maven jar包冲突问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027673.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027673.png&#34;
 	
 	
 	
@@ -7127,7 +7127,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;mybatisx&#34;&gt;MyBatisX
 &lt;/h3&gt;&lt;p&gt;快速生成实体类、mapper、mapper.xml、service、serviceimpl代码
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027619.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027619.png&#34;
 	
 	
 	
@@ -7140,7 +7140,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;restfultool&#34;&gt;RestfulTool
 &lt;/h3&gt;&lt;p&gt;帮助基于restful服务开发的插件
 查看请求路径，在项目运行之后还能发送请求查看返回结果
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027517.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027517.png&#34;
 	
 	
 	
@@ -7152,7 +7152,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;sequencediagram&#34;&gt;SequenceDiagram
 &lt;/h3&gt;&lt;p&gt;生成时序图
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027187.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027187.png&#34;
 	
 	
 	
@@ -7162,7 +7162,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027656.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027656.png&#34;
 	
 	
 	
@@ -7174,7 +7174,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;show-comment&#34;&gt;Show comment
 &lt;/h3&gt;&lt;p&gt;显示注解，在方法上写好注解后，以后用到该方法的地方会看到写好的注解
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202027409.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202027409.png&#34;
 	
 	
 	
@@ -7186,7 +7186,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;statistic&#34;&gt;statistic
 &lt;/h3&gt;&lt;p&gt;统计代码量
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028590.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028590.png&#34;
 	
 	
 	
@@ -7198,7 +7198,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;tabnine&#34;&gt;Tabnine
 &lt;/h3&gt;&lt;p&gt;生成代码提示
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028606.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028606.png&#34;
 	
 	
 	
@@ -7210,7 +7210,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;translation&#34;&gt;Translation
 &lt;/h3&gt;&lt;p&gt;翻译插件
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028247.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028247.png&#34;
 	
 	
 	
@@ -7220,7 +7220,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028373.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028373.png&#34;
 	
 	
 	
@@ -7232,7 +7232,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;rainbow-brackets&#34;&gt;Rainbow Brackets
 &lt;/h3&gt;&lt;p&gt;彩虹括号，以不同的颜色显示每队括号，方便括号配对
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028408.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028408.png&#34;
 	
 	
 	
@@ -7263,7 +7263,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://maven.apache.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;maven官网&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;最新版&#34;&gt;最新版
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036769.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036769.png&#34;
 	
 	
 	
@@ -7278,7 +7278,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;还是刚刚&lt;code&gt;最新版&lt;/code&gt;的页面，往下拉，找到&lt;code&gt;archives&lt;/code&gt;，或者点击&lt;a class=&#34;link&#34; href=&#34;https://archive.apache.org/dist/maven/maven-3/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;链接&lt;/a&gt;前往
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036175.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036175.png&#34;
 	
 	
 	
@@ -7288,7 +7288,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036471.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036471.png&#34;
 	
 	
 	
@@ -7298,7 +7298,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036603.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036603.png&#34;
 	
 	
 	
@@ -7308,7 +7308,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036654.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036654.png&#34;
 	
 	
 	
@@ -7331,7 +7331,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;pache-maven-3.8.6
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036513.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036513.png&#34;
 	
 	
 	
@@ -7352,7 +7352,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;%MAVEN_HOME%&lt;span class=&#34;se&#34;&gt;\b&lt;/span&gt;in
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036785.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036785.png&#34;
 	
 	
 	
@@ -7375,7 +7375,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;新建maven仓库&lt;code&gt;repository&lt;/code&gt;【新建repository文件夹】
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036584.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036584.png&#34;
 	
 	
 	
@@ -7386,7 +7386,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;
 配置&lt;code&gt;setting.xml&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036280.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036280.png&#34;
 	
 	
 	
@@ -7445,7 +7445,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;/profile&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036869.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036869.png&#34;
 	
 	
 	
@@ -7455,7 +7455,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036321.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036321.png&#34;
 	
 	
 	
@@ -7465,7 +7465,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202036857.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202036857.png&#34;
 	
 	
 	
@@ -7486,7 +7486,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/nvm%E9%85%8D%E7%BD%AE/202412211357864.png" alt="Featured image of post Nvm" /&gt;&lt;h2 id=&#34;nvm安装&#34;&gt;nvm安装
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/coreybutler/nvm-windows/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;前往下载&lt;/a&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037693.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037693.png&#34;
 	
 	
 	
@@ -7497,7 +7497,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;默认就好免得配置环境&#34;&gt;默认就好，免得配置环境
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037788.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037788.png&#34;
 	
 	
 	
@@ -7507,7 +7507,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037422.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037422.png&#34;
 	
 	
 	
@@ -7519,7 +7519,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在&lt;code&gt;nvm&lt;/code&gt;文件夹下找到&lt;code&gt;setting.txt&lt;/code&gt;，进行如下配置
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037973.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037973.png&#34;
 	
 	
 	
@@ -7606,7 +7606,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;选择manually select features 手动创建
 选择&lt;code&gt;TypeScript&lt;/code&gt;、&lt;code&gt;Router&lt;/code&gt;、&lt;code&gt;Vuex&lt;/code&gt;，&lt;strong&gt;取消掉Linter/Formatter&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037971.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037971.png&#34;
 	
 	
 	
@@ -7617,7 +7617,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;
 选择3.X
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037983.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037983.png&#34;
 	
 	
 	
@@ -7639,7 +7639,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;npm run serve
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202037071.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202037071.png&#34;
 	
 	
 	
@@ -7687,7 +7687,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
         
         <guid>https://IsUnderAchiever.github.io/p/potplayer%E9%85%8D%E7%BD%AE/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/potplayer%E9%85%8D%E7%BD%AE/202412211456063.png" alt="Featured image of post Potplayer" /&gt;&lt;h2 id=&#34;基本配置&#34;&gt;基本配置
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201957251.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201957251.png&#34;
 	
 	
 	
@@ -7697,7 +7697,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958063.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958063.png&#34;
 	
 	
 	
@@ -7707,7 +7707,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958218.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958218.png&#34;
 	
 	
 	
@@ -7717,7 +7717,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958277.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958277.png&#34;
 	
 	
 	
@@ -7737,7 +7737,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;strong&gt;点击&lt;a class=&#34;link&#34; href=&#34;http://api.fanyi.baidu.com/api/trans/product/prodinfo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;此处&lt;/a&gt;登录百度翻译&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304091524991.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304091524991.png&#34;
 	
 	
 	
@@ -7748,7 +7748,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;点击开始注册&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304091537657.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304091537657.png&#34;
 	
 	
 	
@@ -7766,7 +7766,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
         <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
         
         <guid>https://IsUnderAchiever.github.io/p/terminal%E9%85%8D%E7%BD%AE/</guid>
-        <description>&lt;img src="https://IsUnderAchiever.github.io/p/terminal%E9%85%8D%E7%BD%AE/settings-default-shell.png" alt="Featured image of post Terminal" /&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028768.png&#34;
+        <description>&lt;img src="https://IsUnderAchiever.github.io/p/terminal%E9%85%8D%E7%BD%AE/settings-default-shell.png" alt="Featured image of post Terminal" /&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028768.png&#34;
 	
 	
 	
@@ -7777,7 +7777,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;直接右键，可以选择在终端中打开//windows terminal here&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028336.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028336.png&#34;
 	
 	
 	
@@ -7787,7 +7787,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028056.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028056.png&#34;
 	
 	
 	
@@ -7806,7 +7806,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 第二种点击&lt;a class=&#34;link&#34; href=&#34;https://github.com/microsoft/Terminal&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028196.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028196.png&#34;
 	
 	
 	
@@ -7816,7 +7816,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202028737.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202028737.png&#34;
 	
 	
 	
@@ -7873,7 +7873,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;使用vagrant创建虚拟机官方镜像仓库httpsappvagrantupcomboxessearch&#34;&gt;使用vagrant创建虚拟机——&lt;a class=&#34;link&#34; href=&#34;https://app.vagrantup.com/boxes/search&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方镜像仓库&lt;/a&gt;
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958195.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958195.png&#34;
 	
 	
 	
@@ -7893,7 +7893,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此时在E盘已经生成了一个名为“Vagrantfile”的文件
 启动虚拟环境
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958546.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958546.png&#34;
 	
 	
 	
@@ -7933,7 +7933,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 则输入命令set VAGRANT_PREFER_SYSTEM_BIN=0 后再重新连接即可
 退出vagrant的方法：输入命令exit
 以文本的方式打开Vagrantfile，找到这一行配置
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958434.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958434.png&#34;
 	
 	
 	
@@ -8343,7 +8343,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker pull redis
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958499.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958499.png&#34;
 	
 	
 	
@@ -8371,7 +8371,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;-d redis redis-server /etc/redis/redis.conf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958293.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958293.png&#34;
 	
 	
 	
@@ -8381,7 +8381,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958909.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958909.png&#34;
 	
 	
 	
@@ -8401,7 +8401,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker &lt;span class=&#34;nb&#34;&gt;exec&lt;/span&gt; -it redis redis-cli
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958121.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958121.png&#34;
 	
 	
 	
@@ -8431,7 +8431,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;appendonly yes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958706.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958706.png&#34;
 	
 	
 	
@@ -8441,7 +8441,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958530.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958530.png&#34;
 	
 	
 	
@@ -8498,7 +8498,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h3&gt;&lt;p&gt;链接：https://pan.baidu.com/s/10z0S6b9mo76CWK9y3spPRg?pwd=51tz
 提取码：51tz
 &amp;ndash;来自百度网盘超级会员V3的分享
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201958101.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201958101.png&#34;
 	
 	
 	
@@ -8509,7 +8509,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 	
 &gt;
 点击New Connection右边的按钮，可进入设置页面，设置语言
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959057.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201959057.png&#34;
 	
 	
 	
@@ -8523,7 +8523,7 @@ win+R，输入&lt;code&gt;regedit&lt;/code&gt;&lt;/p&gt;
 &lt;/h2&gt;&lt;h3 id=&#34;1黑马程序员视频内安装方法&#34;&gt;1.黑马程序员视频内安装方法：
 &lt;/h3&gt;&lt;p&gt;链接：https://pan.baidu.com/s/1pGnbmkMjD8RXe5Y4xotfOA?pwd=ihe5
 提取码：ihe5
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202002537.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202002537.png&#34;
 	
 	
 	
@@ -8659,7 +8659,7 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：&lt;/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;查看运行日志，当查看到下面的日志，说明成功：
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202010279.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202010279.png&#34;
 	
 	
 	
@@ -8707,7 +8707,7 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：&lt;/
 &lt;/div&gt;&lt;p&gt;若存在问题，查看这篇&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_38327769/article/details/124847508?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167101576116800182116891%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;amp;request_id=167101576116800182116891&amp;amp;biz_id=0&amp;amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-124847508-null-null.142%5ev68%5econtrol,201%5ev4%5eadd_ask,213%5ev2%5et3_control1&amp;amp;utm_term=docker%E5%AE%89%E8%A3%85ElasticSearch&amp;amp;spm=1018.2226.3001.4187&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;博客&lt;/a&gt;
 我这里的问题是启动的时候没问题，但是过一会有自动关闭
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959669.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201959669.png&#34;
 	
 	
 	
@@ -8730,7 +8730,7 @@ kibana启动一般比较慢，需要多等待一会，可以通过命令：&lt;/
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;查看运行结果
 http://虚拟机ip地址:9200/
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201959677.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201959677.png&#34;
 	
 	
 	
@@ -8824,7 +8824,7 @@ http://虚拟机ip地址:9200/
 &lt;/div&gt;&lt;p&gt;说明plugins目录被挂载到了：&lt;code&gt;/var/lib/docker/volumes/es-plugins/_data &lt;/code&gt;这个目录中。&lt;/p&gt;
 &lt;h3 id=&#34;2解压缩分词器安装包&#34;&gt;2）解压缩分词器安装包
 &lt;/h3&gt;&lt;p&gt;下面我们需要把课前资料中的ik分词器解压缩，重命名为ik
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011441.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202011441.png&#34;
 	
 	
 	
@@ -8836,7 +8836,7 @@ http://虚拟机ip地址:9200/
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;3上传到es容器的插件数据卷中&#34;&gt;3）上传到es容器的插件数据卷中
 &lt;/h3&gt;&lt;p&gt;也就是&lt;code&gt;/var/lib/docker/volumes/es-plugins/_data &lt;/code&gt;：
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202011084.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202011084.png&#34;
 	
 	
 	
@@ -9034,7 +9034,7 @@ http://虚拟机ip地址:9200/
 &lt;/h2&gt;&lt;p&gt;随着互联网的发展，“造词运动”也越发的频繁。出现了很多新的词语，在原有的词汇列表中并不存在。比如：“奥力给”，“传智播客” 等。
 所以我们的词汇也需要不断的更新，IK分词器提供了扩展词汇的功能。
 1）打开IK分词器config目录：
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012285.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202012285.png&#34;
 	
 	
 	
@@ -9089,7 +9089,7 @@ http://虚拟机ip地址:9200/
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker logs -f elasticsearch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202012676.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202012676.png&#34;
 	
 	
 	
@@ -9129,7 +9129,7 @@ http://虚拟机ip地址:9200/
         
         <guid>https://IsUnderAchiever.github.io/p/git%E9%85%8D%E7%BD%AE/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/git%E9%85%8D%E7%BD%AE/branching-illustration@2x.png" alt="Featured image of post Git" /&gt;&lt;h2 id=&#34;git环境配置&#34;&gt;git环境配置
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202015463.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202015463.png&#34;
 	
 	
 	
@@ -9139,7 +9139,7 @@ http://虚拟机ip地址:9200/
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202015664.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202015664.png&#34;
 	
 	
 	
@@ -9150,7 +9150,7 @@ http://虚拟机ip地址:9200/
 	
 &gt;
 安装一路默认即可【一直next】
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202015837.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202015837.png&#34;
 	
 	
 	
@@ -9384,7 +9384,7 @@ hosts文件在C:\Windows\System32\drivers\etc
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh -T git@gitee.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202015913.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202015913.png&#34;
 	
 	
 	
@@ -9394,7 +9394,7 @@ hosts文件在C:\Windows\System32\drivers\etc
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202015239.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202015239.png&#34;
 	
 	
 	
@@ -9404,7 +9404,7 @@ hosts文件在C:\Windows\System32\drivers\etc
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202015408.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202015408.png&#34;
 	
 	
 	

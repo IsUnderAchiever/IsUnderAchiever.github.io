@@ -121,7 +121,7 @@
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;有以上类，我们需要进行测试&lt;/p&gt;
 &lt;p&gt;在idea中按住&lt;code&gt;Ctrl+Shift+T&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292144145_repeat_1701265469164__211203.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292144145_repeat_1701265469164__211203.png&#34;
 	
 	
 	
@@ -132,7 +132,7 @@
 	
 &gt;
 勾选方法
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292145937_repeat_1701265524954__145173.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292145937_repeat_1701265524954__145173.png&#34;
 	
 	
 	
@@ -180,7 +180,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;我们将使用断言&lt;code&gt;Assert&lt;/code&gt;来完成测试
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292146882_repeat_1701265589895__016984.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292146882_repeat_1701265589895__016984.png&#34;
 	
 	
 	
@@ -191,7 +191,7 @@
 	
 &gt;
 我们将&lt;code&gt;预期值&lt;/code&gt;与&lt;code&gt;实际值&lt;/code&gt;进行比较
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147830_repeat_1701265633841__794593.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292147830_repeat_1701265633841__794593.png&#34;
 	
 	
 	
@@ -201,7 +201,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292147718_repeat_1701265662728__041266.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292147718_repeat_1701265662728__041266.png&#34;
 	
 	
 	
@@ -212,7 +212,7 @@
 	
 &gt;
 可以看到&lt;code&gt;100%测试覆盖率&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292150876_repeat_1701265821886__706483.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292150876_repeat_1701265821886__706483.png&#34;
 	
 	
 	
@@ -223,7 +223,7 @@
 	
 &gt;
 注释掉一个测试方法后，导致测试覆盖率不足100%，因为有部分代码未被测试到
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202311292151937_repeat_1701265892946__483201.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202311292151937_repeat_1701265892946__483201.png&#34;
 	
 	
 	

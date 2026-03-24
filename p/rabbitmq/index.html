@@ -416,7 +416,7 @@
 </h2><h3 id="同步调用">同步调用
 </h3><p>微服务间基于Feign的调用就属于同步方式，存在一些问题。业务代码耦合严重，除此之外对性能影响也很严重，因为需要等待被调用的服务返回结果。
 不仅如此，而且如果被调用的服务中，有某个服务挂了，则整个服务调用都会出现问题。
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071726650.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402071726650.png"
 	
 	
 	
@@ -428,7 +428,7 @@
 ></p>
 <h3 id="异步调用">异步调用
 </h3><p>异步调用常见实现就是事件驱动模式
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402071919653.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402071919653.png"
 	
 	
 	
@@ -447,7 +447,7 @@
 <li>性能提高，吞吐量升高，</li>
 <li>服务没有强依赖，无需担心级联失败问题</li>
 <li>流量削峰，broker能起到缓冲的作用，右侧的服务则按照自身能力来获取broker的事件
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402072322477.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402072322477.png"
 	
 	
 	
@@ -467,7 +467,7 @@
 <li>架构复杂了，业务没有明显的流程线，不好追踪管理</li>
 </ol>
 <h3 id="mq选型">MQ选型
-</h3><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073029943.png"
+</h3><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402073029943.png"
 	
 	
 	
@@ -482,7 +482,7 @@ rabbitmq的管理界面的端口为15672
 http://localhost:15672
 管理员的账号和密码是<code>guest</code></p>
 <h4 id="overview">Overview
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073427083.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402073427083.png"
 	
 	
 	
@@ -496,7 +496,7 @@ http://localhost:15672
 <p><code>Overview</code>是总览，可以看到MQ的节点信息，当前为单节点运行，并不存在集群</p>
 </blockquote>
 <h4 id="connections">Connections
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073613643.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402073613643.png"
 	
 	
 	
@@ -510,7 +510,7 @@ http://localhost:15672
 <p>无论是消息的<code>发布者</code>还是消息的<code>消费者</code>都需要与MQ建立连接</p>
 </blockquote>
 <h4 id="channels">Channels
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402073847983.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402073847983.png"
 	
 	
 	
@@ -524,7 +524,7 @@ http://localhost:15672
 <p><code>Channels</code>是通道，在建立连接后需要创建<code>Channels</code>通道，然后消息的<code>发布者</code>和消息的<code>消费者</code>才能基于<code>Channels</code>完成消息的<code>发布</code>和<code>消费</code></p>
 </blockquote>
 <h4 id="exchanges">Exchanges
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074101842.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402074101842.png"
 	
 	
 	
@@ -538,7 +538,7 @@ http://localhost:15672
 <p><code>Exchanges</code>交换机用于接收来自生产者的消息，将它们推入队列</p>
 </blockquote>
 <h4 id="queues">Queues
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074226842.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402074226842.png"
 	
 	
 	
@@ -552,7 +552,7 @@ http://localhost:15672
 <p><code>Queues</code>队列用来做消息存储</p>
 </blockquote>
 <h4 id="admin">Admin
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074543152.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402074543152.png"
 	
 	
 	
@@ -563,7 +563,7 @@ http://localhost:15672
 	
 ></p>
 <h4 id="mq架构">MQ架构
-</h4><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402074637327.png"
+</h4><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402074637327.png"
 	
 	
 	
@@ -622,7 +622,7 @@ http://localhost:15672
 </span></span><span class="line"><span class="cl">        └─test
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402080719815.png"
+</div><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402080719815.png"
 	
 	
 	
@@ -1007,7 +1007,7 @@ http://localhost:15672
 <li>利用channel将消费者与队列绑定</li>
 </ol>
 <h2 id="springamqp">SpringAMQP
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402082842181.png"
+</h2><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402082842181.png"
 	
 	
 	
@@ -1112,7 +1112,7 @@ http://localhost:15672
 </span></span><span class="line"><span class="cl"><span class="na">spring.rabbitmq.password</span><span class="o">=</span><span class="s">123456</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210813058.png"
+</div><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402210813058.png"
 	
 	
 	
@@ -1125,7 +1125,7 @@ http://localhost:15672
 <blockquote>
 <p>点击<code>simple.queue</code></p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402210928426.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402210928426.png"
 	
 	
 	
@@ -1173,7 +1173,7 @@ http://localhost:15672
 </div><blockquote>
 <p>启动consumer工程后接收到消息</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211454812.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402211454812.png"
 	
 	
 	
@@ -1187,7 +1187,7 @@ http://localhost:15672
 <p>发现<code>消息消失了</code>，因为这是MQ的机制，<code>阅后即焚</code>，消息不可重复消费</p>
 </blockquote>
 <h2 id="工作消息队列">工作消息队列
-</h2><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402211730081.png"
+</h2><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402211730081.png"
 	
 	
 	
@@ -1458,7 +1458,7 @@ http://localhost:15672
 </h3><blockquote>
 <p>发布订阅模式与之前案例的区别就是允许将同一消息发送给多个消费者。实现方式是加入了exchange (交换机)。</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214519822.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402214519822.png"
 	
 	
 	
@@ -1479,7 +1479,7 @@ http://localhost:15672
 </h3><blockquote>
 <p>Fanout Exchange会将接收到的消息路由到每一个跟其绑定的queue</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402214633520.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402214633520.png"
 	
 	
 	
@@ -1619,7 +1619,7 @@ http://localhost:15672
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215642007.png"
+</div><p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402215642007.png"
 	
 	
 	
@@ -1629,7 +1629,7 @@ http://localhost:15672
 	
 	
 >
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402215706608.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402215706608.png"
 	
 	
 	
@@ -1853,7 +1853,7 @@ http://localhost:15672
 <p>发布者发送消息时，指定消息的RoutingKey</p>
 <p>Exchange将消息路由到BindingKey与消息RoutingKey一致的队列</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402220448895.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402220448895.png"
 	
 	
 	
@@ -1935,7 +1935,7 @@ http://localhost:15672
 </div><blockquote>
 <p>启动<code>consumer</code>项目，前往rabbitmq网页。发现<code>direct.exchange</code>交换机和<code>directQueue1</code>、<code>directQueue2</code>队列已经声明了</p>
 <p>查看绑定关系
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240402222040723.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240402222040723.png"
 	
 	
 	
@@ -2012,7 +2012,7 @@ http://localhost:15672
 <code>#</code>:代指0个或多个单词
 <code>*</code>:代指一个单词</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065247801.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240403065247801.png"
 	
 	
 	
@@ -2113,7 +2113,7 @@ http://localhost:15672
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>启动项目后，确认绑定关系
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403065809837.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240403065809837.png"
 	
 	
 	
@@ -2292,7 +2292,7 @@ http://localhost:15672
 </div><blockquote>
 <p>这次将<code>consumer</code>项目关闭，我们重新发送信息，去<code>rabbitmq</code>管理页面看一看消息</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403071928081.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240403071928081.png"
 	
 	
 	
@@ -2361,7 +2361,7 @@ http://localhost:15672
 </div><blockquote>
 <p>重新发送消息，前往rabbitmq管理页面查看</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240403072815201.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240403072815201.png"
 	
 	
 	
@@ -2535,25 +2535,25 @@ SpringAMQP中消息的序列化和反序列化是怎么实现的?</p>
     </div>
 
 </div><script 
-                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
+                href="/css/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
+                href="/css/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

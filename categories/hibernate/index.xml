@@ -36,7 +36,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;        &amp;#34;http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd&amp;#34;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152332308.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152332308.png&#34;
 	
 	
 	
@@ -203,7 +203,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;在根目录下创建&lt;code&gt;hibernate.cfg.xml&lt;/code&gt;，一般是src，但是我这里设置的是java
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152332620.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152332620.png&#34;
 	
 	
 	

@@ -17,7 +17,7 @@
 &lt;/h1&gt;&lt;h1 id=&#34;一activiti7概述&#34;&gt;一、Activiti7概述
 &lt;/h1&gt;&lt;p&gt;官网地址：https://www.activiti.org/
   Activiti由Alfresco软件开发，目前最高版本Activiti 7。是BPMN的一个基于java的软件实现，不过Activiti 不仅仅包括BPMN，还有DMN决策表和CMMN Case管理引擎，并且有自己的用户管理、微服务API等一系列功能，是一个服务平台。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245900.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245900.png&#34;
 	
 	
 	
@@ -31,7 +31,7 @@
 &lt;/h1&gt;&lt;p&gt;官方手册：http://jeecg.com/activiti5.21/&lt;/p&gt;
 &lt;h2 id=&#34;1创建springboot项目&#34;&gt;1.创建SpringBoot项目
 &lt;/h2&gt;&lt;p&gt;  现在开发中或者我们自己学习写案例都是通过SpringBoot脚手架工具来快速构建项目的。那么我们也就直接通过创建SpringBoot项目来给大家讲解相关的案例。创建一个普通的SpringBoot项目。指定版本为2.4.2即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245006.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245006.png&#34;
 	
 	
 	
@@ -187,7 +187,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;相关的Activiti依赖加载进来了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245918.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245918.png&#34;
 	
 	
 	
@@ -253,7 +253,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后我们就可以启动，但是出现了如下错误：
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245332.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245332.png&#34;
 	
 	
 	
@@ -299,7 +299,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;然后执行程序正确。搞定。同时在数据库中创建了相关的表结构
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245982.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245982.png&#34;
 	
 	
 	
@@ -429,7 +429,7 @@
 &lt;h2 id=&#34;3在线流程设计器&#34;&gt;3.在线流程设计器
 &lt;/h2&gt;&lt;p&gt;  接下来我们通过官方提供的流程设计器来实现一个简单流程的设计。然后完成相关的部署和流程整体操作。
 官网下载地址：https://www.activiti.org/get-started 下载下来后解压缩
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245884.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245884.png&#34;
 	
 	
 	
@@ -440,7 +440,7 @@
 	
 &gt;
 进入到wars中。提供的有Activiti-app.war
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245820.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245820.png&#34;
 	
 	
 	
@@ -451,7 +451,7 @@
 	
 &gt;
 把这war包拷贝到Tomcat服务器中即可。注意Tomcat的版本不要高于8.5，然后Tomcat服务。访问 http://localhost:8080/activiti-app 即可。登录的账号密码是 admin  test
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245125.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245125.png&#34;
 	
 	
 	
@@ -461,7 +461,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245689.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245689.png&#34;
 	
 	
 	
@@ -482,7 +482,7 @@
 	
 &gt;
 点击create process 弹出窗口。录入相关的流程定义信息
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242245281.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242245281.png&#34;
 	
 	
 	
@@ -493,7 +493,7 @@
 	
 &gt;
 绘制好流程图后。保存并下载对应的xml文件
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246185.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246185.png&#34;
 	
 	
 	
@@ -653,7 +653,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;流程部署的行为会涉及到数据库中的这两张表
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246862.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246862.png&#34;
 	
 	
 	
@@ -753,7 +753,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;发起流程成功后。在对应的&lt;code&gt;act_ru_task&lt;/code&gt;中就有一条对应的待办记录。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246137.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246137.png&#34;
 	
 	
 	
@@ -764,7 +764,7 @@
 	
 &gt;
 对应的流程状态如下：
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246104.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246104.png&#34;
 	
 	
 	
@@ -899,7 +899,7 @@
           &lt;td&gt;历史记录：流程审批节点的记录信息&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
-          &lt;td&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246614.png&#34;
+          &lt;td&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246614.png&#34;
 	
 	
 	
@@ -915,7 +915,7 @@
 &lt;/table&gt;
 &lt;h1 id=&#34;三表达式&#34;&gt;三、表达式
 &lt;/h1&gt;&lt;h2 id=&#34;值表达式&#34;&gt;值表达式
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246605.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246605.png&#34;
 	
 	
 	
@@ -945,7 +945,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;监听器&#34;&gt;监听器
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246908.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246908.png&#34;
 	
 	
 	
@@ -955,7 +955,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242246049.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242246049.png&#34;
 	
 	
 	
@@ -1012,7 +1012,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;配置mysql&#34;&gt;配置MySQL
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152350068.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152350068.png&#34;
 	
 	
 	
@@ -1027,7 +1027,7 @@
     &gt;博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;启动依然还有报错，需要将mysql连接包复制到lib文件夹下&lt;/p&gt;
 &lt;p&gt;不确定对mysql连接包的版本有没有要求，我刚开始用的是&lt;code&gt;8.0.30&lt;/code&gt;版本，依然存在报错，改为&lt;code&gt;8.0.17&lt;/code&gt;后即可，记得删除原本5.xx版本的jar包
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349359.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152349359.png&#34;
 	
 	
 	
@@ -1037,7 +1037,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349743.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152349743.png&#34;
 	
 	
 	
@@ -1071,7 +1071,7 @@
 &lt;p&gt;修改配置文件&lt;/p&gt;
 &lt;p&gt;添加&lt;code&gt;nullCatalogMeansCurrent=true&lt;/code&gt;即可
 datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMeansCurrent=true&lt;/code&gt;&amp;amp;characterEncoding=utf8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC&amp;amp;allowPublicKeyRetrieval=true
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152349643.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152349643.png&#34;
 	
 	
 	
@@ -1326,7 +1326,7 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMe
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;获取processengine对象报错&#34;&gt;获取ProcessEngine对象报错
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152348161.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152348161.png&#34;
 	
 	
 	
@@ -1338,7 +1338,7 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMe
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jdk从8更换为11即可
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243610.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242243610.png&#34;
 	
 	
 	
@@ -1348,7 +1348,7 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMe
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243919.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242243919.png&#34;
 	
 	
 	
@@ -1358,7 +1358,7 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMe
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243195.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242243195.png&#34;
 	
 	
 	
@@ -1372,7 +1372,7 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMe
 &lt;h2 id=&#34;流程部署后查询不到&#34;&gt;流程部署后查询不到
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;那是因为没有部署成功
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243154.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242243154.png&#34;
 	
 	
 	
@@ -1383,7 +1383,7 @@ datasource.url=jdbc:mysql://127.0.0.1:3306/activiti6ui?&lt;code&gt;nullCatalogMe
 	
 &gt;
 这两个&lt;code&gt;xml&lt;/code&gt;文件，图标都不一样，是文件的命名有问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202306242243943.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202306242243943.png&#34;
 	
 	
 	

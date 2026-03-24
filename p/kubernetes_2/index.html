@@ -412,7 +412,7 @@
 </h2><blockquote>
 <p>Service 负责东西流量、Ingress 负责南北流量</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306614.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo04/202505122306614.png"
 	
 	
 	
@@ -427,7 +427,7 @@
 Endpoint 会对容器内 Pod 的 ip 进行管理
 当执行 kubectl 命令操作时候，请求到了 master 的 api-server 上面，api-server 根据 ip 找到对应的 service，service 找到 endpoint，endpoint 根据 iptables 转发找到目标服务器的 kube-proxy，最终找到对应的 pod 容器</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122306617.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo04/202505122306617.png"
 	
 	
 	
@@ -1102,7 +1102,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 </h2><blockquote>
 <p>左侧是传统 nginx 的负载均衡版本，右侧是 k8s 版本的负载均衡</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307025.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo04/202505122307025.png"
 	
 	
 	
@@ -1118,7 +1118,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
     >文档</a></p>
 </blockquote>
 <p>这里有很多的控制器，我们使用 ingress-nginx
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307136.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo04/202505122307136.png"
 	
 	
 	
@@ -1129,7 +1129,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 	
 ></p>
 <p>以下是官方文档
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307254.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo04/202505122307254.png"
 	
 	
 	
@@ -1139,7 +1139,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 	
 	
 >
-<img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo04/202505122307604.png"
+<img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo04/202505122307604.png"
 	
 	
 	
@@ -1428,7 +1428,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 </span></span><span class="line"><span class="cl"><span class="c1"># 尚硅谷这里k8s的配置方法是使用yaml而非helm，看个人需要</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><a class="link" href="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111809272.yaml"  target="_blank" rel="noopener"
+</div><p><a class="link" href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506111809272.yaml"  target="_blank" rel="noopener"
     >values.yaml</a></p>
 <p>上面已经创建了<code>nginx-svc</code>和<code>nginx-deploy</code></p>
 <p>请确认你是否已经创建</p>
@@ -1571,7 +1571,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 </div><blockquote>
 <p>配置一下hosts文件，让指定域名指向k8s主节点，我这里是<code>116.148.120.214</code></p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959307.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506111959307.png"
 	
 	
 	
@@ -1581,7 +1581,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 	
 	
 ></p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506111959890.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506111959890.png"
 	
 	
 	
@@ -1592,7 +1592,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 	
 ></p>
 <p>访问<code>http://k8s.wolfcode.cn:31982/</code>响应404，这是正常的，因为我们配置了前缀<code>/api</code></p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001136.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506112001136.png"
 	
 	
 	
@@ -1603,7 +1603,7 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
 	
 ></p>
 <p>访问<code>http://k8s.wolfcode.cn:31982/api</code>响应结果如下</p>
-<p><img src="https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo05/202506112001892.png"
+<p><img src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo05/202506112001892.png"
 	
 	
 	
@@ -2499,25 +2499,25 @@ Endpoint 会对容器内 Pod 的 ip 进行管理
     </div>
 
 </div><script 
-                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                src="/js/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
                 defer
                 >
             </script><script 
-                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                src="/js/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
                 defer
                 >
             </script><link 
                 rel="stylesheet" 
-                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/default-skin.min.css"crossorigin="anonymous"
+                href="/css/default-skin.min.css"crossorigin="anonymous"
             ><link 
                 rel="stylesheet" 
-                href="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/photoswipe.min.css"crossorigin="anonymous"
+                href="/css/photoswipe.min.css"crossorigin="anonymous"
             >
 
             </main>
         </div>
         <script 
-                src="https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                src="/js/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>

@@ -185,7 +185,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212058806.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412212058806.png&#34;
 	
 	
 	
@@ -198,7 +198,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;进入&lt;code&gt;FreeMarkerProperties&lt;/code&gt;即可查看到默认配置&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212058616.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412212058616.png&#34;
 	
 	
 	
@@ -786,7 +786,7 @@
 &lt;p&gt;为什么&lt;code&gt;Configuration&lt;/code&gt;可以直接被注入呢？&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;找到&lt;code&gt;FreeMarkerAutoConfiguration&lt;/code&gt;配置类&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo03/202412212058540.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo03/202412212058540.png&#34;
 	
 	
 	

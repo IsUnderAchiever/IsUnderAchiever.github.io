@@ -22,7 +22,7 @@
 &lt;li&gt;gulimall-coupon&lt;/li&gt;
 &lt;li&gt;gulimall-member&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405032359147.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202405032359147.png&#34;
 	
 	
 	
@@ -32,7 +32,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202405040000522.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202405040000522.png&#34;
 	
 	
 	
@@ -67,7 +67,7 @@
         
         <guid>https://IsUnderAchiever.github.io/p/server.port%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E4%B8%8D%E7%94%9F%E6%95%88/</guid>
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/server.port%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E4%B8%8D%E7%94%9F%E6%95%88/202412212133331.png" alt="Featured image of post server.port启动端口不生效" /&gt;&lt;h1 id=&#34;serverport启动端口不生效&#34;&gt;server.port启动端口不生效
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411062803925.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240411062803925.png&#34;
 	
 	
 	
@@ -80,7 +80,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;配置里写的端口是&lt;code&gt;8088&lt;/code&gt;，然而启动的依然是&lt;code&gt;8080&lt;/code&gt;
 首先清理一下缓存
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411062859444.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240411062859444.png&#34;
 	
 	
 	
@@ -95,7 +95,7 @@
 &lt;p&gt;依然没用&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;转properties，有用&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;我这里是装过了插件&lt;/code&gt;，可能是由于插件的影响
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411062957291.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240411062957291.png&#34;
 	
 	
 	
@@ -105,7 +105,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/image-20240411063051701.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/image-20240411063051701.png&#34;
 	
 	
 	
@@ -736,7 +736,7 @@ DAO模式是标准的J2EE设计模式之一.开发人员使用这个模式把底
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;dateformat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;MM-ddHH:mm:ss:SSS&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202304151432559.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202304151432559.png&#34;
 	
 	
 	
@@ -1218,7 +1218,7 @@ thymeleaf:.
 &lt;/h1&gt;&lt;h2 id=&#34;requestbody&#34;&gt;@RequestBody
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;今天在使用requestBody注解时，出现了一些问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152328827.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152328827.png&#34;
 	
 	
 	
@@ -1228,7 +1228,7 @@ thymeleaf:.
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152328802.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152328802.png&#34;
 	
 	
 	
@@ -1241,7 +1241,7 @@ thymeleaf:.
 不知道咋想的，传参不是这么传的&lt;/p&gt;
 &lt;p&gt;既然用的是@RequestBody注解，如果是User user，那这么写没问题，但是写的是Integer id&lt;/p&gt;
 &lt;p&gt;那应该使用如下格式的传参
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152328851.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152328851.png&#34;
 	
 	
 	
@@ -1266,7 +1266,7 @@ thymeleaf:.
 &lt;p&gt;自定义了一个异常未被&lt;code&gt;@RestControllerAdvice&lt;/code&gt;捕获&lt;/p&gt;
 &lt;p&gt;原因是被try..catch..捕获了，而没被&lt;code&gt;@RestControllerAdvice&lt;/code&gt;捕获&lt;/p&gt;
 &lt;p&gt;这个原因其实我之前听说过但是没遇到过，现在遇到了，真的长记性了…
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152329730.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152329730.png&#34;
 	
 	
 	
@@ -1467,7 +1467,7 @@ thymeleaf:.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330491.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330491.png&#34;
 	
 	
 	
@@ -1532,7 +1532,7 @@ thymeleaf:.
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;eat方法定义在Animal类中，但如果取消掉类上的&lt;code&gt;&amp;lt;T extends Animal&amp;gt;&lt;/code&gt;后，这行代码会报错
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330591.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330591.png&#34;
 	
 	
 	
@@ -1542,7 +1542,7 @@ thymeleaf:.
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331352.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152331352.png&#34;
 	
 	
 	
@@ -1554,7 +1554,7 @@ thymeleaf:.
 &gt;
 但是java不支持多继承，所以如果还需要同时继承Animal怎么办，参考如下写法&lt;/p&gt;
 &lt;p&gt;但是注意，&lt;code&gt;接口要写在后面&lt;/code&gt;，如果调换位置会报错
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330482.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330482.png&#34;
 	
 	
 	
@@ -1564,7 +1564,7 @@ thymeleaf:.
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330279.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330279.png&#34;
 	
 	
 	
@@ -1667,7 +1667,7 @@ thymeleaf:.
 &lt;/div&gt;&lt;h3 id=&#34;在方法上&#34;&gt;在方法上
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;作用在方法上
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330520.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330520.png&#34;
 	
 	
 	
@@ -1678,7 +1678,7 @@ thymeleaf:.
 	
 &gt;
 注意，这个时候他并不知道T是一个泛型，你需要”告诉他”
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331778.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152331778.png&#34;
 	
 	
 	
@@ -1717,7 +1717,7 @@ thymeleaf:.
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;当然，也可以写多个参数
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330133.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330133.png&#34;
 	
 	
 	
@@ -1783,7 +1783,7 @@ thymeleaf:.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152330061.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152330061.png&#34;
 	
 	
 	
@@ -1796,7 +1796,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;泛型通配符
 &lt;strong&gt;首先，来看一下下面这个问题&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331588.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152331588.png&#34;
 	
 	
 	
@@ -1807,7 +1807,7 @@ thymeleaf:.
 	
 &gt;
 &lt;strong&gt;报错如下&lt;/strong&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331449.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152331449.png&#34;
 	
 	
 	
@@ -1879,7 +1879,7 @@ thymeleaf:.
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202402152331926.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202402152331926.png&#34;
 	
 	
 	
@@ -1901,7 +1901,7 @@ thymeleaf:.
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;h3 id=&#34;项目创建&#34;&gt;项目创建
 &lt;/h3&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222125366.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222125366.png&#34;
 	
 	
 	
@@ -1911,7 +1911,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222127960.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222127960.png&#34;
 	
 	
 	
@@ -1924,7 +1924,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;删掉pom.xml&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222132185.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222132185.png&#34;
 	
 	
 	
@@ -1934,7 +1934,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222132497.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222132497.png&#34;
 	
 	
 	
@@ -1944,7 +1944,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222133344.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222133344.png&#34;
 	
 	
 	
@@ -1954,7 +1954,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222133936.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222133936.png&#34;
 	
 	
 	
@@ -1964,7 +1964,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222133445.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222133445.png&#34;
 	
 	
 	
@@ -1977,7 +1977,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;点击运行即可&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222134032.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222134032.png&#34;
 	
 	
 	
@@ -1987,7 +1987,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222134753.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222134753.png&#34;
 	
 	
 	
@@ -2000,7 +2000,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;因为没有页面&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222136177.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222136177.png&#34;
 	
 	
 	
@@ -2010,7 +2010,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222136111.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222136111.png&#34;
 	
 	
 	
@@ -2023,7 +2023,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;在WEB-INF下新建lib包，在lib下存放jar包&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222139162.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222139162.png&#34;
 	
 	
 	
@@ -2036,7 +2036,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;此时依赖还没完全导入，还需如下操作&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222140082.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222140082.png&#34;
 	
 	
 	
@@ -2046,7 +2046,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222140175.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222140175.png&#34;
 	
 	
 	
@@ -2059,7 +2059,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;选择lib，此时就算导入成功了&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222141981.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222141981.png&#34;
 	
 	
 	
@@ -2592,7 +2592,7 @@ thymeleaf:.
 &lt;p&gt;导入jquery，使用ajax，&lt;a class=&#34;link&#34; href=&#34;https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;下载网址&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222154368.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222154368.png&#34;
 	
 	
 	
@@ -2602,7 +2602,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222155920.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222155920.png&#34;
 	
 	
 	
@@ -2617,7 +2617,7 @@ thymeleaf:.
 &lt;p&gt;我这里@WebServlet注解爆红，导入&lt;code&gt;javax.servlet-api-3.1.0.jar&lt;/code&gt;包后解决
 看到有博客说&lt;code&gt;servlet.jar&lt;/code&gt;也可以，不过我就导入了&lt;code&gt;javax.servlet-api-3.1.0.jar&lt;/code&gt;就已解决&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222200659.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222200659.png&#34;
 	
 	
 	
@@ -2627,7 +2627,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222206576.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222206576.png&#34;
 	
 	
 	
@@ -2637,7 +2637,7 @@ thymeleaf:.
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222204889.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222204889.png&#34;
 	
 	
 	
@@ -2650,7 +2650,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;注释掉SubHandle内的&lt;code&gt;super.doPost(req, resp);&lt;/code&gt;即可，&lt;code&gt;记得重启服务&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303222205247.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303222205247.png&#34;
 	
 	
 	
@@ -2664,7 +2664,7 @@ thymeleaf:.
 &lt;h2 id=&#34;前端之前一直接受不到数据&#34;&gt;前端之前一直接受不到数据
 &lt;/h2&gt;&lt;p&gt;既不执行success也不执行error，是因为后端的返回格式不是json&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303230741695.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303230741695.png&#34;
 	
 	
 	
@@ -2685,14 +2685,14 @@ thymeleaf:.
         <description>&lt;img src="https://IsUnderAchiever.github.io/p/%E6%8B%A6%E6%88%AA%E5%99%A8/202412212133331.png" alt="Featured image of post 拦截器" /&gt;&lt;h1 id=&#34;拦截器&#34;&gt;拦截器
 &lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;问题起因：明明已将放行过测试的路径了，页面也能正常获取到数据，拦截器里的sout却依然有两次输出
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132201695.png&#34; alt=&#34;拦截器请求参数&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303132201695.png&#34; alt=&#34;拦截器请求参数&#34; style=&#34;zoom:80%;&#34; /&gt;
 输出了一下请求路径，发现如下
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132202244.png&#34; alt=&#34;拦截器&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303132202244.png&#34; alt=&#34;拦截器&#34; style=&#34;zoom:80%;&#34; /&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/16476760.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考博客&lt;/a&gt;
 至于为什么会请求error，应该是没有找到favicon.ico的请求
 &lt;code&gt;解决方法如下&lt;/code&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303132208874.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303132208874.png&#34;
 	
 	
 	
@@ -2720,7 +2720,7 @@ thymeleaf:.
 &lt;blockquote&gt;
 &lt;p&gt;新建lib包，在lib下导入jar包&lt;/p&gt;
 &lt;p&gt;如果发现无法使用jar包注解等，请在project structure-&amp;gt;modules-&amp;gt;dependencies中添加lib包
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111039929.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111039929.png&#34;
 	
 	
 	
@@ -2731,7 +2731,7 @@ thymeleaf:.
 	
 &gt;
 这个是新建maven项目导入spring-context依赖后的图片
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111040847.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111040847.png&#34;
 	
 	
 	
@@ -2742,8 +2742,8 @@ thymeleaf:.
 	
 &gt;
 这个是普通java项目手动导入jar包
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111046042.png&#34; alt=&#34;image-20230311104637001&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111042953.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111046042.png&#34; alt=&#34;image-20230311104637001&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111042953.png&#34;
 	
 	
 	
@@ -2858,7 +2858,7 @@ thymeleaf:.
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;运行后报错，继续导入该jar包
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111048473.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111048473.png&#34;
 	
 	
 	
@@ -2869,7 +2869,7 @@ thymeleaf:.
 	
 &gt;
 导入jar包后继续运行
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303111100403.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303111100403.png&#34;
 	
 	
 	
@@ -2884,7 +2884,7 @@ thymeleaf:.
 如果和src同级，需要写&lt;code&gt;applicationContext.xml&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;配置oracle&#34;&gt;配置Oracle
-&lt;/h2&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112242424.png&#34; alt=&#34;image-20230311224226347&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;/h2&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303112242424.png&#34; alt=&#34;image-20230311224226347&#34; style=&#34;zoom:80%;&#34; /&gt;
 ```properties
 # 数据库驱动：
 spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
@@ -2918,7 +2918,7 @@ public class ApplicationTest {
     }
 }
 ```
-![image-20230311224204289](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112242465.png)
+![image-20230311224204289](https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303112242465.png)
 &gt; 可以看到已经配置成功
 &gt;
 &gt; 接下来测试一下sql
@@ -2966,7 +2966,7 @@ User(id=2, nickname=呵呵, username=abcd, password=456)
 User(id=3, nickname=嘿嘿, username=aan, password=1234)
 Process finished with exit code 0
 ```
-![image-20230311230401198](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303112304328.png)
+![image-20230311230401198](https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303112304328.png)
 [项目](https://www.123pan.com/s/tMU0Vv-K2iUd.html)、[lib包](https://www.123pan.com/s/tMU0Vv-u2iUd.html)
 </description>
         </item>
@@ -3045,7 +3045,7 @@ Process finished with exit code 0
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;from&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tb_user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303102244438.png&#34; alt=&#34;image-20230310224428393&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;/div&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303102244438.png&#34; alt=&#34;image-20230310224428393&#34; style=&#34;zoom:80%;&#34; /&gt;
 ```java
 public class User {
     private Integer id;
@@ -3168,11 +3168,11 @@ public class UserMapperImpl implements UserMapper {
 }
 ```
 &gt; 下图是演示结果
-![image-20230310224210463](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303102242670.png)
+![image-20230310224210463](https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303102242670.png)
 ### 关于在lib内导入jar包的操作
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303102248438.png&#34; alt=&#34;image-20230310224841395&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303102246819.png&#34; alt=&#34;image-20230310224654748&#34; style=&#34;zoom:80%;&#34; /&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303102247022.png&#34; alt=&#34;image-20230310224732971&#34; style=&#34;zoom: 80%;&#34; /&gt;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303102248438.png&#34; alt=&#34;image-20230310224841395&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303102246819.png&#34; alt=&#34;image-20230310224654748&#34; style=&#34;zoom:80%;&#34; /&gt;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303102247022.png&#34; alt=&#34;image-20230310224732971&#34; style=&#34;zoom: 80%;&#34; /&gt;
 &gt; 如果以上操作`依然无法连接到oracle`，请查看第二张图片内选择的模块是否正确
 ### 可能出现的报错信息
 1. 表或视图不存在
@@ -3787,7 +3787,7 @@ public class UserMapperImpl implements UserMapper {
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303050935035.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303050935035.png&#34;
 	
 	
 	
@@ -5328,7 +5328,7 @@ public class UserMapperImpl implements UserMapper {
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 2. 使用yml格式&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051728479.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051728479.png&#34;
 	
 	
 	
@@ -5338,7 +5338,7 @@ public class UserMapperImpl implements UserMapper {
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051728336.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051728336.png&#34;
 	
 	
 	
@@ -5350,7 +5350,7 @@ public class UserMapperImpl implements UserMapper {
 &gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;编码格式改为了&lt;code&gt;ISO-8859-1&lt;/code&gt;，如果是配置yml文件，格式也需要更改
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051729582.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051729582.png&#34;
 	
 	
 	
@@ -5360,7 +5360,7 @@ public class UserMapperImpl implements UserMapper {
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051729342.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051729342.png&#34;
 	
 	
 	
@@ -5593,7 +5593,7 @@ public class UserMapperImpl implements UserMapper {
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;不加&lt;code&gt;@RequestBody&lt;/code&gt;的情景，可以直接在&lt;code&gt;Parameters&lt;/code&gt;获取到
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051712583.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051712583.png&#34;
 	
 	
 	
@@ -5604,7 +5604,7 @@ public class UserMapperImpl implements UserMapper {
 	
 &gt;
 加了&lt;code&gt;@RequestBody&lt;/code&gt;的情景，显示&lt;code&gt;No parameters&lt;/code&gt;，但&lt;code&gt;Schema&lt;/code&gt;处可看到参数详情
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051714339.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051714339.png&#34;
 	
 	
 	
@@ -5614,7 +5614,7 @@ public class UserMapperImpl implements UserMapper {
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202303051714998.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202303051714998.png&#34;
 	
 	
 	
@@ -6173,7 +6173,7 @@ public class UserMapperImpl implements UserMapper {
 就准备了这个小项目试试水，结果&amp;hellip;泪目了&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;springbootspringcloudspringcloud-alibaba版本不匹配&#34;&gt;springboot、springcloud、springcloud alibaba版本不匹配
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202123336.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202123336.png&#34;
 	
 	
 	
@@ -6597,7 +6597,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 &lt;/div&gt;&lt;h2 id=&#34;人人开源-代码生成--500&#34;&gt;人人开源-代码生成&amp;ndash;500
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;老实说，这些&lt;code&gt;谷粒商城&lt;/code&gt;的视频里都有，时间太久，我有些记不清了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124459.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124459.png&#34;
 	
 	
 	
@@ -6607,7 +6607,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124956.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124956.png&#34;
 	
 	
 	
@@ -6622,7 +6622,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
     &gt;博客&lt;/a&gt;
 和博主是一样的问题
 &lt;code&gt;解决方法&lt;/code&gt;：http://localhost:/index.html
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124874.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124874.png&#34;
 	
 	
 	
@@ -6634,7 +6634,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 &gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;人人开源-代码生成--serviceimpl报错&#34;&gt;人人开源-代码生成&amp;ndash;serviceimpl报错
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124091.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124091.png&#34;
 	
 	
 	
@@ -6645,7 +6645,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 	
 &gt;
 看到了一篇博客，说是导包的问题
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124174.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124174.png&#34;
 	
 	
 	
@@ -6664,7 +6664,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 &lt;p&gt;以前没注意到这个问题，没踩过这个坑，现在终于补齐了&amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;open-feign返回值为null&#34;&gt;open feign返回值为null
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124059.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124059.png&#34;
 	
 	
 	
@@ -6674,7 +6674,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124374.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124374.png&#34;
 	
 	
 	
@@ -6684,7 +6684,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 	
 	
 &gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124910.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124910.png&#34;
 	
 	
 	
@@ -6704,7 +6704,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 本来是想试验一下来着，但仔细一看代码，不是这个问题&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;错误原因&lt;/code&gt;：返回值的问题，被调用的方法的返回值是&lt;code&gt;renren-fast&lt;/code&gt;的&lt;code&gt;R&lt;/code&gt;，但&lt;code&gt;clients接口&lt;/code&gt;的返回值是User
 这个就是纯纯粗心了，太憨了
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124984.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124984.png&#34;
 	
 	
 	
@@ -6716,7 +6716,7 @@ github上有版本说明，&lt;a class=&#34;link&#34; href=&#34;https://github.c
 &gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;排除mybatis-plus相关依赖&#34;&gt;排除mybatis-plus相关依赖
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301202124662.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301202124662.png&#34;
 	
 	
 	
@@ -8030,7 +8030,7 @@ OSGi 旨在为实现 Java 程序的模块化编程提供基础条件，基于 OS
 正常结束：run()或 call()方法执行完成，线程正常结束。
 异常结束：线程抛出一个未捕获的 Exception 或 Error。
 调用 stop：直接调用该线程的 stop()方法来结束该线程—该方法通常容易导致死锁，不推荐使用。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201940930.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201940930.png&#34;
 	
 	
 	
@@ -9396,7 +9396,7 @@ AQS 只是一个框架，具体资源的获取/释放方式交由自定义同步
 &lt;/h3&gt;&lt;h3 id=&#34;面向切面&#34;&gt;面向切面
 &lt;/h3&gt;&lt;h3 id=&#34;容器&#34;&gt;容器
 &lt;/h3&gt;&lt;h3 id=&#34;框架集合&#34;&gt;框架集合
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942533.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942533.png&#34;
 	
 	
 	
@@ -9407,7 +9407,7 @@ AQS 只是一个框架，具体资源的获取/释放方式交由自定义同步
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;spring核心组件&#34;&gt;Spring核心组件
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942720.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942720.png&#34;
 	
 	
 	
@@ -9418,7 +9418,7 @@ AQS 只是一个框架，具体资源的获取/释放方式交由自定义同步
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;spring常用模块&#34;&gt;Spring常用模块
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942329.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942329.png&#34;
 	
 	
 	
@@ -9429,7 +9429,7 @@ AQS 只是一个框架，具体资源的获取/释放方式交由自定义同步
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;spring主要包&#34;&gt;Spring主要包
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942662.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942662.png&#34;
 	
 	
 	
@@ -9442,7 +9442,7 @@ AQS 只是一个框架，具体资源的获取/释放方式交由自定义同步
 &lt;h3 id=&#34;spring常用注解&#34;&gt;Spring常用注解
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;bean 注入与装配的的方式有很多种，可以通过 xml、get set 方式，、造函数或者注解等。简单易用的方式就是使用 Spring 的注解了，Spring 提供了大量的注解方式&lt;br&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942615.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942615.png&#34;
 	
 	
 	
@@ -9454,7 +9454,7 @@ AQS 只是一个框架，具体资源的获取/释放方式交由自定义同步
 &gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;spring第三方结合&#34;&gt;Spring第三方结合
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942195.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942195.png&#34;
 	
 	
 	
@@ -9620,7 +9620,7 @@ global Session：在一个全局的 Http Session 中，容器会返回该 Bean �
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;![Bean在Spring Bean应用上下文中的生命周期](https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942515.png)
+&lt;pre&gt;&lt;code&gt;![Bean在Spring Bean应用上下文中的生命周期](https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942515.png)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;（生命周期）&lt;/p&gt;
@@ -9907,7 +9907,7 @@ CGLib 全称为 Code Generation Library，是一个强大的高性能，高质�
 &lt;p&gt;Spring 的模型-视图-控制器（MVC）框架是围绕一个 DispatcherServlet 来设计的，这个 Servlet会把请求分发给各个处理器，并支持可配置的处理器映射、视图渲染、本地化、时区与主题渲染等，甚至还能支持文件上传。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;mvc流程&#34;&gt;MVC流程
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942258.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942258.png&#34;
 	
 	
 	
@@ -10107,7 +10107,7 @@ CGLib 全称为 Code Generation Library，是一个强大的高性能，高质�
 &lt;/div&gt;&lt;h3 id=&#34;两阶段提交&#34;&gt;两阶段提交
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;两阶段提交主要保证了分布式事务的原子性：即所有结点要么全做要么全不做，所谓的两个阶段是指：第一阶段：准备阶段；第二阶段：提交阶段。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201941273.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201941273.png&#34;
 	
 	
 	
@@ -10125,7 +10125,7 @@ CGLib 全称为 Code Generation Library，是一个强大的高性能，高质�
 &lt;h3 id=&#34;mybatis缓存&#34;&gt;MyBatis缓存
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;Mybatis 中有一级缓存和二级缓存，默认情况下一级缓存是开启的，而且是不能关闭的。一级缓存是指 SqlSession 级别的缓存，当在同一个 SqlSession 中进行相同的 SQL 语句查询时，第二次以后的查询不会从数据库查询，而是直接从缓存中获取，一级缓存最多缓存 1024 条 SQL。二级缓存是指可以跨 SqlSession 的缓存。是 mapper 级别的缓存，对于 mapper 级别的缓存不同的sqlsession 是可以共享的。
-&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201942455.png&#34;
+&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201942455.png&#34;
 	
 	
 	
@@ -10958,7 +10958,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/renrenio/renren-generator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;renren-generator&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950475.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950475.png&#34;
 	
 	
 	
@@ -10968,7 +10968,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950091.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950091.png&#34;
 	
 	
 	
@@ -10978,7 +10978,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950038.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950038.png&#34;
 	
 	
 	
@@ -10988,7 +10988,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950741.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950741.png&#34;
 	
 	
 	
@@ -10999,7 +10999,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;renren-fast&#34;&gt;renren-fast
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950552.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950552.png&#34;
 	
 	
 	
@@ -11009,7 +11009,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950941.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950941.png&#34;
 	
 	
 	
@@ -11020,7 +11020,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;新建renren-fast数据库，并执行mysql.sql内的sql语句&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950460.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950460.png&#34;
 	
 	
 	
@@ -11030,7 +11030,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201950776.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201950776.png&#34;
 	
 	
 	
@@ -11040,7 +11040,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951709.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951709.png&#34;
 	
 	
 	
@@ -11076,7 +11076,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 &lt;h4 id=&#34;若后端启动报错&#34;&gt;若后端启动报错
 &lt;/h4&gt;&lt;p&gt;报错信息：jar:file:/D:/apache-maven-3.5.3/repository/javax/servlet/servlet-api&amp;hellip;
 表示jar包冲突，我的解决方法是&lt;strong&gt;先去repository删了这些包&lt;/strong&gt;，然后重新在项目中下载&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951646.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951646.png&#34;
 	
 	
 	
@@ -11087,7 +11087,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;运行renren-fast和renren-fast-vue两个项目，前者是后端项目，后者是前端项目&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951110.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951110.png&#34;
 	
 	
 	
@@ -11097,7 +11097,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951109.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951109.png&#34;
 	
 	
 	
@@ -11110,7 +11110,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 &lt;p&gt;账号和密码都是admin&lt;/p&gt;
 &lt;h2 id=&#34;renren-generator&#34;&gt;renren-generator
 &lt;/h2&gt;&lt;p&gt;先去配置数据库的信息&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951490.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951490.png&#34;
 	
 	
 	
@@ -11121,7 +11121,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;以demo数据库为例：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951164.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951164.png&#34;
 	
 	
 	
@@ -11133,7 +11133,7 @@ Java 平台允许我们在内存中创建可复用的 Java 对象，但一般情
 &gt;&lt;/p&gt;
 &lt;p&gt;新建一个springboot项目，来操作demo数据库的这几个表
 springcloud涉及到多个数据库，则需要创建多个项目来对应每个数据库【项目与数据库一一对应】&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951577.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951577.png&#34;
 	
 	
 	
@@ -11143,7 +11143,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951752.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951752.png&#34;
 	
 	
 	
@@ -11153,7 +11153,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951373.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951373.png&#34;
 	
 	
 	
@@ -11165,7 +11165,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;【微服务还需要导入openfeign依赖】&lt;/strong&gt;
 打开generator.properties进行配置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951706.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951706.png&#34;
 	
 	
 	
@@ -11175,7 +11175,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951724.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951724.png&#34;
 	
 	
 	
@@ -11185,7 +11185,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951803.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951803.png&#34;
 	
 	
 	
@@ -11196,7 +11196,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;运行项目&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951877.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951877.png&#34;
 	
 	
 	
@@ -11206,7 +11206,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951882.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951882.png&#34;
 	
 	
 	
@@ -11216,7 +11216,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951019.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951019.png&#34;
 	
 	
 	
@@ -11227,7 +11227,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;直接复制生成的main文件夹，粘贴到项目的main处&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951458.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951458.png&#34;
 	
 	
 	
@@ -11241,7 +11241,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 考虑到各种原因，删除刚刚生成的内容
 我们将工具包和其他依赖【如mybatis-plus、lombok等通用的依赖】集成成一个springboot项目
 将其他springboot的公共依赖、公共包进行整合&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201951173.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201951173.png&#34;
 	
 	
 	
@@ -11251,7 +11251,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201952113.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201952113.png&#34;
 	
 	
 	
@@ -11408,7 +11408,7 @@ springcloud涉及到多个数据库，则需要创建多个项目来对应每个
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行demo项目&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/IsUnderAchiever/markdown-img/master/PicGo01/202301201952508.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://tong-md-img.oss-cn-hangzhou.aliyuncs.com/PicGo01/202301201952508.png&#34;
 	
 	
 	
